@@ -1,0 +1,645 @@
+ 
+ 
+ 
+ 
+Standar Nasional Indonesia  
+  
+ SNI 3932:2008
+  
+  
+  
+    
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+ 
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+Mutu karkas dan daging sapi  
+ 
+ 
+ 
+    
+ 
+  
+  
+ 
+ 
+ 
+   
+ 
+  
+   
+ 
+ICS 67.120.10 Badan Standardisasi Nasional  
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ iDaftar isi 
+ 
+ 
+ 
+Daftar isi ............................................................................................................................... ....................i 
+Prakata ............................................................................................................................... .....................ii 
+1    Ruang lingkup ............................................................................................................................... .. 1 
+2    Acuan normatif ............................................................................................................................... 1 
+3    Istilah dan definisi .......................................................................................................................... 1 
+4    Klasifikasi ............................................................................................................................... ......... 2 
+5    Persyaratan mutu ........................................................................................................................... 4 
+6    Peta karkas sapi ............................................................................................................................. 5 
+7    Cara pemotongan .......................................................................................................................... 6 
+8    Cara pengambilan contoh ............................................................................................................ 7 
+9    Pengujian ............................................................................................................................... ......... 7 
+10    Pengemasan ............................................................................................................................... .7  
+11    Pelabelan ............................................................................................................................... ....... 7 
+12    Penyimpanan ............................................................................................................................... 8 
+Lampiran A (normatif) Prosedur penilaian mutu fisik karkas sapi ................................................. 9 
+Lampiran B (normatif) Prosedur penilaian mutu fisik daging sapi .............................................. 10 
+Bibliografi ............................................................................................................................... .............. 14  
+ 
+Gambar 1 – Potongan daging.................................................................................................. 3 
+Gambar 2 - Peta karkas sapi................................................................................................... 5  
+Gambar A.1 - Standar warna karkas sapi................................................................................ 9 
+Gambar A.2 - Standar warna daging sapi ............................................................................. 11 
+Gambar A.3 - Standar warna lemak ...................................................................................... 11 Gambar A.4 - Standar marbling ............................................................................................. 12
+ 
+ 
+Tabel 1 - Klasifikasi karkas berdasarkan umur dan jenis kelamin ........................................... 2 
+Tabel 2 – Klasifikasi potongan daging..................................................................................... 3 Tabel 3 - Tingkatan mutu karkas ............................................................................................. 4 
+Tabel 4 - Tingkatan mutu daging............................................................................................. 5 
+Tabel 5 - Syarat mutu mikrobiologis daging sapi..................................................................... 5  
+ 
+ 
+ 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ iiPrakata 
+ 
+ 
+ 
+Penyusunan standar Mutu karkas dan daging sapi merupakan revisi SNI 01-3932-1995 
+Karkas sapi  dan SNI 01-3933-1995 Karkas kerbau   Revisi standar dilakukan dalam rangka 
+memperbaiki persyaratan mutu karkas dan daging.   Standar ini disusun oleh Panitia Teknis 67-03 Peternakan dan Produk Peternakan dan telah 
+dibahas pada rapat-rapat teknis dan terakhir disepakati dalam rapat konsensus pada tanggal 
+8 Nopember 2007 di Bogor yang dihadiri oleh anggota Panitia Teknis dan pihak terkait 
+lainnya.  Standar ini juga telah melalui tahap jajak pendapat pada tanggal 7 April 2008 sampai dengan 7 Juni 2008, namun untuk mencapai kuorum diperpanjang sampai dengan tanggal 7 Juli 
+2008 dan langsung disetujui menjadi RASNI. 
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+    
+ 
+     
+ 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 1 dari 14Mutu karkas dan daging sapi 
+ 
+ 
+ 
+1    Ruang lingkup  
+ 
+Standar ini menetapkan klasifikasi, peta dan tingkatan mutu karkas, tingkatan mutu daging, pengemasan, pelabelan dan penyimpanan karkas dan daging sapi.   
+ 
+Standar ini tidak berlaku untuk sapi lokal. 
+ 
+ 
+2    Acuan normatif 
+ 
+SNI 2897:2008, Metoda pengujian cemaran mikroba dalam daging, telur dan susu, serta 
+hasil olahannya . 
+ 
+ 3    Istilah dan definisi 
+ 
+3.1  
+karkas  
+bagian dari tubuh sapi sehat yang telah disembelih secara halal sesuai dengan CAC/GL 24-1997, telah dikuliti, dikeluarkan jeroan, dipisahkan kepala dan  kaki mulai dari tarsus/karpus ke bawah, organ reproduksi dan ambing, ekor serta lemak yang berlebih   3.2  daging  
+bagian otot skeletal dari karkas sapi yang aman, layak dan lazim dikonsumsi oleh manusia, dapat berupa daging segar, daging segar dingin, atau daging beku   3.3  
+daging segar   
+daging yang belum diolah dan atau tidak ditambahkan dengan bahan apapun  
+ 
+3.4  
+daging segar dingin   
+daging yang mengalami proses pendinginan setelah penyembelihan sehingga temperatur bagian dalam daging antara 0 °C dan 4 °C   
+3.5  
+daging beku   
+daging segar yang sudah mengalami proses pembekuan di dalam blast freezer dengan 
+temperatur internal minimum -18 °C   
+3.6     
+marbling 
+butiran lemak putih yang tersebar dalam jaringan otot daging (lemak intra muskuler) 
+ 
+3.7  
+perubahan warna  
+penyimpangan warna karena terdapat memar, pendarahan, "freeze burn"  dan atau 
+perubahan warna lainnya yang disebabkan  oleh mikroorganisme atau zat-zat kontaminan  
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 2 dari 143.8  
+memar perubahan warna dan konsistensi pada daging akibat benturan fisik 
+ 
+3.9 freeze burn  
+perubahan warna pada daging akibat kontak dengan permukaan yang sangat dingin, di 
+bawah temperatur -18 °C 
+ 
+3.10 
+ketebalan lemak karkas 
+jaringan lemak subkutan ( sub cutaneous )  
+ 
+3.11 
+konformasi karkas 
+jaringan otot skeletal dan jaringan lemak sebagai unit komersial yang berhubungan dengan 
+ukuran tulang rangka ( skeleton ) 
+ 
+3.12 
+warna karkas 
+warna pada sayatan segar otot punggung (back muscle)  atau otot daging kelapa pada paha 
+belakang (round)  
+ 
+3.13 Nomor Kontrol Veteriner (NKV) 
+sertifikat sebagai bukti tertulis yang sah telah dipenuhinya persyaratan higiene-sanitasi 
+sebagai kelayakan dasar jaminan keamanan pangan asal hewan pada unit usaha pangan asal hewan  
+  
+4    Klasifikasi  
+ 4.1    Klasifikasi karkas  
+ 
+Karkas diklasifikasikan berdasarkan umur dan jenis kelamin seperti terlihat pada Tabel 1.   
+Tabel 1 - Klasifikasi karkas berdasarkan umur dan jenis kelamin 
+ 
+Kelompok Deskripsi 
+Veal Karkas yang berasal dari sapi dengan umur di bawah 1 
+tahun 
+Yearling  Karkas yang berasal dari sapi dengan umur 1 sampai dengan 2 tahun dan belum menunjukkan adanya  gigi seri 
+permanen yang terkikis 
+Young  Karkas yang berasal dari sapi dara dengan 3 sampai dengan 7 gigi seri permanen terkikis 
+Young prime  Karkas yang berasal dari sapi kastrasi atau sapi jantan yang tidak menunjukkan tanda kelamin sekunder, mempunyai 3 atau lebih gigi seri permanen yang terkikis 
+Prime  Karkas yang berasal dari sapi betina atau jantan dengan 8 gigi seri permanen terkikis 
+Cow/Steer/Ox Karkas yang berasal dari sapi betina atau jantan yang telah mencapai dewasa kelamin 
+  
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 3 dari 144.2    Klasifikasi potongan daging 
+ 
+Klasifikasi potongan daging dapat dilihat pada Tabel 2.  
+Tabel 2 – Klasifikasi potongan daging  
+ 
+ 
+Golongan (kelas)     Potongan daging  
+ 
+ I      1. Has dalam ( tenderloin ) 
+       2 .  H a s  l u a r  ( striploin/sirloin ) 
+       3 .  L a m u s i r  ( cube roll ) 
+ 
+  II      1. Tanjung ( rump ) 
+       2. Kelapa ( round ) 
+       3. Penutup ( topside ) 
+       4. Pendasar ( silverside ) 
+       5. Gandik ( eye round ) 
+       6 .  K i j e n  ( chuck tender ) 
+       7 .  S a m p i l  b e s a r  ( chuck ) 
+       8 .  S a m p i l  k e c i l  ( blade ) 
+ 
+  III      1. Sengkel ( shin/shank ) 
+       2. Daging iga ( rib meat ) 
+       3 .  S a m c a n  ( Thin flank ) 
+       4. Sandung lamur ( brisket ) 
+ 
+  
+Potongan daging sesuai klasifikasi di atas dapat dilihat pada Gambar 1.  
+Has dalam  Has luar  Iga utuh  Lemusir 
+ 
+ 
+Tanjung  Kelapa  Penutup  Pendasar  
+ 
+ 
+ 
+ 
+ 
+Gambar 1 – Potongan daging 
+ 
+ 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 4 dari 14 
+Gandik  Kijen  Sampil besar  Sampil kecil 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+Sandung Lamur Sengkel  Daging iga Samcan  
+ 
+  
+  
+ 
+ 
+Gambar 1   (lanjutan) 
+ 
+ 
+5    Persyaratan mutu  
+ 
+5.1    Karkas  
+ 
+Tingkatan mutu karkas sapi dapat dilihat pada Tabel 3 berikut ini: 
+ 
+Tabel 3 - Tingkatan mutu karkas 
+ 
+Persyaratan mutu No Jenis uji 
+I II III 
+1 Ketebalan lemak < 12 mm 13 mm - 22 mm > 22 mm 
+2 Konformasi cekung - agak 
+cekung rata - cembung sangat 
+cembung  
+3 Warna skor 1- 3 skor 4 - 6 
+ Skor 7 - 9 
+4 Perubahan warna Bebas dari memar 
+dan freeze burn  Ada satu memar 
+atau freeze burn 
+dengan diameter 
+kurang dari 2 cm di 
+bagian selain daerah prime cut Ada satu 
+memar  atau 
+freeze burn 
+lebih dari 2 cm 
+di bagian selain daerah prime 
+cut  dan atau  
+ada lebih dari satu memar  dengan diameter kurang dari 2 
+cm selain pada 
+prime cut  
+ 
+ 
+ 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 5 dari 145.2    Daging 
+ 
+5.2.1 Mutu fisik   
+Tingkatan mutu daging sapi secara fisik dapat dilihat pada Tabel 4 berikut ini:  
+ 
+         Tabel 4 - Tingkatan mutu daging 
+ 
+Persyaratan mutu 
+No Jenis uji 
+I II III 
+1 Warna daging Merah terang 
+Skor 1- 5 Merah kegelapan 
+Skor 6 - 7 Merah gelap 
+Skor 8 - 9 
+2 Warna lemak Putih 
+Skor 1- 3 Putih kekuningan 
+Skor 4 - 6 Kuning 
+Skor 7 - 9 
+3 Marbling Skor 9 - 12        Skor 5 - 8 Skor 1 - 4 
+4 Tekstur  Halus  Sedang  Kasar  
+ 
+5.2.2 Mutu mikrobiologis   
+Persyaratan mutu mikrobiologis daging sapi dapat dilihat pada Tabel 5 berikut ini: 
+ 
+Tabel 5 - Syarat mutu mikrobiologis daging sapi 
+ 
+No Jenis uji Satuan Persyaratan 
+1 
+2 3 4 5 Total Plate Count  
+ 
+Coliform  
+Staphylococcus aureus   
+Salmonella sp  
+Escherichia  coli   
+ cfu/g cfu/g cfu/g 
+per 25 g 
+ cfu/g 
+ maksimum 1 x 10
+6 
+maksimum 1 x 102 
+maksimum 1 x 102 
+negatif 
+ maksimum 1 x 101 
+  
+6    Peta karkas sapi  
+ 
+Peta karkas kambing/domba dapat dilihat pada Gambar 2 berikut ini: 
+                  
+ 
+ 
+ 
+Gambar 2 - Peta karkas sapi 
+ 
+   
+ Iga Sampil 
+Has luarLemusir
+SamcanTanjung
+Pendasar Kelapa
+Sengkel 
+Sengkel Sandun g Sampil kecil 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 6 dari 147    Cara pemotongan  
+ 7.1 Karkas sapi diperoleh dengan memotong kepala di antara tulang osipital ( os. 
+occipitale ) dengan tulang tengkuk pertama ( os. atlas ). Kaki depan dipotong di antara carpus 
+dan metacarpus; kaki belakang dipotong di antara tarsus dan metatarsus. Jika diperlukan 
+untuk memisahkan ekor, maka paling banyak dua ruas tulang belakang coccygeal  (os. 
+caudalis ) terikut pada karkas. 
+ 
+7.2 Karkas paruh ( half carcas ) diperoleh dengan membelah karkas sepanjang tulang 
+belakang dan sternum menjadi dua bagian, yaitu karkas paruh kiri dan karkas paruh kanan.  
+7.3 Karkas perempat diperoleh dengan membelah karkas paruh antara tulang rusuk ke-
+12 dan ke-13 menjadi dua bagian yaitu karkas perempat depan dan karkas perempat 
+belakang. 
+ 7.4 Has dalam ( Tenderloin ) diperoleh dengan melakukan pemotongan yang mengikuti 
+lengkung pada tulang pelvis, selanjutnya dipisahkan dari tulang ilium dengan cara menarik 
+otot tersebut. Lapisan lemak pada bagain atas dan bawah dibersihkan. Bagian lemak di 
+antara musculus illiacus  dan musculus psoas major  dipertahankan. 
+ 7.5 Has luar  diperoleh dengan cara menghilangkan samcan terlebih dahulu pada jarak 
+tertentu dari musculus longissimus dorsi  yaitu pada bagian belakang 0 cm. Potongan bagian 
+belakang dimulai dari lumbo sacral junction  dan diteruskan ke bagian depan dari ilium 
+dilanjutkan ke bagian bawah samcan serta dipisahkan.   7.6 Lamusir  (Cuberoll ) merupakan bagian yang diperoleh dari dorsal iga utuh, potongan 
+bagian depan  dimulai dari rusuk ke-4  sampai rusuk terakhir sealur belahan karkas.  
+7.7 Tanjung  (Rump ). Potongan yang diperoleh dari tanjung penuh dengan 
+menghilangkan tensor faciae latae  pada lapisan yang berbatasan dengan Muskulus gluteus 
+medius , dan juga menghilangkan  tulang coxae . 
+ 
+7.8 Kelapa ( Round/knucle ). Potongan bagian belakang  berbatasan dengan pendasar 
+dan penutup. Bagian depan berbatasan dengan samcan.  7.9 Penutup  (Topside ) diperoleh dari paha bagian medial pada bagian lateral berbatasan 
+dengan pendasar.  
+7.10 Pendasar ( Silverside ) merupakan potongan paha bagian caudo-lateral, pada bagian 
+medial berbatasan dengan penutup. 
+ 7.11 Gandik  (Eye Round ). Potongan diperoleh dengan memisahkan m. semitendinosus  
+dari pendasar.        
+7.12 Kijen ( Chuck tendher ) terletak pada tulang scapula dan dipotong dari lapisan tulang 
+scapula bagian depan. 
+ 7.13 Sampil besar ( Chuck ) diperoleh dengan melakukan potongan perempat karkas 
+depan pada tulang rusuk ke-5 dan ke-6 ke depan termasuk bagian leher, setelah dipisahkan 
+dari potongan punuk dan sandung lamur. 
+ 7.14 Sampil kecil ( Blade
+) diperoleh dengan melakukan potongan mengikuti lapisan otot 
+antara bagian atas m. latissimus  dorsi  dan trapecius  serta bagian bawah m. serratus 
+ventralis . 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 7 dari 147.15 Sandung lamur ( Brisket ) diperoleh dengan melakukan potongan lurus dari pertemuan 
+antara tulang rusuk pertama dan tulang sternum pertama menuju bagian belakang sampai  
+rusuk ke-12. 
+ 
+7.16 Sengkel ( Shin dan Shank ) diperoleh dari paha depan atau belakang yang merupakan 
+kelompok otot flexor extensor . 
+ 
+7.17 Iga ( rib meat ) diambil dari paha depan yaitu dari sela-sela tulang rusuk. Lapisan 
+membran yang melapisi dan lemak sekitarnya dibersihkan. 
+ 
+7.18 Samcan ( Thin flank ) potongan berbentuk seperti kipas, merupakan potongan bagian 
+ventral dari abdomen. 
+ 
+ 
+8    Cara pengambilan contoh 
+ 
+Tata cara pengambilan contoh mengacu pada SNI 2897:2008.   
+ 
+9    Pengujian   9.1    Fisik 
+ 9.1.1    Fisik karkas sesuai dengan Lampiran A. 
+ 9.1.2    Fisik daging sesuai dengan Lampiran B.  
+ 
+9.2    Cemaran mikroba 
+ Cemaran mikroba mengacu kepada SNI 2897:2008.
+  
+  
+ 10    Pengemasan 
+ Produk dikemas dalam kemasan yang aman, serta tidak mengakibatkan 
+penyimpangan/kerusakan produk selama penyimpanan dan pengangkutan. 
+  11    Pelabelan  
+Informasi pada label kemasan primer minimal mencantumkan : 
+a. nama produk; b. merk dagang; 
+c. NKV; 
+d. label halal. 
+ Informasi pada label kemasan sekunder minimal mencantumkan : a. nama produk; b. merk dagang; 
+c. tanggal produksi; 
+d. nama dan alamat produsen; e. berat bersih; f. NKV; g. label halal; h. cara penyimpanan. 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 8 dari 1412    Penyimpanan 
+ Penyimpanan karkas atau daging dapat dilakukan dalam bentuk segar, segar dingin atau 
+beku di ruangan atau tempat sesuai dengan karakteristik produk. 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 9 dari 14Lampiran A  
+(normatif) 
+Prosedur penilaian mutu fisik karkas sapi 
+ 
+  Penilaian mutu fisik karkas dimaksudkan untuk memprediksi palatabilitas karkas dengan menilai ketebalan lemak,  konformasi, dan warna karkas.    
+ A.1    Peralatan 
+Peralatan yang digunakan terdiri atas carcass fat probe , senter dengan lampu putih dengan 
+intensitas cahaya minimum 540 lux,  dan standar warna daging. 
+ 
+A.2    Metode penilaian 
+Penilaian mutu fisik karkas dilakukan secara visual terhadap penampilan fisik otot dan lemak 
+yang selanjutnya ditentukan dengan menggunakan alat bantu standar mutu. 
+ 
+A.3 Ketebalan lemak karkas 
+penilaian dilakukan dengan menusukkan carcass fat probe  secara tegak lurus dengan 
+permukaan jaringan pada os.vertebrae sacralis  ke- 3.  
+ 
+A.4 Konformasi karkas 
+Penilaian konformasi karkas dilakukan secara visual pada bagian daging kelapa ( knuckle ).  
+ 
+A.5 Warna karkas 
+Penilaian  dilakukan pada karkas dingin dengan temperatur bagian dalam karkas antara 0 °C 
+dan 7 °C dengan melakukan sayatan pada otot punggung (back muscle)  atau otot daging 
+kelapa , dan warna pada sayatan tersebut dibandingkan dengan warna standar. Nilai skor 
+warna ditentukan berdasarkan skor warna standar yang paling sesuai dengan warna karkas.    
+Standar warna daging terdiri atas sembilan skor mulai dari warna merah muda hingga merah 
+tua sebagaimana terlihat pada Gambar A.1. 
+ 
+ 
+ 
+  
+1 2 3 
+ 
+  
+  
+4 5 6 
+ 
+  
+  
+7 8 9 
+ 
+Gambar A.1 - Standar warna karkas sapi 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 10 dari 14Lampiran B  
+(normatif) 
+Prosedur penilaian mutu fisik daging sapi 
+ 
+  Penilaian mutu fisik daging dimaksudkan untuk memprediksi palatabilitas daging dengan melihat penampilan warna daging dan lemak, derajat marbling dan tekstur daging.   
+ B.1    Peralatan  
+Peralatan yang digunakan terdiri atas stempel mutu, senter dengan lampu putih dan 
+intensitas minimum 700 lux, standar warna daging, standar warna lemak, standar marbling dan standar tekstur. 
+ 
+ 
+B.2    Pengambilan contoh 
+ 
+Penilaian mutu fisik daging dilakukan pada karkas setelah setelah mengalami proses chilling  
+selama 24 jam - 48 jam. Penilaian dilakukan dengan pengamatan secara seksama pada 
+permukaan irisan melintang otot mata rusuk ke-12 ( m. longissimus dorsi  ) dari setiap karkas 
+bagian kanan. Karkas yang dievaluasi tidak boleh menunjukan adanya penyimpangan kualitas daging.   B.3    Metoda penilaian  
+Pengujian mutu fisik daging dilakukan secara organoleptik dengan menggunakan indra 
+penglihatan terhadap penampilan fisik otot da n lemak. Nilai penampilan fisik daging dan 
+lemak selanjutnya ditentukan dengan menggunakan alat bantu standar mutu. Penampilan 
+fisik daging yang dievaluasi meliputi warna daging dan lemak, intensitas marbling dan tekstur 
+otot.   
+B.4    Warna daging 
+ 
+Penilaian warna daging dilakukan dengan melihat warna permukan otot mata rusuk dengan 
+bantuan cahaya senter dan mencocokannya dengan standar warna. Nilai skor warna ditentukan berdasarkan skor standar warna yang paling sesuai dengan warna daging.  Standar warna daging terdiri atas sembilan skor mulai dari warna merah muda hingga merah tua sebagaimana terlihat pada  Gambar A.2. 
+      
+ 
+    
+ 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 11 dari 14
+ 
+ 
+  
+1 2 3 
+ 
+  
+  
+4 5 6 
+ 
+  
+  
+7 8 9 
+ 
+Gambar A.2 - Standar warna daging sapi 
+ 
+ 
+B.5    Warna lemak 
+ Penilaian warna lemak dilakukan dengan melihat warna lemak subkutis dengan bantuan 
+cahaya senter dan mencocokkannya dengan standar warna.  Nilai skor warna ditentukan berdasarkan skor standar warna yang paling sesuai dengan warna lemak. Standar warna lemak terdiri atas sembilan skor mulai dari warna putih hingga kuning sebagaimana terlihat 
+pada Gambar A.3. 
+  
+ 
+ 
+  
+  
+1 2 3 
+ 
+  
+ 
+4 5 6 
+ 
+  
+  
+7 8 9 
+ 
+Gambar A.3 - Standar warna lemak 
+ 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 12 dari 14B.6    Marbling  
+ 
+Penilaian marbling dilakukan dengan melihat intensitas marbling pada permukaan otot mata 
+rusuk dengan bantuan cahaya senter dan mencocokannya dengan standar.   
+marbling.  Nilai skor marbling ditentukan berdasarkan skor standar marbling yang paling 
+sesuai dengan intensitas marbling otot mata rusuk. Standar marbling terdiri atas dua belas 
+skor mulai dari praktis tidak ada marbling hingga banyak sebagaimana terlihat pada  Gambar 
+A.4. 
+  
+ 
+  
+  
+1 2 3 
+ 
+  
+  
+4 5 6 
+ 
+  
+  
+7 8 9 
+ 
+  
+  
+10 11 12 
+ 
+Gambar A.4 - Standar marbling  
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 13 dari 14B.7    Tekstur 
+ Penilaian tekstur otot dilakukan dengan melihat kehalusan/kekasaran permukaan otot mata 
+rusuk dengan bantuan cahaya senter dan mencocokannya dengan standar tekstur daging.  Nilai skor tekstur ditentukan berdasarkan skor standar tekstur yang paling sesuai dengan 
+tekstur daging.  Standar tekstur daging terdiri atas tiga skor yaitu halus, sedang dan kasar 
+(lihat contoh standar tekstur daging). 
+ 
+ B.8    Peringkat mutu daging 
+ Peringkat mutu daging ditentukan berdasarkan kesesuaian nilai skor untuk masing-masing 
+sifat fisik dengan syarat mutu yang telah ditetapkan. Karkas yang telah dievaluasi dibubuhi dengan stempel sesuai dengan peringkat mutunya. 
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ SNI 3932:2008  
+  
+ 14 dari 14Bibliografi 
+ 
+  
+CAC/GL 24-1997, General guideline for use of the term “Halal”. 
+ 
+SNI 01-6159-1999, Rumah Pemotongan Hewan . 
+ 
+Australian meat standard  USDA - 1991. 
+  
+ 
+ 
+  
+  
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ 
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       
+ 
+  
+BADAN STANDARDISASI NASIONAL - BSN 
+Gedung Manggala Wanabakti Blok IV Lt. 3-4 
+Jl. Jend. Gatot Subroto, Senayan Jakarta 10270 
+Telp: 021- 574 7043;  Faks: 021- 5747045;  e-mail : bsn@bsn.go.id  
+“Hak Cipta Badan Standardisasi Nasional, Copy  standar ini dibuat untuk penayangan di website dan tidak untuk dikomersialkan”                                                       

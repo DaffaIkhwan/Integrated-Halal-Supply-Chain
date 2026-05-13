@@ -1,0 +1,254 @@
+Analisis Kriteria pada Penentuan Resiko Value untuk se4ap 44k kri4s supply chain halal pada
+daging sapi.
+Level 1: Ti4k Kri4s Supply Chain
+1. Farm/kandang sapi
+2. Pakan dan kesehatan hewan
+3. Transportasi hewan ke RPH
+4. RPH/penyembelihan
+5. Post-slaughter handling
+6. Processing/pengolahan
+7. Cold storage/warehouse
+8. Distribusi/logisHk
+9. Retail/pasar/supermarket
+10. Konsumen dan complaint handling
+Level 2: Kriteria Utama
+Kriteria umum yang dapat digunakan di hampir semua HHk:
+1. Halal cer4fica4on validity
+2. Sharia compliance
+3. Traceability completeness
+4. Risk of cross-contamina4on
+5. Documenta4on completeness
+6. Sanita4on and hygiene compliance
+7. Human resource competence
+8. Segrega4on of halal and non-halal materials
+9. Cold chain and quality control
+10. Correc4ve ac4on and incident handling
+2. Parameter (Kriteria) per Ti4k Kri4s
+A. Farm / Kandang Sapi
+Kriteria Fuzzy AHP
+1. Asal-usul sapi
+2. Status kesehatan sapi
+3. Kepatuhan pakan
+4. Penggunaan obat/vaksin
+5. Dokumentasi pemeliharaan
+6. Kebersihan kandang
+7. Kesiapan hewan untuk disembelih
+Parameter Operasional
+Kriteria Parameter Penilaian Dokumen/Sumber Evidence
+Asal-usul sapi ID sapi, asal peternakan, riwayat
+perpindahan livestock record, surat jalan ternak
+Kesehatan sapi pemeriksaan ante-mortem, bebas
+penyakit
+surat kesehatan hewan, catatan
+dokter hewan
+
+Kriteria Parameter Penilaian Dokumen/Sumber Evidence
+Pakan komposisi pakan, supplier pakan daSar bahan pakan, invoice supplier
+Obat/vaksin jenis obat, bahan akHf, masa
+withdrawal medical record, veterinary log
+Kebersihan
+kandang sanitasi kandang, limbah, air checklist sanitasi
+Dokumentasi kelengkapan pencatatan farm logbook
+Risk Value Contoh
+• Data asal sapi lengkap → Low Risk
+• Tidak ada catatan kesehatan → High Risk
+• Pakan mengandung bahan Hdak jelas → High/Cri4cal Risk
+B. Feed and Animal Health Management
+Kriteria
+1. Halal status of feed ingredients
+2. Supplier reliability
+3. Feed storage segrega4on
+4. Medica4on control
+5. Veterinary supervision
+Evidence
+• Formulasi pakan
+• COA bahan pakan
+• supplier declaraHon
+• veterinary record
+• SOP penyimpanan pakan
+Hubungan dengan KMS
+KMS harus menyimpan:
+• daSar bahan pakan berisiko
+• supplier approved list
+• SOP penggunaan obat/vaksin
+• FAQ chatbot: “Apakah pakan X aman untuk rantai halal?”
+C. Transportasi Hewan ke RPH
+Kriteria
+1. Kelayakan kendaraan
+2. Kebersihan kendaraan
+3. Animal welfare
+4. Traceability during transport
+5. Dokumentasi perjalanan
+Parameter
+
+Kriteria Parameter Dokumen
+Kendaraan kendaraan khusus/bersih vehicle inspecHon checklist
+Sanitasi pembersihan sebelum muat cleaning log
+Animal welfare kepadatan muatan, durasi perjalanan transport log
+Traceability asal-tujuan, ID hewan surat jalan
+Petugas kompetensi handler training record
+Risiko
+• Kendaraan kotor/bekas angkut bahan najis → Cri4cal Risk
+• Surat jalan Hdak lengkap → Moderate–High Risk
+D. RPH / Slaughterhouse
+Ini adalah 44k paling kri4s dalam halal beef supply chain.
+Kriteria Fuzzy AHP
+1. Validitas ser4fikat halal RPH
+2. Kompetensi juru sembelih halal
+3. Kesesuaian proses penyembelihan syariah
+4. Pemeriksaan ante-mortem dan post-mortem
+5. Sanitasi alat dan area
+6. Pemisahan halal dan non-halal
+7. Dokumentasi proses penyembelihan
+8. Pengawasan halal internal
+9. Audit dan correc4ve ac4on
+10. Traceability batch
+Parameter Penilaian
+Kriteria Parameter Evidence
+SerHfikat halal
+RPH akHf/Hdak akHf, cakupan produk serHfikat halal
+BPJPH/MUI/LPPOM
+Juru sembelih muslim, kompeten, terserHfikasi serHfikat juru sembelih
+halal
+Proses sembelih membaca basmalah, memotong saluran wajib,
+hewan hidup saat disembelih
+slaughtering checklist,
+audit form
+Alat sembelih tajam, bersih, Hdak terkontaminasi tool sanitaHon log
+Pemeriksaan
+hewan ante-mortem dan post-mortem veterinary inspecHon form
+Segregasi Hdak bercampur dengan non-halal layout area, SOP
+segregaHon
+Dokumentasi batch ID, waktu sembelih, operator slaughter log
+
+Kriteria Parameter Evidence
+Audit internal jadwal audit, temuan audit internal audit form
+CorrecHve
+acHon Hndakan jika terjadi penyimpangan CAPA form
+Risk Value Contoh
+Kondisi Risk Value
+Semua dokumen lengkap dan valid 0.00–0.20
+Cleaning log Hdak lengkap 0.40–0.50
+SerHfikat juru sembelih Hdak tersedia 0.70–0.80
+SerHfikat halal RPH kedaluwarsa 0.90–1.00
+Prosedur sembelih Hdak sesuai syariah 1.00
+Dokumen Rujukan yang Perlu Diintegrasikan
+• SerHfikat halal BPJPH
+• Manual Sistem Jaminan Produk Halal/SJPH
+• HAS 23000 atau dokumen Sistem Jaminan Halal yang relevan
+• Form audit halal LPH/LPPOM
+• SOP penyembelihan halal
+• Form pemeriksaan ante-mortem dan post-mortem
+• Form correcHve acHon
+E. Post-Slaughter Handling
+Kriteria
+1. Handling carcass compliance
+2. Sanita4on
+3. Batch iden4fica4on
+4. Segrega4on
+5. Documenta4on
+Parameter
+• cara pengulitan
+• pemisahan karkas
+• labeling batch
+• alat dan meja pemotongan
+• cleaning log
+Risk
+• karkas Hdak diberi batch ID → traceability risk
+• alat bercampur dengan produk non-halal → criHcal contaminaHon risk
+F. Processing / Pengolahan Daging
+
+Jika daging masuk ke proses lanjutan seperH pemotongan, pengemasan, marinaHon, atau
+produk olahan.
+Kriteria
+1. Halal status of ingredients/addi4ves
+2. Processing equipment sanita4on
+3. Dedicated produc4on line
+4. Batch control
+5. Packaging and labeling compliance
+6. Operator competence
+7. Product formula4on control
+Parameter
+Kriteria Parameter Dokumen
+Bahan tambahan bumbu, enzim, emulsifier, seasoning halal cerHficate bahan
+Mesin shared/dedicated equipment cleaning validaHon log
+Formula perubahan formula master formula record
+Packaging label halal, batch, expiry date label approval form
+Operator training halal training record
+Batch kode produksi batch producHon record
+Dokumen Pen4ng
+• daSar bahan baku dan bahan tambahan
+• serHfikat halal bahan
+• formula produk
+• SOP produksi
+• cleaning validaHon
+• packaging approval
+• audit checklist produksi
+G. Cold Storage / Warehouse
+Kriteria
+1. Temperature compliance
+2. Halal segrega4on
+3. Storage hygiene
+4. Batch traceability
+5. FIFO/FEFO compliance
+6. Documenta4on
+7. Incident handling
+Parameter
+Kriteria Parameter Evidence
+Suhu suhu aktual vs standar temperature log
+
+Kriteria Parameter Evidence
+Segregasi halal/non-halal separated layout storage
+Kebersihan sanitasi ruang pendingin cleaning log
+Traceability batch ID, lokasi rak warehouse inventory record
+FEFO/FIFO expiry control stock movement record
+Insiden suhu naik, listrik padam incident report
+Risk Value Contoh
+• suhu stabil dan log lengkap → Low Risk
+• suhu Hdak stabil selama beberapa jam → High Risk
+• produk halal bercampur dengan non-halal → CriHcal Risk
+H. Distribu4on / Logis4cs
+Kriteria
+1. Dedicated halal transport
+2. Vehicle sanita4on
+3. Temperature control
+4. Route and delivery traceability
+5. Loading-unloading compliance
+6. Documenta4on completeness
+7. Contamina4on preven4on
+Parameter
+Kriteria Parameter Dokumen
+Kendaraan khusus halal/Hdak vehicle profile
+Sanitasi pembersihan kendaraan cleaning log
+Suhu cold chain during delivery IoT/sensor log
+Rute GPS, waktu tempuh delivery log
+Loading pemisahan produk loading checklist
+Dokumen DO, batch, serHfikat delivery order
+Risk
+• kendaraan Hdak dedicated tetapi disanitasi benar → Moderate Risk
+• kendaraan bekas non-halal tanpa sanitasi → CriHcal Risk
+• Hdak ada temperature log → High Risk
+I. Retail / Pasar / Supermarket
+Kriteria
+1. Halal label validity
+2. Display segrega4on
+3. Storage temperature
+4. Expiry date control
+5. Consumer informa4on accessibility
+
+6. Supplier traceability
+7. Complaint handling
+Parameter
+Kriteria Parameter Evidence
+Label halal logo halal valid packaging/label
+Display pemisahan dengan non-halal display observaHon
+Suhu freezer/chiller temperature log
+Expiry tanggal kedaluwarsa stock record
+Supplier asal produk supplier document
+Complaint feedback konsumen complaint log
+KMS Knowledge
+• SOP display produk halal
+• edukasi konsumen
+• FAQ label halal
+• template respon complaint
+

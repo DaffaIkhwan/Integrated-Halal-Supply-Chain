@@ -7,6 +7,10 @@ datasource db {
   url      = env("POSTGRES_URL")
 }
 
+// ======================================================================
+// RAG / Vector Storage (existing)
+// ======================================================================
+
 model items {
   id        BigInt                 @id @default(autoincrement())
   embedding Unsupported("vector")?
@@ -20,4 +24,452 @@ model oai {
   metadata    Json?                  @default("{}")
   updatedAt   DateTime               @default(now())
   dummy_field String?
+}
+
+model HalalDocument {
+  id        String                 @id @default(uuid())
+  title     String?
+  content   String
+  embedding Unsupported("vector")?
+  metadata  Json?                  @default("{}")
+  createdAt DateTime               @default(now())
+  updatedAt DateTime               @default(now()) @updatedAt
+}
+
+// ======================================================================
+// Users & Authentication
+// ======================================================================
+
+model User {
+  id           String             @id @default(uuid())
+  name         String
+  email        String             @unique
+  password     String
+  role         String             @default("ADMIN") // ADMIN, CP1_FARM, CP2_FEED, CP3_TRANSPORT, CP4_SLAUGHTER, CP5_POST_SLAUGHTER, CP6_PROCESSING, CP7_STORAGE, CP8_DISTRIBUTION, CP9_RETAIL, CP10_CONSUMER
+  phone        String?
+  createdAt    DateTime           @default(now())
+  certificates HalalCertificate[]
+  incidents    IncidentLog[]
+}
+
+// ======================================================================
+// DSS — Fuzzy AHP Core (Critical Points + Bobot Pakar)
+// ======================================================================
+
+model CriticalPoint {
+  id                 String                @id // CP1, CP2, ... CP10
+  name               String
+  description        String?
+  globalWeight       Float                 @default(0.0) // Bobot global dari matriks pakar
+  localRiskScore     Float                 @default(0.0) // Risk score lokal terhitung
+  globalWeightedRisk Float                 @default(0.0) // globalWeight × localRiskScore
+  riskLevel          String                @default("Low")
+  updatedAt          DateTime              @default(now()) @updatedAt
+  criteriaWeights    CriteriaWeight[]
+  records            CriticalPointRecord[]
+  incidents          IncidentLog[]
+}
+
+model CriteriaWeight {
+  id              String                @id @default(uuid())
+  criticalPointId String
+  criticalPoint   CriticalPoint         @relation(fields: [criticalPointId], references: [id])
+  criteriaCode    String // e.g. "R1", "F1", "T1"
+  criteriaName    String // e.g. "Asal-usul sapi"
+  weight          Float                 @default(0.0) // Bobot sub-kriteria dari pakar
+  fuzzyScale      String? // TFN notation
+  createdAt       DateTime              @default(now())
+  records         CriticalPointRecord[]
+}
+
+// ======================================================================
+// Traceability — Supply Chain Entities
+// ======================================================================
+
+model Farm {
+  id        String   @id @default(uuid())
+  name      String
+  location  String?
+  address   String?
+  createdAt DateTime @default(now())
+  cattle    Cattle[]
+}
+
+model Slaughterhouse {
+  id        String       @id @default(uuid())
+  name      String
+  location  String?
+  address   String?
+  createdAt DateTime     @default(now())
+  batches   HalalBatch[]
+}
+
+model Transporter {
+  id               String               @id @default(uuid())
+  name             String
+  vehicleNumber    String?
+  vehicleType      String? // Truk, Pickup, Container
+  location         String?
+  createdAt        DateTime             @default(now())
+  transportRecords CP3TransportRecord[]
+}
+
+model ProcessingPlant {
+  id                String                @id @default(uuid())
+  name              String
+  location          String?
+  productionType    String? // Pemotongan, Olahan, Marinade
+  createdAt         DateTime              @default(now())
+  processingRecords CP6ProcessingRecord[]
+}
+
+model Warehouse {
+  id             String             @id @default(uuid())
+  name           String
+  location       String?
+  storageType    String? // Frozen, Chilled, Ambient
+  createdAt      DateTime           @default(now())
+  storageRecords CP7StorageRecord[]
+}
+
+model Distributor {
+  id                  String                  @id @default(uuid())
+  name                String
+  location            String?
+  coverageArea        String?
+  createdAt           DateTime                @default(now())
+  distributionRecords CP8DistributionRecord[]
+}
+
+model RetailOutlet {
+  id            String            @id @default(uuid())
+  name          String
+  location      String?
+  outletType    String? // Supermarket, Pasar Tradisional, Minimarket
+  createdAt     DateTime          @default(now())
+  retailRecords CP9RetailRecord[]
+}
+
+model Cattle {
+  id        String       @id @default(uuid())
+  farmId    String
+  farm      Farm         @relation(fields: [farmId], references: [id])
+  earTag    String       @unique
+  breed     String?
+  birthDate DateTime?
+  createdAt DateTime     @default(now())
+  batches   HalalBatch[]
+}
+
+model HalalBatch {
+  id               String                   @id @default(uuid())
+  cattleId         String
+  cattle           Cattle                   @relation(fields: [cattleId], references: [id])
+  slaughterhouseId String
+  slaughterhouse   Slaughterhouse           @relation(fields: [slaughterhouseId], references: [id])
+  productionDate   DateTime                 @default(now())
+  totalRiskScore   Float                    @default(0.0)
+  riskLevel        String                   @default("LOW")
+  createdAt        DateTime                 @default(now())
+  // Relasi ke 10 CP Records
+  cpRecords        CriticalPointRecord[]
+  cp1Farm          CP1FarmRecord[]
+  cp2Feed          CP2FeedRecord[]
+  cp3Transport     CP3TransportRecord[]
+  cp4Slaughter     CP4SlaughterRecord[]
+  cp5PostSlaughter CP5PostSlaughterRecord[]
+  cp6Processing    CP6ProcessingRecord[]
+  cp7Storage       CP7StorageRecord[]
+  cp8Distribution  CP8DistributionRecord[]
+  cp9Retail        CP9RetailRecord[]
+  cp10Consumer     CP10ConsumerRecord[]
+}
+
+// ======================================================================
+// Compliance Records (Generic — links Batch × CP × Criteria)
+// ======================================================================
+
+model CriticalPointRecord {
+  id               String          @id @default(uuid())
+  halalBatchId     String
+  halalBatch       HalalBatch      @relation(fields: [halalBatchId], references: [id])
+  criticalPointId  String
+  criticalPoint    CriticalPoint   @relation(fields: [criticalPointId], references: [id])
+  criteriaWeightId String?
+  criteriaWeight   CriteriaWeight? @relation(fields: [criteriaWeightId], references: [id])
+  complianceStatus String          @default("PENDING") // PASS, FAIL, PENDING
+  riskValue        Float           @default(0)
+  weightedRisk     Float           @default(0)
+  notes            String?
+  checkedAt        DateTime        @default(now())
+}
+
+// ======================================================================
+// CP1 — Farm / Kandang Sapi (7 kriteria)
+// ======================================================================
+
+model CP1FarmRecord {
+  id                    String     @id @default(uuid())
+  halalBatchId          String
+  halalBatch            HalalBatch @relation(fields: [halalBatchId], references: [id])
+  asalUsulRisk          Float      @default(0) // Asal-usul sapi
+  kesehatanRisk         Float      @default(0) // Status kesehatan sapi
+  kepatuhanPakanRisk    Float      @default(0) // Kepatuhan pakan
+  obatVaksinRisk        Float      @default(0) // Penggunaan obat/vaksin
+  dokumentasiRisk       Float      @default(0) // Dokumentasi pemeliharaan
+  kebersihanKandangRisk Float      @default(0) // Kebersihan kandang
+  kesiapanSembelihRisk  Float      @default(0) // Kesiapan hewan disembelih
+  riskScore             Float      @default(0) // Σ(bobot × risk) terhitung
+  notes                 String?
+  createdAt             DateTime   @default(now())
+}
+
+// ======================================================================
+// CP2 — Pakan & Kesehatan Hewan (5 kriteria)
+// ======================================================================
+
+model CP2FeedRecord {
+  id                  String     @id @default(uuid())
+  halalBatchId        String
+  halalBatch          HalalBatch @relation(fields: [halalBatchId], references: [id])
+  halalFeedStatusRisk Float      @default(0) // Halal status of feed ingredients
+  supplierRisk        Float      @default(0) // Supplier reliability
+  feedStorageRisk     Float      @default(0) // Feed storage segregation
+  medicationRisk      Float      @default(0) // Medication control
+  vetSupervisionRisk  Float      @default(0) // Veterinary supervision
+  riskScore           Float      @default(0)
+  notes               String?
+  createdAt           DateTime   @default(now())
+}
+
+// ======================================================================
+// CP3 — Transportasi Hewan ke RPH (5 kriteria)
+// ======================================================================
+
+model CP3TransportRecord {
+  id                String       @id @default(uuid())
+  halalBatchId      String
+  halalBatch        HalalBatch   @relation(fields: [halalBatchId], references: [id])
+  transporterId     String?
+  transporter       Transporter? @relation(fields: [transporterId], references: [id])
+  kelayakanRisk     Float        @default(0) // Kelayakan kendaraan
+  kebersihanRisk    Float        @default(0) // Kebersihan kendaraan
+  animalWelfareRisk Float        @default(0) // Animal welfare
+  traceabilityRisk  Float        @default(0) // Traceability during transport
+  dokumentasiRisk   Float        @default(0) // Dokumentasi perjalanan
+  riskScore         Float        @default(0)
+  notes             String?
+  createdAt         DateTime     @default(now())
+}
+
+// ======================================================================
+// CP4 — RPH / Penyembelihan (10 kriteria — PALING KRITIS)
+// ======================================================================
+
+model CP4SlaughterRecord {
+  id                     String     @id @default(uuid())
+  halalBatchId           String
+  halalBatch             HalalBatch @relation(fields: [halalBatchId], references: [id])
+  sertifikatHalalRisk    Float      @default(0) // Validitas sertifikat halal RPH
+  kompetensiSembelihRisk Float      @default(0) // Kompetensi juru sembelih halal
+  prosesSyariahRisk      Float      @default(0) // Kesesuaian proses penyembelihan syariah
+  pemeriksaanRisk        Float      @default(0) // Pemeriksaan ante/post-mortem
+  sanitasiRisk           Float      @default(0) // Sanitasi alat dan area
+  segregasiRisk          Float      @default(0) // Pemisahan halal dan non-halal
+  dokumentasiRisk        Float      @default(0) // Dokumentasi penyembelihan
+  pengawasanRisk         Float      @default(0) // Pengawasan halal internal
+  auditRisk              Float      @default(0) // Audit dan corrective action
+  traceabilityRisk       Float      @default(0) // Traceability batch
+  riskScore              Float      @default(0)
+  notes                  String?
+  createdAt              DateTime   @default(now())
+}
+
+// ======================================================================
+// CP5 — Post-Slaughter Handling (5 kriteria)
+// ======================================================================
+
+model CP5PostSlaughterRecord {
+  id              String     @id @default(uuid())
+  halalBatchId    String
+  halalBatch      HalalBatch @relation(fields: [halalBatchId], references: [id])
+  handlingRisk    Float      @default(0) // Handling carcass compliance
+  sanitasiRisk    Float      @default(0) // Sanitation
+  batchIdRisk     Float      @default(0) // Batch identification
+  segregasiRisk   Float      @default(0) // Segregation
+  dokumentasiRisk Float      @default(0) // Documentation
+  riskScore       Float      @default(0)
+  notes           String?
+  createdAt       DateTime   @default(now())
+}
+
+// ======================================================================
+// CP6 — Processing / Pengolahan (7 kriteria)
+// ======================================================================
+
+model CP6ProcessingRecord {
+  id                   String           @id @default(uuid())
+  halalBatchId         String
+  halalBatch           HalalBatch       @relation(fields: [halalBatchId], references: [id])
+  halalIngredientsRisk Float            @default(0) // Halal status of ingredients/additives
+  equipmentRisk        Float            @default(0) // Equipment sanitation
+  dedicatedLineRisk    Float            @default(0) // Dedicated production line
+  batchControlRisk     Float            @default(0) // Batch control
+  packagingRisk        Float            @default(0) // Packaging & labeling compliance
+  operatorRisk         Float            @default(0) // Operator competence
+  formulaRisk          Float            @default(0) // Product formulation control
+  riskScore            Float            @default(0)
+  notes                String?
+  createdAt            DateTime         @default(now())
+  processingPlant      ProcessingPlant? @relation(fields: [processingPlantId], references: [id])
+  processingPlantId    String?
+}
+
+// ======================================================================
+// CP7 — Cold Storage / Warehouse (7 kriteria)
+// ======================================================================
+
+model CP7StorageRecord {
+  id               String     @id @default(uuid())
+  halalBatchId     String
+  halalBatch       HalalBatch @relation(fields: [halalBatchId], references: [id])
+  temperatureRisk  Float      @default(0) // Temperature compliance
+  segregasiRisk    Float      @default(0) // Halal segregation
+  hygieneRisk      Float      @default(0) // Storage hygiene
+  traceabilityRisk Float      @default(0) // Batch traceability
+  fifoFefoRisk     Float      @default(0) // FIFO/FEFO compliance
+  dokumentasiRisk  Float      @default(0) // Documentation
+  incidentRisk     Float      @default(0) // Incident handling
+  riskScore        Float      @default(0)
+  notes            String?
+  createdAt        DateTime   @default(now())
+  warehouse        Warehouse? @relation(fields: [warehouseId], references: [id])
+  warehouseId      String?
+}
+
+// ======================================================================
+// CP8 — Distribusi / Logistik (7 kriteria)
+// ======================================================================
+
+model CP8DistributionRecord {
+  id                  String       @id @default(uuid())
+  halalBatchId        String
+  halalBatch          HalalBatch   @relation(fields: [halalBatchId], references: [id])
+  distributorId       String?
+  distributor         Distributor? @relation(fields: [distributorId], references: [id])
+  dedicatedTransRisk  Float        @default(0) // Dedicated halal transport
+  vehicleSanitasiRisk Float        @default(0) // Vehicle sanitation
+  temperatureRisk     Float        @default(0) // Temperature control
+  routeRisk           Float        @default(0) // Route & delivery traceability
+  loadingRisk         Float        @default(0) // Loading-unloading compliance
+  dokumentasiRisk     Float        @default(0) // Documentation completeness
+  kontaminasiRisk     Float        @default(0) // Contamination prevention
+  riskScore           Float        @default(0)
+  notes               String?
+  createdAt           DateTime     @default(now())
+}
+
+// ======================================================================
+// CP9 — Retail / Pasar / Supermarket (7 kriteria)
+// ======================================================================
+
+model CP9RetailRecord {
+  id                String        @id @default(uuid())
+  halalBatchId      String
+  halalBatch        HalalBatch    @relation(fields: [halalBatchId], references: [id])
+  labelHalalRisk    Float         @default(0) // Halal label validity
+  displayRisk       Float         @default(0) // Display segregation
+  storageTemRisk    Float         @default(0) // Storage temperature
+  expiryRisk        Float         @default(0) // Expiry date control
+  consumerInfoRisk  Float         @default(0) // Consumer information accessibility
+  supplierTraceRisk Float         @default(0) // Supplier traceability
+  complaintRisk     Float         @default(0) // Complaint handling
+  riskScore         Float         @default(0)
+  notes             String?
+  createdAt         DateTime      @default(now())
+  retailOutlet      RetailOutlet? @relation(fields: [retailOutletId], references: [id])
+  retailOutletId    String?
+}
+
+// ======================================================================
+// CP10 — Konsumen & Complaint Handling (5 kriteria)
+// ======================================================================
+
+model CP10ConsumerRecord {
+  id                 String     @id @default(uuid())
+  halalBatchId       String
+  halalBatch         HalalBatch @relation(fields: [halalBatchId], references: [id])
+  transparansiRisk   Float      @default(0) // Information transparency
+  traceabilityRisk   Float      @default(0) // Traceability accessibility
+  responsivenessRisk Float      @default(0) // Complaint responsiveness
+  consumerTrustRisk  Float      @default(0) // Consumer trust
+  halalLiteracyRisk  Float      @default(0) // Halal literacy
+  riskScore          Float      @default(0)
+  notes              String?
+  createdAt          DateTime   @default(now())
+}
+
+// ======================================================================
+// Halal Certificates
+// ======================================================================
+
+model HalalCertificate {
+  id                String   @id @default(uuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  certificateNumber String   @unique
+  issueDate         DateTime
+  expiryDate        DateTime
+  validityStatus    String   @default("VALID") // VALID, EXPIRED, REVOKED
+  fileUrl           String?
+  createdAt         DateTime @default(now())
+}
+
+// ======================================================================
+// Incident Log
+// ======================================================================
+
+model IncidentLog {
+  id               String        @id @default(uuid())
+  criticalPointId  String
+  criticalPoint    CriticalPoint @relation(fields: [criticalPointId], references: [id])
+  incidentType     String
+  severity         String        @default("LOW") // LOW, MODERATE, HIGH, CRITICAL
+  description      String?
+  correctiveAction String?
+  status           String        @default("OPEN") // OPEN, IN_PROGRESS, CLOSED
+  userId           String?
+  user             User?         @relation(fields: [userId], references: [id])
+  createdAt        DateTime      @default(now())
+}
+
+// ======================================================================
+// Chatbot Log
+// ======================================================================
+
+model ChatbotLog {
+  id         String   @id @default(uuid())
+  query      String
+  intent     String?
+  response   String?
+  sourceType String? // RAG, DB, DSS
+  createdAt  DateTime @default(now())
+}
+
+// ======================================================================
+// Fuzzy AHP — Pairwise Comparison Matrices (Dynamic)
+// ======================================================================
+
+model PairwiseComparison {
+  id          String   @id @default(uuid())
+  matrixType  String // "LEVEL1_CP" atau "LEVEL2_CP1", "LEVEL2_CP4", dst.
+  rowCode     String // "CP1", "CP4", "R1", "F1", dst.
+  colCode     String // "CP2", "CP5", "R2", "F2", dst.
+  tfnLow      Float // l (lower)
+  tfnMid      Float // m (middle)
+  tfnUp       Float // u (upper)
+  evaluatorId String? // Optional: ID expert yang mengisi
+  createdAt   DateTime @default(now())
+
+  @@unique([matrixType, rowCode, colCode])
 }

@@ -1,7 +1,24 @@
 import { query } from './pg';
-import { openai } from '@ai-sdk/openai';
-import { embed, embedMany } from 'ai';
+import { pipeline, env } from '@huggingface/transformers';
 
+// Next.js specific configuration to prevent hanging/fetch issues
+env.allowLocalModels = false;
+env.useBrowserCache = false;
+
+class EmbeddingPipeline {
+  static task = 'feature-extraction' as const;
+  static model = 'Xenova/all-MiniLM-L6-v2';
+  static instance: any = null;
+
+  static async getInstance() {
+    if (this.instance === null) {
+      console.log('[RAG] Initializing HuggingFace Pipeline...');
+      this.instance = await pipeline(this.task, this.model);
+      console.log('[RAG] Pipeline initialized successfully');
+    }
+    return this.instance;
+  }
+}
 import {
   DB_CONFIG,
   ChunkMetadata,
@@ -48,20 +65,16 @@ export class VectorDB {
         ...config?.search,
       },
     };
-
-    this.embeddingModel = openai.embedding(this.config.embedding.model);
   }
-
   /**
    *
    * Adds chunks to the database with their embeddings
    */
   async addChunks(chunks: string[], metadata?: Partial<ChunkMetadata>) {
     try {
-      const { embeddings } = await embedMany({
-        model: this.embeddingModel,
-        values: chunks,
-      });
+      const extractor = await EmbeddingPipeline.getInstance();
+      const output = await extractor(chunks, { pooling: 'mean', normalize: true });
+      const embeddings = output.tolist();
 
       const baseMetadata: ChunkMetadata = {
         date: new Date().toISOString(),
@@ -107,10 +120,12 @@ export class VectorDB {
       select?: string[];
     }
   ) {
-    const { embedding } = await embed({
-      model: this.embeddingModel,
-      value: searchQuery,
-    });
+    console.log('[RAG] Starting searchSimilar for query:', searchQuery);
+    const extractor = await EmbeddingPipeline.getInstance();
+    console.log('[RAG] Running extractor on query...');
+    const output = await extractor(searchQuery, { pooling: 'mean', normalize: true });
+    const embedding = output.tolist()[0];
+    console.log('[RAG] Extractor finished. Querying DB...');
 
     const distanceOp = {
       cosine: '<=>',

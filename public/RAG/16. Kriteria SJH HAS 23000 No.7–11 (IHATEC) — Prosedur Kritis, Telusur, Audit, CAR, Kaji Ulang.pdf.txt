@@ -1,0 +1,466 @@
+IHATEC_SJH 2017 Rev.1
+Tujuan :
+Peserta mengetahui definisi terkait SJH
+Peserta memahami Kriteria Sistem Jaminan
+Halal (HAS 23000 : 1) : Kriteria 7 s.d11
+IHATEC_SJH 2017 Rev.1
+Kriteria
+Sistem Jaminan Halal
+1.Kebijakan Halal
+2.Tim Manajemen Halal
+3.Pelatihan
+4.Bahan
+5.Produk
+6.Fasilitas Produksi
+7.Prosedur tertulis untuk aktivitas kritis
+8.Kemampuan T elusur
+9.Penanganan Produk yang Tidak Memenuhi Kriteria
+10.Audit Internal
+11.Kaji Ulang Manajemen
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Aktivitas kritis: aktivitas pada rantai proses produksi yang dapat  
+mempengaruhi status kehalalan suatu produk. Contoh: seleksi  
+bahan baru, pembelian bahan, formulasi produk, pemeriksaan  
+bahan datang, produksi, pencucian fasilitas produksi dan  
+peralatan pembantu, penyimpanan dan penanganan,  
+transportasi, pemajangan, penyembelihan hewan, danlain-lain
+Cakupan aktivitas kritis tidak selalu  
+sama antar perusahaan, tergantung  
+pada proses bisnisnya masing -masing
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Prosedur tertulis: tata cara/panduan pelaksanaan suatu aktivitas  
+yang dibakukan dapat berupa prosedur/SOP (Standard  
+Operating Procedure ), instruksi kerja, spesifikasi, standar, jadwal,  
+internal memo, checklist atau bentuk panduan kerja yang lain.
+•Penjelasan prosedur: dapat digabungkan dengan prosedur untuk  
+sistem lain, terdapat identitas dokumen, dibuat dan disahkan  
+oleh orang yang berwenang, didistribusikan kepada orang/bagian  
+yang terlibat, jika ada perubahan maka prosedur yang tersedia  
+adalah prosedur yang termutakhir
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Bukti: catatan/rekaman atau hasil yang dicapai dari pelaksanaan  
+prosedur dapat berupa formulir, checklist, daftar, logbook,  
+planning, report yang sudah terisi
+•Penjelasan bukti: dapat digabungkan dengan bukti untuk sistem  
+lain, terdapat identitas rekaman, disimpan dengan aman, dapat  
+dicari dengan mudah, masa simpan sesuai kebutuhan atau  
+sesuai dengan masa berlaku Sertifikat halal (agar tersedia saat  
+dilakukan audit eksternal), dimusnahkan sesuai masa simpan  
+dengan pengawasan
+IHATEC_SJH 2017 Rev.1
+Prosedur Tertulis Aktivitas Kritis
+IHATEC_SJH 2017 Rev.1•Seleksi Bahan Baru
+•Pembelian Bahan
+•Pengembangan Produk Baru
+•Pemeriksaan Bahan Datang
+•Produksi
+•Pencucian Fasilitas Produksi
+•Penyimpanan dan Penanganan Bahan &Produk
+•Transportasi
+•Pemajangan (Display ) dan Penyajian
+•Pengembangan Dapur/Outlet Baru•Aturan PengunjungKhusus restoran &katering
+•Aturan Karyawan
+PROSEDUR SELEKSI  
+BAHAN BARU
+IHATEC_SJH 2017 Rev.1Perhatikan Klausul pada :
+Sertifikat Halal MUI
+PROSEDUR SELE KSIBAHANBARU
+Perusahaan harus mempunyai prosedur tertulis yang menjamin bahwa
+setiap penggunaan bahan baru harus melalui persetujuan LPPOM MUI.
+Lingkup bahan baru:
+•Industri pengolahan bahan baru untuk produk yang sudah disertifikasi
+•Restoran/katering bahan baru untuk semua menu yang sudah dijual
+Perubahan
+Bahan
+Perubahan
+Jenis Bahan
+Perubahan
+ProdusenNote :
+•Status halal belum
+tentu sama
+•Bentuk jaminan halal  
+dari perusahaan
+IHATEC_SJH 2017 Rev.1
+PROSEDUR SELE KSIBAHANBARU
+Bahan baru dapat digunakan jika telah mendapat surat persetujuan  
+tertulis dari LPPOM MUI atau persetujuan internal perusahaan (jika  
+positive list atau bahan berSH MUI yang ada di database LPPOM MUI)
+Persetujuan
+Bahan oleh
+LPPOM MUI
+Langsung
+disetujui
+Surat  
+persetujuan  
+(melalui Cerol)
+Bahan Positive List
+Bahan Ber -SHMUI  
+& ada di database  
+LPPOM MUI*
+*) Database di website  
+www.halalmui.org , Jurnal Halal  
+atau aplikasi smartphone
+IHATEC_SJH 2017 Rev.1Bukti persetujuan penggunaan bahan baru harus dipelihara
+DAFTAR BAHAN HALAL
+Daftar Bahan Halal adalah daftar bahan yang telah disetujui LPPOM MUI
+dapat diperbaharui setiap ada perubahan data/dokumen bahan dan  
+setiap ada penambahan bahan baru
+menjadi acuan di proses pembelian, pemeriksaan bahan datang dan
+proses produksi
+DAFTAR
+BAHAN
+HALAL
+REGISTERED
+MATERIALS
+diCEROL
+DAFTAR
+BAHAN BARUDaftar Bahan di Cerol yang dapat  
+diunduh perusahaan setelah  
+registrasi produk lolos Komisi Fatwa
+bahan & produsen tidak bisa
+diganti, data yang lain bisa diganti
+IHATEC_SJH 2017 Rev.1Daftar Bahan Baru yang dibuat oleh  
+perusahaan setelah bahan baru  
+disetujui oleh LPPOM MUI atau  
+internal perusahaan
+Contoh Daftar Bahan di Cerol:
+Contoh Daftar Bahan Baru:
+DAFTAR BAHAN BARU PT EVIGO 2017
+Nama Bahan Produsen Negara Supplier Halal By Certificate No Valid End Dokumen Lain Catatan Persetujuan
+Flavor Mint AB1234 PTABC Indonesia PTAbadi HFCE CERT001 2-Jan-18 - Persetujuan LPPOM 24/1/2017
+Cabe merah PTDEF Indonesia Supermarket - - - - Positive list,27/1/2017
+Margarin Blue PTGHI Indonesia PTIndoprima MUI CERT003 13-Mar-18- Website halalmui, 3/2/2017
+Tapioka CapIbu PTZHY Indonesia Supermarket - - - - Positive list,5/2/2017
+LPPOM M U I _IHSAJTHEC2_0S1J7HR2e0v1.71Rev.1
+Perusahaan harus mempunyai prosedur pembelian atau
+pengadaan bahan
+Prosedur harus menjamin semua bahan yang dibeli untuk produk
+yang disertifikasi telah disetujui LPPOM MUI
+Pembelian bahan mengacu pada Daftar bahan halal
+Bentuk Daftar bahan halal dapat dimodifikasi sesuai dengan
+kebutuhan perusahaan.
+Untuk bahan yang dikemas ulang/dilabel ulang oleh supplier
+dapat dilakukan kontrak agar bahan yang dikirim sesuai
+IHATEC_SJH 2017 Rev.1PROSEDUR PEMB ELIAN
+Bukti pembelian bahan harus dipelihara
+Perusahaan harus mempunyai prosedur tertulis pemeriksaan  
+bahan datang menjamin kesesuaian nama bahan, nama  
+produsen dan negara asal produsen yang tercantum di kemasan  
+bahan dengan yang tercantum di dokumen bahan
+Beberapa lembaga sertifikasi luar negeri (seperti IFANCA dan HFFIA)  
+mempersyaratkan pencantuman logo halal pada label produk yang  
+disertifikasi, dapat dilihat pada sertifikat yang dikeluarkan. Jikabahan  
+dilengkapi dengan sertifikat ini, maka pada saat penerimaan bahan di  
+pabrik, logo halal tersebut harus dipastikan ada di kemasan
+Bahan tidak kritis boleh tidak diperiksa ketika penerimaan bahan
+Logo halal di kemasan tidak perlu diperiksa bila bahan bersertifikat  
+halal MUI
+IHATEC_SJH 2017 Rev.1PROSEDUR PEMERIKSAAN BAHAN DATANG
+Untuk bahan dengan sertifikat halal per pengapalan, misalnya daging  
+impor, pemeriksaan harus menjamin kesesuaian data di label dengan  
+data yang tertulis di sertifikat halal pemeriksaan mencakup tanggal  
+penyembelihan ( slaughtering date ), tanggal pengemasan (packing  
+date ), dan nomor Rumah Potong Hewan (abattoir number/  
+establishment oforigin )
+Bagi perusahaan yang mempunyai gudang pusat dan gudang cabang,  
+bila gudang cabang hanya menerima bahan dari gudang pusat dan  
+pemeriksaan bahan datang sudah dilakukan secara lengkap di gudang  
+pusat, maka gudang cabang boleh tidak melakukan pemeriksaan  
+ulang secara lengkap. Pemeriksaan di gudang cabang cukup  
+memeriksa kesesuaian nama bahan atau kode bahan.
+IHATEC_SJH 2017 Rev.1PROSEDUR PEMERIKSAAN BAHAN DATANG
+Untuk bahan dengan kasus berikut :
+1. Daging yang mengalami perlakuan tertentu di pemasok seperti dipotong
+atau digiling padahal nama bahan di sertifikat halal adalah daging
+2. Bahan yang dikemas ulang atau diberi label baru oleh pemasok sehingga  
+nama bahan, nama produsen, negara produsen atau adanya logo halal  
+tidak sesuai dengan yang tercantum di dokumen pendukung bahan
+Pemeriksaan nama bahan dan produsen bahan dapat melalui dokumen
+bahan yang dikeluarkan produsen seperti CoA
+Pemasok harus mempunyai prosedur tertulis untuk menjamin fasilitasnya  
+bebas babi, serta daging dan bahan yang dikemas ulang atau diberi label  
+baru tidak terkena najis
+Perusahaan melakukan audit pemasok setidaknya sekali dalam dua tahun
+IHATEC_SJH 2017 Rev.1PROSEDUR PEMERIKSAAN BAHAN DATANG
+Bukti pemeriksaan bahan datang harus dipelihara
+PROSEDUR PRODUKSI
+IHATEC_SJH 2017 Rev.1Perusahaan harus mempunyai prosedur tertulis untuk semua tahapan  
+produksi menjamin produksi halal hanya menggunakan bahan yang  
+disetujui LPPOM MUI (Daftar Bahan Halal ) dan dilakukan di fasilitas  
+produksi yang memenuhi kriteria fasilitas
+Jika produk mempunyai formula, maka formula/resep baku (formula
+yang menjadi rujukan dalam proses produksi) harus tersedia.
+Jika terdapat penggunaan fasilitas bersama (sharing facility )
+ prosedur harus menjamin bahan yang digunakan dalam
+proses produksi produk yang tidak disertifikasi tidak berasal
+dari babi/ turunannya
+Bukti penerapan prosedur produksi harus dipelihara
+Prosedur Tertulis untuk Aktivitas Kritis / Produksi pada  RPA/ RPH
+I.Pra Penembelihan
+Memastikan hewan yang akan disembelih mempunyai waktu 
+istirahat yang cukup dan mengikuti kaidah kesejahteraan hewan 
+yang berlaku
+Hewan dilakukan pemeriksaan ante mortem oleh lembaga yang 
+berwenang
+Rekaman pra penyembelihan, termasuk rekaman hewan yang 
+mati sebelum sempat disembelih (jika ada) harus disimpan dan 
+dipelihara
+Jika dilakukan pemingsanan pada hewan maka harus memenuhi 
+persyaratan :
+a)Pemingsanan hanya menyebabkan hewan pingsan sementara, 
+tidak menyebabkan hewan mati sebelum disembelih
+b)Tidak menyebabkan cedera permanen atau merusak organ 
+hewan yang dipingsankan khususnya sistem syaraf pusat (SSP)
+c)Tidak menyebabkan hewan kesakitan
+Supervisor halal harus memastikan bahwa pemingsanan tidak 
+menyebabkan kematian pada hewan sebelum disembelih dengan 
+memastikan adanya gerakan hewan sebagai tanda hidupnya 
+hewan 
+Supervisor halal melakukan verifikasi secara berkala untuk 
+memastkan pelaksanaan pemingsanan sesuai dengan metode 
+yang telah divalidasi
+Rekaman pemingsanan hewan termasuk yang tidak sesuai 
+dengan persyaratan halal harus disimpan dan dipelihara
+II. Penyembelihan
+Hewan yang akan disembelih dihadapkan ke kiblat
+Penyembelih mengucapkan “Bismillah Allahu Akbar” atau 
+“Bismillahir Rahmanir Rahim” yang diucapkan untuk tiap individu 
+hewan
+Proses penyembelihan dilakukan dengan cepat dan tepat 
+sasaran tanpa mengangkat pisau
+Penyembelihan wajib terpotong 3 saluran yaitu pembuluh 
+darah, saluran makanan dan saluran pernafasan.
+Penyembelihan dilakukan dileher bagian depan dan tidak 
+memutus tulang leher
+Supervisor Halal akan memastikan terpotongnya tiga saluran, 
+memastikan darah berwarna merah dan mengalir deras saat 
+disembelih
+Rekaman proses penyembelihan termasuk penyembelihan 
+yang tidak sesuai dengan syariat Islam disimpan dan dipelihara.
+III. Pasca Penyembelihan
+Proses penaganan pasca penyembelihan dilakukan setelah 
+hewan mati secara klinis, yaitu berhentinya aktivitas otak
+Waktu minimal antara penyembelihan dengan proses proses
+selanjutnya adalah 45 detik untuk hewan besar, 40 detik untuk 
+hewan kecil dan 3 menit untuk unggas.
+Supervisor halal akan memeriksa dan memastikan hewan mati 
+sebelum dilakukan penanganan atau proses selanjutnya
+Karkas dan jeroan ditangani diruang terpisah.
+Jika ada karkas atau jeroan yang berasal dari hewan yang 
+disembelih tidak memenuhi persyaratan halal maka akan 
+diperlakukan sebagai non halal
+Rekaman proses pasca penyembelihan termasuk yang tidak 
+memenuhi kriteria harus disimpan dan dipelihara
+Perusahaan harus mempunyai prosedur tertulis pencucian fasilitas  
+produksi menjamin pencucian fasilitas produksi yang kontak  
+langsung dengan bahan atau produk dapat menghilangkan najis.
+Yang dimaksud dengan najis di atas adalah najis mutawassithah (najis  
+sedang), yaitu najis yang ditimbulkan karena bersentuhan dengan barang  
+najis selain najis mukhaffafah (najis ringan, yaitu air seni bayi laki -laki  
+sebelum usia dua tahun yang hanya mengonsumsi ASI) dan najis  
+mughallazhah (najis berat, yaitu babi, anjing atau turunan keduanya).
+Contoh najis sedang yaitu daging hewan halal yang penyembelihannya tidak
+sesuai syariat Islam, khamr, kotoran manusia.
+Bahan pembantu yang digunakan dalam pencucian fasilitas (cleaning
+agent, sanitizer ) tidak boleh berasal dari bahan haram atau najis.
+IHATEC_SJH 2017 Rev.1PROSEDUR PENCUCIAN FASILITAS PRODUKSI
+•Pencucian dapat dilakukan dengan air atau non air seperti dibilas  
+dengan dekstrin, maltodekstrin atau skim milk powder, diseka dengan  
+lap basah, disikat, atau disemprot dengan udara bertekanan
+•Pencucian dengan bahan non air diperbolehkan jika pencucian dengan  
+air dapat menyebabkan kerusakan fasilitas, produk atau kesulitan  
+teknis lain. Pencucian ini juga hanya diperbolehkan jika fasilitas  
+terbuat dari bahan yang tidak menyerap najis atau bersifat inert
+•Proses pencucian harus diverifikasi untuk membuktikan hilangnya  
+warna, bau dan rasa dari pengotor . Cara verifikasi dapat ditentukan  
+sendiri oleh perusahaan.
+IHATEC_SJH 2017 Rev.1Bukti penerapan prosedur pencucian harus dipeliharaPROSEDUR PENCUCIAN FASILITAS PRODUKSI
+Perusahaan harus mempunyai prosedur tertulis penyimpanan dan  
+penanganan bahan/produk menjamin bahan dan produk tidak  
+terkontaminasi oleh bahan haram/najis selama disimpan dan ditangani
+Penyimpanan adalah penyimpanan bahan dan produk di fasilitas produksi,
+termasuk penyimpanan di gudang antara.
+Penyimpanan bahan/produk dapat dilakukan di lokasi yang sama dengan
+bahan/produk yang haram/najis selama tidak terjadi kotaminasi silang
+Penanganan adalah penanganan bahan/produk selama proses produksi,
+termasuk aliran bahan/produk, penggunaan peralatan dan personel produksi
+Bukti penyimpanan harus dipelihara
+IHATEC_SJH 2017 Rev.1PROSEDUR PENYIMPANAN DAN
+PENANGANAN BAHAN/PRODUK
+Perusahaan harus mempunyai prosedur tertulis transportasi  
+bahan dan produk menjamin bahan dan produk tidak  
+terkontaminasi najis selama dalam transportasi
+Lingkup transportasi yang dimaksud mencakup transportasi bahan dari  
+supplier ke gudang perusahaan dan antar fasilitas produksi dalam  
+perusahaan serta transportasi produk dari perusahaan kedistributor
+Alat transportasi yang digunakan dapat bersifat sharing facility sepanjang  
+dapat dijamin bahwa bahan atau produk halal tidak terkontaminasi najis  
+selama transportasi. Persyaratan ini dapat dipenuhi misalnya dengan  
+mengemas bahan atau produk, memberikan penandaan yang jelas serta  
+dilakukan kontrak dengan jasa transporter
+Bukti penerapan prosedur transportasi harus dipelihara
+IHATEC_SJH 2017 Rev.1PROSEDUR TRANSPORTASI BAHAN/PRODUK
+Khusus untuk produk retail di industri pengolahan, perusahaan harus  
+mempunyai prosedur tertulis pengembangan produk baru menjamin  
+produk baru dengan merk/brand yang sama dengan produk yang sudah  
+disertifikasi telah disertifikasi sebelum dipasarkan diIndonesia
+Prosedur dapat mempertimbangkan total waktu yang diperlukan dalam  
+proses pengembangan produk di R&D, pencetakan kemasan, proses  
+sertifikasi halal dan proses pemenuhan regulasi lain seperti MD/ML
+Khusus untuk restoran/katering, perusahaan harus mempunyai prosedur
+tertulis pengembangan menu barumenjamin bahwa menu baru telah
+disertifikasi sebelum dijual
+IHATEC_SJH 2017 Rev.1PROSEDUR PENGEMBANGAN
+PRODUK/MENU BARU
+Bukti pengembangan produk/menu baru harus dipelihara
+Khusus restoran: perusahaan harus mempunyai prosedur  
+pengembangan outlet baru
+Prosedur harus menjamin bahwa outlet tersebut telah
+didaftarkan untuk disertifikasi sebelum dibuka.
+IHATEC_SJH 2017 Rev.1PROSEDUR PENGEMBANGAN OUTLET BARU
+Bukti pengembangan outlet baru harus dipelihara
+Khusus restoran/katering: perusahaan harus mempunyai  
+prosedur penyajian menu, termasuk pemajangan ( display ) 
+ menjamin tidak terjadinya kontaminasi menu oleh 
+bahan  haram/najis selama penyajian
+Fasilitas dan peralatan penyajian hanya dikhususkan untuk  
+menyajikan menu halal.
+Jika ada penggunaan peralatan penyajian secara bersama  
+dengan menu yang tidak disertifikasi (misalnya di foodcourt  
+atau acara pernikahan) harus ada proses pencucian yang  
+dapat menjamin tidak terjadi kontaminasi silang
+IHATEC_SJH 2017 Rev.1PROSEDUR PENYAJIAN
+Jika ada penggunaan fasilitas/peralatan penyajian secara  
+bersama dengan menu yang tidak disertifikasi yang bahannya  
+berasal dari babi/turunannya (misalnya di foodcourt atau acara  
+pernikahan) harus mempunyai peralatan penyajian khusus  
+yang tidak digunakan secara bersama atau menggunakan  
+peralatan penyajian yang sekali pakai.
+Peralatan penyajian yang dimaksud mencakup peralatan yang kontak  
+dengan menu langsung.
+Jika terdapat kontaminasi najis babi pada peralatan penyajian, maka  
+harus dilakukan prosedur penyucian najis berat dan untuk  
+selanjutnya hanya digunakan untuk menyajikan menu yang tidak  
+mengandung babi
+IHATEC_SJH 2017 Rev.1PROSEDUR PENYAJIAN
+Khusus restoran: perusahaan harus mempunyai prosedur  
+aturan pengunjung menjamin pengunjung tidak  
+mengkonsumsi produk dari luar restoran yang tidak memiliki  
+status halal yang jelas.
+Perusahaan harus menerapkan aturan larangan bagi pelanggan  
+mengkonsumsi makanan/minuman haram atau tidak jelas kehalalannya di  
+dalam restoran.
+Jika terdapat acara/seremoni di dalam restoran, maka makanan yang  
+dibawa dari luar (misalkan kue tart, mie panjang umur, telur merah, hadiah)  
+harus bersertifikat Halal . Jika tidak, maka makanan hanya boleh untuk  
+seremonial (dipotong/difoto) tetapi tidak boleh dikonsumsi di dalam  
+restoran.
+IHATEC_SJH 2017 Rev.1PROSEDUR ATURAN PENGUNJUNG
+Khusus restoran/katering : perusahaan harus mempunyai prosedur  
+aturan karyawan menjamin karyawan tidak mengkonsumsi produk  
+dari luar outlet/dapur yang tidak memiliki status kehalalan yang jelas.
+Caranya:
+Menerapkan aturan larangan larangan bagi karyawan  
+mengkonsumsi makanan/minuman haram atau tidak jelas status  
+kehalalannya di dalam outlet/dapur
+Jika terdapat karyawan yang membawa makanan/minuman  
+haram/tidak jelas status kehalalannya, maka karyawan tidak boleh  
+mengkonsumsi makanan/minuman tersebut di dalam outlet/dapur  
+dan tidak boleh menggunakan peralatan makan outlet/dapur
+IHATEC_SJH 2017 Rev.1PROSEDUR ATURAN KARYAWAN
+Perusahaan harus mempunyai prosedur tertulis yang menjamin  
+ketertelusuran produk yang disertifikasi.
+Maksud ketertelusuran
+Selalu dapat dibuktikan bahwa produk yang disertifikasi  
+berasal dari bahan yang disetujui (termasuk jika ada  
+pengkodean bahan/produk) dan diproduksi di fasilitas  
+yang memenuhi kriteria .
+Bukti ketertelusuran produk harus dibuat dan dipelihara.Kemampuan Telusur
+IHATEC_SJH 2017 Rev.1
+Perusahaan harus mempunyai prosedur untuk menangani
+produk yang tidak memenuhi kriteria.
+Prosedur harus memuat definisi yang tepat tentang produk ini dan cara  
+menanganinya.
+Definisi :produk yang sudah disertifikasi tetapi terlanjur diproduksi dari
+bahan yang tidak disetujui dan/atau diproduksi difasilitas yang tidak
+memenuhi kriteria
+Produk yang tidak memenuhi kriteria dapat diidentifikasi dari audit internal,
+audit pemasok, pemeriksaan mutu produk rutin atau analisis laboratorium
+Prosedur inibersifat antisipatif karena kemungkinan kesalahan selalu adaPenanganan Produk yang
+Tidak Memenuhi Kriteria
+IHATEC_SJH 2017 Rev.1
+Penanganan Produk yang
+Tidak Memenuhi Kriteria (Lanjutan)
+Cara menangani produk yang tidak memenuhi kriteria:
+Tidak dijual ke konsumen yang membutuhkan produk halal
+Dapat berupa pemusnahan produk, penjualan untuk tujuan non
+pangan, penjualan ke negara non muslim, dan lainnya
+Khusus restoran/katering: harus dimusnahkan
+Jika terlanjur dijual, maka produk harus ditarik
+Produk yang tidak memenuhi kriteria tidak boleh diproses
+ulang (rework ), down grade atau direformulasi
+Bukti penanganan produk yang tidak memenuhi kriteria harus
+dipelihara
+IHATEC_SJH 2017 Rev.1
+10. Audit Internal
+“Verifikasi pemenuhan 11 kriteria yang dilakukan  
+oleh auditor dari internal perusahaan”
+Perusahaan harus mempunyai prosedur tertulis audit internal
+Audit internal harus dilakukan setidaknya dua kalidalam
+setahun
+Ruang lingkup audit internal disesuaikan dengan kebutuhan.  
+Jika perusahaan menggunakan fasilitas produksi pihak lain  
+(melakukan maklon atau toll manufacturing ), maka ruang  
+lingkup audit internal juga mencakup implementasi SJH di  
+tempat maklon
+IHATEC_SJH 2017 Rev.1
+Audit Internal
+IHATEC_SJH 2017 Rev.1(Lanjutan)
+Pelaksanaan audit internal dapat diintegrasikan dengan audit
+sistem lain (jadwal, personel, check list)
+Audit internal harus dilakukan oleh pihak kompeten dan  
+independen terhadap area yang diaudit
+Pihak independen:
+Dari divisi/bagian/departemen lain(audit silang).
+Dari pihak yang ditunjuk manajemen untuk tugas ini
+Jadi, tidak harus audit silang
+Hasil audit internal harus disampaikan ke semua pihak yang
+berkepentingan dalam audit internal.
+Jika ditemukan kelemahan (tidak terpenuhinya kriteria) dalam audit  
+internal, maka perusahaan harus mengidentifikasi akar penyebabnya  
+dan melakukan perbaikan. Perbaikan harus dilakukan dengan target  
+waktu yang jelas serta harus mampu menyelesaikan kelemahan &  
+mencegah terulangnya di masa yang akan datang.
+Hasil audit internal harus disampaikan ke LPPOM MUI dalam bentuk
+laporan berkala melalui menu regular report di sistem on lineCEROL.
+IHATEC_SJH 2017 Rev.1Audit Internal (Lanjutan)
+Bukti penerapan prosedur audit internal harus dipelihara
+Kaji Ulang Manajemen
+(Management Review)
+Kaji ulang manajemen: evaluasi  
+efektifitas pelaksanaan sistem jaminan  
+halal yang dilakukan oleh manajemen
+Perusahaan harus mempunyai prosedur  
+tertulis kaji ulang manajemen kaji  
+ulang manajemen harus dilakukan  
+setidaknya sekali dalam setahun
+IHATEC_SJH 2017 Rev.1
+Kaji Ulang Manajemen (Lanjutan)
+Pelaksanaan kaji ulang dapat diintegrasikan dengan kaji
+ulang sistem lain
+Bahan kaji ulang manajemen: hasil audit internal, audit  
+eksternal, hasil kaji ulang sebelumnya, dan adanya  
+perubahan dalam perusahaan yang mempengaruhi  
+efektifitas pelaksanaan SJH
+Hasil kaji ulang harus disampaikan kepada pihak yang
+bertanggungjawab terhadap implementasi SJH.
+Bukti kaji ulang harus dibuat dan dipelihara.
+IHATEC_SJH 2017 Rev.1
+IHATEC_SJH 2017 Rev.1
+

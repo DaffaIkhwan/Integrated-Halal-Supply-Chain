@@ -1,0 +1,1374 @@
+Panduan Pendamping PPH iiBuku Panduan Pendamping PPH 
+(Proses Produk Halal)
+iiiPanduan Pendamping PPHBuku Panduan Pendamping PPH  
+(Proses Produk Halal)
+Pengarah:
+Dr. Taufik Hidayat, M.Ec.
+Penanggung Jawab:
+Afdhal Aliasar, MBA., MIFP .
+Penulis:
+Evrin Lutfika, S.TP ., M.TPn.  
+Dr. Lia Amalia, S.T., S.S., M.T. 
+Dr. Ir. Mardiah, M.Si.
+Editor KNEKS:
+Ni Putu Desinthya AA, S.E., M.Sc., MIFP .Eva Afifah Tsurayya, S.T.P ., M.Agr.Ryanda Al Fathan, S.E.
+Editor BPJPH:
+H. Mahdisin, S.HI.
+H. Nurhanudin, ST. M.Kom., VCP , ITIL, PRINCE2
+Nurgina Arsyad, S.Si.
+ISBN 978-623-99543-6-9
+Cetakan Pertama, September 2023
+Penerbit:
+Komite Nasional Ekonomi dan Keuangan Syariah
+
+Panduan Pendamping PPH ivDAFTAR ISI
+KATA SAMBUTAN  ��������������������������������������������������������������������������������� VII
+KATA SAMBUTAN  �������������������������������������������������������������������������������� VIII
+KATA PENGANTAR  �������������������������������������������������������������������������������� IX
+PENDAHULUAN  �������������������������������������������������������������������������������������� 1
+PENJELASAN SELF DECLARE  ������������������������������������������������������������������� 2
+Pengertian Pernyataan Halal Pelaku Usaha (self declare)  ........................ 2
+Syarat UMK yang dapat Mengajukan self declare  .................................... 2
+Pendamping Proses Produk Halal (PPH)  ................................................... 4
+Mekanisme self declare  ............................................................................ 5
+PANDUAN PELAKSANAAN SELF DECLARE  ��������������������������������������������� 7
+Persiapan Pendampingan  ......................................................................... 7
+Kunjungan ke Tempat Produksi  ................................................................. 8
+a P embukaan  ........................................................................................... 8
+b P emeriksaan Persyaratan Umum  .......................................................... 9
+c P engisian Data Pelaku Usaha di SIHALAL  ............................................ 12
+d P emeriksaan Persyaratan Khusus  ....................................................... 12
+e P enutupan Kunjungan  ........................................................................ 14
+Pengisian Data Verifikasi di SIHALAL  ....................................................... 14
+Pengiriman Laporan ke Komite Fatwa Produk Halal  ............................... 14
+Pemantauan   ������������������������������������������������������������������������������� 15
+Penutupan Proses Sertifikasi Halal  ......................................................... 15
+PANDUAN PENGISIAN DATA PELAKU USAHA DI SIHALAL  ������������������ 16
+Pembuatan Akun Pelaku Usaha di SIHALAL  ............................................ 16
+Pengisian Data Pelaku Usaha di SIHALAL  ................................................ 17
+Pengajuan self declare  ............................................................................ 23
+PANDUAN PENGISIAN DATA DAN VERVAL DI SIHALAL  ���������������������� 40
+Proses Verval Bahan, Produk, dan Proses Produk Halal  ........................ 40
+A
+B
+C
+D
+E
+vPanduan Pendamping PPHPengiriman Data  ..................................................................................... 45
+Proses Verval Penerapan SJPH  ................................................................ 46
+PENUTUP  ���������������������������������������������������������������������������������������������� 56
+DAFTAR PUSTAKA  ��������������������������������������������������������������������������������� 57
+F
+Panduan Pendamping PPH viDAFTAR LAMPIRAN
+LAMPIRAN 1 � CONTOH TEMPLATE MANUAL SJPH YANG DIUNDUH 
+DARI SIHALAL  ��������������������������������������������������������������������������������������� 60
+LAMPIRAN 2 � CONTOH BUKTI/CATATAN PRODUKSI  ��������������������������� 72
+LAMPIRAN 3 � CONTOH FORM DAFTAR PERIKSA AUDIT INTERNAL  ����73
+LAMPIRAN 4 � PANDUAN UNTUK MENDAPATKAN NIB  ������������������������ 74
+A.P anduan untuk Mendapatkan Hak Akses Perizinan Berusaha di OSS ....74
+B.P anduan untuk Mendapatkan NIB  ..................................................... 75
+
+viiPanduan Pendamping PPHAssalaamualaikum warahmatullaahi  wabarakaatuh
+Bismillahirrahmanirrahim
+Puji dan syukur kita panjatkan ke hadirat ALLAH 
+Subhanahu wa ta’ala karena atas rahmat dan ridha-Nya 
+kita dapat menyelesaikan penyusunan buku Panduan 
+Pendamping Proses Produk Halal (PPH). Sholawat serta 
+salam senantiasa tercurahkan kepada Nabi Muhammad 
+Shallallahu 'alaihi wasallam beserta keluarga, sahabat dan 
+para pengikutnya.
+Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) hadir untuk terus 
+mendorong perkembangan industri halal di Indonesia, termasuk di dalamnya sertifikasi halal bagi Usaha Mikro dan Kecil (UMK). Kepemilikan sertifikat halal terhadap produk dapat menjadi jaminan bahwa produk-produknya memenuhi ketentuan halal sehingga dapat memberikan perlindungan atas kebutuhan  konsumen, serta pelaku usaha dapat menjangkau pasar halal yang lebih luas lagi.
+Buku Panduan Pendamping PPH ini diharapkan dapat menjadi acuan bagi 
+Pendamping PPH dan juga masyarakat luas mengenai prosedur dan persyaratan bagi UMK yang ingin mengajukan Sertifikasi Halal khususnya melalui Program Pernyataan Halal Pelaku Usaha (self declare). Selain itu, semoga Buku ini dapat bermanfaat dan dapat dipergunakan oleh seluruh pemangku kepentingan untuk mendorong pengembangan industri Halal di Indonesia.
+Terima kasih
+Wassalaamualaikum warahmatullaahi wabarakaatuh.
+Jakarta, September 2023
+Plt. Direktur Eksekutif
+Komite Nasional Ekonomi dan Keuangan Syariah
+Dr. Taufik Hidayat, M.Ec.KATA SAMBUTAN
+
+Panduan Pendamping PPH viiiPuji syukur kami panjatkan kehadira t Allah SWT, 
+atas segala limpahan rahmat-Nya,  sehingga Panduan 
+Pendamping Proses Produk Halal (PPH) ini dapat 
+diselesaikan. Shalawat teriring salam semoga senantiasa 
+tercurahkan kepada Nabi Besar Muhammad SAW.
+Panduan Pendamping PPH bertujuan untuk 
+memberikan petunjuk teknis bagi Pendamping PPH dalam 
+melaksanakan verifikasi dan validasi pernyataan kehalalan 
+produk yang dibuat oleh pelaku usaha mikro dan kecil.  Panduan 
+ini memandu pendamping PPH melaksanakan tugas di tempat proses produksi. 
+Penggunaan panduan praktis ini akan memudahkan Pendamping PPH menilai 
+penerapan kehalalan produk pelaku usaha sehingga proses pelaksaaan sertifikasi 
+halal melalui pernyataan pelaku usaha ( self declare ) dapat berjalan dengan baik. 
+Sertifikasi halal melalui pernyataan pelaku usaha menjadi kebijakan strategis 
+yang diambil Pemerintah untuk percepatan peningkatan jumlah produk bersertifikat 
+halal bagi pelaku usaha mikro dan kecil. Sertifikat halal tidak hanya sebagai jaminan 
+kehalalan terhadap produk tetapi juga  memberikan nilai tambah bagi pelaku usaha 
+dalam memproduksi/menjual produk. Penyusunan Panduan Pendamping PPH ini 
+menjadi salah satu kontribusi nyata mendukung Pendamping PPH mewujudkan 
+harapan pelaku usaha mendapatkan manfaat sertifikasi halal dimaksud. 
+Ucapan terima kasih dan penghargaan kami sampaikan kepada tim penyusun 
+yang telah berupaya maksimal untuk kesempurnaan penyusunan panduan ini. 
+Penyempurnaan dimasa mendatang senantiasa terbuka dan dimungkinkan untuk 
+semakin melengkapi Panduan Pendamping PPH ini. Harapan kami tidak lain adalah 
+bahwa panduan ini dapat memberikan manfaat bagi kita semua.  
+Jakarta, September 2023
+Kepala Badan Penyelenggara Jaminan Produk Halal
+Dr. Muhammad Aqil Irham, M.Si KATA SAMBUTAN
+
+ixPanduan Pendamping PPHAssalaamualaikum warahmatul laahi wabarakaatuh
+Bismillahirrahmanirrahim
+Tidak ada kata yang pantas kami ucapkan selain 
+puji syukur kehadirat Allah subhanahu wa ta’ala 
+karena atas berkat dan rahmat-Nya, Buku Panduan 
+Pendamping Proses Produk Halal (PPH) ini dapat 
+diterbitkan. Shalawat dan salam juga selalu tercurahkan 
+kepada Nabi Muhammad Shallallahu 'alaihi wasallam yang 
+merupakan suri tauladan bagi seluruh umat.
+Terbitnya UU Jaminan Produk Halal (JPH) telah menimbulkan tantangan baru bagi 
+industri termasuk bagi Usaha Mikro Kecil (UMK). Dengan adanya UU JPH tersebut, 
+diharapkan masyarakat Indonesia bisa mendapatkan jaminan kehalalan dan kualitas 
+suatu produk terutama yang dihasilkan oleh UMK melalui Sertifikasi Halal. Selain 
+itu, Sertifikat Halal juga dapat digunakan oleh UMK untuk meningkatkan daya saing 
+produknya.  
+Buku ini bertujuan untuk memberikan informasi, khsususnya kepada Pendamping 
+PPH, terkait prosedur dan persyaratan untuk memperoleh Sertifikasi Halal bagi UMK 
+melalui jalur self declare . Sertifikasi Halal self declare  adalah pernyataan status 
+halal produk UMK oleh pelaku usaha itu sendiri  yang produknya tidak beresiko, 
+menggunakan bahan yang sudah dipastikan kehalalanya, dan proses produksinya 
+sederhana. Proses ini didampingi dan divalidasi oleh pendamping halal yang terlatih.
+Bersama dengan para pemangku kepentingan ekonomi syariah, KNEKS terus 
+mendorong setiap sektor dalam industri halal agar dapat berkontribusi bagi ketahanan 
+ekonomi nasional termasuk UMK. Semoga Buku ini dapat bermanfaat bagi pembaca, 
+khususnya para pemangku kepentingan UMK sebagai dasar penyusunan dan pemilihan 
+strategi untuk pengembangan UMK kedepan.
+Wassalaamualaikum warahmatullaahi wabarakaatuh.
+Jakarta, September 2023
+Direktur Industri Produk Halal
+Komite Nasional Ekonomi dan Keuangan Syariah
+Afdhal Aliasar, MBA., MIFP .KATA PENGANTAR
+
+Panduan Pendamping PPH 1PENDAHULU AN
+Pertumbuhan UMKM di Indonesia semakin meningkat dari tahun ke tahun. 
+Berdasarkan data Kementerian Koperasi dan UMKM per Maret 2021, jumlah UMKM 
+saat ini mencapai 64,2 juta dengan kontribusi terhadap Produk Domestik Bruto sebesar 
+61,07% atau senilai Rp 8.573,89 triliun. Dari data tersebut, peran UMKM sangat bernilai 
+untuk meningkatkan ekonomi masyarakat Indonesia. UMKM yang memiliki sertifikat halal 
+memiliki keuntungan yang lebih kompetitif dalam menghadapi persaingan perdagangan 
+global. Hasil analisis dari BPS tahun 2019 menunjukkan bahwa kurang dari 10% UMK 
+(Usaha Mikro dan Kecil) di Indonesia telah bersertifikat halal.  
+Berdasarkan UU Nomor 33 tahun 2014 dan UU Nomor 6 tahun 2023, sertifikasi 
+halal menjadi wajib bagi produk yang dipasarkan di Indonesia, tak terkecuali produk yang 
+dihasilkan oleh UMK. Pemerintah memiliki metode sertifikasi halal khusus bagi UMK, yaitu 
+pernyataan halal pelaku usaha atau self declare . Pembebanan biaya layanan self declare  
+berasal dari sejumlah sumber antara lain APBN, APBD, pembiayaan dari dana kemitraan, 
+bantuan hibah pemerintah dan lembaga lain. Oleh karena itu, saat ini biaya sertifikasi halal 
+melalui skema self declare  bagi pelaku usaha dikenakan tarif nol rupiah atau gratis. Hal ini 
+meringankan UMK untuk mendapatkan sertifikat halal atas produknya.
+Kriteria sertifikasi halal melalui skema self declare  mengacu pada beberapa regulasi 
+diantaranya Peraturan Menteri Agama Nomor 20 Tahun 2021 tentang Sertifikasi Halal bagi 
+Pelaku Usaha Mikro dan Kecil, Keputusan Kepala BPJPH Nomor 150 Tahun 2022 tentang 
+Petunjuk Teknis Pendamping Proses Produk Halal dalam Penentuan Kewajiban Bersertifikat 
+Halal Bagi Pelaku Usaha Mikro dan Kecil yang Didasarkan Atas Pernyataan Pelaku Usaha, 
+dan Keputusan Kepala BPJPH Nomor 22 Tahun 2023 tentang Perubahan Atas Keputusan 
+Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 150 Tahun 2022 Tentang 
+Petunjuk Teknis Pendamping Proses Produk Halal dalam Penentuan Kewajiban Bersertifikat 
+Halal Bagi Pelaku Usaha Mikro dan Kecil yang Didasarkan Atas Pernyataan Pelaku Usaha. 
+Perppu Nomor 2 Tahun 2022 tentang Cipta Kerja yang disahkan pada tanggal 30 Desember 
+2022 yang kemudian ditetapkan menjadi Undang-Undang melalui Undang-Undang Nomor 
+6 tahun 2023 yang disahkan pada tanggal 31 Maret 2023, memerlukan penyesuaian 
+pada alur proses verifikasi dan validasi Pendamping PPH serta adanya perubahan proses 
+penentuan kehalalan produk pada sidang fatwa.
+Dalam proses sertifikasi melalui skema self declare , kompetensi pendamping PPH 
+(Proses Produk Halal) sangat penting karena pendamping PPH harus membina pelaku 
+usaha dalam penerapan SJPH (Sistem Jaminan Produk Halal) sekaligus mendampingi 
+dalam proses pendaftaran sampai keluar Sertifikat halal. Selain itu, pendamping PPH 
+harus melakukan verifikasi dan validasi (verval) kehalalan produk yang disertifikasi halal. 
+Buku “Panduan Pendamping PPH (Proses Produk Halal)” ini berisi penjelasan mengenai 
+self declare , panduan pengisian data di SIHALAL, dan panduan pelaksanaan verval oleh 
+Pendamping PPH, agar proses sertifikat halal melalui skema self declare  dapat berjalan 
+dengan baik.
+A
+2Panduan Pendamping PPHPENJELASAN SELF DEC LARE
+Pengertian Pernyataan Halal Pelaku Usaha (self declare)
+Pernyataan halal pelaku usaha (self declare) adalah pernyataan yang dikeluarkan 
+oleh pelaku usaha mikro dan kecil atas kehalalan suatu produk. Menurut regulasi 
+Peraturan Pemerintah Nomor 39 Tahun 2021 tentang Penyelenggaraan Bidang Jaminan Produk Halal, pernyataan pelaku usaha didasarkan pada standar halal, paling sedikit 
+terdiri atas:
+Syarat UMK yang dapat Mengajukan self declare
+Tidak semua pelaku usaha dapat mengajukan sertifikasi halal produknya melalui 
+skema self declare. Berdasarkan Keputusan Kepala BPJPH nomor 150 tahun 2022 dan 
+Keputusan Kepala BPJPH nomor 22 tahun 2023, persyaratan pelaku usaha yang dapat mengajukan self declare yaitu:
+a Jenis produk
+Produk yang dapat didaftarkan melalui skema self declare merupakan produk 
+tidak berisiko atau produk yang menggunakan bahan yang sudah dipastikan 
+kehalalannya. Selain itu, produk tidak mengandung unsur hewan hasil sembelihan, kecuali berasal dari produsen atau rumah potong hewan/rumah potong unggas yang sudah bersertifikat halal. Produk yang dihasilkan berupa makanan dan minuman dengan jenis dan rincian sebagaimana tercantum dalam lampiran Keputusan Kepala BPJPH Nomor 22 Tahun 2023. 
+B
+1
+1 Adan ya pernyataan pelaku usaha yang berupa akad/ ikrar 
+y ang berisi:
+a.K ehalalan produk dan bahan yang digunakan
+b.Pr oses produk halal (PPH)
+2 Adan ya pendampingan PPH
+Ber dasarkan standar halal tersebut, peran pendamping PPH   
+sang at penting dalam proses sertifikasi halal secara self declare. 
+2
+Panduan Pendamping PPH 3Berdasarkan surat Kepala Pusat Registrasi dan Sertifikasi Halal tanggal 27 April 
+2023 mengenai Penguatan Informasi Ketentuan Sertifikasi Halal self declare, 
+dijelaskan bahwa pengajuan sertifikasi halal self declare untuk 1 NIB dapat diajukan 
+maksimal 3 kali pengajuan dengan 3 jenis produk yang berbeda. Pengajuan sertifikasi halal diajukan per jenis produk dengan ketentuan maksimal 10 nama produk. Pengajuan tidak dibolehkan dipecah menjadi beberapa pengajuan yang sebenarnya bisa masuk dalam satu jenis produk yang sama. 
+Pengajuan untuk jenis produk “Penyediaan makanan dan minuman dengan 
+pengolahan” diperbolehkan dengan syarat bukan produk dari usaha restoran, jasa boga/katering, rumah makan, warung makan yang memiliki menu banyak atau usaha yang memiliki outlet lebih dari 1 (satu). Berikut ini penjelasan jenis 
+produk tersebut yang dapat mengajukan self declare:
+ 
+1) Kedai makanan
+Jenis produk ini mencakup usaha jasa pangan yang menjual dan menyajikan 
+makanan atau minuman siap dikonsumsi berdasarkan pemesanan, yang melalui 
+proses pembuatan di tempat. Contoh:
+•Kedai gado-gado “Barokah”, memiliki 9 menu/nama produk, dengan rincian
+sebagai berikut: gado-gado, karedok, pecel, tempe mendoan, tahu isi, pisanggoreng, teh tawar, teh manis, air putih.
+•Kedai kelapa “Abang”, memiliki 8 menu/nama produk, dengan rincian sebagaiberikut: es kelapa muda, es kelapa hijau, es kelapa gula merah, es kelapa gula
+putih, es kelapa sirop, es kelapa susu, es kelapa jeruk, es kelapa sirsak
+2) Penyediaan makanan dan minuman dengan pengolahan lainnya
+Jenis produk ini mencakup gerai pangan jajanan yang produknya siap dikonsumsi 
+untuk umum dengan ataupun tanpa pengolahan yang dikelola menggunakan 
+perlengkapan semi permanen yang bergerak/berkeliling. Contoh:
+•Bubur Kacang Hijau & Ketan Hitam yang dijual dengan gerobak keliling, memiliki
+2 menu/nama produk, dengan rincian sebagai berikut: bubur kacang hijau,bubur ketan hitam
+•Gorengan “AA” yang dijual dengan gerobak memiliki 8 nama produk, denganrincian: tahu goreng, tempe goreng, cireng, bakwan, risol, pisang molen, ubi
+goreng, pisang aroma
+b Bahan yang digunakan  
+Bahan yang digunakan tidak berbahaya (sebagaimana ketentuan dalam Keputusan 
+Kepala BPJPH Nomor 150 Tahun 2022) dan dapat dipastikan kehalalannya yaitu dibuktikan dengan sertifikat halal atau termasuk dalam daftar bahan yang dikecualikan dari kewajiban bersertifikat halal (KMA Nomor 1360 Tahun 2021 tentang bahan yang dikecualikan dalam kewajiban bersertifikat halal). Bahan hewan hasil sembelihan harus berasal dari produsen atau rumah potong hewan/
+4Panduan Pendamping PPHrumah potong unggas yang sudah bersertifikat halal dan bahan bukan berupa 
+daging giling.
+c Proses produksi
+Proses produksi dilakukan secara sederhana dan dapat dipastikan kehalalannya, 
+proses pengawetan produk sederhana dan tidak menggunakan kombinasi lebih 
+dari 1 metode pengawetan.
+d Lokasi, tempat, dan alat Proses Produk Halal (PPH)
+Pelaku usaha memiliki lokasi, tempat, dan alat proses untuk produk halal yang 
+terpisah dengan lokasi, tempat dan alat proses untuk produk tidak halal. Peralatan 
+yang digunakan adalah peralatan produksi dengan teknologi sederhana atau 
+dilakukan secara manual dan/atau semi otomatis (usaha rumahan bukan usaha 
+pabrik). Pelaku usaha memiliki fasilitas produksi paling banyak di 1 (satu) lokasi.
+e Memiliki NIB (Nomor Induk Berusaha)
+Pelaku usaha harus memiliki NIB yaitu nomor identitas yang diberikan kepada 
+Pelaku Usaha dalam menjalankan usaha sesuai dengan bidang usahanya. 
+Pembuatan NIB dilakukan melalui sistem OSS ( one single submission ) tanpa biaya. 
+f Omset atau hasil penjualan  
+Pelaku usaha memiliki hasil penjualan  tahunan (omset) maksimal  Rp 500.000.000,00 
+(lima ratus juta rupiah) yang dibuktikan dengan pernyataan mandiri.
+g Surat izin edar
+Pelaku usaha memiliki atau tidak memiliki surat izin edar (PIRT/MD), Sertifikat Laik 
+Higiene Sanitasi (SLHS) untuk produk makanan/minuman dengan daya simpan 
+kurang dari 7 (tujuh) hari, atau izin industri lainnya atas produk yang dihasilkan 
+dari dinas/instansi terkait.
+h Verifikasi oleh pendamping
+Pelaku usaha telah diverifikasi kehalalannya oleh pendamping PPH.
+i Melengkapi dokumen pengajuan di SIHALAL 
+Pelaku usaha harus melengkapi dokumen pengajuan self declare  secara online 
+melalui SIHALAL. Dokumen pengajuan yang perlu disiapkan antara lain dokumen 
+penyelia halal (salinan KTP dan surat pengangkatan), data produk, foto produk, 
+data bahan baku dan dokumen izin edar (jika ada). 
+Pendamping Proses Produk Halal (PPH)
+Menurut Peraturan Menteri Agama Republik Indonesia Nomor 20 Tahun 2021 
+tentang Sertifikasi Halal Bagi Pelaku Usaha Mikro dan Kecil, Proses Produk Halal (PPH) 
+adalah rangkaian kegiatan untuk menjamin kehalalan Produk meliputi penyediaan 
+bahan, pengolahan, penyimpanan, pengemasan, pendistribusian, penjualan, dan 
+penyajian Produk. Pendampingan PPH adalah kegiatan mendampingi pelaku usaha 3
+Panduan Pendamping PPH 5dalam memenuhi persyaratan pernyataan kehalalan produk. Pendamping PPH adalah 
+orang yang melakukan verifikasi pernyataan kehalalan produk pada proses self declare. 
+Calon Pendamping PPH perlu mendaftar di LP3H (Lembaga Pendampingan Proses 
+Produk Halal) untuk diberikan pelatihan terlebih dahulu. Setiap pendamping yang lulus pelatihan akan mendapat sertifikat tanda lulus pelatihan pendamping PPH dari Lembaga yang menyelenggarakan pelatihan. Setelah itu LP3H akan mengajukan permohonan registrasi pendamping PPH kepada BPJPH dan diberikan nomor registrasi oleh BPJPH.
+Mekanisme self declare
+Mekanisme sertifikasi halal melalui skema self declare adalah sebagai berikut:
+1)Pelaku usaha dibantu oleh pendamping PPH mengajukan permohonan  
+sertifikasi halal
+Pada tahap ini, pendamping PPH melakukan kurasi (seleksi awal) data untuk  
+memastikan pelaku usaha telah memenuhi persyaratan self declare. Pelaku 
+usaha didampingi pendamping PPH melakukan pendaftaran sertifikasi halal  
+secara elektronik di SIHALAL.
+2)Pendamping PPH melakukan verifikasi dan validasi (verval)
+Verifikasi dan validasi meliputi bahan dan Proses Produk Halal (PPH), antara 
+lain memeriksa dokumen bahan dan komposisi produk. Jika ditemukan  
+ketidaksesuaian, pelaku usaha bersama pendamping PPH melakukan tindakan  
+koreksi. Jika hasil verifikasi dan validasi memenuhi standar kehalalan produk, 
+pendamping PPH memberikan rekomendasi kepada BPJPH.
+3)BPJPH melakukan verifikasi dokumen secara otomatis di SIHALAL dan 
+penerbitan Surat Tanda Terima Dokumen (STTD).
+4)Komite Fatwa Produk Halal menetapkan kehalalan produk.
+5)BPJPH melakukan penerbitan Sertifikat Halal.
+Berikut ini adalah persyaratan pendamping PPH:
+a.Warga Negara Indonesia;
+b.Beragama Islam;
+c.Memiliki wawasan luas dan memahami  syariat 
+mengenai kehalalan Produk; dan
+d.Memiliki sertifikat pelatihan pendamping PPH.
+4
+6Panduan Pendamping PPHPada gambar di bawah dapat dilihat alur sertifikasi halal UMK melalui skema 
+self declare.
+sumber: BPJPH, 2023
+
+Panduan Pendamping PPH 7PANDUAN PELAKSANAAN SELF DECLARE 
+Persiapan Pendampingan
+Pada sistem SIHALAL terbaru, pendamping PPH melakukan pendampingan 
+terhadap pelaku usaha, mulai dari pembuatan akun pelaku usaha di SIHALAL sampai 
+selesai proses sertifikasi halal. Pelaku usaha dapat memilih pendamping atau pendamping dapat mencari pelaku usaha untuk didampingi. Untuk mendapatkan 
+pelaku usaha yang akan didampingi, pendamping dapat melakukan kegiatan:
+a.Penyebaran informasi melalui media sosial atau grup Whatsapp  yang
+menginformasikan  bahwa pendamping siap membantu UMK untuk
+pendaftaran sertifikasi halal melalui self declare.
+b.Pendamping mencari pelaku UMK di provinsi yang sama yang dapat didampingi
+untuk sertifikasi halal melalui self declare.
+c.Bersama pemerintah setempat mulai dari RT atau dinas Kota/Kabupaten
+membina pelaku UMK agar siap disertifikasi halal.
+Sebelum melakukan pendampingan, pendamping wajib memahami kriteria SJPH 
+sebagai persyaratan sertifikasi halal. Untuk memastikan pelaku usaha dapat diajukan sertifikasi halal melalui self declare, pendamping dianjurkan melakukan kurasi melalui 
+wawancara kepada pelaku usaha. Berikut ini pertanyaan yang dapat diajukan saat 
+wawancara:
+a.Apakah pelaku usaha tidak pernah mendapatkan fasilitasi sertifikasi halal
+sebelumnya? (Jawab: Ya)
+b.Apakah produksi yang dilakukan merupakan usaha rumahan (bukan u saha
+pabrikan)? (Jawab: Ya).
+c.Apakah proses produksi menggunakan bahan-bahan halal (contoh bahan halal:
+1. Bahan bersertifikat halal, 2. Bahan berasal dari alam
+(tanpa sertifikat halal): sayur segar, telur segar, ikansegar, rempah, dll)? (Jawab: Ya)
+d.Jika ada proses produksi produk lain yang
+menggunakan bahan non halal, apakahdilakukan pada tempat terpisah danmenggunakan alat yang berbeda?(Jawab: Ya).
+e.Apakah proses produksi tidak
+menggunakan bahan berbahaya (bahanberbahaya tertuang dalam Peraturan
+BPOM Nomor 7 tahun 2018,  c on t o h :
+boraks, formalin, rhodamin B, dankuning metanil) (Jawab: Ya).
+C
+1
+
+8Panduan Pendamping PPHf.Apakah proses pengawetan produk sederhana (contoh: pendinginan,
+pembekuan, pengeringan, pengasapan, penggulaan, penggaraman) dan tidak
+menggunakan kombinasi lebih dari 1 metode pengawetan? (Jawab: Ya).
+g.Apakah proses produksi menggunakan peralatan manual/semi otomatis?
+(Jawab: Ya).
+h. Apakah jumlah tempat produksi yang dimiliki hanya 1? (Jawab: Ya).
+i.Apakah jumlah produk yang diproduksi maksimal 10? (Jawab: Ya).
+j.Apakah jumlah tempat penjualan yang dimiliki hanya 1? (Jawab: Ya).
+Semua jawaban pertanyaan diatas harus “Ya”. Jika terdapat jawaban “tidak”,
+maka proses pendampingan self declare tidak bisa dilakukan dan harus melakukan 
+pendaftaran melalui skema sertifikasi halal reguler. Selanjutnya pendamping PPH 
+dapat melakukan hal berikut:
+a.Menyepakati jadwal kunjungan.
+b.Menginformasikan agar saat kunjungan diperlihatkan bahan yang digunakan,
+proses produksi, bukti pembelian bahan dan contoh produk.
+c.Menanyakan apakah pelaku usaha sudah memiliki NIB. Jika belum memiliki
+NIB maka pendamping membantu mendaftarkan NIB. Cara pendaftaran NIB
+dapat dilihat pada Lampiran 4.
+d.Untuk produk retail, menanyakan apakah produk sudah memiliki merk dan label
+kemasan. Jika belum, maka pendamping meminta pelaku usaha menyiapkanmerk dan label saat kunjungan.
+e.Mempelajari pr oduk yang dihasilkan dan cara produksinya (bisa melihat di
+pencarian google ), agar saat kunjungan sudah memiliki pengetahuan dan
+gambaran.
+Jika terdapat ketidaksesuaian atau memerlukan klarifikasi saat kunjungan, 
+pendamping dapat menuliskan catatan yang akan ditanyakan saat kunjungan.  
+Kunjungan ke Tempat Produksi
+Pendamping PPH melakukan kunjungan ke tempat produksi sesuai jadwal yang 
+disepakati dengan membawa surat tugas/tanda pengenal dari LP3H tempat 
+bernaung atau kalau tidak ada mencatat No Registrasi Pendamping PPH di SIHALAL,  membawa catatan/HP/laptop serta memakai pakaian yang rapih dan sopan.  
+Tahapan kunjungan yaitu sebagai berikut:
+a Pembukaan
+Pendamping PPH melakukan perkenalan diri, menunjukkan surat tugas/
+tanda pengenal/menyebutkan no mor registrasi pendamping PPH, 
+menyampaikan tujuan kunjungan, menyampaikan hal-hal yang akan dilakukan 
+serta meminta pelaku usaha untuk menyiapkan bahan, nota pembelian bahan, 
+produksi, juga fasilitas yang biasa  digunakan untuk produksi.2
+Panduan Pendamping PPH 9b Pemeriksaan Persyaratan Umum
+Pendamping PPH melakukan pemeriksaan persyaratan umum pelaku usaha 
+(sesuai yang tertera di SIHALAL) mencakup:
+Merek atau Nama Produk 
+ √Periksa daftar produk yang dijual dengan memeriksa media promosi seperti 
+media sosial, brosur, katalog produk, toko, marketplace . 
+ √Periksa kesesuaian nama/simbol produk apakah memenuhi persyaratan 
+berikut:
+•Tidak terkait ibadah agama dan kepercayaan lain
+•Tidak bertentangan dengan akidah Islam
+•Tidak menggambarkan kekufuran dan kemaksiatan
+•Tidak menggunakan nama minuman beralkohol
+•Tidak menggunakan nama babi dan anjing serta turunannya
+ √Periksa kesesuaian rasa/aroma ( flavor ) produk agar memenuhi persyaratan 
+yaitu tidak memiliki rasa/aroma unsur benda atau hewan yang diharamkan.
+ √Periksa bentuk produk apakah memenuhi persyaratan berikut:
+•Tidak menggunakan bentuk babi atau anjing
+•Tidak menggunakan bentuk hewan haram lain selain babi dan anjing
+yang persis dengan hewan aslinya baik bentuk maupun warnanya1
+Berikut ini contoh kalimat saat pembukaan: 
+“Assalaamu’alaikum wr.wb. Perkenalkan nama saya Ryan, 
+saya pendamping dari LP3H …. Ini surat tugas/
+tanda pengenal/no registrasi Pendamping PPH saya 
+(Pendamping menyebutkan LP3H tempat bernaung dan 
+menunjukkan surat tugas/tanda pengenal/no registrasi 
+Pendamping PPH). Sehubungan dengan adanya pengajuan 
+sertifikasi halal melalui skema self declare oleh Bapak Raffi dengan nama usaha … 
+yang memproduksi … (Pendamping menyebutkan nama usaha dan produk yang didaftarkan), maka saya ditugaskan untuk membantu Bapak memperoleh Sertifikat halal dari BPJPH. Mohon Bapak menyiapkan proses produksi produk dan dokumen yang diperlukan serta menjawab semua pertanyaan saya sesuai dengan yang Bapak lakukan dalam melakukan usaha dan memproduksi produk yang didaftarkan. Saya juga akan membantu melakukan pendaftaran data di SIHALAL. SIHALAL adalah aplikasi online BPJPH yang digunakan untuk pendaftaran produk hingga terbit Sertifikat halal. Perlu kami sampaikan bahwa pembiayaan sertifikasi halal untuk pelaku usaha UMK melalui skema self declare ini gratis tidak berbayar. Pembiayaan sudah ditanggung 
+oleh APBN, APBD, pembiayaan dari dana kemitraan, bantuan hibah pemerintah dan lembaga lain.”
+10Panduan Pendamping PPH•Tidak menggunakan bentuk produk yang menggambarkan sifat erotis
+atau porno
+ √Periksa kemasan produk apakah memenuhi persyaratan berikut:
+•Tidak menggunakan kemasan bergambar anjing atau babi sebagai fokus
+utama
+•Tidak menggunakan kemasan yang bergambar erotis atau porno
+•Tidak menggunakan kemasan yang berbentuk erotis atau porno
+ √Khusus untuk produk minuman (terutama produk minuman susu fermentasi), pastikan kadar etanol produk kurang dari 0,5%
+ √Jika produk merupakan produk yang dikemas ulang ( repacked ) atau diberi 
+label ulang ( relabeled ), periksa apakah produk asal memiliki sertifikat halal 
+BPJPH atau produk termasuk dalam daftar bahan yang dikecualikan dari kewajiban bersertifikat halal (KMA Nomor 1360 Tahun 2021)
+ √Jika produk memiliki berbagai varian rasa, maka periksa semua varian nama produk. Contoh: nastar matcha, nastar keju, nastar gulung.
+ √Pastikan jumlah produk dengan jenis yang sama berjumlah maksimal 10 produk.
+ √Pastikan jenis produk sesuai dengan Kepkaban BPJPH nomor 22 tahun 2023. 
+ √Contoh produk yang tidak sesuai yaitu merek produk tidak tercantum sebagai nama produk (jika di kemasan tercantum merek), varian produk tidak lengkap (misalnya yang dijual ada 5 rasa produk namun yang didaftarkan hanya 3 rasa), nama produk tidak sesuai (misalnya corn dog, 
+hot dog , mie bikini, es pocong), rasa/aroma tidak sesuai (misalnya minuman 
+rasa bir, mie rasa babi, es krim rasa rhum raisin), jenis produk tidak bisa disertifikasi melalui skema self declare  (contoh obat herbal, kosmetik, 
+restoran, katering).
+ √Jika produk tidak sesuai, maka pelaku usaha wajib mengganti atau 
+memperbaiki agar sesuai dengan persyaratan.
+
+Panduan Pendamping PPH 11Daftar Bahan 
+ √Periksa komposisi bahan dengan cara memeriksa resep produk, nota 
+pembelian bahan serta melihat langsung stok bahan baku dan bahan yang 
+digunakan saat produksi. 
+ √Cek nama/merk bahan dan produsen di SIHALAL (lihat caranya di bab D), 
+termasuk sumber air, sabun cuci piring dan minyak (jika produk digoreng). 
+ √Jika terdapat bahan kritis yang digunakan belum disertifikasi halal maupun 
+sertifikat halalnya sudah tidak berlaku, maka pendamping menyarankan 
+kepada pelaku usaha untuk mengganti bahan tersebut dengan bahan yang 
+sudah disertifikasi halal. 
+ √Usahakan agar mendaftarkan bahan/merk alternatif sebagai cadangan jika 
+stok bahan dengan merk yang biasa digunakan sedang kosong di supplier /
+toko. 
+ √Pendamping memastikan agar pelaku usaha memiliki “Daftar Bahan Halal” 
+(bisa diunduh dari SIHALAL setelah data bahan diinput) sebagai acuan untuk 
+proses pembelian bahan. 
+ √Perhatikan kesesuaian data antara daftar bahan, proses produk halal, dan 
+juga foto produk. Jika dalam foto terlihat menggunakan keju sedangkan 
+dalam daftar bahan dan proses produk halal tidak tercantum bahan keju, 
+ataupun sebaliknya maka pengajuan akan dikembalikan untuk diperbaiki.
+ √Pastikan tidak menggunakan bahan berupa daging giling dan bahan yang 
+berbahaya, contohnya boraks, formalin, rhodamin B, dan kuning metanil.
+Proses Produk Halal  
+ √Periksa proses produksi secara lengkap dan catat untuk nanti dimasukkan 
+data tahapan produksi di SIHALAL. 
+ √Periksa apakah proses produksi dilakukan dengan higienis dan terhindar 
+dari najis.
+ √Pendamping juga dapat memfoto proses p roduksi dan produk yang 
+dihasilkan.2
+3
+PENDAMPING WAJIB MENULISKAN 
+DAN MELAPORKAN PRODUK, 
+BAHAN, SERTA  PROSES PRODUK 
+HALAL DENGAN JUJUR SESUAI 
+FAKTA YANG DIPERIKSA ��!
+
+12Panduan Pendamping PPHc Pengisian Data Pelaku Usaha di SIHALAL
+Setelah pemeriksaan umum selesai, pendamping PPH melakukan pendampingan 
+dalam pengisian data pelaku usaha di SIHALAL. Cara pembuatan akun hingga pengisian 
+data pelaku usaha dapat dilihat di Bab D. Jika pelaku usaha belum memiliki NIB, maka 
+Pendamping membantu membuatkan NIB. Cara pembuatan NIB dapat dilihat di 
+Lampiran 4. Pendamping membantu pelaku usaha melakukan pengisian semua data 
+sampai selesai. Jika masih terdapat data yang belum memenuhi persyaratan, contoh 
+bahan masih ada yang belum memiliki sertifikat halal, foto produk belum ada, maka 
+pendamping membantu pelaku usaha untuk memenuhi semua persyaratan.
+d Pemeriksaan Persyaratan Khusus
+Pendamping PPH melakukan pemeriksaan/pendampingan persyaratan khusus 
+pelaku usaha di SIHALAL, mencakup penerapan SJPH (Sistem Jaminan Produk Halal) 
+sebagai berikut: 
+Kebijakan Halal 
+Meminta pelaku usaha menyampaikan Kebijakan halal yang ada di Manual 
+SJPH ke semua pekerja. Pelaku usaha juga diminta untuk menempelkan 
+kebijakan halal di lokasi produksi.
+Penetapan Penyelia halal  
+ √Meminta pelaku usaha menetapkan Penyelia halal yang akan mengontrol 
+kehalalan produk. Penyelia halal adalah orang yang bertanggung jawab 
+terhadap penerapan SJPH dan harus beragama Islam. 
+ √Pimpinan pelaku usaha dapat menunjuk dirinya sendiri sebagai penyelia 
+halal jika usaha dilakukan seorang diri, atau dapat diisi dengan orang 
+terdekat seperti suami/istri, anak, atau saudara. 
+Prosedur Training  
+ √Pendamping melakukan training/pembinaan/edukasi kepada pelaku usaha.  
+Materi training dapat berupa penjelasan isi Manual SJPH yang diunduh di 
+SIHALAL setelah pengisian data pelaku usaha. Contoh Manual SJPH dapat 
+dilihat di lampiran 1. 
+Prosedur Penggunaan Bahan Baru 
+ √Pastikan pelaku usaha memahami bahwa setelah memperoleh Sertifikat 
+halal, jika ada penggunaan bahan baru yang tidak kritis (ada di KMA 1360, 
+contoh bahan nabati dan hewan air segar) maka dapat langsung digunakan. 
+Jika bahan baru termasuk bahan kritis (bahan yang diragukan) maka harus 
+mencari yang bersertifikat halal. 
+ √Bahan baru perlu dituliskan di “Daftar Bahan Halal” agar menjadi acuan 
+terbaru untuk proses pembelian bahan.1
+2
+3
+4
+Panduan Pendamping PPH 13Bahan Penolong Pencucian ( Cleaning Agent )
+ √Periksa apakah bahan pencucian peralatan telah memiliki Sertifikat halal 
+yang masih berlaku, kecuali jika menggunakan bahan kimia yang tercantum 
+di KMA 1360.
+Fasilitas Produksi 
+ √Pastikan lokasi produksi hanya 1 dan tidak ada lokasi lain.
+ √Jika berupa kedai makanan, pastikan hanya ada 1 tempat penjualan.
+Prosedur Fasilitas Bebas Babi
+ √Periksa apakah semua fasilitas yang kontak langsung dengan bahan/produk 
+bebas dari kontaminasi babi. 
+ √Jika pelaku usaha menggunakan dapur dan peralatan rumah, pastikan tidak 
+digunakan untuk memasak babi (harus terpisah).  
+Prosedur Pencucian  
+ √Periksa apakah semua peralatan dicuci/dibersihkan sebelum digunakan.
+ √Jika pelaku usaha memungkinkan memasak babi, pastikan tempat pencucian 
+terpisah.  
+Prosedur Pemeriksaan Bahan Datang  
+ √Periksa apakah terdapat pemeriksaan bahwa bahan yang dibeli sesuai 
+dengan bahan yang ada di “Daftar bahan halal”, mencakup nama/merk 
+bahan, produsen dan negara produsen. Jika tidak sesuai, maka bahan 
+tersebut dianggap sebagai bahan baru dan perlu mengikuti prosedur 
+penggunaan bahan baru.
+Prosedur Produksi
+ √Periksa apakah proses produk halal hanya menggunakan bahan halal dan 
+dilakukan di fasilitas yang bebas najis. 
+ √Pelaku usaha dapat mencatat bukti produksi agar kehalalan produk 
+selalu dapat tertelusur. Contoh bukti/catatan produksi dapat dilihat pada 
+Lampiran 2. 
+ √Contoh kesalahan:  pelaku usaha memelihara anjing di dalam rumah, 
+terdapat kotoran hewan di ruang produksi, menggunakan daging yang 
+tidak bersertifikat halal.
+Prosedur Penyimpanan  
+ √Periksa apakah kondisi penyimpanan bahan dan produk bersih dan terbebas 
+dari najis, contohnya bangkai tikus. 5
+6
+7
+8
+9
+10
+11
+14Panduan Pendamping PPHProsedur Pemusnahan
+ √Pastikan pelaku usaha telah memahami bahwa jika terdapat produk yang 
+tidak memenuhi kriteria (menggunakan bahan haram atau peralatan 
+terkontaminasi najis) maka produk tersebut harus dimusnahkan.
+Prosedur Audit Internal dan Kaji Ulang 
+ √Pastikan pelaku usaha telah memahami bahwa harus dilakukan audit 
+internal dan kaji ulang minimal setahun sekali. 
+ √Contoh daftar periksa untuk audit internal terdapat di Lampiran 3. 
+ √Hasil audit internal kemudian dibahas dengan karyawan melalui rapat kaji 
+ulang. Jika ada hasil audit internal yang tidak sesuai, maka harus dilakukan 
+perbaikan.  
+e Penutupan Kunjungan
+Setelah pemeriksaan dan pengisian data pelaku usaha di SIHALAL selesai, 
+pendamping PPH dapat melakukan penutupan kunjungan. Berikut ini contoh kalimat 
+saat melakukan penutupan kunjungan: 
+Pengisian Data Verifikasi di SIHALAL
+Pendamping PPH melakukan verval di SIHALAL dengan tahapan yang dapat 
+dilihat pada Bab E.  
+Pengiriman Laporan ke Komite Fatwa Produk Halal
+Pendamping PPH melakukan pengiriman hasil verval di SIHALAL untuk selanjutnya 
+masuk ke Komite Fatwa Produk Halal melalui BPJPH secara elektronik dan menunggu 
+persetujuan dari Komite Fatwa Produk Halal apakah produk ditetapkan halal atau 
+dikembalikan karena masih ada bahan atau PPH yang belum memenuhi persyaratan.12
+13
+“Assalamu’alaikum wr. wb. Saya ucapkan terima kasih kepada Bapak 
+Raffi atas kerjasama yang baik selama kunjungan ini. Alhamdulillah 
+proses pemeriksaan dan pengisian data di SIHALAL berjalan dengan 
+lancar. Selanjutnya saya akan melakukan pengisian data verifikasi 
+di SIHALAL, kemudian akan diverifikasi oleh BPJPH dan jika sesuai 
+akan dilanjutkan ke sidang fatwa oleh Komite Fatwa Produk 
+Halal. Mohon maaf jika ada hal-hal yang kurang berkenan selama 
+kunjungan ini. Terima kasih, Wassaalamu’alaikum Wr.Wb.”.
+3
+4
+Panduan Pendamping PPH 15Pemantauan  
+Pelaku usaha bersama pendamping PPH memantau pengajuan di SIHALAL (lihat 
+menu tracking). Jika dikembalikan, maka perlu melihat catatan pengembaliannya 
+pada SIHALAL. Selanjutnya pendamping memperbaiki sesuai catatan, dan 
+mengirimkan kembali pengajuan. Pemantauan dan perbaikan terus dilakukan 
+sampai sertifikat halal keluar.
+Penutupan Proses Sertifikasi Halal
+Jika sertifikat halal sudah keluar, pendamping menginformasikan kepada pelaku 
+usaha. Berikut ini contoh kalimat saat menutup proses sertifikasi halal:5
+6
+“Assalamu’alaikum wr. wb. Saya ucapkan terima kasih kepada 
+Bapak Raffi atas kerjasama yang baik selama proses sertifikasi 
+halal. Alhamdulillah sertifikat halalnya sudah keluar. Saya harap 
+Bapak dapat menjaga konsistensi kehalalan produk dan PPH sesuai 
+dengan yang saya jelaskan pada training saat pendampingan. 
+Mohon maaf jika ada hal-hal yang kurang berkenan selama proses 
+sertifikasi halal ini. 
+Terima kasih, Wassaalamu’alaikum Wr.Wb.”.
+
+16Panduan Pendamping PPHPANDUAN PENGISIAN DATA 
+PELAKU USAHA DI SIHALAL 
+Pembuatan Akun Pelaku Usaha di SIHALAL
+Pelaku usaha dibantu pendamping PPH membuat akun di SIHALAL, dengan cara:
+a.Masuk ke laman https://ptsp.halal.go.id/, selanjutnya login ke SIHALAL, klik
+“create an account”.
+b.Klik menu “P elaku usaha Business Actor/Importer”.
+c.Mengisi f orm register:
+T ype of user: Pelaku Usaha/Business Actor/Import
+Nama:  diisi dengan nama pelaku usaha, contoh: Mohammad Raffi Firza 
+Perdana. 
+Email as Username: diisi deng an alamat email yang aktif, contoh: 
+raffifirza213@gmail.com
+P assword: diisi dengan password paling sedikit 8 digit yang mudah diingat, 
+contoh: raffifirza123.
+Con firm Password: diisi password untuk mengonfirmasi, contoh: raffifirza123
+Selanjutn ya klik “Send”.
+D
+1
+
+Panduan Pendamping PPH 17d.Di SIHALAL akan muncul tulisan bahwa akun sudah teregistrasi. Selanjutnya
+klik “Click here to return to Login Page”.
+e.Selanjutn ya Pelaku usaha dapat login ke SIHALAL untuk melakukan pendaftaran
+menggunakan email/username dan password yang sudah teregistrasi di atas.
+Pengisian Data Pelaku Usaha di SIHALAL
+a.Masuk ke laman https://ptsp.halal.go.id/ Pelaku usaha mengisi email/
+username dan password, selanjutnya klik “LOGIN”.
+b.P ada menu “Asal Pelaku Usaha” diisi dengan klik “Dalam N egeri/Domestik”.
+2
+
+18Panduan Pendamping PPHc.Selanjutn ya memasukkan nomor NIB pelaku usaha, dan diakhiri dengan klik
+“Lanjut”. Apabila pelaku usaha belum memiliki NIB maka perlu dilakukan
+pendaftaran NIB di OSS yang merujuk pada lampiran 4 di halaman 74
+d.Da ta pelaku usaha akan terlihat di SIHALAL, pelaku usaha melakukan
+pengecekan apakah data yang diisikan sudah benar atau belum. Jika sudahbenar selanjutnya klik “Selesai ”.
+
+Panduan Pendamping PPH 19e.P ada menu SIHALAL klik “Sertifikasi”.
+f.Selanjutn ya klik “Pelaku Usaha”.
+g.Un tuk mengisi data pelaku usaha, klik “Edit”.
+
+20Panduan Pendamping PPHh.Mengisi penanggung jawab usaha atau pemilik usaha, nomor kontak, dan
+alamat email. Nomor kontak dan alamat email harus aktif karena semua
+pemberitahuan dari BPJPH akan dikirim lewat nomor kontak dan email pelakuusaha. Selanjutnya klik “Simpan”. Jika penyimpanan berha sil, klik “OK”.
+i.Mengisi aspek legal. Jika pelaku usaha memiliki PIRT atau No. MD klik “tambah”
+lalu diisikan nomor PIRT atau MD, jika tidak memiliki, maka dikosongkan.
+
+Panduan Pendamping PPH 21j.Jik a pelaku usaha memiliki usaha pengolahan makanan atau minuman, maka
+yang diisi adalah “Pabrik”. Jika usahanya berupa kedai, maka  yang diisi adalah
+outlet. Selanjutnya pelaku usaha mengisi data pabrik: nama pabrik, alamatpabrik, kab/kota, provinsi, negara, kode pos, dan status.  Baik pabrik ataupunoutlet, isi statusnya dengan “Milik Sendiri”, selanjutnya klik “ Tambah”.
+k.P engisian penyelia halal. Mengisi Nama, Agama, No Sertifikat Diklat (jika ada),
+menulis No SK (dapat dibuat seperti contoh: 01/VII/2023, artinya SK yangdibuat nomor 1/ bulan VII (Juli)/ Tahun 2023), selanjutnya klik “Tambah”.Dibawah layar akan muncul identitas Penyelia Halal, selanjutnya upload KTPPenyelia halal. Pelaku usaha mengunduh SK Penetapan Penyelia halal denganmengklik “SK Penetepan Penyelia Halal”.
+
+22Panduan Pendamping PPH1
+l.Berik ut contoh SK Penetapan Penyelia Halal hasil und uh.
+
+Panduan Pendamping PPH 23m.Selanjutnya klik “Kembali” untuk masuk ke menu awal.
+Pengajuan self declare
+a.P elaku usaha dibantu pendamping mengajukan self declare dengan mengklik
+menu “Sertifikasi”, selanjutnya klik “Pengajuan ( Self Declare)”.
+3
+
+24Panduan Pendamping PPHb.Selanjutn ya klik “Layanan”.
+c.P engisian Kuesioner sesuai pada gambar di bawah. Selanjutnya kli k “Next”.
+d.Mengisi kuesioner self declare secara lengkap
+sesuai gambar di bawah. Selanjutnya klik
+“Finish”. Jika pelaku usaha mengisi kuesioner
+dengan jawaban “tidak”, maka pengajuanself declare  akan ditolak, artinya pelaku
+usaha tidak dapat mengajukan permohonansertifikasi halal melalui self declare  tapi harus
+melalui skema reguler �
+24Panduan Pendamping PPH
+Panduan Pendamping PPH 25   a
+e.P engisian KBLI/Usaha/Kegiatan sesuai dengan NIB yang dimasukkan, Contoh
+KBLI/usaha kegiatan Industri kerupuk, keripik, peyek, dan sejenisnya,
+selanjutnya klik “Daftar”.
+
+26Panduan Pendamping PPHf.Selanjutnya klik “Edit”.
+g.P ada layar akan tampil seperti gambar yang dibawah ini.
+P engisian Menu Pelaku Usaha
+•Pelaku usaha tidak perlu melakukan pengisian karena data pelaku usaha
+sudah tersambung dengan data isian pelaku usaha sebelumnya. Jika adadata yang perlu di tambahkan maka klik “tambah”.
+•Jika terdapat data yang salah pelaku usaha harus melakukan mengeditandengan mengklik menu “Sertifikasi” kemudian klik “Pelaku Usaha” KemudianKlik “Edit”. Jika semua data sudah sesuai, klik “Simpa n”.
+-
+
+Panduan Pendamping PPH 27P engisian Menu Pengajuan
+•Pelaku usaha harus mengisi “Kode Daftar Fasilitas” sesuai dengan lembaga
+yang memfasilitasi pengajuan sertifikasi halal. Contoh jika difasilitasi BPJPHdengan program sehati, maka diisi dengan “SEHATI” kemudia klik “Cari”,maka akan muncul tampilan “BPJPH SEHATI”. Kemudian pilih asal pelakuusaha dengan memilih “lainnya”.
+•
+
+28Panduan Pendamping PPH•Pelaku usaha mengisi data untuk pembuatan surat permohonan dan surat
+pernyataan. Data yang harus diisi untuk pengajuan surat permohonan danpernyataan adalah:
+ ͳNo surat permohonan diisi seperti contoh: 02/II/2023, surat yang dibuattanggal 2 bulan 2 tahun 2023. Tanggal permohonan sesuai dengan tanggal ketika pengajuan.
+ ͳJenis Layanan diisi dengan memilih makanan/minuman/obat sesuai dengan jenis produk yang diproduksi.
+ ͳJenis produk diisi dengan memilih jenis produk yang sesuai dengan KBLI.
+ ͳNama usaha diisi dengan nama perusahaan contoh raffi snack.
+ ͳArea pemasaran diisi dengan memilih lokasi area pemasaran, contoh kabupaten/ kota/ provinsi/ nasional/ internasional.
+ ͳLembaga pendamping diisi sesuai dengan tempat pendamping bernaung, contoh Riyan Agustian merupakan pendamping dibawah naungan LP3H pusat halal salman.
+ ͳPendamping diisi dengan memilih nama pendamping yang mendampingi.
+
+Panduan Pendamping PPH 29•Setelah semua data diisi, selanjutnya mengklik “Surat Permohonan” dan
+“Surat Pernyataan” kemudian Klik “Ok” dan Klik “Simpan” .
+a
+
+30Panduan Pendamping PPH
+
+Panduan Pendamping PPH 31P engisian Menu Pabrik & Outlet
+•Data pabrik & outlet sudah terisi sesuai dengan isian yang dilakukan
+pelaku usaha sebelumnya. Jika ada data yang ingin dirubah, bisa klik menu“Sertifikasi” pilih “Pelaku Usaha”, Pilih “Edit”.
+a
+P engisian Menu Bahan
+•Bahan yang didaftarkan di SIHALAL harus lengkap sesuai dengan hasilpemeriksaan. Contohnya produk diproses dengan digoreng maka harus adabahan baku minyak.
+•Bahan yang digunakan adalah bahan yang sudah memiliki sertifikat halal ataubahan yang termasuk positive list/bahan yang tidak dikenakan kewajiban
+bersertifikat halal.
+
+32Panduan Pendamping PPH•Ada 3 kategori bahan, yaitu bahan, cleaning agent dan kemasan.
+•Pertama klik “jenis bahan” (lihat catatan bahan apa saja yang digunakan
+berdasarkan wawancara dan pemeriksaan proses produksi).
+•Cari bahan yang kategori positive list, klik kolom “cari bahan tidak bersertifikat”
+misalnya tulis singkong, kemudian cari bahan ‘singkong mentah’ dan kliktulisan “tambah” pada pojok kanan bawah.
+•Bahan-bahan ini sudah ada dalam database di SIHALAL sehingga ketikadiketik bahan tersebut akan muncul di SIHALAL
+
+Panduan Pendamping PPH 33•Untuk bahan yang bersertifikat halal, misalnya minyak goreng,
+maka cari bahan pada kolom “cari bahan bersertifikat”. Disistem terdapat berbagai jenis merk minyak goreng.  Jaditinggal memilih dengan klik “cari”  merk minyak gorengyang dipakai. Setelah itu klik tulisan “tambah”pada pojok kanan bawah.
+
+34Panduan Pendamping PPH•Bahan yang ditambahkan bisa diedit atau dihapus jika salah.
+•Jika bahan tidak ada dalam database SIHALAL, maka klik “ajukan” (tombol
+warna merah) untuk memasukan bahan. Contohnya bahan ‘rosela’ yang
+ternyata tidak ada dalam database bahan, maka bahan ‘rosela’ bisa diajukan
+sebagai bahan baku dengan klik “ajukan”.
+•Setelah bahan baku selesai, maka pilih cleaning agent pada kolom “jenis
+bahan”. Selanjutnya klik “cari bahan bersertifikat”.
+•Setelah itu pilih bahan kemasan pada kolom “jenis bahan”, selanjutnya klik“cari bahan tidak bersertifikat halal”. Tulis misalnya gelas plastik, lalu kliktombol “tambah” pada pojok kanan bawah.
+•Jika bahan cleaning agent dan kemasan tidak ada di database SIHALAL, maka
+pendamping dapat menambahkan bahan dengan mengklik “Ajukan”.
+•Pastikan semua bahan sudah dimasukkan ke dalam daftar bahan dan sesuaidengan data bahan yang tercantum pada proses produk halal.
+
+Panduan Pendamping PPH 35P engisian Menu Produk
+•Pilih jenis produk, nama produk, merk produk.
+•Penulisan nama produk disesuaikan dengan kondisi produk. Jika telah
+memiliki kemasan dengan merek dagang, maka penulisan nama produkdilengkapi merek dagang. Contoh: Nastar JILL rasa keju. Jika belum memilikilabel/merek dalam kemasan, maka cukup dicantumkan nama produk danvariannya saja.
+
+36Panduan Pendamping PPH•Ajukan semua nama produk secara rinci dengan varian rasanya (jika memiliki
+varian rasa). Contoh: keripik singkong original, keripik singkong rasa manis,keripik singkong rasa pedas manis.
+•Pada saat upload produk, format foto harus dalam bentuk image (PNG, JPG,JPEG), tidak boleh dalam bentuk word atau pdf. Foto produk yang digunakanadalah foto asli bukan hasil edit ataupun hasil unduh dari internet. Tampilanfoto produk harus menampilkan gambar produk. Jika menggunakan kemasantertutup (tidak transparan), maka kemasan harus dibuka atau ditampilkanproduk di dekat kemasan.
+•Jangan lupa meng klik kata “tambah” pada pojok kanan bawah agar informasiproduk terlihat dalam sistem.
+
+Panduan Pendamping PPH 37P engisian Menu Proses Produk Halal
+•Tulis urutan proses produksi produk halal secara rinci dan lengkap. Contoh
+deskripsi proses: persiapan bahan baku, pencucian bahan, pemotonganbahan baku, bahan yang sudah dipotong lalu direndam, bahan digorengsampai matang, keripik yang sudah digoreng dilakukan pengemasan. Janganlupa klik “tambah” agar deskripsi proses bisa terlihat pada kolom “prosesproduksi”.
+P engisian Menu Pernyataan 
+•Pada pernyataan ikrar, jangan lupa klik setuju. Pelaku usaha harus melakukanpengecekan apakah nama dari pelaku usaha dan data yang diisikan sudahbenar atau tidak. Jika sudah benar maka unduh surat Pernyataan PelakuUsaha, kemudian klik “Kembali”.
+
+38Panduan Pendamping PPHa
+h.P engecekan Manual SJPH. Klik menu “SJPH”, unduh sebagai pegangan bagi
+pelaku usaha, selanjutnya diperiksa dan dipahami oleh pelaku usaha dan
+pendamping.
+
+Panduan Pendamping PPH 39i.Sesudah mengisi data pengajuan self declare klik “Logout” kemudian masuk ke
+akun pendamping PPH.
+
+40Panduan Pendamping PPHPANDUAN PENGISIAN  DATA 
+DAN VERVAL DI SIHALAL 
+Pengisian data verval di aplikasi SIHALAL berdasarkan hasil pelaksanaan 
+kunjungan/verval. Tanggal pendampingan diisi dengan tanggal kunjungan verval ke 
+Pelaku usaha. Laporan verval harus dibuat dengan benar agar tidak dikembalikan atau ditolak setelah diperiksa oleh BPJPH maupun Komite Fatwa. Laporan dapat dikembalikan jika isi laporan tidak lengkap atau membutuhkan klarifikasi. Laporan dapat ditolak jika tidak sesuai dengan standar fatwa halal di Komite Fatwa atau kategori produk yang tidak sesuai dengan kriteria self declare.
+Proses Verval Bahan, Produk, dan Proses Produk  Halal 
+a. Masuk ke dalam akun pendamping halal seperti gambar dibawah.
+E
+1
+
+Panduan Pendamping PPH 41b.K emudian Klik “Menu”,  pilih “Cek Data Pengajuan PU”, kemudian klik tanda
+“mata” di pojok kanan seperti gambar dibawah ini.
+
+42Panduan Pendamping PPHc.Klik pada bagian “bahan”. Pendamping harus mengecek bahan-bahan yang
+digunakan oleh pelaku usaha dengan melakukan ceklist. Jika terdapat bahan
+yang tidak digunakan maka lakukan penghapusan. Jika terdapat bahan yangkurang maka dapat ditambahkan. Jika semua sesuai klik “Simpan HasilVerifikasi”.
+d.Selanjutn ya verifikasi produk dengan mengklik “Produk”. Pendamping PPH
+memverifikasi bahan apa saja yang digunakan di setiap produk denganmenceklist semua bahan yang digunakan untuk produk tersebut. Jika semuasesuai, maka klik “Simpan Hasil Verifikasi”.
+
+Panduan Pendamping PPH 43a
+
+44Panduan Pendamping PPHe.Selanjutn ya verifikasi “Proses Produk Halal”. Jika proses produk halal sudah
+sesuai maka klik “Simpan Hasil Verifikasi”.
+f.Klik “Pernyataan” apabila semua sudah sesuai, selanjutnya klik “Setuju” dan
+unduh hasil pernyataan kemudian klik “Kembali”.
+
+Panduan Pendamping PPH 45Pengiriman Data
+Selanjutnya masuk kembali ke akun pelaku usaha untuk melakukan pengiriman 
+data. Jika semua pengajuan sudah terisi klik “kirim” dan secara otomatis pengajuan 
+akan langsung tersubmit.
+Selanjutnya tampilan secara otomatis akan tampak seperti gambar di bawah, 
+kemudian masuk ke menu “sertifikasi” kemudian klik “Status Permohonan”. 
+Pastikan sudah tertulis “Submited PU” di SIHALAL. Pelaku usaha bisa langsung 
+“logout” dari akun pelaku usaha.2
+
+46Panduan Pendamping PPHProses Verval Penerapan SJPH
+a. Pendamping PPH “login” ke akun SIHALAL dengan mengisi password dan
+username.
+b.P endamping PPH melakukan pengecekan persyaratan umum
+P endamping PPH melakukan pemeriksaan kesesuaian data persyaratan umum
+pelaku usaha di SIHALAL (lihat Gambar). Klik kolom “Sesu ai”.
+P endamping PPH melakukan pemeriksaan kesesuaian data persyaratan khusus 
+pelaku usaha di SIHALAL (lihat Gambar). Klik kolom “Sesuai”.3
+
+Panduan Pendamping PPH 47a
+Selanjutnya pendamping PPH mengklik “Simpan” .
+
+48Panduan Pendamping PPHc.P endamping PPH melakukan verval “proses produksi”.
+Dalam menu proses produksi ada 2 hal yang harus diisi, yaitu proses dan
+kriteria SJPH seperti gambar di bawah, setelah itu klik “simpa n”.
+
+Panduan Pendamping PPH 49a
+d.Se telah proses pengisian selesai, pendamping bisa mengunduh dokumen
+laporan, dokumen hasil pendampingan dan formulir rekomendasi seperti  
+gambar di bawah.
+
+50Panduan Pendamping PPHa
+
+Panduan Pendamping PPH 51a
+
+52Panduan Pendamping PPHe.Selanjutn ya Klik “kirim” dan proses verval oleh pendam ping PPH selesai.
+
+Panduan Pendamping PPH 53f.Apabila pelaku usaha ingin melihat STTD (Surat Tanda Terima Dokumen) bisa
+masuk kembali ke akun pelaku usaha dengan mengklik “Sertifikasi”, klik “Status
+Permohonan” lalu klik pada simbol mata, kemudian pilih kolom “STTD” seperti gambar di bawah.
+
+54Panduan Pendamping PPHg. Untuk pelaku usaha yang ingin melihat tracking sudah sejauh mana proses
+sertifikasi halal, bisa di lihat dengan cara meng -scroll  ke bawah seperti gambar
+di bawah ini.
+Proses Penentuan Kehalalan oleh Komite Fatwa 
+Setelah Pendamping PPH mengirim hasil verval di SIHALAL, maka akan dilakukan 
+pemeriksaan dan penentuan halal oleh Komite Fatwa. Jika produk dinyatakan 
+halal, maka pelaku usaha dapat mengunduh sertifikat halal di SIHALAL
+
+Panduan Pendamping PPH 55Proses Penentuan Kehalalan oleh Komite Fatwa
+Se telah Pendamping PPH mengirim hasil verval di SIHALAL, maka akan dilakukan 
+pemeriksaan dan penentuan halal oleh Komite Fatwa. Jika produk dinyatakan 
+halal, maka pelaku usaha dapat mengunduh sertifikat halal di SIHALAL
+
+56Panduan Pendamping PPHPENUTUP
+Pendamping halal mempunyai peran yang sangat penting dalam melakukan 
+pendampingan pelaku usaha untuk memperoleh sertifikat halal melalui skema 
+self declare . Semua laporan pendamping akan dijadikan dasar oleh Komite Fatwa 
+Produk Halal dalam memutuskan kehalalan produk, karena itu pendamping harus 
+memiliki pengetahun mengenai self declare  dan bekerja dengan baik, jujur, teliti, dan 
+amanah. Buku ini diharapkan dapat dijadikan panduan dalam melaksanakan proses 
+pendampingan PPH dengan baik dan benar.
+F
+Panduan Pendamping PPH 57DAFTAR PUSTA KA
+Keputusan Kepala BPJPH Nomor 150 Tahun 2022 tentang Petunjuk Teknis Pendamping 
+Proses Produk Halal dalam Penentuan Kewajiban Bersertifikat Halal Bagi Pelaku 
+Usaha Mikro dan Kecil yang Didasarkan Atas Pernyataan Pelaku Usaha 
+Keputusan Kepala BPJPH Nomor 22 Tahun 2023 tentang Perubahan Atas Keputusan 
+Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 150 Tahun 2022 
+Tentang Petunjuk Teknis Pendamping Proses Produk Halal Dalam Penentuan 
+Kewajiban Bersertifikat Halal Bagi Pelaku Usaha Mikro Dan Kecil Yang Didasarkan 
+Atas Pernyataan Pelaku Usaha
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 40 Tahun 2022 
+tentang Penetapan Label Halal.
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 41 Tahun 2022 
+tentang Penetapan Nomor Registrasi Pendamping Proses Produk Halal.
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 57 Tahun 2022 
+tentang Manual Sistem Jaminan Produk Halal untuk Sertifikat Halal dengan 
+Pernyataan Pelaku Usaha Mikro dan Kecil ( self declare ).
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 57 Tahun 2021 
+tentang Kriteria Sistem Jaminan Produk Halal. 
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 58 Tahun 2022 
+tentang Penetapan Instrumen Verifikasi dan Validasi oleh Pendamping Proses 
+Produk Halal. 
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 65 Tahun 2022 
+tentang Penetapan Nomor Registrasi Pendampingan Proses Produk Halal. 
+Keputusan Kepala Badan Penyelenggara Jaminan Produk Halal Nomor 145 Tahun 
+2022 tentang Penggunaan Logo Halal dan Label Halal pada Produk yang telah 
+memperoleh Sertifikat Halal.  
+Keputusan Menteri Agama Republik Indonesia Nomor 748 Tahun 2021 tentang Jenis 
+Produk yang Wajib Bersertifikat Halal. 
+Keputusan Menteri Agama Republik Indonesia Nomor 1360 Tahun 2021 tentang 
+Bahan yang dikecualikan dari kewajiban Bersertifikat Halal.
+Nasori, N., Indrawati, S., Endarko, E., Mashuri, M., Prayitno, G., & Rubiyanto, A. (2022). 
+Pemetaan Usaha Mikro Kecil dan Menengah Jawa Timur Menuju Sertifikasi Halal 
+Tahun 2024. Sewagati, 6(1), 76-84.
+Peraturan Pemerintah Nomor 24 Tahun 2018 Pasal 25 Ayat (1) tentang Pelayanan 
+
+58Panduan Pendamping PPHPerizinan Berusaha Terintegrasi Secara Elektronik atau Online Single Submission 
+(OSS).
+Peraturan Pemerintah Nomor 20 Tahun 2021 tentang Sertifikasi Halal bagi Pelaku 
+Usaha Mikro dan Kecil. 
+Peraturan Pemerintah Nomor 39 Tahun 2021 tentang Penyelenggaraan Bidang 
+Jaminan Produk Halal. 
+Peraturan Badan Penyelenggara Jaminan Produk Halal Nomor 1 Tahun 2021 tentang 
+Tata Cara Pembayaran Tarif Layanan Badan Layanan Umum Badan Penyelenggara 
+Jaminan Produk Halal. 
+Rafianti, F., Krisna, R., & Radityo, E. (2022). Dinamika Pendampingan Manajemen 
+Halal Bagi Usaha Mikro dan Kecil Melalui Program self declare . Jurnal Sains Sosio 
+Humaniora, 6(1), 636-643.
+Undang-Undang Nomor 33 Tahun 2014 tentang Jaminan Produk Halal.
+Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja. 
+Undang-Undang Nomor 6 Tahun 2023 tentang Penetapan Peraturan Pemerintah 
+Pengganti Undang-Undang Nomor 2 Tahun 2 Tahun 2022 tentang Cipta Kerja 
+Menjadi Undang-Undang. 
+Panduan Pendamping PPH 59 LAMPIRAN
+60Panduan Pendamping PPHLampiran 1 � Contoh Template Manual SJPH yang Diunduh dari Sihalal
+SISTEM JAMINAN PRODUK HALAL (SJPH) UNTUK SERTIFIKASI HALAL
+DENGAN PERNYATAAN PELAKU USAHA MIKRO DAN KECIL 
+(SELF DECLARE)
+MOHAMMAD RAFFI FIRZA PER DANA
+BAB I
+PENDAHULUAN
+A� In formasi Umum PerusahaanManual halal ini adalah milik (MOHAMMAD RAFFI FIRZA PERDANA) 
+yang memuat kebijakan dan ketentuan yang dilaksanakan dalam rangka pemenuhan persyaratan sertifikasi halal yang ditetapkan oleh Badan Penyelenggara Jaminan Produk Halal. Manual halal ini hanya berlaku apabila telah diisi secara lengkap beserta lampirannya dan ditanda tangani oleh pemilik usaha. Manual halal ini tidak boleh diduplikasi/ diedit tanpa seizin dari pemiliki usaha (MOHAMMAD RAFFI FIRZA PERDANA).Pengesahan
+Disiapkan/Disetujui
+Tanda Tangan
+Sasmita NamaPemilik Usaha
+Mohammad Raffi  
+Firza PerdanaPenanggung Jawab/
+Penyelia HalalRevisi 1.0
+Nama Perusahaan  : Mohammad Ra ffi Firza Perdana
+Nomor Induk Berusaha  : 2607230047706
+Skala Usaha  : Mikr o
+Nama Pimpinan  : Mohammad Ra ffi Firza Perdana
+Nama Penanggung Jawab/ 
+Penyelia Halal:  Mohammad Raffi Firza Perdana
+Alamat Perusahaan  : Kp.Cibeber Girang, Rt/Rw -, Tenjoayu, Cicurug 
+Kab. Sukabumi Jawa Barat
+Panduan Pendamping PPH 61B� Tujuan
+Manual Sistem Jaminan Produk Halal (SJPH) disusun untuk menjadi pedoman 
+dalam penerapan SJPH bagi pelaku usaha mikro dan kecil, dalam rangka menjaga kesinambungan produksi halal sesuai dengan persyaratan sertifikasi halal yang ditetapkan oleh Badan Penyelenggara Jaminan Produk Halal (BPJPH) dan keputusan penetapan kehalalan produk oleh Majelis Ulama Indonesia (MUI).
+C� Ruang Linkup
+Manual SJPH adalah dokumen yang menjadi panduan penerapan SJPH di unit usahaTelpon/Fax Perusahaan  : 
+Alamat Fasilitas Produksi  : Kp. Cibeber Girang, Desa/Kelurahan Tenjoayu, 
+Kec. Cicurug, Kab. Sukabumi, Provinsi Jawa   
+Barat Sukabumi Jawa Barat Sukabumi
+Telpon/Fax Fasilitas 
+Produksi  : 
+Contact Person/Email  : Mohammad Ra ffi Firza Perdana/  
+raffifirza123@gmail.com
+Nama/Merk Produk  : Raffi Snack
+No Izin Edar (Jika Ada)  : 
+Jenis Produk  : Mak anan ringan siap santap
+Daerah Pemasaran  : Kabupaten/Kota
+62Panduan Pendamping PPHBAB II
+KRITERIA SISTEM JAMINAN PRODUK HALAL
+A� KOMITMEN DAN TANGGUNG JAWAB
+1� Kebijakan Halal
+1.1. Sosialisasi K ebijakan Halal kepada karyawan, suplier, atau orang yang terlibat 
+dalam proses produksi untuk memastikan semua personel menjaga integritas 
+halal di lokasi usaha. Sosialisasi dapat dilakukan dengan menggunakan poster, banner, rapat/pertemuan, atau kajian tentang halal dalam bentuk pengajian atau ceramah.
+1.2. P elaku usaha menyimpan dan memelihara bukti hasil Sosialisasi Kebijakan Halal 
+dalam bentuk bukti catatan/rekaman, foto kegiatan, notulensi, atau bentuk lainnya.
+1.3. Menempel pos ter kebijakan halal dan edukasi halal di kantor, area produksi atau 
+gudang seperti tercantum dalam Lampiran 1. Poster Sosialisasi Kebijakan dan Edukasi Halal.KEBIJAKAN HALAL
+[Raffi Snack]
+Kami berkomitmen dan bertanggung jawab untuk menghasilkan produk halal secara konsisten dan berkesinambungan dengan melakukan tindakan:
+1.Mema tuhi peraturan perundangan terkait jaminan produk halal.
+2.Meng gunakan bahan halal dan melaksanakan proses produk halal
+(PPH) sesuai dengan ketentuan yang berlaku.
+3.Men yiapkan sumber daya manusia yang mendukung pelaksanaan
+PPH di perusahaan
+4.Mensosialisasik an dan mengkomunikasikan kebijakan halal pada
+seluruh pihak terkait untuk memastikan semua personel menjagaintegritas halal di unit usaha
+Sukabumi,24-07-2023
+Mohammad Raffi Firza Perdana 
+Pimpinan
+Panduan Pendamping PPH 632� Tanggung Jawab Pemilik Usaha
+Mohammad Raffi Firza Perdana  berkomitmen dan bertanggung jawab untuk :
+a.Men yediakan tempat dan lokasi usaha, dan karyawan yang sesuai dengan
+syarat-syarat Proses Produk Halal (PPH).
+b.Memas tikan seluruh personel di tempat usaha bertanggungjawab dan
+melaksanakan serta menjaga konsistensi kehalalan produk.
+c.Meng angkat dan menetapkan penanggungjawab/penyelia halal (dalam bentuk
+Surat Keputusan) sebagaimana tercantum dalam Lampiran 2.
+3� Pembinaan Sumber Daya Manusia
+Mohammad Raffi Firza Perdana  berkomitmen dan bertanggung jawab untuk :
+a.Melak sanakan pembinaan melalui pelatihan dan/atau kompetensi di bidang
+halal kepada karyawan dan orang yang terlibat dalam proses produksi.
+b.Me lakukan pelatihan internal dengan materi seperti tercantum dalam Lampiran
+3. Materi Pelatihan Internal setidaknya setahun sekali.
+B� BAHAN
+1.Ra ffi Snack berkomitmen untuk senantiasa secara konsisten menggunakan
+bahan yang sesuai dengan persyaratan SJPH sebagai berikut:
+•Bahan y ang digunakan sudah dipastikan kehalalannya;
+•Dibuk tikan dengan sertifikat halal; atau
+•Bahan y ang dikecualikan dari kewajiban bersertifikat halal (positive list)
+meliputi: bahan nabati; bahan hewani non sembelihan (madu murni, royal
+jelly murni, telur segar, ikan segar, dll); bahan berasal dari proses fermentasimikroba; bahan berasal dari air alam (air langsung dari sumber mata air/airtanah, air untuk injeksi, es batu); bahan kimia; dan bahan tambang.
+•Tidak meng gunakan bahan berbahaya atau menghindari produk yang
+mengandung bahan berbahaya seperti formalin, ganja, bahan yang berasaldari sumber hayati yang dilarang dalam Pangan olahan, Senyawa YangDilarang Ditambahkan Dalam Pangan Olahan, atau bahan berbahaya lainnyasesuai peraturan Badan Pengawas Obat dan Makanan.
+•Khusus bahan y ang berasal dari daging atau hasil sembelihan wajib berasal
+dari produsen atau rumah potong hewan/rumah potong unggas yang sudahbersertifikat halal;
+2.Dalam hal t erdapat perubahan bahan setelah mendapatkan sertifikat halal, (Isi
+Nama Usaha) wajib melaporkan kepada BPJPH.
+3.Membeli dan meng gunakan bahan dengan nama, merek, dan dari produsen
+yang memiliki sertifikat halal
+64Panduan Pendamping PPH4.Men yusun Daftar Bahan Halal sebagaimana tercantum dalam Lampiran 4.
+5.Men yimpan bukti/catatan pembelian bahan (bon/nota/kuitansi/dll.) dan contoh
+label kemasan (jika ada) selama masa berlaku sertifikat halal, kecuali untuk
+bahan yang jarang dibeli maka disimpan bukti pembelian terakhir (format padaLampiran 5. Bukti/Catatan Pembelian Bahan)
+6.Memerik sa label bahan pada setiap pembelian atau penerimaan bahan untuk
+memastikan kesesuaian nama bahan, nama produsen dengan yang tercantumdalam Daftar Bahan Halal (Format Pemeriksaan Bahan pada Lampiran 6).
+7.Membua t resep produk yang akan menjadi acuan/rujukan dalam menghasilkan
+produk.
+8.Melak ukan pemantauan dan pemeliharaan dokumen pendukung bahan
+mencakup masa berlaku dan validitas.
+C� PR OSES PRODUK HALAL
+Raffi Snack  berkomitmen untuk senantiasa secara konsisten menjalankan PPH 
+dengan ketentuan:
+1.Menjag a lokasi usaha, tempat produksi, dan alat yang digunakan untuk produksi
+bersih, higienis, dan tidak terkontaminasi dengan bahan najis atau bahan yangdiharamkan.
+2.Menjag a semua fasilitas produksi dan peralatan dalam keadaan bersih (bebas
+dari najis) sebelum dan sesudah digunakan yang dibuktikan dengan hilangnyawarna, bau dan rasa dari pengotor dan bebas dari babi.
+3.Menjag a ruang produksi tidak terkontaminasi dengan bahan najis atau bahan
+yang diharamkan.
+4.Melak ukan pensucian atau penyamakan pada fasilitas produksi yang digunakan
+secara bersamaan antara produk yang disertifikasi halal dengan produk yangtidak diajukan sertifikasi halalnya sesuai syariat Islam yaitu:
+•Apabila t erkena najis berat (mughallazah), maka fasilitas produksi tidak boleh
+digunakan secara bersamaan (wajib terpisah).
+•Apabila t erkena najis sedang (mutawassithah), yaitu najisnya kotoran hewan
+dan manusia, minuman keras, bangkai hewan selain ikan dan belalang, makacaranya, dicuci dengan menggunakan air yang mengalir hingga najisnyabenar-benar hilang, atau dengan membasuhnya, atau dengan istijmar(menggunakan batu, kayu, dan sejenisnya), dan dengan cara lain.
+•Apabila t erkena najis ringan (mukhoffafah), yaitu najisnya urin bayi laki-
+laki yang belum berumur dua tahun dan tidak mengonsumsi apapun selainair susu ibu, maka caranya dicuci dengan menggunakan air (dikucur dandirendam).
+Panduan Pendamping PPH 65•Jik a disucikan dengan menggunakan air akan merusak alat dan/atau proses
+produksinya, maka dapat disucikan dengan menggunakan selain air (bahan
+lain).
+5.Men yimpan dan memelihara bukti:
+•P elaksanaan proses produksi;
+•P elaksanaan ketertelusuran kehalalan;
+•P enanganan produk yang tidak memenuhi kriteria halal; dan
+•P eluncuran/penjualan produk.
+6.Mene tapkan tugas penanggungjawab/penyelia halal dalam PPH, yakni:
+•Memas tikan proses produksi yang bersih dan bebas dari bahan haram,
+dengan hanya menggunakan bahan yang tercantum dalam Daftar BahanHalal.
+•Sec ara rutin memeriksa sarana transportasi bahan dan produk yang
+digunakan untuk memastikan dapat menjaga integritas kehalalan produk halalyang diangkutnya
+•Memerik sa dan memastikan ketertelusuran kehalalan melalui
+1.T anggal kedaluwarsa produk, dibuktikan dengan catatan pembelian, atau
+2.Ca tatan penjualan produk, dibuktikan dengan catatan pembelian bahan,
+atau
+3.Ca tatan bahan yang tersedia, dibuktikan dengan catatan penggunaan stok
+bahan terhadap resep dari produk, atau
+4.Label k ode produksi, dibuktikan dengan tanggal produksi dan jam produksi.
+•Melak ukan penanganan terhadap produk yang tidak memenuhi kriteria
+halal, dengan ketentuan: apabila ditemukan produk yang tidak memenuhikriteria halal, maka produk yang dihasilkan tidak akan dijual ke konsumen.Selanjutnya akan dilakukan penarikan atau pemusnahan.
+•Memas tikan bahwa peluncuran/penjualan produk berlogo halal dilakukan
+setelah terbit sertifikat halal
+D� PR ODUK
+Raffi Snack berkomitmen untuk memenuhi persyaratan terkait produk:
+1.Pr oduk yang dihasilkan adalah produk yang mendapatkan sertifikasi halal dari
+BPJPH.
+2.Menghasilk an produk yang aman, sehat, dan halal untuk dikonsumsi.
+3.P elaksanaan proses pengemasan produk dilakukan dengan menggunakan
+bahan/alat yang bersih dan bebas najis.
+66Panduan Pendamping PPH4.P encantuman label halal hanya untuk kemasan produk yang disertifikasi halal.
+5.Menda ftarkan setiap ada produk baru retail (eceran) dengan merek yang sama
+untuk disertifikasi halal sebelum dipasarkan.
+6.Memas tikan produk halal tidak menggunakan:
+•nama dan/ atau simbol-simbol kekufuran dan kebatilan, contohnya roti natal;
+•nama dan/ atau simbol-simbol benda binatang yang diharamkan seperti babi,
+anjing, khamr, kecuali yang telah mentradisi seperti bir pletok, bakmi, bakso
+•bahan c ampuran yang menimbulkan rasa atau aroma benda-benda atau
+binatang yang diharamkan, seperti mie instan rasa babi panggang;
+•ben tuk anjing dan babi atau hewan haram lainnya;
+•k emasan bergambar anjing atau babi sebagai fokus utama;
+•k emasan yang bergambar erotis atau porn
+E� P emantauan dan Evaluasi
+Mohammad Raffi Firza Perdana  berkomitmen untuk memenuhi persyaratan 
+Pemantauan dan Evaluasi, sebagai berikut:
+1.Meng gunakan prosedur audit internal yang dilakukan oleh penanggungjawab/
+penyelia halal untuk memantau penerapan SJPH (Form Daftar Periksa Audit
+Internal pada Lampiran 7)
+2.Memiliki dan memelihar a bukti pelaksanaan audit internal.
+3.Jik a dalam audit internal ditemukan ketidaksesuaian pelaksanaan SJPH, akan
+segera dilakukan tindakan perbaikan. Bukti perbaikan ketidaksesuaian harusdisimpan selama masa sertifikat halal berlaku.
+4.Melapork an hasil audit internal kepada BPJPH.
+Sukabumi,24-07-2023
+Pimpinan
+Mohammad Raffi Firza Perdana
+Panduan Pendamping PPH 67Lampiran 1 � Materi untuk Pembuatan Poster Sosialisasi Kebijakan dan Edukasi Halal
+A. P engertian Tentang Halal dan Haram
+B� Pr aktek Penerapan SJPH
+•Menjaga semua f asilitas produksi dan peralatan dalam keadaan bersih
+sebelum dan sesudah digunakan
+•Menjaga k ebersihan diri sebelum dan selama bekerja sehingga tidak
+mengotori produk yang dihasilkan.
+•Tidak boleh membawa produk tidak halal di area produk si
+•Tidak boleh membawa/memelihara he wan peliharaan di area produksi.
+•Tidak boleh menggunak an peralatan produksi untuk kepentingan lain
+•Men yimpan bahan dan produk di tempat yang bersih dan menjaganya
+supaya terhindar dari najis.
+•Memas tikan kendaraan yang digunakan untuk mengangkut produk halal
+dalam kondisi baik dan tidak digunakan untuk mengangkut produk lain
+yang diragukan kehalalannya.•Mengonsumsi mak anan dan minuman yang halal adalah wajib hukumnya
+bagi orang Islam.
+•Pengertian halal haram : (i) Halal adalah Boleh. (ii) Haram adalah sesuatu
+yang dilarang oleh Allah SWT dengan larangan yang tegas.
+•Con toh bahan haram : (i) Babi, termasuk seluruh bagian tubuhnya dan
+produk turunannya (segar atau olahan), (ii) Khamr (minuman beralkohol),(iii) Hasil samping khamr yang diperoleh hanya dengan pemisahan secarafisik, (iv) Darah, (v) Bangkai, (vi) Bagian dari tubuh manusia, binatangbuas, anjing.
+68Panduan Pendamping PPHLampiran 2 � Surat Keputusan Penetapan Penanggungjawab/Penyelia Halal
+SURAT KEPUTUSAN PENETAPAN PENANGGUNGJAWAB/PENYELIA HALAL
+No. ...........Thn...........
+Untuk menerapkan Sistem Jaminan Produk Halal dan dalam rangka menjaga 
+konsistensi kehalalan produk, dengan ini kami tunjuk Penanggungjawab/Penyelia Halal sebagai berikut:
+Penanggungjawab/Penyelia Halal telah membaca dan memahami Manual SJPH serta 
+akan melaksanakan dengan sungguh-sungguh seluruh kriteria SJPH sebagaimana tertulis dalam manual SJPH ini.Demikian surat penetapan ini dibuat untuk dilaksanakan sebagaimana mestinya.
+Lampiran 3. Materi Pelatihan Internal
+A� P engetahuan Halal Haram
+1.Meng onsumsi makanan dan minuman yang halal adalah wajib hukumnya bagi
+orang Islam
+2.P engertian halal haram : (i) Halal adalah Boleh. (ii) Haram adalah sesuatu yang
+dilarang oleh Allah SWT dengan larangan yang tegas
+3.Con toh bahan haram : (i) Babi, termasuk seluruh bagian tubuhnya dan produk
+turunannya (segar atau olahan), (ii) Khamr (minuman beralkohol), (iii) Hasil
+samping khamr yang diperoleh hanya dengan pemisahan secara fisik, (iv) Darah,(v) Bangkai, (vi) Bagian dari tubuh manusia, binatang buas, anjing
+B� P engetahuan Benda Najis
+1.P engertian najis : (i) Menurut bahasa adalah “setiap yang kotor”, (ii) Menurut
+syara’ adalah kotoran yang wajib dihindari dan dibersihkan oleh setiap muslimketika terkena olehnya
+2.Najis ada tig a: (1) Najis mukhaffafah (najis ringan), yaitu air seni bayi laki-laki
+sebelum usia dua tahun yang hanya mengonsumsi ASI, (2) Najis mughallazhah(najis berat), yaitu najis babi, anjing atau turunan keduanya, dan (3) Najismutawassithah (najis sedang), yaitu najis kotoran hewan, khamr (minumankeras)Nama  Agama  NIK No. Sertifik at
+Penyelia Halal
+(Jika Ada)
+Sasmita  32021249601870009
+Panduan Pendamping PPH 693.Mut anajjis adalah benda suci yang terkena najis, dapat berupa bahan, produk
+atau peralatan produksi. Benda mutanajjis dapat menjadi suci kembali setelah
+dicuci secara syar’i
+4.P ensucian benda mutanajjis padat yang terkena najis mutawassithah secara
+syar’i yaitu dengan mengucurinya dengan air atau menyucinya di dalam air yangbanyak (direndam) hingga hilang rasa, bau dan warna dari bahan najisnya
+5.P ensucian benda mutanajjis padat yang terkena najis mughallazhah secara
+syar’i yaitu disucikan tujuh kali dengan air dan salah satunya dengan tanah ataubahan lain yang mempunyai kemampuan menghilangkan rasa, bau dan warna
+C.P engetahuan Sertifikasi Halal
+1.Sertifik at halal produk di Indonesia diterbitkan oleh Badan Penyelenggara
+Jaminan Produk Halal (BPJPH) berdasarkan Keputusan Penetapan KehalalanProduk dari Majelis Ulama Indonesia (MUI).
+2.P erusahaan yang telah mendapatkan sertifikat halal dari BPJPH harus menjaga
+kehalalan produknya dengan cara menerapkan Sistem Jaminan Halal (SJPH).
+3.Label halal tidak boleh digunak an oleh perusahaan jika tidak memiliki sertifikat
+halal BPJPH.
+D� P enerapan Sistem Jaminan Halal (SJPH)
+1.In ti dari penerapan SJPH adalah membuat kebijakan halal, membentuk penyelia
+halal dan melaksanakan dengan sungguh-sungguh semua prosedur operasionalyang tercantum dalam Manual SJPH
+2.K ebijakan halal adalah komitmen perusahaan untuk menghasilkan produk
+halal, dengan hanya menggunakan bahan yang telah disetujui oleh BPJPH sertadiproduksi dengan menggunakan peralatan yang bebas dari najis
+3.Bahan y ang telah disetujui oleh BPJPH tercantum dalam Daftar Bahan Halal.
+4.Membeli bahan deng an nama/merek dan produsen sesuai dengan yang
+tercantum dalam Daftar Bahan Halal
+5.Jik a akan menggunakan bahan baru di luar Daftar Bahan Halal (termasuk bahan
+lama dengan produsen baru), akan meminta persetujuan penggunaan bahantersebut ke BPJPH
+6.Memerik sa label bahan pada setiap pembelian bahan atau penerimaan bahan
+untuk memastikan kesesuaian nama bahan, nama produsen dan negaraprodusen dengan yang tercantum dalam Daftar Bahan Halal. Bahan yangboleh digunakan hanya bahan yang namanya, nama produsen dan negaraprodusennya sesuai dengan Daftar Bahan Halal
+7.Dalam pr oses produksi hanya menggunakan bahan dengan nama/merek dan
+produsen seperti yang tercantum dalam Daftar Bahan Halal.
+70Panduan Pendamping PPH8.Menjag a semua fasilitas produksi dan peralatan dalam keadaan bersih (bebas
+dari najis) sebelum dan sesudah digunakan.
+9.Se tiap pekerja menjaga kebersihan diri sebelum dan selama bekerja sehingga
+tidak mengotori produk yang dihasilkan.
+10.Se tiap pekerja tidak boleh membawa produk tidak halal di area produksi
+11.Se tiap pekerja tidak boleh membawa/memelihara hewan peliharaan di area
+produksi.
+12.Se tiap pekerja tidak boleh menggunakan peralatan produksi untuk kepentingan
+lain, misalnya untuk memasak karyawan atau menyimpan produk tidak halal
+milik karyawan.
+13.Men yimpan bahan dan produk di tempat yang bersih dan menjaganya supaya
+terhindar dari najis.
+14.Memas tikan kendaraan yang digunakan untuk mengangkut produk halal dalam
+kondisi baik dan tidak digunakan untuk mengangkut produk lain yang diragukankehalalannya.
+15.Menda ftarkan setiap ada produk baru dengan merek yang sama untuk
+disertifikasi halal sebelum dipasarkan.
+16.Menda ftarkan setiap ada penambahan fasilitas produksi baru untuk disertifikasi
+halal.
+E.E valuasi pelatihan internal
+Contoh Soal Pelatihan Internal
+1.Con toh bahan haram yaitu …
+2.Dalam pr oses produk halal hanya menggunakan bahan dengan nama/merek
+dan produsen seperti yang tercantum dalam …
+3.Jik a akan menggunakan bahan baru di luar Daftar Bahan Halal (termasuk bahan
+lama dengan produsen baru), akan meminta persetujuan penggunaan bahantersebut ke …
+4.P ada proses produksi, semua fasilitas produksi dan peralatan harus dalam
+keadaan …
+5.Audit in ternal dilakukan minimal … kali dalam setahun.
+Catatan: soal ini diberikan kepada seluruh peserta pelatihan dan dinilai olehtrainer. Trainer boleh mengganti soal sesuai dengan materi pelatihan yangdisampaikan.
+Panduan Pendamping PPH 71Lampiran 4. Daftar Bahan Halal
+Nama Bahan
+Singkong 
+Mentah
+Garam 
+"Jempol"PT. Susanti MegahGaram
+Pengemas Plastik
+Sunlight Cairan 
+Pencuci Piring, HigienisPT. Unilever Indonesia TbkSunlightMinyakita Sinar Mas Agro Resource And Technology TbkMinyakitaAir MurniMerek ProdusenNo. Sertifikat HalalTgl. Berlaku Sertifikat Halal
+ID35310000  
+11989062127-08-2025
+02-09-2025
+19-05-2024ID00410000  
+008400120ID00410000  
+188990621DAFTAR BAHAN MOHAMMAD RAFFI FIRZA PERDANA
+Nama Produk
+Keripik SingkongNama Bahan Yang Digunakan
+Air Murni,MINYAKITA,Garam 
+"Jempol",SUNLIGHT Cairan Pencuci Piring, Higienis ,Pengemas PlastikDAFTAR BAHAN YANG DIGUNAKAN PADA SETIAP PRODUK
+Panduan Pendamping PPH 71
+72Panduan Pendamping PPHLampiran 2. Contoh Bukti/Catatan Produksi
+
+Panduan Pendamping PPH 73Lampiran 3. Contoh Form Daftar Periksa Audit Internal
+
+74Panduan Pendamping PPHLampiran 4 � Panduan untuk Mendapatkan NIB
+A� Panduan untuk Mendapatkan Hak Akses Perizinan Berusaha di OSS
+1. Kunjungi laman https://oss.go.id/ 
+2. Pilih daftar 
+3. Pilih skala usaha (UMK)
+4. Pilih jenis pelaku usaha UMK 
+a. Pilih Jenis Pelaku Usaha (Orang perseorangan atau badan Usaha)
+b. Lengkapi formular pendaftaran yang tersedia 
+5. Lengkapi formulir pendaftaran dan disesuaikan dengan Jenis Usaha   
+ yang dimiliki 
+a.  Lengkapi data sebagai UMK Orang Perseorangan 
+◊ Pilih jenis pelaku usaha orang perseorangan 
+◊ Data yang harus anda lengkapi :
+1. Nomor Induk Kependudukan 
+2. Tanggal lahir 
+3. Alamat email 
+4. Nomor telepon seluler
+◊ Centang Kolom Penyataan 
+◊ Klik tombol daftar 
+b.  Lengkapi data sebagai UMK Badan Usaha 
+◊ Pilih Jenis Pelaku Usaha Badan Usaha 
+◊ Pilih Jenis badan usaha PT, CV, Firma, Persekutuan Perdata
+◊ Data yang harus dilengkapi 
+1. Data Perusahaan 
+a. Nama Perusahaan 
+b. NPWP Perusahaan 
+c. Nomor SK Pengesahan 
+d. Alamat email 
+2. Data Salah satu Direksi/Pengurus 
+a. Nomor Induk Kependudukan 
+b. Tanggal lahir 
+c. Jabatan 
+d. Nomor Telepon Seluler 
+◊ Centang kolom pernyataan 
+◊ Klik tombol Daftar 
+Panduan Pendamping PPH 756.Pilih V erifikasi melalui email  atau WhatsApp dan klik tombol aktivasi
+7.Jik a Verifikasi melalui email, Cek email untuk mengetahui Username
+dan Password
+8.Jik a verifikasi melalui WhatsApp , maka akan ada pada pesan masuk dari
+OSS un tuk memberitahukan Username  anda
+9.Se telah verifikasi berhasil, maka pendaftaran berhasil
+10.Hak akses anda siap digunakan untuk masuk ke Sistem OSS
+B� P anduan untuk Mendapatkan NIB
+1.P astikan Anda telah memiliki hak akses OSS
+Hak akses berupa username  dan password yang dikirimkan ke e-mail  yang
+dicantumkan pada saat pendaftaran
+2.K unjungi https://oss.go.id/
+3.Masukk an Username  dan Password  beserta Captcha yang tertera,
+lalu klik t ombol MASUK
+4.Klik Menu P erizinan Berusaha dan pilih Permohonan Baru
+5.Lengk api Data Pelaku Usaha
+•Sistem akan menampilkan data secara otomatis:
+1.Nomor Induk K ependudukan (NIK)
+2.Nama
+3.Jenis K elamin
+4.T empat/Tanggal Lahir
+5.Nomor T elepon
+6.Alama t Sesuai KTP
+•Data yang harus Anda lengkapi:
+1.Nomor P okok Wajib Pajak (NPWP) Pribadi
+2.Email
+3.BP JS Ketenagakerjaan (Jika sudah memiliki)
+4.BP JS Kesehatan (Jika sudah memiliki)
+•Klik tombol SIMPAN DATA
+•Klik tombol ISI BIDANG USAHA
+6.Lengk api Data Bidang Usaha
+•Sistem akan menampilkan Form Pemilihan Bidang Usaha
+•Data yang harus Anda lengkapi:
+1. Jenis Kegiatan Usaha (Utama, Pendung, Kantor Cabang Administrasi,
+atau Pendukung UMKU)
+76Panduan Pendamping PPH2.Bidang Usaha
+(Apabila bidang usaha yang dipilih masuk dalam ketentuan BUPM,
+sistem akan menampilkan pilihan kegiatan. Pilih kegiatan usaha yang
+sesuai dengan kegiatan yang dilakukan Pelaku Usaha)
+3.Ur aian Bidang Usaha, akan otomatis terisi oleh sistem setelah
+memilih KBLI/Bidang Usaha
+4.Ruang Lingk up Kegiatan
+•Klik tombol SIMPAN
+7.Lengk api Data Detail Bidang Usaha
+•Data yang harus Anda lengkapi:
+1. Nama Usaha/Kegiatan
+2. Luas Lahan Usaha3. Alamat Usaha4. Provinsi5. Kabupaten/Kota6. Kecamatan7. Kelurahan/Desa8. Kode Pos9. Apakah kegiatan ini sudah berjalan?10. Modal Usaha
+•Klik VALIDASI RISIKO
+•Sistem akan otomatis menampilkan skala usaha dan tingkat risiko pada
+usaha Anda ber dasarkan pengisian data.
+•Data yang harus Anda lengkapi:
+1. Apakah sudah memiliki perizinan berusaha yang sebelumnya? (Jika
+Ya, isi data perizinan berusaha yang dimiliki)
+2. Jangka Waktu Perkiraan Beroperasi/Produksi3. Deskripsi kegiatan usaha4. Jumlah Tenaga Kerja Indonesia
+•Klik tombol TAMBAH PRODUK JASA
+8.Lengk api Data Produk/Jasa Bidang Usaha
+•Data yang harus Anda lengkapi:
+1. Jenis Produk/Jasa2. Kapasitas (/Tahun)3. Satuan Kapasitas
+•Klik tombol SIMPAN
+Panduan Pendamping PPH 779. Periksa Daftar Produk/Jasa
+• Data yang harus Anda lengkapi:
+1. Jenis Produk/Jasa
+2. Kapasitas (/Tahun)
+3. Satuan Kapasitas 
+4. Apakah Anda sudah memiliki Sertifikat SNI?
+(Jika Ya, isi Nomor Sertifikat SNI dan Masa berlaku SNI)
+5. Apakah Anda sudah memiliki Sertifikat Halal?
+(Jika Ya, isi Nomor Sertifikat Halal, Tanggal Terbit dan Tanggal Berakhir)
+•  Klik tombol SIMPAN
+• Sistem akan menampilkan:
+1. Kapasitas
+2. Satuan
+3. Jenis Produksi
+• Klik tombol SELESAI
+10. Periksa Data Usaha
+• Sistem akan menampilkan data:
+1. Bidang Usaha (KBLI)
+2. Lokasi Usaha
+3. Data Usaha (Jumlah tenaga kerja dan Modal Usaha)
+• Klik tombol SELANJUTNYA.
+11. Periksa Daftar Kegiatan Usaha
+• Sistem akan menampilkan:
+1. KBLI
+2. Lokasi Usaha
+3. Data Usaha
+4. Skala Usaha
+5. Tingkat Risiko
+6. Pernyataan Mandiri
+7. Status
+• Klik ikon “V”.
+• Klik tombol PROSES PERIZINAN BERUSAHA.
+• Untuk Perizinan UMK dengan Risiko Rendah lanjut ke langkah 13.
+• Untuk Perizinan UMK dengan Risiko Menengah Rendah lanjut ke langkah 12.
+12. Periksa dan Lengkapi Dokumen Persetujuan Lingkungan (KBLI/Bidang   
+ Usaha Tertentu)
+78Panduan Pendamping PPH•Sistem akan menampilkan pertanyaan konfirmasi “Apakah sudah memiliki
+Dokumen Persetujuan Lingkungan atas kegiatan ini?” yang harus Andapilih:
+12�a
+a. Jik a pilih Sudah, lanjut ke langkah 12.a untuk memilih jenis dokumen
+persetujuan lingkungan yang dimiliki.
+b.Jik a pilih Belum, lanjut ke langkah 12.b untuk lengkapi formulir parameter
+kewajiban persetujuan lingkungan sesuai dengan kondisi pada kegiatanusaha terpilih.
+•Klik tombol LANJUT.
+12�b
+•Jika pilih Sudah, akan muncul pilihan jenis dokumen persetujuan
+lingkungan yang dimiliki.
+•Klik tombol LANJUT, untuk ke langkah selanjutnya (langkah 13)
+tanpa melalui proses pemilihan parameter
+•Jika Anda belum memiliki Dokumen Persetujuan Lingkungan, maka
+data yang harus Anda lengkapi:
+1.P arameter Lingkungan, pilihlah kondisi parameter yang tertera pada
+formulir sesuai dengan kegiatan usaha yang dilakukan. (Kemudian, sistemakan menampilkan jenis kewajiban dokumen lingkungan yang harusdipenuhi, seperti SPPL, UKL/UPL, atau AMDAL.)
+2.Ur aian Usaha, isilah sesuai dengan uraian kegiatan usaha yang dilakukan.
+•Klik tombol LANJUT
+13.P ahami dan Centang Pernyataan Mandiri
+•Sistem akan menampilkan berbagai macam Pernyataan Mandiri sesuaidengan data dan informasi yang tersimpan sebelumnya, seperti PernyataanMandiri K3L, Kesediaan Memenuhi Standar Usaha (risiko MenengahTinggi)/Kesediaan Memenuhi Persyaratan izin (risiko Tinggi), SPPL, danlain-lain.
+•Baca, pahami dan klik checkbox masing-masing PERNYATAAN MANDIRI,
+•Klik LANJUT
+•Khusus untuk perizinan tunggal dan pada KBLI tertentu yang membutuhkanStandar Nasional Indonesia (SNI) dan Sertifikasi Halal, sistem akanmenampilkan Pernyataan Mandiri terkait hal tersebut.
+•Khusus untuk perizinan yang membutuhkan komitmen terkait lingkunganhidup, sistem akan menampilkan Pernyataan Mandiri terkait lingkunganhidup (SPPL/PKPLH)
+
+Panduan Pendamping PPH 7914.P eriksa Draf Perizinan Berusaha
+•Sistem akan menampilkan draf NIB, lalu klik kotak centang/checkbox.
+•Klik tombol TERBITKAN PERIZINAN BERUSAHA.
+15.P erizinan Berusaha terbit
+15�a Perizinan Berusaha telah terbit (Risiko Rendah)
+•Perizinan Berusaha telah terbit, meliputi:
+1. NIB, klik tombol CETAK NIB.
+2. Pernyataan Mandiri, klik tulisan Cetak.
+•Selanjutnya Anda dapat melihat, mengunduh, dan mencetak produk
+perizinan berusaha tersebut.
+15�b Perizinan Berusaha telah terbit (Risiko Menengah Rendah)
+•Perizinan Berusaha telah terbit, meliputi:
+1. NIB, klik tombol CETAK NIB.
+2. Sertifikat Standar, klik tombol CETAK SERTIFIKAT STANDAR.3. PKPLH/SKKL, klik CETAK Persetujuan PKPLH/SKKL. (Jika ada)4. Pernyataan Mandiri, klik tulisan Cetak.
+•Selanjutnya Anda dapat melihat, mengunduh, dan mencetak produk
+perizinan berusaha tersebut.
+

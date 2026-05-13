@@ -1,0 +1,125 @@
+A. DOKUMEN REGULASI  8 DOKUMEN · NO.1 –8 
+1. UU No. 33 Tahun 2014 — Jaminan Produk Halal  
+BPK RI · Dasar hukum tertinggi JPH · 26 hal  
+A1 · UU JPH  
+ 
+2. UU No. 33/2014 — Penjelasan Resmi (TLN No.5604)  
+peraturan.go.id · Penjelasan pasal demi pasal UU JPH  
+A1 · UU JPH  
+ 
+3. PP No. 39 Tahun 2021 — Penyelenggaraan Bidang JPH  
+JDIH Kemenkeu · Tata cara LPH, auditor, sertifikasi, pengawasan  
+A2 · PP JPH  
+ 
+4. PP No. 39/2021 — Penjelasan (TLN No.6651)  
+peraturan.go.id · Klarifikasi teknis PP 39/2021  
+A2 · PP JPH  
+ 
+5. KepKaBan No. 57/2021 — Kriteria SJPH (5 Kriteria Wajib)  
+halaltransactions.org · Komitmen, Bahan, PPH, Produk, Pemantauan  
+A3 · Peraturan BPJPHA4 · Teknis SJPH  
+ 
+6. KepKaBan No. 20/2023 — Perubahan Kriteria SJPH  
+cmsbl.halal.go.id · Update resmi atas KepKaBan 57/2021  
+A4 · Teknis SJPH  
+ 
+7. KepKaBan No. 77/2023 — Pedoman SJPH Pemotongan Hewan Ruminansia 
+& Unggas  
+cmsbl.halal.go.id · Standar inti RPH halal: fasilitas, juru sembelih, audit LPH  
+A5 · Standar Auditor/LPHA6 · Pedoman SJPH  
+ 
+8. KepKaBan No. 78/2023 — Pedoman Sertifikasi Halal Makanan & Minuman  
+cmsbl.halal.go.id · Untuk produk pangan olahan & bahan tambahan  
+A3 · Peraturan BPJPHA6 · Pedoman SJPH  
+ 
+B. DOKUMEN MUI / LPPOM / LPH  9 DOKUMEN · NO.9 –17 
+ 
+9. KepKaBan No. 48/2024 — Manual SJPH UMK Reguler  
+cmsbl.halal.go.id · Template resmi manual SJPH terbaru untuk pelaku usaha  
+B1 · Manual SJPH  
+ 
+10. KepKaBan No. 49/2024 — Manual SJPH Jasa Penyembelihan Ruminansia & 
+Unggas  
+cmsbl.halal.go.id · Manual SJPH khusus RPH/RPA — paling relevan untuk 
+operasional lapangan  
+B1 · Manual SJPHB6 · Checklist Penyembelihan  
+ 
+11. KepKaBan No. 57/2023 — Manual SJPH Self Declare (dengan contoh form)  
+cmsbl.halal.go.id · Form audit, catatan produksi, laporan ketidaksesuaian, 
+CAR  
+B1 · Manual SJPHB3 · Form AuditB7 · KetidaksesuaianB8 · CAR  
+ 
+12. SKKNI No. 147/2022 — Standar Kompetensi Juru Sembelih Halal 
+(Kemnaker)  
+skkni -api.kemnaker.go.id · Referensi SNI 99001, 99002, 99003 + kriteria 
+kompetensi auditor & juru sembelih  
+B2 · HAS 23000 / Standar SJHB4 · Checklist Bahan BakuB5 · Checklist 
+Fasilitas  
+ 
+13. Buku Panduan Pendamping PPH 2023 (BPJPH/Unair)  
+halal.unair.ac.id · Lamp. 2: log produksi · Lamp. 3: checklist audit internal · 80 
+hal 
+B3 · Form AuditB4 · Checklist Bahan BakuB5 · Checklist FasilitasB7 · 
+Ketidaksesuaian C9 · Log Batch  
+ 
+14. Format Template SJPH Resmi BPJPH (17 Lampiran Form Operasional)  
+cmsbl.halal.go.id · Daftar Bahan Halal, Form Pemeriksaan Bahan, Layout 
+Denah, SOP Produksi  
+B4 · Checklist Bahan Baku C3 · SOP SegregasiC6 · SOP Handling Bahan 
+Tambahan  
+ 
+15. Kriteria SJH HAS 23000 No.1 –6 (IHATEC) — Kebijakan, Tim, Pelatihan, 
+Bahan, Produk, Fasilitas  
+bikinpabrik.id · Materi pelatihan auditor halal nasional — kriteria 1 s.d. 6  
+B2 · HAS 23000B5 · Checklist Fasilitas  
+ 
+16. Kriteria SJH HAS 23000 No.7 –11 (IHATEC) — Prosedur Kritis, Telusur, Audit, 
+CAR, Kaji Ulang  
+bikinpabrik.id · Format ketidaksesuaian, root cause, corrective & preventive 
+action, verifikasi  
+B7 · Form KetidaksesuaianB8 · Form CAR  
+ 
+17. Panduan Umum Sistem Jaminan Halal LPPOM MUI (2008)  
+jurnal.uns.ac.id · Tindakan perbaikan, kaji ulang manajemen, notulen insiden 
+— Bab XVI & XVII  
+B7 · Form KetidaksesuaianB8 · Form CAR C11 · Log Insiden  
+ 
+C. DOKUMEN OPERASIONAL LAPANGAN  7 DOKUMEN · NO.18 –24 
+ 
+18. SOP Pemotongan Hewan RPH — Kota Batam  
+distankp.batam.go.id · Penurunan, penampungan, ante -mortem, 
+penyembelihan, post -mortem, cleaning  
+C1 · SOP PenyembelihanC2 · SOP CleaningC7 · Form AM/PM  
+ 
+19. Manual Pemeriksaan Ante -mortem & Post -mortem di RPHR (BVET 
+Lampung/Kementan)  
+kikp-pertanian.id · Titik inspeksi, palpasi/insisi, SNI 99003 -2018, keputusan 
+AM/PM  
+C7 · Form AM/PM  
+ 
+20. SNI 3932:2008 — Mutu Karkas dan Daging Sapi (BSN)  
+logis.co.id/BSN · Suhu penyimpanan segar 0 –4°C & beku −18°C, 
+pengemasan, pelabelan karkas  
+C4 · SOP Penyimpanan DagingC8 · Log Suhu  
+21. PerBPOM No. 21/2021 — Sistem Jaminan Keamanan & Mutu Pangan di 
+Sarana Peredaran (CPerPOB)  
+e-sertifikasi.pom.go.id · Monitoring suhu cold storage, prosedur distribusi & 
+transportasi pangan  
+C5 · SOP TransportasiC8 · Log SuhuC10 · Log Distribusi  
+ 
+22. Kajian Kelayakan Operasional RPH Oeba — Jurnal Partner (Neliti)  
+media.neliti.com · Evaluasi fasilitas RPH berdasarkan SNI 01 -6159 -1999: 
+daerah bersih/kotor, sanitasi  
+C1 · SOP PenyembelihanC2 · SOP Cleaning B5 · Checklist Fasilitas  
+ 
+23. Kebijakan Pemotongan Sapi di RPH: Manajemen Halal & HACCP — Halal 
+Research Journal  
+media.neliti.com · Titik kritis kehalalan, HACCP, segregasi, standar 
+operasional pemotongan  
+C1 · SOP PenyembelihanC3 · SOP SegregasiC5 · SOP Transportasi  
+ 
+24. KepKaBan No. 79/2025 — Juknis Fasilitasi Sertifikasi Halal SEHATI (terbaru)  
+cmsbl.halal.go.id · Pencatatan produksi & distribusi, prosedur corrective 
+action, verifikasi PPH 2025  
+C9 · Log BatchC10 · Log Distribusi B8 · Form CAR  
+ 

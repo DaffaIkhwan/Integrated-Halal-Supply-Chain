@@ -2,10 +2,7 @@ import { Pool, PoolClient, QueryResult } from 'pg';
 
 // Creates a global connection pool
 const pool = new Pool({
-  sslmode: 'require',
-  ssl: {
-    rejectUnauthorized: false, // For development. In production, you might want this true
-  },
+  // ssl disabled for local docker
 });
 
 // Better type for query params

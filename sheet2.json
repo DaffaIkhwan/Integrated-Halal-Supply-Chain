@@ -1,0 +1,4237 @@
+[
+  [
+    "PERHITUNGAN MANUAL LENGKAP – FUZZY AHP – HALAL BEEF SUPPLY CHAIN DSS"
+  ],
+  [
+    "Bobot Kriteria + Risk Score Setiap Titik Kritis | UIN Sultan Syarif Kasim Riau | Sumber: Dokumen Analisis Fuzzy AHP & DSS Halal Supply Chain"
+  ],
+  [],
+  [
+    "BAGIAN 1 – DASAR TEORI & SKALA FUZZY AHP"
+  ],
+  [
+    "AHP (Analytic Hierarchy Process) digunakan untuk membandingkan kepentingan antar kriteria secara berpasangan. Versi FUZZY-nya mengganti bilangan tunggal dengan Triangular Fuzzy Number (TFN) = (l, m, u) agar bisa menangkap ketidakpastian penilaian manusia. Setelah di-defuzzifikasi menjadi bilangan tunggal, perhitungan sama seperti AHP biasa."
+  ],
+  [
+    "1a. Skala Linguistik Fuzzy AHP – Triangular Fuzzy Number (TFN)"
+  ],
+  [
+    "CARA BACA: Ketika pakar menilai 'Kriteria A lebih penting dari B', ia memilih label linguistik. TFN (l, m, u) = batas bawah, nilai tengah (paling mungkin), batas atas. Defuzzifikasi = (l + m + u) / 3 → menghasilkan 1 angka untuk matriks perbandingan."
+  ],
+  [
+    "Label Linguistik",
+    "Skala\r\nAHP",
+    "l\r\n(batas\r\nbawah)",
+    "m\r\n(nilai\r\ntengah)",
+    "u\r\n(batas\r\natas)",
+    "Defuzzifikasi\r\n= (l+m+u)/3",
+    "Kebalikan\r\nAHP",
+    "Interpretasi"
+  ],
+  [
+    "Equal importance – Sama penting",
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Kedua kriteria sama pentingnya"
+  ],
+  [
+    "Slightly more – Sedikit lebih penting",
+    2,
+    1,
+    2,
+    3,
+    2,
+    "1/2",
+    "Satu sedikit lebih penting"
+  ],
+  [
+    "Moderately important – Cukup penting",
+    3,
+    2,
+    3,
+    4,
+    3,
+    "1/3",
+    "Satu cukup lebih penting"
+  ],
+  [
+    "Mod+ important – Lebih dari cukup penting",
+    4,
+    3,
+    4,
+    5,
+    4,
+    "1/4",
+    "Di antara cukup & sangat"
+  ],
+  [
+    "Strongly important – Sangat penting",
+    5,
+    4,
+    5,
+    6,
+    5,
+    "1/5",
+    "Satu sangat lebih penting"
+  ],
+  [
+    "Strongly+ important – Antara sangat–mutlak",
+    6,
+    5,
+    6,
+    7,
+    6,
+    "1/6",
+    "Di antara sangat & mutlak"
+  ],
+  [
+    "Very strongly – Mutlak lebih penting",
+    7,
+    6,
+    7,
+    8,
+    7,
+    "1/7",
+    "Satu dominan lebih penting"
+  ],
+  [
+    "Very strongly+ – Antara mutlak",
+    8,
+    7,
+    8,
+    9,
+    8,
+    "1/8",
+    "Di antara mutlak"
+  ],
+  [
+    "Absolutely important – Mutlak paling penting",
+    9,
+    7,
+    9,
+    9,
+    8.333333333333334,
+    "1/9",
+    "Satu jauh lebih penting"
+  ],
+  [],
+  [
+    "1b. Tabel Random Index (RI) – untuk menghitung CR"
+  ],
+  [
+    "RI adalah bilangan acak referensi yang berbeda untuk setiap n (jumlah kriteria). Nilai ini digunakan dalam rumus CR = CI / RI. Matriks dinyatakan KONSISTEN jika CR < 0.10."
+  ],
+  [
+    "n (jumlah kriteria)",
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  [
+    "Nilai RI",
+    0,
+    0,
+    0.58,
+    0.9,
+    1.12,
+    1.24,
+    1.32,
+    1.41,
+    1.45,
+    1.49,
+    1.51
+  ],
+  [],
+  [
+    "1c. Skala Risk Value (RV) – Penilaian Kondisi Lapangan"
+  ],
+  [
+    "Risk Value (RV) adalah nilai 0–1 yang menggambarkan seberapa berisiko kondisi suatu kriteria di lapangan. Ditentukan oleh auditor/peneliti berdasarkan observasi dokumen dan lapangan. BUKAN hasil Fuzzy AHP – ini INPUT terpisah yang digabung dengan bobot Fuzzy AHP untuk menghasilkan Risk Score."
+  ],
+  [
+    "Rentang RV",
+    "Kategori",
+    "Warna",
+    "Makna & Contoh Kondisi",
+    "Tindakan yang Diperlukan"
+  ],
+  [
+    "0.00 – 0.25",
+    "Low Risk",
+    "■",
+    "Dokumen lengkap, prosedur dijalankan konsisten",
+    "Monitoring rutin berkala"
+  ],
+  [
+    "0.26 – 0.50",
+    "Moderate Risk",
+    "■",
+    "Ada kekurangan minor, dokumen tidak selalu lengkap",
+    "Perbaikan & verifikasi berkala"
+  ],
+  [
+    "0.51 – 0.75",
+    "High Risk",
+    "■",
+    "Prosedur tidak konsisten, log sering kosong",
+    "Tindakan korektif segera"
+  ],
+  [
+    "0.76 – 1.00",
+    "Critical Risk",
+    "■",
+    "Sertifikat kedaluarsa, prosedur tidak sesuai syariah",
+    "Hentikan proses, audit menyeluruh"
+  ],
+  [],
+  [],
+  [
+    "BAGIAN 2 – ALUR PERHITUNGAN FUZZY AHP (LANGKAH DEMI LANGKAH)"
+  ],
+  [
+    "Fuzzy AHP dilakukan dalam 6 LANGKAH utama untuk setiap level hirarki:\r\nLANGKAH 1 → Susun matriks perbandingan berpasangan (pairwise comparison)\r\nLANGKAH 2 → Jumlahkan setiap kolom (column sum)\r\nLANGKAH 3 → Normalisasi setiap sel (bagi nilai sel dengan jumlah kolomnya)\r\nLANGKAH 4 → Hitung bobot prioritas wi = rata-rata setiap baris dari matriks ternormalisasi\r\nLANGKAH 5 → Uji Konsistensi (λmax → CI → CR). Jika CR < 0.10 → konsisten\r\nLANGKAH 6 → Hitung Risk Score = Σ (wi × RV_i), lalu Global Weighted Risk = wi_global × RiskScore"
+  ],
+  [],
+  [
+    "BAGIAN 3 – LEVEL 1: MATRIKS PERBANDINGAN 10 TITIK KRITIS (BOBOT GLOBAL)"
+  ],
+  [
+    "TUJUAN: Menentukan bobot global (wi) masing-masing titik kritis supply chain. Bobot ini mencerminkan seberapa besar pengaruh setiap titik terhadap status halal keseluruhan. RPH mendapat bobot tertinggi (0.250) karena menjadi titik penentu syariah utama."
+  ],
+  [
+    "LANGKAH 1 – Isi matriks perbandingan berpasangan. Nilai sel (i,j) = wi/wj (bobot baris dibagi bobot kolom). Sel diagonal selalu = 1.0 (membandingkan diri sendiri). Sel (j,i) = kebalikan dari sel (i,j). Nilai diperoleh dari penilaian pakar yang sudah di-defuzzifikasi."
+  ],
+  [
+    "Titik Kritis",
+    "CP1",
+    "CP2",
+    "CP3",
+    "CP4",
+    "CP5",
+    "CP6",
+    "CP7",
+    "CP8",
+    "CP9",
+    "CP10",
+    "Σ Kolom\r\n(Jml Kolom)"
+  ],
+  [
+    "CP1: Farm / Kandang Sapi",
+    1,
+    1,
+    1,
+    0.3333333333333333,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    11.333333333333334
+  ],
+  [
+    "CP2: Pakan & Kesehatan Hewan",
+    1,
+    1,
+    1,
+    0.25,
+    1,
+    0.5,
+    1,
+    1,
+    1,
+    2,
+    9.75
+  ],
+  [
+    "CP3: Transportasi Hewan ke RPH",
+    1,
+    1,
+    1,
+    0.3333333333333333,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    11.333333333333334
+  ],
+  [
+    "CP4: RPH / Penyembelihan",
+    3,
+    4,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    4,
+    8.333333333333334,
+    31.333333333333336
+  ],
+  [
+    "CP5: Post-Slaughter Handling",
+    1,
+    1,
+    1,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    11.5
+  ],
+  [
+    "CP6: Processing / Pengolahan",
+    1,
+    2,
+    1,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    4,
+    14.5
+  ],
+  [
+    "CP7: Cold Storage / Warehouse",
+    1,
+    1,
+    1,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    11.5
+  ],
+  [
+    "CP8: Distribusi / Logistik",
+    1,
+    1,
+    1,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    11.5
+  ],
+  [
+    "CP9: Retail / Pasar / Supermarket",
+    1,
+    1,
+    1,
+    0.25,
+    1,
+    0.5,
+    1,
+    1,
+    1,
+    2,
+    9.75
+  ],
+  [
+    "CP10: Konsumen & Complaint Handling",
+    0.3333333333333333,
+    0.5,
+    0.3333333333333333,
+    0.12,
+    0.3333333333333333,
+    0.25,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.5,
+    1,
+    4.036666666666667
+  ],
+  [
+    "LANGKAH 2 – Hitung JUMLAH SETIAP KOLOM (Column Sum). Rumus: = SUM nilai kolom dari baris CP1 sampai CP10. Digunakan sebagai pembagi pada langkah normalisasi."
+  ],
+  [
+    "Jumlah Kolom →",
+    11.333333333333334,
+    13.5,
+    11.333333333333334,
+    4.286666666666666,
+    10.333333333333334,
+    9.25,
+    10.333333333333334,
+    10.333333333333334,
+    13.5,
+    32.333333333333336
+  ],
+  [],
+  [
+    "Normalisasi Matriks & Perhitungan Bobot Global (wi)"
+  ],
+  [
+    "LANGKAH 3 – NORMALISASI: Bagi setiap sel dengan Jumlah Kolomnya. Contoh: sel CP1-CP1 = 1.0 / Jumlah Kolom CP1. Hasil: setiap kolom akan berjumlah = 1.0"
+  ],
+  [
+    "Titik Kritis",
+    "CP1",
+    "CP2",
+    "CP3",
+    "CP4",
+    "CP5",
+    "CP6",
+    "CP7",
+    "CP8",
+    "CP9",
+    "CP10",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n= Σ(baris×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "CP1: Farm / Kandang Sapi",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.07776049766718507,
+    0.0967741935483871,
+    0.10810810810810811,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.09278350515463916,
+    0.08935934279585359,
+    0.9024654752166333,
+    10.099285054931146
+  ],
+  [
+    "CP2: Pakan & Kesehatan Hewan",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.05832037325038881,
+    0.0967741935483871,
+    0.05405405405405406,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.06185567010309278,
+    0.07891714144361392,
+    0.7952436218349983,
+    10.076944087023193
+  ],
+  [
+    "CP3: Transportasi Hewan ke RPH",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.07776049766718507,
+    0.0967741935483871,
+    0.10810810810810811,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.09278350515463916,
+    0.08935934279585359,
+    0.9024654752166333,
+    10.099285054931146
+  ],
+  [
+    "CP4: RPH / Penyembelihan",
+    0.2647058823529412,
+    0.2962962962962963,
+    0.2647058823529412,
+    0.23328149300155523,
+    0.1935483870967742,
+    0.21621621621621623,
+    0.1935483870967742,
+    0.1935483870967742,
+    0.2962962962962963,
+    0.25773195876288657,
+    0.24098791865694555,
+    2.453292276948775,
+    10.180146335224046
+  ],
+  [
+    "CP5: Post-Slaughter Handling",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.11664074650077762,
+    0.0967741935483871,
+    0.10810810810810811,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.09278350515463916,
+    0.09324736767921285,
+    0.9426301283261244,
+    10.108919444985684
+  ],
+  [
+    "CP6: Processing / Pengolahan",
+    0.08823529411764705,
+    0.14814814814814814,
+    0.08823529411764705,
+    0.11664074650077762,
+    0.0967741935483871,
+    0.10810810810810811,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.14814814814814814,
+    0.12371134020618556,
+    0.11115496599918229,
+    1.132026455040651,
+    10.18421844552567
+  ],
+  [
+    "CP7: Cold Storage / Warehouse",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.11664074650077762,
+    0.0967741935483871,
+    0.10810810810810811,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.09278350515463916,
+    0.09324736767921285,
+    0.9426301283261244,
+    10.108919444985684
+  ],
+  [
+    "CP8: Distribusi / Logistik",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.11664074650077762,
+    0.0967741935483871,
+    0.10810810810810811,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.09278350515463916,
+    0.09324736767921285,
+    0.9426301283261244,
+    10.108919444985684
+  ],
+  [
+    "CP9: Retail / Pasar / Supermarket",
+    0.08823529411764705,
+    0.07407407407407407,
+    0.08823529411764705,
+    0.05832037325038881,
+    0.0967741935483871,
+    0.05405405405405406,
+    0.0967741935483871,
+    0.0967741935483871,
+    0.07407407407407407,
+    0.06185567010309278,
+    0.07891714144361392,
+    0.7952436218349983,
+    10.076944087023193
+  ],
+  [
+    "CP10: Konsumen & Complaint Handling",
+    0.02941176470588235,
+    0.037037037037037035,
+    0.02941176470588235,
+    0.027993779160186628,
+    0.03225806451612903,
+    0.02702702702702703,
+    0.03225806451612903,
+    0.03225806451612903,
+    0.037037037037037035,
+    0.03092783505154639,
+    0.03156204382729859,
+    0.32000673988599015,
+    10.138973940883083
+  ],
+  [
+    "LANGKAH 4 – BOBOT PRIORITAS (wi): Rata-rata setiap baris dari matriks ternormalisasi. Rumus: wi = AVERAGE(nilai ternormalisasi baris ke-i). Semua wi dijumlahkan harus = 1.00"
+  ],
+  [
+    "Uji Konsistensi Level 1 (n = 10, RI = 1.49)"
+  ],
+  [
+    "LANGKAH 5 – UJI KONSISTENSI. λmax = rata-rata kolom A·w/wi. CI = (λmax − n) / (n−1). CR = CI / RI. Jika CR < 0.10 maka penilaian KONSISTEN dan dapat dilanjutkan."
+  ],
+  [
+    "n  (jumlah titik kritis)",
+    "=",
+    10,
+    "Jumlah titik kritis yang dibandingkan"
+  ],
+  [
+    "λmax  = AVERAGE(kolom A·w/wi)",
+    "=",
+    10.118255534049855,
+    "Seharusnya ≈ n jika matriks perfect konsisten"
+  ],
+  [
+    "CI  = (λmax − n) / (n − 1)",
+    "=",
+    0.013139503783317174,
+    "Semakin kecil CI semakin konsisten"
+  ],
+  [
+    "RI  (tabel Saaty, n=10)",
+    "=",
+    1.49,
+    "Nilai acak referensi dari tabel RI"
+  ],
+  [
+    "CR  = CI / RI",
+    "=",
+    0.00881845891497797,
+    "Syarat lolos: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Jika KONSISTEN → bobot dapat digunakan"
+  ],
+  [
+    "Σ wi  (harus = 1.000)",
+    "=",
+    0.9999999999999999,
+    "Validasi: total bobot global harus = 1"
+  ],
+  [],
+  [],
+  [
+    "BAGIAN 4 – LEVEL 2: PAIRWISE, BOBOT, KONSISTENSI & RISK SCORE PER TITIK KRITIS"
+  ],
+  [
+    "Setiap titik kritis diturunkan lagi ke kriteria-kriterianya. Proses yang sama (Langkah 1–5) diulang untuk setiap titik kritis guna mendapatkan bobot lokal wi. Lalu pada LANGKAH 6: Risk Score = Σ(wi × RV_i). Sel KUNING = Risk Value (RV) – bisa diubah sesuai kondisi lapangan aktual."
+  ],
+  [],
+  [
+    "CP1 – Farm / Kandang Sapi   |   Bobot Global = 0.080   |   Kriteria: 7"
+  ],
+  [
+    "Titik kritis ini memiliki 7 kriteria turunan. Bobot global 0.080 artinya titik ini menyumbang 8.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP1"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Σ Baris"
+  ],
+  [
+    "K1: Asal-usul sapi",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    4,
+    12
+  ],
+  [
+    "K2: Status kesehatan sapi",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    4,
+    12
+  ],
+  [
+    "K3: Kepatuhan pakan",
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    4,
+    11
+  ],
+  [
+    "K4: Penggunaan obat/vaksin",
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    9
+  ],
+  [
+    "K5: Dokumentasi pemeliharaan",
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    7
+  ],
+  [
+    "K6: Kebersihan kandang",
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    2,
+    6.5
+  ],
+  [
+    "K7: Kesiapan hewan untuk disembelih",
+    0.25,
+    0.25,
+    0.25,
+    0.3333333333333333,
+    0.5,
+    0.5,
+    1,
+    3.083333333333333
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    5.25,
+    5.25,
+    5.75,
+    6.333333333333333,
+    8.5,
+    9.5,
+    20
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP1"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Asal-usul sapi",
+    0.19047619047619047,
+    0.19047619047619047,
+    0.17391304347826086,
+    0.15789473684210528,
+    0.23529411764705882,
+    0.21052631578947367,
+    0.2,
+    0.19408294210132565,
+    1.3802629976475715,
+    7.111717200406887
+  ],
+  [
+    "K2: Status kesehatan sapi",
+    0.19047619047619047,
+    0.19047619047619047,
+    0.17391304347826086,
+    0.15789473684210528,
+    0.23529411764705882,
+    0.21052631578947367,
+    0.2,
+    0.19408294210132565,
+    1.3802629976475715,
+    7.111717200406887
+  ],
+  [
+    "K3: Kepatuhan pakan",
+    0.19047619047619047,
+    0.19047619047619047,
+    0.17391304347826086,
+    0.15789473684210528,
+    0.11764705882352941,
+    0.21052631578947367,
+    0.2,
+    0.17727621941225005,
+    1.2595209708597397,
+    7.104850131820359
+  ],
+  [
+    "K4: Penggunaan obat/vaksin",
+    0.19047619047619047,
+    0.19047619047619047,
+    0.17391304347826086,
+    0.15789473684210528,
+    0.11764705882352941,
+    0.10526315789473684,
+    0.15,
+    0.15509576828443047,
+    1.1008008695469034,
+    7.097555798738121
+  ],
+  [
+    "K5: Dokumentasi pemeliharaan",
+    0.09523809523809523,
+    0.09523809523809523,
+    0.17391304347826086,
+    0.15789473684210528,
+    0.11764705882352941,
+    0.10526315789473684,
+    0.1,
+    0.12074202678783184,
+    0.8563174926721261,
+    7.092124552264218
+  ],
+  [
+    "K6: Kebersihan kandang",
+    0.09523809523809523,
+    0.09523809523809523,
+    0.08695652173913043,
+    0.15789473684210528,
+    0.11764705882352941,
+    0.10526315789473684,
+    0.1,
+    0.10831966653938463,
+    0.767679382966001,
+    7.087165308867302
+  ],
+  [
+    "K7: Kesiapan hewan untuk disembelih",
+    0.047619047619047616,
+    0.047619047619047616,
+    0.043478260869565216,
+    0.05263157894736842,
+    0.058823529411764705,
+    0.05263157894736842,
+    0.05,
+    0.050400434773451706,
+    0.35799039676892874,
+    7.102922789814885
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    1
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP1  (n=7, RI=1.32)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 7) / (7−1). CR = CI / 1.32 (RI untuk n=7). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    7,
+    "Jumlah kriteria CP1"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    7.101150426045523,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 7) / (7 − 1)",
+    "=",
+    0.01685840434092049,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=7, tabel Saaty)",
+    "=",
+    1.32,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.01277151844009128,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP1"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Asal-usul sapi",
+    0.19408294210132565,
+    0.25,
+    0.04852073552533141,
+    "Low Risk",
+    "Data asal sapi tersedia (ID, peternakan) → Low Risk"
+  ],
+  [
+    "K2: Status kesehatan sapi",
+    0.19408294210132565,
+    0.5,
+    0.09704147105066283,
+    "Moderate Risk",
+    "Catatan kesehatan lengkap dan sapi sehat → Moderate Risk"
+  ],
+  [
+    "K3: Kepatuhan pakan",
+    0.17727621941225005,
+    0.5,
+    0.08863810970612503,
+    "Moderate Risk",
+    "Pakan perlu diverifikasi komposisinya → Moderate Risk"
+  ],
+  [
+    "K4: Penggunaan obat/vaksin",
+    0.15509576828443047,
+    0.25,
+    0.03877394207110762,
+    "Low Risk",
+    "Obat/vaksin terdokumentasi → Low Risk"
+  ],
+  [
+    "K5: Dokumentasi pemeliharaan",
+    0.12074202678783184,
+    0.5,
+    0.06037101339391592,
+    "Moderate Risk",
+    "Farm logbook ada tapi tidak selalu lengkap → Moderate Risk"
+  ],
+  [
+    "K6: Kebersihan kandang",
+    0.10831966653938463,
+    0.25,
+    0.027079916634846157,
+    "Low Risk",
+    "Sanitasi kandang memadai → Low Risk"
+  ],
+  [
+    "K7: Kesiapan hewan untuk disembelih",
+    0.050400434773451706,
+    0.25,
+    0.012600108693362927,
+    "Low Risk",
+    "Hewan dalam kondisi layak sembelih → Low Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP1",
+    1,
+    null,
+    0.37302529707535187,
+    "MODERATE RISK ⚠",
+    "Risk Score CP1 ini akan dikalikan bobot global 0.080 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP2 – Pakan & Kesehatan Hewan   |   Bobot Global = 0.070   |   Kriteria: 5"
+  ],
+  [
+    "Titik kritis ini memiliki 5 kriteria turunan. Bobot global 0.070 artinya titik ini menyumbang 7.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP2"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Σ Baris"
+  ],
+  [
+    "K1: Halal status of feed ingredients",
+    1,
+    1,
+    2,
+    2,
+    2,
+    8
+  ],
+  [
+    "K2: Supplier reliability",
+    1,
+    1,
+    1,
+    1,
+    1,
+    5
+  ],
+  [
+    "K3: Feed storage segregation",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    4.5
+  ],
+  [
+    "K4: Medication control",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    4.5
+  ],
+  [
+    "K5: Veterinary supervision",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    4.5
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    3.5,
+    5,
+    6,
+    6,
+    6
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP2"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Halal status of feed ingredients",
+    0.2857142857142857,
+    0.2,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.2971428571428571,
+    1.5057142857142853,
+    5.067307692307692
+  ],
+  [
+    "K2: Supplier reliability",
+    0.2857142857142857,
+    0.2,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.19714285714285712,
+    1,
+    5.072463768115942
+  ],
+  [
+    "K3: Feed storage segregation",
+    0.14285714285714285,
+    0.2,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16857142857142854,
+    0.8514285714285714,
+    5.050847457627119
+  ],
+  [
+    "K4: Medication control",
+    0.14285714285714285,
+    0.2,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16857142857142854,
+    0.8514285714285714,
+    5.050847457627119
+  ],
+  [
+    "K5: Veterinary supervision",
+    0.14285714285714285,
+    0.2,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16857142857142854,
+    0.8514285714285714,
+    5.050847457627119
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    1
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP2  (n=5, RI=1.12)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 5) / (5−1). CR = CI / 1.12 (RI untuk n=5). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    5,
+    "Jumlah kriteria CP2"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    5.058462766660999,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 5) / (5 − 1)",
+    "=",
+    0.014615691665249786,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=5, tabel Saaty)",
+    "=",
+    1.12,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.01304972470111588,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP2"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Halal status of feed ingredients",
+    0.2971428571428571,
+    0.5,
+    0.14857142857142855,
+    "Moderate Risk",
+    "Status halal bahan pakan belum selalu terverifikasi → Moderate Risk"
+  ],
+  [
+    "K2: Supplier reliability",
+    0.19714285714285712,
+    0.25,
+    0.04928571428571428,
+    "Low Risk",
+    "Supplier pakan terdaftar dan andal → Low Risk"
+  ],
+  [
+    "K3: Feed storage segregation",
+    0.16857142857142854,
+    0.5,
+    0.08428571428571427,
+    "Moderate Risk",
+    "Penyimpanan pakan belum selalu terpisah → Moderate Risk"
+  ],
+  [
+    "K4: Medication control",
+    0.16857142857142854,
+    0.25,
+    0.042142857142857135,
+    "Low Risk",
+    "Kontrol obat ada tapi pencatatan tidak konsisten → Low Risk"
+  ],
+  [
+    "K5: Veterinary supervision",
+    0.16857142857142854,
+    0.25,
+    0.042142857142857135,
+    "Low Risk",
+    "Ada pengawasan dokter hewan → Low Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP2",
+    1,
+    null,
+    0.36642857142857144,
+    "MODERATE RISK ⚠",
+    "Risk Score CP2 ini akan dikalikan bobot global 0.070 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP3 – Transportasi Hewan ke RPH   |   Bobot Global = 0.080   |   Kriteria: 5"
+  ],
+  [
+    "Titik kritis ini memiliki 5 kriteria turunan. Bobot global 0.080 artinya titik ini menyumbang 8.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP3"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Σ Baris"
+  ],
+  [
+    "K1: Kelayakan kendaraan",
+    1,
+    1,
+    1,
+    1,
+    1,
+    5
+  ],
+  [
+    "K2: Kebersihan kendaraan",
+    1,
+    1,
+    2,
+    1,
+    2,
+    7
+  ],
+  [
+    "K3: Animal welfare",
+    1,
+    0.5,
+    1,
+    0.5,
+    1,
+    4
+  ],
+  [
+    "K4: Traceability during transport",
+    1,
+    1,
+    2,
+    1,
+    2,
+    7
+  ],
+  [
+    "K5: Dokumentasi perjalanan",
+    1,
+    0.5,
+    1,
+    0.5,
+    1,
+    4
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    5,
+    4,
+    7,
+    4,
+    7
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP3"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Kelayakan kendaraan",
+    0.2,
+    0.25,
+    0.14285714285714285,
+    0.25,
+    0.14285714285714285,
+    0.19714285714285715,
+    0.9999999999999999,
+    5.0724637681159415
+  ],
+  [
+    "K2: Kebersihan kendaraan",
+    0.2,
+    0.25,
+    0.2857142857142857,
+    0.25,
+    0.2857142857142857,
+    0.2542857142857143,
+    1.2942857142857143,
+    5.089887640449438
+  ],
+  [
+    "K3: Animal welfare",
+    0.2,
+    0.125,
+    0.14285714285714285,
+    0.125,
+    0.14285714285714285,
+    0.14714285714285716,
+    0.7457142857142857,
+    5.067961165048543
+  ],
+  [
+    "K4: Traceability during transport",
+    0.2,
+    0.25,
+    0.2857142857142857,
+    0.25,
+    0.2857142857142857,
+    0.2542857142857143,
+    1.2942857142857143,
+    5.089887640449438
+  ],
+  [
+    "K5: Dokumentasi perjalanan",
+    0.2,
+    0.125,
+    0.14285714285714285,
+    0.125,
+    0.14285714285714285,
+    0.14714285714285716,
+    0.7457142857142857,
+    5.067961165048543
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.9999999999999999
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP3  (n=5, RI=1.12)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 5) / (5−1). CR = CI / 1.12 (RI untuk n=5). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    5,
+    "Jumlah kriteria CP3"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    5.077632275822381,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 5) / (5 − 1)",
+    "=",
+    0.019408068955595326,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=5, tabel Saaty)",
+    "=",
+    1.12,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.017328632996067253,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP3"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Kelayakan kendaraan",
+    0.19714285714285715,
+    0.25,
+    0.04928571428571429,
+    "Low Risk",
+    "Kendaraan laik pakai dan terdaftar → Low Risk"
+  ],
+  [
+    "K2: Kebersihan kendaraan",
+    0.2542857142857143,
+    0.5,
+    0.12714285714285714,
+    "Moderate Risk",
+    "Kebersihan kendaraan tidak selalu terdokumentasi → Moderate Risk"
+  ],
+  [
+    "K3: Animal welfare",
+    0.14714285714285716,
+    0.25,
+    0.03678571428571429,
+    "Low Risk",
+    "Kepadatan muatan dan durasi dalam batas wajar → Low Risk"
+  ],
+  [
+    "K4: Traceability during transport",
+    0.2542857142857143,
+    0.5,
+    0.12714285714285714,
+    "Moderate Risk",
+    "Surat jalan ada tapi tracking real-time belum ada → Moderate Risk"
+  ],
+  [
+    "K5: Dokumentasi perjalanan",
+    0.14714285714285716,
+    0.5,
+    0.07357142857142858,
+    "Moderate Risk",
+    "Cleaning log tidak selalu lengkap → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP3",
+    0.9999999999999999,
+    null,
+    0.4139285714285714,
+    "MODERATE RISK ⚠",
+    "Risk Score CP3 ini akan dikalikan bobot global 0.080 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP4 – RPH / Penyembelihan   |   Bobot Global = 0.250   |   Kriteria: 10"
+  ],
+  [
+    "Titik kritis ini memiliki 10 kriteria turunan. Bobot global 0.250 artinya titik ini menyumbang 25.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP4"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "K8",
+    "K9",
+    "K10",
+    "Σ Baris"
+  ],
+  [
+    "K1: Validitas sertifikat halal RPH",
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    4,
+    5,
+    5,
+    23
+  ],
+  [
+    "K2: Kompetensi juru sembelih halal",
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    3,
+    4,
+    6,
+    6,
+    28
+  ],
+  [
+    "K3: Kesesuaian proses penyembelihan syariah",
+    1,
+    1,
+    1,
+    3,
+    2,
+    2,
+    3,
+    5,
+    7,
+    7,
+    32
+  ],
+  [
+    "K4: Pemeriksaan ante-mortem dan post-mortem",
+    0.5,
+    0.5,
+    0.3333333333333333,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    13.333333333333332
+  ],
+  [
+    "K5: Sanitasi alat dan area",
+    1,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    14
+  ],
+  [
+    "K6: Pemisahan halal dan non-halal",
+    1,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    14
+  ],
+  [
+    "K7: Dokumentasi penyembelihan",
+    0.5,
+    0.3333333333333333,
+    0.3333333333333333,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    11.166666666666666
+  ],
+  [
+    "K8: Pengawasan halal internal",
+    0.25,
+    0.25,
+    0.2,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    5.7
+  ],
+  [
+    "K9: Audit dan corrective action",
+    0.2,
+    0.16666666666666666,
+    0.14285714285714285,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.5,
+    1,
+    1,
+    1,
+    5.0095238095238095
+  ],
+  [
+    "K10: Traceability batch",
+    0.2,
+    0.16666666666666666,
+    0.14285714285714285,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.5,
+    1,
+    1,
+    1,
+    5.0095238095238095
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    6.65,
+    5.416666666666667,
+    5.152380952380954,
+    12.166666666666668,
+    10.166666666666668,
+    10.166666666666668,
+    13.5,
+    24,
+    32,
+    32
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP4"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "K8",
+    "K9",
+    "K10",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Validitas sertifikat halal RPH",
+    0.15037593984962405,
+    0.1846153846153846,
+    0.1940850277264325,
+    0.1643835616438356,
+    0.0983606557377049,
+    0.0983606557377049,
+    0.14814814814814814,
+    0.16666666666666666,
+    0.15625,
+    0.15625,
+    0.15174960401255017,
+    1.5410393057059117,
+    10.155145482807738
+  ],
+  [
+    "K2: Kompetensi juru sembelih halal",
+    0.15037593984962405,
+    0.1846153846153846,
+    0.1940850277264325,
+    0.1643835616438356,
+    0.1967213114754098,
+    0.1967213114754098,
+    0.2222222222222222,
+    0.16666666666666666,
+    0.1875,
+    0.1875,
+    0.18507914256749852,
+    1.874571946040177,
+    10.12848838629409
+  ],
+  [
+    "K3: Kesesuaian proses penyembelihan syariah",
+    0.15037593984962405,
+    0.1846153846153846,
+    0.1940850277264325,
+    0.2465753424657534,
+    0.1967213114754098,
+    0.1967213114754098,
+    0.2222222222222222,
+    0.20833333333333334,
+    0.21875,
+    0.21875,
+    0.20371498731635693,
+    2.0650446889577023,
+    10.136930601727473
+  ],
+  [
+    "K4: Pemeriksaan ante-mortem dan post-mortem",
+    0.07518796992481203,
+    0.0923076923076923,
+    0.06469500924214416,
+    0.0821917808219178,
+    0.0983606557377049,
+    0.0983606557377049,
+    0.07407407407407407,
+    0.08333333333333333,
+    0.09375,
+    0.09375,
+    0.08560111711793836,
+    0.8651963781135213,
+    10.107302418979915
+  ],
+  [
+    "K5: Sanitasi alat dan area",
+    0.15037593984962405,
+    0.0923076923076923,
+    0.09704251386321625,
+    0.0821917808219178,
+    0.0983606557377049,
+    0.0983606557377049,
+    0.07407407407407407,
+    0.08333333333333333,
+    0.09375,
+    0.09375,
+    0.09635466457252677,
+    0.9750236780058559,
+    10.119112368160955
+  ],
+  [
+    "K6: Pemisahan halal dan non-halal",
+    0.15037593984962405,
+    0.0923076923076923,
+    0.09704251386321625,
+    0.0821917808219178,
+    0.0983606557377049,
+    0.0983606557377049,
+    0.07407407407407407,
+    0.08333333333333333,
+    0.09375,
+    0.09375,
+    0.09635466457252677,
+    0.9750236780058559,
+    10.119112368160955
+  ],
+  [
+    "K7: Dokumentasi penyembelihan",
+    0.07518796992481203,
+    0.061538461538461535,
+    0.06469500924214416,
+    0.0821917808219178,
+    0.0983606557377049,
+    0.0983606557377049,
+    0.07407407407407407,
+    0.08333333333333333,
+    0.0625,
+    0.0625,
+    0.07627419404101529,
+    0.7698007372040752,
+    10.092545019749753
+  ],
+  [
+    "K8: Pengawasan halal internal",
+    0.03759398496240601,
+    0.04615384615384615,
+    0.0388170055452865,
+    0.0410958904109589,
+    0.04918032786885245,
+    0.04918032786885245,
+    0.037037037037037035,
+    0.041666666666666664,
+    0.03125,
+    0.03125,
+    0.04032250865139062,
+    0.4071141300598744,
+    10.096448452143466
+  ],
+  [
+    "K9: Audit dan corrective action",
+    0.03007518796992481,
+    0.030769230769230767,
+    0.027726432532347495,
+    0.027397260273972598,
+    0.032786885245901634,
+    0.032786885245901634,
+    0.037037037037037035,
+    0.041666666666666664,
+    0.03125,
+    0.03125,
+    0.032274558574098264,
+    0.3260774571833791,
+    10.103235228910936
+  ],
+  [
+    "K10: Traceability batch",
+    0.03007518796992481,
+    0.030769230769230767,
+    0.027726432532347495,
+    0.027397260273972598,
+    0.032786885245901634,
+    0.032786885245901634,
+    0.037037037037037035,
+    0.041666666666666664,
+    0.03125,
+    0.03125,
+    0.032274558574098264,
+    0.3260774571833791,
+    10.103235228910936
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.9999999999999999
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP4  (n=10, RI=1.49)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 10) / (10−1). CR = CI / 1.49 (RI untuk n=10). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    10,
+    "Jumlah kriteria CP4"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    10.116155555584621,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 10) / (10 − 1)",
+    "=",
+    0.012906172842735665,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=10, tabel Saaty)",
+    "=",
+    1.49,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.00866186096827897,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP4"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Validitas sertifikat halal RPH",
+    0.15174960401255017,
+    0.25,
+    0.03793740100313754,
+    "Low Risk",
+    "Sertifikat RPH masih aktif (BPJPH/MUI/LPPOM) → Low Risk"
+  ],
+  [
+    "K2: Kompetensi juru sembelih halal",
+    0.18507914256749852,
+    0.75,
+    0.1388093569256239,
+    "High Risk",
+    "Sertifikat juru sembelih tidak selengkap yang diharapkan → High Risk"
+  ],
+  [
+    "K3: Kesesuaian proses penyembelihan syariah",
+    0.20371498731635693,
+    0.25,
+    0.05092874682908923,
+    "Low Risk",
+    "Prosedur sembelih (basmalah, saluran wajib, hewan hidup) dipatuhi → Low Risk"
+  ],
+  [
+    "K4: Pemeriksaan ante-mortem dan post-mortem",
+    0.08560111711793836,
+    0.5,
+    0.04280055855896918,
+    "Moderate Risk",
+    "Pemeriksaan ante/post-mortem dilakukan tapi form tidak selalu lengkap → Moderate Risk"
+  ],
+  [
+    "K5: Sanitasi alat dan area",
+    0.09635466457252677,
+    0.5,
+    0.048177332286263384,
+    "Moderate Risk",
+    "Sanitasi alat dilakukan namun cleaning log tidak konsisten → Moderate Risk"
+  ],
+  [
+    "K6: Pemisahan halal dan non-halal",
+    0.09635466457252677,
+    0.5,
+    0.048177332286263384,
+    "Moderate Risk",
+    "Segregasi halal/non-halal ada tapi belum selalu sesuai SOP → Moderate Risk"
+  ],
+  [
+    "K7: Dokumentasi penyembelihan",
+    0.07627419404101529,
+    0.5,
+    0.038137097020507646,
+    "Moderate Risk",
+    "Slaughter log ada namun batch ID tidak selalu terisi → Moderate Risk"
+  ],
+  [
+    "K8: Pengawasan halal internal",
+    0.04032250865139062,
+    0.5,
+    0.02016125432569531,
+    "Moderate Risk",
+    "Pengawasan internal ada tapi belum terjadwal rutin → Moderate Risk"
+  ],
+  [
+    "K9: Audit dan corrective action",
+    0.032274558574098264,
+    0.5,
+    0.016137279287049132,
+    "Moderate Risk",
+    "CAPA form tersedia namun belum selalu ditindaklanjuti → Moderate Risk"
+  ],
+  [
+    "K10: Traceability batch",
+    0.032274558574098264,
+    0.5,
+    0.016137279287049132,
+    "Moderate Risk",
+    "Traceability batch belum end-to-end → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP4",
+    0.9999999999999999,
+    null,
+    0.45740363780964777,
+    "MODERATE RISK ⚠",
+    "Risk Score CP4 ini akan dikalikan bobot global 0.250 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP5 – Post-Slaughter Handling   |   Bobot Global = 0.100   |   Kriteria: 5"
+  ],
+  [
+    "Titik kritis ini memiliki 5 kriteria turunan. Bobot global 0.100 artinya titik ini menyumbang 10.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP5"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Σ Baris"
+  ],
+  [
+    "K1: Handling carcass compliance",
+    1,
+    1,
+    1,
+    1,
+    2,
+    6
+  ],
+  [
+    "K2: Sanitation",
+    1,
+    1,
+    1,
+    1,
+    2,
+    6
+  ],
+  [
+    "K3: Batch identification",
+    1,
+    1,
+    1,
+    1,
+    2,
+    6
+  ],
+  [
+    "K4: Segregation",
+    1,
+    1,
+    1,
+    1,
+    2,
+    6
+  ],
+  [
+    "K5: Documentation",
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    1,
+    3
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    9
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP5"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Handling carcass compliance",
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.22222222222222224,
+    1.1111111111111112,
+    5
+  ],
+  [
+    "K2: Sanitation",
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.22222222222222224,
+    1.1111111111111112,
+    5
+  ],
+  [
+    "K3: Batch identification",
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.22222222222222224,
+    1.1111111111111112,
+    5
+  ],
+  [
+    "K4: Segregation",
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.2222222222222222,
+    0.22222222222222224,
+    1.1111111111111112,
+    5
+  ],
+  [
+    "K5: Documentation",
+    0.1111111111111111,
+    0.1111111111111111,
+    0.1111111111111111,
+    0.1111111111111111,
+    0.1111111111111111,
+    0.11111111111111112,
+    0.5555555555555556,
+    5
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    1
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP5  (n=5, RI=1.12)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 5) / (5−1). CR = CI / 1.12 (RI untuk n=5). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    5,
+    "Jumlah kriteria CP5"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    5,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 5) / (5 − 1)",
+    "=",
+    0,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=5, tabel Saaty)",
+    "=",
+    1.12,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP5"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Handling carcass compliance",
+    0.22222222222222224,
+    0.5,
+    0.11111111111111112,
+    "Moderate Risk",
+    "Penanganan karkas mengikuti prosedur tapi belum konsisten → Moderate Risk"
+  ],
+  [
+    "K2: Sanitation",
+    0.22222222222222224,
+    0.5,
+    0.11111111111111112,
+    "Moderate Risk",
+    "Sanitasi meja dan alat dilakukan namun log tidak lengkap → Moderate Risk"
+  ],
+  [
+    "K3: Batch identification",
+    0.22222222222222224,
+    0.5,
+    0.11111111111111112,
+    "Moderate Risk",
+    "Batch ID karkas tidak selalu dipasang → Moderate Risk"
+  ],
+  [
+    "K4: Segregation",
+    0.22222222222222224,
+    0.5,
+    0.11111111111111112,
+    "Moderate Risk",
+    "Pemisahan karkas halal/non-halal belum sempurna → Moderate Risk"
+  ],
+  [
+    "K5: Documentation",
+    0.11111111111111112,
+    0.5,
+    0.05555555555555556,
+    "Moderate Risk",
+    "Dokumentasi post-slaughter masih parsial → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP5",
+    1,
+    null,
+    0.5,
+    "MODERATE RISK ⚠",
+    "Risk Score CP5 ini akan dikalikan bobot global 0.100 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP6 – Processing / Pengolahan   |   Bobot Global = 0.120   |   Kriteria: 7"
+  ],
+  [
+    "Titik kritis ini memiliki 7 kriteria turunan. Bobot global 0.120 artinya titik ini menyumbang 12.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP6"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Σ Baris"
+  ],
+  [
+    "K1: Halal status of ingredients/additives",
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    4,
+    14
+  ],
+  [
+    "K2: Processing equipment sanitation",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    11
+  ],
+  [
+    "K3: Dedicated production line",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    10
+  ],
+  [
+    "K4: Batch control",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    8.5
+  ],
+  [
+    "K5: Packaging & labeling compliance",
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    5.5
+  ],
+  [
+    "K6: Operator competence",
+    0.3333333333333333,
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    4.833333333333333
+  ],
+  [
+    "K7: Product formulation control",
+    0.25,
+    0.3333333333333333,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    4.583333333333333
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    4.583333333333333,
+    5.333333333333333,
+    5.5,
+    7,
+    10,
+    12,
+    14
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP6"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Halal status of ingredients/additives",
+    0.2181818181818182,
+    0.1875,
+    0.18181818181818182,
+    0.2857142857142857,
+    0.2,
+    0.25,
+    0.2857142857142857,
+    0.22984693877551018,
+    1.6416782622139765,
+    7.142484781219521
+  ],
+  [
+    "K2: Processing equipment sanitation",
+    0.2181818181818182,
+    0.1875,
+    0.18181818181818182,
+    0.14285714285714285,
+    0.2,
+    0.16666666666666666,
+    0.21428571428571427,
+    0.1873299319727891,
+    1.334747990105133,
+    7.12511863987125
+  ],
+  [
+    "K3: Dedicated production line",
+    0.2181818181818182,
+    0.1875,
+    0.18181818181818182,
+    0.14285714285714285,
+    0.2,
+    0.16666666666666666,
+    0.14285714285714285,
+    0.17712585034013606,
+    1.2584415584415585,
+    7.104787675118928
+  ],
+  [
+    "K4: Batch control",
+    0.1090909090909091,
+    0.1875,
+    0.18181818181818182,
+    0.14285714285714285,
+    0.1,
+    0.16666666666666666,
+    0.14285714285714285,
+    0.14725572047000618,
+    1.0447510822510822,
+    7.094808126410835
+  ],
+  [
+    "K5: Packaging & labeling compliance",
+    0.1090909090909091,
+    0.09375,
+    0.09090909090909091,
+    0.14285714285714285,
+    0.1,
+    0.08333333333333333,
+    0.07142857142857142,
+    0.09876700680272109,
+    0.7028486394557822,
+    7.116229014205768
+  ],
+  [
+    "K6: Operator competence",
+    0.07272727272727272,
+    0.09375,
+    0.09090909090909091,
+    0.07142857142857142,
+    0.1,
+    0.08333333333333333,
+    0.07142857142857142,
+    0.08336811997526283,
+    0.5909129560915275,
+    7.08799666187584
+  ],
+  [
+    "K7: Product formulation control",
+    0.05454545454545455,
+    0.0625,
+    0.09090909090909091,
+    0.07142857142857142,
+    0.1,
+    0.08333333333333333,
+    0.07142857142857142,
+    0.07630643166357452,
+    0.5405373891981035,
+    7.0837723297200546
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    1
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP6  (n=7, RI=1.32)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 7) / (7−1). CR = CI / 1.32 (RI untuk n=7). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    7,
+    "Jumlah kriteria CP6"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    7.107885318346028,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 7) / (7 − 1)",
+    "=",
+    0.017980886391004702,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=7, tabel Saaty)",
+    "=",
+    1.32,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.013621883629549017,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP6"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Halal status of ingredients/additives",
+    0.22984693877551018,
+    0.5,
+    0.11492346938775509,
+    "Moderate Risk",
+    "Sertifikat halal bahan tambahan tidak selalu lengkap → Moderate Risk"
+  ],
+  [
+    "K2: Processing equipment sanitation",
+    0.1873299319727891,
+    0.5,
+    0.09366496598639455,
+    "Moderate Risk",
+    "Cleaning validation ada tapi tidak selalu dijalankan → Moderate Risk"
+  ],
+  [
+    "K3: Dedicated production line",
+    0.17712585034013606,
+    0.75,
+    0.13284438775510204,
+    "High Risk",
+    "Peralatan produksi belum sepenuhnya dedicated halal → High Risk"
+  ],
+  [
+    "K4: Batch control",
+    0.14725572047000618,
+    0.5,
+    0.07362786023500309,
+    "Moderate Risk",
+    "Batch production record tidak konsisten → Moderate Risk"
+  ],
+  [
+    "K5: Packaging & labeling compliance",
+    0.09876700680272109,
+    0.25,
+    0.024691751700680272,
+    "Low Risk",
+    "Label halal dan expiry date sudah tercantum → Low Risk"
+  ],
+  [
+    "K6: Operator competence",
+    0.08336811997526283,
+    0.5,
+    0.04168405998763142,
+    "Moderate Risk",
+    "Training halal operator tidak berkala → Moderate Risk"
+  ],
+  [
+    "K7: Product formulation control",
+    0.07630643166357452,
+    0.5,
+    0.03815321583178726,
+    "Moderate Risk",
+    "Master formula record ada tapi tidak selalu diperbarui → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP6",
+    1,
+    null,
+    0.5195897108843538,
+    "HIGH RISK ✗",
+    "Risk Score CP6 ini akan dikalikan bobot global 0.120 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP7 – Cold Storage / Warehouse   |   Bobot Global = 0.100   |   Kriteria: 7"
+  ],
+  [
+    "Titik kritis ini memiliki 7 kriteria turunan. Bobot global 0.100 artinya titik ini menyumbang 10.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP7"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Σ Baris"
+  ],
+  [
+    "K1: Temperature compliance",
+    1,
+    1,
+    2,
+    2,
+    2,
+    3,
+    4,
+    15
+  ],
+  [
+    "K2: Halal segregation",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    11
+  ],
+  [
+    "K3: Storage hygiene",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    8.5
+  ],
+  [
+    "K4: Batch traceability",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    8.5
+  ],
+  [
+    "K5: FIFO/FEFO compliance",
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    6
+  ],
+  [
+    "K6: Documentation",
+    0.3333333333333333,
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    4.833333333333333
+  ],
+  [
+    "K7: Incident handling",
+    0.25,
+    0.3333333333333333,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    4.583333333333333
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    4.083333333333334,
+    5.333333333333333,
+    7,
+    7,
+    9,
+    12,
+    14
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP7"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Temperature compliance",
+    0.24489795918367344,
+    0.1875,
+    0.2857142857142857,
+    0.2857142857142857,
+    0.2222222222222222,
+    0.25,
+    0.2857142857142857,
+    0.25168043407839324,
+    1.7951388888888888,
+    7.132612018341244
+  ],
+  [
+    "K2: Halal segregation",
+    0.24489795918367344,
+    0.1875,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.2222222222222222,
+    0.16666666666666666,
+    0.21428571428571427,
+    0.18875526401036602,
+    1.3452583414318107,
+    7.126997747506168
+  ],
+  [
+    "K3: Storage hygiene",
+    0.12244897959183672,
+    0.1875,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.1111111111111111,
+    0.16666666666666666,
+    0.14285714285714285,
+    0.14518545513443473,
+    1.033669420149012,
+    7.119648584576767
+  ],
+  [
+    "K4: Batch traceability",
+    0.12244897959183672,
+    0.1875,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.1111111111111111,
+    0.16666666666666666,
+    0.14285714285714285,
+    0.14518545513443473,
+    1.033669420149012,
+    7.119648584576767
+  ],
+  [
+    "K5: FIFO/FEFO compliance",
+    0.12244897959183672,
+    0.09375,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.1111111111111111,
+    0.08333333333333333,
+    0.07142857142857142,
+    0.10968375445416263,
+    0.7797821509556203,
+    7.109367789570834
+  ],
+  [
+    "K6: Documentation",
+    0.08163265306122447,
+    0.09375,
+    0.07142857142857142,
+    0.07142857142857142,
+    0.1111111111111111,
+    0.08333333333333333,
+    0.07142857142857142,
+    0.08344468739876902,
+    0.5926499568081199,
+    7.1023090298839415
+  ],
+  [
+    "K7: Incident handling",
+    0.06122448979591836,
+    0.0625,
+    0.07142857142857142,
+    0.07142857142857142,
+    0.1111111111111111,
+    0.08333333333333333,
+    0.07142857142857142,
+    0.07606494978943958,
+    0.5402173766331929,
+    7.102053943749445
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.9999999999999999
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP7  (n=7, RI=1.32)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 7) / (7−1). CR = CI / 1.32 (RI untuk n=7). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    7,
+    "Jumlah kriteria CP7"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    7.116091099743595,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 7) / (7 − 1)",
+    "=",
+    0.019348516623932444,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=7, tabel Saaty)",
+    "=",
+    1.32,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.014657967139342759,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP7"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Temperature compliance",
+    0.25168043407839324,
+    0.75,
+    0.18876032555879493,
+    "High Risk",
+    "Temperature log tidak stabil atau tidak dicatat konsisten → High Risk"
+  ],
+  [
+    "K2: Halal segregation",
+    0.18875526401036602,
+    0.5,
+    0.09437763200518301,
+    "Moderate Risk",
+    "Segregasi halal/non-halal ada namun belum penuh → Moderate Risk"
+  ],
+  [
+    "K3: Storage hygiene",
+    0.14518545513443473,
+    0.5,
+    0.07259272756721737,
+    "Moderate Risk",
+    "Cleaning log ruang pendingin tidak teratur → Moderate Risk"
+  ],
+  [
+    "K4: Batch traceability",
+    0.14518545513443473,
+    0.5,
+    0.07259272756721737,
+    "Moderate Risk",
+    "Inventory record dan batch ID belum terkoneksi → Moderate Risk"
+  ],
+  [
+    "K5: FIFO/FEFO compliance",
+    0.10968375445416263,
+    0.25,
+    0.027420938613540658,
+    "Low Risk",
+    "Stock movement record ada dan FEFO dijalankan → Low Risk"
+  ],
+  [
+    "K6: Documentation",
+    0.08344468739876902,
+    0.5,
+    0.04172234369938451,
+    "Moderate Risk",
+    "Dokumentasi gudang parsial → Moderate Risk"
+  ],
+  [
+    "K7: Incident handling",
+    0.07606494978943958,
+    0.5,
+    0.03803247489471979,
+    "Moderate Risk",
+    "Incident report belum terstandarisasi → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP7",
+    0.9999999999999999,
+    null,
+    0.5354991699060576,
+    "HIGH RISK ✗",
+    "Risk Score CP7 ini akan dikalikan bobot global 0.100 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP8 – Distribusi / Logistik   |   Bobot Global = 0.100   |   Kriteria: 7"
+  ],
+  [
+    "Titik kritis ini memiliki 7 kriteria turunan. Bobot global 0.100 artinya titik ini menyumbang 10.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP8"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Σ Baris"
+  ],
+  [
+    "K1: Dedicated halal transport",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    11
+  ],
+  [
+    "K2: Vehicle sanitation",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    11
+  ],
+  [
+    "K3: Temperature control",
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    11
+  ],
+  [
+    "K4: Route & delivery traceability",
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    9
+  ],
+  [
+    "K5: Loading-unloading compliance",
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    5.5
+  ],
+  [
+    "K6: Documentation completeness",
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    5
+  ],
+  [
+    "K7: Contamination prevention",
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.5,
+    1,
+    1,
+    1,
+    4.5
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    5.333333333333333,
+    5.333333333333333,
+    5.333333333333333,
+    6,
+    10,
+    11,
+    14
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP8"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Dedicated halal transport",
+    0.1875,
+    0.1875,
+    0.1875,
+    0.16666666666666666,
+    0.2,
+    0.18181818181818182,
+    0.21428571428571427,
+    0.18932436611008038,
+    1.3433596165739021,
+    7.095545302355967
+  ],
+  [
+    "K2: Vehicle sanitation",
+    0.1875,
+    0.1875,
+    0.1875,
+    0.16666666666666666,
+    0.2,
+    0.18181818181818182,
+    0.21428571428571427,
+    0.18932436611008038,
+    1.3433596165739021,
+    7.095545302355967
+  ],
+  [
+    "K3: Temperature control",
+    0.1875,
+    0.1875,
+    0.1875,
+    0.16666666666666666,
+    0.2,
+    0.18181818181818182,
+    0.21428571428571427,
+    0.18932436611008038,
+    1.3433596165739021,
+    7.095545302355967
+  ],
+  [
+    "K4: Route & delivery traceability",
+    0.1875,
+    0.1875,
+    0.1875,
+    0.16666666666666666,
+    0.1,
+    0.18181818181818182,
+    0.14285714285714285,
+    0.16483457019171305,
+    1.1657274273345704,
+    7.0721052384748875
+  ],
+  [
+    "K5: Loading-unloading compliance",
+    0.09375,
+    0.09375,
+    0.09375,
+    0.16666666666666666,
+    0.1,
+    0.09090909090909091,
+    0.07142857142857142,
+    0.10146490414347556,
+    0.7160134508348794,
+    7.056759742486002
+  ],
+  [
+    "K6: Documentation completeness",
+    0.09375,
+    0.09375,
+    0.09375,
+    0.08333333333333333,
+    0.1,
+    0.09090909090909091,
+    0.07142857142857142,
+    0.08956014223871367,
+    0.6335961657390229,
+    7.074532821198912
+  ],
+  [
+    "K7: Contamination prevention",
+    0.0625,
+    0.0625,
+    0.0625,
+    0.08333333333333333,
+    0.1,
+    0.09090909090909091,
+    0.07142857142857142,
+    0.07616728509585653,
+    0.5389339826839826,
+    7.075662234852328
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    1
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP8  (n=7, RI=1.32)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 7) / (7−1). CR = CI / 1.32 (RI untuk n=7). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    7,
+    "Jumlah kriteria CP8"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    7.080813706297149,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 7) / (7 − 1)",
+    "=",
+    0.013468951049524799,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=7, tabel Saaty)",
+    "=",
+    1.32,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.010203750795094545,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP8"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Dedicated halal transport",
+    0.18932436611008038,
+    0.75,
+    0.14199327458256028,
+    "High Risk",
+    "Kendaraan tidak selalu dedicated halal → High Risk"
+  ],
+  [
+    "K2: Vehicle sanitation",
+    0.18932436611008038,
+    0.5,
+    0.09466218305504019,
+    "Moderate Risk",
+    "Vehicle sanitation log ada tapi tidak rutin → Moderate Risk"
+  ],
+  [
+    "K3: Temperature control",
+    0.18932436611008038,
+    0.75,
+    0.14199327458256028,
+    "High Risk",
+    "IoT/sensor suhu tidak tersedia di semua armada → High Risk"
+  ],
+  [
+    "K4: Route & delivery traceability",
+    0.16483457019171305,
+    0.5,
+    0.08241728509585652,
+    "Moderate Risk",
+    "GPS dan delivery log belum real-time → Moderate Risk"
+  ],
+  [
+    "K5: Loading-unloading compliance",
+    0.10146490414347556,
+    0.5,
+    0.05073245207173778,
+    "Moderate Risk",
+    "Loading checklist ada tapi tidak selalu diisi → Moderate Risk"
+  ],
+  [
+    "K6: Documentation completeness",
+    0.08956014223871367,
+    0.5,
+    0.044780071119356835,
+    "Moderate Risk",
+    "Delivery order lengkap namun batch info kadang hilang → Moderate Risk"
+  ],
+  [
+    "K7: Contamination prevention",
+    0.07616728509585653,
+    0.5,
+    0.038083642547928266,
+    "Moderate Risk",
+    "Protokol pencegahan kontaminasi belum baku → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP8",
+    1,
+    null,
+    0.5946621830550403,
+    "HIGH RISK ✗",
+    "Risk Score CP8 ini akan dikalikan bobot global 0.100 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP9 – Retail / Pasar / Supermarket   |   Bobot Global = 0.070   |   Kriteria: 7"
+  ],
+  [
+    "Titik kritis ini memiliki 7 kriteria turunan. Bobot global 0.070 artinya titik ini menyumbang 7.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP9"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Σ Baris"
+  ],
+  [
+    "K1: Halal label validity",
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    11
+  ],
+  [
+    "K2: Display segregation",
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    8
+  ],
+  [
+    "K3: Storage temperature",
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    8
+  ],
+  [
+    "K4: Expiry date control",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    6.5
+  ],
+  [
+    "K5: Consumer information accessibility",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    6.5
+  ],
+  [
+    "K6: Supplier traceability",
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    6.5
+  ],
+  [
+    "K7: Complaint handling",
+    0.5,
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    1,
+    5.5
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    5,
+    6.5,
+    6.5,
+    8,
+    8,
+    8,
+    10
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP9"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Halal label validity",
+    0.2,
+    0.15384615384615385,
+    0.15384615384615385,
+    0.25,
+    0.25,
+    0.25,
+    0.2,
+    0.20824175824175822,
+    1.4824175824175823,
+    7.118733509234828
+  ],
+  [
+    "K2: Display segregation",
+    0.2,
+    0.15384615384615385,
+    0.15384615384615385,
+    0.125,
+    0.125,
+    0.125,
+    0.2,
+    0.15467032967032965,
+    1.104120879120879,
+    7.13854351687389
+  ],
+  [
+    "K3: Storage temperature",
+    0.2,
+    0.15384615384615385,
+    0.15384615384615385,
+    0.125,
+    0.125,
+    0.125,
+    0.2,
+    0.15467032967032965,
+    1.104120879120879,
+    7.13854351687389
+  ],
+  [
+    "K4: Expiry date control",
+    0.1,
+    0.15384615384615385,
+    0.15384615384615385,
+    0.125,
+    0.125,
+    0.125,
+    0.1,
+    0.1260989010989011,
+    0.8958791208791208,
+    7.104575163398692
+  ],
+  [
+    "K5: Consumer information accessibility",
+    0.1,
+    0.15384615384615385,
+    0.15384615384615385,
+    0.125,
+    0.125,
+    0.125,
+    0.1,
+    0.1260989010989011,
+    0.8958791208791208,
+    7.104575163398692
+  ],
+  [
+    "K6: Supplier traceability",
+    0.1,
+    0.15384615384615385,
+    0.15384615384615385,
+    0.125,
+    0.125,
+    0.125,
+    0.1,
+    0.1260989010989011,
+    0.8958791208791208,
+    7.104575163398692
+  ],
+  [
+    "K7: Complaint handling",
+    0.1,
+    0.07692307692307693,
+    0.07692307692307693,
+    0.125,
+    0.125,
+    0.125,
+    0.1,
+    0.10412087912087911,
+    0.7412087912087911,
+    7.118733509234828
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.9999999999999999
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP9  (n=7, RI=1.32)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 7) / (7−1). CR = CI / 1.32 (RI untuk n=7). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    7,
+    "Jumlah kriteria CP9"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    7.118325648916216,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 7) / (7 − 1)",
+    "=",
+    0.019720941486036054,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=7, tabel Saaty)",
+    "=",
+    1.32,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.014940107186390949,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP9"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Halal label validity",
+    0.20824175824175822,
+    0.25,
+    0.052060439560439556,
+    "Low Risk",
+    "Logo halal valid dan tertera di kemasan → Low Risk"
+  ],
+  [
+    "K2: Display segregation",
+    0.15467032967032965,
+    0.5,
+    0.07733516483516482,
+    "Moderate Risk",
+    "Display pemisahan halal/non-halal belum selalu terjaga → Moderate Risk"
+  ],
+  [
+    "K3: Storage temperature",
+    0.15467032967032965,
+    0.5,
+    0.07733516483516482,
+    "Moderate Risk",
+    "Suhu freezer/chiller tidak selalu dipantau → Moderate Risk"
+  ],
+  [
+    "K4: Expiry date control",
+    0.1260989010989011,
+    0.25,
+    0.031524725274725274,
+    "Low Risk",
+    "Kontrol tanggal kadaluarsa ada namun stock record tidak selalu update → Low Risk"
+  ],
+  [
+    "K5: Consumer information accessibility",
+    0.1260989010989011,
+    0.5,
+    0.06304945054945055,
+    "Moderate Risk",
+    "Informasi produk belum mudah diakses konsumen → Moderate Risk"
+  ],
+  [
+    "K6: Supplier traceability",
+    0.1260989010989011,
+    0.5,
+    0.06304945054945055,
+    "Moderate Risk",
+    "Traceability ke supplier belum end-to-end → Moderate Risk"
+  ],
+  [
+    "K7: Complaint handling",
+    0.10412087912087911,
+    0.5,
+    0.052060439560439556,
+    "Moderate Risk",
+    "Complaint log ada namun respons tidak terstandarisasi → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP9",
+    0.9999999999999999,
+    null,
+    0.41641483516483513,
+    "MODERATE RISK ⚠",
+    "Risk Score CP9 ini akan dikalikan bobot global 0.070 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "CP10 – Konsumen & Complaint Handling   |   Bobot Global = 0.030   |   Kriteria: 5"
+  ],
+  [
+    "Titik kritis ini memiliki 5 kriteria turunan. Bobot global 0.030 artinya titik ini menyumbang 3.0% dari total Halal Compliance Risk Score keseluruhan."
+  ],
+  [
+    "A. MATRIKS PERBANDINGAN BERPASANGAN – CP10"
+  ],
+  [
+    "LANGKAH 1–2: Isi sel dengan perbandingan berpasangan antar kriteria (wi/wj setelah defuzzifikasi). Sel DIAGONAL = 1.000 (membandingkan diri sendiri). Baris terakhir = Jumlah Kolom (dipakai untuk normalisasi di Bagian B)."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Σ Baris"
+  ],
+  [
+    "K1: Information transparency",
+    1,
+    1,
+    1,
+    2,
+    2,
+    7
+  ],
+  [
+    "K2: Traceability accessibility",
+    1,
+    1,
+    1,
+    2,
+    2,
+    7
+  ],
+  [
+    "K3: Complaint responsiveness",
+    1,
+    1,
+    1,
+    1,
+    1,
+    5
+  ],
+  [
+    "K4: Consumer trust",
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    4
+  ],
+  [
+    "K5: Halal literacy",
+    0.5,
+    0.5,
+    1,
+    1,
+    1,
+    4
+  ],
+  [
+    "Σ Jumlah Kolom →",
+    4,
+    4,
+    5,
+    7,
+    7
+  ],
+  [],
+  [
+    "B. NORMALISASI & BOBOT PRIORITAS – CP10"
+  ],
+  [
+    "LANGKAH 3–4: Normalisasi = bagi setiap sel dengan Jumlah Kolomnya. Bobot wi = AVERAGE(nilai ternormalisasi per baris). Kolom A·w = jumlah (nilai pairwise baris × wi semua baris). Kolom λ = A·w dibagi wi — dipakai untuk hitung λmax."
+  ],
+  [
+    "Kriteria",
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "Bobot wi\r\n= AVG baris",
+    "A·w\r\n(Aw = Σ pw×wi)",
+    "λ baris\r\n= A·w / wi"
+  ],
+  [
+    "K1: Information transparency",
+    0.25,
+    0.25,
+    0.2,
+    0.2857142857142857,
+    0.2857142857142857,
+    0.2542857142857143,
+    1.2942857142857143,
+    5.089887640449438
+  ],
+  [
+    "K2: Traceability accessibility",
+    0.25,
+    0.25,
+    0.2,
+    0.2857142857142857,
+    0.2857142857142857,
+    0.2542857142857143,
+    1.2942857142857143,
+    5.089887640449438
+  ],
+  [
+    "K3: Complaint responsiveness",
+    0.25,
+    0.25,
+    0.2,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.19714285714285712,
+    1,
+    5.072463768115942
+  ],
+  [
+    "K4: Consumer trust",
+    0.125,
+    0.125,
+    0.2,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.14714285714285716,
+    0.7457142857142857,
+    5.067961165048543
+  ],
+  [
+    "K5: Halal literacy",
+    0.125,
+    0.125,
+    0.2,
+    0.14285714285714285,
+    0.14285714285714285,
+    0.14714285714285716,
+    0.7457142857142857,
+    5.067961165048543
+  ],
+  [
+    "Σ wi (harus = 1.000)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    1
+  ],
+  [],
+  [
+    "C. UJI KONSISTENSI – CP10  (n=5, RI=1.12)"
+  ],
+  [
+    "LANGKAH 5: λmax = AVERAGE(kolom λ baris). CI = (λmax − 5) / (5−1). CR = CI / 1.12 (RI untuk n=5). Syarat: CR < 0.10 → KONSISTEN. Karena matriks dibuat dari bobot yang konsisten, CR akan sangat kecil mendekati 0."
+  ],
+  [
+    "n (jumlah kriteria)",
+    "=",
+    5,
+    "Jumlah kriteria CP10"
+  ],
+  [
+    "λmax = AVERAGE(kolom λ baris)",
+    "=",
+    5.077632275822381,
+    "Nilai eigen terbesar matriks"
+  ],
+  [
+    "CI = (λmax − 5) / (5 − 1)",
+    "=",
+    0.019408068955595326,
+    "Consistency Index. Semakin kecil semakin baik"
+  ],
+  [
+    "RI (n=5, tabel Saaty)",
+    "=",
+    1.12,
+    "Random Index dari tabel referensi"
+  ],
+  [
+    "CR = CI / RI",
+    "=",
+    0.017328632996067253,
+    "Consistency Ratio. Syarat: CR < 0.10"
+  ],
+  [
+    "STATUS KONSISTENSI",
+    "=",
+    "✓ KONSISTEN (CR < 0.10)",
+    "Hasil uji: KONSISTEN / TIDAK KONSISTEN"
+  ],
+  [],
+  [
+    "D. PERHITUNGAN RISK SCORE – CP10"
+  ],
+  [
+    "LANGKAH 6: Risk Score = Σ (wi × RV_i). wi = bobot kriteria dari hasil Fuzzy AHP (otomatis dari Bagian B). RV = Risk Value – ISI SESUAI KONDISI LAPANGAN (sel KUNING). wi × RV = kontribusi risiko per kriteria. TOTAL = Risk Score lokal titik kritis ini."
+  ],
+  [
+    "Kriteria",
+    "Bobot wi\r\n(dari Fuzzy AHP)",
+    "Risk Value (RV)\r\n← ISI DI SINI",
+    "wi × RV\r\n(Kontribusi Risiko)",
+    "Level Risiko\r\nKriteria",
+    "Dasar Penetapan RV\r\n(kondisi lapangan)"
+  ],
+  [
+    "K1: Information transparency",
+    0.2542857142857143,
+    0.5,
+    0.12714285714285714,
+    "Moderate Risk",
+    "Informasi produk belum transparan penuh → Moderate Risk"
+  ],
+  [
+    "K2: Traceability accessibility",
+    0.2542857142857143,
+    0.5,
+    0.12714285714285714,
+    "Moderate Risk",
+    "Konsumen belum dapat menelusuri asal produk → Moderate Risk"
+  ],
+  [
+    "K3: Complaint responsiveness",
+    0.19714285714285712,
+    0.5,
+    0.09857142857142856,
+    "Moderate Risk",
+    "Respons complaint lambat dan tidak terstandarisasi → Moderate Risk"
+  ],
+  [
+    "K4: Consumer trust",
+    0.14714285714285716,
+    0.25,
+    0.03678571428571429,
+    "Low Risk",
+    "Brand trust sudah cukup baik → Low Risk"
+  ],
+  [
+    "K5: Halal literacy",
+    0.14714285714285716,
+    0.5,
+    0.07357142857142858,
+    "Moderate Risk",
+    "Literasi halal konsumen masih perlu ditingkatkan → Moderate Risk"
+  ],
+  [
+    "TOTAL RISK SCORE CP10",
+    1,
+    null,
+    0.46321428571428575,
+    "MODERATE RISK ⚠",
+    "Risk Score CP10 ini akan dikalikan bobot global 0.030 pada Bagian Rekap untuk mendapatkan Global Weighted Risk."
+  ],
+  [],
+  [],
+  [
+    "BAGIAN 5 – REKAPITULASI: TOTAL HALAL COMPLIANCE RISK SCORE"
+  ],
+  [
+    "LANGKAH 6 (lanjutan): Global Weighted Risk = Bobot Global (wi) × Local Risk Score. Total Halal Compliance Risk Score = Σ (wi_global × RiskScore_lokal) dari semua 10 titik kritis. Ini adalah angka tunggal yang merepresentasikan tingkat risiko keseluruhan supply chain halal daging sapi."
+  ],
+  [
+    "Kode",
+    "Titik Kritis",
+    "Bobot Global\r\nwi (dari AHP)",
+    "Local Risk\r\nScore",
+    "Global Weighted\r\nRisk = wi × RS",
+    "Level Risiko",
+    "Interpretasi Singkat"
+  ],
+  [
+    "CP1",
+    "Farm / Kandang Sapi",
+    0.08935934279585359,
+    0.37302529707535187,
+    0.03333329539288149,
+    "Moderate Risk",
+    "Bobot terbesar; titik penentu syariah utama – prioritas #1"
+  ],
+  [
+    "CP2",
+    "Pakan & Kesehatan Hewan",
+    0.07891714144361392,
+    0.36642857142857144,
+    0.02891749540040996,
+    "Moderate Risk",
+    "Bahan tambahan & peralatan bersama jadi risiko utama – prioritas #3"
+  ],
+  [
+    "CP3",
+    "Transportasi Hewan ke RPH",
+    0.08935934279585359,
+    0.4139285714285714,
+    0.03698838510728368,
+    "Moderate Risk",
+    "Kendaraan non-dedicated & cold chain kritis – prioritas #2"
+  ],
+  [
+    "CP4",
+    "RPH / Penyembelihan",
+    0.24098791865694555,
+    0.45740363780964777,
+    0.11022875066186238,
+    "Moderate Risk",
+    "Suhu & segregasi di gudang belum optimal – prioritas #4"
+  ],
+  [
+    "CP5",
+    "Post-Slaughter Handling",
+    0.09324736767921285,
+    0.5,
+    0.046623683839606425,
+    "Moderate Risk",
+    "Batch ID & pemisahan karkas perlu konsistensi – prioritas #5"
+  ],
+  [
+    "CP6",
+    "Processing / Pengolahan",
+    0.11115496599918229,
+    0.5195897108843538,
+    0.0577549766468753,
+    "High Risk",
+    "Traceability perjalanan masih lemah – prioritas #6"
+  ],
+  [
+    "CP7",
+    "Cold Storage / Warehouse",
+    0.09324736767921285,
+    0.5354991699060576,
+    0.049933887988143424,
+    "High Risk",
+    "Asal-usul & kesehatan hewan perlu diverifikasi – prioritas #7"
+  ],
+  [
+    "CP8",
+    "Distribusi / Logistik",
+    0.09324736767921285,
+    0.5946621830550403,
+    0.05545068322825672,
+    "High Risk",
+    "Segregasi display & label halal perlu dijaga – prioritas #8"
+  ],
+  [
+    "CP9",
+    "Retail / Pasar / Supermarket",
+    0.07891714144361392,
+    0.41641483516483513,
+    0.03286226844592247,
+    "Moderate Risk",
+    "Status halal pakan belum terverifikasi penuh – prioritas #9"
+  ],
+  [
+    "CP10",
+    "Konsumen & Complaint Handling",
+    0.03156204382729859,
+    0.46321428571428575,
+    0.014619989587145098,
+    "Moderate Risk",
+    "Risiko terendah; edukasi konsumen tetap penting – prioritas #10"
+  ],
+  [
+    "TOTAL",
+    "HALAL COMPLIANCE RISK SCORE  =  Σ (wi × Risk Score)",
+    0.9999999999999999,
+    null,
+    0.4667134162983869,
+    "MODERATE RISK ⚠ – Perlu Verifikasi"
+  ],
+  [],
+  [
+    "RANKING PRIORITAS TITIK KRITIS (urut dari Global Weighted Risk tertinggi)"
+  ],
+  [
+    "Titik kritis dengan Global Weighted Risk tertinggi = prioritas utama untuk tindakan perbaikan. Perlu diperhatikan: RPH bisa saja bukan local risk tertinggi, tapi karena bobot globalnya besar, dampak sistemiknya paling besar terhadap keseluruhan status halal."
+  ],
+  [
+    "Rank",
+    "Kode",
+    "Titik Kritis",
+    "Global Weighted\r\nRisk",
+    "Level",
+    "Tindakan Prioritas"
+  ],
+  [
+    1,
+    "CP4",
+    "RPH / Penyembelihan",
+    0.11022875066186238,
+    "Moderate Risk",
+    "Validasi sertifikat juru sembelih, slaughtering checklist, audit internal SJPH"
+  ],
+  [
+    2,
+    "CP8",
+    "Distribusi / Logistik",
+    0.05545068322825672,
+    "High Risk",
+    "Wajibkan kendaraan dedicated halal, pasang IoT suhu, lengkapi vehicle sanitation log"
+  ],
+  [
+    3,
+    "CP6",
+    "Processing / Pengolahan",
+    0.0577549766468753,
+    "High Risk",
+    "Pastikan cleaning validation, sertifikat halal bahan tambahan, dedicated production line"
+  ],
+  [
+    4,
+    "CP7",
+    "Cold Storage / Warehouse",
+    0.049933887988143424,
+    "High Risk",
+    "Perkuat monitoring suhu real-time, perbaiki segregasi halal/non-halal di gudang"
+  ],
+  [
+    5,
+    "CP5",
+    "Post-Slaughter Handling",
+    0.046623683839606425,
+    "Moderate Risk",
+    "Standarisasi batch ID karkas, pastikan pemisahan karkas terdokumentasi penuh"
+  ],
+  [
+    6,
+    "CP3",
+    "Transportasi Hewan ke RPH",
+    0.03698838510728368,
+    "Moderate Risk",
+    "Lengkapi cleaning log kendaraan, aktifkan GPS tracking, verifikasi surat jalan"
+  ],
+  [
+    7,
+    "CP1",
+    "Farm / Kandang Sapi",
+    0.03333329539288149,
+    "Moderate Risk",
+    "Verifikasi livestock record, update catatan kesehatan dan pakan secara berkala"
+  ],
+  [
+    8,
+    "CP9",
+    "Retail / Pasar / Supermarket",
+    0.03286226844592247,
+    "Moderate Risk",
+    "Pastikan display segregasi dan suhu freezer terpantau, update stock record"
+  ],
+  [
+    9,
+    "CP2",
+    "Pakan & Kesehatan Hewan",
+    0.02891749540040996,
+    "Moderate Risk",
+    "Verifikasi COA bahan pakan, perkuat supplier approved list, cleaning log pakan"
+  ],
+  [
+    10,
+    "CP10",
+    "Konsumen & Complaint Handling",
+    0.014619989587145098,
+    "Moderate Risk",
+    "Tingkatkan transparansi informasi, buat FAQ halal, standarisasi respons complaint"
+  ],
+  [],
+  [],
+  [
+    "Tabel Kategori Risiko & Interpretasi"
+  ],
+  [
+    "Rentang Score",
+    "Kategori",
+    "Warna",
+    "Makna",
+    "Tindakan Sistemik"
+  ],
+  [
+    "0.00 – 0.25",
+    "Low Risk",
+    "■",
+    "Supply chain halal relatif aman dan terdokumentasi dengan baik",
+    "Monitoring dan audit rutin berkala (1–2x setahun)"
+  ],
+  [
+    "0.26 – 0.50",
+    "Moderate Risk",
+    "■",
+    "Ada kekurangan minor; beberapa dokumen tidak konsisten",
+    "Perbaikan dokumen, verifikasi berkala, audit per semester"
+  ],
+  [
+    "0.51 – 0.75",
+    "High Risk",
+    "■",
+    "Risiko kontaminasi atau ketidakpatuhan syariah signifikan",
+    "Tindakan korektif segera, hold produk sampai terverifikasi"
+  ],
+  [
+    "0.76 – 1.00",
+    "Critical Risk",
+    "■",
+    "Prosedur tidak sesuai syariah atau sertifikat tidak valid",
+    "Hentikan proses, audit menyeluruh, lapor ke BPJPH/LPH"
+  ]
+]

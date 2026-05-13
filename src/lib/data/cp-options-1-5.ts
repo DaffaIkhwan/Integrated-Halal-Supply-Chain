@@ -1,0 +1,293 @@
+import type { CPDropdownGroup } from "./dropdown-scale";
+
+// Helper untuk buat opsi cepat
+const o = (value: string, label: string, l: number, m: number, u: number) => ({
+  value, label, tfn: [l, m, u] as [number, number, number],
+  risk: Number(((l + m + u) / 3).toFixed(2)),
+});
+
+export const CP1_OPTIONS: CPDropdownGroup = {
+  cpId: "CP1", cpLabel: "CP1 — Farm / Kandang Sapi",
+  criteria: [
+    { key: "asalUsulRisk", criteriaCode: "F1", label: "Asal-usul sapi",
+      options: [
+        o("f1_1", "Bersertifikat halal + dokumen lengkap", 0, 0.05, 0.15),
+        o("f1_2", "Ada dokumen asal tapi belum sertifikasi halal", 0.10, 0.25, 0.35),
+        o("f1_3", "Dokumen sebagian, asal-usul kurang jelas", 0.30, 0.45, 0.55),
+        o("f1_4", "Tidak ada dokumen, asal dari pasar bebas", 0.50, 0.65, 0.80),
+        o("f1_5", "Asal-usul tidak diketahui sama sekali", 0.75, 0.90, 1.00),
+      ]},
+    { key: "kesehatanRisk", criteriaCode: "F2", label: "Status kesehatan sapi",
+      options: [
+        o("f2_1", "Sehat, surat keterangan veteriner valid", 0, 0.05, 0.15),
+        o("f2_2", "Sehat, pemeriksaan rutin tapi surat belum update", 0.10, 0.25, 0.35),
+        o("f2_3", "Ada riwayat sakit ringan, sudah diobati", 0.30, 0.45, 0.55),
+        o("f2_4", "Kondisi kurang sehat, belum diperiksa dokter hewan", 0.50, 0.65, 0.80),
+        o("f2_5", "Sakit / ada gejala penyakit menular", 0.75, 0.90, 1.00),
+      ]},
+    { key: "kepatuhanPakanRisk", criteriaCode: "F3", label: "Kepatuhan pakan",
+      options: [
+        o("f3_1", "Pakan 100% halal certified, tercatat lengkap", 0, 0.05, 0.15),
+        o("f3_2", "Pakan halal tapi belum semua tersertifikasi", 0.10, 0.25, 0.35),
+        o("f3_3", "Sebagian pakan belum terverifikasi kehalalannya", 0.30, 0.45, 0.55),
+        o("f3_4", "Pakan campuran, ada bahan yang meragukan", 0.50, 0.65, 0.80),
+        o("f3_5", "Pakan mengandung bahan haram / tidak diketahui", 0.75, 0.90, 1.00),
+      ]},
+    { key: "obatVaksinRisk", criteriaCode: "F4", label: "Penggunaan obat/vaksin",
+      options: [
+        o("f4_1", "Obat/vaksin halal certified, withdrawal period terpenuhi", 0, 0.05, 0.15),
+        o("f4_2", "Obat terdaftar BPOM, withdrawal period terpenuhi", 0.10, 0.25, 0.35),
+        o("f4_3", "Obat terdaftar tapi withdrawal period belum pasti", 0.30, 0.45, 0.55),
+        o("f4_4", "Penggunaan obat tanpa resep / tidak tercatat", 0.50, 0.65, 0.80),
+        o("f4_5", "Obat ilegal / mengandung bahan haram", 0.75, 0.90, 1.00),
+      ]},
+    { key: "dokumentasiRisk", criteriaCode: "F5", label: "Dokumentasi pemeliharaan",
+      options: [
+        o("f5_1", "Dokumentasi lengkap dan digital", 0, 0.05, 0.15),
+        o("f5_2", "Dokumentasi manual tapi lengkap", 0.10, 0.25, 0.35),
+        o("f5_3", "Dokumentasi sebagian, ada yang hilang", 0.30, 0.45, 0.55),
+        o("f5_4", "Dokumentasi sangat minim", 0.50, 0.65, 0.80),
+        o("f5_5", "Tidak ada dokumentasi sama sekali", 0.75, 0.90, 1.00),
+      ]},
+    { key: "kebersihanKandangRisk", criteriaCode: "F6", label: "Kebersihan kandang",
+      options: [
+        o("f6_1", "Kandang bersih, sanitasi rutin terjadwal", 0, 0.05, 0.15),
+        o("f6_2", "Kandang cukup bersih, sanitasi periodik", 0.10, 0.25, 0.35),
+        o("f6_3", "Kebersihan kurang, sanitasi tidak rutin", 0.30, 0.45, 0.55),
+        o("f6_4", "Kandang kotor, jarang dibersihkan", 0.50, 0.65, 0.80),
+        o("f6_5", "Kondisi sangat kotor, potensi kontaminasi tinggi", 0.75, 0.90, 1.00),
+      ]},
+    { key: "kesiapanSembelihRisk", criteriaCode: "F7", label: "Kesiapan hewan disembelih",
+      options: [
+        o("f7_1", "Hewan sehat, istirahat cukup, ante-mortem PASS", 0, 0.05, 0.15),
+        o("f7_2", "Hewan sehat, istirahat cukup tapi belum ante-mortem", 0.10, 0.25, 0.35),
+        o("f7_3", "Hewan lelah / stres ringan", 0.30, 0.45, 0.55),
+        o("f7_4", "Hewan sakit ringan / sangat stres", 0.50, 0.65, 0.80),
+        o("f7_5", "Hewan tidak layak sembelih", 0.75, 0.90, 1.00),
+      ]},
+  ],
+};
+
+export const CP2_OPTIONS: CPDropdownGroup = {
+  cpId: "CP2", cpLabel: "CP2 — Pakan & Kesehatan Hewan",
+  criteria: [
+    { key: "halalFeedStatusRisk", criteriaCode: "FD1", label: "Status halal bahan pakan",
+      options: [
+        o("fd1_1", "Semua bahan pakan bersertifikat halal", 0, 0.05, 0.15),
+        o("fd1_2", "Mayoritas bersertifikat, sisanya aman", 0.10, 0.25, 0.35),
+        o("fd1_3", "Sebagian bahan belum terverifikasi", 0.30, 0.45, 0.55),
+        o("fd1_4", "Banyak bahan tanpa sertifikat halal", 0.50, 0.65, 0.80),
+        o("fd1_5", "Ada bahan yang diketahui mengandung haram", 0.75, 0.90, 1.00),
+      ]},
+    { key: "supplierRisk", criteriaCode: "FD2", label: "Reliabilitas supplier",
+      options: [
+        o("fd2_1", "Supplier tersertifikasi, rekam jejak baik", 0, 0.05, 0.15),
+        o("fd2_2", "Supplier terpercaya tapi belum sertifikasi", 0.10, 0.25, 0.35),
+        o("fd2_3", "Supplier berganti-ganti, verifikasi parsial", 0.30, 0.45, 0.55),
+        o("fd2_4", "Supplier tidak terverifikasi", 0.50, 0.65, 0.80),
+        o("fd2_5", "Supplier bermasalah / pernah terindikasi haram", 0.75, 0.90, 1.00),
+      ]},
+    { key: "feedStorageRisk", criteriaCode: "FD3", label: "Segregasi penyimpanan pakan",
+      options: [
+        o("fd3_1", "Penyimpanan terpisah, berlabel, terkontrol", 0, 0.05, 0.15),
+        o("fd3_2", "Terpisah tapi labeling kurang", 0.10, 0.25, 0.35),
+        o("fd3_3", "Penyimpanan campur tapi wadah berbeda", 0.30, 0.45, 0.55),
+        o("fd3_4", "Tidak ada segregasi yang jelas", 0.50, 0.65, 0.80),
+        o("fd3_5", "Pakan halal-haram tercampur", 0.75, 0.90, 1.00),
+      ]},
+    { key: "medicationRisk", criteriaCode: "FD4", label: "Kontrol pengobatan",
+      options: [
+        o("fd4_1", "Semua obat tercatat, halal, resep dokter hewan", 0, 0.05, 0.15),
+        o("fd4_2", "Obat tercatat, withdrawal period dipatuhi", 0.10, 0.25, 0.35),
+        o("fd4_3", "Pencatatan obat tidak konsisten", 0.30, 0.45, 0.55),
+        o("fd4_4", "Obat tanpa pencatatan / resep", 0.50, 0.65, 0.80),
+        o("fd4_5", "Penggunaan obat terlarang / bahan haram", 0.75, 0.90, 1.00),
+      ]},
+    { key: "vetSupervisionRisk", criteriaCode: "FD5", label: "Supervisi veteriner",
+      options: [
+        o("fd5_1", "Dokter hewan tetap, kunjungan rutin terjadwal", 0, 0.05, 0.15),
+        o("fd5_2", "Dokter hewan berkala, ada catatan kunjungan", 0.10, 0.25, 0.35),
+        o("fd5_3", "Supervisi hanya saat ada masalah", 0.30, 0.45, 0.55),
+        o("fd5_4", "Jarang ada supervisi veteriner", 0.50, 0.65, 0.80),
+        o("fd5_5", "Tidak ada akses ke dokter hewan", 0.75, 0.90, 1.00),
+      ]},
+  ],
+};
+
+export const CP3_OPTIONS: CPDropdownGroup = {
+  cpId: "CP3", cpLabel: "CP3 — Transportasi ke RPH",
+  criteria: [
+    { key: "kelayakanRisk", criteriaCode: "T1", label: "Kelayakan kendaraan",
+      options: [
+        o("t1_1", "Kendaraan khusus ternak, terawat, layak jalan", 0, 0.05, 0.15),
+        o("t1_2", "Kendaraan layak, perawatan berkala", 0.10, 0.25, 0.35),
+        o("t1_3", "Kendaraan cukup layak, perawatan tidak rutin", 0.30, 0.45, 0.55),
+        o("t1_4", "Kendaraan kurang layak, modifikasi seadanya", 0.50, 0.65, 0.80),
+        o("t1_5", "Kendaraan tidak layak angkut ternak", 0.75, 0.90, 1.00),
+      ]},
+    { key: "kebersihanRisk", criteriaCode: "T2", label: "Kebersihan kendaraan",
+      options: [
+        o("t2_1", "Disinfeksi sebelum dan sesudah penggunaan", 0, 0.05, 0.15),
+        o("t2_2", "Dibersihkan sebelum penggunaan", 0.10, 0.25, 0.35),
+        o("t2_3", "Dibersihkan tapi tidak disinfeksi", 0.30, 0.45, 0.55),
+        o("t2_4", "Jarang dibersihkan", 0.50, 0.65, 0.80),
+        o("t2_5", "Kotor, ada sisa angkutan sebelumnya", 0.75, 0.90, 1.00),
+      ]},
+    { key: "animalWelfareRisk", criteriaCode: "T3", label: "Animal welfare",
+      options: [
+        o("t3_1", "Kepadatan sesuai standar, ada ventilasi", 0, 0.05, 0.15),
+        o("t3_2", "Kepadatan wajar, ventilasi cukup", 0.10, 0.25, 0.35),
+        o("t3_3", "Agak padat, ventilasi minimal", 0.30, 0.45, 0.55),
+        o("t3_4", "Terlalu padat, hewan stres berat", 0.50, 0.65, 0.80),
+        o("t3_5", "Kondisi menyiksa, hewan cedera", 0.75, 0.90, 1.00),
+      ]},
+    { key: "traceabilityRisk", criteriaCode: "T4", label: "Traceability selama transport",
+      options: [
+        o("t4_1", "GPS tracking + dokumen perjalanan lengkap", 0, 0.05, 0.15),
+        o("t4_2", "Dokumen perjalanan lengkap, tanpa GPS", 0.10, 0.25, 0.35),
+        o("t4_3", "Dokumen sebagian ada", 0.30, 0.45, 0.55),
+        o("t4_4", "Dokumentasi minim", 0.50, 0.65, 0.80),
+        o("t4_5", "Tidak ada dokumentasi perjalanan", 0.75, 0.90, 1.00),
+      ]},
+    { key: "dokumentasiRisk", criteriaCode: "T5", label: "Dokumentasi perjalanan",
+      options: [
+        o("t5_1", "Surat jalan, SKKH, log suhu lengkap", 0, 0.05, 0.15),
+        o("t5_2", "Surat jalan dan SKKH ada", 0.10, 0.25, 0.35),
+        o("t5_3", "Hanya surat jalan", 0.30, 0.45, 0.55),
+        o("t5_4", "Dokumen tidak lengkap / kadaluarsa", 0.50, 0.65, 0.80),
+        o("t5_5", "Tidak ada dokumen perjalanan", 0.75, 0.90, 1.00),
+      ]},
+  ],
+};
+
+export const CP4_OPTIONS: CPDropdownGroup = {
+  cpId: "CP4", cpLabel: "CP4 — RPH / Penyembelihan (PALING KRITIS)",
+  criteria: [
+    { key: "sertifikatHalalRisk", criteriaCode: "R1", label: "Validitas sertifikat halal RPH",
+      options: [
+        o("r1_1", "Sertifikat MUI valid, audit terbaru PASS", 0, 0.05, 0.15),
+        o("r1_2", "Sertifikat valid, audit dalam proses", 0.10, 0.25, 0.35),
+        o("r1_3", "Sertifikat mendekati kadaluarsa", 0.30, 0.45, 0.55),
+        o("r1_4", "Sertifikat kadaluarsa, sedang perpanjangan", 0.50, 0.65, 0.80),
+        o("r1_5", "Tidak memiliki sertifikat halal", 0.75, 0.90, 1.00),
+      ]},
+    { key: "kompetensiSembelihRisk", criteriaCode: "R2", label: "Kompetensi juru sembelih",
+      options: [
+        o("r2_1", "Bersertifikat MUI, pengalaman >5 tahun", 0, 0.05, 0.15),
+        o("r2_2", "Bersertifikat, pengalaman 1-5 tahun", 0.10, 0.25, 0.35),
+        o("r2_3", "Terlatih tapi belum bersertifikat", 0.30, 0.45, 0.55),
+        o("r2_4", "Belum terlatih formal", 0.50, 0.65, 0.80),
+        o("r2_5", "Tidak kompeten / bukan Muslim", 0.75, 0.90, 1.00),
+      ]},
+    { key: "prosesSyariahRisk", criteriaCode: "R3", label: "Kesesuaian proses syariah",
+      options: [
+        o("r3_1", "Sesuai 100% standar syariah MUI", 0, 0.05, 0.15),
+        o("r3_2", "Sesuai standar, minor deviation", 0.10, 0.25, 0.35),
+        o("r3_3", "Ada beberapa ketidaksesuaian kecil", 0.30, 0.45, 0.55),
+        o("r3_4", "Banyak ketidaksesuaian prosedur", 0.50, 0.65, 0.80),
+        o("r3_5", "Tidak mengikuti prosedur syariah", 0.75, 0.90, 1.00),
+      ]},
+    { key: "pemeriksaanRisk", criteriaCode: "R4", label: "Pemeriksaan ante/post-mortem",
+      options: [
+        o("r4_1", "Ante + post mortem oleh dokter hewan resmi", 0, 0.05, 0.15),
+        o("r4_2", "Ante-mortem ada, post-mortem visual saja", 0.10, 0.25, 0.35),
+        o("r4_3", "Hanya ante-mortem atau hanya post-mortem", 0.30, 0.45, 0.55),
+        o("r4_4", "Pemeriksaan oleh non-dokter hewan", 0.50, 0.65, 0.80),
+        o("r4_5", "Tidak ada pemeriksaan sama sekali", 0.75, 0.90, 1.00),
+      ]},
+    { key: "sanitasiRisk", criteriaCode: "R5", label: "Sanitasi alat dan area",
+      options: [
+        o("r5_1", "Sterilisasi alat rutin, area bersih standar GMP", 0, 0.05, 0.15),
+        o("r5_2", "Alat dibersihkan rutin, area terawat", 0.10, 0.25, 0.35),
+        o("r5_3", "Sanitasi dilakukan tapi tidak konsisten", 0.30, 0.45, 0.55),
+        o("r5_4", "Sanitasi jarang, area kurang bersih", 0.50, 0.65, 0.80),
+        o("r5_5", "Tidak ada prosedur sanitasi", 0.75, 0.90, 1.00),
+      ]},
+    { key: "segregasiRisk", criteriaCode: "R6", label: "Pemisahan halal/non-halal",
+      options: [
+        o("r6_1", "Dedicated line 100% halal, tidak ada produk haram", 0, 0.05, 0.15),
+        o("r6_2", "Area terpisah dengan penanda jelas", 0.10, 0.25, 0.35),
+        o("r6_3", "Pemisahan waktu (shift berbeda)", 0.30, 0.45, 0.55),
+        o("r6_4", "Pemisahan tidak jelas", 0.50, 0.65, 0.80),
+        o("r6_5", "Tidak ada pemisahan halal/non-halal", 0.75, 0.90, 1.00),
+      ]},
+    { key: "dokumentasiRisk", criteriaCode: "R7", label: "Dokumentasi penyembelihan",
+      options: [
+        o("r7_1", "Digital record per ekor, timestamp, foto", 0, 0.05, 0.15),
+        o("r7_2", "Pencatatan manual per ekor lengkap", 0.10, 0.25, 0.35),
+        o("r7_3", "Pencatatan batch (bukan per ekor)", 0.30, 0.45, 0.55),
+        o("r7_4", "Pencatatan sangat minim", 0.50, 0.65, 0.80),
+        o("r7_5", "Tidak ada pencatatan", 0.75, 0.90, 1.00),
+      ]},
+    { key: "pengawasanRisk", criteriaCode: "R8", label: "Pengawasan halal internal",
+      options: [
+        o("r8_1", "Tim halal internal aktif, audit bulanan", 0, 0.05, 0.15),
+        o("r8_2", "Ada pengawas halal, audit triwulanan", 0.10, 0.25, 0.35),
+        o("r8_3", "Pengawas ada tapi tidak rutin", 0.30, 0.45, 0.55),
+        o("r8_4", "Pengawasan sangat longgar", 0.50, 0.65, 0.80),
+        o("r8_5", "Tidak ada pengawasan halal internal", 0.75, 0.90, 1.00),
+      ]},
+    { key: "auditRisk", criteriaCode: "R9", label: "Audit & corrective action",
+      options: [
+        o("r9_1", "Audit eksternal tahunan, CAPA terdokumentasi", 0, 0.05, 0.15),
+        o("r9_2", "Audit internal rutin, ada tindak lanjut", 0.10, 0.25, 0.35),
+        o("r9_3", "Audit jarang, corrective action lambat", 0.30, 0.45, 0.55),
+        o("r9_4", "Tidak ada audit formal", 0.50, 0.65, 0.80),
+        o("r9_5", "Temuan audit diabaikan", 0.75, 0.90, 1.00),
+      ]},
+    { key: "traceabilityRisk", criteriaCode: "R10", label: "Traceability batch",
+      options: [
+        o("r10_1", "Full traceability digital (farm to carcass)", 0, 0.05, 0.15),
+        o("r10_2", "Traceability manual per batch", 0.10, 0.25, 0.35),
+        o("r10_3", "Traceability sebagian", 0.30, 0.45, 0.55),
+        o("r10_4", "Traceability sangat terbatas", 0.50, 0.65, 0.80),
+        o("r10_5", "Tidak ada traceability", 0.75, 0.90, 1.00),
+      ]},
+  ],
+};
+
+export const CP5_OPTIONS: CPDropdownGroup = {
+  cpId: "CP5", cpLabel: "CP5 — Post-Slaughter Handling",
+  criteria: [
+    { key: "handlingRisk", criteriaCode: "PS1", label: "Handling carcass compliance",
+      options: [
+        o("ps1_1", "Penanganan sesuai SOP, suhu terkontrol", 0, 0.05, 0.15),
+        o("ps1_2", "Penanganan baik, monitoring suhu berkala", 0.10, 0.25, 0.35),
+        o("ps1_3", "Penanganan cukup, suhu kadang tidak terpantau", 0.30, 0.45, 0.55),
+        o("ps1_4", "Penanganan buruk, chain terputus", 0.50, 0.65, 0.80),
+        o("ps1_5", "Tidak ada SOP penanganan karkas", 0.75, 0.90, 1.00),
+      ]},
+    { key: "sanitasiRisk", criteriaCode: "PS2", label: "Sanitation",
+      options: [
+        o("ps2_1", "Area dan alat steril, sanitasi per batch", 0, 0.05, 0.15),
+        o("ps2_2", "Sanitasi rutin terjadwal", 0.10, 0.25, 0.35),
+        o("ps2_3", "Sanitasi tidak konsisten", 0.30, 0.45, 0.55),
+        o("ps2_4", "Sanitasi jarang dilakukan", 0.50, 0.65, 0.80),
+        o("ps2_5", "Tidak ada prosedur sanitasi", 0.75, 0.90, 1.00),
+      ]},
+    { key: "batchIdRisk", criteriaCode: "PS3", label: "Batch identification",
+      options: [
+        o("ps3_1", "Label batch per karkas, barcode/QR", 0, 0.05, 0.15),
+        o("ps3_2", "Label manual per batch", 0.10, 0.25, 0.35),
+        o("ps3_3", "Identifikasi batch terbatas", 0.30, 0.45, 0.55),
+        o("ps3_4", "Identifikasi tidak konsisten", 0.50, 0.65, 0.80),
+        o("ps3_5", "Tidak ada identifikasi batch", 0.75, 0.90, 1.00),
+      ]},
+    { key: "segregasiRisk", criteriaCode: "PS4", label: "Segregation",
+      options: [
+        o("ps4_1", "Segregasi fisik penuh halal/non-halal", 0, 0.05, 0.15),
+        o("ps4_2", "Segregasi dengan penanda/warna berbeda", 0.10, 0.25, 0.35),
+        o("ps4_3", "Segregasi waktu (shift berbeda)", 0.30, 0.45, 0.55),
+        o("ps4_4", "Segregasi tidak konsisten", 0.50, 0.65, 0.80),
+        o("ps4_5", "Tidak ada segregasi", 0.75, 0.90, 1.00),
+      ]},
+    { key: "dokumentasiRisk", criteriaCode: "PS5", label: "Documentation",
+      options: [
+        o("ps5_1", "Dokumentasi lengkap digital per karkas", 0, 0.05, 0.15),
+        o("ps5_2", "Dokumentasi manual lengkap", 0.10, 0.25, 0.35),
+        o("ps5_3", "Dokumentasi sebagian", 0.30, 0.45, 0.55),
+        o("ps5_4", "Dokumentasi sangat minim", 0.50, 0.65, 0.80),
+        o("ps5_5", "Tidak ada dokumentasi", 0.75, 0.90, 1.00),
+      ]},
+  ],
+};

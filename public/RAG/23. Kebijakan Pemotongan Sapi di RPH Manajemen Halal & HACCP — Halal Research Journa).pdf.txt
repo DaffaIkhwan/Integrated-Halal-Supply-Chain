@@ -1,0 +1,919 @@
+Halal Research 1 (2021 ) 20-38 
+ 
+Received January 30, 2021 ; Revised February 9, 2021 ; Accepted February 22, 2021  Kebijakan pemotongan sapi di RPH (Rumah Potong Hewa n) dalam 
+kaitannya dengan prinsip manajemen halal dan HACPP (Hazard Analysis 
+Critical Control Point ) 
+ 
+Dwi Aprilia Anggrainia,, Norma Farizah Fahmia, Devi Anggraini Putria, Moh. Saiful Hakikib 
+a D3 Analis Kesehatan, Sekolah Tinggi Ilmu Kesehatan Ngudia Hus ada Madura, Bangkalan, 
+69116,  Indonesia. 
+b Program Studi Arsitektur, Universitas Merdeka Surabaya, Surabaya, 60232,  Indonesia. 
+ 
+ABSTRAK 
+Kebijakan merupakan suatu kumpulan keputusan yang diambil o leh seorang pelaku atau 
+kelompok politik dalam usaha memilih tujuan-tujuan dan cara- cara untuk mencapai tujuan. 
+Kebijakan pemerintah terkait pemotongan sapi di Rumah Potong Hewa n (RPH) berkaitan 
+dengan perlindungan konsumen, yaitu manajemen ASUH (Aman, Sehat, Utuh, dan Halal) 
+dan prinsip HACCP ( Hazard Analysis Critical Control Point ) dengan identifikasi titik-titik kritis 
+tahap penanganan dan proses produksi sudah dibentuk beb erapa aturan kebijakan. Dalam 
+prosesnya, masih ditemui beberapa kendala, seperti kebersihan k ualitas daging, RPH yang 
+kurang bersih, ataupun kontaminasi silang saat pemotongan daging sampai pengepakannya. 
+Kebijakan tersebut perlu diimbangi dengan edukasi dari tingka t RPH paling tradisional atau 
+pada para peternak tentang pentingnya perlindungan konsumen. Co ntoh program kebijakan 
+pemerintah yang dilaksanakan adalah Good Farming Practice  untuk menghasilkan ternak 
+potong yang sehat dan berkualitas. Namun, hal tersebut perlu  diimbangi dengan 
+pembentukan pengawas pangan ( food inspector ) dan riset untuk mendukung kebijakan 
+tersebut agar berjalan baik. Tujuan dari jurnal review  ini adalah untuk membantu pihak RPH 
+mendapat pedoman yang sesuai kebijakan pemotongan sapi di RPH  sebagai upaya 
+perlindungan konsumen. Pencarian database  yang digunakan termasuk Jurnal Veteriner, 
+Jurnal Kesehatan Masyarakat, Jurnal Vektor Penyakit, Jurnal Studi Kasu s, Jurnal, Medik 
+Veteriner, Jurnal SainVet, Jurnal Ilmu Lingkungan, Jurnal Aplika si Manajemen Bisnis, Jurnal 
+Peternakan, Jurnal Teknik Industri dan Jurnal Pengkajian Teknolog i. Kata kunci yang 
+digunakan dalam pencarian artikel, yaitu kebijakan kualitas da ging, rumah potong hewan, 
+pemotongan sapi, manajemen halal, HACCP, SNI, peternakan sapi, mik roorganisme, ISO, 
+limbah RPH. Terdapat 30 artikel yang diperoleh dan 19 artikel dianalisis melalui analisis 
+tujuan, kesesuaian topik, metode penelitian yang digunakan, ukuran sampel, etik penelitian, 
+hasil dari setiap artikel, serta keterbatasan yang terjadi.  
+Kata kunci: HACCP, Halal, Kebijakan pemerintah, Kualitas daging, Rumah Potong Hewan.   
+ 
+ Corresponding author. Tel: 082141414952; Fax: -. 
+Email address: dwiapriliaanggraini2021@gmail.com   
+21                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ © 2017 Pusat Kajian Halal ITS. All rights reserved.  
+1 Pendahuluan 
+Peningkatan populasi penduduk dan perbaikan taraf hidup ma syarakat Indonesia 
+mendorong peningkatan kebutuhan pangan dan konsumsi menu m akanan rumah tangga 
+yang secara bertahap turut meningkatkan konsumsi protein hewani (termasuk produk 
+peternakan [1]. Daging adalah bahan pangan yang memiliki ni lai gizi tinggi dan merupakan 
+salah satu komoditas sumber protein hewani yang penting untuk  kesehatan dan 
+pertumbuhan [2]. Oleh karena itu, kebijakan pemerintah untuk  menciptakan kualitas daging 
+dengan prinsip manajemen halal dan HACCP yang dimulai dari Ru mah Potong Hewan (RPH) 
+sangat diperlukan. 
+RPH adalah suatu bangunan atau kompleks bangunan dengan d esain tertentu yang 
+digunakan sebagai tempat pemotongan hewan selain unggas untu k konsumsi masyarakat 
+umum . RPH memiliki peranan penting sebagai mata rantai untuk memperole h kualitas 
+daging yang baik. Hal tersebut dapat dilakukan dengan menerap kan animal welfare  pada 
+setiap RPH. Animal welfare merupakan suatu usaha kepedulian yang dilakukan oleh manusia 
+untuk memberikan kenyamanan kehidupan terhadap hewan [3]. 
+Kebijakan merupakan suatu kumpulan keputusan yang diambil o leh seorang pelaku atau 
+oleh kelompok politik dalam usaha memilih tujuan-tujuan da n cara-cara untuk mencapai 
+tujuan. Kualitas daging bergantung pada berbagai faktor, a ntara lain: manajemen 
+pemeliharaan, kualitas pakan, dan proses pemotongan. Peraturan keb ijakan pemerintah 
+tentang kualitas daging adalah memberi larangan keras dan mengel uarkan Pasal 21 UU No. 7 
+Tahun 1996 tentang Pangan, karena menjual makanan yang tidak la yak dikonsumsi 
+ancamannya berupa pidana penjara maksimal 5 tahun atau denda ma ksimal Rp 600.000.000 
+[4]. 
+Pada kebijakan yang lain, pemerintah Indonesia mulai mengantisip asi perkembangan isu 
+halal dengan pengesahan Undang-Undang No.33 Tahun 201 4 (UU No.33/2014) tentang 
+Jaminan Produk Halal. Selain bertujuan untuk memberikan kenyamana n, keamanan, 
+keselamatan, dan kepastian ketersediaan produk halal bagi masyarak at dalam mengonsumsi 
+dan menggunakannya, produk halal sudah terbukti dapat meningk atkan nilai tambah dan 
+daya saing bagi pelaku usaha. Regulasi halal berkaitan deng an kualitas daging dan RPH, yaitu 
+UU No.18/2009 tentang Peternakan dan Kesehatan Hewan pasal 58 ayat 1 dan Pasal 62 ayat 
+1, Permentan No.13/2010 tentang Persyaratan Rumah Potong Hewan (RPH) Ruminans ia dan 
+Unit Penanganan Daging, pasal 38 dan 39, serta Permentan No.50/2 011 tentang 
+Rekomendasi Persetujuan Pemasukan Karkas, Daging, Jeroan dan/atau Ola hannya ke Dalam 
+Negara Republik Indonesia pasal 2 ayat 2. Meskipun sudah h ampir dua tahun disahkan, 
+pelaksanaan UU No.33/2014 tersebut belum banyak mengalami kemajuan  yang berarti [5]. 
+Sementara itu, dalam jangka panjang berkaitan dengan panga n, semua peraturan dan 
+kebijakan kualitas bahan pangan harus sesuai dengan International Codex Alimentarius  dan 
+standar ISO seri 9000. Pengendalian kualitas makanan harus menyelu ruh sejak dari proses 
+produksi di ladang, pengolahan, pemasaran, sampai siap unt uk dikonsumsi. Hal ini untuk 
+menjamin agar konsumen selalu mendapatkan bahan yang aman, seha t, produk akhir 
+berkualitas prima dan memungkinkan deteksi dini adanya penyimpa ngan kualitas [6]. 
+D.A. Anggraini et al.  1 (2021 ) 20-38 22 
+ Selain peraturan pemerintah, kebijakan berkaitan dengan RPH dan kualitas daging halal 
+adalah standar Majelis Ulama Indonesia (MUI). Standar tersebu t menyatakan bahwa produk 
+halal merupakan produk yang memenuhi persyaratan halal sesuai d engan syariat Islam, 
+yaitu: (1) tidak mengandung babi dan bahan yang berasal dari b abi; (2) tidak mengandung 
+bahan-bahan yang diharamkan seperti bahan-bahan yang berasal  dari organ manusia, 
+darah, kotoran-kotoran, dan sebagainya; (3) semua bahan yang ber asal dari hewan halal 
+yang disembelih menurut tata cara syariat Islam; (4) semua tempat penyimpana n, tempat 
+penjualan, pengolahan, tempat pengelolaan, dan transportasinya ti dak boleh digunakan 
+untuk babi, jika digunakan untuk babi atau barang yang ti dak halal lainnya terlebih dahulu 
+harus dibersihkan dengan tata cara yang diatur sesuai syariat Isl am; (5) semua makanan dan 
+minuman yang tidak mengandung khamr (LPPOM MUI 2012) [6]. 
+Halal Assurance System  (HAS) 23000 adalah dokumen yang berisi persyaratan sertifika si 
+halal LPPOM MUI. Berikut adalah sebelas kriteria sistem jaminan halal: 1. Kebijakan halal, 2. 
+Tim manajemen halal, 3. Pelatihan dan edukasi, 4. Bahan , 5. Produk, 6. Fasilitas produksi, 7. 
+Prosedur tertulis aktivitas kritis, 8. Kemampuan telusur, 9. Penangan an produk yang tidak 
+memenuhi kriteria, 10. Audit internal, 11. Kaji ulang manajemen [6 ]. 
+Dalam rangka melindungi dan meningkatkan kesehatan masyarakat, s erta menjamin 
+ketenteraman batin masyarakat, pemerintah telah menetapkan kebijakan penyedi aan 
+pangan asal hewan yang―aman, sehat, utuh, dan halal (ASUH). M asalah utama pangan 
+hewani yang ASUH di Indonesia adalah: (1) ditemukannya pered aran produk pangan hewani 
+yang tidak memenuhi persyaratan kesehatan dan kehalalan, (2) banyak terj adi kasus 
+penyakit dan keracunan melalui makanan yang sebagian besar belu m dilaporkan dan belum 
+teridentifikasi penyebabnya, (3) masih banyak ditemukan sarana produ ksi dan distribusi 
+pangan hewani yang tidak memenuhi persyaratan, dan (4) masih renda hnya pengetahuan 
+dan kepedulian konsumen terhadap keamanan dan kehalalan pa ngan hewani [7]. 
+Sistem keamanan pangan seperti Hazard Analysis Critical Control Point  (HACCP)  juga 
+diperlukan untuk menjamin produk aman dari potensi bahaya. HACCP merupakan suatu 
+sistem pengawasan untuk mencegah kemungkinan terjadinya keracunan atau foodborne  
+disease . HACCP meliputi analisis bahaya dan pengendalian titik kritis  untuk menjamin 
+produk yang dikonsumsi aman dari bahaya fisik, kimia (pestis ida), dan mikrobiologi. Konsep 
+HACCP dapat diterapkan dalam seluruh proses pengolahan makanan. Aplikasi HACCP pada 
+umumnya dilakukan dengan analisis kendali kritis pada pr oses penerimaan bahan baku, 
+proses produksi, sampai dengan penyimpanan sebelum produk d ipasarkan. Langkah 
+penerapan HACCP adalah penetapan tim HACCP, deskripsi produk, pen entuan diagram alir, 
+identifikasi bahaya, penentuan Critical Control Point  (CCP), penetapan batas kritis tiap CCP, 
+monitoring, tindakan koreksi, verifikasi mikrobiologi, dan d okumentasi [6]. 
+Penerapan kebijakan sistem HACCP pada usaha peternakan secara terp adu akan 
+meminimalkan terjadinya bahaya pada produk pangan asal tern ak. Nilai gizi yang 
+terkandung dalam daging sangat mendukung bagi kehidupan mi kroorganisme terutama 
+bakteri. Adanya aktivitas mikorganisme dalam daging akan menurunka n kualitas daging 
+yang ditunjukkan dengan perubahan warna, rasa, aroma dan pembusukan yang dipengaruhi 
+23                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ oleh kondisi ternak, kondisi lingkungan, kondisi tempat p emotongan dan proses 
+penanganan daging mulai dari pemotongan sampai pengolaha n [8]. 
+Manajemen dan penanganan yang baik pada hewan diharapkan a kan menghasilkan produk 
+daging yang Aman, Sehat, Utuh, dan Halal (ASUH). Aman dimaksud kan agar daging yang 
+dikonsumsi bebas dari bibit penyakit. Sehat dimaksudkan da ging mempunyai zat-zat yang 
+berguna bagi kesehatan dan pertumbuhan. Utuh adalah dagi ng tidak dicampurkan dengan 
+bagian lain dari hewan tersebut atau hewan lain . Halal adalah hewan dipotong sesuai 
+dengan syariat agama Islam. Penjaminan atas produk yang dihasilk an dapat dilakukan mulai 
+dari penerapan praktek beternak yang baik ( Good Farming Practice ), praktek penanganan 
+paskapanen yang baik ( Good Handling Practice ) meliputi kebersihan peralatan atau mesin 
+yang digunakan untuk penanganan, dan penerapan Good Manufacuring Practice  (GMP) atau 
+Good Slaughtering Practice  (GSP) pada tahap pengolahan agar produk yang dihasilkan aman 
+dan sehat untuk dikonsumsi. Selain itu, dapat juga menerap kan HCCP yang sudah  diakui 
+dan diterapkan secara internasional [9]. Oleh karena itu, penel iti tertarik untuk melakukan 
+jurnal review terkait kebijakan proses pemotongan daging di RPH d alam kaitannya dengan 
+manajemen ASUH, halal dan HACCP apakah sudah berjalan sesua i atau menemukan 
+kesulitan kasus di lapangan [ 10].  
+2 Metode Penelitian 
+Metode yang digunakan dalam literatur review  ini menggunakan strategi secara 
+komprehensif, seperti pencarian artikel dalam database  jurnal penelitian, pencarian melalui 
+internet, tinjauan ulang artikel. Pencarian database  yang digunakan meliputi Jurnal 
+Veteriner, Jurnal Kesehatan Masyarakat, Jurnal Vektor Penyakit, Jurnal Stud i Kasus, Jurnal, 
+Medik Veteriner, Jurnal SainVet, Jurnal Ilmu Lingkungan, Jurnal Apli kasi Manajemen Bisnis, 
+Jurnal Peternakan, Jurnal Teknik Industri dan Jurnal Pengkajian T eknologi. Kata kunci yang 
+digunakan dalam pencarian artikel yaitu kebijakan kualitas da ging, rumah potong hewan, 
+pemotongan sapi, manajemen halal, HACCP, SNI, peternakan sapi, mik roorganisme, ISO, 
+limbah RPH. Terdapat 30 artikel yang diperoleh dan 19 artikel dianalisis melalui analisis 
+tujuan, kesesuaian topik, metode penelitian yang digunakan, ukuran sampel, etik penelitian, 
+hasil dari setiap artikel, serta keterbatasan yang terjadi. 
+Tabel 1. Theoretical mapping  
+No Judul Referensi Metode Hasil 
+1. Beberapa Kendala Bahan Pangan 
+Asal Ternak untuk Mencapai 
+Aman, Sehat, Utuh dan Halal 
+(ASUH).  [7] Literatur review  Pengadaan bahan 
+pangan asal ternak 
+untuk pemenuhan 
+kebutuhan konsumsi 
+protein hewani 
+masyarakat Indonesia 
+masih dihadapkan pada 
+beberapa kasus seperti 
+daging glonggongan, 
+daging bangkai, daging 
+ilegal dan produk yang 
+D.A. Anggraini et al.  1 (2021 ) 20-38 24 
+ tercemari oleh residu 
+antibiotik dan cemaran 
+mikroba. Pelanggaran 
+terhadap mutu dan 
+keamanan pangan 
+identik dengan 
+kejahatan dan harus 
+diberi sangsi hukum 
+yang tegas. 
+2. Gambaran Total Plate Count 
+(TPC) pada Daging Sapi yang 
+Diambil di Rumah Potong Hewan 
+(RPH) Kota Kupang.   [11]  Eksperimental Sejumlah besar sampel 
+daging yang diambil dari 
+RPH kota Kupang berada 
+di atas nilai normal 
+cemaran mikroba yang 
+ditetapkan yang dapat 
+dipengaruhi oleh 
+kontaminasi silang pada 
+daging, peralatan serta 
+pada proses pengolahan 
+daging. 
+3 Alternatif Pengolahan Limbah 
+Rumah Potong Hewan - Cakung 
+(Suatu Studi Kasus). [3] Studi kasus Limbah padat dan cair 
+RPH ideal untuk proses 
+biologis. 
+4 Studi Infeksi Nematoda 
+Gastrointestinal pada Kambing 
+dan Domba di Rumah Potong 
+Hewan Banda Aceh.  [12]  Eksperimental Terdapat cacing 
+nematoda usus dalam 
+gastrointestinal 
+5 Penerapan HACCP ( Hazard 
+Analysis Critical Control Point ) 
+Menu Chicken Butter  untuk 
+Maskapai Penerbangan JQ di PT. 
+AF. [13]  Observasi 
+analitik Penerapan sistem 
+HACCP untuk Chicken 
+Butter  untuk Maskapai 
+penerbangan JQ pada 
+PT. AF sudah berjalan 
+dengan baik dan sesuai 
+dengan ketentuan CCP 
+yang telah ditetapkan. 
+Pada proses penerimaan 
+barang kualitas bahan 
+baku harus diperhatikan 
+sangat teliti dan 
+mendetail agar tidak 
+mempengaruhi mutu 
+produk yang diproduksi. 
+Pengaturan suhu yang 
+konsisten dikontrol tiap 
+4 jam sekali menjadi 
+dasar bahwa produk 
+25                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ tersebut masih tetap 
+terjaga kualitasnya. 
+Kebijakan yang 
+diterapkan oleh PT. AF 
+menjadi landasan yang 
+digunakan untuk 
+mempertahankan mutu 
+dari makanan diseluruh 
+maskapai penerbangan. 
+6 Analisis Dampak Kepadatan 
+Lalat, Sanitasi Lingkungan dan 
+Personal Higiene terhadap 
+Kejadian Demam Tifoid di 
+Pemukiman UPTD Rumah 
+Pemotongan Hewan (RPH) Kota 
+Kendari Tahun 2017.  [8] Metode case 
+control  Terdapat hubungan 
+antara kepadatan lalat 
+dengan kejadian demam 
+tifoid pada pemukiman 
+sekitar UPTD Rumah 
+Pemotongan Hewan 
+Kota Kendari tahun 
+2017.  
+7 Penerapan HACCP dalam Proses 
+Produksi Menu Daging Rendang 
+di Inflight Catering.   [14]  Metode 
+Observasi Penerapan HACCP dalam 
+proses produksi menu 
+daging rendang di PT.X 
+adalah dengan 
+mengontrol suhu dan 
+waktu selama proses 
+produksi untuk 
+mencegah pertumbuhan 
+mikroba dan mencegah 
+kerusakan makanan, 
+sehingga menu daging 
+rendang yang diproduksi 
+oleh PT. X aman 
+dikonsumsi. 
+8 Gambaran Rumah Potong 
+Hewan/Tempat Pemotongan 
+Hewan di Kabupaten Sigi, 
+Sulawesi Tengah. [9] Observasi RPH/TPH yang ada di 
+Kabupaten Sigi, baik 
+milik pemerintah 
+maupun perseorangan 
+belum memenuh syarat 
+dan layak sesuai dengan 
+SNI 01- 6159 -1999. 
+9 Sertifikasi Halal Sektor Industri 
+Pengolahan Hasil Pertanian.  
+ [5] Observasi Jaminan kualitas akan 
+memaksa pemasok dan 
+produsen untuk 
+memenuhi standar yang 
+diperlukan dalam proses 
+produksi dan distribusi. 
+Sertifikasi halal sebagai 
+D.A. Anggraini et al.  1 (2021 ) 20-38 26 
+ sistem jaminan kualitas 
+yang menyeluruh dapat 
+digunakan untuk 
+memenangkan 
+persaingan pasar dengan 
+memenuhi kebutuhan 
+konsumen yang terjamin 
+kehalalannya. 
+10 Uji Organoleptis, pH, Uji Eber 
+dan Cemaran Bakteri pada 
+Karkas yang Diisolasi dari Kios di 
+Banyuwangi. [15]  Kuantitatif yang 
+menggunakan 
+kombinasi 
+kajian 
+epidemiologi 
+dengan 
+pendekatan 
+cross sectional 
+study.  Hasil organoleptis warna 
+37% kelainan, bau 
+normal, tekstur 
+konsistensi keras 0,05%, 
+uji pH 50% diatas 
+ambang normal, uji Eber  
+45% positif mengalami 
+awal kebusukan. Uji 
+mikrobiologis seluruh 
+sampel negatif 
+Salmonella sp.  tetapi 
+50% melebihi ambang 
+batas Standar Nasional 
+Indonesia cemaran 
+Escherichia coli . 
+11 Analisis Atribut Produk pada 
+Manajemen Mutu Proses 
+Produksi Daging Sapi di RPH PT. 
+Elders Indonesia, Bogor. [16]  Analisis 
+deskriptif  Penilaian penerapan 
+sistem manajemen mutu 
+(ISO 9001:2008) dan 
+sistem manajemen 
+keamanan pangan 
+(HACCP) berdasarkan 
+analisis Self Assessment  
+menunjukkan bahwa PT. 
+Elders Indonesia telah 
+memenuhi sebagian 
+besar dari keseluruhan 
+unsur ISO 9001 yang 
+telah diterapkan di 
+perusahaan. Sementara 
+itu, rekomendasi 
+prioritas perbaikan pada 
+atribut produk 
+berdasarkan keinginan 
+dan harapan konsumen 
+terdapat pada atribut 
+ketebalan lemak dengan 
+bobot nilai 0,457 sebagai 
+prioritas perbaikan 
+27                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ utama. 
+12 Implementasi Sistem Hazard 
+Analysis Critical Control Point 
+(HACCP) dan Sistem Jaminan 
+Halal di UD Bandeng Citra 
+Semarang. 
+ 
+ [6] Analisis 
+deskriptif Dalam evaluasi yang 
+telah dilakukan 
+mengenai penerapan 
+kriteria HACCP dan 
+kriteria system jaminan 
+halal, dapat diketahu 
+bahwa untuk kriteria 
+HACCP ditemukan 6 titik 
+kritis yang perhatikan 
+yaitu bahan baku ikan 
+bandeng, bahan asam 
+cuka, suplai air, proses 
+penerimaan bahan baku, 
+proses pemasakan ikan 
+bandeng, dan proses 
+pendinginan ikan 
+bandeng 
+13 Hubungan Penerapan Standard 
+Sanitation Operasional 
+Procedure (SSOP) terhadap 
+Mutu Daging Ditinjau dari 
+Tingkat Cemaran Mikroba.  [10]  Sampel acak 
+sederhana 
+(simple random 
+sample ) Jumlah mikroba TPC 
+berkisar antara 1,0x106-
+4,5x107 cfu/g, E. coli  
+berkisar 35>1100 
+MPN/g, Coliform>1100 
+MPN/g dan negatif 
+untuk cemaran 
+Salmonella. Cemaran 
+mikroba TPC, E coli dan 
+Coliform berada di atas 
+batas maksimum yang 
+telah ditentukan oleh 
+SNI. 
+14 Sertifikat Halal pada Produk 
+Makanan dan Minuman 
+Memberi Perlindungan dan 
+Kepastian Hukum Hak-Hak 
+Konsumen Muslim. [17]  Literatur review  Manfaat pemberian 
+sertifikat halal adalah 
+untuk melindungi 
+konsumen muslim 
+terhadap produk 
+makanan dan minuman 
+yang tidak halal, 
+memberikan rasa aman 
+dan nyaman bagi 
+konsumen untuk 
+mengkonsumsi produk 
+makanan dan minuman, 
+karena tidak ada 
+keraguan lagi bah wa 
+produk tersebut 
+D.A. Anggraini et al.  1 (2021 ) 20-38 28 
+ terindikasi dari hal-hal 
+yang diharamkan sesuai 
+syariat Islam. 
+15 Analisis Kelayakan Investasi 
+Penerapan Hazard Analysis 
+Critical Control Point (HACCP) 
+pada Rumah Pemotongan 
+Hewan (Studi Kasus di Rumah 
+Pemotongan Hewan (RPH) Kota 
+Bogor) .  [18]  Analisis dan 
+observasi penerapan Hazard 
+Analysis Critical Control 
+Point (HAeC?) menjadi 
+pentlng karena produk 
+yang dihasilkan 
+memenuhi kntena ASUH 
+16 Perancangan Alat Pendeteksi 
+Kualitas Daging Sapi Berdasar 
+Warna dan Bau Berbasis 
+Mikrokontroler Atmega32 
+Menggunakan Logika Fuzzy.  [4] Eksperimental Pada pengujian kalibrasi 
+sensor warna DT-Sense 
+Color Sensor  pada saat 
+kalibrasi warna putih 
+didapatkan hasil warna 
+R=255, G=255, B=255 
+sedangkan pada kalibrasi 
+warna hitam didapat 
+nilai R=0, G=0, B=0, 
+dapat disimpulkan 
+kalibrasi sensor warna 
+dapat dilakukan dengan 
+baik. 
+17 Peningkatan Kualitas Daging 
+Lokal di Kabupaten Manggarai 
+Barat NTT melalui Penerapan 
+Good Farming Practice dan 
+Pemotongan Halal Berbasis 
+Kesrawan.  [2] Observasi Masyarakat pelaku 
+industri peternakan di 
+kabupaten Manggarai 
+Barat Nusa Tenggara 
+Timur secara umum 
+belum terlalu 
+mengetahui tentang 
+Good Farming Practice 
+dikarenakan masih 
+banyak peternakan yang 
+dijalankan secara 
+tradisional dan hewan 
+ternak digembalakan. 
+Akan tetapi 
+pengetahuan terkait 
+kesejahteraan hewan 
+dan pemotongan halal 
+sudah banyak diketahui 
+dan diterapkan. Kegiatan 
+ini terbukti sangat 
+membantu masyarakat 
+dan pemerintah dalam 
+memberikan 
+pengetahuan untuk 
+29                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ membnatu dalam 
+peningkatan kuailitas 
+hewan ternak dan 
+daging lokal. 
+18 Pengendalian Cemaran Mikroba 
+pada Bahan Pangan Asal Ternak 
+(Daging dan Susu) Mulai dari 
+Peternakan Sampai 
+Dihidangkan.  [19]  Observasi dan 
+eksperimental Pengolahan untuk 
+menghambat 
+pertumbuhan bakteri, 
+walaupun cara ini belum 
+selalu dapat 
+menghilangkan bakteri 
+yang mencemari produk 
+ternak saat berada di 
+peternakan atau pada 
+saat panen. 2) 
+Pengendalian residu dan 
+cemaran mikroba pada 
+produk pangan asal 
+ternak dengan menekan 
+batas maksimum residu 
+antibiotik. 3) Penerapan 
+sistem keamanan 
+pangan pada setiap 
+proses produksi melalui 
+(GFP), good handling 
+practices (GHP), dan 
+good manufacture 
+practices (GMP). 4) 
+Meningkatkan 
+pengetahuan, 
+kesadaran, dan 
+kepedulian masyarakat 
+terhadap penyakit yang 
+disebabkan oleh 
+cemaran mikroba 
+sehingga dapat 
+mengeliminasi dampak 
+yang ditimbulkan oleh 
+pencemaran mikroba 
+pada bahan pangan. 
+19 Evaluasi Kebijakan Impor Daging 
+Sapi Melalui Analisis Penawaran 
+dan Permintaan. [1] Kajian analisis Hasil parameter dugaan 
+dilihat dari sisi 
+penawaran, bahwa 
+peranan populasi sapi 
+nasional nyata. 
+ 
+D.A. Anggraini et al.  1 (2021 ) 20-38 30 
+ 3 Hasil dan diskusi 
+Pembahasan tentang kebijakan pemotongan sapi di RPH dalam kai tannya dengan Prinsip 
+Manajemen Halal dan HACPP secara singkat meliputi: kebijakan peme rintah dalam proses 
+dan kendalanya, teknik pemotongan ternak di RPH secara islami,  kualitas daging sapi dan 
+pencemarannya termasuk residu antibiotik pada daging, dan H ACCP yang diuraikan secara 
+singkat sebagai berikut ini. 
+3.1 Kebijakan pemerintah dalam proses dan kendalanya 
+Keputusan yang diambil oleh pemerintah penyediaan produk panga n asal hewan UU 
+No.8/1999 tentang Perlindungan Konsumen dan UU No. 7/1996 tentang Pangan, mengatur 
+peran pemerintah dalam penyediaan produk pangan asal hewan yang Aman, Sehat, Utuh 
+dan Halal (ASUH) [18]. Selain itu Keputusan Menteri Pertanian yang diakomodasi dal am 
+Undang-Undang Nomor 18 Tahun 2012 tentang Pangan Pasal 57  menyatakan pelaku usaha 
+berkewajiban mencantumkan logo halal pada kemasan produk p angan yang 
+diperdagangkan di wilayah Indonesia tujuannya adalah untuk  melindungi dan memberi 
+kepastian hukum hak-hak konsumen muslim terhadap produk yang halal [17]. Peraturan 
+lainnya berkaitan dengan RPH Menurut Permentan nomor 13 Tahun 201 0 yang menyatakan 
+bahwa Rumah Potong Hewan (RPH) merupakan sebuah kompleks ban gunan yang didesain 
+untuk melaksanakan tugas pokok dan fungsi utama untuk memoto ng hewan ternak potong 
+dengan standart aman, higienis, sanitasi, dan halal dalam hal pencegahan food borne 
+disease . Beberapa kebijakan lain terkait kualitas daging yang sudah  dijelaskan pada bab 
+pendahuluan.  
+Dalam kaitannya dengan kualitas daging, yaitu masih banyak rum ah potong tradisional yang 
+kurang memperhatikan animal welfare  dan terkesan kotor. Kendala kebijakan pemerintah 
+lainnya, yaitu limbah yang sesuai dengan Analisis Mengenai D ampak Lingkungan (AMDAL). 
+RPH bisa menjadi sumber kontaminasi penyakit karena kemungkinan  ternak yang dibawa 
+untuk dipotong berasal dari suatu daerah yang sedang ada da lam keadaan infeksi subklinis 
+suatu penyakit. Kegiatan yang dilakukan di RPH meliputi pemerik saan sebelum pemotongan 
+(antemort em) dan sesudah pemotongan ( postmortem ). Pemeriksaan antemortem  dilakukan 
+untuk mengidentifikasi dan mencegah penyembelihan ternak yang terserang penyakit 
+terutama yang dapat menular pada manusia yang mengonsumsinya. Pemerik saan 
+postmortem  dilakukan untuk memastikan kelayakan daging yang dihasilka n aman dan layak 
+diedarkan untuk dikonsumsi masyarakat. Pemeriksaan postmortem  juga dilakukan 
+melindungi konsumen dari penyakit yang dapat ditimbulkan karen a makan daging atau 
+karkas yang tidak sehat dan melindungi konsumen dari pemals uan daging  [10]. 
+Kendala lain selain bangunan RPH yang kurang bersih terdapa t juga penurunan akan kualitas 
+daging dalam hal ini cemaran, daging glonggong, daging palsu, daging antrak (radang limpa) . 
+Ditemukan lebih dari seratus ekor sapi dan kerbau terjangkit antra ks di Desa Laikang dan 
+Desa Punaga, Kecamatan Mangarabombang, Takalar, Sulawesi S elatan. Sapi dan kerbau 
+tersebut mengalami kejang-kejang kemudian mati serta daging ilegal. Keb ijakan peraturan 
+yang ada lebih baik dilengkapi dengan pengawas pangan ( food inspector ) yang 
+berkelanjutan untuk melindungi konsumen [7]. 
+31                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ Kurangnya penyuluhan dan pelatihan kepada para pekerja di Kabu paten Sigi membuat 
+mereka tidak memahami tugas yang akan dilakukan di RPH dan bekerja  berdasarkan 
+pengetahuan mereka saja. Selain itu, akibat tidak ada penyuluha n, para pekerja tidak 
+mengetahui standar yang harus dikerjakan agar mendapatkan produ k karkas yang ASUH. 
+Petugas kesehatan hewan terutama dokter hewan sangat diperlukan di  RPH. Dokter Hewan 
+atau tenaga paramedis sangat diperlukan untuk memeriksa hewan s ebelum atau sesudah 
+dilakukan penyembelihan [9] .  
+Beberapa kebijakan telah melibatkan masyarakat, misalnya yang terjad i Kabupaten 
+Manggarai Barat NTT. Kebijakan tersebut adalah penerapan Good Farming Practice  untuk 
+menghasilkan ternak potong yang sehat dan berkualitas, serta pe nerapan pemotongan halal 
+berbasis kesejahteraan hewan untuk menghasilkan daging yang berkualitas dan ASUH. 
+Berbanding terbalik dengan pengetahuan akan kesejahteraan hewan,  masyarakat sudah 
+lebih banyak mengetahui dan mendapatkan informasi terkait hal terseb ut. Sebagian besar 
+peternak sudah mengetahui dan menerapkannya walaupun minimal. Kon sep GAF dapat 
+dicapai melalui penerapan efisiensi produksi dengan tetap m emperhatikan faktor 
+lingkungan dan semua yang terlibat dalam usaha peternakan sep erti jenis hewan ternak 
+yang dipelihara, pakan yang diberikan, manajemen pemeliharaan, fasilitas pemeliharaan 
+serta lingkungan dan SDM yang berkualitas [2]. 
+3.2 Teknik pemotongan ternak di RPH secara islami 
+Produk hasil RPH memperhatikan pedoman ASUH dan HACCP untuk men jaga kualitas daging 
+dan perlindungan terhadap konsumen. Produk ASUH adalah ketent uan untuk produk yang 
+akan dipasarkan, didistribusikan dan dikonsumsi dengan mem perhatikan syarat-syarat 
+kesehatan, secara etika dapat diterima masyarakat dan memenuhi syarat-syar at halal dan 
+baik (halalan thoyyiban), sebagaimana Al-Quran telah memberi kan petunjuk yang berbunyi 
+sebagai berikut: 
+ 
+  “―Dan ma kanlah makanan yang halal dan baik dari apa yang Allah telah rezekikan 
+kepadamu, dan bertakwalah kepada Allah yang kamu beriman kepada-Nya. ” (QS. Al-
+Maidah: 88). 
+Pemotongan ternak secara islami dimaksudkan untuk mendapatkan daging yang baik dan 
+halal ditinjau dari syari‘at Agama Islam serta untuk melindungi keamanan batin konsumen 
+dari kecurigaan maupun keragaman terhadap produk peternakan, mengingat bangsa 
+Indonesia mayoritas beragama Islam, tentunya pemotongan ternak harus  dilakukan sesuai 
+persyaratan pemotongan yang halal. Dalam syariat Islam, ada tiga  aspek pemotongan halal, 
+yaitu aspek ternak yang akan dipotong, aspek orang yang memotong (p enyembelih) dan 
+aspek proses pemotongan. Aspek ternak yang akan dipotong harus ternak yang secara 
+syariat adalah ternak yang halal , seperti kambing, domba, sapi, kerbau, kelinci, rusa, kacil, 
+ayam, unta dan dalam kondisi yang masih hidup, artinya bukan sudah mati sebelum 
+
+D.A. Anggraini et al.  1 (2021 ) 20-38 32 
+ dipotong (bangkai) dan dalam kondisi sehat. Dari aspek orang yang memotong harus orang 
+muslim, dewasa, mengerti cara pemotongan yang baik dan benar [7 ]. 
+3.3 Kualitas daging sapi dan pencemarannya termasuk residu antibioti k pada daging  
+Kualitas daging menjadi salah satu upaya untuk menjaga rasa aman dan nyaman dalam 
+konsumsi bahan produk asal hewan agar mencakup standar keaman an pangan ( food safety ). 
+Penjaminan kualitas karkas merupakan nilai karkas yang dihasi lkan oleh ternak relatif 
+terhadap suatu kondisi pemasaran. Jumlah daging dan kualitas da ging menjadi faktor 
+penting yang menentukan nilai karkas. Nilai karkas dapat diti njau dari tipe ternak asal 
+karkas, lemak intramuskular atau marbling di dalam struktur o tot. Faktor nilai karkas dapat 
+diukur secara obyektif, misal berat karkas, sedangkan secara s ubjektif dapat diukur dengan 
+pengujian organoleptik atau panel method . Faktor kualitas daging, meliputi warna, 
+keempukan dan tekstur, aroma, citarasa dan jus daging ( juiciness ). Selain itu, lemak 
+intramuskular dan susut mamasak ( cooking loss ) yaitu berat sampel daging yang hilang 
+selama pemasakan atau pemanasan, retensi cairan dan pH daging  ikut menentukan kualitas 
+daging. Faktor sebelum dan sesudah pemotongan dapat mempengaruh i kualitas karkas. 
+Faktor sebelum pemotongan yang dapat mempengaruhi kualitas dagin g, antara lain: 
+genetik, spesies, bangsa, tipe ternak, jenis kelamin, umur, pak an, termasuk bahan aditif 
+(hormon, antibiotik, dan mineral), dan stres. Faktor setelah pemotongan  mempengaruhi 
+kualitas daging, antara lain metode pelayuan, stimulasi listri k, metode pemasakan, pH 
+karkas dan daging, bahan tambahan termasuk enzim pengempu k daging, hormon dan 
+antibiotik, lemak intramuskular atau marbling , metode penyimpanan dan preservasi, 
+macam otot daging dan lokasi otot daging [15]. 
+Dalam penelitian terbaru, salah satu pedoman yang telah dipaka i untuk menguji kualitas 
+daging adalah alat pendeteksi daging bangkai dengan ting kat akurasi 100% . Alat ini berhasil 
+dibuat oleh Program Studi Kesehatan Masyarakat Veteriner (Kesmavet), Fak ultas 
+Kedokteran Hewan (FKH), UGM. Alat pendeteksi daging bangkai yang baru pertama kali 
+diciptakan ini diberi nama Durante. Namun, Durante berbentuk ca iran yang diteteskan pada 
+daging untuk mengetahui tingkat kualitasnya dan dinilai kura ng dalam hal mobilitas [4]. 
+Penelitian lainnya adalah teknologi penggabungan dua jenis sensor, yaitu sensor bau 
+(TGS2602) dan sensor warna ( DT-Sense Color Sensor) . Kedua sensor tersebut  untuk 
+menentukan kualitas daging sapi  Pengambilan keputusan pada  alat ini menggunakan logika 
+fuzzy . Alat ini relatif kecil, menggunakan daya dari baterai sehingga  mudah dibawa kemana-
+mana [4]. 
+Pengujian kualitas daging di laboratorium umumnya menggunak an uji Triple Sugar Iron Agar  
+(TSIA), Methyl Red-Voges Proskauer  (MR-VP), Simmon’s Citrate Agar  (SCA), Sulfide Indol 
+Motility  (SIM), dan uji gula-gula menggunakan media laktosa, sukrosa dan glukosa. Warna, 
+rasa, aroma, dan pembusukkan yang dipengaruhi oleh kondisi ternak, kondisi lingkungan, 
+kondisi tempat pemotongan dan proses penanganan daging mul ai dari pemotongan sampai 
+pengolahan. Nilai TPC standard normal jumlah kuman total pada daging adalah 1x106 cfu/g. 
+Parameter TPC sangat penting diperhatikan karena erat kaitannya de ngan keamanan 
+produk pangan yang diuji. Adanya aktivitas bakteri dalam dagi ng akan menurunkan kualitas 
+daging yang ditunjukkan dengan perubahan [15].  
+33                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ Cemaran mikroba pada daging segar antara lain adalah Salmonella sp ., Shigella sp ., dan E. 
+coli. Jumlah mikroba berbahaya pada daging yang dijual di pasar tra disional sangat 
+membahayakan, apalagi jika pemotongan dilakukan di tempat yan g tidak higienis, misalnya 
+RPH yang kotor. Daging terkontaminasi mikroba yang melebihi ambang b atas akan tampak 
+berlendir, berjamur, daya simpannya menurun, berbau busuk, ras a tidak enak, dan 
+menyebabkan gangguan kesehatan bila dikonsumsi [15]. Jenis parasit juga banyak 
+ditemukan di RPH yang kotor. Banyaknya lalat yang dijumpai disebabkan oleh banyak 
+kotoran hewan yang berserahkan di jalanan yang dapat membawa b anyaknya penyakit. 
+Selain itu, adanya cemaran karkas daging, seperti isi jeroan usus banyak terdapat cacing 
+trematoda, cacing cestoda ataupun nematoda (cacing tambang, caci ng gelang, dan cacing 
+cambuk) [ 12]. 
+Kontaminasi silang tangan pemotong, peralatan yang terkontamina si, pengepakan, dan 
+pengiriman yang terkontaminasi, serta kualitas air selama proses pro duksi daging memiliki 
+peranan penting dalam pencemaran daging yang diproduksi [ 11]. Hal ini telah banyak 
+digunakan dalam peternakan sebagai usaha pencegahan dan pe ngobatan penyakit, serta 
+merangsang pertumbuhan ternak. Dari segi kesehatan masyarakat veteriner, p emberian 
+antibiotik pada ternak produksi perlu diawasi secara ketat, kare na adanya residu antibiotik 
+dalam hasil ternak dapat mempengaruhi kesehatan konsumen. Antibio tik dapat ditemukan 
+pada hasil ternak jika hasil ternak tersebut dipanen sebelum ma sa henti obat ( withdrawal 
+time ) habis pada hewan yang diobati. Dapat pula disebabkan ka rena dilakukan penambahan 
+antibiotik secara sengaja ke dalam bahan makanan dengan tujuan ingin menyimpan 
+makanan tersebut untuk jangka waktu lama. 
+3.4 Hazard Analysis Critical Control Point  (HACCP)  
+Hazard Analysis Critical Control Point  (HACCP) adalah salah suatu sistem kontrol dalam 
+upaya pencegahan terjadinya masalah yang didasarkan atas identif ikasi titik-titik kritis di 
+dalam tahap penanganan dan proses produksi. HACCP merupakan sa lah satu bentuk 
+manajemen resiko yang dikembangkan untuk menjamin keamanan pan gan dengan 
+pendekatan pencegahan yang dianggap dapat memberikan jaminan dala m menghasilkan 
+makanan yang aman bagi konsumen [ 13]. Suatu sistem pengawasan untuk mencegah 
+kemungkinan terjadinya keracunan atau foodborne disease  berkaitan erat dengan HACCP 
+[14]. Proses menganalisa kualitas daging dengan HACCP ditunjukkan  oleh Gambar 1. 
+D.A. Anggraini et al.  1 (2021 ) 20-38 34 
+  
+Gambar 1. Diagram ali r kualitas daging HACCP [14].  
+HACCP meliputi analisis bahaya dan pengendalian titik kritis un tuk menjamin produk yang 
+dikonsumsi aman dari bahaya fisik, kimia (pestisida), dan mi krobiologi. Konsep HACCP dapat 
+diterapkan dalam seluruh proses pengolahan makanan. Aplikasi  HACCP pada umumnya 
+dilakukan dengan analisis kendali kritis pada proses pen erimaan bahan baku, proses 
+produksi, sampai dengan penyimpanan sebelum produk dipas arkan [ 14]. RPH yang baik 
+telah menerapkan sistem manajemen keamanan pangan dan telah men dapatkan sertifikat 
+ISO 9001 dari badan sertifikasi SAI Global, sistem HACCP, serti fikat Halal dari Majelis Ulama 
+Indonesia (MUI), Nomor Kontrol Veteriner (NKV), artinya produk yang d ihasilkan 
+perusahaan sudah melalui proses audit yang dilakukan pih ak badan sertifikasi terkait untuk 
+menjamin kualitas daging sehingga layak dikonsumsi [16]. Pendekatan HACCP meliputi tujuh 
+prinsip, yaitu: 1) Analisis potensi bahaya, bertujuan untuk meng identifikasi dan 
+mengevaluasi potensi bahaya yang diperkirakan dapat terjadi p ada setiap langkah produksi 
+makanan. 2) Penentuan titik kendali kritis, merupakan langkah tinda k lanjut dari analisis 
+potensi bahaya. Potensi bahaya yang telah teridentifikasi harus dii kuti dengan satu atau 
+lebih critical control point (CCP). 3) Penetapan batas kritis. Batas k ritis mencerminkan 
+batasan yang digunakan untuk menjamin proses yang berlangsun g dapat menghasilkan 
+
+35                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ 
+Receiving Bahan baku 
+Suhu: -8oC (Frozen) dan suhu 5oC (chill) 
+Dikembalikan ke 
+supplier dengan 
+menyertakan Berita 
+Acara Penolakan 
+(BAP) produk yang aman [19]. Proses menjaga kualitas daging dari proses pemotongan di  RPH 
+sampai menjadi daging rendang dapat dilihat pada Gambar 2 .  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Gambar 2. Diagram alir proses produksi menu daging rendang d i PT. X [14].  
+Untuk menjaga kualitas daging, perlu memperhatikan hal-hal b erikut: 
+1. Identifikasi bahaya 
+Bahaya pada proses menu daging rendang secara keseluruhan sud ah sesuai dengan SNI No. 
+01-4852-1998. Bahaya yang diidentifikasi pada daging sapi a dalah mikroba alami pada 
+daging yaitu jumlah E. coli  yang dihitung dengan metode TPC ( Total Plate Count ). Apabila 
+jumlah bakteri ini melebihi standar, maka akan meningkatan res iko timbulnya penyakit   
+Storing 
+Daging 
+(Frozen )  Bumbu rendang 
+instan ( Chilled )  Air (kemasan 
+galon)  Minyak 
+goreng  Santan 
+kemasan  Penyedap 
+rasa (MSG) 
+Thawing (5oC 
+selama 24 jam) 
+Dipotong 
+dadu Chiller (Maks 1 hari) 
+Cooking dengan suhu 74oC 
+Blast Chilling suhu -5oC- 0oC 
+selama 4 jam hingga suhu 
+makanan 5 C. jika belum mencapai 
+5oC, ditambah 2 jam Jika suhu 
+rendang tidak 
+mencapai 5oC, 
+maka dibuang 
+Chilling (Maks selama 2 
+hari sebelum di dishing ) 
+Dishing/Portioning dengan 
+suhu ruangan 15oC-21oC 
+selama maks 45 menit. 
+Daging rendang di dishing  
+bersama nasi Jika waktu 
+pemorsian >45 
+menit→cek 
+suhu rendang 
+Jika suhu 
+rendang 
+>15oC 
+→Jika suhu 
+rendang ≤ 15oC 
+→rendang 
+dimasukkan 
+kembali ke 
+chiller MTSU (Meal 
+Tray Set Up) 
+Storage (Final 
+Holding) Suhu 
+Holding room maks 
+5oC. Makanan 
+dikeluarkan dari 
+holding room maks 3 
+Jika 
+ suhu>5oC→ 
+tambah dry ice  Transportasi 
+D.A. Anggraini et al.  1 (2021 ) 20-38 36 
+ lainnya. Potensi bahaya biologi pada daging sapi berupa ba kteri Salmonella , Y. enterolitica , 
+L. monocytogenes , S. aureus , dan C. perferingens . Bahaya kimia pada daging dapat berupa 
+formalin, dan bahaya fisik serta cemaran limbah cair pada waktu p emotongan termasuk 
+kontaminasi silang pada saat pengepakan. Hal ini sesuai  dengan kebijakan pemerintah 
+tentang Peraturan Menteri Lingkungan Hidup No.5 Tahun 2014 di a ntaranya limbah cair 
+memiliki kadar paling tinggi untuk BOD 100 mg/l, COD 200 mg/l, TSS 100 mg/l, minyak dan 
+lemak 15mg/l, NH3-N 25 mg/ dan pH 6- 9 [3] . 
+2. Penentuan CCP dan batas kritisnya  
+Prinsip HACCP yang kedua adalah penentuan CCP ( Critical Control Point ). Penentuan CCP 
+dapat dilakukan dengan menggunakan pohon keputusan. Batas  kritis adalah sebuah titik 
+kendali yang dilakukan untuk menghilangkan bahaya atau men urunkannya hingga batas 
+aman. Batas kritis harus ditetapkan secara spesifik dan divalidasi  terlebih dahulu. Kriteria 
+yang sering digunakan sebagai batas kritis adalah hasil pen gukuran suhu, waktu, tingkat 
+kelembaban, pH, Aw, kandungan klorin, tekstur, dan kenampakan vis ual. 
+3. Monitoring  dan tindakan koreksinya  
+Monitoring merupakan kegiatan rutin berupa pengukuran atau pen gamatan pada tiap CCP 
+dan dibandingkan dengan batas kritisnya. Tindakan koreksi harus dilakukan ketika terdapat 
+penyimpangan atau proses yang melampaui batas kritis . Kegiatan monitoring dilakukan agar 
+CPP berada di bawah batas kritis. 
+4. Verifikasi Mikrobiologi Pangan  
+Kegiatan verifikasi yang dilakukan sesuai dengan SNI No. 01-48 52-1998, yaitu mencakup 
+peninjauan kembali sistem pencatatan HACCP, peninjauan kembali penyi mpangan dan 
+disposisi produk, dan memastikan CCP memenuhi batas kritisnya. Verifi kasi dilakukan untuk 
+memastikan sistem HACCP telah berjalan dengan benar sehingga mamp u menghasilkan 
+mutu produk yang berkualitas. Kegiatan verifikasi terdiri dari empat kegia tan, yaitu validasi 
+HACCP, meninjau hasil pemantauan, pengujian produk, dan auditin g. 
+5. Dokumentasi dan Pencatatan  
+Dokumentasi HACCP meliputi pendataan tertulis semua langkah HACCP yang  dilakukan agar 
+dapat dilakukan pemeriksaan ulang dalam periode waktu tertentu. Penerapan sistem HACCP 
+pada menu daging rendang didokumentasikan mulai dari penerima an bahan baku, 
+penyimpanan bahan, proses pemasakan, pemorsian, dan penyimpan an akhir. Pada 
+dokumen HACCP terdapat form Hazard Analysis Checksheet  untuk menu rendang yang berisi 
+analisis bahaya fisika, kimia, dan biologi pada setiap pro ses produksi daging rendang. 
+Kesimpulan 
+Berdasarkan kesimpulan dari uraian diatas yaitu diperoleh ba hwa dalam prosesnya 
+beberapa kebijakan yang dibuat pemerintah berdasarkan kasus dilapangan dalam prosesnya 
+proses pemotongan daging di RPH kurang memperhatikan kebijaka n-kebijakan pemerintah 
+dalam prinsip manajemen ASUH ataupun aturan HACCP yang ada. Hal ini bisa diperhatian 
+dari masih adanya bentukan RPH tradisional tanpa memperhatkan s tandar kebersihan RPH, 
+37                                                                  D.A. Anggraini et al.  1 (2021 ) 20-38 
+ 
+ kesejahteraan hewan  animal welfare  ataupun aturan HACCP sehingga rentan kontaminasi 
+silang mengabitakan penurunan kualitas daging. Pengadaan pan gan ini harus diwaspadai 
+karenan hal tersebut juga mengakibatkan munculnya penyakit zoo nosis ataupun emerging 
+disease  di kalangan masyarakat. 
+Adanya solusi yang baru tentang kebijakan pemerintah terkait atu ran baku yang ada dengan  
+adanya evaluasi ataupun pengamatan akan adanya kualitas da ging akan perlindungan hak 
+konsumen mulai dari sistem identifikasi ketetelusuran asal bahan baku. Prinsip ASUH dan 
+HACCP diimbangi oleh edukasi, misalnya seminar berkelanjutan den gan dimulai kunjungan 
+pemerintah ke RPH setempat, penegakan regulasi pangan, riset terhadap berbag ai masalah 
+ancaman pangan terhadap gangguan kesehatan dengan dibentuknya pengawas pangan 
+(food inspector ). 
+Referensi 
+[1]  D. Priyanto, “Evaluasi Ke bijakan Impor Daging Sapi Melalui Analisis Penawaran dan 
+Permintaan,” Seminar Nasional Teknologi Peternakan dan Veteriner, pp. 27 5-284, 2005.  
+[2]  Herawati, A. Setianingrum, E. Junining, dan W.P. Alamsyah, “Pening katan Kualitas 
+Daging Lokal di Kabupaten Manggarai Barat NTT melalui Pen erapan Good Farming 
+Practice dan Pemotongan Halal Berbasis Kesrawan,” Journal of Innovati on and Applied 
+Technology, pp. 1096-1103, 2020.  
+[3]  D. Padmono, “Alternatif Pengolahan Limbah Rumah Potong Hewan - Cakung (Suatu 
+Studi Kasus),” Jurnal Teknik Oingkungan P3TL BPPT, pp. 303 -310, 2005.  
+[4]  R.W. Hadi, I. Setiawan, dan Sumardi, “Perancangan Alat Pendeteksi K ualitas Daging Sapi 
+Berdasar Warna dan Bau Berbasis Mikrokontroler Atmega32 Meng gunakan Logika 
+Fuzzy,” Transmisi, pp. 2 1-26, 2011. 
+[5]  S. Prabowo dan A.A. Rahman, “Sertifikasi Halal Sektor Industri P engolahan Hasil 
+Pertanian,” Forum Penelitian Agro Ekonomi, pp. 57 -70, 2016.  
+[6]  O.P. Winey, H. Santoso dan N.U. Handayani, “Implementasi Sistem Haz ard Analysis 
+Critical Control Point (HACCP) dan Sistem Jaminan Halal di UD Banden g Citra 
+Semarang,” Industrial Engineering Online Journal, pp. 1 -11, 2019.   
+[7]  D. Rosyidi, “Beberapa Kendala Bahan Pangan Asal Ternak untuk  Mencapai Aman, Sehat, 
+Utuh dan Halal (ASUH),” Prosiding Sem inar Teknologi dan Agribisnis Peternakan VI: 
+Pengembangan Sumber Daya Genetik Ternak Lokal Menuju Swasembada  Pangan 
+Hewani ASUH, Fakultas Peternakan Universitas Jenderal Soedirman, pp . 51-57, 2018.  
+[8]  Y. Lestari, F. Nirmala G, dan L.O.A. Saktiansyah, “A nalisis Dampak Kepadatan Lalat, 
+Sanitasi Lingkungan dan Personal Higiene terhadap Kejadian  Demam Tifoid di 
+Pemukiman UPTD Rumah Pemotongan Hewan (RPH) Kota Kendari Tahun 2017,” Jurnal 
+Ilmiah Mahasiswa Kesehatan Masyarakat, pp. 1-9, 2017.  
+[9]  I. Tolistiaw aty, J. Widjaja, R. Isnawati, dan L.T. Lobo, “Gambaran Rumah Po tong 
+Hewan/Tempat Pemotongan Hewan di Kabupaten Sigi, Sulawesi Tengah ,” Jurnal Vektor 
+Penyakit, pp. 45-52, 2015.  
+[10]  B. Kuntoro, R.R. Maheswari, dan H. Nuraini, “Hubungan Penerapan Sta ndard Sanitation 
+Operasional Procedure (SSOP) terhadap Mutu Daging Ditinjau da ri Tingkat Cemaran 
+Mikroba,” Jurnal Ilmiah Ilmu -Ilmu Peternakan, pp. 70-80, 2012.  
+[11] J.M. Jacob, E.R.E. Hau, dan Y.Y. Rumlaklak, “Gambaran Total Plate Count (TPC) pada 
+Daging Sapi yang Diambil di Rumah Potong Hewan (RPH) Kota Kupang,” Part ner, pp. 
+483-487, 2018.  
+D.A. Anggraini et al.  1 (2021 ) 20-38 38 
+ [12]  M. Hanafiah, Winaruddin, dan Rusli, “Studi Infeksi Nematoda Gas trointestinal pada 
+Kambing dan Domba di Rumah Potong Hewan Banda Aceh,” Jurnal Sain Veteriner, pp. 
+15-19, 2002.  
+[13]  D. Nandari, N.M.A.S. Singapurwa, A.M. Semariyani, I.P. Candra, dan  I.N. Rudianta, 
+“Penerapan HACCP (Hazard Analysis Critical Control Point) Menu Chicken Butter untuk 
+Maskapai Penerbangan JQ di PT AF,” Gema Agro, pp. 134 -140, 2019.   
+[14] A.L. Wicaksani dan R. Adriyani, “Penerapan HACCP dalam Proses  Produksi Menu Daging 
+Rendang d i Inflight Catering,” Media Gizi Indonesia, pp. 88 -97, 2017.  
+[15] F. Fikri, I.S. Hamid, dan M.T.E. Purnama, “Uji Organoleptis, p H, Uji Eber dan Cemaran 
+Bakteri pada Karkas yang Diisolasi dari Kios di Banyuwangi,” Ju rnal Medik Veteriner, pp. 
+23-27, 2017.  
+[16] A. Hapidin, A. Basith, dan J.M. Munandar, “Analisis Atribut Produk pada Manajemen 
+Mutu Proses Produksi Daging Sapi di RPH PT. Elders Indonesi a, Bogor,” Jurnal Aplikasi 
+Manajemen dan Bisnis, pp. 84-94, 2019.   
+[17]  Syafrida, “Sertifikat Halal pada Pro duk Makanan dan Minuman Memberi Perlindungan 
+dan Kepastian Hukum Hak- Hak Konsumen Muslim,” Jurnal ADIL, pp. 159 -174, 2016.  
+[18]  Warcito, “Analisis Kelayakan Investasi Penerapan Hazard Analysi s Critical Control Point 
+(HACCP) pada Rumah Pemotongan Hewan (Studi Kasus di Rumah Pemoton gan Hewan 
+(RPH) Kota Bogor),” IPB University Scientific Repository, 2003.  
+[19] E. Gustiani, “Pengendalian Cemaran Mikroba pada Bahan Pang an Asal Ternak (Daging 
+dan Susu) Mulai dari Peternakan Sampai Dihidangkan,” Jurnal L itbang Pertanian, pp. 96-
+100, 2009.  

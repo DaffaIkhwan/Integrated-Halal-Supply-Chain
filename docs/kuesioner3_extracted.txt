@@ -1,0 +1,4618 @@
+﻿__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CPI\. KANDANG SAPI \(FARM\)__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP1 ÔÇô KANDANG SAPI \(FARM\)__
+
+Nama Farm / Peternakan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Staff / Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Staff ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Penyelia Halal 
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam 
+
+Batch / Kode Ternak
+
+:
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada CP1 ÔÇô KANDANG SAPI \(FARM\)
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP1\. Kandang Sapi \- Farm__
+
+__CP1\.1\.__
+
+__Asal\-usul sapi & Traceability \- Cattle Origins & Traceability__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Identitas asal sapi terdokumentasi 
+
+Surat asal ternak 
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Riwayat perpindahan sapi tersedia
+
+Logbook distribusi 
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Supplier ternak terverifikasi
+
+Vendor approval
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Sistem traceability berjalan
+
+Database ternak
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Histori kepemilikan tersedia
+
+Dokumen pembelian
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP1\.2\.__
+
+__Status kesehatan sapi \- Cattle health status__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Pemeriksaan kesehatan rutin
+
+Laporan dokter hewan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Status bebas penyakit zoonosis
+
+Sertifikat kesehatan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Rekam vaksinasi tersedia
+
+Buku vaksinasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Penggunaan antibiotik terdokumentasi
+
+Medical record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+SOP isolasi sapi sakit tersedia
+
+SOP biosecurity
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP1\.3\.__
+
+__Kepatuhan pakan \- Feed compliance __
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Pakan bersertifikat halal
+
+Sertifikat halal pakan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Formula pakan terdokumentasi
+
+Dokumen formulasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Penyimpanan pakan terpisah
+
+SOP gudang
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Supplier pakan terverifikasi
+
+Vendor document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Feed additive halal compliant
+
+Sertifikat additive
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP1\.4\.__
+
+__Dokumentasi pemeliharaan \- Maintenance documentation__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+SOP pemeliharaan tersedia
+
+SOP farm
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Jadwal maintenance tersedia
+
+Checklist maintenance
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Cleaning log terdokumentasi
+
+Cleaning logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Pelatihan halal pekerja tersedia
+
+Sertifikat training
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Audit internal dilakukan rutin
+
+Audit report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP1\.5\.__
+
+__Kebersihan kandang & Sanitasi \- Coop Cleanliness & Sanitation__
+
+__Ketersediaan Bukti Pendukung__
+
+__Catatan Auditor__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Frekuensi pembersihan kandang
+
+Jadwal cleaning
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sistem pembuangan limbah baik
+
+SOP limbah
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Sanitasi alat dilakukan rutin
+
+Checklist sanitasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Desinfektan halal tersedia
+
+Sertifikat produk
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Kualitas air ternak teruji
+
+Hasil uji laboratorium
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP1 ÔÇô KANDANG SAPI \(FARM\)__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP2\. Pakan & Kesehatan Hewan \- Animal Feed & Health__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP2\. Pakan & Kesehatan Hewan \- Animal Feed & Health__
+
+Nama Farm / Unit
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama PIC / Staff
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Staff ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Veteriner ÔÿÉ Penyelia Halal
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Batch / Kode Ternak
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP2\. Pakan & Kesehatan Hewan \- Animal Feed & Health__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP2\. Pakan & Kesehatan Hewan \-__ __Animal Feed & Health__
+
+__CP2\.1\.__
+
+__Halal status bahan pakan \- Halal status of feed ingredients__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Seluruh bahan pakan memiliki status halal yang jelas
+
+Sertifikat halal bahan pakan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Komposisi bahan pakan terdokumentasi
+
+Dokumen formulasi pakan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Feed additive terverifikasi halal
+
+Sertifikat halal additive
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Tidak menggunakan bahan hewani non\-halal
+
+Supplier ingredient declaration
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Penggunaan bahan GMO/aditif sesuai regulasi
+
+Material Safety Data Sheet \(MSDS\)
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP1\.2\.__
+
+__Status kesehatan sapi \- Cattle health status__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Pemeriksaan kesehatan rutin
+
+Laporan dokter hewan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Status bebas penyakit zoonosis
+
+Sertifikat kesehatan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Rekam vaksinasi tersedia
+
+Buku vaksinasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Penggunaan antibiotik terdokumentasi
+
+Medical record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+SOP isolasi sapi sakit tersedia
+
+SOP biosecurity
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP2\.2\.__
+
+__Kontrol obat/vaksin hewan \- Control of veterinary drugs/vaccines__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Obat dan vaksin terdaftar resmi
+
+Izin edar obat/vaksin
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Penggunaan antibiotik terdokumentasi
+
+Medical treatment record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Status halal obat/vaksin tersedia
+
+Sertifikat halal obat/vaksin
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Jadwal pemberian vaksin terdokumentasi
+
+Logbook vaksinasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Masa withdrawal dipatuhi
+
+SOP withdrawal period
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP2\.3\.__
+
+__Pengawasan veteriner \- Veterinary supervision__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Pemeriksaan kesehatan rutin dilakukan
+
+Veterinary inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Dokter hewan terlibat aktif
+
+Surat penugasan dokter hewan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Tersedia SOP biosecurity
+
+SOP biosecurity
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Penanganan hewan sakit sesuai prosedur
+
+Incident handling report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Audit kesehatan ternak dilakukan
+
+Audit report kesehatan hewan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP2\.4\.__
+
+__Supplier reliability pakan \- Feed supplier reliability__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Supplier memiliki legalitas usaha
+
+Legal business permit
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Supplier memiliki sertifikasi halal
+
+Sertifikat halal supplier
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Supplier memiliki rekam jejak baik
+
+Supplier evaluation report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Tersedia kontrak dan SLA supplier
+
+Contract agreement
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Audit supplier dilakukan berkala
+
+Supplier audit checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP2\. Pakan & Kesehatan Hewan \- Animal Feed & Health__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP3\. Transportasi Hewan ke RPH\-__ __Transportation of Animals to the Slaughterhouse__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP3\. Transportasi Hewan ke RPH\-__ __Transportation of Animals to the Slaughterhouse__
+
+Nama Perusahaan / Transporter
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor Kendaraan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Responsible Person \(PIC\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Driver ÔÿÉ Handler ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Penyelia Halal
+
+Tanggal Pengiriman
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Waktu Berangkat
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Asal
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Tujuan \(RPH\)
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Batch
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jumlah Hewan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP3\. Transportasi Hewan ke RPH\-__ __Transportation of Animals to the Slaughterhouse__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP3\. Transportasi Hewan ke RPH\-__ __Transportation of Animals to the Slaughterhouse__
+
+__CP3\.1\.__
+
+__Kelayakan Transportasi Hewan__ *\(Animal Welfare in Transport\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Kondisi kendaraan sesuai standar kesejahteraan hewan
+
+SOP animal welfare transport
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Kepadatan hewan dalam kendaraan sesuai kapasitas
+
+Checklist kapasitas kendaraan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Tersedia ventilasi dan sirkulasi udara baik
+
+Inspection checklist kendaraan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Waktu perjalanan sesuai standar
+
+Log waktu perjalanan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Penanganan loading/unloading sesuai SOP
+
+SOP handling ternak
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP3\.2\.__
+
+__Kebersihan Kendaraan *\(Vehicle Cleanliness\)*__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Kendaraan dibersihkan sebelum digunakan
+
+SOP animal welfare transport
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Proses sanitasi kendaraan terdokumentasi
+
+Sanitation logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Kendaraan bebas dari kontaminasi bahan non\-halal
+
+Inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Desinfektan yang digunakan sesuai standar
+
+Sertifikat bahan sanitasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Area kendaraan kering dan higienis
+
+Dokumentasi foto kendaraan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP3\.3\.__
+
+__Ketertelusuran Selama Transportasi *\(Traceability During Transport\)*__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Identitas hewan dapat ditelusuri selama perjalanan
+
+Ear tag / RFID record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Data asal dan tujuan hewan tersedia
+
+Delivery order / shipment document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Monitoring lokasi transportasi berjalan
+
+GPS tracking log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Histori perjalanan terdokumentasi
+
+Transportation history report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Sistem digital traceability tersedia
+
+Database traceability system
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP3\.4__
+
+__Dokumentasi Perjalanan__ *\(Travel Documentation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Surat jalan hewan tersedia
+
+Surat jalan ternak
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sertifikat kesehatan hewan lengkap
+
+Veterinary health certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Dokumen asal ternak tersedia
+
+Animal ownership document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Jadwal perjalanan terdokumentasi
+
+Trip schedule document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Catatan insiden perjalanan tersedia
+
+Incident report transportasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP3\.5__
+
+__Kompetensi Petugas Handler__ *\(Handler Competencies\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Petugas memahami SOP halal handling
+
+Sertifikat pelatihan halal
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Petugas memiliki kompetensi animal welfare
+
+Training certificate animal welfare
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Petugas memahami prosedur darurat
+
+Emergency SOP training record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Evaluasi kinerja petugas dilakukan
+
+Staff performance evaluation
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Jumlah petugas sesuai kebutuhan transportasi
+
+Staffing assignment document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP3\. Transportasi Hewan ke RPH\-__ __Transportation of Animals to the Slaughterhouse__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP4\. Rumah Potong Hewan \- Slaughterhouse__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP4\. Rumah Potong Hewan \(Sapi\) \- Slaughterhouse__
+
+Nama Rumah Potong Hewan \(RPH\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor Sertifikat Halal RPH
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Masa Berlaku Sertifikat Halal
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Alamat RPH
+
+:
+
+ÔÿÉ Driver ÔÿÉ Handler ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Penyelia Halal
+
+Nama Responsible Person \(PIC\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Juru Sembelih Halal ÔÿÉ QC ÔÿÉ Supervisor ÔÿÉ Veteriner ÔÿÉ Penyelia Halal ÔÿÉ Operator Produksi \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor ID Karyawan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift Operasional
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam 
+
+Waktu Mulai Operasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Batch / Kode Produksi
+
+:
+
+Jumlah Hewan Disembelih
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Asal Hewan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor Kendaraan Pengangkut
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Supplier / Peternakan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP4\. Rumah Potong Hewan \- Slaughterhouse__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP4\. Rumah Potong Hewan \- Slaughterhouse__
+
+__CP4\.1\.__
+
+__Validitas Sertifikat Halal RPH__ *\(Validity of the Slaughterhouse Halal Certificate\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Sertifikat halal masih berlaku
+
+Sertifikat halal RPH
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Ruang lingkup sertifikat sesuai aktivitas
+
+Scope certification document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Lembaga sertifikasi resmi
+
+Surat registrasi BPJPH/LPPOM
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Audit halal berkala dilakukan
+
+Audit surveillance report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Perubahan fasilitas dilaporkan
+
+Change management report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.2\.__
+
+__Keber Kompetensi Juru Sembelih Halal__ *\(Competence of Halal Slaughterers\)*__*\)*__
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Juru sembelih memiliki sertifikasi halal
+
+Sertifikat JULEHA
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Pemahaman syariat penyembelihan
+
+Training halal slaughtering
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Kompetensi animal welfare
+
+Training animal welfare
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Evaluasi kompetensi berkala
+
+Competency assessment report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Jumlah juru sembelih memadai
+
+Staffing assignment
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.3\.__
+
+__Kesesuaian Proses Sembelih Syariah__ *\(Compliance with Sharia\-compliant Slaughtering Processes\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Penyembelihan sesuai syariat Islam
+
+SOP halal slaughtering
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Penyebutan nama Allah saat penyembelihan
+
+Observation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Hewan masih hidup saat disembelih
+
+Ante mortem inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Arah dan teknik sembelih sesuai syariah
+
+Slaughtering procedure checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Proses stunning sesuai regulasi halal
+
+Stunning SOP & inspection record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.4__
+
+__Pemeriksaan Ante/Post\-Mortem__ *\(Ante/Post Mortem Inspections\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Pemeriksaan kesehatan sebelum sembelih
+
+Ante mortem report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Pemeriksaan karkas setelah sembelih
+
+Post mortem report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Dokter hewan melakukan inspeksi
+
+Veterinary inspection record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Dokumentasi hasil inspeksi tersedia
+
+Inspection documentation
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Penanganan hewan abnormal sesuai SOP
+
+Non\-conformance report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.5__
+
+__Sanitasi Alat & Area__ *\(Equipment and Area Sanitation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Peralatan dibersihkan rutin
+
+Cleaning checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Area produksi higienis
+
+Hygiene inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Desinfektan sesuai standar halal
+
+Sertifikat produk sanitasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Jadwal sanitasi terdokumentasi
+
+Sanitation logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Sistem pest control berjalan
+
+Pest control report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.6__
+
+__Pemisahan Halal & Non\-Halal__ *\(Separation of Halal and Non\-Halal Meat\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Area halal terpisah dari non\-halal
+
+Layout segregasi area
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Alat halal dan non\-halal dibedakan
+
+Equipment labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Jalur distribusi terpisah
+
+Distribution SOP
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Penyimpanan halal terpisah
+
+Warehouse segregation SOP
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Identifikasi produk halal jelas
+
+Batch labeling record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.7__
+
+__Dokumentasi & Batch Traceability__ *\(Documentation and Batch Traceability\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Batch produk dapat ditelusuri
+
+Batch production record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Data asal hewan terdokumentasi
+
+Supplier traceability document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Sistem traceability digital tersedia
+
+ERP/traceability system
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Histori distribusi tercatat
+
+Distribution tracking record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Dokumentasi produksi lengkap
+
+Production logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.8__
+
+__Audit & Corrective Action Internal__ *\(Internal Audits and Corrective Actions\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Audit internal dilakukan berkala
+
+Internal audit report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Temuan audit ditindaklanjuti
+
+CAPA report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Monitoring efektivitas corrective action
+
+Follow\-up audit report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Terdapat sistem pelaporan insiden
+
+Incident report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Management review dilakukan
+
+Management review minutes
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\.9__
+
+__Pengawasan Halal Internal__ *\(Internal Halal Supervision\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Terdapat penyelia halal internal
+
+Surat penunjukan penyelia halal
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Monitoring kepatuhan halal rutin
+
+Halal monitoring checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Pelaporan halal terdokumentasi
+
+Halal compliance report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Sosialisasi halal kepada pekerja
+
+Training attendance list
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Evaluasi sistem halal dilakukan
+
+Halal review document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP4\. Rumah Potong Hewan \- Slaughterhouse__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP5\. Post \- Slaughter Handling__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP5\. Post \- Slaughter Handling__
+
+Nama Rumah Potong Hewan \(RPH\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor Sertifikat Halal RPH
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Masa Berlaku Sertifikat Halal
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Alamat RPH
+
+:
+
+ÔÿÉ Driver ÔÿÉ Handler ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Penyelia Halal
+
+Nama Responsible Person \(PIC\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Juru Sembelih Halal ÔÿÉ QC ÔÿÉ Supervisor ÔÿÉ Veteriner ÔÿÉ Penyelia Halal ÔÿÉ Operator Produksi \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor ID Karyawan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift Operasional
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam 
+
+Waktu Mulai Operasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Batch / Kode Produksi
+
+:
+
+Jumlah Hewan Disembelih
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Asal Hewan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor Kendaraan Pengangkut
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Supplier / Peternakan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP5\. Post \- Slaughter Handling__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP5\. Post \- Slaughter Handling__
+
+__CP5\.1\.__
+
+__Handling Karkas & Sanitasi__ *\(Carcass Handling & Sanitation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Karkas ditangani sesuai SOP halal setelah penyembelihan
+
+SOP post\-slaughter handling
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Area handling karkas bersih dan higienis
+
+Hygiene inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Peralatan pengulitan, pemotongan, dan penggantungan disanitasi
+
+Cleaning and sanitation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Petugas menggunakan APD sesuai standar
+
+PPE checklist / personnel hygiene record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Karkas tidak menyentuh lantai atau area kotor
+
+Observation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP5\.2\.__
+
+__Batch Identification Karkas__ *\(Carcass Batch Identification\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Setiap karkas memiliki kode batch unik
+
+Batch ID record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Batch karkas terhubung dengan data asal hewan
+
+Animal origin traceability record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Label batch terpasang jelas dan tahan selama proses
+
+Carcass labeling record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Pencatatan batch dilakukan konsisten
+
+Slaughter batch logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Batch terhubung dengan waktu proses dan operator
+
+Operator and timestamp record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP5\.3\.__
+
+__Segregasi Karkas Halal/Non\-Halal__ *\(Halal/Non\-Halal Carcass Segregation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Karkas halal dipisahkan dari karkas non\-halal/suspect
+
+SOP segregasi karkas
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Area gantung atau penyimpanan karkas halal terpisah
+
+Layout area segregasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Peralatan handling halal diberi identitas khusus
+
+Equipment labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Karkas suspect diberi label dan area khusus
+
+Non\-conformance carcass report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Jalur perpindahan karkas halal tidak bercampur
+
+Flow process map / movement log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP5\.4__
+
+__Dokumentasi Proses Post\-Slaughter__ *\(Post\-Slaughter Process Documentation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Seluruh aktivitas post\-slaughter dicatat lengkap
+
+Post\-slaughter process log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Hasil pemeriksaan karkas terdokumentasi
+
+Carcass inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Cleaning log setelah proses tersedia
+
+Cleaning logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Ketidaksesuaian dan tindakan korektif dicatat
+
+Non\-conformity report / CAPA form
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Dokumen post\-slaughter terhubung dengan batch distribusi berikutnya
+
+Integrated batch traceability document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP5\. Post \- Slaughter Handling__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP6\. Pengolahan Daging \- Processing__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP6\. Pengolahan Daging \- Processing__
+
+Nama Perusahaan / Unit Processing
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Fasilitas Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Responsible Person \(PIC\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Operator Produksi ÔÿÉ QC ÔÿÉ Supervisor ÔÿÉ Penyelia Halal ÔÿÉ Warehouse ÔÿÉ Maintenance
+
+Nomor ID Karyawan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift Produksi
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Waktu Mulai Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Batch / Kode Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jenis Produk
+
+:
+
+ÔÿÉ Fresh Meat ÔÿÉ Frozen Meat ÔÿÉ Processed Meat ÔÿÉ Ready\-to\-Cook
+
+Jumlah Produksi
+
+:
+
+ÔÿÉ Operator Produksi ÔÿÉ QC ÔÿÉ Supervisor ÔÿÉ Penyelia Halal ÔÿÉ Warehouse ÔÿÉ Maintenance
+
+Area Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Perusahaan / Unit Processing
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Fasilitas Produksi
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Area Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP6\. Pengolahan Daging \- Processing__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP6\. Pengolahan Daging \- Processing__
+
+__CP6\.1\.__
+
+__Handling Karkas & Sanitasi__ *\(Carcass Handling & Sanitation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Karkas ditangani sesuai SOP halal setelah penyembelihan
+
+SOP post\-slaughter handling
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Area handling karkas bersih dan higienis
+
+Hygiene inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Peralatan pengulitan, pemotongan, dan penggantungan disanitasi
+
+Cleaning and sanitation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Petugas menggunakan APD sesuai standar
+
+PPE checklist / personnel hygiene record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Karkas tidak menyentuh lantai atau area kotor
+
+Observation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP6\.2\.__
+
+__Batch Identification Karkas__ *\(Carcass Batch Identification\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Setiap karkas memiliki kode batch unik
+
+Batch ID record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Batch karkas terhubung dengan data asal hewan
+
+Animal origin traceability record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Label batch terpasang jelas dan tahan selama proses
+
+Carcass labeling record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Pencatatan batch dilakukan konsisten
+
+Slaughter batch logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Batch terhubung dengan waktu proses dan operator
+
+Operator and timestamp record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP6\.3\.__
+
+__Segregasi Karkas Halal/Non\-Halal__ *\(Halal/Non\-Halal Carcass Segregation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Karkas halal dipisahkan dari karkas non\-halal/suspect
+
+SOP segregasi karkas
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Area gantung atau penyimpanan karkas halal terpisah
+
+Layout area segregasi
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Peralatan handling halal diberi identitas khusus
+
+Equipment labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Karkas suspect diberi label dan area khusus
+
+Non\-conformance carcass report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Jalur perpindahan karkas halal tidak bercampur
+
+Flow process map / movement log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP6\.4__
+
+__Dokumentasi Proses Post\-Slaughter__ *\(Post\-Slaughter Process Documentation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Seluruh aktivitas post\-slaughter dicatat lengkap
+
+Post\-slaughter process log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Hasil pemeriksaan karkas terdokumentasi
+
+Carcass inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Cleaning log setelah proses tersedia
+
+Cleaning logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Ketidaksesuaian dan tindakan korektif dicatat
+
+Non\-conformity report / CAPA form
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Dokumen post\-slaughter terhubung dengan batch distribusi berikutnya
+
+Integrated batch traceability document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP6\. Pengolahan Daging \- Processing__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP7\. Cold Storage \- Warehouse__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP7\. Cold Storage \- Warehouse__
+
+Nama Perusahaan / Unit Processing
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Fasilitas Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Responsible Person \(PIC\)
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Operator Produksi ÔÿÉ QC ÔÿÉ Supervisor ÔÿÉ Penyelia Halal ÔÿÉ Warehouse ÔÿÉ Maintenance
+
+Nomor ID Karyawan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift Produksi
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Waktu Mulai Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Batch / Kode Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jenis Produk
+
+:
+
+ÔÿÉ Fresh Meat ÔÿÉ Frozen Meat ÔÿÉ Processed Meat ÔÿÉ Ready\-to\-Cook
+
+Jumlah Produksi
+
+:
+
+ÔÿÉ Operator Produksi ÔÿÉ QC ÔÿÉ Supervisor ÔÿÉ Penyelia Halal ÔÿÉ Warehouse ÔÿÉ Maintenance
+
+Area Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Perusahaan / Unit Processing
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Fasilitas Produksi
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Area Produksi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP7\. Cold Storage \- Warehouse__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP7\. Cold Storage \- Warehouse__
+
+__CP7\.1\.__
+
+__Kepatuhan Suhu__ *\(Temperature Compliance\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Suhu cold storage sesuai standar produk halal beku/dingin
+
+Temperature monitoring log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sistem monitoring suhu berjalan real\-time
+
+IoT temperature dashboard / recorder
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Alarm suhu aktif dan berfungsi
+
+Alarm validation report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Kalibrasi sensor suhu dilakukan berkala
+
+Calibration certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Backup power system tersedia
+
+Generator maintenance report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP7\.2\.__
+
+__Halal Segregated Storage__ *\(Halal Segregated Storage\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Produk halal disimpan terpisah dari non\-halal
+
+SOP segregasi gudang
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Area penyimpanan halal memiliki identifikasi jelas
+
+Layout segregasi storage
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Rak, pallet, dan container halal diberi label khusus
+
+Equipment labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Jalur keluar\-masuk produk halal terkontrol
+
+Warehouse movement log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Tidak ada penyimpanan bahan syubhat/non\-halal di area halal
+
+Warehouse inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP7\.3\.__
+
+__Kebersihan Gudang / Cold Room__ *\(Warehouse / Cold Room Cleanliness\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Gudang dan cold room dibersihkan secara rutin
+
+Cleaning and sanitation log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Tidak terdapat hama atau kontaminasi lingkungan
+
+Pest control report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Drainase dan sistem air berjalan baik
+
+Sanitation inspection checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Petugas menggunakan APD sesuai standar hygiene
+
+Personnel hygiene checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Produk tidak bersentuhan langsung dengan lantai
+
+Observation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP7\.4__
+
+__Batch Traceability & FIFO/FEFO__ *\(Batch Traceability & FIFO/FEFO\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Setiap produk memiliki kode batch yang jelas
+
+Batch traceability record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sistem FIFO/FEFO diterapkan secara konsisten
+
+FIFO/FEFO monitoring report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Histori keluar\-masuk produk terdokumentasi
+
+Warehouse inventory log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Batch produk dapat ditelusuri ke supplier dan distribusi
+
+ERP / traceability system
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Label tanggal produksi dan expired jelas
+
+Product labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP7\.5__
+
+__Penanganan Insiden \(Suhu Naik\)__ *\(Incident Handling ÔÇô Temperature Rise\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti __
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+SOP penanganan kenaikan suhu tersedia
+
+Incident handling SOP
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Terdapat tindakan cepat saat suhu melebihi batas
+
+Incident response report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Produk terdampak suhu abnormal diisolasi
+
+Quarantine product record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Evaluasi dampak terhadap status halal dan keamanan pangan dilakukan
+
+Corrective action report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Simulasi/mock drill penanganan insiden dilakukan berkala
+
+Emergency drill report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP7\. Pengolahan Daging \- Processing__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP8\. Distribusi / Logistic__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP8\. Distribusi / Logistic__
+
+Nama Perusahaan / Distributor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Distribusi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama PIC / Responsible Person
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Driver ÔÿÉ Logistic Staff ÔÿÉ Warehouse Staff ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Penyelia Halal
+
+Nomor ID Karyawan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Pengiriman
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift Operasional
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Nomor Kendaraan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jenis Kendaraan
+
+:
+
+ÔÿÉ Refrigerated Truck ÔÿÉ Box Truck ÔÿÉ Container ÔÿÉ Lainnya
+
+Nomor Batch Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jumlah Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Asal Pengiriman
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Lokasi Tujuan Pengiriman
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Waktu Berangkat
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Waktu Tiba
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP8\. Distribusi / Logistic__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP8\. Distribusi / Logistic__
+
+__CP8\.1\.__
+
+__Transportasi Halal Khusus__ *\(Dedicated Halal Transport\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Kendaraan distribusi khusus digunakan untuk produk halal
+
+SOP dedicated halal transport
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Kendaraan memiliki identifikasi halal yang jelas
+
+Vehicle halal identification record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Tidak ada riwayat pengangkutan bahan non\-halal tanpa cleansing
+
+Vehicle usage history
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Area muatan halal dipisahkan secara fisik
+
+Loading segregation layout
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Evaluasi kepatuhan kendaraan dilakukan berkala
+
+Vehicle inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP8\.2\.__
+
+__Sanitasi Kendaraan__ *\(Vehicle Sanitation\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Kendaraan dibersihkan sebelum pemuatan produk halal
+
+Cleaning and sanitation checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sanitasi dilakukan sesuai SOP halal logistics
+
+SOP sanitation vehicle
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Bahan pembersih sesuai standar halal
+
+Halal certificate / MSDS sanitizer
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Jadwal sanitasi terdokumentasi
+
+Vehicle sanitation logbook
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Verifikasi kebersihan dilakukan sebelum loading
+
+Pre\-loading inspection checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP8\.3\.__
+
+__Distribusi dengan Kontrol Suhu__ *\(Temperature Control Distribution\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Suhu kendaraan sesuai standar produk
+
+Temperature monitoring log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sistem monitoring suhu berjalan selama pengiriman
+
+IoT/GPS temperature tracking report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Alarm suhu tersedia dan aktif
+
+Alarm system validation
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Kalibrasi alat monitoring suhu dilakukan
+
+Calibration certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Tersedia prosedur penanganan jika suhu meningkat
+
+Incident handling SOP
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP8\.4__
+
+__Ketelusuran Rute & Pengiriman__ *\(Route & Delivery Traceability\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Setiap pengiriman memiliki kode delivery unik
+
+GPS route history
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+GPS tracking digunakan selama distribusi
+
+Delivery order / shipment document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Histori asal dan tujuan pengiriman terdokumentasi
+
+Delivery timestamp log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Waktu pengiriman tercatat lengkap
+
+ERP/logistics traceability system
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Sistem digital traceability terintegrasi
+
+GPS route history
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP8\.5__
+
+__Pencegahan Kontaminasi \(Pemuatan\)__ *\(Contamination Prevention ÔÇô Loading\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti __
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Area loading bersih dan higienis
+
+Loading area inspection checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Produk halal dipisahkan saat loading
+
+SOP loading segregation
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Petugas loading memahami SOP halal
+
+Training record halal logistics
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Penggunaan pallet/container khusus halal
+
+Equipment labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Produk terlindungi selama proses loading/unloading
+
+Observation report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP8\.6__
+
+__Kelengkapan Dokumentasi__ *\(Documentation Completeness\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti __
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Dokumen pengiriman tersedia lengkap
+
+Delivery document checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Sertifikat halal produk menyertai pengiriman bila diperlukan
+
+Product halal certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Catatan suhu distribusi terdokumentasi
+
+Temperature distribution report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Laporan insiden distribusi tersedia
+
+Incident report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Dokumen terhubung dengan batch traceability
+
+Integrated traceability document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP8\. Distribusi / Logistic__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+
+__FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP9\. Retail / Pasar / Supermarket__
+
+__Latar Belakang Pengisi Formulir__
+
+__CP9\. Retail / Pasar / Supermarket__
+
+Nama Retail / Supermarket
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Cabang / Lokasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nama PIC / Responsible Person
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jabatan
+
+:
+
+ÔÿÉ Store Staff ÔÿÉ Supervisor ÔÿÉ QC ÔÿÉ Warehouse ÔÿÉ Penyelia Halal
+
+Nomor ID Karyawan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Pengisian
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Shift Operasional
+
+:
+
+ÔÿÉ Pagi ÔÿÉ Siang ÔÿÉ Malam
+
+Area Retail
+
+:
+
+ÔÿÉ Frozen Area ÔÿÉ Chiller ÔÿÉ Dry Storage ÔÿÉ Display Area
+
+Nama Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Nomor Batch Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Supplier Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Jumlah Produk
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi\. Adapun skala yang digunakan adalah ÔÇ£YaÔÇØ dan ÔÇ£TidakÔÇØ sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1\-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini\.
+
+Tabel 1\.  Skala tingkat resiko kepatuhan halal
+
+Intensitas Kepentingan \(Skala\)
+
+Indonesia Version
+
+English Version
+
+Interpretasi dari bukti dukung
+
+1
+
+Sangat Rendah 
+
+Very Low Risk
+
+Sangat patuh dan terdokumentasi lengkap
+
+2
+
+Rendah
+
+Low Risk
+
+Risiko kecil dan masih terkendali
+
+3
+
+Sedang 
+
+Moderate Risk
+
+Terdapat potensi ketidakpatuhan
+
+4
+
+Tinggi
+
+High Risk
+
+Risiko signifikan terhadap kepatuhan halal
+
+5
+
+Sangat Tinggi
+
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+__Petunjuk:__ Berilah tanda *centang* \(* ÔêÜ * \), pada kolom ketersediaan bukti dukung ÔÇ£TersediaÔÇØ dan ÔÇ£Kondisi Aktual / Risiko \(1ÔÇô5\)ÔÇØ berdasarkan penilaian tingkat keberadaan aktual dari masing\-masing indikator\.  
+
+Tabel 2\. Aspek Kondisi Aktual Kepatuhan Halal pada __CP9\. Retail / Pasar / Supermarket__
+
+__No__
+
+__Pengukuran Kondisi Aktual Kepatuhan Halal__
+
+__Kondisi Aktual/Resiko__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+__CP9\. Retail / Pasar / Supermarket__
+
+__CP9\.1\.__
+
+__Validitas Label Halal__ *\(Halal Label Validity\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Produk memiliki label halal resmi dan masih berlaku
+
+Sertifikat halal produk
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Logo halal sesuai regulasi BPJPH/LPPOM/MUI
+
+Approved packaging & label document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Informasi label sesuai dengan produk yang dijual
+
+Product specification sheet
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Produk impor memiliki dokumen halal yang diakui
+
+Import halal certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Perubahan label melalui approval halal
+
+Label change control form
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP9\.2\.__
+
+__Pemisahan Tampilan Halal/Non\-Halal__ *\(Display Segregation Halal/Non\-Halal\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Produk halal dipisahkan dari produk non\-halal
+
+SOP display segregation
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Rak/display halal diberi identifikasi jelas
+
+Display labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Area penyimpanan produk halal terpisah
+
+Storage layout plan
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Peralatan display \(tray, tong, freezer\) khusus halal
+
+Equipment identification checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Produk non\-halal tidak ditempatkan berdekatan dengan produk halal sensitif
+
+Retail inspection report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP9\.3\.__
+
+__Suhu Penyimpanan Retail__ *\(Retail Storage Temperature\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Suhu freezer/chiller sesuai standar produk
+
+Temperature monitoring log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Monitoring suhu dilakukan berkala
+
+Temperature inspection checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Alarm suhu tersedia untuk cold storage retail
+
+Alarm validation report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Kalibrasi alat ukur suhu dilakukan
+
+Calibration certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Produk sensitif disimpan sesuai kategori suhu
+
+Product storage SOP
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP9\.4__
+
+__Pengendalian Tanggal Kedaluwarsa__ *\(Expiry Date Control\)*
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti__
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Sistem FIFO/FEFO diterapkan
+
+FIFO/FEFO monitoring record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Pemeriksaan tanggal kedaluwarsa dilakukan rutin
+
+Expiry inspection checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Produk expired dipisahkan dari area penjualan
+
+Non\-conformance product record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Penarikan produk expired terdokumentasi
+
+Product withdrawal report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Label tanggal produksi dan expired jelas terbaca
+
+Product labeling checklist
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP9\.5__
+
+__Ketelusuran Pemasok__ \(Supplier Traceability\)
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti __
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Data supplier tersedia lengkap
+
+Approved supplier list
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Produk dapat ditelusuri ke supplier asal
+
+Supplier traceability record
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Supplier memiliki sertifikasi halal valid
+
+Supplier halal certificate
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Histori penerimaan barang terdokumentasi
+
+Goods receiving log
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Audit supplier dilakukan berkala
+
+Supplier audit report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP9\.6__
+
+__Penanganan Keluhan Konsumen__ \(Consumer Complaint Handling\)
+
+__Ketersediaan Bukti Pendukung__
+
+__Upload Bukti __
+
+__1__
+
+__2__
+
+__3__
+
+__4__
+
+__5__
+
+1
+
+Sistem penerimaan keluhan konsumen tersedia
+
+Complaint handling SOP
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+2
+
+Keluhan terkait halal ditindaklanjuti segera
+
+Complaint investigation report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+3
+
+Produk bermasalah dapat ditelusuri melalui batch
+
+Batch traceability report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+4
+
+Tindakan korektif terhadap keluhan dilakukan
+
+Corrective action report
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+5
+
+Evaluasi tren keluhan dilakukan berkala
+
+Integrated traceability document
+
+ÔÿÉ Ya ÔÿÉ Tidak
+
+__CP9\. Retail / Pasar / Supermarket__
+
+__VALIDASI SUPERVISOR __
+
+Nama Supervisor
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Hasil Verifikasi
+
+:
+
+ÔÿÉ Sesuai ÔÿÉ Tidak Sesuai
+
+Tingkat Risiko Keseluruhan
+
+:
+
+ÔÿÉ Sangat Rendah ÔÿÉ Rendah ÔÿÉ Sedang ÔÿÉ Tinggi ÔÿÉ Sangat Tinggi \(Kritis\)
+
+Tindakan Korektif
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanggal Verifikasi
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Tanda Tangan
+
+:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+__*Sekian dan Terima Kasih*__
+

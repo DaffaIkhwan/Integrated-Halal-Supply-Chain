@@ -1,0 +1,650 @@
+IHATEC_SJH 2017 Rev.1
+Tujuan :
+Peserta mengetahui definisi terkait SJH
+Peserta memahami Kriteria Sistem Jaminan
+Halal (HAS 23000 : 1) : Kriteria 1 s.d6
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Sistem Jaminan Halal (SJH): sistem manajemen terintegrasi  
+yang disusun, diterapkan dan dipelihara untuk mengatur  
+bahan, proses produksi, produk, sumber daya manusia dan  
+prosedur dalam rangka menjaga kesinambungan proses  
+produksi halal sesuai dengan persyaratan LPPOM MUI (HAS  
+23000:1 Kriteria Sistem Jaminan Halal)
+•Kriteria SJH:kalimat yang menjelaskan persyaratan yang harus
+dipenuhi perusahaan dalam rangka menerapkan SJHsehingga
+dihasilkan produk halal secara konsisten
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Aktivitas kritis: aktivitas pada rantai proses produksi yang dapat  
+mempengaruhi status kehalalan suatu produk. Contoh: seleksi  
+bahan baru, pembelian bahan, formulasi produk, pemeriksaan  
+bahan datang, produksi, pencucian fasilitas produksi dan  
+peralatan pembantu, penyimpanan dan penanganan,  
+transportasi, pemajangan, penyembelihan hewan, danlain-lain
+Cakupan aktivitas kritis tidak selalu sama  
+antar perusahaan, tergantung pada proses  
+bisnisnya masing -masing
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Prosedur tertulis: tata cara pelaksanaan suatu aktivitas yang  
+dibakukan dapat berupa prosedur/SOP (Standard Operating  
+Procedure ), instruksi kerja, spesifikasi, standar, jadwal, internal  
+memo atau bentuk panduan kerja yang lain.
+•Penjelasan prosedur: dapat digabungkan dengan prosedur  
+untuk sistem lain, terdapat identitas dokumen, dibuat dan  
+disahkan oleh orang yang berwenang, didistribusikan kepada  
+orang/bagian yang terlibat, jika ada perubahan maka prosedur  
+yang tersedia adalah prosedur yang termutakhir
+IHATEC_SJH 2017 Rev.1
+DEFINISI DAN  
+PENJELASAN UMUM
+•Bukti: catatan/rekaman atau hasil yang dicapai dari pelaksanaan  
+prosedur dapat berupa formulir, checklist, daftar, logbook,  
+planning, report yang sudah terisi
+•Penjelasan bukti: dapat digabungkan dengan bukti untuk sistem  
+lain, terdapat identitas rekaman, disimpan dengan aman, dapat  
+dicari dengan mudah, masa simpan sesuai kebutuhan atau  
+sesuai dengan masa berlaku Sertifikat halal (agar tersedia saat  
+dilakukan audit eksternal), dimusnahkan sesuai masa simpan  
+dengan pengawasan
+IHATEC_SJH 2017 Rev.1
+1.Kebijakan Halal
+2.Tim Manajemen Halal
+3.Pelatihan
+4.Bahan
+5.Produk
+6.Fasilitas Produksi
+7.Prosedur tertulis untuk aktivitas kritis
+8.Kemampuan Telusur
+9.Penanganan Produk yang Tidak Memenuhi Kriteria
+10.Audit Internal
+11.Kaji Ulang ManajemenKriteria
+Sistem Jaminan Halal
+IHATEC_SJH 2017 Rev.1
+KEBIJAKA NHALAL
+a.Manajemen puncak harus menetapkan kebijakan halal
+Manajemen puncak: tingkatan manajemen tertinggi yang memiliki
+tanggung jawab terhadap keseluruhan kegiatan dipabrik/perusahaan
+Kebijakan halal dapat ditulis terpisah atau terintegrasi dengan  
+kebijakan sistem yang lain, seperti kebijakan mutu atau keamanan  
+pangan
+Kebijakan halal: komitmen tertulis untuk menghasilkan produk
+halal secara konsisten, sesuai dengan proses bisnis perusahaan
+IHATEC_SJH 2017 Rev.1
+Contoh Kebijakan Halal
+IHATEC_SJH 2017 Rev.1
+RPA / RPH
+KEBIJAKAN HALAL
+RPA/RPH ....................... ..............................
+“Kami berkomitmen tinggi untuk memproduksi daging halal secara
+konsisten, mencangkup pengadaan bahan baku dan cara berproduksi
+yang baik sesuai dengan syariat Islam dengan menggunakan peralatan
+yang bebas dari najis .Kami akan mencapainya dengan membentuk tim
+manajemen halal dan melaksanakan dengan sungguh -sungguh semua
+prosedur operasional “
+............... ,.................... .................. ...
+Pimpinan Perusahaan,
+( ........................................................)
+Kebijakan Halal
+IHATEC_SJH 2017 Rev.1b.Kebijakan halal harus didiseminasikan/disebarkan kepada  
+manajemen, tim manajemen halal, karyawan dan pemasok.
+Cara diseminasi kebijakan dapat ditentukan sendiri oleh  
+perusahaan, misalnya melalui pelatihan, briefing , pemasangan  
+poster, banner , pencetakan buku saku atau melalui email.
+c.Bukti diseminasi kebijakan halal harus dipelihara harus
+tersedia saat audit
+Contoh: daftar hadir pelatihan, notulen briefing karyawan,  
+pemasangan poster, banner , buku saku, daftar email.
+TIM MANAJEMEN HALAL
+Sekelompok orang yang bertanggung jawab  
+terhadap perencanaan, implementasi, evaluasi  
+dan perbaikan SJH diperusahaan
+IHATEC_SJH 2017 Rev.1a.Manajemen puncak harus menetapkan tim manajemen halal
+dengan disertai bukti tertulis
+Bukti dapat berupa surat keputusan, surat pengangkatan atau bentuk
+penetapan lain yang berlaku diperusahaan
+Dapat berada di level kantor pusat dan/atau di level pabrik, outlet,  
+dapur tergantung proses bisnisnya
+Dapat digabungkan dengan tim implementasi sistem lain
+Mencakup semua bagian yang terlibat dalam aktivitas kritis
+Tim Manajemen Halal (Lanjutan)
+IHATEC_SJH 2017 Rev.1b.Tim manajemen halal harus merupakan karyawan tetap  
+perusahaan dan diutamakan seorang muslim
+c.Tanggung jawab tim manajemen halal harus diuraikan dengan jelas
+Contoh tanggung jawab tim: melakukan pelatihan internal, memastikan  
+semua bahan yang digunakan untuk produksi halal dilengkapi dengan  
+dokumen pendukung yang cukup dan telah disetujui penggunaannya  
+oleh LPPOM MUI, memastikan fasilitas produksi memenuhi kriteria  
+fasilitas, memastikan produk yang disertifikasi memenuhi kriteria,  
+melakukan audit internal, melakukan seleksi bahan baru terkait halal,  
+melakukan pemeriksaan bahan datang
+TIM MANAJEMEN HALAL
+(Lanjutan)
+IHATEC_SJH 2017 Rev.1d.Tim manajemen halal harus kompeten dalam menerapkan  
+persyaratan sertifikasi halal HAS 23000 sesuai dengan ruang  
+lingkup tanggung jawabnya masing -masing
+Bukti tim manajemen halal sudah kompeten dapat berupa sertifikat  
+kompetensi, sertifikat kelulusan pelatihan HAS 23000 (eksternal/internal)  
+dan hasil evaluasi kerja
+e.Manajemen puncak harus menyediakan sumber daya yang  
+diperlukan oleh tim manajemen halal
+Contoh sumberdaya: penyiapan sumberdaya manusia, penyiapan budget
+pelatihan SJH, penyiapan fasilitas produksi bebas babi
+PELATIHAN
+Kegiatan peningkatan pengetahuan, ketrampilan dan sikap
+untuk mencapai tingkat kompetensi yang diinginkan
+KATEGORI PELATIHAN:
+Pelatihan eksternal: pelatihan yang diselenggarakan  
+oleh atau atas nama LPPOM MUI
+Pelatihan internal: pelatihan yang diselenggarakan  
+oleh internal perusahaan
+IHATEC_SJH 2017 Rev.1
+a.Perusahaan harus mempunyai prosedur tertulis pelaksanaan
+pelatihan untuk semua personel yang terlibat dalam aktifitas
+kritis, termasuk karyawan baru
+Prosedur dapat berisi tujuan/target, jadwal, peserta, metode, pemberi
+materi, materi, dokumentasi, dan evaluasi kelulusan
+Materi pelatihan meliputi HAS 23000 (Kriteria, Kebijakan dan Prosedur)  
+atau teknis penerapan prosedur aktivitas kritis atau materi lainnya  
+disesuaikan dengan sasaran pelatihan
+Dapat digabungkan dengan prosedur pelatihan sistem lain
+Pelatihan (Lanjutan)
+IHATEC_SJH 2017 Rev.1
+IHATEC_SJH 2017 Rev.1b.Pelatihan eksternal harus diikuti oleh salah satu tim
+manajemen halal setidaknya sekali dalam dua tahun
+Penyelenggara pelatihan: Indonesia Halal Training and Education Center
+(IHATEC) yang sudah ditunjuk secara resmi oleh LPPOM MUI , atau di 
+LPOM MUI Provinsi
+Jenis pelatihan: SJH reguler (di tempat yang ditentukan IHATEC , LPPOM
+MUI Provinsi ),SJHinhouse (di perusahaan), Cerol dan Pengenalan 
+Sertifikasi Halal
+Informasi mengenai pelatihan LPPOM MUI Provinsi dapat dilihat di 
+website www.halal jateng.or.id atau dapat ditanyakan melalui 
+email ke pelatihan.jateng@yahoo.com
+Pelatihan (Lanjutan)
+Pelatihan (Lanjutan)
+IHATEC_SJH 2017 Rev.1c.Pelatihan internal harus dilaksanakan setidaknya setahun sekali  
+Jadwal pelatihan internal dapat dibuat tersendiri atau digabungkan  
+dengan jadwal pelatihan yang lain
+d.Trainer internal harus telah lulus pelatihan HAS 23000 (eksternal/
+internal)
+e.Hasil pelatihan internal harus dievaluasi untuk memastikan  
+kompetensi peserta pelatihan
+Bentuk evaluasi hasil pelatihan internal dapat berupa tes tertulis, tes lisan
+atau bentuk lain yang berlaku diperusahaan
+f.Bukti pelaksanaan pelatihan (eksternal/internal) harus dipelihara  
+Contoh bukti pelatihan: daftar hadir, materi pelatihan, lembar post test,  
+laporan kelulusan peserta, sertifikat pelatihan
+BAHAN
+Bahan mencakup bahan baku ( raw material ),bahan
+tambahan (additive ) & bahan penolong (processing aid)
+Bahan Baku dan Bahan Tambahan
+Bahan yang digunakan dalam pembuatan produk &
+menjadi bagian dari komposisi produk (ingredient )
+Bahan Penolong
+Bahan yang digunakan untuk membantu produksi tetapi
+tidak menjadi bagian dari komposisi produk (ingredient )
+Contoh: pelarut, katalis, refining/bleaching agent, enzim,
+air untuk mencuci, kuas untuk mengoles kue
+Khusus untuk restoran/katering, jika ada menu konsinyasi/titipan, menu
+rekanan, dan menu yang dibeli dari pihak lain (misal AMDK, soft drink , es krim)
+menu tersebut dimasukkan sebagai bahan
+IHATEC_SJH 2017 Rev.1
+(a)Bahan tidak boleh berasal dari bahan haram/najis
+(b)Bahan bebas dari kontaminasi bahan haram/najis
+(c)Bahan yang merupakan produk mikrobial harus
+memenuhi persyaratan
+(d)Persyaratan alkohol/etanol dan hasil sampingnya
+(e)Bahan untuk produk luar
+(f)Bahan kritis harus dilengkapi dengan dokumen
+pendukung yang cukup
+(g)Mekanisme untuk menjamin keberlakuan dokumen
+pendukung bahan
+IHATEC_SJH 2017 Rev.1Kriteria Bahan
+Bahan tidak boleh berasal dari bahan haram/najis:
+IHATEC_SJH 2017 Rev.1i.Babi dan produk turunannya
+Contoh bahan vitamin yang dilapisi dengan gelatin babi, seasoning yang
+menggunakan lemak babi, pepton yang dihidrolisis enzim babi
+ii.Bulu, rambut dan seluruh bagian dari anggota tubuh manusia
+iii.Khamr (minuman beralkohol)
+Bahan yang termasuk khamr: rhum, angciu, mirin
+iv.Hasil samping khamr yang diperoleh dari pemisahan secara fisik
+v.Darah
+vi.Bangkai atau hewan yang disembelih tidak sesuai dengan hukum Islam
+vii.Hewan lain yang diharamkan seperti hewan buas atau bertaring,  
+hewan menjijikkan, hewan yang hidup di duaalam
+Catatan: Semua hewan laut/air adalah halal
+Bahan bebas dari kontaminasi bahan haram/najis:
+i.Bahan tidak boleh bercampur dengan bahan najis atau haram
+Dapat berasal dari bahan tambahan, bahan penolong dan fasilitas produksi
+ii.Bahan tidak boleh dihasilkan dari fasilitas produksi yang juga  
+digunakan untuk membuat produk yang menggunakan babi atau  
+turunannya sebagai salah satu bahannya
+Contoh bahan yang memiliki potensi diproduksi di fasilitas yang sama  
+dengan bahan dari babi/turunannya adalah minyak dan seasoning
+perlu pernyataan pork free facility dari produsennya
+Pernyataan pork free facility pernyataan dari produsen bahwa fasilitas produksi,  
+termasuk peralatan pembantu, tidak digunakan secara bergantian untuk  
+menghasilkan produk halal dan produk yang mengandung babi/turunannya.
+Pernyataan yang dimaksud juga harus menjamin bahwa personel yang menangani  
+produksi produk halal tidak menangani produksi produk babi/turunannya.
+IHATEC_SJH 2017 Rev.1
+Persyaratan Bahan yang Merupakan Produk Mikrobial
+a) Persyaratan kultur/starter mikroba:
+Mikroba bukan berasal dari hasil rekayasa genetika yang melibatkan gen
+babi atau genmanusia
+Mikroba tidak pernah bersentuhan dengan unsur babi
+Media atau bahan aditif dalam kultur tidak berasal dari babi
+Catatan: Informasi dimintakan kepada produsen kultur/starter
+b) Persyaratan bahan media pertumbuhan: dijelaskan pada halaman
+berikutnya
+c) Persyaratan bahan aditif: harus menggunakan bahan yang halal
+d) Produk mikrobial tidak menyebabkan infeksi dan intoksikasi pada manusia
+IHATEC_SJH 2017 Rev.1
+Persyaratan Media Pertumbuhan Produk Mikrobial
+IHATEC_SJH 2017 Rev.1a) Produk mikrobial yang diperoleh tanpa pemisahan dari media  
+pertumbuhannya , contoh kecap, yoghurt, tempe, tape, oncom, tauco 
+ media pertumbuhan harus halal
+b) Produk mikrobial yang diperoleh dengan pemisahan dari media  
+pertumbuhannya namun dalam tahapan proses selanjutnya tidak ada  
+proses pencucian syar’i media pertumbuhan harus halal
+c) Produk mikrobial yang diperoleh dengan pemisahan dari media  
+pertumbuhannya dan dalam tahapan proses selanjutnya ada proses  
+pencucian syar’i media pertumbuhan boleh berasal dari bahan najis/  
+haram selain babi
+Catatan:
+Media pertumbuhan mencakup media penyegaran, pengembangan inokulum,
+media produksi dan bahan penolong dalam media.
+Pemisahan produk dari media pertumbuhannya dapat melalui proses kimiawi
+atau fisik
+Pencucian Syar’i pada Produk Mikrobial
+IHATEC_SJH 2017 Rev.1Ada dua cara proses pencucian produk yang tathir syar’i :
+a)Pengucuran : dengan cara mengucurkan/mengalirkan air ke produk. Contoh:
+Produk dialiri dengan air pada tahap pemurnian produk
+Produk disemprot (spray ) dengan air di drum dryer pada tahap pengeringan
+b)Perendaman : dengan merendam produk dalam air minimal 270 liter atau  
+dengan menambahkan air ke dalam produk sampai airnya mencapai volume  
+minimal 270 liter . Contoh:
+Penambahan air > 270 liter dan bahan -bahan media pada tahap fermentasi
+Penambahan air > 270 liter dan activated carbon ke dalam produk pada tahap  
+pemurnian produk
+Catatan: Proses pencucian dilakukan hingga hilang sifat dari najis, sehingga harus  
+dilakukan verifikasi setelah pencucian untuk membuktikan hilangnya bau dan warna dari  
+najis. Cara verifikasi dapat ditentukan sendiri oleh perusahaan.
+Persyaratan Alkohol/Etanol dan
+Hasil Sampingnya
+a.Etanol tidak berasal dari industri khamr (minuman beralkohol)
+Etanol dari sumber yang lain seperti dari fermentasi singkong, jagung atau
+molases dapat digunakan.
+Etanol dapat digunakan sebagai pelarut atau bahan untuk sanitasi
+a.Produk cair yang berasal dari hasil samping industri khamr yang diperoleh  
+hanya dengan pemisahan secara fisik tidak boleh digunakan.
+b.Produk cair yang berasal dari hasil samping industri khamr kemudian  
+direaksikan dengan bahan lain atau dilakukan proses biotransformasi  
+sehingga menghasilkan produk baru, maka produk baru ini dapat digunakan
+c.Produk padat yang berasal dari hasil samping industri khamr (seperti brewer  
+yeast ) dapat digunakan setelah dicuci dengan air hingga hilang bau dan  
+warna minuman beralkoholnya
+IHATEC_SJH 2017 Rev.1
+Persyaratan Bahan untuk Produk Luar
+Produk luar adalah produk digunakan di luar dan tidak dikonsumsi, baik berupa  
+kosmetik, obat dan jamu. Contohnya krim wajah, salep, sabun.
+Bahan berikut dapat digunakan di produk luar:
+a.Etanol yang tidak berasal dari industri khamr
+b.Plasenta hewan halal
+c.Kulit dari bangkai hewan halal setelah dilakukan penyamakan
+d.Bulu, rambut dan tanduk dari bangkai hewan halal, termasuk yang tidak
+disembelih secarasyar’i
+IHATEC_SJH 2017 Rev.1
+Kategori Bahan :
+IHATEC_SJH 2017 Rev.11.Bahan Tidak Kritis / Positive List
+Daftar bahan tidak kritis terdapat pada SK LPPOM MUI:
+(i) Halal Positive List ofMaterials
+(ii) Halal Positive List of Flavor Materials
+(iii) Halal Positive List of Fragrance Materials
+Bahan tidak memerlukan dokumen apapun cukup upload dokumen  
+kosong diCEROL
+Jika bahan tersebut menggunakan nama dagang yang tidak sama  
+dengan nama bahan dokumen bahan tetap diperlukan
+2.Bahan Kritis / Non Positive List
+Bahan selain positive list harus dilengkapi dengan dokumen
+Jenis dokumen: Sertifikat Halal atau selain Sertifikat Halal
+Bahan kritis harus dilengkapi dengan
+dokumen pendukung yang cukup
+Jenis dokumen pendukung :
+Sertifikat Halal sertifikat halal yang diterbitkan oleh MUI  
+atau lembaga lain yang tercantum di dalam website  
+www.halalmui.org dan masih berlaku
+Sertifikat Halal dapat berlaku pada masa tertentu (misalnya 2 tahun)  
+atau berlaku per pengapalan (misalnya produk daging dan olahan susu)
+Non Sertifikat Halal spesifikasi, diagram alir, pernyataan,  
+kuesioner, dll
+IHATEC_SJH 2017 Rev.1
+Bahan Kritis yang Harus Dilengkapi  
+Sertifikat Halal
+IHATEC_SJH 2017 Rev.1a.Daging dan produk turunan hewani
+Contoh: sosis, beef powder, chicken extract, gelatin dari tulang/kulit, enzim
+b.Bahan yang umumnya diproduksi dengan proses yang rumit atau
+bahan dalam jumlah besar
+Contoh: flavor, fragrance, seasoning dan vitamin
+c.Bahan yang sulit ditelusuri kehalalannya
+Contoh: whey protein concentrate dan laktosa
+Pengecualian untuk bahan berikut :(i)Flavor/seasoning/fragrance dengan formula
+sederhana dan terdiri dari bahan -bahan yang tidak kritis ,misalnya campuran beberapa
+rempah atau essensial oil,(ii)Vitamin yang disintesa secara kimiawi, (iii)Flavor yang tidak
+bisa disertifikasi (misalnya karena kandungan etanol) namun diproduksi diprodusen yang
+sudah memiliki Sertifikat halal dan dapat dibuktikan tidak mengandung bahan haram
+(melalui pemeriksaan formula atau pernyataan dari lembaga sertifikasi)
+Sertifikat Halal yang Diterbitkan oleh Selain MUI
+IHATEC_SJH 2017 Rev.1LIST OF APPROVED FOREIGN HALAL CERTIFICATION BODIES
+1.LPPOM MUI mengakui Sertifikat Halal yang dikeluarkan oleh Lembaga
+Sertifikasi Halal yang disetujui untuk produk yang diproduksi dinegara
+dimana lembaga sertifikasi halal tersebut berada (kecuali SHdari lembaga
+sertifikasi halal diEropa berlaku untuk produk yang diproduksi diEropa)
+2.LPPOM MUI masih memungkinkan meminta dokumen pendukung lainnya
+untuk mengklarifikasi titik kritis produk tertentu
+3.Masa efektif berlakunya persetujuan Lembaga Sertifikasi adalah 2 tahun
+dan lembaga tersebut dimonitoring/dievaluasi sekali per tahun
+4.Ada 37 Lembaga Sertifikasi dari 21 negara yang disetujui oleh LPPOM MUI :
+Slaughtering / Penyembelihan (32 Lembaga Sertifikasi)
+Raw Material / Bahan Baku (32 Lembaga Sertifikasi)
+Flavour (16 Lembaga Sertifikasi )
+5.Update Desember 2016 (terdapat di website www.halalmui.org pada menu
+sertifikasi halal, submenu Daftar Lembaga Sertifikasi Halal)
+Ketentuan Persetujuan Bahan yang  
+disertifikasi oleh lembaga sertifikasi halal  
+yang statusnya Delisted /Suspended
+Sertifikatnya masih dinilai cukup sebagai dokumen  
+pendukung bahan selama sertifikat tersebut  
+diterbitkan sebelum tanggal delisted /suspended
+IHATEC_SJH 2017 Rev.1
+Contoh Sertifikat Halal  
+Non MUI yang valid
+Nama ProdukNomor Sertifikat Halal
+Lokasi produsen
+Masa berlaku sertifikat Halal
+IHATEC_SJH 2017 Rev.1
+Persyaratan
+logo halal
+IHATEC_SJH 2017 Rev.1
+CONTOH: SH VALID, namun tidak diakui
+IHATEC_SJH 2017 Rev.1
+Daging Impor
+harus didukung dokumen/kondisi :
+•Sertifikat Halal (umumnya perpengapalan/
+pershipment )
+•Dokumen lain (dokumen pengapalan,  
+dokumen kesehatan dll).
+•Sertifikat Halal cocok dengan dokumen lain
+•Dokumen memiliki lot number , plant number ,  
+date of slaughtering , dll yang sesuai.
+•Dokumen sesuai dengan kemasan/label
+IHATEC_SJH 2017 Rev.1
+CONTOH SH per
+shipment
+Informasi pada dokumen harus sesuai
+dengan informasi pada label :
+–Negara dimana pabrik berada
+–Logo Halal
+–Plant number
+–Tanggal produksi / Lot number /
+Tanggal penyembelihan (daging)
+IHATEC_SJH 2017 Rev.1
+Persyaratan Dokumen Pendukung yang
+Bukan Berupa Sertifikat Halal
+IHATEC_SJH 2017 Rev.1a.Harus diterbitkan oleh produsen bahan
+b.Harus memuat informasi sumber semua bahan kritis yang digunakan  
+sehingga status kehalalannya dapat ditentukan
+Kecukupan dinilai berdasarkan kehalalan semua bahan (bahan baku, bahan  
+tambahan dan bahan penolong) yang digunakan dan pemenuhan persyaratan  
+fasilitas produksi
+Contoh: bahan maltodekstrin memiliki dokumen diagram alir proses, yang di  
+dalamnya dijelaskan bahwa pembuatan maltodekstrin menggunakan enzim 
+ harus dilengkapi dokumen pendukung enzim dan surat pernyataan 
+konsistensi  penggunaan enzim serta pernyataan bahwa perubahan sumber 
+enzim akan  diinformasikan kepada pengguna. Perusahaan pengguna 
+maltodekstrin akan  meminta pembaruan dokumen konsistensi setiap dua
+tahun
+Informasi yang diperlukanSPECIFICATION sebagai dokumen pendukung
+SPEC belum
+jelas
+IHATEC_SJH 2017 Rev.1a.Sumber enzim 
+dari  produsen 
+enzim ,
+b.Pernyataan dari  
+produsen  
+maltodekstrin tentang  
+penggunaan enzim  
+yang hanya berasal dari  
+produsen tersebut.
+Hydrolysis
+AgentFPC sebagai dokumen pendukung Sertifikasi Halal
+IHATEC_SJH 2017 Rev.1FPCbelum
+jelasInformasi yang diperlukan
+a.Agent hidrolisis dan
+sumber
+b.Pernyataan dari  
+produsen HVP tentang  
+penggunaan bahan  
+penghidrolisis yang  
+hanya berasal dari  
+produsen tersebut.
+a) Produk mikrobial yang diperoleh tanpa pemisahan dari media  
+pertumbuhannya komposisi lengkap dan sumber media pertumbuhan*,  
+jika mengandung bahan hewani maka perlu Sertifikat halal
+b) Produk mikrobial yang diperoleh dengan pemisahan dari media  
+pertumbuhannya namun dalam tahapan proses selanjutnya tidak ada  
+proses pencucian syar’i komposisi lengkap dan sumber media  
+pertumbuhan*, jika mengandung bahan hewani maka perlu Sertifikat halal
+c) Produk mikrobial yang diperoleh dengan pemisahan dari media  
+pertumbuhannya dan dalam tahapan proses selanjutnya ada proses  
+pencucian syar’i komposisi lengkap dan sumber media pertumbuhan*  
+serta informasi pencucian (purifikasi) produk, jika mengandung bahan  
+haram/najis selain babi dibolehkan
+*) Media pertumbuhan mencakup media penyegaran, pengembangan  
+inokulum, media produksi dan bahan penolong dalam mediaStandar Dokumen Bahan Mikrobial
+IHATEC_SJH 2017 Rev.1
+Bahan kompleks  
+perlu sertifikat  
+halal
+IHATEC_SJH 2017 Rev.1
+FPCjelas
+Bahan dapat
+digunakan
+IHATEC_SJH 2017 Rev.1
+Mekanisme untuk menjamin keberlakuan
+dokumen pendukung bahan
+IHATEC_SJH 2017 Rev.1Perusahaan harus mempunyai mekanisme untuk menjamin semua dokumen  
+pendukung bahan yang digunakan selalu dalam keadaan masih berlaku
+Mekanisme dapat berupa pemeriksaan secara berkala masa berlaku sertifikat  
+halal bahan atau sistem peringatan dini (early warning system ) yang  
+memberitahukan jika masa berlaku dokumen bahan akan segera berakhir 
+ selanjutnya memintakan sertifikat halal terbaru
+Sertifikat halal bahan yang sudah kadaluarsa masih dapat dianggap sebagai  
+dokumen pendukung yang cukup bila bahan tersebut diproduksi pada masa  
+berlaku sertifikat
+Khusus untuk bahan dengan sertifikat halal MUI, jika bahan diproduksi  
+setelah masa berlaku sertifikat habis, maka bahan tersebut masih dapat  
+digunakan jika dilengkapi dengan Surat Keterangan dalam Proses  
+Perpanjangan (SKPP)
+Produk
+Produk pada industri pengolahan: produk  
+yang didaftarkan untuk sertifikasi halal,  
+baik berupa produk retail, non retail,  
+produk akhir, produk antara (intermediet)
+Produk pada restoran/katering: semua  
+menu yang disajikan, baik dibuat sendiri  
+oleh perusahaan maupun menu yang dibeli  
+dari pihak lain (menu titipan, rekanan),  
+termasuk menu musiman dan menu ekstra
+IHATEC_SJH 2017 Rev.1
+Kriteria Produk
+(a)Nama produk
+(b)Karakteristik/profil sensori produk
+(c)Bentuk produk
+(d)Merk/brand pada produk retail
+(e)Kadar etanol
+(f)Produk kosmetik
+(g)Produk yang dikemas ulang (repacked ) atau diberi label ulang
+(relabeled )
+IHATEC_SJH 2017 Rev.1
+Nama Produk
+Tidak menggunakan nama minuman beralkohol
+Contoh: rootbeer, es krim rasa rhum raisin, bir 0% alkohol
+Tidak menggunakan nama babi dan anjing serta turunannya
+Contoh: babi panggang, beef bacon dan hot dog
+Tidak menggunakan nama setan
+Contoh: rawon setan, es pocong, mi ayam kuntilanak
+Tidak mengarah pada hal yang menimbulkan kekufuran/kebatilan
+Contoh: coklat valentine, biskuit natal, mie Gong Xi FaCai
+Tidak menggunakan kata yang berkonotasi erotis, vulgar atau porno
+Nama produk yang telah dikenal luas dan tidak mengandung bahan  
+haram dapat digunakan , contoh bir pletok, bakso, bakmi, bakpia, bakpao
+IHATEC_SJH 2017 Rev.1
+Karakteristik/profil sensori produk
+IHATEC_SJH 2017 Rev.1Tidak boleh memiliki kecenderungan bau atau rasa yang
+mengarah kepada produk haram
+Contoh: minuman yang memiliki bau atau rasa bir tidak dapat disertifikasi
+meskipun dibuat dari bahan halal
+Bentuk produk
+Tidak menggunakan bentuk babi atau anjing
+Tidak menggunakan bentuk produk, bentuk kemasan atau label
+yang menggambarkan sifat erotis, vulgar atau porno
+Merk/brand pada produk retail
+IHATEC_SJH 2017 Rev.1Khusus untuk produk retail jika suatu produk dengan  
+merk/brand tertentu didaftarkan, maka semua varian atau  
+produk lain dengan merk/brand yang sama harus didaftarkan
+Produk dengan merk/brand yang sama dengan produk yang sudah
+disertifikasi harus sudah disertifikat halal sebelum diedarkan
+Pada kasus produk non retail atau intermediet, aplikasi sertifikasi dapat
+dilakukan untuk sebagian atau seluruh produk
+Kadar etanol
+Produk akhir minuman: tidak terdeteksi
+Produk intermediet (tidak dikonsumsi langsung): < 1%
+Produk kosmetik/obat/jamu luar: tidak ada batasnya
+Produk Kosmetik
+IHATEC_SJH 2017 Rev.1Produk kosmetik yang mengklaim tahan air (waterproof )
+harus lulus uji analisa laboratorium daya tembus air
+Produk kosmetik yang tidak tembus air dapat disertifikasi dengan  
+syarat: (i) Produk yang penggunaannya terbatas waktunya,  
+seperti sunblock khusus untuk berenang, (ii) Perusahaan harus  
+memberikan catatan cara penggunaan bagi pengguna yang akan  
+beribadah shalat ketika menggunakan kosmetika tersebut,  
+misalnya dengan membuat leaflet khusus, penulisan di kemasan  
+atau pembedaan warna kemasan. Penempatan harus jelas dan  
+mencolok termasuk di boxkemasan
+Pewarna rambut bisa disertifikasi
+Dapat diajukan untuk disertifikasi dengan syarat  
+produk tersebut bersertifikat halal MUI atau produk  
+termasuk kategori produk tidak beresiko (NoRisk)
+Catatan :Dapat disertifikasi bersamaan dengan produk asalnya
+jika produk asal tidak bersertifikat halal MUI atau produk
+bukan termasuk kategori produk tidak beresiko (NoRisk)Produk yang dikemas ulang (repacked )  
+atau diberi label ulang (relabeled )
+IHATEC_SJH 2017 Rev.1
+Penulisan Nama Produk
+Produk Flavor / Seasoning /Fragrance
+Semua nama dagang (fantasy name ) harus didaftarkan
+untuk disertifikasi walaupun memiliki formula yang sama.
+Produk Non Retail yang memiliki banyak Nama/ Kode /
+Varian Khusus
+Produk ditulis rinci untuk semua nama/kode/varian produk
+Menu Katering
+Penulisan menu boleh dituliskan kelompok menu secara umum,
+misalnya menu sayur olahan, ayam olahan dan nasi olahan
+IHATEC_SJH 2017 Rev.1
+Sertifikasi Produk Intermediet untuk beberapa kelompok
+produk dalam grup perusahaan yang sama
+Produk Intermediet Disertifikasi
+Semua registrasi produk akhir hanya mencantumkan
+produk intermediet sebagai bahan .
+Produk Intermediet tidak Disertifikasi
+Semua registrasi produk akhir mencantumkan seluruh
+bahan dari produk intermediet beserta seluruh dokumen
+pendukungnya .
+Penulisan Nama Produk
+IHATEC_SJH 2017 Rev.1
+Fasilitas Produksi
+Semua lini produksi dan peralatan  
+pembantu yang digunakan untuk  
+menghasilkan produk, baik milik sendiri  
+atau menyewa dari pihak lain
+mencakup bangunan, ruangan, mesin,  
+peralatan utama, peralatan pembantu  
+sejak penyiapan bahan, proses utama,  
+hingga penyimpanan produk
+Produksi halal hanya dibolehkan difasilitas
+produksi yang memenuhi kriteria
+IHATEC_SJH 2017 Rev.1
+Kategori Fasilitas Produksi:
+IHATEC_SJH 2017 Rev.11.Halal Dedicated Facility
+Fasilitas yang hanya digunakan untuk produksi halal
+WAJIB untuk Rumah Potong Hewan, produk olahan daging (seperti
+sosis dan bakso), dan dapur (restoran, hotel atau katering)
+Halal dedicated facility harus terletak di lokasi yang terpisah dari
+fasilitas lain yang memproduksi produk babi/turunannya
+2.Sharing Facility
+Fasilitas yang digunakan secara bergantian untuk produksi halal dan
+menghasilkan produk yang tidak disertifikasi
+Semua fasilitas yang kontak langsung dengan bahan atau produk harus
+bersifat bebas babi ( pork free)
+Jika ada bahan babi untuk produk yang tidak disertifikasi pastikan
+tidak ditangani di fasilitas untuk produk yang disertifikasi
+Fasilitas Bebas Babi ( pork free facility )
+Semua fasilitas yang kontak langsung dengan bahan atau produk
+harus bersifat bebas babi (pork free):
+Fasilitas tidak pernah kontak langsung dengan bahan atau produk turunan
+babi (tidak terkena najis berat)
+Jika pernah kontak langsung dengan bahan atau produk turunan babi  
+(terkena najis berat) harus dicuci 7 kali dengan air dan salah satunya  
+dengan tanah, sabun, deterjen atau bahan kimia yang dapat menghilangkan  
+bau dan warna najis setelah pencucian ini, fasilitas tidak boleh kontak  
+langsung lagi dengan bahan atau produk turunan babi
+IHATEC_SJH 2017 Rev.1
+Fasilitas yang Kontak Langsung dengan
+Bahan/Produk
+IHATEC_SJH 2017 Rev.1Sebelum digunakan untuk produksi atau untuk penyajian (restoran/katering),
+semua fasilitas yang kontak langsung dengan bahan/produk harus bebas najis
+•Jika fasilitas terkena najis harus dicuci
+•Pencucian dapat dilakukan dengan airatau non airseperti dibilas dengan
+dekstrin, maltodekstrin atau skim milk powder, diseka dengan lapbasah,
+disikat, atau disemprot dengan udara bertekanan
+•Pencucian dengan bahan non air diperbolehkan jika pencucian dengan air  
+dapat menyebabkan kerusakan fasilitas, produk atau kesulitan teknis lain.  
+Pencucian ini juga hanya diperbolehkan jika fasilitas terbuat dari bahan yang  
+tidak menyerap najis atau bersifat inert.
+•Contoh fasilitas yang kontak langsung dengan bahan/produk: wadah  
+penimbangan bahan, wadah produk intermediet, tangki pencampuran dan  
+peralatan pengambilan sampel bahan/produk, peralatan penyajian
+Fasilitas yang Tidak Kontak Langsung
+dengan Bahan atau Produk
+IHATEC_SJH 2017 Rev.1•Fasilitas yang tidak kontak langsung dengan bahan/produk dapat  
+digunakan bersama untuk bahan/produk halal dan bahan/produk  
+yang tidak disertifikasi (termasuk babi) selama ada prosedur yang  
+menjamin bahan/produk halal tidak terkontaminasi najis
+•Fasilitas yang tidak kontak langsung: gudang bahan/produk (termasuk
+gudang antara), sampling room dan transportasi produk terkemas.
+•Fasilitas pencucian peralatan untuk produksi halal tidak boleh  
+digunakan bersama atau bergantian dengan peralatan yang kontak  
+dengan bahan yang berasal dari babi/turunannya
+Pendaftaran Fasilitas Produksi
+IHATEC_SJH 2017 Rev.1Semua fasilitas produksi harus didaftarkan dalam aplikasi sertifikasi:
+Industri pengolahan semua pabrik yang menghasilkan produk yang
+didaftarkan dan dipasarkan di Indonesia, baik milik sendiri atau pihak lain.
+Jika produk yang didaftarkan berupa produk retail, maka pabrik yang harus  
+didaftarkan adalah pabrik yang menghasilkan produk dengan merk/brand  
+yang sama yang dipasarkan di Indonesia. Jika produk yang didaftarkan  
+berupa produk non retail, maka pabrik yang harus didaftarkan adalah pabrik  
+yang menghasilkan produk yang dipasarkan diIndonesia
+Restoran dapur (pusat/cabang), outlet, gudang (pusat/cabang), termasuk  
+fasilitas yang digunakan untuk membuat menu konsinyasi atau menu yang  
+dibeli yang belum memiliki sertifikat halal
+Katering dapur (pusat/cabang), gudang (pusat/cabang), termasuk fasilitas  
+yang digunakan untuk membuat menu rekanan atau menu yang dibeli yang  
+belum memiliki sertifikat halal
+IHATEC_SJH 2017 Rev.1
+

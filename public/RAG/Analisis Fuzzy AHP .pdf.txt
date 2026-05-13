@@ -1,0 +1,431 @@
+Berikut adalah contoh analisis Fuzzy AHP–DSS berdasarkan kriteria dalam file Anda. Catatan
+pen6ng: karena belum ada data kuesioner pairwise comparison dari expert, bobot berikut
+disusun sebagai model awal/simulasi berbasis expert judgement konseptual. Untuk hasil final
+peneli6an, bobot harus divalidasi melalui kuesioner Fuzzy AHP kepada auditor halal, BPJPH/LPH,
+prak6si RPH, ahli supply chain, dan pakar KMS/AI.
+1. Struktur Hirarki Fuzzy AHP–DSS
+Goal:
+Menentukan Halal Compliance Risk Score pada supply chain daging sapi.
+Level 1: TiJk kriJs supply chain
+Mengacu pada dokumen Anda, 66k kri6s terdiri dari farm/kandang sapi, pakan dan kesehatan
+hewan, transportasi ke RPH, RPH/penyembelihan, post-slaughter handling, processing, cold
+storage, distribusi/logis6k, retail, serta konsumen dan complaint handling .
+2. Bobot Global TiJk KriJs Supply Chain
+Kode TiJk KriJs Bobot Fuzzy AHP
+CP1 Farm/Kandang Sapi 0.080
+CP2 Pakan & Kesehatan Hewan 0.070
+CP3 Transportasi Hewan ke RPH 0.080
+CP4 RPH/Penyembelihan 0.250
+CP5 Post-Slaughter Handling 0.100
+CP6 Processing/Pengolahan 0.120
+CP7 Cold Storage/Warehouse 0.100
+CP8 Distribusi/Logis6k 0.100
+CP9 Retail/Pasar/Supermarket 0.070
+CP10 Konsumen & Complaint Handling 0.030
+Total 1.000
+Interpretasi:
+RPH/penyembelihan memperoleh bobot ter6nggi karena menjadi 66k paling menentukan
+status halal daging sapi. Hal ini sejalan dengan dokumen Anda yang menegaskan bahwa RPH
+merupakan 66k paling kri6s dalam halal beef supply chain .
+3. Bobot Kriteria pada SeJap TiJk KriJs
+CP1. Farm/Kandang Sapi
+Kriteria Bobot Risk Value Weighted Risk
+Asal-usul sapi 0.20 0.25 0.050
+Status kesehatan sapi 0.20 0.50 0.100
+Kepatuhan pakan 0.18 0.50 0.090
+Obat/vaksin 0.15 0.25 0.038
+Dokumentasi pemeliharaan 0.12 0.50 0.060
+Kebersihan kandang 0.10 0.25 0.025
+
+Kriteria Bobot Risk Value Weighted Risk
+Kesiapan disembelih 0.05 0.25 0.013
+Risk Score CP1 1.00 0.376
+Level Risiko: Moderate Risk.
+CP2. Pakan dan Kesehatan Hewan
+Kriteria Bobot Risk Value Weighted Risk
+Halal status of feed ingredients 0.30 0.50 0.150
+Supplier reliability 0.20 0.25 0.050
+Feed storage segrega6on 0.18 0.50 0.090
+Medica6on control 0.17 0.25 0.043
+Veterinary supervision 0.15 0.25 0.038
+Risk Score CP2 1.00 0.371
+Level Risiko: Moderate Risk.
+CP3. Transportasi Hewan ke RPH
+Kriteria Bobot Risk Value Weighted Risk
+Kelayakan kendaraan 0.20 0.25 0.050
+Kebersihan kendaraan 0.25 0.50 0.125
+Animal welfare 0.15 0.25 0.038
+Traceability during transport 0.25 0.50 0.125
+Dokumentasi perjalanan 0.15 0.50 0.075
+Risk Score CP3 1.00 0.413
+Level Risiko: Moderate Risk.
+CP4. RPH/Penyembelihan
+Kriteria Bobot Risk Value Weighted Risk
+Validitas ser6fikat halal RPH 0.15 0.25 0.038
+Kompetensi juru sembelih halal 0.18 0.75 0.135
+Kesesuaian proses penyembelihan syariah 0.22 0.25 0.055
+Pemeriksaan ante/post-mortem 0.08 0.50 0.040
+Sanitasi alat dan area 0.10 0.50 0.050
+Pemisahan halal dan non-halal 0.10 0.50 0.050
+Dokumentasi penyembelihan 0.07 0.50 0.035
+Pengawasan halal internal 0.04 0.50 0.020
+Audit & correc6ve ac6on 0.03 0.50 0.015
+Traceability batch 0.03 0.50 0.015
+
+Kriteria Bobot Risk Value Weighted Risk
+Risk Score CP4 1.00 0.453
+Level Risiko: Moderate menuju High Risk.
+Interpretasi kriJs:
+Walaupun ser6fikat RPH masih dianggap rela6f aman, risiko meningkat karena kompetensi atau
+buk6 ser6fikasi juru sembelih belum sepenuhnya terdokumentasi. Dalam dokumen Anda,
+parameter juru sembelih, proses sembelih, audit form, slaughtering checklist, dan ser6fikat
+halal BPJPH/MUI/LPPOM disebut sebagai evidence utama pada 66k RPH .
+CP5. Post-Slaughter Handling
+Kriteria Bobot Risk Value Weighted Risk
+Handling carcass compliance 0.25 0.50 0.125
+Sanita6on 0.25 0.50 0.125
+Batch iden6fica6on 0.20 0.50 0.100
+Segrega6on 0.20 0.50 0.100
+Documenta6on 0.10 0.50 0.050
+Risk Score CP5 1.00 0.500
+Level Risiko: Moderate–High Risk.
+CP6. Processing/Pengolahan
+Kriteria Bobot Risk Value Weighted Risk
+Halal status of ingredients/addi6ves 0.25 0.50 0.125
+Equipment sanita6on 0.18 0.50 0.090
+Dedicated produc6on line 0.17 0.75 0.128
+Batch control 0.15 0.50 0.075
+Packaging & labeling compliance 0.10 0.25 0.025
+Operator competence 0.08 0.50 0.040
+Product formula6on control 0.07 0.50 0.035
+Risk Score CP6 1.00 0.518
+Level Risiko: High Risk.
+Interpretasi:
+Processing menjadi 66k berisiko 6nggi karena penggunaan peralatan bersama, bahan
+tambahan, formula produk, batch produc6on record, dan cleaning valida6on menjadi sumber
+risiko kontaminasi dan ke6daksesuaian halal .
+CP7. Cold Storage/Warehouse
+Kriteria Bobot Risk Value Weighted Risk
+Temperature compliance 0.25 0.75 0.188
+Halal segrega6on 0.20 0.50 0.100
+
+Kriteria Bobot Risk Value Weighted Risk
+Storage hygiene 0.15 0.50 0.075
+Batch traceability 0.15 0.50 0.075
+FIFO/FEFO compliance 0.10 0.25 0.025
+Documenta6on 0.08 0.50 0.040
+Incident handling 0.07 0.50 0.035
+Risk Score CP7 1.00 0.538
+Level Risiko: High Risk.
+CP8. Distribusi/LogisJk
+Kriteria Bobot Risk Value Weighted Risk
+Dedicated halal transport 0.20 0.75 0.150
+Vehicle sanita6on 0.20 0.50 0.100
+Temperature control 0.20 0.75 0.150
+Route & delivery traceability 0.15 0.50 0.075
+Loading-unloading compliance 0.10 0.50 0.050
+Documenta6on completeness 0.08 0.50 0.040
+Contamina6on preven6on 0.07 0.50 0.035
+Risk Score CP8 1.00 0.600
+Level Risiko: High Risk.
+Interpretasi:
+Distribusi/logis6k menjadi 66k paling kri6s secara operasional karena kendaraan 6dak selalu
+dedicated halal, suhu distribusi 6dak selalu terdokumentasi, dan loading-unloading berpotensi
+menimbulkan kontaminasi. Dokumen Anda juga menekankan kendaraan khusus halal, vehicle
+sanita6on, IoT/sensor log, delivery log, loading checklist, dan delivery order sebagai evidence
+utama .
+CP9. Retail/Pasar/Supermarket
+Kriteria Bobot Risk Value Weighted Risk
+Halal label validity 0.20 0.25 0.050
+Display segrega6on 0.18 0.50 0.090
+Storage temperature 0.18 0.50 0.090
+Expiry date control 0.12 0.25 0.030
+Consumer informa6on accessibility 0.12 0.50 0.060
+Supplier traceability 0.12 0.50 0.060
+Complaint handling 0.08 0.50 0.040
+Risk Score CP9 1.00 0.420
+Level Risiko: Moderate Risk.
+
+CP10. Konsumen dan Complaint Handling
+Kriteria Bobot Risk Value Weighted Risk
+Informa6on transparency 0.25 0.50 0.125
+Traceability accessibility 0.25 0.50 0.125
+Complaint responsiveness 0.20 0.50 0.100
+Consumer trust 0.15 0.25 0.038
+Halal literacy 0.15 0.50 0.075
+Risk Score CP10 1.00 0.463
+Level Risiko: Moderate Risk.
+4. Rekapitulasi Risk Score per TiJk KriJs
+Kode TiJk KriJs Bobot Global Risk Score Lokal Global Weighted Risk
+CP1 Farm/Kandang Sapi 0.080 0.376 0.030
+CP2 Pakan & Kesehatan Hewan 0.070 0.371 0.026
+CP3 Transportasi ke RPH 0.080 0.413 0.033
+CP4 RPH/Penyembelihan 0.250 0.453 0.113
+CP5 Post-Slaughter Handling 0.100 0.500 0.050
+CP6 Processing/Pengolahan 0.120 0.518 0.062
+CP7 Cold Storage/Warehouse 0.100 0.538 0.054
+CP8 Distribusi/Logis6k 0.100 0.600 0.060
+CP9 Retail/Pasar/Supermarket 0.070 0.420 0.029
+CP10 Konsumen & Complaint Handling 0.030 0.463 0.014
+Total Halal Compliance Risk Score 1.000 0.471
+5. Kategori Risiko
+Score Level Risiko Makna
+0.00–0.25 Low Risk Aman, monitoring ru6n
+0.26–0.50 Moderate Risk Perlu verifikasi dan perbaikan minor
+0.51–0.75 High Risk Perlu 6ndakan korek6f segera
+0.76–1.00 Cri6cal Risk Proses harus dihen6kan/audit segera
+Total Halal Compliance Risk Score = 0.471
+Maka status keseluruhan supply chain berada pada:
+Moderate Risk, mendekaJ High Risk
+6. TiJk KriJs Prioritas
+Berdasarkan Global Weighted Risk, prioritas risiko adalah:
+
+Rank TiJk KriJs Global Weighted Risk
+1 RPH/Penyembelihan 0.113
+2 Processing/Pengolahan 0.062
+3 Distribusi/Logis6k 0.060
+4 Cold Storage/Warehouse 0.054
+5 Post-Slaughter Handling 0.050
+Kesimpulan analiJs:
+Meskipun distribusi/logis6k memiliki local risk score ter6nggi, RPH tetap menjadi 66k prioritas
+utama karena bobot strategisnya paling besar dalam menentukan status halal daging sapi.
+Dengan kata lain, risiko pada RPH memiliki dampak sistemik lebih besar dibanding 66k lain.
+7. Implikasi untuk Chatbot AI
+Berdasarkan hasil DSS, chatbot dapat menghasilkan alert seper6 berikut:
+“Current Halal Compliance Risk Score is 0.471, categorized as Moderate Risk approaching High
+Risk. The most cri6cal point is the slaughterhouse stage, followed by processing, logis6cs, and
+cold storage. Immediate verifica6on is recommended for slaughterman cer6fica6on, batch
+traceability, equipment sanita6on, cold-chain temperature records, and dedicated halal
+transporta6on.”
+Output rekomendasi chatbot:
+1. RPH: validasi ser6fikat juru sembelih dan slaughtering checklist.
+2. Processing: pas6kan cleaning valida6on, bahan tambahan, dan dedicated line.
+3. LogisJk: wajibkan vehicle sanita6on log dan temperature log.
+4. Cold storage: perkuat monitoring suhu dan segregasi halal/non-halal.
+5. Post-slaughter: pas6kan batch ID dan pemisahan karkas terdokumentasi.
+8. Rumus yang Digunakan
+Risk Score lokal:
+[
+RiskScore_i = \sum (W_{ij} \6mes RV_{ij})
+]
+Global Weighted Risk:
+[
+GWR_i = W_i \6mes RiskScore_i
+]
+Total Halal Compliance Risk Score:
+[
+TotalRisk = \sum GWR_i
+]
+Model ini dapat langsung dijadikan basis untuk DSS Fuzzy AHP, KMS repository, dan AI Chatbot
+risk alert system.
+
+Berikut contoh analisis lengkap Fuzzy AHP–DSS dengan angka asumsi penilaian pakar untuk
+model risiko kepatuhan halal supply chain daging sapi, berdasarkan 66k kri6s dan kriteria pada
+dokumen Anda .
+1. Struktur Hirarki Fuzzy AHP–DSS
+GOAL:
+Menentukan Halal Compliance Risk Score pada supply chain daging sapi
+│
+├── CP1 Farm/Kandang Sapi
+├── CP2 Pakan & Kesehatan Hewan
+├── CP3 Transportasi Hewan ke RPH
+├── CP4 RPH/Penyembelihan
+├── CP5 Post-Slaughter Handling
+├── CP6 Processing/Pengolahan
+├── CP7 Cold Storage/Warehouse
+├── CP8 Distribusi/Logis6k
+├── CP9 Retail/Pasar/Supermarket
+└── CP10 Konsumen & Complaint Handling
+Kriteria utama mencakup validitas ser6fikasi halal, kepatuhan syariah, traceability, risiko
+kontaminasi, dokumentasi, sanitasi, kompetensi SDM, segregasi halal–non-halal, cold chain, dan
+correc6ve ac6on .
+2. Skala Fuzzy AHP yang Digunakan
+LinguisJc Judgment TFN
+Equal importance (1,1,1)
+Slightly important (1,3,5)
+Strongly important (3,5,7)
+Very strongly important (5,7,9)
+Absolutely important (7,9,9)
+Setelah dinilai oleh pakar, nilai fuzzy dapat didefuzzifikasi:
+[
+D = \frac{l + m + u}{3}
+]
+Lalu digunakan dalam matriks perbandingan berpasangan.
+3. Rumus Dasar AHP
+Normalisasi matriks
+[
+n_{ij} = \frac{a_{ij}}{\sum_{i=1}^{n} a_{ij}}
+]
+
+Bobot prioritas
+[
+w_i = \frac{\sum_{j=1}^{n} n_{ij}}{n}
+]
+Lambda maksimum
+[
+\lambda_{max} = \frac{1}{n}\sum_{i=1}^{n} \frac{(Aw)_i}{w_i}
+]
+Consistency Index
+[
+CI = \frac{\lambda_{max}-n}{n-1}
+]
+Consistency RaJo
+[
+CR = \frac{CI}{RI}
+]
+Matriks dinyatakan konsisten jika:
+[
+CR < 0.10
+]
+4. Matriks Perbandingan Berpasangan Level TiJk KriJs
+Berikut contoh matriks hasil agregasi pakar setelah defuzzifikasi.
+CP CP1 CP2 CP3 CP4 CP5 CP6 CP7 CP8 CP9 CP10
+CP1 1.00 1.14 1.00 0.32 0.80 0.67 0.80 0.80 1.14 2.67
+CP2 0.88 1.00 0.88 0.28 0.70 0.58 0.70 0.70 1.00 2.33
+CP3 1.00 1.14 1.00 0.32 0.80 0.67 0.80 0.80 1.14 2.67
+CP4 3.13 3.57 3.13 1.00 2.50 2.08 2.50 2.50 3.57 8.33
+CP5 1.25 1.43 1.25 0.40 1.00 0.83 1.00 1.00 1.43 3.33
+CP6 1.50 1.71 1.50 0.48 1.20 1.00 1.20 1.20 1.71 4.00
+CP7 1.25 1.43 1.25 0.40 1.00 0.83 1.00 1.00 1.43 3.33
+CP8 1.25 1.43 1.25 0.40 1.00 0.83 1.00 1.00 1.43 3.33
+CP9 0.88 1.00 0.88 0.28 0.70 0.58 0.70 0.70 1.00 2.33
+CP10 0.38 0.43 0.38 0.12 0.30 0.25 0.30 0.30 0.43 1.00
+5. Bobot Final TiJk KriJs
+Kode TiJk KriJs Bobot
+CP1 Farm/Kandang Sapi 0.080
+CP2 Pakan & Kesehatan Hewan 0.070
+CP3 Transportasi Hewan ke RPH 0.080
+
+Kode TiJk KriJs Bobot
+CP4 RPH/Penyembelihan 0.250
+CP5 Post-Slaughter Handling 0.100
+CP6 Processing/Pengolahan 0.120
+CP7 Cold Storage/Warehouse 0.100
+CP8 Distribusi/Logis6k 0.100
+CP9 Retail/Pasar/Supermarket 0.070
+CP10 Konsumen & Complaint Handling 0.030
+Total 1.000
+Karena matriks dibangun secara reciprocal dan konsisten dari penilaian pakar teragregasi:
+[
+\lambda_{max} = 10
+]
+[
+CI = \frac{10-10}{10-1} = 0
+]
+Untuk n = 10, RI = 1.49.
+[
+CR = \frac{0}{1.49} = 0
+]
+Maka:
+CR = 0.00 < 0.10, sehingga matriks konsisten.
+6. Contoh Perhitungan Detail pada TiJk KriJs RPH
+Karena RPH adalah 66k paling kri6s, maka diturunkan lagi ke level kriteria.
+Kriteria RPH
+Kode Kriteria RPH Bobot
+R1 Validitas ser6fikat halal RPH 0.150
+R2 Kompetensi juru sembelih halal 0.180
+R3 Kesesuaian proses penyembelihan syariah 0.220
+R4 Pemeriksaan ante/post-mortem 0.080
+R5 Sanitasi alat dan area 0.100
+R6 Pemisahan halal dan non-halal 0.100
+R7 Dokumentasi penyembelihan 0.070
+R8 Pengawasan halal internal 0.040
+R9 Audit dan correc6ve ac6on 0.030
+R10 Traceability batch 0.030
+Total 1.000
+
+Dokumen Anda menyebut evidence pen6ng pada RPH seper6 ser6fikat halal
+BPJPH/MUI/LPPOM, ser6fikat juru sembelih halal, slaughtering checklist, audit form, veterinary
+inspec6on form, SOP segrega6on, slaughter log, internal audit form, dan CAPA form .
+7. Matriks Berpasangan Kriteria RPH
+R R1 R2 R3 R4 R5 R6 R7 R8 R9 R10
+R1 1.00 0.83 0.68 1.88 1.50 1.50 2.14 3.75 5.00 5.00
+R2 1.20 1.00 0.82 2.25 1.80 1.80 2.57 4.50 6.00 6.00
+R3 1.47 1.22 1.00 2.75 2.20 2.20 3.14 5.50 7.33 7.33
+R4 0.53 0.44 0.36 1.00 0.80 0.80 1.14 2.00 2.67 2.67
+R5 0.67 0.56 0.45 1.25 1.00 1.00 1.43 2.50 3.33 3.33
+R6 0.67 0.56 0.45 1.25 1.00 1.00 1.43 2.50 3.33 3.33
+R7 0.47 0.39 0.32 0.88 0.70 0.70 1.00 1.75 2.33 2.33
+R8 0.27 0.22 0.18 0.50 0.40 0.40 0.57 1.00 1.33 1.33
+R9 0.20 0.17 0.14 0.38 0.30 0.30 0.43 0.75 1.00 1.00
+R10 0.20 0.17 0.14 0.38 0.30 0.30 0.43 0.75 1.00 1.00
+Karena bobot diperoleh dari matriks reciprocal yang konsisten:
+[
+\lambda_{max} = 10
+]
+[
+CI = \frac{10-10}{9} = 0
+]
+[
+CR = \frac{0}{1.49} = 0
+]
+Maka kriteria RPH juga konsisten.
+8. Perhitungan Risk Score pada RPH
+Risk value diasumsikan berdasarkan kondisi lapangan.
+Kriteria Bobot Risk Value Bobot × Risk
+Validitas ser6fikat halal RPH 0.150 0.25 0.0375
+Kompetensi juru sembelih halal 0.180 0.75 0.1350
+Kesesuaian proses penyembelihan syariah 0.220 0.25 0.0550
+Pemeriksaan ante/post-mortem 0.080 0.50 0.0400
+Sanitasi alat dan area 0.100 0.50 0.0500
+Pemisahan halal dan non-halal 0.100 0.50 0.0500
+Dokumentasi penyembelihan 0.070 0.50 0.0350
+
+Kriteria Bobot Risk Value Bobot × Risk
+Pengawasan halal internal 0.040 0.50 0.0200
+Audit dan correc6ve ac6on 0.030 0.50 0.0150
+Traceability batch 0.030 0.50 0.0150
+Total Risk Score RPH 1.000 0.4525
+[
+RiskScore_{RPH} = \sum (w_i \6mes rv_i)
+]
+[
+RiskScore_{RPH} = 0.4525
+]
+Maka RPH berada pada kategori:
+Moderate Risk menuju High Risk
+9. Rekap Risk Score Seluruh TiJk KriJs
+Kode TiJk KriJs Bobot Global Local Risk Score Global Risk
+CP1 Farm/Kandang Sapi 0.080 0.376 0.030
+CP2 Pakan & Kesehatan Hewan 0.070 0.371 0.026
+CP3 Transportasi ke RPH 0.080 0.413 0.033
+CP4 RPH/Penyembelihan 0.250 0.453 0.113
+CP5 Post-Slaughter Handling 0.100 0.500 0.050
+CP6 Processing/Pengolahan 0.120 0.518 0.062
+CP7 Cold Storage/Warehouse 0.100 0.538 0.054
+CP8 Distribusi/Logis6k 0.100 0.600 0.060
+CP9 Retail/Pasar/Supermarket 0.070 0.420 0.029
+CP10 Konsumen & Complaint Handling 0.030 0.463 0.014
+Total Risk Score 1.000 0.471
+[
+TotalRisk = \sum (W_{CP} \6mes RiskScore_{CP})
+]
+[
+TotalRisk = 0.471
+]
+10. Interpretasi Akhir
+Score Kategori
+0.00–0.25 Low Risk
+0.26–0.50 Moderate Risk
+
+Score Kategori
+0.51–0.75 High Risk
+0.76–1.00 Cri6cal Risk
+Karena:
+[
+TotalRisk = 0.471
+]
+Maka kondisi keseluruhan halal supply chain daging sapi adalah:
+Moderate Risk, tetapi mendekaJ High Risk.
+Ti6k yang harus diprioritaskan:
+1. RPH/Penyembelihan
+2. Processing/Pengolahan
+3. Distribusi/LogisJk
+4. Cold Storage/Warehouse
+5. Post-Slaughter Handling
+Kesimpulan DSS:
+RPH tetap menjadi 66k paling strategis karena bobot globalnya ter6nggi, sedangkan
+distribusi/logis6k memiliki local risk ter6nggi. Ar6nya, sistem harus memberikan alert ganda:
+pertama pada aspek syariah di RPH, kedua pada aspek operasional-logis6k seper6 cold chain,
+kendaraan, dan dokumentasi distribusi.
+
