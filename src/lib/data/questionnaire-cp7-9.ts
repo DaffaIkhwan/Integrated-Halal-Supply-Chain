@@ -1,21 +1,23 @@
 import type { CPQuestionnaire } from './questionnaire-data';
 
 // ══════════════════════════════════════
-// CP7 — Cold Storage / Warehouse
+// CP7 — Cold Storage - Warehouse
 // ══════════════════════════════════════
 export const CP7_QUESTIONNAIRE: CPQuestionnaire = {
-  cpId: 'CP7', cpName: 'Cold Storage / Warehouse', cpNameEn: 'Cold Storage / Warehouse',
+  cpId: 'CP7', cpName: 'Cold Storage', cpNameEn: 'Warehouse',
   backgroundFields: [
     { key: 'namaPerusahaan', label: 'Nama Perusahaan / Unit Processing', type: 'text' },
     { key: 'lokasi', label: 'Lokasi Fasilitas Produksi', type: 'text' },
     { key: 'namaPIC', label: 'Nama Responsible Person (PIC)', type: 'text' },
     { key: 'jabatan', label: 'Jabatan', type: 'select', options: ['Operator Produksi', 'QC', 'Supervisor', 'Penyelia Halal', 'Warehouse', 'Maintenance'] },
-    { key: 'nomorID', label: 'Nomor ID Karyawan', type: 'text' },
+    { key: 'idKaryawan', label: 'Nomor ID Karyawan', type: 'text' },
     { key: 'tanggal', label: 'Tanggal Pengisian', type: 'date' },
     { key: 'shift', label: 'Shift Produksi', type: 'select', options: ['Pagi', 'Siang', 'Malam'] },
+    { key: 'waktuMulai', label: 'Waktu Mulai Produksi', type: 'time' },
     { key: 'batch', label: 'Batch / Kode Produksi', type: 'text' },
     { key: 'namaProduk', label: 'Nama Produk', type: 'text' },
     { key: 'jenisProduk', label: 'Jenis Produk', type: 'select', options: ['Fresh Meat', 'Frozen Meat', 'Processed Meat', 'Ready-to-Cook'] },
+    { key: 'jumlahProduk', label: 'Jumlah Produksi', type: 'number' },
   ],
   subCriteria: [
     { code: 'CP7.1', name: 'Kepatuhan Suhu', nameEn: 'Temperature Compliance',
@@ -67,25 +69,24 @@ export const CP7_QUESTIONNAIRE: CPQuestionnaire = {
 };
 
 // ══════════════════════════════════════
-// CP8 — Distribusi / Logistik
+// CP8 — Distribusi / Logistic
 // ══════════════════════════════════════
 export const CP8_QUESTIONNAIRE: CPQuestionnaire = {
-  cpId: 'CP8', cpName: 'Distribusi / Logistik', cpNameEn: 'Distribution / Logistics',
+  cpId: 'CP8', cpName: 'Distribusi / Logistic', cpNameEn: 'Distribution / Logistics',
   backgroundFields: [
     { key: 'namaPerusahaan', label: 'Nama Perusahaan / Distributor', type: 'text' },
     { key: 'lokasi', label: 'Lokasi Distribusi', type: 'text' },
     { key: 'namaPIC', label: 'Nama PIC / Responsible Person', type: 'text' },
     { key: 'jabatan', label: 'Jabatan', type: 'select', options: ['Driver', 'Logistic Staff', 'Warehouse Staff', 'Supervisor', 'QC', 'Penyelia Halal'] },
-    { key: 'nomorID', label: 'Nomor ID Karyawan', type: 'text' },
+    { key: 'idKaryawan', label: 'Nomor ID Karyawan', type: 'text' },
     { key: 'tanggal', label: 'Tanggal Pengiriman', type: 'date' },
     { key: 'shift', label: 'Shift Operasional', type: 'select', options: ['Pagi', 'Siang', 'Malam'] },
-    { key: 'nomorKendaraan', label: 'Nomor Kendaraan', type: 'text' },
+    { key: 'kendaraan', label: 'Nomor Kendaraan', type: 'text' },
     { key: 'jenisKendaraan', label: 'Jenis Kendaraan', type: 'select', options: ['Refrigerated Truck', 'Box Truck', 'Container', 'Lainnya'] },
     { key: 'batch', label: 'Nomor Batch Produk', type: 'text' },
     { key: 'namaProduk', label: 'Nama Produk', type: 'text' },
-    { key: 'jumlahProduk', label: 'Jumlah Produk', type: 'text' },
+    { key: 'jumlahProduk', label: 'Jumlah Produk', type: 'number' },
     { key: 'lokasiAsal', label: 'Lokasi Asal Pengiriman', type: 'text' },
-    { key: 'lokasiTujuan', label: 'Lokasi Tujuan Pengiriman', type: 'text' },
   ],
   subCriteria: [
     { code: 'CP8.1', name: 'Transportasi Halal Khusus', nameEn: 'Dedicated Halal Transport',
@@ -155,14 +156,14 @@ export const CP9_QUESTIONNAIRE: CPQuestionnaire = {
     { key: 'cabang', label: 'Cabang / Lokasi', type: 'text' },
     { key: 'namaPIC', label: 'Nama PIC / Responsible Person', type: 'text' },
     { key: 'jabatan', label: 'Jabatan', type: 'select', options: ['Store Staff', 'Supervisor', 'QC', 'Warehouse', 'Penyelia Halal'] },
-    { key: 'nomorID', label: 'Nomor ID Karyawan', type: 'text' },
+    { key: 'idKaryawan', label: 'Nomor ID Karyawan', type: 'text' },
     { key: 'tanggal', label: 'Tanggal Pengisian', type: 'date' },
     { key: 'shift', label: 'Shift Operasional', type: 'select', options: ['Pagi', 'Siang', 'Malam'] },
     { key: 'areaRetail', label: 'Area Retail', type: 'select', options: ['Frozen Area', 'Chiller', 'Dry Storage', 'Display Area'] },
     { key: 'namaProduk', label: 'Nama Produk', type: 'text' },
     { key: 'batch', label: 'Nomor Batch Produk', type: 'text' },
-    { key: 'supplierProduk', label: 'Supplier Produk', type: 'text' },
-    { key: 'jumlahProduk', label: 'Jumlah Produk', type: 'text' },
+    { key: 'supplier', label: 'Supplier Produk', type: 'text' },
+    { key: 'jumlahProduk', label: 'Jumlah Produk', type: 'number' },
   ],
   subCriteria: [
     { code: 'CP9.1', name: 'Validitas Label Halal', nameEn: 'Halal Label Validity',

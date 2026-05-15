@@ -25,7 +25,7 @@ function BgFieldInput({ field, value, onChange }: { field: BackgroundField; valu
   }
   return (
     <input
-      type={field.type === "date" ? "date" : "text"}
+      type={field.type}
       value={value}
       onChange={e => onChange(e.target.value)}
       className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
@@ -99,7 +99,7 @@ function SubCriteriaForm({
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-2">
               {/* Header */}
-              <div className="grid grid-cols-[24px_1fr_140px_80px_60px_200px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_60px_200px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
                 <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Kondisi Aktual (1-5)</span>
               </div>
 
@@ -108,45 +108,69 @@ function SubCriteriaForm({
                 const val = risks[key];
                 const hasEvidence = evidence[key];
                 return (
-                  <div key={key} className="grid grid-cols-[24px_1fr_140px_80px_60px_200px] gap-2 items-center px-2 py-2.5 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                    <span className="text-xs font-mono font-bold text-muted-foreground">{ind.no}</span>
-                    <p className="text-[13px] leading-snug">{ind.statement}</p>
-                    <p className="text-[10px] text-muted-foreground italic text-center">{ind.evidence}</p>
-                    <div className="flex justify-center gap-2">
-                      {["Ya", "Tidak"].map(opt => (
-                        <button
-                          key={opt}
-                          onClick={() => onEvidence(key, opt === "Ya")}
-                          className={`px-2 py-1 rounded-md text-[10px] font-semibold transition-all ${
-                            hasEvidence === (opt === "Ya")
-                              ? opt === "Ya" ? "bg-emerald-500 text-white" : "bg-red-500 text-white"
-                              : hasEvidence === undefined ? "bg-muted text-muted-foreground" : "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          {opt}
-                        </button>
-                      ))}
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_60px_200px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                    {/* Number & Statement */}
+                    <div className="flex gap-2 w-full md:contents items-start">
+                      <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
+                      <p className="flex-1 text-[13px] leading-snug">{ind.statement}</p>
                     </div>
-                    <div className="flex justify-center">
-                      <FileUploadButton fileKey={key} files={files} onUpload={onUpload} onRemove={onRemoveFile} />
+
+                    {/* Evidence */}
+                    <div className="w-full md:w-auto mt-1 md:mt-0 pl-8 md:pl-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground block mb-0.5">Bukti Pendukung:</span>
+                      <p className="text-[10px] text-muted-foreground italic text-left md:text-center">{ind.evidence}</p>
                     </div>
-                    <div className="flex items-center gap-1 justify-center">
-                      {RISK_SCALE_LIKERT.map(scale => (
-                        <button
-                          key={scale.value}
-                          onClick={() => onRisk(key, scale.value)}
-                          className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${
-                            val === scale.value
-                              ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg"
-                                : scale.value === 3 ? "bg-amber-500 text-white shadow-lg"
-                                : "bg-red-500 text-white shadow-lg"
-                              : "bg-muted hover:bg-muted/80 text-muted-foreground"
-                          }`}
-                          title={scale.label}
-                        >
-                          {scale.value}
-                        </button>
-                      ))}
+
+                    {/* Yes/No & Upload (Mobile groups them) */}
+                    <div className="flex w-full md:w-auto items-center justify-between md:contents mt-2 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0 pl-8 md:pl-0">
+                      <div className="flex flex-col md:items-center gap-1">
+                        <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">Tersedia?</span>
+                        <div className="flex justify-center gap-2">
+                          {["Ya", "Tidak"].map(opt => (
+                            <button
+                              key={opt}
+                              onClick={() => onEvidence(key, opt === "Ya")}
+                              className={`px-3 py-1.5 md:px-2 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                                hasEvidence === (opt === "Ya")
+                                  ? opt === "Ya" ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20" : "bg-red-500 text-white shadow-md shadow-red-500/20"
+                                  : hasEvidence === undefined ? "bg-muted text-muted-foreground" : "bg-muted text-muted-foreground"
+                              }`}
+                            >
+                              {opt}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-col items-end md:items-center gap-1">
+                        <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">File</span>
+                        <div className="flex justify-center">
+                          <FileUploadButton fileKey={key} files={files} onUpload={onUpload} onRemove={onRemoveFile} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Scale */}
+                    <div className="w-full flex flex-col md:block items-center gap-2 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Kondisi Aktual (1-5)</span>
+                      <div className="flex items-center gap-1 w-full md:w-auto justify-center">
+                        {RISK_SCALE_LIKERT.map(scale => (
+                          <button
+                            key={scale.value}
+                            onClick={() => onRisk(key, scale.value)}
+                            className={`flex-1 md:flex-none md:w-8 h-10 md:h-8 rounded-lg text-sm md:text-xs font-bold transition-all ${
+                              val === scale.value
+                                ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg"
+                                  : scale.value === 3 ? "bg-amber-500 text-white shadow-lg"
+                                  : "bg-red-500 text-white shadow-lg"
+                                : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                            }`}
+                            title={scale.label}
+                          >
+                            {scale.value}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 );
@@ -167,6 +191,7 @@ export default function KuesionerAktualPage() {
   const [bgData, setBgData] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Validation
   const [validasiSupervisor, setValidasiSupervisor] = useState({
@@ -177,21 +202,82 @@ export default function KuesionerAktualPage() {
   const totalQ = cp.subCriteria.reduce((a, s) => a + s.indicators.length, 0);
   const answeredQ = cp.subCriteria.reduce((a, s) => a + s.indicators.filter(i => risks[`${s.code}_${i.no}`]).length, 0);
 
-  const handleSubmit = async () => {
-    setSubmitting(true);
-    // Build FormData for file uploads
-    const formData = new FormData();
-    formData.append("cpId", cp.cpId);
-    formData.append("background", JSON.stringify(bgData));
-    formData.append("risks", JSON.stringify(risks));
-    formData.append("evidence", JSON.stringify(evidence));
-    formData.append("validation", JSON.stringify(validasiSupervisor));
-    Object.entries(files).forEach(([key, file]) => { if (file) formData.append(`file_${key}`, file); });
+  // Auto-calculate overall risk level from answered values
+  const riskValues = Object.values(risks).filter(v => typeof v === 'number' && v > 0) as number[];
+  const avgRisk = riskValues.length > 0
+    ? riskValues.reduce((a, b) => a + b, 0) / riskValues.length
+    : 0;
+  const calculatedRiskScale = RISK_SCALE_LIKERT.find(s => s.value === Math.round(avgRisk));
+  const calculatedRiskLabel = calculatedRiskScale?.label || '—';
+  const calculatedRiskColor = avgRisk <= 1.5 ? 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30'
+    : avgRisk <= 2.5 ? 'text-sky-400 bg-sky-500/15 border-sky-500/30'
+    : avgRisk <= 3.5 ? 'text-amber-400 bg-amber-500/15 border-amber-500/30'
+    : avgRisk <= 4.5 ? 'text-orange-400 bg-orange-500/15 border-orange-500/30'
+    : 'text-red-400 bg-red-500/15 border-red-500/30';
 
-    // TODO: API call with formData
-    await new Promise(r => setTimeout(r, 1500));
+  const handlePreSubmit = () => {
+    setShowConfirm(true);
+  };
+
+  const confirmSubmit = async () => {
+    setShowConfirm(false);
+    setSubmitting(true);
+
+    // Upload files to Google Drive (or fallback to mock)
+    const fileList: any[] = [];
+    for (const [key, f] of Object.entries(files)) {
+      if (f) {
+        const formData = new FormData();
+        formData.append("file", f);
+        try {
+          const res = await fetch("/api/upload", { method: "POST", body: formData });
+          const json = await res.json();
+          fileList.push({
+            key,
+            filename: f.name,
+            url: json.url || `/uploads/${f.name}`,
+            downloadUrl: json.downloadUrl
+          });
+        } catch (err) {
+          console.error("Upload error:", err);
+          fileList.push({ key, filename: f.name, url: `/uploads/${f.name}` });
+        }
+      }
+    }
+
+    // Get respondent name from background data
+    const nameKey = Object.keys(bgData).find(k => k.includes("namaStaff") || k.includes("namaPIC") || k.includes("namaFarm"));
+    const respName = (nameKey ? bgData[nameKey] : "") || "Anonim";
+
+    try {
+      await fetch("/api/dss/questionnaire-responses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          questionnaireType: "aktual",
+          cpId: cp.cpId,
+          respondentName: respName,
+          respondentRole: bgData[`${cp.cpId}_jabatan`] || null,
+          respondentOrg: bgData[`${cp.cpId}_namaFarm`] || bgData[`${cp.cpId}_namaPerusahaan`] || null,
+          respondentEmail: null,
+          respondentInfo: bgData,
+          answers: { risks, evidence },
+          notes: { ...validasiSupervisor, tingkatRisiko: calculatedRiskLabel, avgRiskScore: avgRisk.toFixed(2) },
+          files: fileList,
+        }),
+      });
+    } catch (e) { console.error(e); }
     setSubmitted(true);
     setSubmitting(false);
+
+    // Auto next CP
+    if (selectedCPIndex < ALL_CP_QUESTIONNAIRES.length - 1) {
+      setTimeout(() => {
+        setSelectedCPIndex(selectedCPIndex + 1);
+        setSubmitted(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1200);
+    }
   };
 
   return (
@@ -312,10 +398,13 @@ export default function KuesionerAktualPage() {
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Tingkat Risiko Keseluruhan</label>
-              <select value={validasiSupervisor.tingkatRisiko} onChange={e => setValidasiSupervisor(p => ({ ...p, tingkatRisiko: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
-                <option value="">— Pilih —</option>
-                {RISK_SCALE_LIKERT.map(s => <option key={s.value} value={s.label}>{s.label}</option>)}
-              </select>
+              <div className={`flex items-center justify-between w-full rounded-lg border px-3 py-2 text-sm font-semibold ${riskValues.length > 0 ? calculatedRiskColor : 'border-border bg-muted/30 text-muted-foreground'}`}>
+                <span>{calculatedRiskLabel}</span>
+                {riskValues.length > 0 && (
+                  <span className="text-xs font-mono opacity-70">rata-rata: {avgRisk.toFixed(2)}</span>
+                )}
+              </div>
+              <p className="text-[10px] text-muted-foreground mt-1">⚡ Dihitung otomatis oleh sistem dari {riskValues.length} jawaban kondisi aktual</p>
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Tanggal Verifikasi</label>
@@ -335,7 +424,7 @@ export default function KuesionerAktualPage() {
               <CheckCircle2 className="h-4 w-4" /> Data berhasil disimpan
             </motion.div>
           )}
-          <button onClick={handleSubmit} disabled={submitting} className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold hover:from-teal-600 hover:to-cyan-600 transition-all shadow-lg shadow-teal-500/20 disabled:opacity-50">
+          <button onClick={handlePreSubmit} disabled={submitting} className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold hover:from-teal-600 hover:to-cyan-600 transition-all shadow-lg shadow-teal-500/20 disabled:opacity-50">
             {submitting ? (
               <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
             ) : <Send className="h-4 w-4" />}
@@ -343,6 +432,45 @@ export default function KuesionerAktualPage() {
           </button>
         </div>
       </main>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {showConfirm && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-card w-full max-w-md rounded-2xl shadow-xl overflow-hidden border"
+            >
+              <div className="p-6 text-center space-y-4">
+                <div className="w-16 h-16 bg-teal-500/10 text-teal-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <FileCheck className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold">Simpan & Lanjutkan?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Apakah Anda yakin semua nilai kondisi aktual untuk <strong className="text-foreground">{cp.cpId}</strong> sudah sesuai dan supervisor telah memvalidasi?
+                </p>
+                <p className="text-xs text-amber-500 font-medium">Setelah disimpan, Anda akan otomatis diarahkan ke CP berikutnya.</p>
+              </div>
+              <div className="flex border-t bg-muted/30">
+                <button 
+                  onClick={() => setShowConfirm(false)}
+                  className="flex-1 py-4 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors border-r"
+                >
+                  Batal
+                </button>
+                <button 
+                  onClick={confirmSubmit}
+                  className="flex-1 py-4 text-sm font-bold text-teal-500 hover:bg-teal-500/10 transition-colors"
+                >
+                  Ya, Simpan
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

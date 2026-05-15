@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  serverExternalPackages: ['@huggingface/transformers'],
+  serverExternalPackages: ['@huggingface/transformers', 'pdf-parse'],
 };
 
 export default nextConfig;

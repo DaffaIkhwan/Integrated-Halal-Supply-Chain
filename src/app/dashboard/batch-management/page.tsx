@@ -142,7 +142,7 @@ export default function BatchManagementPage() {
               <div className="rounded-2xl border bg-card p-6 shadow-sm">
                 <h2 className="text-lg font-bold flex items-center gap-2 mb-4">
                   <Beef className="h-5 w-5 text-cyan-500" />
-                  Registrasi Sapi Baru (CP1_FARM)
+                  Registrasi Sapi Baru (CP1 FARM)
                 </h2>
                 <p className="text-xs text-muted-foreground mb-4">
                   Peternak mendaftarkan sapi ke dalam sistem berdasarkan eartag (Nomor Telinga) yang menempel pada fisik sapi.
@@ -235,7 +235,7 @@ export default function BatchManagementPage() {
               <div className="rounded-2xl border bg-card p-6 shadow-sm">
                 <h2 className="text-lg font-bold flex items-center gap-2 mb-4">
                   <Factory className="h-5 w-5 text-emerald-500" />
-                  Terbitkan Halal Batch (CP4_SLAUGHTER)
+                  Terbitkan Halal Batch (CP4 SLAUGHTER)
                 </h2>
                 <p className="text-xs text-muted-foreground mb-4">
                   Saat sapi disembelih di Rumah Potong Hewan, sistem membuatkan Batch ID daging yang menempel pada sapi tersebut.

@@ -1,0 +1,3950 @@
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CPI. KANDANG SAPI (FARM)
+
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP1 – KANDANG SAPI (FARM)
+
+Nama Farm / Peternakan
+:
+_____________________________________________________________________________________
+Lokasi
+:
+_____________________________________________________________________________________
+Nama Staff / Supervisor
+:
+_____________________________________________________________________________________
+Jabatan
+:
+☐ Staff ☐ Supervisor ☐ QC ☐ Penyelia Halal 
+Tanggal Pengisian
+:
+_____________________________________________________________________________________
+Shift
+:
+☐ Pagi ☐ Siang ☐ Malam 
+Batch / Kode Ternak
+:
+
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+
+Tabel 1. Skala Tingkat Resiko Kepatuhan Halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator. 
+
+
+
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP1 – KANDANG SAPI (FARM)
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP1. Kandang Sapi - Farm
+CP1.1.
+Asal-usul sapi &amp; Traceability - Cattle Origins &amp; Traceability
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Identitas asal sapi terdokumentasi 
+Surat asal ternak 
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Riwayat perpindahan sapi tersedia
+Logbook distribusi 
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+
+Supplier ternak terverifikasi
+Vendor approval
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Sistem traceability berjalan
+Database ternak
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Histori kepemilikan tersedia
+Dokumen pembelian
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP1.2.
+Status kesehatan sapi - Cattle health status
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Pemeriksaan kesehatan rutin
+Laporan dokter hewan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Status bebas penyakit zoonosis
+Sertifikat kesehatan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+
+Rekam vaksinasi tersedia
+
+Buku vaksinasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Penggunaan antibiotik terdokumentasi
+Medical record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+SOP isolasi sapi sakit tersedia
+SOP biosecurity
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP1.3.
+Kepatuhan pakan - Feed compliance 
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Pakan bersertifikat halal
+Sertifikat halal pakan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Formula pakan terdokumentasi
+Dokumen formulasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Penyimpanan pakan terpisah
+SOP gudang
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Supplier pakan terverifikasi
+Vendor document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Feed additive halal compliant
+Sertifikat additive
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP1.4.
+Dokumentasi pemeliharaan - Maintenance documentation
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+
+SOP pemeliharaan tersedia
+SOP farm
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Jadwal maintenance tersedia
+Checklist maintenance
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Cleaning log terdokumentasi
+Cleaning logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Pelatihan halal pekerja tersedia
+Sertifikat training
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Audit internal dilakukan rutin
+Audit report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP1.5.
+Kebersihan kandang &amp; Sanitasi - Coop Cleanliness &amp; Sanitation
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Frekuensi pembersihan kandang
+Jadwal cleaning
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sistem pembuangan limbah baik
+SOP limbah
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Sanitasi alat dilakukan rutin
+Checklist sanitasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Desinfektan halal tersedia
+Sertifikat produk
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Kualitas air ternak teruji
+Hasil uji laboratorium
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+CP1 – KANDANG SAPI (FARM)
+
+VALIDASI SUPERVISOR
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP2. PAKAN &amp; KESEHATAN HEWAN - ANIMAL FEED &amp; HEALTH
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP2. PAKAN &amp; KESEHATAN HEWAN - ANIMAL FEED &amp; HEALTH
+
+Nama Farm / Peternakan
+:
+_____________________________________________________________________________________
+Lokasi
+:
+_____________________________________________________________________________________
+Nama Staff / Supervisor
+:
+_____________________________________________________________________________________
+Jabatan
+:
+☐ Staff ☐ Supervisor ☐ QC ☐ Penyelia Halal 
+Tanggal Pengisian
+:
+_____________________________________________________________________________________
+Shift
+:
+☐ Pagi ☐ Siang ☐ Malam 
+Batch / Kode Ternak
+:
+
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+
+Tabel 1. Skala Tingkat Resiko Kepatuhan Halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator.
+
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP2. Pakan &amp; Kesehatan Hewan - Animal Feed &amp; Health
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP2. Pakan &amp; Kesehatan Hewan - Animal Feed &amp; Health
+CP2.1.
+Halal status bahan pakan - Halal status of feed ingredients
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Seluruh bahan pakan memiliki status halal yang jelas
+Sertifikat halal bahan pakan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Komposisi bahan pakan terdokumentasi
+Dokumen formulasi pakan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Feed additive terverifikasi halal
+Sertifikat halal additive
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Tidak menggunakan bahan hewani non-halal
+Supplier ingredient declaration
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Penggunaan bahan GMO/aditif sesuai regulasi
+Material Safety Data Sheet (MSDS)
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP1.2.
+Status kesehatan sapi - Cattle health status
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Pemeriksaan kesehatan rutin
+Laporan dokter hewan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Status bebas penyakit zoonosis
+Sertifikat kesehatan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Rekam vaksinasi tersedia
+
+Buku vaksinasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Penggunaan antibiotik terdokumentasi
+Medical record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+SOP isolasi sapi sakit tersedia
+SOP biosecurity
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP2.2.
+Kontrol obat/vaksin hewan - Control of veterinary drugs/vaccines
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Obat dan vaksin terdaftar resmi
+Izin edar obat/vaksin
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Penggunaan antibiotik terdokumentasi
+Medical treatment record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Status halal obat/vaksin tersedia
+Sertifikat halal obat/vaksin
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Jadwal pemberian vaksin terdokumentasi
+Logbook vaksinasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Masa withdrawal dipatuhi
+SOP withdrawal period
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP2.3.
+Pengawasan veteriner - Veterinary supervision
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Pemeriksaan kesehatan rutin dilakukan
+Veterinary inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Dokter hewan terlibat aktif
+Surat penugasan dokter hewan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Tersedia SOP biosecurity
+SOP biosecurity
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Penanganan hewan sakit sesuai prosedur
+Incident handling report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Audit kesehatan ternak dilakukan
+Audit report kesehatan hewan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP2.4.
+Supplier reliability pakan - Feed supplier reliability
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Supplier memiliki legalitas usaha
+Legal business permit
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Supplier memiliki sertifikasi halal
+Sertifikat halal supplier
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Supplier memiliki rekam jejak baik
+Supplier evaluation report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Tersedia kontrak dan SLA supplier
+Contract agreement
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Audit supplier dilakukan berkala
+Supplier audit checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+CP2. PAKAN &amp; KESEHATAN HEWAN - ANIMAL FEED &amp; HEALTH
+
+VALIDASI SUPERVISOR 
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+
+
+
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP3. TRANSPORTASI HEWAN KE RPH- TRANSPORTATION OF ANIMALS TO THE SLAUGHTERHOUSE
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP3. TRANSPORTASI HEWAN KE RPH- TRANSPORTATION OF ANIMALS TO THE SLAUGHTERHOUSE
+
+Nama Perusahaan / Transporter
+:
+____________________________________________________________________________
+Nomor Kendaraan
+:
+____________________________________________________________________________
+Nama Responsible Person (PIC)
+:
+____________________________________________________________________________
+Jabatan
+:
+☐ Driver ☐ Handler ☐ Supervisor ☐ QC ☐ Penyelia Halal
+Tanggal Pengiriman
+:
+____________________________________________________________________________
+Waktu Berangkat
+:
+____________________________________________________________________________
+Lokasi Asal
+:
+____________________________________________________________________________
+Lokasi Tujuan (RPH)
+
+____________________________________________________________________________
+Batch
+:
+____________________________________________________________________________
+Jumlah Hewan
+:
+____________________________________________________________________________
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+
+Tabel 1. Skala tingkat resiko kepatuhan halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator.
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP3. Transportasi Hewan ke RPH- Transportation of Animals to the Slaughterhouse
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP3. Transportasi Hewan ke RPH- Transportation of Animals to the Slaughterhouse
+CP3.1.
+Kelayakan Transportasi Hewan (Animal Welfare in Transport)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Kondisi kendaraan sesuai standar kesejahteraan hewan
+SOP animal welfare transport
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Kepadatan hewan dalam kendaraan sesuai kapasitas
+Checklist kapasitas kendaraan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Tersedia ventilasi dan sirkulasi udara baik
+Inspection checklist kendaraan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Waktu perjalanan sesuai standar
+Log waktu perjalanan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Penanganan loading/unloading sesuai SOP
+SOP handling ternak
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP3.2.
+Kebersihan Kendaraan (Vehicle Cleanliness)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Kendaraan dibersihkan sebelum digunakan
+SOP animal welfare transport
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Proses sanitasi kendaraan terdokumentasi
+Sanitation logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Kendaraan bebas dari kontaminasi bahan non-halal
+Inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Desinfektan yang digunakan sesuai standar
+Sertifikat bahan sanitasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Area kendaraan kering dan higienis
+Dokumentasi foto kendaraan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP3.3.
+Ketertelusuran Selama Transportasi (Traceability During Transport)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Identitas hewan dapat ditelusuri selama perjalanan
+Ear tag / RFID record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Data asal dan tujuan hewan tersedia
+Delivery order / shipment document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Monitoring lokasi transportasi berjalan
+GPS tracking log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Histori perjalanan terdokumentasi
+Transportation history report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Sistem digital traceability tersedia
+Database traceability system
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP3.4
+Dokumentasi Perjalanan (Travel Documentation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Surat jalan hewan tersedia
+Surat jalan ternak
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sertifikat kesehatan hewan lengkap
+Veterinary health certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Dokumen asal ternak tersedia
+Animal ownership document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Jadwal perjalanan terdokumentasi
+Trip schedule document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Catatan insiden perjalanan tersedia
+Incident report transportasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP3.5
+Kompetensi Petugas Handler (Handler Competencies)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Petugas memahami SOP halal handling
+Sertifikat pelatihan halal
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Petugas memiliki kompetensi animal welfare
+Training certificate animal welfare
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Petugas memahami prosedur darurat
+Emergency SOP training record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Evaluasi kinerja petugas dilakukan
+Staff performance evaluation
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Jumlah petugas sesuai kebutuhan transportasi
+Staffing assignment document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+CP3. TRANSPORTASI HEWAN KE RPH- TRANSPORTATION OF ANIMALS TO THE SLAUGHTERHOUSE
+
+VALIDASI SUPERVISOR
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP4. RUMAH POTONG HEWAN - SLAUGHTERHOUSE
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP4. RUMAH POTONG HEWAN (SAPI) – SLAUGHTERHOUSE
+
+Nama Rumah Potong Hewan (RPH)
+:
+_____________________________________________________________________________
+Nomor Sertifikat Halal RPH
+:
+_____________________________________________________________________________
+Masa Berlaku Sertifikat Halal
+:
+_____________________________________________________________________________
+Alamat RPH
+:
+☐ Driver ☐ Handler ☐ Supervisor ☐ QC ☐ Penyelia Halal
+Nama Responsible Person (PIC)
+:
+_____________________________________________________________________________
+Jabatan
+:
+☐ Juru Sembelih Halal ☐ QC ☐ Supervisor ☐ Veteriner ☐ Penyelia Halal ☐ Operator Produksi 
+Nomor ID Karyawan
+:
+_____________________________________________________________________________
+Tanggal Pengisian
+:
+_____________________________________________________________________________
+Shift Operasional
+:
+☐ Pagi ☐ Siang ☐ Malam 
+Waktu Mulai Operasi
+:
+_____________________________________________________________________________
+Batch / Kode Produksi
+:
+_____________________________________________________________________________
+Jumlah Hewan Disembelih
+:
+_____________________________________________________________________________
+Asal Hewan
+:
+_____________________________________________________________________________
+Nomor Kendaraan Pengangkut
+:
+_____________________________________________________________________________
+Nama Supplier / Peternakan
+:
+_____________________________________________________________________________
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+Tabel 1. Skala tingkat resiko kepatuhan halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator.
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP4. Rumah Potong Hewan - Slaughterhouse
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP4. Rumah Potong Hewan - Slaughterhouse
+CP4.1.
+Validitas Sertifikat Halal RPH (Validity of the Slaughterhouse Halal Certificate)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Sertifikat halal masih berlaku
+Sertifikat halal RPH
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Ruang lingkup sertifikat sesuai aktivitas
+Scope certification document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Lembaga sertifikasi resmi
+Surat registrasi BPJPH/LPPOM
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Audit halal berkala dilakukan
+Audit surveillance report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Perubahan fasilitas dilaporkan
+Change management report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.2.
+Keber Kompetensi Juru Sembelih Halal (Competence of Halal Slaughterers))
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Juru sembelih memiliki sertifikasi halal
+Sertifikat JULEHA
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Pemahaman syariat penyembelihan
+Training halal slaughtering
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Kompetensi animal welfare
+Training animal welfare
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Evaluasi kompetensi berkala
+Competency assessment report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Jumlah juru sembelih memadai
+Staffing assignment
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.3.
+Kesesuaian Proses Sembelih Syariah (Compliance with Sharia-compliant Slaughtering Processes)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Penyembelihan sesuai syariat Islam
+SOP halal slaughtering
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Penyebutan nama Allah saat penyembelihan
+Observation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Hewan masih hidup saat disembelih
+Ante mortem inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Arah dan teknik sembelih sesuai syariah
+Slaughtering procedure checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Proses stunning sesuai regulasi halal
+Stunning SOP &amp; inspection record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.4
+Pemeriksaan Ante/Post-Mortem (Ante/Post Mortem Inspections)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Pemeriksaan kesehatan sebelum sembelih
+Ante mortem report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Pemeriksaan karkas setelah sembelih
+Post mortem report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Dokter hewan melakukan inspeksi
+Veterinary inspection record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Dokumentasi hasil inspeksi tersedia
+Inspection documentation
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Penanganan hewan abnormal sesuai SOP
+Non-conformance report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.5
+Sanitasi Alat &amp; Area (Equipment and Area Sanitation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Peralatan dibersihkan rutin
+Cleaning checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Area produksi higienis
+Hygiene inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Desinfektan sesuai standar halal
+Sertifikat produk sanitasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Jadwal sanitasi terdokumentasi
+Sanitation logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Sistem pest control berjalan
+Pest control report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.6
+Pemisahan Halal &amp; Non-Halal (Separation of Halal and Non-Halal Meat)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Area halal terpisah dari non-halal
+Layout segregasi area
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Alat halal dan non-halal dibedakan
+Equipment labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Jalur distribusi terpisah
+Distribution SOP
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Penyimpanan halal terpisah
+Warehouse segregation SOP
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Identifikasi produk halal jelas
+Batch labeling record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.7
+Dokumentasi &amp; Batch Traceability (Documentation and Batch Traceability)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Batch produk dapat ditelusuri
+Batch production record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Data asal hewan terdokumentasi
+Supplier traceability document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Sistem traceability digital tersedia
+ERP/traceability system
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Histori distribusi tercatat
+Distribution tracking record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Dokumentasi produksi lengkap
+Production logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.8
+Audit &amp; Corrective Action Internal (Internal Audits and Corrective Actions)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Audit internal dilakukan berkala
+Internal audit report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Temuan audit ditindaklanjuti
+CAPA report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Monitoring efektivitas corrective action
+Follow-up audit report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Terdapat sistem pelaporan insiden
+Incident report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Management review dilakukan
+Management review minutes
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP4.9
+Pengawasan Halal Internal (Internal Halal Supervision)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Terdapat penyelia halal internal
+Surat penunjukan penyelia halal
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Monitoring kepatuhan halal rutin
+Halal monitoring checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Pelaporan halal terdokumentasi
+Halal compliance report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Sosialisasi halal kepada pekerja
+Training attendance list
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Evaluasi sistem halal dilakukan
+Halal review document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+
+CP4. RUMAH POTONG HEWAN - SLAUGHTERHOUSE
+
+VALIDASI SUPERVISOR
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP5. POST - SLAUGHTER HANDLING
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP5. POST - SLAUGHTER HANDLING
+
+Nama Rumah Potong Hewan (RPH)
+:
+_________________________________________________________________________________
+Nomor Sertifikat Halal RPH
+:
+_________________________________________________________________________________
+Masa Berlaku Sertifikat Halal
+:
+_________________________________________________________________________________
+Alamat RPH
+:
+☐ Driver ☐ Handler ☐ Supervisor ☐ QC ☐ Penyelia Halal
+Nama Responsible Person (PIC)
+:
+_________________________________________________________________________________
+Jabatan
+:
+☐ Juru Sembelih Halal ☐ QC ☐ Supervisor ☐ Veteriner ☐ Penyelia Halal ☐ Operator Produksi _________________________________________________________________________________
+Nomor ID Karyawan
+:
+_________________________________________________________________________________
+Tanggal Pengisian
+:
+_________________________________________________________________________________
+Shift Operasional
+:
+☐ Pagi ☐ Siang ☐ Malam 
+Waktu Mulai Operasi
+:
+_________________________________________________________________________________
+Batch / Kode Produksi
+:
+_________________________________________________________________________________
+Jumlah Hewan Disembelih
+:
+_________________________________________________________________________________
+Asal Hewan
+:
+_________________________________________________________________________________
+Nomor Kendaraan Pengangkut
+:
+_________________________________________________________________________________
+Nama Supplier / Peternakan
+:
+_________________________________________________________________________________
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+
+Tabel 1. Skala tingkat resiko kepatuhan halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator.
+
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP5. Post - Slaughter Handling
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP5. Post - Slaughter Handling
+CP5.1.
+Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Karkas ditangani sesuai SOP halal setelah penyembelihan
+SOP post-slaughter handling
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Area handling karkas bersih dan higienis
+Hygiene inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Peralatan pengulitan, pemotongan, dan penggantungan disanitasi
+Cleaning and sanitation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Petugas menggunakan APD sesuai standar
+PPE checklist / personnel hygiene record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Karkas tidak menyentuh lantai atau area kotor
+Observation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP5.2.
+Batch Identification Karkas (Carcass Batch Identification)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Setiap karkas memiliki kode batch unik
+Batch ID record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Batch karkas terhubung dengan data asal hewan
+Animal origin traceability record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Label batch terpasang jelas dan tahan selama proses
+Carcass labeling record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Pencatatan batch dilakukan konsisten
+Slaughter batch logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Batch terhubung dengan waktu proses dan operator
+Operator and timestamp record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP5.3.
+Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Karkas halal dipisahkan dari karkas non-halal/suspect
+SOP segregasi karkas
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Area gantung atau penyimpanan karkas halal terpisah
+Layout area segregasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Peralatan handling halal diberi identitas khusus
+Equipment labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Karkas suspect diberi label dan area khusus
+Non-conformance carcass report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Jalur perpindahan karkas halal tidak bercampur
+Flow process map / movement log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP5.4
+Dokumentasi Proses Post-Slaughter (Post-Slaughter Process Documentation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Seluruh aktivitas post-slaughter dicatat lengkap
+Post-slaughter process log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Hasil pemeriksaan karkas terdokumentasi
+Carcass inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Cleaning log setelah proses tersedia
+Cleaning logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Ketidaksesuaian dan tindakan korektif dicatat
+Non-conformity report / CAPA form
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Dokumen post-slaughter terhubung dengan batch distribusi berikutnya
+Integrated batch traceability document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+CP5. POST - SLAUGHTER HANDLING
+
+VALIDASI SUPERVISOR 
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+
+
+
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP6. PENGOLAHAN DAGING - PROCESSING
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP6. PENGOLAHAN DAGING – PROCESSING
+
+Nama Perusahaan / Unit Processing
+:
+_______________________________________________________________________________
+Lokasi Fasilitas Produksi
+:
+_______________________________________________________________________________
+Nama Responsible Person (PIC)
+:
+_______________________________________________________________________________
+Jabatan
+:
+☐ Operator Produksi ☐ QC ☐ Supervisor ☐ Penyelia Halal ☐ Warehouse ☐ Maintenance
+Nomor ID Karyawan
+:
+_______________________________________________________________________________
+Tanggal Pengisian
+:
+_______________________________________________________________________________
+Shift Produksi
+:
+☐ Pagi ☐ Siang ☐ Malam
+Waktu Mulai Produksi
+:
+_______________________________________________________________________________
+Batch / Kode Produksi
+:
+_______________________________________________________________________________
+Nama Produk
+:
+_______________________________________________________________________________
+Jenis Produk
+:
+☐ Fresh Meat ☐ Frozen Meat ☐ Processed Meat ☐ Ready-to-Cook
+Jumlah Produksi
+:
+☐ Operator Produksi ☐ QC ☐ Supervisor ☐ Penyelia Halal ☐ Warehouse ☐ Maintenance
+Area Produksi
+:
+_______________________________________________________________________________
+Nama Perusahaan / Unit Processing
+:
+_______________________________________________________________________________
+Lokasi Fasilitas Produksi
+:
+☐ Pagi ☐ Siang ☐ Malam
+Area Produksi
+:
+_______________________________________________________________________________
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+Tabel 1. Skala tingkat resiko kepatuhan halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator.
+
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP6. Pengolahan Daging - Processing
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP6. Pengolahan Daging - Processing
+CP6.1.
+Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Karkas ditangani sesuai SOP halal setelah penyembelihan
+SOP post-slaughter handling
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Area handling karkas bersih dan higienis
+Hygiene inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Peralatan pengulitan, pemotongan, dan penggantungan disanitasi
+Cleaning and sanitation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Petugas menggunakan APD sesuai standar
+PPE checklist / personnel hygiene record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Karkas tidak menyentuh lantai atau area kotor
+Observation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP6.2.
+Batch Identification Karkas (Carcass Batch Identification)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Setiap karkas memiliki kode batch unik
+Batch ID record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Batch karkas terhubung dengan data asal hewan
+Animal origin traceability record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Label batch terpasang jelas dan tahan selama proses
+Carcass labeling record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Pencatatan batch dilakukan konsisten
+Slaughter batch logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Batch terhubung dengan waktu proses dan operator
+Operator and timestamp record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP6.3.
+Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Karkas halal dipisahkan dari karkas non-halal/suspect
+SOP segregasi karkas
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Area gantung atau penyimpanan karkas halal terpisah
+Layout area segregasi
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Peralatan handling halal diberi identitas khusus
+Equipment labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Karkas suspect diberi label dan area khusus
+Non-conformance carcass report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Jalur perpindahan karkas halal tidak bercampur
+Flow process map / movement log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP6.4
+Dokumentasi Proses Post-Slaughter (Post-Slaughter Process Documentation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Seluruh aktivitas post-slaughter dicatat lengkap
+Post-slaughter process log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Hasil pemeriksaan karkas terdokumentasi
+Carcass inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Cleaning log setelah proses tersedia
+Cleaning logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Ketidaksesuaian dan tindakan korektif dicatat
+Non-conformity report / CAPA form
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Dokumen post-slaughter terhubung dengan batch distribusi berikutnya
+Integrated batch traceability document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+CP6. PENGOLAHAN DAGING - PROCESSING
+
+VALIDASI SUPERVISOR 
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP7. Cold Storage - Warehouse
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP7. COLD STORAGE - WAREHOUSE
+
+Nama Perusahaan / Unit Processing
+:
+_________________________________________________________________________________
+Lokasi Fasilitas Produksi
+:
+_________________________________________________________________________________
+Nama Responsible Person (PIC)
+:
+_________________________________________________________________________________
+Jabatan
+:
+☐ Operator Produksi ☐ QC ☐ Supervisor ☐ Penyelia Halal ☐ Warehouse ☐ Maintenance
+Nomor ID Karyawan
+:
+_________________________________________________________________________________
+Tanggal Pengisian
+:
+_________________________________________________________________________________
+Shift Produksi
+:
+☐ Pagi ☐ Siang ☐ Malam
+Waktu Mulai Produksi
+:
+_________________________________________________________________________________
+Batch / Kode Produksi
+:
+_________________________________________________________________________________
+Nama Produk
+:
+_________________________________________________________________________________
+Jenis Produk
+:
+☐ Fresh Meat ☐ Frozen Meat ☐ Processed Meat ☐ Ready-to-Cook
+Jumlah Produksi
+:
+☐ Operator Produksi ☐ QC ☐ Supervisor ☐ Penyelia Halal ☐ Warehouse ☐ Maintenance
+Area Produksi
+:
+_________________________________________________________________________________
+Nama Perusahaan / Unit Processing
+:
+_________________________________________________________________________________
+Lokasi Fasilitas Produksi
+:
+☐ Pagi ☐ Siang ☐ Malam
+Area Produksi
+:
+_________________________________________________________________________________
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+Tabel 1. Skala tingkat resiko kepatuhan halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator.
+
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP7. Cold Storage - Warehouse
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP7. Cold Storage - Warehouse
+CP7.1.
+Kepatuhan Suhu (Temperature Compliance)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Suhu cold storage sesuai standar produk halal beku/dingin
+Temperature monitoring log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sistem monitoring suhu berjalan real-time
+IoT temperature dashboard / recorder
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Alarm suhu aktif dan berfungsi
+Alarm validation report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Kalibrasi sensor suhu dilakukan berkala
+Calibration certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Backup power system tersedia
+Generator maintenance report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP7.2.
+Halal Segregated Storage (Halal Segregated Storage)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Produk halal disimpan terpisah dari non-halal
+SOP segregasi gudang
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Area penyimpanan halal memiliki identifikasi jelas
+Layout segregasi storage
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Rak, pallet, dan container halal diberi label khusus
+Equipment labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Jalur keluar-masuk produk halal terkontrol
+Warehouse movement log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Tidak ada penyimpanan bahan syubhat/non-halal di area halal
+Warehouse inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP7.3.
+Kebersihan Gudang / Cold Room (Warehouse / Cold Room Cleanliness)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Gudang dan cold room dibersihkan secara rutin
+Cleaning and sanitation log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Tidak terdapat hama atau kontaminasi lingkungan
+Pest control report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Drainase dan sistem air berjalan baik
+Sanitation inspection checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Petugas menggunakan APD sesuai standar hygiene
+Personnel hygiene checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Produk tidak bersentuhan langsung dengan lantai
+Observation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP7.4
+Batch Traceability &amp; FIFO/FEFO (Batch Traceability &amp; FIFO/FEFO)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Setiap produk memiliki kode batch yang jelas
+Batch traceability record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sistem FIFO/FEFO diterapkan secara konsisten
+FIFO/FEFO monitoring report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Histori keluar-masuk produk terdokumentasi
+Warehouse inventory log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Batch produk dapat ditelusuri ke supplier dan distribusi
+ERP / traceability system
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Label tanggal produksi dan expired jelas
+Product labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP7.5
+Penanganan Insiden (Suhu Naik) (Incident Handling – Temperature Rise)
+Ketersediaan Bukti Pendukung
+
+Upload Bukti 
+2
+3
+4
+5
+
+1
+SOP penanganan kenaikan suhu tersedia
+Incident handling SOP
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Terdapat tindakan cepat saat suhu melebihi batas
+Incident response report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Produk terdampak suhu abnormal diisolasi
+Quarantine product record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Evaluasi dampak terhadap status halal dan keamanan pangan dilakukan
+Corrective action report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Simulasi/mock drill penanganan insiden dilakukan berkala
+Emergency drill report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+
+CP7. PENGOLAHAN DAGING - PROCESSING
+
+VALIDASI SUPERVISOR 
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP8. DISTRIBUSI / LOGISTIC
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP8. DISTRIBUSI / LOGISTIC
+
+Nama Perusahaan / Distributor
+:
+_______________________________________________________________________________
+Lokasi Distribusi
+:
+_______________________________________________________________________________
+Nama PIC / Responsible Person
+:
+_______________________________________________________________________________
+Jabatan
+:
+☐ Driver ☐ Logistic Staff ☐ Warehouse Staff ☐ Supervisor ☐ QC ☐ Penyelia Halal
+Nomor ID Karyawan
+:
+_______________________________________________________________________________
+Tanggal Pengiriman
+:
+_______________________________________________________________________________
+Shift Operasional
+:
+☐ Pagi ☐ Siang ☐ Malam
+Nomor Kendaraan
+:
+_______________________________________________________________________________
+Jenis Kendaraan
+:
+☐ Refrigerated Truck ☐ Box Truck ☐ Container ☐ Lainnya
+Nomor Batch Produk
+:
+_______________________________________________________________________________
+Nama Produk
+:
+_______________________________________________________________________________
+Jumlah Produk
+:
+_______________________________________________________________________________
+Lokasi Asal Pengiriman
+:
+_______________________________________________________________________________
+Lokasi Tujuan Pengiriman
+:
+_______________________________________________________________________________
+Waktu Berangkat
+:
+_______________________________________________________________________________
+Waktu Tiba
+:
+_______________________________________________________________________________
+
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+Tabel 1. Skala Tingkat Resiko Kepatuhan Halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+Petunjuk: 
+Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator. 
+ 
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP8. Distribusi / Logistic
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP8. Distribusi / Logistic
+CP8.1.
+Transportasi Halal Khusus (Dedicated Halal Transport)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Kendaraan distribusi khusus digunakan untuk produk halal
+SOP dedicated halal transport
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Kendaraan memiliki identifikasi halal yang jelas
+Vehicle halal identification record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Tidak ada riwayat pengangkutan bahan non-halal tanpa cleansing
+Vehicle usage history
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Area muatan halal dipisahkan secara fisik
+Loading segregation layout
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Evaluasi kepatuhan kendaraan dilakukan berkala
+Vehicle inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP8.2.
+Sanitasi Kendaraan (Vehicle Sanitation)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Kendaraan dibersihkan sebelum pemuatan produk halal
+Cleaning and sanitation checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sanitasi dilakukan sesuai SOP halal logistics
+SOP sanitation vehicle
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Bahan pembersih sesuai standar halal
+Halal certificate / MSDS sanitizer
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Jadwal sanitasi terdokumentasi
+Vehicle sanitation logbook
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Verifikasi kebersihan dilakukan sebelum loading
+Pre-loading inspection checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP8.3.
+Distribusi dengan Kontrol Suhu (Temperature Control Distribution)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Suhu kendaraan sesuai standar produk
+Temperature monitoring log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sistem monitoring suhu berjalan selama pengiriman
+IoT/GPS temperature tracking report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Alarm suhu tersedia dan aktif
+Alarm system validation
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Kalibrasi alat monitoring suhu dilakukan
+Calibration certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Tersedia prosedur penanganan jika suhu meningkat
+Incident handling SOP
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP8.4
+Ketelusuran Rute &amp; Pengiriman (Route &amp; Delivery Traceability)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Setiap pengiriman memiliki kode delivery unik
+GPS route history
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+GPS tracking digunakan selama distribusi
+Delivery order / shipment document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Histori asal dan tujuan pengiriman terdokumentasi
+Delivery timestamp log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Waktu pengiriman tercatat lengkap
+ERP/logistics traceability system
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Sistem digital traceability terintegrasi
+GPS route history
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP8.5
+Pencegahan Kontaminasi (Pemuatan) (Contamination Prevention – Loading)
+Ketersediaan Bukti Pendukung
+
+Upload Bukti 
+1
+2
+3
+4
+5
+1
+Area loading bersih dan higienis
+Loading area inspection checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Produk halal dipisahkan saat loading
+SOP loading segregation
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Petugas loading memahami SOP halal
+Training record halal logistics
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Penggunaan pallet/container khusus halal
+Equipment labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Produk terlindungi selama proses loading/unloading
+Observation report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP8.6
+Kelengkapan Dokumentasi (Documentation Completeness)
+Ketersediaan Bukti Pendukung
+
+Upload Bukti 
+1
+2
+3
+4
+5
+1
+Dokumen pengiriman tersedia lengkap
+Delivery document checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Sertifikat halal produk menyertai pengiriman bila diperlukan
+Product halal certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Catatan suhu distribusi terdokumentasi
+Temperature distribution report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Laporan insiden distribusi tersedia
+Incident report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Dokumen terhubung dengan batch traceability
+Integrated traceability document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+
+CP8. DISTRIBUSI / LOGISTIC
+
+VALIDASI SUPERVISOR 
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FORMULIR KONDISI AKTUAL PADA TITIK KRITIS CP9. RETAIL / PASAR / SUPERMARKET
+
+LATAR BELAKANG PENGISI FORMULIR
+
+CP9. RETAIL / PASAR / SUPERMARKET
+
+Nama Retail / Supermarket
+:
+________________________________________________________________________________
+Cabang / Lokasi
+:
+________________________________________________________________________________
+Nama PIC / Responsible Person
+:
+________________________________________________________________________________
+Jabatan
+:
+☐ Store Staff ☐ Supervisor ☐ QC ☐ Warehouse ☐ Penyelia Halal
+Nomor ID Karyawan
+:
+________________________________________________________________________________
+Tanggal Pengisian
+:
+________________________________________________________________________________
+Shift Operasional
+:
+☐ Pagi ☐ Siang ☐ Malam
+Area Retail
+:
+☐ Frozen Area ☐ Chiller ☐ Dry Storage ☐ Display Area
+Nama Produk
+:
+________________________________________________________________________________
+Nomor Batch Produk
+:
+________________________________________________________________________________
+Supplier Produk
+:
+________________________________________________________________________________
+Jumlah Produk
+:
+________________________________________________________________________________
+
+
+Formulir ini digunakan untuk menilai kondisi aktual kepatuhan halal integrated supply chain pada daging sapi. Adapun skala yang digunakan adalah “Ya” dan “Tidak” sebagai bentuk pernyataan kesediaan bukti dukung dan skala linkert 1-5 untuk mencerminkan keadaan atau kondisi aktual tingkat kepatuhan halal sesuai dengan bukti dukung yang tersedia di setiap titik kritis yang didefinisikan pada tabel dibawah ini.
+
+Tabel 1. Skala tingkat resiko kepatuhan halal
+Intensitas Kepentingan (Skala)
+Indonesia Version
+English Version
+Interpretasi dari bukti dukung
+1
+Sangat Rendah
+Very Low Risk
+Sangat patuh dan terdokumentasi lengkap
+2
+Rendah
+Low Risk
+Risiko kecil dan masih terkendali
+3
+Sedang
+Moderate Risk
+Terdapat potensi ketidakpatuhan
+4
+Tinggi
+High Risk
+Risiko signifikan terhadap kepatuhan halal
+5
+Sangat Tinggi
+Critical Risk
+
+Risiko kritis dan perlu tindakan segera
+
+
+Petunjuk: Berilah tanda centang ( ), pada kolom ketersediaan bukti dukung “Tersedia” dan “Kondisi Aktual / Risiko (1–5)” berdasarkan penilaian tingkat keberadaan aktual dari masing-masing indikator. 
+
+Tabel 2. Aspek Kondisi Aktual Kepatuhan Halal pada CP9. Retail / Pasar / Supermarket
+No
+Pengukuran Kondisi Aktual Kepatuhan Halal
+Kondisi Aktual/Resiko
+
+
+1
+2
+3
+4
+5
+CP9. Retail / Pasar / Supermarket
+CP9.1.
+Validitas Label Halal (Halal Label Validity)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Produk memiliki label halal resmi dan masih berlaku
+Sertifikat halal produk
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Logo halal sesuai regulasi BPJPH/LPPOM/MUI
+Approved packaging &amp; label document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Informasi label sesuai dengan produk yang dijual
+Product specification sheet
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Produk impor memiliki dokumen halal yang diakui
+Import halal certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Perubahan label melalui approval halal
+Label change control form
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP9.2.
+Pemisahan Tampilan Halal/Non-Halal (Display Segregation Halal/Non-Halal)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Produk halal dipisahkan dari produk non-halal
+SOP display segregation
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Rak/display halal diberi identifikasi jelas
+Display labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Area penyimpanan produk halal terpisah
+Storage layout plan
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Peralatan display (tray, tong, freezer) khusus halal
+Equipment identification checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Produk non-halal tidak ditempatkan berdekatan dengan produk halal sensitif
+Retail inspection report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP9.3.
+Suhu Penyimpanan Retail (Retail Storage Temperature)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Suhu freezer/chiller sesuai standar produk
+Temperature monitoring log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Monitoring suhu dilakukan berkala
+Temperature inspection checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Alarm suhu tersedia untuk cold storage retail
+Alarm validation report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Kalibrasi alat ukur suhu dilakukan
+Calibration certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Produk sensitif disimpan sesuai kategori suhu
+Product storage SOP
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP9.4
+Pengendalian Tanggal Kedaluwarsa (Expiry Date Control)
+Ketersediaan Bukti Pendukung
+Upload Bukti
+1
+2
+3
+4
+5
+1
+Sistem FIFO/FEFO diterapkan
+FIFO/FEFO monitoring record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Pemeriksaan tanggal kedaluwarsa dilakukan rutin
+Expiry inspection checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Produk expired dipisahkan dari area penjualan
+Non-conformance product record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Penarikan produk expired terdokumentasi
+Product withdrawal report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Label tanggal produksi dan expired jelas terbaca
+Product labeling checklist
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP9.5
+Ketelusuran Pemasok (Supplier Traceability)
+Ketersediaan Bukti Pendukung
+
+Upload Bukti 
+1
+2
+3
+4
+5
+1
+Data supplier tersedia lengkap
+Approved supplier list
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Produk dapat ditelusuri ke supplier asal
+Supplier traceability record
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Supplier memiliki sertifikasi halal valid
+Supplier halal certificate
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Histori penerimaan barang terdokumentasi
+Goods receiving log
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Audit supplier dilakukan berkala
+Supplier audit report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP9.6
+Penanganan Keluhan Konsumen (Consumer Complaint Handling)
+Ketersediaan Bukti Pendukung
+
+Upload Bukti 
+1
+2
+3
+4
+5
+1
+Sistem penerimaan keluhan konsumen tersedia
+Complaint handling SOP
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+2
+Keluhan terkait halal ditindaklanjuti segera
+Complaint investigation report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+3
+Produk bermasalah dapat ditelusuri melalui batch
+Batch traceability report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+4
+Tindakan korektif terhadap keluhan dilakukan
+Corrective action report
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+5
+Evaluasi tren keluhan dilakukan berkala
+Integrated traceability document
+☐ Ya ☐ Tidak
+
+
+
+
+
+
+CP9. RETAIL / PASAR / SUPERMARKET
+
+VALIDASI SUPERVISOR 
+
+Nama Supervisor
+:
+__________________________________________________________________________________
+Hasil Verifikasi
+:
+☐ Sesuai ☐ Tidak Sesuai
+Tingkat Risiko Keseluruhan
+:
+☐ Sangat Rendah ☐ Rendah ☐ Sedang ☐ Tinggi ☐ Sangat Tinggi (Kritis)
+Tindakan Korektif
+:
+__________________________________________________________________________________
+Tanggal Verifikasi
+:
+__________________________________________________________________________________
+Tanda Tangan
+:
+__________________________________________________________________________________

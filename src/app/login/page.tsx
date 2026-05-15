@@ -156,32 +156,6 @@ export default function LoginPage() {
               {loading ? "Memproses..." : "Masuk"}
             </button>
           </form>
-
-          {/* Roles info */}
-          <div className="px-8 pb-8">
-            <details className="group">
-              <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground transition-colors flex items-center gap-1.5">
-                <span className="text-[10px] bg-muted rounded-md px-1.5 py-0.5 font-mono">
-                  11 ROLE
-                </span>
-                Daftar role pengguna sistem
-              </summary>
-              <div className="mt-3 grid grid-cols-1 gap-1.5">
-                {Object.entries(ROLE_LABELS).map(([key, label]) => (
-                  <div
-                    key={key}
-                    className="flex items-center gap-2 text-xs text-muted-foreground py-1 px-2 rounded-lg hover:bg-muted/50 transition-colors"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 shrink-0" />
-                    <span className="font-mono text-[10px] bg-muted px-1.5 py-0.5 rounded min-w-[130px]">
-                      {key}
-                    </span>
-                    <span>{label}</span>
-                  </div>
-                ))}
-              </div>
-            </details>
-          </div>
         </div>
 
         {/* Footer */}

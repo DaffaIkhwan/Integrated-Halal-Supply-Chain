@@ -1,0 +1,1521 @@
+[
+  {
+    "cpId": "CP1",
+    "cpName": "Kandang Sapi",
+    "cpNameEn": "Farm",
+    "subCriteria": [
+      {
+        "code": "CP1.1",
+        "name": "Asal-Usul Sapi &amp; Traceability",
+        "nameEn": "Cattle Origins &amp; Traceability",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Identitas asal sapi terdokumentasi",
+            "evidence": "Surat asal ternak"
+          },
+          {
+            "no": 2,
+            "statement": "Riwayat perpindahan sapi tersedia",
+            "evidence": "Logbook distribusi"
+          },
+          {
+            "no": 3,
+            "statement": "Supplier ternak terverifikasi",
+            "evidence": "Vendor approval"
+          },
+          {
+            "no": 4,
+            "statement": "Sistem traceability berjalan",
+            "evidence": "Database ternak"
+          },
+          {
+            "no": 5,
+            "statement": "Histori kepemilikan tersedia",
+            "evidence": "Dokumen pembelian"
+          }
+        ]
+      },
+      {
+        "code": "CP1.2",
+        "name": "Status kesehatan sapi",
+        "nameEn": "Cattle health status",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Pemeriksaan kesehatan rutin",
+            "evidence": "Laporan dokter hewan"
+          },
+          {
+            "no": 2,
+            "statement": "Status bebas penyakit zoonosis",
+            "evidence": "Sertifikat kesehatan"
+          },
+          {
+            "no": 3,
+            "statement": "Rekam vaksinasi tersedia",
+            "evidence": "Buku vaksinasi"
+          },
+          {
+            "no": 4,
+            "statement": "Penggunaan antibiotik terdokumentasi",
+            "evidence": "Medical record"
+          },
+          {
+            "no": 5,
+            "statement": "SOP isolasi sapi sakit tersedia",
+            "evidence": "SOP biosecurity"
+          }
+        ]
+      },
+      {
+        "code": "CP1.3",
+        "name": "Kepatuhan pakan",
+        "nameEn": "Feed compliance",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Pakan bersertifikat halal",
+            "evidence": "Sertifikat halal pakan"
+          },
+          {
+            "no": 2,
+            "statement": "Formula pakan terdokumentasi",
+            "evidence": "Dokumen formulasi"
+          },
+          {
+            "no": 3,
+            "statement": "Penyimpanan pakan terpisah",
+            "evidence": "SOP gudang"
+          },
+          {
+            "no": 4,
+            "statement": "Supplier pakan terverifikasi",
+            "evidence": "Vendor document"
+          },
+          {
+            "no": 5,
+            "statement": "Feed additive halal compliant",
+            "evidence": "Sertifikat additive"
+          }
+        ]
+      },
+      {
+        "code": "CP1.4",
+        "name": "Dokumentasi pemeliharaan",
+        "nameEn": "Maintenance documentation",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "SOP pemeliharaan tersedia",
+            "evidence": "SOP farm"
+          },
+          {
+            "no": 2,
+            "statement": "Jadwal maintenance tersedia",
+            "evidence": "Checklist maintenance"
+          },
+          {
+            "no": 3,
+            "statement": "Cleaning log terdokumentasi",
+            "evidence": "Cleaning logbook"
+          },
+          {
+            "no": 4,
+            "statement": "Pelatihan halal pekerja tersedia",
+            "evidence": "Sertifikat training"
+          },
+          {
+            "no": 5,
+            "statement": "Audit internal dilakukan rutin",
+            "evidence": "Audit report"
+          }
+        ]
+      },
+      {
+        "code": "CP1.5",
+        "name": "Kebersihan kandang &amp; Sanitasi",
+        "nameEn": "Coop Cleanliness &amp; Sanitation",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Frekuensi pembersihan kandang",
+            "evidence": "Jadwal cleaning"
+          },
+          {
+            "no": 2,
+            "statement": "Sistem pembuangan limbah baik",
+            "evidence": "SOP limbah"
+          },
+          {
+            "no": 3,
+            "statement": "Sanitasi alat dilakukan rutin",
+            "evidence": "Checklist sanitasi"
+          },
+          {
+            "no": 4,
+            "statement": "Desinfektan halal tersedia",
+            "evidence": "Sertifikat produk"
+          },
+          {
+            "no": 5,
+            "statement": "Kualitas air ternak teruji",
+            "evidence": "Hasil uji laboratorium"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP2",
+    "cpName": "Pakan &amp; Kesehatan Hewan",
+    "cpNameEn": "Animal Feed &amp; Health",
+    "subCriteria": [
+      {
+        "code": "CP2.1",
+        "name": "Halal status bahan pakan",
+        "nameEn": "Halal status of feed ingredients",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Seluruh bahan pakan memiliki status halal yang jelas",
+            "evidence": "Sertifikat halal bahan pakan"
+          },
+          {
+            "no": 2,
+            "statement": "Komposisi bahan pakan terdokumentasi",
+            "evidence": "Dokumen formulasi pakan"
+          },
+          {
+            "no": 3,
+            "statement": "Feed additive terverifikasi halal",
+            "evidence": "Sertifikat halal additive"
+          },
+          {
+            "no": 4,
+            "statement": "Tidak menggunakan bahan hewani non-halal",
+            "evidence": "Supplier ingredient declaration"
+          },
+          {
+            "no": 5,
+            "statement": "Penggunaan bahan GMO/aditif sesuai regulasi",
+            "evidence": "Material Safety Data Sheet (MSDS)"
+          }
+        ]
+      },
+      {
+        "code": "CP2.2",
+        "name": "Kontrol obat/vaksin hewan",
+        "nameEn": "Control of veterinary drugs/vaccines",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Obat dan vaksin terdaftar resmi",
+            "evidence": "Izin edar obat/vaksin"
+          },
+          {
+            "no": 2,
+            "statement": "Penggunaan antibiotik terdokumentasi",
+            "evidence": "Medical treatment record"
+          },
+          {
+            "no": 3,
+            "statement": "Status halal obat/vaksin tersedia",
+            "evidence": "Sertifikat halal obat/vaksin"
+          },
+          {
+            "no": 4,
+            "statement": "Jadwal pemberian vaksin terdokumentasi",
+            "evidence": "Logbook vaksinasi"
+          },
+          {
+            "no": 5,
+            "statement": "Masa withdrawal dipatuhi",
+            "evidence": "SOP withdrawal period"
+          }
+        ]
+      },
+      {
+        "code": "CP2.3",
+        "name": "Pengawasan veteriner",
+        "nameEn": "Veterinary supervision",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Pemeriksaan kesehatan rutin dilakukan",
+            "evidence": "Veterinary inspection report"
+          },
+          {
+            "no": 2,
+            "statement": "Dokter hewan terlibat aktif",
+            "evidence": "Surat penugasan dokter hewan"
+          },
+          {
+            "no": 3,
+            "statement": "Tersedia SOP biosecurity",
+            "evidence": "SOP biosecurity"
+          },
+          {
+            "no": 4,
+            "statement": "Penanganan hewan sakit sesuai prosedur",
+            "evidence": "Incident handling report"
+          },
+          {
+            "no": 5,
+            "statement": "Audit kesehatan ternak dilakukan",
+            "evidence": "Audit report kesehatan hewan"
+          }
+        ]
+      },
+      {
+        "code": "CP2.4",
+        "name": "Supplier reliability pakan",
+        "nameEn": "Feed supplier reliability",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Supplier memiliki legalitas usaha",
+            "evidence": "Legal business permit"
+          },
+          {
+            "no": 2,
+            "statement": "Supplier memiliki sertifikasi halal",
+            "evidence": "Sertifikat halal supplier"
+          },
+          {
+            "no": 3,
+            "statement": "Supplier memiliki rekam jejak baik",
+            "evidence": "Supplier evaluation report"
+          },
+          {
+            "no": 4,
+            "statement": "Tersedia kontrak dan SLA supplier",
+            "evidence": "Contract agreement"
+          },
+          {
+            "no": 5,
+            "statement": "Audit supplier dilakukan berkala",
+            "evidence": "Supplier audit checklist"
+          }
+        ]
+      },
+      {
+        "code": "CP2.5",
+        "name": "Penyimpanan pakan (segregasi)",
+        "nameEn": "Feed storage (segregation)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Penyimpanan pakan halal terpisah",
+            "evidence": "SOP segregasi gudang"
+          },
+          {
+            "no": 2,
+            "statement": "Gudang bersih dan higienis",
+            "evidence": "Cleaning checklist gudang"
+          },
+          {
+            "no": 3,
+            "statement": "Sistem FIFO/FEFO diterapkan",
+            "evidence": "Inventory management record"
+          },
+          {
+            "no": 4,
+            "statement": "Identifikasi label pakan jelas",
+            "evidence": "Label dan barcode stock"
+          },
+          {
+            "no": 5,
+            "statement": "Kontrol kelembaban &amp; suhu gudang",
+            "evidence": "Monitoring suhu dan kelembaban"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP3",
+    "cpName": "Transportasi Hewan ke RPH",
+    "cpNameEn": "Transportation of Animals to the Slaughterhouse",
+    "subCriteria": [
+      {
+        "code": "CP3.1",
+        "name": "Kelayakan transportasi hewan",
+        "nameEn": "Animal welfare in transport",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Kondisi kendaraan sesuai standar kesejahteraan hewan",
+            "evidence": "SOP animal welfare transport"
+          },
+          {
+            "no": 2,
+            "statement": "Kepadatan hewan dalam kendaraan sesuai kapasitas",
+            "evidence": "Checklist kapasitas kendaraan"
+          },
+          {
+            "no": 3,
+            "statement": "Tersedia ventilasi dan sirkulasi udara baik",
+            "evidence": "Inspection checklist kendaraan"
+          },
+          {
+            "no": 4,
+            "statement": "Waktu perjalanan sesuai standar",
+            "evidence": "Log waktu perjalanan"
+          },
+          {
+            "no": 5,
+            "statement": "Penanganan loading/unloading sesuai SOP",
+            "evidence": "SOP handling ternak"
+          }
+        ]
+      },
+      {
+        "code": "CP3.2",
+        "name": "Kebersihan kendaraan",
+        "nameEn": "Vehicle cleanliness",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Kendaraan dibersihkan sebelum digunakan",
+            "evidence": "Cleaning checklist kendaraan"
+          },
+          {
+            "no": 2,
+            "statement": "Proses sanitasi kendaraan terdokumentasi",
+            "evidence": "Sanitation logbook"
+          },
+          {
+            "no": 3,
+            "statement": "Kendaraan bebas dari kontaminasi bahan non-halal",
+            "evidence": "Inspection report"
+          },
+          {
+            "no": 4,
+            "statement": "Desinfektan yang digunakan sesuai standar",
+            "evidence": "Sertifikat bahan sanitasi"
+          },
+          {
+            "no": 5,
+            "statement": "Area kendaraan kering dan higienis",
+            "evidence": "Dokumentasi foto kendaraan"
+          }
+        ]
+      },
+      {
+        "code": "CP3.3",
+        "name": "Ketertelusuran selama transportasi",
+        "nameEn": "Traceability during transport",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Identitas hewan dapat ditelusuri selama perjalanan",
+            "evidence": "Ear tag / RFID record"
+          },
+          {
+            "no": 2,
+            "statement": "Data asal dan tujuan hewan tersedia",
+            "evidence": "Delivery order / shipment document"
+          },
+          {
+            "no": 3,
+            "statement": "Monitoring lokasi transportasi berjalan",
+            "evidence": "GPS tracking log"
+          },
+          {
+            "no": 4,
+            "statement": "Histori perjalanan terdokumentasi",
+            "evidence": "Transportation history report"
+          },
+          {
+            "no": 5,
+            "statement": "Sistem digital traceability tersedia",
+            "evidence": "Database traceability system"
+          }
+        ]
+      },
+      {
+        "code": "CP3.4",
+        "name": "Dokumentasi perjalanan",
+        "nameEn": "Travel documentation",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Surat jalan hewan tersedia",
+            "evidence": "Surat jalan ternak"
+          },
+          {
+            "no": 2,
+            "statement": "Sertifikat kesehatan hewan lengkap",
+            "evidence": "Veterinary health certificate"
+          },
+          {
+            "no": 3,
+            "statement": "Dokumen asal ternak tersedia",
+            "evidence": "Animal ownership document"
+          },
+          {
+            "no": 4,
+            "statement": "Jadwal perjalanan terdokumentasi",
+            "evidence": "Trip schedule document"
+          },
+          {
+            "no": 5,
+            "statement": "Catatan insiden perjalanan tersedia",
+            "evidence": "Incident report transportasi"
+          }
+        ]
+      },
+      {
+        "code": "CP3.5",
+        "name": "Kompetensi petugas handler",
+        "nameEn": "Handler competencies",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Petugas memahami SOP halal handling",
+            "evidence": "Sertifikat pelatihan halal"
+          },
+          {
+            "no": 2,
+            "statement": "Petugas memiliki kompetensi animal welfare",
+            "evidence": "Training certificate animal welfare"
+          },
+          {
+            "no": 3,
+            "statement": "Petugas memahami prosedur darurat",
+            "evidence": "Emergency SOP training record"
+          },
+          {
+            "no": 4,
+            "statement": "Evaluasi kinerja petugas dilakukan",
+            "evidence": "Staff performance evaluation"
+          },
+          {
+            "no": 5,
+            "statement": "Jumlah petugas sesuai kebutuhan transportasi",
+            "evidence": "Staffing assignment document"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP4",
+    "cpName": "Rumah Potong Hewan (RPH)",
+    "cpNameEn": "Slaughterhouse",
+    "subCriteria": [
+      {
+        "code": "CP4.1",
+        "name": "Validitas Sertifikat Halal RPH (Validity of the Slaughterhouse Halal Certificate)",
+        "nameEn": "Validitas Sertifikat Halal RPH (Validity of the Slaughterhouse Halal Certificate)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Sertifikat halal masih berlaku",
+            "evidence": "Sertifikat halal RPH"
+          },
+          {
+            "no": 2,
+            "statement": "Ruang lingkup sertifikat sesuai aktivitas",
+            "evidence": "Scope certification document"
+          },
+          {
+            "no": 3,
+            "statement": "Lembaga sertifikasi resmi",
+            "evidence": "Surat registrasi BPJPH/LPPOM"
+          },
+          {
+            "no": 4,
+            "statement": "Audit halal berkala dilakukan",
+            "evidence": "Audit surveillance report"
+          },
+          {
+            "no": 5,
+            "statement": "Perubahan fasilitas dilaporkan",
+            "evidence": "Change management report"
+          }
+        ]
+      },
+      {
+        "code": "CP4.2",
+        "name": "Kompetensi Juru Sembelih Halal (Competence of Halal Slaughterers)",
+        "nameEn": "Kompetensi Juru Sembelih Halal (Competence of Halal Slaughterers)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Juru sembelih memiliki sertifikasi halal",
+            "evidence": "Sertifikat JULEHA"
+          },
+          {
+            "no": 2,
+            "statement": "Pemahaman syariat penyembelihan",
+            "evidence": "Training halal slaughtering"
+          },
+          {
+            "no": 3,
+            "statement": "Kompetensi animal welfare",
+            "evidence": "Training animal welfare"
+          },
+          {
+            "no": 4,
+            "statement": "Evaluasi kompetensi berkala",
+            "evidence": "Competency assessment report"
+          },
+          {
+            "no": 5,
+            "statement": "Jumlah juru sembelih memadai",
+            "evidence": "Staffing assignment"
+          }
+        ]
+      },
+      {
+        "code": "CP4.3",
+        "name": "Kesesuaian Proses Sembelih Syariah (Compliance with Sharia-compliant Slaughtering Processes)",
+        "nameEn": "Kesesuaian Proses Sembelih Syariah (Compliance with Sharia-compliant Slaughtering Processes)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Penyembelihan sesuai syariat Islam",
+            "evidence": "SOP halal slaughtering"
+          },
+          {
+            "no": 2,
+            "statement": "Penyebutan nama Allah saat penyembelihan",
+            "evidence": "Observation checklist"
+          },
+          {
+            "no": 3,
+            "statement": "Hewan masih hidup saat disembelih",
+            "evidence": "Ante mortem inspection report"
+          },
+          {
+            "no": 4,
+            "statement": "Arah dan teknik sembelih sesuai syariah",
+            "evidence": "Slaughtering procedure checklist"
+          },
+          {
+            "no": 5,
+            "statement": "Proses stunning sesuai regulasi halal",
+            "evidence": "Stunning SOP &amp; inspection record"
+          },
+          {
+            "no": 1,
+            "statement": "Pemeriksaan kesehatan sebelum sembelih",
+            "evidence": "Ante mortem report"
+          },
+          {
+            "no": 2,
+            "statement": "Pemeriksaan karkas setelah sembelih",
+            "evidence": "Post mortem report"
+          },
+          {
+            "no": 3,
+            "statement": "Dokter hewan melakukan inspeksi",
+            "evidence": "Veterinary inspection record"
+          },
+          {
+            "no": 4,
+            "statement": "Dokumentasi hasil inspeksi tersedia",
+            "evidence": "Inspection documentation"
+          },
+          {
+            "no": 5,
+            "statement": "Penanganan hewan abnormal sesuai SOP",
+            "evidence": "Non-conformance report"
+          },
+          {
+            "no": 1,
+            "statement": "Peralatan dibersihkan rutin",
+            "evidence": "Cleaning checklist"
+          },
+          {
+            "no": 2,
+            "statement": "Area produksi higienis",
+            "evidence": "Hygiene inspection report"
+          },
+          {
+            "no": 3,
+            "statement": "Desinfektan sesuai standar halal",
+            "evidence": "Sertifikat produk sanitasi"
+          },
+          {
+            "no": 4,
+            "statement": "Jadwal sanitasi terdokumentasi",
+            "evidence": "Sanitation logbook"
+          },
+          {
+            "no": 5,
+            "statement": "Sistem pest control berjalan",
+            "evidence": "Pest control report"
+          },
+          {
+            "no": 1,
+            "statement": "Area halal terpisah dari non-halal",
+            "evidence": "Layout segregasi area"
+          },
+          {
+            "no": 2,
+            "statement": "Alat halal dan non-halal dibedakan",
+            "evidence": "Equipment labeling checklist"
+          },
+          {
+            "no": 3,
+            "statement": "Jalur distribusi terpisah",
+            "evidence": "Distribution SOP"
+          },
+          {
+            "no": 4,
+            "statement": "Penyimpanan halal terpisah",
+            "evidence": "Warehouse segregation SOP"
+          },
+          {
+            "no": 5,
+            "statement": "Identifikasi produk halal jelas",
+            "evidence": "Batch labeling record"
+          },
+          {
+            "no": 1,
+            "statement": "Batch produk dapat ditelusuri",
+            "evidence": "Batch production record"
+          },
+          {
+            "no": 2,
+            "statement": "Data asal hewan terdokumentasi",
+            "evidence": "Supplier traceability document"
+          },
+          {
+            "no": 3,
+            "statement": "Sistem traceability digital tersedia",
+            "evidence": "ERP/traceability system"
+          },
+          {
+            "no": 4,
+            "statement": "Histori distribusi tercatat",
+            "evidence": "Distribution tracking record"
+          },
+          {
+            "no": 5,
+            "statement": "Dokumentasi produksi lengkap",
+            "evidence": "Production logbook"
+          },
+          {
+            "no": 1,
+            "statement": "Audit internal dilakukan berkala",
+            "evidence": "Internal audit report"
+          },
+          {
+            "no": 2,
+            "statement": "Temuan audit ditindaklanjuti",
+            "evidence": "CAPA report"
+          },
+          {
+            "no": 3,
+            "statement": "Monitoring efektivitas corrective action",
+            "evidence": "Follow-up audit report"
+          },
+          {
+            "no": 4,
+            "statement": "Terdapat sistem pelaporan insiden",
+            "evidence": "Incident report"
+          },
+          {
+            "no": 5,
+            "statement": "Management review dilakukan",
+            "evidence": "Management review minutes"
+          },
+          {
+            "no": 1,
+            "statement": "Terdapat penyelia halal internal",
+            "evidence": "Surat penunjukan penyelia halal"
+          },
+          {
+            "no": 2,
+            "statement": "Monitoring kepatuhan halal rutin",
+            "evidence": "Halal monitoring checklist"
+          },
+          {
+            "no": 3,
+            "statement": "Pelaporan halal terdokumentasi",
+            "evidence": "Halal compliance report"
+          },
+          {
+            "no": 4,
+            "statement": "Sosialisasi halal kepada pekerja",
+            "evidence": "Training attendance list"
+          },
+          {
+            "no": 5,
+            "statement": "Evaluasi sistem halal dilakukan",
+            "evidence": "Halal review document"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP5",
+    "cpName": "Post",
+    "cpNameEn": "Slaughter Handling",
+    "subCriteria": [
+      {
+        "code": "CP5.1",
+        "name": "Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)",
+        "nameEn": "Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Karkas ditangani sesuai SOP halal setelah penyembelihan",
+            "evidence": "SOP post-slaughter handling"
+          },
+          {
+            "no": 2,
+            "statement": "Area handling karkas bersih dan higienis",
+            "evidence": "Hygiene inspection report"
+          },
+          {
+            "no": 3,
+            "statement": "Peralatan pengulitan, pemotongan, dan penggantungan disanitasi",
+            "evidence": "Cleaning and sanitation checklist"
+          },
+          {
+            "no": 4,
+            "statement": "Petugas menggunakan APD sesuai standar",
+            "evidence": "PPE checklist / personnel hygiene record"
+          },
+          {
+            "no": 5,
+            "statement": "Karkas tidak menyentuh lantai atau area kotor",
+            "evidence": "Observation checklist"
+          }
+        ]
+      },
+      {
+        "code": "CP5.2",
+        "name": "Batch Identification Karkas (Carcass Batch Identification)",
+        "nameEn": "Batch Identification Karkas (Carcass Batch Identification)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Setiap karkas memiliki kode batch unik",
+            "evidence": "Batch ID record"
+          },
+          {
+            "no": 2,
+            "statement": "Batch karkas terhubung dengan data asal hewan",
+            "evidence": "Animal origin traceability record"
+          },
+          {
+            "no": 3,
+            "statement": "Label batch terpasang jelas dan tahan selama proses",
+            "evidence": "Carcass labeling record"
+          },
+          {
+            "no": 4,
+            "statement": "Pencatatan batch dilakukan konsisten",
+            "evidence": "Slaughter batch logbook"
+          },
+          {
+            "no": 5,
+            "statement": "Batch terhubung dengan waktu proses dan operator",
+            "evidence": "Operator and timestamp record"
+          }
+        ]
+      },
+      {
+        "code": "CP5.3",
+        "name": "Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)",
+        "nameEn": "Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Karkas halal dipisahkan dari karkas non-halal/suspect",
+            "evidence": "SOP segregasi karkas"
+          },
+          {
+            "no": 2,
+            "statement": "Area gantung atau penyimpanan karkas halal terpisah",
+            "evidence": "Layout area segregasi"
+          },
+          {
+            "no": 3,
+            "statement": "Peralatan handling halal diberi identitas khusus",
+            "evidence": "Equipment labeling checklist"
+          },
+          {
+            "no": 4,
+            "statement": "Karkas suspect diberi label dan area khusus",
+            "evidence": "Non-conformance carcass report"
+          },
+          {
+            "no": 5,
+            "statement": "Jalur perpindahan karkas halal tidak bercampur",
+            "evidence": "Flow process map / movement log"
+          },
+          {
+            "no": 1,
+            "statement": "Seluruh aktivitas post-slaughter dicatat lengkap",
+            "evidence": "Post-slaughter process log"
+          },
+          {
+            "no": 2,
+            "statement": "Hasil pemeriksaan karkas terdokumentasi",
+            "evidence": "Carcass inspection report"
+          },
+          {
+            "no": 3,
+            "statement": "Cleaning log setelah proses tersedia",
+            "evidence": "Cleaning logbook"
+          },
+          {
+            "no": 4,
+            "statement": "Ketidaksesuaian dan tindakan korektif dicatat",
+            "evidence": "Non-conformity report / CAPA form"
+          },
+          {
+            "no": 5,
+            "statement": "Dokumen post-slaughter terhubung dengan batch distribusi berikutnya",
+            "evidence": "Integrated batch traceability document"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP6",
+    "cpName": "Pengolahan Daging",
+    "cpNameEn": "Processing",
+    "subCriteria": [
+      {
+        "code": "CP6.1",
+        "name": "Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)",
+        "nameEn": "Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Karkas ditangani sesuai SOP halal setelah penyembelihan",
+            "evidence": "SOP post-slaughter handling"
+          },
+          {
+            "no": 2,
+            "statement": "Area handling karkas bersih dan higienis",
+            "evidence": "Hygiene inspection report"
+          },
+          {
+            "no": 3,
+            "statement": "Peralatan pengulitan, pemotongan, dan penggantungan disanitasi",
+            "evidence": "Cleaning and sanitation checklist"
+          },
+          {
+            "no": 4,
+            "statement": "Petugas menggunakan APD sesuai standar",
+            "evidence": "PPE checklist / personnel hygiene record"
+          },
+          {
+            "no": 5,
+            "statement": "Karkas ditangani sesuai SOP halal setelah penyembelihan",
+            "evidence": "SOP post-slaughter handling"
+          }
+        ]
+      },
+      {
+        "code": "CP6.2",
+        "name": "Batch Identification Karkas (Carcass Batch Identification)",
+        "nameEn": "Batch Identification Karkas (Carcass Batch Identification)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Setiap karkas memiliki kode batch unik",
+            "evidence": "Batch ID record"
+          },
+          {
+            "no": 2,
+            "statement": "Batch karkas terhubung dengan data asal hewan",
+            "evidence": "Animal origin traceability record"
+          },
+          {
+            "no": 3,
+            "statement": "Label batch terpasang jelas dan tahan selama proses",
+            "evidence": "Carcass labeling record"
+          },
+          {
+            "no": 4,
+            "statement": "Pencatatan batch dilakukan konsisten",
+            "evidence": "Slaughter batch logbook"
+          },
+          {
+            "no": 5,
+            "statement": "Batch terhubung dengan waktu proses dan operator",
+            "evidence": "Operator and timestamp record"
+          }
+        ]
+      },
+      {
+        "code": "CP6.3",
+        "name": "Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)",
+        "nameEn": "Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Karkas halal dipisahkan dari karkas non-halal/suspect",
+            "evidence": "SOP segregasi karkas"
+          },
+          {
+            "no": 2,
+            "statement": "Area gantung atau penyimpanan karkas halal terpisah",
+            "evidence": "Layout area segregasi"
+          },
+          {
+            "no": 3,
+            "statement": "Peralatan handling halal diberi identitas khusus",
+            "evidence": "Equipment labeling checklist"
+          },
+          {
+            "no": 4,
+            "statement": "Karkas suspect diberi label dan area khusus",
+            "evidence": "Non-conformance carcass report"
+          },
+          {
+            "no": 5,
+            "statement": "Jalur perpindahan karkas halal tidak bercampur",
+            "evidence": "Flow process map / movement log"
+          },
+          {
+            "no": 1,
+            "statement": "Seluruh aktivitas post-slaughter dicatat lengkap",
+            "evidence": "Post-slaughter process log"
+          },
+          {
+            "no": 2,
+            "statement": "Hasil pemeriksaan karkas terdokumentasi",
+            "evidence": "Carcass inspection report"
+          },
+          {
+            "no": 3,
+            "statement": "Cleaning log setelah proses tersedia",
+            "evidence": "Cleaning logbook"
+          },
+          {
+            "no": 4,
+            "statement": "Ketidaksesuaian dan tindakan korektif dicatat",
+            "evidence": "Non-conformity report / CAPA form"
+          },
+          {
+            "no": 5,
+            "statement": "Dokumen post-slaughter terhubung dengan batch distribusi berikutnya",
+            "evidence": "Integrated batch traceability document"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP7",
+    "cpName": "Cold Storage",
+    "cpNameEn": "Warehouse",
+    "subCriteria": [
+      {
+        "code": "CP7.1",
+        "name": "Kepatuhan Suhu (Temperature Compliance)",
+        "nameEn": "Kepatuhan Suhu (Temperature Compliance)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Suhu cold storage sesuai standar produk halal beku/dingin",
+            "evidence": "Temperature monitoring log"
+          },
+          {
+            "no": 2,
+            "statement": "Sistem monitoring suhu berjalan real-time",
+            "evidence": "IoT temperature dashboard / recorder"
+          },
+          {
+            "no": 3,
+            "statement": "Alarm suhu aktif dan berfungsi",
+            "evidence": "Alarm validation report"
+          },
+          {
+            "no": 4,
+            "statement": "Kalibrasi sensor suhu dilakukan berkala",
+            "evidence": "Calibration certificate"
+          },
+          {
+            "no": 5,
+            "statement": "Backup power system tersedia",
+            "evidence": "Generator maintenance report"
+          }
+        ]
+      },
+      {
+        "code": "CP7.2",
+        "name": "Halal Segregated Storage (Halal Segregated Storage)",
+        "nameEn": "Halal Segregated Storage (Halal Segregated Storage)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Produk halal disimpan terpisah dari non-halal",
+            "evidence": "SOP segregasi gudang"
+          },
+          {
+            "no": 2,
+            "statement": "Area penyimpanan halal memiliki identifikasi jelas",
+            "evidence": "Layout segregasi storage"
+          },
+          {
+            "no": 3,
+            "statement": "Rak, pallet, dan container halal diberi label khusus",
+            "evidence": "Equipment labeling checklist"
+          },
+          {
+            "no": 4,
+            "statement": "Jalur keluar-masuk produk halal terkontrol",
+            "evidence": "Warehouse movement log"
+          },
+          {
+            "no": 5,
+            "statement": "Tidak ada penyimpanan bahan syubhat/non-halal di area halal",
+            "evidence": "Warehouse inspection report"
+          }
+        ]
+      },
+      {
+        "code": "CP7.3",
+        "name": "Kebersihan Gudang / Cold Room (Warehouse / Cold Room Cleanliness)",
+        "nameEn": "Kebersihan Gudang / Cold Room (Warehouse / Cold Room Cleanliness)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Gudang dan cold room dibersihkan secara rutin",
+            "evidence": "Cleaning and sanitation log"
+          },
+          {
+            "no": 2,
+            "statement": "Tidak terdapat hama atau kontaminasi lingkungan",
+            "evidence": "Pest control report"
+          },
+          {
+            "no": 3,
+            "statement": "Drainase dan sistem air berjalan baik",
+            "evidence": "Sanitation inspection checklist"
+          },
+          {
+            "no": 4,
+            "statement": "Petugas menggunakan APD sesuai standar hygiene",
+            "evidence": "Personnel hygiene checklist"
+          },
+          {
+            "no": 5,
+            "statement": "Produk tidak bersentuhan langsung dengan lantai",
+            "evidence": "Observation checklist"
+          },
+          {
+            "no": 1,
+            "statement": "Setiap produk memiliki kode batch yang jelas",
+            "evidence": "Batch traceability record"
+          },
+          {
+            "no": 2,
+            "statement": "Sistem FIFO/FEFO diterapkan secara konsisten",
+            "evidence": "FIFO/FEFO monitoring report"
+          },
+          {
+            "no": 3,
+            "statement": "Histori keluar-masuk produk terdokumentasi",
+            "evidence": "Warehouse inventory log"
+          },
+          {
+            "no": 4,
+            "statement": "Batch produk dapat ditelusuri ke supplier dan distribusi",
+            "evidence": "ERP / traceability system"
+          },
+          {
+            "no": 5,
+            "statement": "Label tanggal produksi dan expired jelas",
+            "evidence": "Product labeling checklist"
+          },
+          {
+            "no": 1,
+            "statement": "SOP penanganan kenaikan suhu tersedia",
+            "evidence": "Incident handling SOP"
+          },
+          {
+            "no": 2,
+            "statement": "Terdapat tindakan cepat saat suhu melebihi batas",
+            "evidence": "Incident response report"
+          },
+          {
+            "no": 3,
+            "statement": "Produk terdampak suhu abnormal diisolasi",
+            "evidence": "Quarantine product record"
+          },
+          {
+            "no": 4,
+            "statement": "Evaluasi dampak terhadap status halal dan keamanan pangan dilakukan",
+            "evidence": "Corrective action report"
+          },
+          {
+            "no": 5,
+            "statement": "Simulasi/mock drill penanganan insiden dilakukan berkala",
+            "evidence": "Emergency drill report"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP8",
+    "cpName": "Distribusi / Logistic",
+    "cpNameEn": "Distribusi / Logistic",
+    "subCriteria": [
+      {
+        "code": "CP8.1",
+        "name": "Transportasi Halal Khusus (Dedicated Halal Transport)",
+        "nameEn": "Transportasi Halal Khusus (Dedicated Halal Transport)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Kendaraan distribusi khusus digunakan untuk produk halal",
+            "evidence": "SOP dedicated halal transport"
+          },
+          {
+            "no": 2,
+            "statement": "Kendaraan memiliki identifikasi halal yang jelas",
+            "evidence": "Vehicle halal identification record"
+          },
+          {
+            "no": 3,
+            "statement": "Tidak ada riwayat pengangkutan bahan non-halal tanpa cleansing",
+            "evidence": "Vehicle usage history"
+          },
+          {
+            "no": 4,
+            "statement": "Area muatan halal dipisahkan secara fisik",
+            "evidence": "Loading segregation layout"
+          },
+          {
+            "no": 5,
+            "statement": "Evaluasi kepatuhan kendaraan dilakukan berkala",
+            "evidence": "Vehicle inspection report"
+          }
+        ]
+      },
+      {
+        "code": "CP8.2",
+        "name": "Sanitasi Kendaraan (Vehicle Sanitation)",
+        "nameEn": "Sanitasi Kendaraan (Vehicle Sanitation)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Kendaraan dibersihkan sebelum pemuatan produk halal",
+            "evidence": "Cleaning and sanitation checklist"
+          },
+          {
+            "no": 2,
+            "statement": "Sanitasi dilakukan sesuai SOP halal logistics",
+            "evidence": "SOP sanitation vehicle"
+          },
+          {
+            "no": 3,
+            "statement": "Bahan pembersih sesuai standar halal",
+            "evidence": "Halal certificate / MSDS sanitizer"
+          },
+          {
+            "no": 4,
+            "statement": "Jadwal sanitasi terdokumentasi",
+            "evidence": "Vehicle sanitation logbook"
+          },
+          {
+            "no": 5,
+            "statement": "Verifikasi kebersihan dilakukan sebelum loading",
+            "evidence": "Pre-loading inspection checklist"
+          }
+        ]
+      },
+      {
+        "code": "CP8.3",
+        "name": "Distribusi dengan Kontrol Suhu (Temperature Control Distribution)",
+        "nameEn": "Distribusi dengan Kontrol Suhu (Temperature Control Distribution)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Suhu kendaraan sesuai standar produk",
+            "evidence": "Temperature monitoring log"
+          },
+          {
+            "no": 2,
+            "statement": "Sistem monitoring suhu berjalan selama pengiriman",
+            "evidence": "IoT/GPS temperature tracking report"
+          },
+          {
+            "no": 3,
+            "statement": "Alarm suhu tersedia dan aktif",
+            "evidence": "Alarm system validation"
+          },
+          {
+            "no": 4,
+            "statement": "Kalibrasi alat monitoring suhu dilakukan",
+            "evidence": "Calibration certificate"
+          },
+          {
+            "no": 5,
+            "statement": "Tersedia prosedur penanganan jika suhu meningkat",
+            "evidence": "Incident handling SOP"
+          },
+          {
+            "no": 1,
+            "statement": "Setiap pengiriman memiliki kode delivery unik",
+            "evidence": "GPS route history"
+          },
+          {
+            "no": 2,
+            "statement": "GPS tracking digunakan selama distribusi",
+            "evidence": "Delivery order / shipment document"
+          },
+          {
+            "no": 3,
+            "statement": "Histori asal dan tujuan pengiriman terdokumentasi",
+            "evidence": "Delivery timestamp log"
+          },
+          {
+            "no": 4,
+            "statement": "Waktu pengiriman tercatat lengkap",
+            "evidence": "ERP/logistics traceability system"
+          },
+          {
+            "no": 5,
+            "statement": "Sistem digital traceability terintegrasi",
+            "evidence": "GPS route history"
+          },
+          {
+            "no": 1,
+            "statement": "Area loading bersih dan higienis",
+            "evidence": "Loading area inspection checklist"
+          },
+          {
+            "no": 2,
+            "statement": "Produk halal dipisahkan saat loading",
+            "evidence": "SOP loading segregation"
+          },
+          {
+            "no": 3,
+            "statement": "Petugas loading memahami SOP halal",
+            "evidence": "Training record halal logistics"
+          },
+          {
+            "no": 4,
+            "statement": "Penggunaan pallet/container khusus halal",
+            "evidence": "Equipment labeling checklist"
+          },
+          {
+            "no": 5,
+            "statement": "Produk terlindungi selama proses loading/unloading",
+            "evidence": "Observation report"
+          },
+          {
+            "no": 1,
+            "statement": "Dokumen pengiriman tersedia lengkap",
+            "evidence": "Delivery document checklist"
+          },
+          {
+            "no": 2,
+            "statement": "Sertifikat halal produk menyertai pengiriman bila diperlukan",
+            "evidence": "Product halal certificate"
+          },
+          {
+            "no": 3,
+            "statement": "Catatan suhu distribusi terdokumentasi",
+            "evidence": "Temperature distribution report"
+          },
+          {
+            "no": 4,
+            "statement": "Laporan insiden distribusi tersedia",
+            "evidence": "Incident report"
+          },
+          {
+            "no": 5,
+            "statement": "Dokumen terhubung dengan batch traceability",
+            "evidence": "Integrated traceability document"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cpId": "CP9",
+    "cpName": "Retail / Pasar / Supermarket",
+    "cpNameEn": "Retail / Pasar / Supermarket",
+    "subCriteria": [
+      {
+        "code": "CP9.1",
+        "name": "Validitas Label Halal (Halal Label Validity)",
+        "nameEn": "Validitas Label Halal (Halal Label Validity)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Produk memiliki label halal resmi dan masih berlaku",
+            "evidence": "Sertifikat halal produk"
+          },
+          {
+            "no": 2,
+            "statement": "Logo halal sesuai regulasi BPJPH/LPPOM/MUI",
+            "evidence": "Approved packaging &amp; label document"
+          },
+          {
+            "no": 3,
+            "statement": "Informasi label sesuai dengan produk yang dijual",
+            "evidence": "Product specification sheet"
+          },
+          {
+            "no": 4,
+            "statement": "Produk impor memiliki dokumen halal yang diakui",
+            "evidence": "Import halal certificate"
+          },
+          {
+            "no": 5,
+            "statement": "Perubahan label melalui approval halal",
+            "evidence": "Label change control form"
+          }
+        ]
+      },
+      {
+        "code": "CP9.2",
+        "name": "Pemisahan Tampilan Halal/Non-Halal (Display Segregation Halal/Non-Halal)",
+        "nameEn": "Pemisahan Tampilan Halal/Non-Halal (Display Segregation Halal/Non-Halal)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Produk halal dipisahkan dari produk non-halal",
+            "evidence": "SOP display segregation"
+          },
+          {
+            "no": 2,
+            "statement": "Rak/display halal diberi identifikasi jelas",
+            "evidence": "Display labeling checklist"
+          },
+          {
+            "no": 3,
+            "statement": "Area penyimpanan produk halal terpisah",
+            "evidence": "Storage layout plan"
+          },
+          {
+            "no": 4,
+            "statement": "Peralatan display (tray, tong, freezer) khusus halal",
+            "evidence": "Equipment identification checklist"
+          },
+          {
+            "no": 5,
+            "statement": "Produk non-halal tidak ditempatkan berdekatan dengan produk halal sensitif",
+            "evidence": "Retail inspection report"
+          }
+        ]
+      },
+      {
+        "code": "CP9.3",
+        "name": "Suhu Penyimpanan Retail (Retail Storage Temperature)",
+        "nameEn": "Suhu Penyimpanan Retail (Retail Storage Temperature)",
+        "indicators": [
+          {
+            "no": 1,
+            "statement": "Suhu freezer/chiller sesuai standar produk",
+            "evidence": "Temperature monitoring log"
+          },
+          {
+            "no": 2,
+            "statement": "Monitoring suhu dilakukan berkala",
+            "evidence": "Temperature inspection checklist"
+          },
+          {
+            "no": 3,
+            "statement": "Alarm suhu tersedia untuk cold storage retail",
+            "evidence": "Alarm validation report"
+          },
+          {
+            "no": 4,
+            "statement": "Kalibrasi alat ukur suhu dilakukan",
+            "evidence": "Calibration certificate"
+          },
+          {
+            "no": 5,
+            "statement": "Produk sensitif disimpan sesuai kategori suhu",
+            "evidence": "Product storage SOP"
+          },
+          {
+            "no": 1,
+            "statement": "Sistem FIFO/FEFO diterapkan",
+            "evidence": "FIFO/FEFO monitoring record"
+          },
+          {
+            "no": 2,
+            "statement": "Pemeriksaan tanggal kedaluwarsa dilakukan rutin",
+            "evidence": "Expiry inspection checklist"
+          },
+          {
+            "no": 3,
+            "statement": "Produk expired dipisahkan dari area penjualan",
+            "evidence": "Non-conformance product record"
+          },
+          {
+            "no": 4,
+            "statement": "Penarikan produk expired terdokumentasi",
+            "evidence": "Product withdrawal report"
+          },
+          {
+            "no": 5,
+            "statement": "Label tanggal produksi dan expired jelas terbaca",
+            "evidence": "Product labeling checklist"
+          },
+          {
+            "no": 1,
+            "statement": "Data supplier tersedia lengkap",
+            "evidence": "Approved supplier list"
+          },
+          {
+            "no": 2,
+            "statement": "Produk dapat ditelusuri ke supplier asal",
+            "evidence": "Supplier traceability record"
+          },
+          {
+            "no": 3,
+            "statement": "Supplier memiliki sertifikasi halal valid",
+            "evidence": "Supplier halal certificate"
+          },
+          {
+            "no": 4,
+            "statement": "Histori penerimaan barang terdokumentasi",
+            "evidence": "Goods receiving log"
+          },
+          {
+            "no": 5,
+            "statement": "Audit supplier dilakukan berkala",
+            "evidence": "Supplier audit report"
+          },
+          {
+            "no": 1,
+            "statement": "Sistem penerimaan keluhan konsumen tersedia",
+            "evidence": "Complaint handling SOP"
+          },
+          {
+            "no": 2,
+            "statement": "Keluhan terkait halal ditindaklanjuti segera",
+            "evidence": "Complaint investigation report"
+          },
+          {
+            "no": 3,
+            "statement": "Produk bermasalah dapat ditelusuri melalui batch",
+            "evidence": "Batch traceability report"
+          },
+          {
+            "no": 4,
+            "statement": "Tindakan korektif terhadap keluhan dilakukan",
+            "evidence": "Corrective action report"
+          },
+          {
+            "no": 5,
+            "statement": "Evaluasi tren keluhan dilakukan berkala",
+            "evidence": "Integrated traceability document"
+          }
+        ]
+      }
+    ]
+  }
+]

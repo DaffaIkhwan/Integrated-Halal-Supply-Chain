@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import { LogIn, LogOut, User, ChevronDown, Menu, X } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 
 const ROLE_SHORT: Record<string, string> = {
 	ADMIN: "Admin",
@@ -21,17 +21,86 @@ const ROLE_SHORT: Record<string, string> = {
 	CP10_CONSUMER: "CP10",
 };
 
-const navItems = [
+interface NavItem {
+	href: string;
+	label: string;
+	children?: { href: string; label: string }[];
+}
+
+const navItems: NavItem[] = [
 	{ href: "/dashboard", label: "Dashboard" },
-	{ href: "/dashboard/batch-management", label: "Manajemen Sapi" },
-	{ href: "/dashboard/kuesioner-pembobotan", label: "K1 Pembobotan" },
-	{ href: "/dashboard/kuesioner-risiko", label: "K2 Risiko" },
-	{ href: "/dashboard/kuesioner-aktual", label: "K3 Aktual" },
+	{
+		href: "#", label: "Pembobotan",
+		children: [
+			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan" },
+			{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
+		],
+	},
+	{
+		href: "#", label: "Risiko",
+		children: [
+			{ href: "/dashboard/kuesioner-risiko", label: "Input Risiko" },
+			{ href: "/dashboard/rekap-risiko", label: "Rekap Data" },
+		],
+	},
+	{
+		href: "#", label: "Aktual",
+		children: [
+			{ href: "/dashboard/batch-management", label: "Manajemen Sapi" },
+			{ href: "/dashboard/kuesioner-aktual", label: "Input Aktual" },
+			{ href: "/dashboard/rekap-aktual", label: "Rekap Data" },
+		],
+	},
 	{ href: "/dashboard/input", label: "Input CP" },
-	{ href: "/dashboard/weighting", label: "Pembobotan AHP" },
 	{ href: "/dashboard/ahp-steps", label: "Tahapan AHP" },
 	{ href: "/chat", label: "Chat" },
 ];
+
+function NavDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
+	const [open, setOpen] = useState(false);
+	const ref = useRef<HTMLDivElement>(null);
+	const isChildActive = item.children?.some((c) => pathname.startsWith(c.href.split("?")[0])) ?? false;
+
+	useEffect(() => {
+		function handleClick(e: MouseEvent) {
+			if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+		}
+		document.addEventListener("mousedown", handleClick);
+		return () => document.removeEventListener("mousedown", handleClick);
+	}, []);
+
+	return (
+		<div className="relative" ref={ref}>
+			<button
+				onClick={() => setOpen(!open)}
+				className={`flex items-center gap-1 text-sm transition-colors hover:text-foreground/80 ${
+					isChildActive ? "text-foreground font-medium" : "text-muted-foreground"
+				}`}
+			>
+				{item.label}
+				<ChevronDown className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
+			</button>
+			{open && (
+				<div className="absolute top-full left-0 mt-2 w-48 rounded-xl border bg-card shadow-xl py-1.5 z-50">
+					{item.children?.map((child) => (
+						<Link
+							key={child.href}
+							href={child.href}
+							onClick={() => setOpen(false)}
+							className={`block px-4 py-2.5 text-sm transition-colors hover:bg-muted ${
+								pathname.startsWith(child.href.split("?")[0])
+									? "text-foreground font-medium bg-muted/50"
+									: "text-muted-foreground"
+							}`}
+						>
+							{child.label}
+						</Link>
+					))}
+				</div>
+			)}
+		</div>
+	);
+}
 
 export function Navbar() {
 	const pathname = usePathname();
@@ -39,6 +108,15 @@ export function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
+
+	const dynamicNavItems = useMemo(() => {
+		const items = [...navItems];
+		if (session?.user?.role === "ADMIN") {
+			// Add rekap-all link and docs
+			items.push({ href: "/docs", label: "Tambah Knowledge" });
+		}
+		return items;
+	}, [session?.user?.role]);
 
 	useEffect(() => {
 		function handleClickOutside(e: MouseEvent) {
@@ -59,6 +137,22 @@ export function Navbar() {
 		? ROLE_SHORT[session.user.role] || session.user.role
 		: "";
 
+	// Mobile: flatten dropdowns
+	const flatMobileItems = useMemo(() => {
+		const flat: { href: string; label: string; indent?: boolean }[] = [];
+		for (const item of dynamicNavItems) {
+			if (item.children) {
+				flat.push({ href: "#", label: item.label });
+				for (const child of item.children) {
+					flat.push({ href: child.href, label: child.label, indent: true });
+				}
+			} else {
+				flat.push({ href: item.href, label: item.label });
+			}
+		}
+		return flat;
+	}, [dynamicNavItems]);
+
 	return (
 		<header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
 			<div className="max-w-[1200px] mx-auto flex h-16 items-center justify-between px-4">
@@ -67,19 +161,23 @@ export function Navbar() {
 				</Link>
 				<div className="flex items-center gap-4 sm:gap-6">
 					<nav className="hidden md:flex items-center gap-4">
-						{navItems.map((item) => (
-							<Link
-								key={item.href}
-								href={item.href}
-								className={`text-sm transition-colors hover:text-foreground/80 ${
-									pathname === item.href
-										? "text-foreground font-medium"
-										: "text-muted-foreground"
-								}`}
-							>
-								{item.label}
-							</Link>
-						))}
+						{dynamicNavItems.map((item) =>
+							item.children ? (
+								<NavDropdown key={item.label} item={item} pathname={pathname} />
+							) : (
+								<Link
+									key={item.href}
+									href={item.href}
+									className={`text-sm transition-colors hover:text-foreground/80 ${
+										pathname === item.href
+											? "text-foreground font-medium"
+											: "text-muted-foreground"
+									}`}
+								>
+									{item.label}
+								</Link>
+							)
+						)}
 					</nav>
 
 					<div className="flex items-center gap-2 sm:gap-3">
@@ -147,21 +245,27 @@ export function Navbar() {
 			{/* Mobile Dropdown Menu */}
 			{mobileMenuOpen && (
 				<div className="md:hidden absolute top-16 left-0 w-full bg-background/95 backdrop-blur-md border-b shadow-lg z-40">
-					<nav className="flex flex-col p-4 space-y-2">
-						{navItems.map((item) => (
-							<Link
-								key={item.href}
-								href={item.href}
-								onClick={() => setMobileMenuOpen(false)}
-								className={`px-4 py-3 rounded-xl text-sm transition-colors ${
-									pathname === item.href
-										? "bg-muted text-foreground font-medium"
-										: "text-muted-foreground hover:bg-muted/50"
-								}`}
-							>
-								{item.label}
-							</Link>
-						))}
+					<nav className="flex flex-col p-4 space-y-1">
+						{flatMobileItems.map((item, i) =>
+							item.href === "#" ? (
+								<p key={i} className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+									{item.label}
+								</p>
+							) : (
+								<Link
+									key={`${item.href}-${i}`}
+									href={item.href}
+									onClick={() => setMobileMenuOpen(false)}
+									className={`px-4 py-3 rounded-xl text-sm transition-colors ${item.indent ? "pl-8" : ""} ${
+										pathname === item.href.split("?")[0]
+											? "bg-muted text-foreground font-medium"
+											: "text-muted-foreground hover:bg-muted/50"
+									}`}
+								>
+									{item.label}
+								</Link>
+							)
+						)}
 					</nav>
 				</div>
 			)}

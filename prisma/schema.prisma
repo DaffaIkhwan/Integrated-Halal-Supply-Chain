@@ -473,3 +473,24 @@ model PairwiseComparison {
 
   @@unique([matrixType, rowCode, colCode])
 }
+
+// ======================================================================
+// Questionnaire Responses (K1 Pembobotan, K2 Risiko, K3 Aktual)
+// ======================================================================
+
+model QuestionnaireResponse {
+  id              String   @id @default(uuid())
+  questionnaireType String // "pembobotan" | "risiko" | "aktual"
+  cpId            String?  // CP1..CP9, null for CP_LEVEL pembobotan
+  respondentName  String
+  respondentRole  String?
+  respondentOrg   String?
+  respondentEmail String?
+  respondentInfo  Json?    @default("{}") // Full background info
+  answers         Json     @default("{}") // All answers data
+  notes           Json?    @default("{}") // Auditor/supervisor notes
+  files           Json?    @default("[]") // [{key, filename, url}]
+  status          String   @default("SUBMITTED") // SUBMITTED, REVIEWED, APPROVED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now()) @updatedAt
+}

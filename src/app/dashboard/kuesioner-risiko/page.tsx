@@ -64,7 +64,7 @@ function SubCriteriaSection({
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-3">
               {/* Table header */}
-              <div className="grid grid-cols-[auto_1fr_auto_auto] gap-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+              <div className="hidden md:grid grid-cols-[auto_1fr_auto_auto] gap-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
                 <span className="w-6">No</span>
                 <span>Pernyataan</span>
                 <span className="w-40 text-center">Bukti Pendukung</span>
@@ -75,32 +75,48 @@ function SubCriteriaSection({
                 const key = `${sub.code}_${ind.no}`;
                 const val = answers[key] as number | undefined;
                 return (
-                  <div key={key} className="grid grid-cols-[auto_1fr_auto_auto] gap-2 items-start px-2 py-2 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                    <span className="w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
-                    <div>
-                      <p className="text-sm leading-snug">{ind.statement}</p>
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[auto_1fr_auto_auto] gap-3 md:gap-2 items-start px-3 py-4 md:px-2 md:py-2 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                    {/* Number & Statement (Mobile groups these) */}
+                    <div className="flex gap-2 w-full md:contents items-start">
+                      <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
+                      <div className="flex-1">
+                        <p className="text-sm leading-snug">{ind.statement}</p>
+                      </div>
                     </div>
-                    <div className="w-40 text-center">
+
+                    {/* Evidence */}
+                    <div className="w-full md:w-40 text-left md:text-center mt-1 md:mt-0 pl-8 md:pl-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground block mb-0.5">Bukti Pendukung:</span>
                       <span className="text-[11px] text-muted-foreground italic">{ind.evidence}</span>
                     </div>
-                    <div className="w-[220px] flex items-center gap-1 justify-center">
-                      {RISK_SCALE_LIKERT.map(scale => (
-                        <button
-                          key={scale.value}
-                          onClick={() => onAnswer(key, scale.value)}
-                          className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${
-                            val === scale.value
-                              ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
-                                : scale.value === 3 ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
-                                : "bg-red-500 text-white shadow-lg shadow-red-500/30"
-                              : "bg-muted hover:bg-muted/80 text-muted-foreground"
-                          }`}
-                          title={scale.label}
-                        >
-                          {scale.value}
-                        </button>
-                      ))}
-                      {val && <RiskBadge value={val} />}
+
+                    {/* Risk Rating */}
+                    <div className="w-full md:w-[220px] flex flex-col md:flex-row items-center gap-2 md:gap-1 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Tingkat Risiko (1-5)</span>
+                      <div className="flex items-center justify-center gap-1 w-full md:w-auto">
+                        {RISK_SCALE_LIKERT.map(scale => (
+                          <button
+                            key={scale.value}
+                            onClick={() => onAnswer(key, scale.value)}
+                            className={`flex-1 md:flex-none md:w-9 h-10 md:h-9 rounded-lg text-sm md:text-xs font-bold transition-all ${
+                              val === scale.value
+                                ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
+                                  : scale.value === 3 ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
+                                  : "bg-red-500 text-white shadow-lg shadow-red-500/30"
+                                : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                            }`}
+                            title={scale.label}
+                          >
+                            {scale.value}
+                          </button>
+                        ))}
+                      </div>
+                      <div className="h-5 md:hidden">
+                        {val && <RiskBadge value={val} />}
+                      </div>
+                      <div className="hidden md:block">
+                        {val && <RiskBadge value={val} />}
+                      </div>
                     </div>
                   </div>
                 );
@@ -133,6 +149,7 @@ export default function KuesionerRisikoPage() {
   const [notes, setNotes] = useState<AuditorNotes>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Auditor background
   const [auditorBg, setAuditorBg] = useState({
@@ -153,12 +170,42 @@ export default function KuesionerRisikoPage() {
   const answeredQuestions = cp.subCriteria.reduce((acc, sub) =>
     acc + sub.indicators.filter(ind => answers[`${sub.code}_${ind.no}`]).length, 0);
 
-  const handleSubmit = async () => {
+  const handlePreSubmit = () => {
+    setShowConfirm(true);
+  };
+
+  const confirmSubmit = async () => {
+    setShowConfirm(false);
     setSubmitting(true);
-    // TODO: API call
-    await new Promise(r => setTimeout(r, 1500));
+    try {
+      await fetch("/api/dss/questionnaire-responses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          questionnaireType: "risiko",
+          cpId: cp.cpId,
+          respondentName: auditorBg.nama || "Anonim",
+          respondentRole: auditorBg.posisi || null,
+          respondentOrg: auditorBg.namaInstansi || null,
+          respondentEmail: null,
+          respondentInfo: auditorBg,
+          answers,
+          notes,
+          files: [],
+        }),
+      });
+    } catch (e) { console.error(e); }
     setSubmitted(true);
     setSubmitting(false);
+
+    // Auto next CP
+    if (selectedCPIndex < ALL_CP_QUESTIONNAIRES.length - 1) {
+      setTimeout(() => {
+        setSelectedCPIndex(selectedCPIndex + 1);
+        setSubmitted(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1200);
+    }
   };
 
   return (
@@ -308,7 +355,7 @@ export default function KuesionerRisikoPage() {
             </motion.div>
           )}
           <button
-            onClick={handleSubmit}
+            onClick={handlePreSubmit}
             disabled={submitting}
             className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold hover:from-cyan-600 hover:to-emerald-600 transition-all shadow-lg shadow-cyan-500/20 disabled:opacity-50"
           >
@@ -321,6 +368,45 @@ export default function KuesionerRisikoPage() {
           </button>
         </div>
       </main>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {showConfirm && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-card w-full max-w-md rounded-2xl shadow-xl overflow-hidden border"
+            >
+              <div className="p-6 text-center space-y-4">
+                <div className="w-16 h-16 bg-cyan-500/10 text-cyan-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <ClipboardCheck className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold">Simpan & Lanjutkan?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Apakah Anda yakin semua nilai tingkat risiko untuk <strong className="text-foreground">{cp.cpId}</strong> sudah sesuai?
+                </p>
+                <p className="text-xs text-amber-500 font-medium">Setelah disimpan, Anda akan otomatis diarahkan ke CP berikutnya.</p>
+              </div>
+              <div className="flex border-t bg-muted/30">
+                <button 
+                  onClick={() => setShowConfirm(false)}
+                  className="flex-1 py-4 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors border-r"
+                >
+                  Batal
+                </button>
+                <button 
+                  onClick={confirmSubmit}
+                  className="flex-1 py-4 text-sm font-bold text-cyan-500 hover:bg-cyan-500/10 transition-colors"
+                >
+                  Ya, Simpan
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

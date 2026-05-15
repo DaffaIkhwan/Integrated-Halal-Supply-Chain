@@ -274,6 +274,7 @@ export default function InputPage() {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ totalRiskScore: number; riskLevel: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -344,11 +345,16 @@ export default function InputPage() {
     setResult(null);
   }, []);
 
-  const handleSubmit = async () => {
+  const handlePreSubmit = () => {
     if (!selectedBatchId) {
       setError("Pilih batch terlebih dahulu.");
       return;
     }
+    setShowConfirm(true);
+  };
+
+  const confirmSubmit = async () => {
+    setShowConfirm(false);
     setSubmitting(true);
     setError(null);
     setResult(null);
@@ -375,6 +381,7 @@ export default function InputPage() {
       setError(String(e));
     } finally {
       setSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -503,7 +510,7 @@ export default function InputPage() {
             <RotateCcw className="h-4 w-4" /> Reset Semua
           </button>
           <button
-            onClick={handleSubmit}
+            onClick={handlePreSubmit}
             disabled={submitting || !selectedBatchId}
             className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm font-bold"
           >
@@ -516,6 +523,45 @@ export default function InputPage() {
           </button>
         </div>
       </main>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {showConfirm && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-card w-full max-w-md rounded-2xl shadow-xl overflow-hidden border"
+            >
+              <div className="p-6 text-center space-y-4">
+                <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Save className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold">Simpan & Hitung Risk Score?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Apakah Anda yakin semua input kondisi aktual untuk batch ini sudah benar? 
+                  Sistem akan mengkalkulasi <strong>Risk Score</strong> berdasarkan input ini.
+                </p>
+              </div>
+              <div className="flex border-t bg-muted/30">
+                <button 
+                  onClick={() => setShowConfirm(false)}
+                  className="flex-1 py-4 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors border-r"
+                >
+                  Batal
+                </button>
+                <button 
+                  onClick={confirmSubmit}
+                  className="flex-1 py-4 text-sm font-bold text-primary hover:bg-primary/10 transition-colors"
+                >
+                  Ya, Simpan
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

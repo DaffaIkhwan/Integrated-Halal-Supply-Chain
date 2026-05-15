@@ -63,6 +63,7 @@ export default function WeightingPage() {
   const [comparisons, setComparisons] = useState<Record<string, number>>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Auto select first allowed CP if selectedCp is not in allowedCPs
   useEffect(() => {
@@ -112,7 +113,12 @@ export default function WeightingPage() {
     setSuccess(false);
   };
 
-  const handleSubmit = async () => {
+  const handlePreSubmit = () => {
+    setShowConfirm(true);
+  };
+
+  const confirmSubmit = async () => {
+    setShowConfirm(false);
     setSubmitting(true);
     setSuccess(false);
     
@@ -121,6 +127,7 @@ export default function WeightingPage() {
     
     setSubmitting(false);
     setSuccess(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Check progress
@@ -222,8 +229,8 @@ export default function WeightingPage() {
                   className="rounded-2xl border bg-card p-6 shadow-sm space-y-6"
                 >
                   {/* Pair labels */}
-                  <div className="flex justify-between items-end gap-4 relative">
-                    <div className={`flex-1 ${isLeft ? "opacity-100" : "opacity-70"}`}>
+                  <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-4 relative text-center md:text-left">
+                    <div className={`flex-1 w-full md:w-auto ${isLeft ? "opacity-100" : "opacity-70"}`}>
                       <span className="text-xs font-mono font-bold text-cyan-500 block mb-1">
                         {pair.left.criteriaCode}
                       </span>
@@ -238,7 +245,7 @@ export default function WeightingPage() {
                       </span>
                     </div>
 
-                    <div className={`flex-1 text-right ${isRight ? "opacity-100" : "opacity-70"}`}>
+                    <div className={`flex-1 w-full md:w-auto text-center md:text-right ${isRight ? "opacity-100" : "opacity-70"}`}>
                       <span className="text-xs font-mono font-bold text-emerald-500 block mb-1">
                         {pair.right.criteriaCode}
                       </span>
@@ -333,7 +340,7 @@ export default function WeightingPage() {
             <RotateCcw className="h-4 w-4" /> Reset Semua
           </button>
           <button
-            onClick={handleSubmit}
+            onClick={handlePreSubmit}
             disabled={submitting}
             className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm font-bold"
           >
@@ -346,6 +353,44 @@ export default function WeightingPage() {
           </button>
         </div>
       </main>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {showConfirm && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-card w-full max-w-md rounded-2xl shadow-xl overflow-hidden border"
+            >
+              <div className="p-6 text-center space-y-4">
+                <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Scale className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold">Simpan Bobot Saaty?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Apakah Anda yakin semua nilai perbandingan untuk <strong className="text-foreground">{selectedCp}</strong> sudah sesuai?
+                </p>
+              </div>
+              <div className="flex border-t bg-muted/30">
+                <button 
+                  onClick={() => setShowConfirm(false)}
+                  className="flex-1 py-4 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors border-r"
+                >
+                  Batal
+                </button>
+                <button 
+                  onClick={confirmSubmit}
+                  className="flex-1 py-4 text-sm font-bold text-primary hover:bg-primary/10 transition-colors"
+                >
+                  Ya, Simpan
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

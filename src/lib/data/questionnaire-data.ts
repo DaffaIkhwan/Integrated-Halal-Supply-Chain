@@ -15,7 +15,7 @@ export interface SubCriteria {
 export interface BackgroundField {
   key: string;
   label: string;
-  type: 'text' | 'select' | 'date';
+  type: 'text' | 'select' | 'date' | 'time' | 'number';
   options?: string[];
 }
 
