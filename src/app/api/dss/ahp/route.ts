@@ -7,6 +7,8 @@ import {
   calculateConsistencyRatio 
 } from "@/lib/dss/fuzzyAHP";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get("type") || "LEVEL1_CP"; // default to Level 1
