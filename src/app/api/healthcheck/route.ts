@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { healthCheck } from '@/lib/db/pg';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   console.log('in pg route');
   try {
