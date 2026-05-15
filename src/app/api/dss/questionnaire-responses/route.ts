@@ -1,9 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db/client';
 
 export const dynamic = 'force-dynamic';
-
-const prisma = new PrismaClient();
 
 // GET — list questionnaire responses with filters
 export async function GET(req: NextRequest) {

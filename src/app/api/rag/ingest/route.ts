@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { oaiVectorDB } from "@/lib/db/vector";
 import { auth } from "@/lib/auth";
 
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {

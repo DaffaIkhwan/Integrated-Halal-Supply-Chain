@@ -11,7 +11,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(['development', 'test', 'preview', 'production'])
       .default('development'),
-    POSTGRES_URL: z.string().url(),
+    POSTGRES_URL: z.string().url().optional(),
     // DATABASE_URL: z.string().url(),
     // OPENAI_API_KEY: z.string().min(1),
   },

@@ -1,10 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db/client';
 import { calculateBatchRiskScore } from '@/lib/dss/fuzzyAHP';
 
 export const dynamic = 'force-dynamic';
-
-const prisma = new PrismaClient();
 
 // GET — load dropdown options (farms, cattle, RPH) + CP field definitions
 export async function GET() {

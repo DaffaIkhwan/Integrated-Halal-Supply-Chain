@@ -1,6 +1,8 @@
 import { searchSimilarChunks } from '@/lib/actions/search';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
   try {
     const { query } = await req.json();
