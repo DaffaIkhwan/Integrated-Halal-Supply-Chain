@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { ALL_CP_QUESTIONNAIRES, RISK_SCALE_LIKERT } from "@/lib/data/questionnaire-index";
@@ -99,8 +99,8 @@ function SubCriteriaForm({
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-2">
               {/* Header */}
-              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_60px_160px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
-                <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Verifikasi Supervisor</span>
+              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_60px_100px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+                <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Kesesuaian</span>
               </div>
 
               {sub.indicators.map(ind => {
@@ -108,7 +108,7 @@ function SubCriteriaForm({
                 const val = risks[key];
                 const hasEvidence = evidence[key];
                 return (
-                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_60px_160px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_60px_100px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
                     {/* Number & Statement */}
                     <div className="flex gap-2 w-full md:contents items-start">
                       <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
@@ -151,12 +151,12 @@ function SubCriteriaForm({
                     </div>
 
                     {/* Verifikasi Supervisor */}
-                    <div className="w-full flex flex-col md:block items-center gap-2 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
-                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Verifikasi Supervisor</span>
-                      <div className="flex flex-col gap-1.5 w-full justify-center">
+                    <div className="w-full flex flex-col md:items-center gap-1 mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0 pl-8 md:pl-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">Kesesuaian</span>
+                      <div className="flex gap-1.5">
                         <button
                           onClick={() => onRisk(key, "sesuai")}
-                          className={`w-full px-3 py-1.5 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                          className={`px-2.5 py-1.5 md:px-2 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
                             val === "sesuai" ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20" : "bg-muted hover:bg-muted/80 text-muted-foreground"
                           }`}
                         >
@@ -164,11 +164,11 @@ function SubCriteriaForm({
                         </button>
                         <button
                           onClick={() => onRisk(key, "tidak_sesuai")}
-                          className={`w-full px-3 py-1.5 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                          className={`px-2.5 py-1.5 md:px-2 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
                             val === "tidak_sesuai" ? "bg-red-500 text-white shadow-md shadow-red-500/20" : "bg-muted hover:bg-muted/80 text-muted-foreground"
                           }`}
                         >
-                          Tidak Sesuai
+                          Tidak
                         </button>
                       </div>
                     </div>
@@ -214,6 +214,22 @@ export default function KuesionerAktualPage() {
   const cp = availableCPs[selectedCPIndex] || availableCPs[0];
   const totalQ = cp.subCriteria.reduce((a, s) => a + s.indicators.length, 0);
   const answeredQ = cp.subCriteria.reduce((a, s) => a + s.indicators.filter(i => risks[`${s.code}_${i.no}`]).length, 0);
+
+  const handleRisk = useCallback((key: string, value: string) => {
+    setRisks(prev => ({ ...prev, [key]: value }));
+  }, []);
+
+  const handleEvidence = useCallback((key: string, value: boolean) => {
+    setEvidence(prev => ({ ...prev, [key]: value }));
+  }, []);
+
+  const handleUpload = useCallback((k: string, f: File) => {
+    setFiles(p => ({ ...p, [k]: f }));
+  }, []);
+
+  const handleRemoveFile = useCallback((k: string) => {
+    setFiles(p => ({ ...p, [k]: null }));
+  }, []);
 
   // Calculate compliance stats
   const answeredValues = Object.values(risks) as string[];
@@ -365,10 +381,10 @@ export default function KuesionerAktualPage() {
           <div className="space-y-3">
             {cp.subCriteria.map(sub => (
               <SubCriteriaForm key={sub.code} sub={sub} risks={risks} evidence={evidence} files={files}
-                onRisk={(k, v) => setRisks(p => ({ ...p, [k]: v }))}
-                onEvidence={(k, v) => setEvidence(p => ({ ...p, [k]: v }))}
-                onUpload={(k, f) => setFiles(p => ({ ...p, [k]: f }))}
-                onRemoveFile={k => setFiles(p => ({ ...p, [k]: null }))}
+                onRisk={handleRisk}
+                onEvidence={handleEvidence}
+                onUpload={handleUpload}
+                onRemoveFile={handleRemoveFile}
               />
             ))}
           </div>

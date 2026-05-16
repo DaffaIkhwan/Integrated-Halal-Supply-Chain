@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import {
@@ -22,7 +22,7 @@ interface QResponse {
   respondentInfo: Record<string, string>;
   answers: Record<string, unknown>;
   notes: Record<string, string>;
-  files: Array<{ key: string; filename: string; url: string }>;
+  files: Array<{ key: string; filename: string; url: string; thumbnailUrl?: string }>;
   status: string;
   createdAt: string;
 }
@@ -217,9 +217,13 @@ export default function RekapPembobotanPage() {
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
+  const searchTimer = useRef<ReturnType<typeof setTimeout>>();
   const handleSearch = (val: string) => {
-    setSearchTerm(val);
-    setPage(1);
+    clearTimeout(searchTimer.current);
+    searchTimer.current = setTimeout(() => {
+      setSearchTerm(val);
+      setPage(1);
+    }, 300);
   };
 
   return (

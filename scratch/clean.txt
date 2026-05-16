@@ -1,0 +1,2563 @@
+  1   
+KUESIONER PENGUKURAN  TINGKAT RESIKO KEPATUHAN HALAL   INTEGRATED  
+SUPPLY CHAIN PADA DAGING SAPI   
+  
+  
+LATAR BELAKANG RESPONDEN   DAN PERUSAHAAN   
+  
+Petunjuk : Silahkan isi kolom kosong   
+  
+A.   Latar Belakang  Responden   
+Tanggal   Audit   :   ____________________________________________________________________   
+Nama   :   ____________________________________________________________________   
+Jenis Kelamin   :   ____________________________________________________________________   
+Posisi   :   ____________________________________________________________________   
+Nama Instansi   :   ____________________________________________________________________   
+No Sertifikat Auditor   ( Jika Ada )     :   ____________________________________________________________________   
+  
+K uesioner  ini   digunakan untuk  menilai   tingkat  resiko kepatuhan halal integrated supply chain pada daging sapi .  Adapun skala linkert 1 - 
+5 digunakan untuk  mencerminkan keadaan   atau ketersediaan   terkini   tingkat kepatuhan halal   di   setiap titik kritis  yang didefinisikan pada  
+tabel dibawah ini.   
+  
+Tabel  1 .    Skala tingkat   resiko kepatuhan halal   
+Intensitas Kepentingan   
+(Skala)   Indonesia Version   English Version   Interpretasi   
+1   Sangat Rendah   Very Low Risk   Risiko pelanggaran halal hampir tidak ada   
+2   Rendah   Low Risk   Risiko kecil dan masih mudah dikendalikan   
+3   Sedang   Moderate Risk   Risiko mulai memerlukan pengawasan   
+4   Tinggi   High Risk   Risiko signifikan dan perlu tindakan segera   
+5   Sangat  Tinggi   Critical Risk   Risiko kritis yang dapat menyebabkan ketidakpatuhan halal serius   
+  
+Petunjuk:     
+Berilah tanda  melingkar   (   Ö   ), pada kolom Tingkat Persetujuan berdasarkan penilaian tingkat keberadaan dari masing - masing indikator  
+di UMKM anda.   
+  
+
+
+  2   
+Tabel  2 .   Aspek Pengukuran   Tingkat Kepatuhan Halal      
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+CP1. Kandang Sapi  -   Farm   
+CP1.1.   Asal - U sul  S api & Traceability  -   
+Cattle Origins & Traceability   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Identitas asal sapi terdokumentasi    Surat asal ternak    ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Riwayat perpindahan sapi  tersedia   Logbook distribusi    ☐   Ya  ☐   Tidak     Seluruh  
+asal ternak  
+dapat  
+ditelusuri  
+digital/man 
+ual  
+lengkap,  
+supplier  
+terverifikas 
+i halal   
+Dokumen  
+lengkap  
+namun  
+update  
+histori  
+belum real - 
+time   
+Sebagian  
+histori  
+perpinda 
+han  
+ternak  
+tidak  
+terdokum 
+entasi   
+Tracea 
+bility  
+lemah  
+dan  
+supplie 
+r belum  
+tervalid 
+asi   
+Asal  
+ternak  
+tidak  
+jelas atau  
+tidak  
+dapat  
+ditelusuri   
+3   Supplier ternak terverifikasi   Vendor approval   ☐   Ya  ☐   Tidak     
+4   Sistem traceability berjalan   Database ternak   ☐   Ya  ☐   Tidak     
+5   Histori kepemilikan tersedia   Dokumen pembelian   ☐   Ya  ☐   Tidak     
+CP1.2.   Status kesehatan sapi  -   Cattle  
+health status   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Pemeriksaan kesehatan rutin   Laporan dokter  
+hewan   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Status bebas penyakit zoonosis   Sertifikat kesehatan   ☐   Ya  ☐   Tidak     Pemeriksa 
+an  
+veteriner  
+rutin,  
+bebas  
+zoonosis,  
+vaksinasi  
+lengkap   
+Pemeriksa 
+an berjalan  
+namun  
+terdapat  
+keterlamba 
+tan  
+dokumenta 
+si   
+Sebagian  
+rekam  
+kesehata 
+n tidak  
+lengkap   
+Monito 
+ring  
+kesehat 
+an  
+tidak  
+konsist 
+en   
+Tidak  
+ada  
+pengawa 
+san  
+kesehata 
+n ternak   
+3   Rekam vaksinasi tersedia   Buku  vaksinasi   ☐   Ya  ☐   Tidak     
+4   Penggunaan antibiotik  
+terdokumentasi   Medical record   ☐   Ya  ☐   Tidak     
+5   SOP isolasi sapi sakit tersedia   SOP biosecurity   ☐   Ya  ☐   Tidak     
+CP1.3.   Kepatuhan pakan  -   Feed  
+compliance     Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Pakan  bersertifikat halal   Sertifikat halal pakan   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Formula pakan terdokumentasi   Dokumen formulasi   ☐   Ya  ☐   Tidak     Seluruh  
+bahan  
+pakan  
+bersertifika 
+t halal dan  
+terdokume 
+ntasi   
+Ada bahan  
+belum  
+tersertifika 
+si namun  
+memiliki  
+declaration   
+Formula  
+pakan  
+tidak  
+lengkap   
+Supplie 
+r pakan  
+tidak  
+tervalid 
+asi   
+Menggun 
+akan  
+bahan  
+haram/sy 
+ubhat   
+3   Penyimpanan pakan terpisah   SOP gudang   ☐   Ya  ☐   Tidak     
+4   Supplier pakan terverifikasi   Vendor document   ☐   Ya  ☐   Tidak     
+5   Feed additive halal compliant   Sertifikat additive   ☐   Ya  ☐   Tidak     
+
+
+  3   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+CP1.4.   Dokumentasi pemeliharaan  -   
+Maintenance documentation   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   SOP pemeliharaan tersedia   SOP farm   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Jadwal maintenance tersedia   Checklist  
+maintenance   ☐   Ya  ☐   Tidak     SOP,  
+cleaning  
+log, audit  
+internal  
+lengkap  
+dan  
+berjalan   
+Dokumen  
+tersedia  
+namun  
+belum  
+konsisten  
+update   
+Sebagian  
+checklist  
+maintena 
+nce  
+hilang   
+Audit  
+halal  
+tidak  
+rutin   
+Tidak  
+ada  
+dokumen 
+tasi  
+pemeliha 
+raan   
+3   Cleaning log terdokumentasi   Cleaning logbook   ☐   Ya  ☐   Tidak     
+4   Pelatihan halal pekerja tersedia   Sertifikat training   ☐   Ya  ☐   Tidak     
+5   Audit internal dilakukan rutin   Audit report   ☐   Ya  ☐   Tidak     
+CP1.5.   Kebersihan kandang & Sanitasi  -   
+Coop Cleanliness & Sanitation   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Frekuensi pembersihan kandang   Jadwal cleaning   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sistem pembuangan limbah baik   SOP limbah   ☐   Ya  ☐   Tidak     
+Sanitasi  
+kandang  
+optimal  
+dan  
+terdokume 
+ntasi   
+Sanitasi  
+berjalan  
+dengan  
+minor  
+issue   
+Cleaning  
+tidak  
+konsisten   
+Area  
+kandan 
+g kotor  
+dan  
+berpote 
+nsi  
+kontam 
+inasi   
+Kondisi  
+kandang  
+tidak  
+higienis  
+dan  
+melangg 
+ar SOP  
+halal   
+3   Sanitasi alat dilakukan rutin   Checklist sanitasi   ☐   Ya  ☐   Tidak     
+4   Desinfektan halal tersedia   Sertifikat produk   ☐   Ya  ☐   Tidak     
+5   Kualitas air ternak teruji   Hasil uji laboratorium   ☐   Ya  ☐   Tidak     
+CP2. Pakan & Kesehatan Hewan  -   Animal Feed & Health   
+CP2.1.   Halal status bahan pakan  -   Halal  
+status of feed ingredients   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Seluruh bahan pakan memiliki  
+status halal yang jelas   
+Sertifikat halal bahan  
+pakan   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Komposisi bahan pakan  
+terdokumentasi   
+Dokumen formulasi  
+pakan   ☐   Ya  ☐   Tidak     Seluruh  
+bahan  
+pakan  
+memiliki  
+sertifikat  
+halal valid,  
+additive  
+tervalidasi  
+halal,  
+formula  
+terdokume 
+Sebagian  
+bahan  
+mengguna 
+kan  
+supplier  
+declaration 
+, namun  
+masih  
+dapat  
+diverifikasi  
+Sebagian  
+formula  
+atau  
+additive  
+belum  
+memiliki  
+validasi  
+halal  
+lengkap   
+Banyak  
+bahan  
+belum  
+tervalid 
+asi,  
+supplie 
+r tidak  
+konsist 
+en, dan  
+dokum 
+Menggun 
+akan  
+bahan  
+hewani  
+non - 
+halal/syu 
+bhat atau  
+additive  
+tanpa  
+status  
+halal   
+3   Feed additive terverifikasi halal   Sertifikat halal  
+additive   ☐   Ya  ☐   Tidak     
+4   Tidak  menggunakan bahan hewani  
+non - halal   
+Supplier ingredient  
+declaration   ☐   Ya  ☐   Tidak     
+5   Penggunaan bahan GMO/aditif  
+sesuai regulasi   
+Material Safety Data  
+Sheet (MSDS)   ☐   Ya  ☐   Tidak     
+
+
+  4   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+ntasi  
+lengkap,  
+bebas  
+bahan non - 
+halal   
+dan sesuai  
+SOP   
+entasi  
+lemah   
+CP2.2.   
+Kontrol obat/vaksin hewan  -   
+Control of veterinary  
+drugs/vaccines   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Obat dan vaksin terdaftar resmi   Izin edar obat/vaksin   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Penggunaan antibiotik  
+terdokumentasi   
+Medical treatment  
+record   ☐   Ya  ☐   Tidak     Seluruh  
+obat/vaksi 
+n legal,  
+terdokume 
+ntasi, halal  
+compliant,  
+withdrawal  
+period  
+dipatuhi   
+Minor  
+issue  
+administrat 
+if pada  
+pencatatan  
+atau update  
+dokumen   
+Sebagian  
+penggun 
+aan  
+antibiotik  
+atau  
+vaksin  
+tidak  
+terdokum 
+entasi  
+lengkap e 
+n   
+Penggu 
+naan  
+obat  
+tidak  
+terkontr 
+ol dan  
+monitor 
+ing  
+withdra 
+wal  
+lemah   
+Menggun 
+akan  
+obat/vaks 
+in ilegal  
+atau  
+mengand 
+ung  
+unsur  
+non - halal   
+3   Status halal obat/vaksin tersedia   Sertifikat halal  
+obat/vaksin   ☐   Ya  ☐   Tidak     
+4   Jadwal pemberian vaksin  
+terdokumentasi   Logbook vaksinasi   ☐   Ya  ☐   Tidak     
+5   Masa withdrawal dipatuhi   SOP withdrawal  
+period   ☐   Ya  ☐   Tidak     
+CP2.3.   Pengawasan veteriner  -   
+Veterinary supervision   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Pemeriksaan kesehatan rutin  
+dilakukan   
+Veterinary inspection  
+report   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Dokter hewan terlibat aktif   Surat penugasan  
+dokter hewan   ☐   Ya  ☐   Tidak     Pemeriksa 
+an  
+veteriner  
+rutin  
+berjalan,  
+SOP  
+biosecurity  
+diterapkan,  
+audit  
+kesehatan  
+aktif   
+Pemeriksa 
+an berjalan  
+namun  
+dokumenta 
+si belum  
+sepenuhny 
+a digital   
+Audit  
+kesehata 
+n atau  
+monitori 
+ng tidak  
+konsisten   
+Pengaw 
+asan  
+veterin 
+er  
+minim  
+dan  
+SOP  
+biosecu 
+rity  
+tidak  
+optimal   
+Tidak  
+ada  
+pengawa 
+san  
+veteriner  
+dan tidak  
+ada SOP  
+biosecuri 
+ty   
+3   Tersedia SOP biosecurity   SOP biosecurity   ☐   Ya  ☐   Tidak     
+4   Penanganan hewan sakit sesuai  
+prosedur   
+Incident handling  
+report   ☐   Ya  ☐   Tidak     
+5   Audit kesehatan ternak dilakukan   Audit report  
+kesehatan hewan   ☐   Ya  ☐   Tidak     
+CP2.4.   Supplier reliability pakan  -   Feed  
+supplier reliability   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+
+
+  5   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+1   Supplier memiliki legalitas usaha   Legal  business permit   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Supplier memiliki sertifikasi halal   Sertifikat halal  
+supplier   ☐   Ya  ☐   Tidak     Supplier  
+legal,  
+tersertifika 
+si halal,  
+audit  
+berkala,  
+SLA aktif  
+dan  
+terdokume 
+ntasi   
+Minor  
+issue  
+administrat 
+if supplier  
+namun  
+masih  
+compliant   
+Sebagian  
+supplier  
+belum  
+diaudit  
+rutin   
+Supplie 
+r tidak  
+tervalid 
+asi  
+dengan  
+baik  
+dan  
+banyak  
+dokum 
+en  
+expired   
+Supplier  
+tidak  
+memiliki  
+legalitas  
+atau  
+status  
+halal  
+tidak  
+jelas   
+3   Supplier memiliki rekam jejak baik   Supplier evaluation  
+report   ☐   Ya  ☐   Tidak     
+4   Tersedia kontrak dan SLA supplier   Contract agreement   ☐   Ya  ☐   Tidak     
+5   Audit supplier  dilakukan berkala   Supplier audit  
+checklist   ☐   Ya  ☐   Tidak     
+CP2.5.   Penyimpanan pakan (segregasi)  -   
+Feed storage (segregation)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Penyimpanan pakan halal terpisah   SOP segregasi  
+gudang   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Gudang bersih  dan higienis   Cleaning checklist  
+gudang   ☐   Ya  ☐   Tidak     Pakan  
+halal  
+disimpan  
+terpisah,  
+FIFO/FEF 
+O berjalan,  
+gudang  
+higienis  
+dan  
+termonitor   
+Minor  
+issue  
+labeling  
+atau  
+monitoring  
+suhu   
+Segregas 
+i belum  
+optimal  
+dan  
+monitori 
+ng  
+gudang  
+tidak  
+konsisten   
+Risiko  
+pencam 
+puran  
+tinggi  
+dan  
+sanitasi  
+gudang  
+lemah   
+Pakan  
+halal  
+bercamp 
+ur  
+dengan  
+bahan  
+non - halal  
+atau  
+gudang  
+tidak  
+higienis   
+3   Sistem FIFO/FEFO diterapkan   Inventory  
+management record   ☐   Ya  ☐   Tidak     
+4   Identifikasi label pakan jelas   Label dan barcode  
+stock   ☐   Ya  ☐   Tidak     
+5   Kontrol kelembaban & suhu  
+gudang   
+Monitoring suhu dan  
+kelembaban   ☐   Ya  ☐   Tidak     
+CP3.  Transportasi Hewan ke RPH   -   Transportation of Animals to the Slaughterhouse   
+CP3 .1.   Kelayakan transportasi hewan  -   
+Animal welfare in transport   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Kondisi kendaraan sesuai standar  
+kesejahteraan hewan   
+SOP animal welfare  
+transport   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Kepadatan hewan dalam kendaraan  
+sesuai kapasitas   
+Checklist kapasitas  
+kendaraan   ☐   Ya  ☐   Tidak     K endaraan  
+memenuhi  
+welfare  
+standard  
+dan  
+Minor  
+issue pada  
+ventilasi  
+atau  
+kapasitas   
+Monitori 
+ng  
+transport  
+tidak  
+konsisten   
+Overcr 
+owding  
+atau  
+handlin 
+g kasar   
+Hewan  
+mengala 
+mi stress  
+berat/ced 
+era  
+3   Tersedia ventilasi dan sirkulasi  
+udara baik   
+Inspection checklist  
+kendaraan   ☐   Ya  ☐   Tidak     
+4   Waktu perjalanan  sesuai standar   Log waktu perjalanan   ☐   Ya  ☐   Tidak     
+
+
+  6   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+5   Penanganan loading/unloading  
+sesuai SOP   SOP handling ternak   ☐   Ya  ☐   Tidak     terdokume 
+ntasi   
+signifika 
+n   
+CP3 .2.   Kebersihan kendaraan  -   Vehicle  
+cleanliness   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Kendaraan dibersihkan sebelum  
+digunakan   
+Cleaning checklist  
+kendaraan   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Proses sanitasi kendaraan  
+terdokumentasi   Sanitation logbook   ☐   Ya  ☐   Tidak     
+Sanitasi  
+kendaraan  
+sesuai SOP  
+halal  
+logistics   
+Cleaning  
+dilakukan  
+namun  
+logbook  
+kurang  
+lengkap   
+Sanitasi  
+tidak  
+konsisten   
+Potensi  
+kontam 
+inasi  
+tinggi   
+Kendaraa 
+n  
+terkonta 
+minasi  
+bahan  
+non - halal   
+3   Kendaraan bebas dari kontaminasi  
+bahan non - halal   Inspection report   ☐   Ya  ☐   Tidak     
+4   Desinfektan yang digunakan sesuai  
+standar   
+Sertifikat bahan  
+sanitasi   ☐   Ya  ☐   Tidak     
+5   Area kendaraan kering dan higienis   Dokumentasi foto  
+kendaraan   ☐   Ya  ☐   Tidak     
+CP3 .3.   
+Ketertelusuran selama  
+transportasi  -   Traceability during  
+transport   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Identitas hewan dapat  ditelusuri  
+selama perjalanan   Ear tag / RFID record   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Data asal dan tujuan hewan tersedia   Delivery order /  
+shipment document   ☐   Ya  ☐   Tidak     
+GPS,  
+RFID, dan  
+shipment  
+tracking  
+berjalan   
+Data  
+tersedia  
+namun  
+belum real - 
+time   
+Sebagian  
+histori  
+hilang   
+Sistem  
+traceabi 
+lity  
+manual  
+dan  
+lemah   
+Perjalana 
+n tidak  
+dapat  
+ditelusuri   
+3   Monitoring lokasi transportasi  
+berjalan   GPS tracking log   ☐   Ya  ☐   Tidak     
+4   Histori perjalanan terdokumentasi   Transportation  
+history report   ☐   Ya  ☐   Tidak     
+5   Sistem digital traceability tersedia   Database traceability  
+system   ☐   Ya  ☐   Tidak     
+CP3 .4.   Dokumentasi perjalanan  -   Travel  
+documentation   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Surat jalan hewan  tersedia   Surat jalan ternak   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sertifikat kesehatan hewan lengkap   Veterinary health  
+certificate   ☐   Ya  ☐   Tidak     Seluruh  
+surat jalan,  
+sertifikat  
+kesehatan,  
+jadwal  
+perjalanan,  
+Minor  
+issue  
+administrat 
+if pada  
+dokumen   
+Sebagian  
+dokumen  
+perjalana 
+n belum  
+lengkap   
+Banyak  
+dokum 
+en  
+tidak  
+tervalid 
+asi atau  
+Tidak  
+tersedia  
+dokumen  
+perjalana 
+n atau  
+3   Dokumen asal ternak tersedia   Animal ownership  
+document   ☐   Ya  ☐   Tidak     
+4   Jadwal perjalanan terdokumentasi   Trip schedule  
+document   ☐   Ya  ☐   Tidak     
+
+
+  7   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+5   Catatan  insiden perjalanan tersedia   Incident report  
+transportasi   ☐   Ya  ☐   Tidak     
+dan  
+incident  
+report  
+lengkap   
+tidak  
+update   
+perjalana 
+n ilegal   
+CP3 .5.   Kompetensi petugas handler  -   
+Handler competencies   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Petugas memahami SOP halal  
+handling   
+Sertifikat pelatihan  
+halal   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Petugas memiliki kompetensi  
+animal welfare   
+Training certificate  
+animal welfare   ☐   Ya  ☐   Tidak     Seluruh  
+handler  
+memahami  
+SOP halal  
+handling,  
+animal  
+welfare,  
+dan  
+emergency  
+procedure   
+Minor  
+issue  
+training  
+refreshmen 
+t   
+Evaluasi  
+kompete 
+nsi tidak  
+konsisten   
+Petugas  
+kurang  
+memah 
+ami  
+SOP  
+halal  
+logistic 
+s   
+Tidak  
+ada  
+pelatihan  
+halal  
+handling  
+dan  
+terjadi  
+kesalaha 
+n  
+penangan 
+an serius   
+3   Petugas memahami prosedur  
+darurat   
+Emergency SOP  
+training record   ☐   Ya  ☐   Tidak     
+4   Evaluasi kinerja petugas dilakukan   Staff performance  
+evaluation   ☐   Ya  ☐   Tidak     
+5   Jumlah petugas  sesuai kebutuhan  
+transportasi   
+Staffing assignment  
+document   ☐   Ya  ☐   Tidak     
+CP4.  Rumah Potong Hewan (RPH)  -   Slaughterhouse   
+CP 4 .1.   
+Validitas Sertifikat Halal RPH  
+(Validity of the Slaughterhouse  
+Halal Certificate)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Sertifikat halal masih berlaku   Sertifikat halal RPH   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Ruang lingkup sertifikat sesuai  
+aktivitas   
+Scope certification  
+document   ☐   Ya  ☐   Tidak     Sertifikat  
+halal aktif  
+dan sesuai  
+scope Sertif 
+ikat halal  
+aktif dan  
+sesuai  
+scope   
+Dokumen  
+lengkap  
+namun  
+mendekati  
+expired   
+Audit  
+surveilla 
+nce  
+terlambat   
+Scope  
+sertifik 
+asi  
+tidak  
+sesuai  
+aktivita 
+s   
+Tidak  
+memiliki  
+sertifikat  
+halal  
+aktif   
+3   Lembaga sertifikasi resmi   Surat registrasi  
+BPJPH/LPPOM   ☐   Ya  ☐   Tidak     
+4   Audit halal berkala dilakukan   Audit  surveillance  
+report   ☐   Ya  ☐   Tidak     
+5   Perubahan fasilitas dilaporkan   Change management  
+report   ☐   Ya  ☐   Tidak     
+CP4 .2.   
+Kompetensi Juru Sembelih Halal  
+(Competence of Halal  
+Slaughterers)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Juru sembelih memiliki  sertifikasi  
+halal   Sertifikat JULEHA   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+
+
+  8   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+2   Pemahaman syariat penyembelihan   Training halal  
+slaughtering   ☐   Ya  ☐   Tidak     Seluruh  
+JULEHA  
+tersertifika 
+si dan  
+kompeten   
+Sebagian  
+training  
+perlu  
+refresh   
+Evaluasi  
+kompete 
+nsi tidak  
+rutin   
+Kompe 
+tensi  
+syariah  
+lemah   
+Penyemb 
+elih tidak  
+tersertifi 
+kasi   
+3   Kompetensi animal welfare   Training animal  
+welfare   ☐   Ya  ☐   Tidak     
+4   Evaluasi kompetensi berkala   Competency  
+assessment report   ☐   Ya  ☐   Tidak     
+5   Jumlah juru  sembelih memadai   Staffing assignment   ☐   Ya  ☐   Tidak     
+CP4 .3.   
+Kesesuaian Proses Sembelih  
+Syariah  (Compliance with Sharia - 
+compliant Slaughtering Processes)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Penyembelihan sesuai syariat Islam   SOP halal  
+slaughtering   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Penyebutan nama Allah saat  
+penyembelihan   Observation checklist   ☐   Ya  ☐   Tidak     
+Seluruh  
+proses  
+sesuai  
+syariah dan  
+SJPH   
+Minor  
+deviation  
+administrat 
+if   
+Stunning  
+belum  
+terdokum 
+entasi  
+optimal   
+Prosed 
+ur  
+syariah  
+tidak  
+konsist 
+en   
+Penyemb 
+elihan  
+tidak  
+sesuai  
+syariat  
+Islam   
+3   Hewan masih hidup saat disembelih   Ante mortem  
+inspection report   ☐   Ya  ☐   Tidak     
+4   Arah dan teknik sembelih sesuai  
+syariah   
+Slaughtering  
+procedure checklist   ☐   Ya  ☐   Tidak     
+5   Proses stunning sesuai regulasi  
+halal   
+Stunning SOP &  
+inspection record   ☐   Ya  ☐   Tidak     
+CP4 .4   Pemeriksaan Ante/Post - Mortem  
+(Ante/Post Mortem Inspections)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Pemeriksaan kesehatan sebelum  
+sembelih   Ante  mortem report   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Pemeriksaan karkas setelah  
+sembelih   Post mortem report   ☐   Ya  ☐   Tidak     
+Pemeriksa 
+an lengkap  
+dan  
+terdokume 
+ntasi   
+Minor  
+delay  
+dokumenta 
+si   
+Sebagian  
+inspeksi  
+tidak  
+lengkap   
+Pengaw 
+asan  
+veterin 
+er  
+lemah   
+Tidak  
+dilakuka 
+n  
+inspeksi  
+kesehata 
+n   
+3   Dokter hewan melakukan inspeksi   Veterinary inspection  
+record   ☐   Ya  ☐   Tidak     
+4   Dokumentasi hasil inspeksi tersedia   Inspection  
+documentation   ☐   Ya  ☐   Tidak     
+5   Penanganan hewan  abnormal sesuai  
+SOP   
+Non - conformance  
+report   ☐   Ya  ☐   Tidak     
+CP4 .5   Sanitasi Alat & Area  (Equipment  
+and Area Sanitation)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Peralatan dibersihkan rutin   Cleaning checklist   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Area produksi higienis   Hygiene inspection  
+report   ☐   Ya  ☐   Tidak     Seluruh  
+area  
+Sanitasi  
+berjalan  
+Sanitasi  
+tidak  
+Area  
+atau  
+Area  
+produksi  
+
+
+  9   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+3   Desinfektan sesuai standar halal   Sertifikat produk  
+sanitasi   ☐   Ya  ☐   Tidak     produksi,  
+alat  
+sembelih,  
+conveyor,  
+lantai,  
+drainase,  
+dan  
+fasilitas  
+sanitasi  
+dibersihka 
+n sesuai  
+SOP halal  
+sanitation  
+serta  
+terdokume 
+ntasi  
+lengkap   
+baik  
+dengan  
+minor  
+issue  
+administrat 
+if pada  
+checklist  
+atau jadwal  
+cleaning   
+konsisten  
+pada  
+beberapa  
+area atau  
+cleaning  
+validatio 
+n belum  
+lengkap   
+alat  
+berpote 
+nsi  
+menyeb 
+abkan  
+kontam 
+inasi  
+biologi 
+s/najis  
+dan  
+monitor 
+ing  
+sanitasi  
+lemah   
+tidak  
+higienis,  
+alat  
+tercemar  
+najis/non 
+- halal,  
+atau  
+tidak  
+dilakuka 
+n sanitasi  
+sesuai  
+SOP   
+4   Jadwal sanitasi terdokumentasi   Sanitation logbook   ☐   Ya  ☐   Tidak     
+5   Sistem pest control berjalan   Pest control report   ☐   Ya  ☐   Tidak     
+CP4 .6   
+Pemisahan Halal & Non - Halal  
+(Separation of Halal and Non - 
+Halal Meat)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Area halal terpisah dari non - halal   Layout segregasi area   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Alat halal dan non - halal dibedakan   Equipment labeling  
+checklist   ☐   Ya  ☐   Tidak     Jalur  
+produksi,  
+area  
+penyimpan 
+an, alat,  
+handling,  
+dan  
+distribusi  
+halal  
+sepenuhny 
+a terpisah  
+dari non - 
+halal   
+Segregasi  
+berjalan  
+dengan  
+minor  
+issue pada  
+labeling  
+atau visual  
+identificati 
+on   
+Area  
+segregasi  
+tersedia  
+namun  
+belum  
+optimal  
+atau  
+belum  
+terdokum 
+entasi  
+lengkap   
+Risiko  
+pencam 
+puran  
+halal/n 
+on - 
+halal  
+tinggi  
+akibat  
+shared  
+equipm 
+ent atau  
+layout  
+tidak  
+sesuai   
+Terjadi  
+cross  
+contamin 
+ation  
+atau  
+pencamp 
+uran  
+langsung  
+produk  
+halal dan  
+non - halal   
+3   Jalur distribusi terpisah   Distribution SOP   ☐   Ya  ☐   Tidak     
+4   Penyimpanan halal terpisah   Warehouse  
+segregation SOP   ☐   Ya  ☐   Tidak     
+5   Identifikasi produk halal jelas   Batch labeling record   ☐   Ya  ☐   Tidak     
+CP4 .7   
+Dokumentasi & Batch  
+Traceability  (Documentation and  
+Batch Traceability)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+
+
+  10   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+1   Batch produk dapat ditelusuri   Batch production  
+record   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Data asal hewan terdokumentasi   Supplier  traceability  
+document   ☐   Ya  ☐   Tidak     Seluruh  
+batch  
+karkas  
+dapat  
+ditelusuri  
+mulai dari  
+asal ternak,  
+penyembel 
+ihan,  
+processing,  
+hingga  
+distribusi  
+secara real - 
+time   
+Sistem  
+traceability  
+berjalan  
+baik  
+namun  
+terdapat  
+minor  
+issue  
+administrat 
+if   
+Sebagian  
+batch  
+belum  
+terintegra 
+si penuh  
+dengan  
+sistem  
+traceabili 
+ty   
+Dokum 
+entasi  
+tidak  
+konsist 
+en dan  
+sistem  
+traceabi 
+lity  
+lemah/ 
+manual   
+Produk  
+tidak  
+dapat  
+ditelusuri  
+dan  
+dokumen 
+tasi  
+produksi  
+tidak  
+tersedia   
+3   Sistem traceability digital tersedia   ERP/traceability  
+system   ☐   Ya  ☐   Tidak     
+4   Histori distribusi tercatat   Distribution tracking  
+record   ☐   Ya  ☐   Tidak     
+5   Dokumentasi produksi lengkap   Production logbook   ☐   Ya  ☐   Tidak     
+CP4 .8   
+Audit & Corrective Action  
+Internal  (Internal Audits and  
+Corrective Actions)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Audit internal dilakukan berkala   Internal audit report   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Temuan audit ditindaklanjuti   CAPA report   ☐   Ya  ☐   Tidak     Audit  
+internal  
+halal  
+dilakukan  
+rutin,  
+seluruh  
+temuan  
+ditindaklan 
+juti melalui  
+CAPA dan  
+diverifikasi  
+efektivitas 
+nya   
+Audit  
+berjalan  
+baik  
+dengan  
+minor  
+delay  
+corrective  
+action   
+Audit  
+tidak  
+konsisten  
+atau  
+sebagian  
+CAPA  
+belum  
+terdokum 
+entasi   
+Banyak  
+temuan  
+audit  
+berulan 
+g dan  
+tindaka 
+n  
+korektif  
+tidak  
+efektif   
+Tidak  
+ada audit  
+internal  
+atau  
+tidak ada  
+sistem  
+correctiv 
+e action   
+3   Monitoring efektivitas corrective  
+action   
+Follow - up audit  
+report   ☐   Ya  ☐   Tidak     
+4   Terdapat sistem pelaporan insiden   Incident report   ☐   Ya  ☐   Tidak     
+5   Management review dilakukan   Management review  
+minutes   ☐   Ya  ☐   Tidak     
+CP4 .9   Pengawasan Halal Internal  
+(Internal Halal  Supervision)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Terdapat penyelia halal internal   Surat penunjukan  
+penyelia halal   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+
+
+  11   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+2   Monitoring kepatuhan halal rutin   Halal monitoring  
+checklist   ☐   Ya  ☐   Tidak     Penyelia  
+halal aktif  
+melakukan  
+monitoring 
+, verifikasi  
+halal,  
+pelaporan,  
+sosialisasi,  
+dan  
+evaluasi  
+rutin  
+terhadap  
+seluruh  
+aktivitas  
+RPH   
+Pengawasa 
+n berjalan  
+baik  
+dengan  
+minor  
+issue  
+dokumenta 
+si  
+monitoring   
+Monitori 
+ng halal  
+belum  
+konsisten  
+di  
+seluruh  
+area   
+Penyeli 
+a halal  
+tidak  
+aktif  
+atau  
+pelapor 
+an halal  
+lemah   
+Tidak  
+ada  
+sistem  
+pengawa 
+san halal  
+internal   
+3   Pelaporan halal  terdokumentasi   Halal compliance  
+report   ☐   Ya  ☐   Tidak     
+4   Sosialisasi halal kepada pekerja   Training attendance  
+list   ☐   Ya  ☐   Tidak     
+5   Evaluasi sistem halal dilakukan   Halal review  
+document   ☐   Ya  ☐   Tidak     
+CP5. Post  -   Slaughter Handling   
+CP5 .1.   Handling Karkas & Sanitasi  
+(Carcass Handling & Sanitation)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Karkas ditangani sesuai SOP halal  
+setelah penyembelihan   
+SOP post - slaughter  
+handling   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Area handling karkas bersih dan  
+higienis   
+Hygiene inspection  
+report   ☐   Ya  ☐   Tidak     
+Karkas  
+ditangani  
+higienis  
+sesuai SOP  
+halal   
+Minor  
+issue APD  
+atau  
+sanitasi   
+Cleaning  
+tidak  
+konsisten   
+Karkas  
+berpote 
+nsi  
+kontam 
+inasi   
+Karkas  
+terkonta 
+minasi  
+najis   
+3   Peralatan pengulitan, pemotongan,  
+dan penggantungan disanitasi   
+Cleaning and  
+sanitation checklist   ☐   Ya  ☐   Tidak     
+4   Petugas menggunakan APD sesuai  
+standar   
+PPE checklist /  
+personnel hygiene  
+record   
+☐   Ya  ☐   Tidak     
+5   Karkas tidak  menyentuh lantai atau  
+area kotor   Observation checklist   ☐   Ya  ☐   Tidak     
+CP5.2.   Batch Identification Karkas  
+(Carcass Batch Identification)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Setiap karkas memiliki kode batch  
+unik   Batch ID record   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Batch karkas terhubung dengan  
+data asal hewan   
+Animal origin  
+traceability record   ☐   Ya  ☐   Tidak     Batch  
+tracking  
+lengkap  
+Labeling  
+minor  
+issue   
+Sebagian  
+batch  
+tidak  
+Tracea 
+bility  
+lemah   
+Batch  
+tidak  
+dapat  
+ditelusuri   3   Label batch terpasang jelas dan  
+tahan selama proses   
+Carcass labeling  
+record   ☐   Ya  ☐   Tidak     
+
+
+  12   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+4   Pencatatan batch dilakukan  
+konsisten   
+Slaughter batch  
+logbook   ☐   Ya  ☐   Tidak     dan  
+realtime   
+terdokum 
+entasi   
+5   Batch  terhubung dengan waktu  
+proses dan operator   
+Operator and  
+timestamp record   ☐   Ya  ☐   Tidak     
+CP5 .3.   
+Segregasi Karkas Halal/Non - 
+Halal  (Halal/Non - Halal Carcass  
+Segregation)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Karkas halal dipisahkan dari  karkas  
+non - halal/suspect   SOP segregasi karkas   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Area gantung atau penyimpanan  
+karkas halal terpisah   Layout area segregasi   ☐   Ya  ☐   Tidak     Karkas  
+halal dan  
+non - halal  
+sepenuhny 
+a terpisah  
+pada  
+seluruh  
+proses   
+Segregasi  
+berjalan  
+dengan  
+minor  
+issue  
+labeling   
+Area  
+segregasi  
+belum  
+optimal   
+Risiko  
+pencam 
+puran  
+tinggi   
+Terjadi  
+cross  
+contamin 
+ation  
+halal/non 
+- halal   
+3   Peralatan handling halal diberi  
+identitas khusus   
+Equipment labeling  
+checklist   ☐   Ya  ☐   Tidak     
+4   Karkas suspect diberi  label dan area  
+khusus   
+Non - conformance  
+carcass report   ☐   Ya  ☐   Tidak     
+5   Jalur perpindahan karkas halal tidak  
+bercampur   
+Flow process map /  
+movement log   ☐   Ya  ☐   Tidak     
+CP5 .4   
+Dokumentasi Proses Post - 
+Slaughter  (Post - Slaughter Process  
+Documentation)   
+Ketersediaan Bukti  Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Seluruh aktivitas post - slaughter  
+dicatat lengkap   
+Post - slaughter  
+process log   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Hasil pemeriksaan karkas  
+terdokumentasi   
+Carcass inspection  
+report   ☐   Ya  ☐   Tidak     Seluruh  
+aktivitas  
+post - 
+slaughter  
+terdokume 
+ntasi  
+lengkap  
+dan  
+realtime   
+Minor  
+issue  
+pencatatan  
+administrat 
+if   
+Sebagian  
+logbook  
+atau  
+checklist  
+tidak  
+lengkap   
+Dokum 
+entasi  
+tidak  
+konsist 
+en dan  
+sulit  
+diverifi 
+kasi   
+Tidak  
+tersedia  
+dokumen 
+tasi  
+proses   
+3   Cleaning log setelah proses tersedia   Cleaning  logbook   ☐   Ya  ☐   Tidak     
+4   Ketidaksesuaian dan tindakan  
+korektif dicatat   
+Non - conformity  
+report / CAPA form   ☐   Ya  ☐   Tidak     
+5   Dokumen post - slaughter terhubung  
+dengan batch distribusi berikutnya   
+Integrated batch  
+traceability document   ☐   Ya  ☐   Tidak     
+ C  P6. Pengolahan Daging  -   Processing   
+CP6 .1.   
+CP6.1 H alal Status Bahan  
+Tambahan   / A dditif   (Halal Status  
+of Additional  
+Ingredients/Additives)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+
+
+  13   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+1   Penggunaan additive tanpa  
+sertifikat halal   
+Sertifikat halal  
+additive   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Supplier bahan tambahan tidak  
+tervalidasi   
+Approved supplier  
+list   ☐   Ya  ☐   Tidak     Semua  
+additive  
+dan bahan  
+tambahan  
+bersertifika 
+t halal dan  
+tervalidasi   
+Sebagian  
+mengguna 
+kan  
+supplier  
+declaration   
+Sebagian  
+dokumen  
+halal  
+belum  
+update   
+Additiv 
+e tidak  
+tervalid 
+asi  
+dengan  
+baik   
+Menggun 
+akan  
+additive  
+non - 
+halal/syu 
+bhat   
+3   Formula produk berubah tanpa  
+approval halal   
+Change control  
+document   ☐   Ya  ☐   Tidak     
+4   Traceability additive tidak jelas   Batch additive record   ☐   Ya  ☐   Tidak     
+5   Penggunaan bahan syubhat/non - 
+halal   
+Material specification  
+sheet   ☐   Ya  ☐   Tidak     
+CP6 .2.   
+S a n itasi Peralatan Produksi   
+( Sanitation of Production  
+Equipment)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Cleaning equipment tidak  
+dilakukan sesuai SOP   Cleaning checklist   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Peralatan terkontaminasi residu  
+produk sebelumnya   Swab test report   ☐   Ya  ☐   Tidak     Seluruh  
+peralatan  
+dibersihka 
+n sesuai  
+SOP halal  
+sanitation  
+dan  
+tervalidasi   
+Cleaning  
+berjalan  
+dengan  
+minor  
+issue  
+dokumenta 
+si   
+Sanitasi  
+tidak  
+konsisten   
+Potensi  
+kontam 
+inasi  
+biologi 
+s/najis  
+tinggi   
+Peralatan  
+terpapar  
+non - halal  
+atau  
+tidak  
+disanitasi   
+3   Sanitasi tidak tervalidasi   Cleaning validation  
+report   ☐   Ya  ☐   Tidak     
+4   Penggunaan bahan sanitasi tidak  
+halal compliant   
+Sertifikat cleaning  
+chemical   ☐   Ya  ☐   Tidak     
+5   Monitoring hygiene area produksi  
+lemah   
+Hygiene inspection  
+report   ☐   Ya  ☐   Tidak     
+CP6 .3.   J alur   P roduksi  K husus   
+(Dedicated Production Line)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Jalur halal dan non - halal tidak  
+terpisah   Production layout   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Shared equipment tanpa cleansing  
+procedure   
+SOP cleansing  
+procedure   ☐   Ya  ☐   Tidak     
+Dedicated  
+halal line  
+tersedia  
+dan  
+tervalidasi   
+Shared line  
+dengan  
+cleansing  
+procedure  
+tervalidasi   
+Segregas 
+i line  
+belum  
+optimal   
+Risiko  
+pencam 
+puran  
+halal/n 
+on - 
+halal  
+tinggi   
+Jalur  
+produksi  
+halal dan  
+non - halal  
+bercamp 
+ur   
+3   Risiko cross contamination pada  
+line produksi   
+Segregation  
+monitoring report   ☐   Ya  ☐   Tidak     
+4   Line clearance tidak dilakukan   Line clearance  
+checklist   ☐   Ya  ☐   Tidak     
+5   Area halal tidak memiliki  
+identifikasi khusus   
+Halal line  
+identification   ☐   Ya  ☐   Tidak     
+CP6 .4   
+K ontrol  B atch   & F ormula  
+P roduk  (Batch Control & Product  
+Formula)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+
+
+  14   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+1   Batch produk tidak dapat ditelusuri   Batch identification  
+record   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Formula produk tidak tervalidasi   Approved formula  
+sheet   ☐   Ya  ☐   Tidak     Batch dan  
+formula  
+produk  
+tervalidasi,  
+terdokume 
+ntasi, dan  
+realtime  
+traceable   
+Minor  
+issue  
+administra 
+si batch   
+Sebagian  
+formula  
+belum  
+terdokum 
+entasi  
+lengkap   
+Kontrol  
+batch  
+lemah  
+dan  
+rawan  
+kesalah 
+an   
+Formula  
+tidak  
+tervalida 
+si atau  
+batch  
+tidak  
+dapat  
+ditelusuri   
+3   Sistem traceability tidak berjalan   ERP traceability  
+system   ☐   Ya  ☐   Tidak     
+4   Histori produksi tidak lengkap   Production logbook   ☐   Ya  ☐   Tidak     
+5   Mock recall tidak pernah dilakukan   Mock recall report   ☐   Ya  ☐   Tidak     
+CP6 . 5   
+K epatuhan Kemasan & Label     
+(Packaging & Label Compliance)   
+  
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Label halal tidak valid   Halal registration  
+certificate   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Informasi produk tidak sesuai  
+formula   Product specification   ☐   Ya  ☐   Tidak     Kemasan  
+dan label  
+sesuai  
+regulasi  
+halal dan  
+BPJPH   
+Minor  
+issue  
+desain/adm 
+inistratif  
+label   
+Sebagian  
+label  
+belum  
+update   
+Label  
+halal  
+tidak  
+tervalid 
+asi   
+Produk  
+tanpa  
+label  
+halal  
+resmi  
+atau  
+mislabeli 
+ng   
+3   Batch atau expired date tidak jelas   Packaging inspection  
+checklist   ☐   Ya  ☐   Tidak     
+4   Kemasan tidak food grade   Packaging material  
+specification   ☐   Ya  ☐   Tidak     
+5   QC label verification tidak  
+dilakukan   
+QC label inspection  
+checklist   ☐   Ya  ☐   Tidak     
+CP6 . 6   
+K ompetensi  O perator   T raining )   
+(Operator Competence) )   
+  
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Operator tidak memahami SOP  
+halal   
+SOP competency  
+checklist   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Training halal tidak dilakukan rutin   Training attendance  
+record   ☐   Ya  ☐   Tidak     Seluruh  
+operator  
+telah  
+training  
+halal,  
+hygiene,  
+dan SOP  
+processing   
+Training  
+berjalan  
+namun  
+refreshmen 
+t belum  
+rutin   
+Sebagian  
+operator  
+belum  
+dievaluas 
+i  
+kompete 
+nsinya   
+Pemaha 
+man  
+SOP  
+halal  
+rendah   
+Tidak  
+ada  
+training  
+halal atau  
+operator  
+tidak  
+kompete 
+n   
+3   Kompetensi operator tidak  
+dievaluasi   
+Competency  
+assessment report   ☐   Ya  ☐   Tidak     
+4   Operator tidak memahami segregasi  
+halal   
+Segregation training  
+record   ☐   Ya  ☐   Tidak     
+5   Pelanggaran SOP tidak  
+ditindaklanjuti   
+Non - conformance  
+report   ☐   Ya  ☐   Tidak     
+ C  P7. Cold Storage  -   Warehouse   
+
+
+  15   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+CP7 .1.   Kepatuhan Suhu  (Temperature  
+Compliance)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Suhu cold storage sesuai standar  
+produk halal beku/dingin   
+Temperature  
+monitoring log   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sistem monitoring suhu  berjalan  
+real - time   
+IoT temperature  
+dashboard / recorder   ☐   Ya  ☐   Tidak     
+Monitoring  
+suhu real - 
+time dan  
+stabil   
+Ada  
+deviasi  
+minor suhu   
+Alarm  
+suhu  
+tidak  
+konsisten   
+Fluktua 
+si suhu  
+tinggi   
+Suhu  
+gagal  
+dikontro 
+l     
+3   Alarm suhu aktif dan berfungsi   Alarm validation  
+report   ☐   Ya  ☐   Tidak     
+4   Kalibrasi sensor suhu dilakukan  
+berkala   Calibration certificate   ☐   Ya  ☐   Tidak     
+5   Backup power system tersedia   Generator  
+maintenance report   ☐   Ya  ☐   Tidak     
+CP7 .2.   Halal Segregated Storage  (Halal  
+Segregated Storage)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Produk halal disimpan terpisah dari  
+non - halal   
+SOP segregasi  
+gudang   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Area penyimpanan halal  memiliki  
+identifikasi jelas   
+Layout segregasi  
+storage   ☐   Ya  ☐   Tidak     
+Penyimpan 
+an halal  
+terpisah  
+sempurna   
+Minor  
+issue  
+labeling   
+Area  
+segregasi  
+kurang  
+jelas   
+Risiko  
+pencam 
+puran  
+tinggi   
+Produk  
+halal  
+bercamp 
+ur non - 
+halal   
+3   Rak, pallet, dan container halal  
+diberi label khusus   
+Equipment labeling  
+checklist   ☐   Ya  ☐   Tidak     
+4   Jalur keluar - masuk produk halal  
+terkontrol   
+Warehouse  
+movement log   ☐   Ya  ☐   Tidak     
+5   Tidak ada  penyimpanan bahan  
+syubhat/non - halal di area halal   
+Warehouse  
+inspection report   ☐   Ya  ☐   Tidak     
+CP7 .3.   
+Kebersihan Gudang / Cold Room  
+(Warehouse / Cold Room  
+Cleanliness)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Gudang dan cold room  dibersihkan  
+secara rutin   
+Cleaning and  
+sanitation log   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Tidak terdapat hama atau  
+kontaminasi lingkungan   Pest control report   ☐   Ya  ☐   Tidak     
+Gudang  
+sangat  
+higienis   
+Minor  
+issue  
+sanitasi   
+Cleaning  
+tidak  
+konsisten   
+Area  
+berpote 
+nsi  
+kontam 
+inasi   
+Gudang  
+tidak  
+higienis  
+dan  
+tercemar   
+3   Drainase dan sistem air berjalan  
+baik   
+Sanitation inspection  
+checklist   ☐   Ya  ☐   Tidak     
+4   Petugas menggunakan APD sesuai  
+standar hygiene   
+Personnel hygiene  
+checklist   ☐   Ya  ☐   Tidak     
+5   Produk tidak bersentuhan langsung  
+dengan lantai   Observation checklist   ☐   Ya  ☐   Tidak     
+
+
+  16   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+CP7 .4   
+Batch Traceability &  
+FIFO/FEFO  (Batch Traceability  
+& FIFO/FEFO)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Setiap produk memiliki kode batch  
+yang jelas   
+Batch traceability  
+record   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sistem FIFO/FEFO diterapkan  
+secara konsisten   
+FIFO/FEFO  
+monitoring report   ☐   Ya  ☐   Tidak     
+Traceabilit 
+y realtime  
+dan FIFO  
+berjalan   
+Minor  
+issue  
+administra 
+si   
+Sebagian  
+batch  
+tidak  
+lengkap   
+Sistem  
+traceabi 
+lity  
+lemah   
+Produk  
+tidak  
+dapat  
+ditelusuri   
+3   Histori keluar - masuk produk  
+terdokumentasi   
+Warehouse inventory  
+log   ☐   Ya  ☐   Tidak     
+4   Batch  produk dapat ditelusuri ke  
+supplier dan distribusi   
+ERP / traceability  
+system   ☐   Ya  ☐   Tidak     
+5   Label tanggal produksi dan expired  
+jelas   
+Product labeling  
+checklist   ☐   Ya  ☐   Tidak     
+CP7 .5   
+Penanganan Insiden (Suhu Naik)  
+(Incident Handling  –   Temperature  
+Rise)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   SOP penanganan kenaikan suhu  
+tersedia   
+Incident handling  
+SOP   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Terdapat tindakan cepat saat suhu  
+melebihi batas   
+Incident response  
+report   ☐   Ya  ☐   Tidak     
+Sistem  
+incident  
+handling  
+berjalan  
+efektif   
+Ada delay  
+minor  
+penangana 
+n   
+Respons  
+insiden  
+tidak  
+konsisten   
+Banyak  
+insiden  
+tidak  
+tertang 
+ani   
+Tidak  
+ada  
+sistem  
+incident  
+handling   
+3   Produk terdampak suhu abnormal  
+diisolasi   
+Quarantine product  
+record   ☐   Ya  ☐   Tidak     
+4   
+Evaluasi dampak terhadap status  
+halal dan keamanan pangan  
+dilakukan   
+Corrective action  
+report   ☐   Ya  ☐   Tidak     
+5   Simulasi/mock drill penanganan  
+insiden dilakukan berkala   
+Emergency drill  
+report   ☐   Ya  ☐   Tidak     
+ C  P8.  Distribusi / Logistic   
+CP8 .1.   Transportasi Halal Khusus  
+(Dedicated Halal Transport)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Kendaraan distribusi khusus  
+digunakan untuk produk halal   
+SOP dedicated halal  
+transport   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Kendaraan  memiliki identifikasi  
+halal yang jelas   
+Vehicle halal  
+identification record   ☐   Ya  ☐   Tidak     Kendaraan  
+khusus  
+halal  
+tervalidasi   
+Shared  
+transport  
+dengan  
+Cleaning  
+tidak  
+konsisten   
+Riwaya 
+t non - 
+halal  
+Transpor 
+t  
+digunaka 
+n  3   Tidak ada riwayat pengangkutan  
+bahan non - halal tanpa cleansing   Vehicle usage history   ☐   Ya  ☐   Tidak     
+
+
+  17   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+4   Area muatan halal dipisahkan  
+secara fisik   
+Loading segregation  
+layout   ☐   Ya  ☐   Tidak     cleansing  
+tervalidasi   
+tidak  
+jelas   
+campura 
+n  
+halal/non 
+- halal   5   Evaluasi kepatuhan kendaraan  
+dilakukan berkala   
+Vehicle inspection  
+report   ☐   Ya  ☐   Tidak     
+CP8 .2.   Sanitasi Kendaraan  (Vehicle  
+Sanitation)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Kendaraan dibersihkan sebelum  
+pemuatan produk halal   
+Cleaning and  
+sanitation checklist   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sanitasi dilakukan sesuai SOP halal  
+logistics   
+SOP sanitation  
+vehicle   ☐   Ya  ☐   Tidak     
+Sanitasi  
+kendaraan  
+optimal   
+Minor  
+issue  
+sanitasi   
+Sanitasi  
+tidak  
+konsisten   
+Risiko  
+kontam 
+inasi  
+tinggi   
+Kendaraa 
+n  
+terkonta 
+minasi  
+najis/non 
+- halal   
+3   Bahan pembersih sesuai standar  
+halal   
+Halal certificate /  
+MSDS sanitizer   ☐   Ya  ☐   Tidak     
+4   Jadwal sanitasi terdokumentasi   Vehicle sanitation  
+logbook   ☐   Ya  ☐   Tidak     
+5   Verifikasi kebersihan dilakukan  
+sebelum loading   
+Pre - loading  
+inspection checklist   ☐   Ya  ☐   Tidak     
+CP8 .3.   
+Distribusi dengan Kontrol Suhu  
+(Temperature Control  
+Distribution)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Suhu kendaraan sesuai standar  
+produk   
+Temperature  
+monitoring log   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sistem monitoring suhu berjalan  
+selama pengiriman   
+IoT/GPS temperature  
+tracking report   ☐   Ya  ☐   Tidak     
+Suhu  
+distribusi  
+stabil dan  
+termonitor   
+Deviasi  
+minor   
+Monitori 
+ng  
+manual   
+Banyak  
+fluktua 
+si suhu   
+Tidak  
+ada  
+kontrol  
+suhu   
+3   Alarm suhu tersedia dan aktif   Alarm system  
+validation   ☐   Ya  ☐   Tidak     
+4   Kalibrasi alat monitoring suhu  
+dilakukan   Calibration certificate   ☐   Ya  ☐   Tidak     
+5   Tersedia prosedur penanganan jika  
+suhu meningkat   
+Incident handling  
+SOP   ☐   Ya  ☐   Tidak     
+CP8 .4   Ketelusuran Rute & Pengiriman  
+(Route & Delivery Traceability)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Setiap  pengiriman memiliki kode  
+delivery unik   GPS route history   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   GPS tracking digunakan selama  
+distribusi   
+Delivery order /  
+shipment document   ☐   Ya  ☐   Tidak     Traceabilit 
+y realtime  
+berjalan   
+Minor  
+issue  
+administrat 
+if   
+Data  
+distribusi  
+tidak  
+lengkap   
+Sistem  
+traceabi 
+lity  
+lemah   
+Shipment  
+tidak  
+dapat  
+ditelusuri   3   Histori asal dan tujuan pengiriman  
+terdokumentasi   
+Delivery timestamp  
+log   ☐   Ya  ☐   Tidak     
+
+
+  18   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+4   Waktu  pengiriman tercatat lengkap   ERP/logistics  
+traceability system   ☐   Ya  ☐   Tidak     
+5   Sistem digital traceability  
+terintegrasi   GPS route history   ☐   Ya  ☐   Tidak     
+CP8 .5   
+Pencegahan Kontaminasi  
+(Pemuatan)  (Contamination  
+Prevention  –   Loading)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Area loading bersih dan higienis   Loading area  
+inspection checklist   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Produk halal dipisahkan saat  
+loading   
+SOP loading  
+segregation   ☐   Ya  ☐   Tidak     
+Loading  
+sangat  
+higienis  
+dan  
+terkontrol   
+Minor  
+issue  
+operasiona 
+l   
+Segregas 
+i loading  
+kurang  
+optimal   
+Risiko  
+kontam 
+inasi  
+tinggi   
+Terjadi  
+cross  
+contamin 
+ation   
+3   Petugas loading memahami SOP  
+halal   
+Training record halal  
+logistics   ☐   Ya  ☐   Tidak     
+4   Penggunaan pallet/container khusus  
+halal   
+Equipment labeling  
+checklist   ☐   Ya  ☐   Tidak     
+5   Produk terlindungi selama proses  
+loading/unloading   Observation report   ☐   Ya  ☐   Tidak     
+CP8 .6   Kelengkapan Dokumentasi  
+(Documentation Completeness)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Dokumen pengiriman tersedia  
+lengkap   
+Delivery document  
+checklist   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Sertifikat halal produk menyertai  
+pengiriman bila diperlukan   
+Product halal  
+certificate   ☐   Ya  ☐   Tidak     
+Dokument 
+asi lengkap  
+dan  
+realtime   
+Minor  
+issue  
+administra 
+si   
+Sebagian  
+dokumen  
+tidak  
+lengkap   
+Dokum 
+entasi  
+sulit  
+diverifi 
+kasi   
+Tidak  
+tersedia  
+dokumen 
+tasi   
+3   Catatan suhu distribusi  
+terdokumentasi   
+Temperature  
+distribution report   ☐   Ya  ☐   Tidak     
+4   Laporan insiden distribusi tersedia   Incident report   ☐   Ya  ☐   Tidak     
+5   Dokumen terhubung dengan batch  
+traceability   
+Integrated traceability  
+document   ☐   Ya  ☐   Tidak     
+ C  P9.  Retail / Pasar / Supermarket   
+CP9 .1.   Validitas Label Halal  (Halal  
+Label Validity)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Produk memiliki label halal resmi  
+dan masih berlaku   
+Sertifikat halal  
+produk   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Logo halal sesuai regulasi  
+BPJPH/LPPOM/MUI   
+Approved  packaging  
+& label document   ☐   Ya  ☐   Tidak     Seluruh  
+label halal  
+valid dan  
+Minor  
+issue  
+administrat 
+if   
+Sebagian  
+label  
+kurang  
+jelas   
+Label  
+halal  
+tidak  
+Produk  
+tanpa  
+label  3   Informasi label sesuai dengan  
+produk yang dijual   
+Product specification  
+sheet   ☐   Ya  ☐   Tidak     
+
+
+  19   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+4   Produk impor memiliki dokumen  
+halal yang diakui   
+Import halal  
+certificate   ☐   Ya  ☐   Tidak     terverifikas 
+i   
+tervalid 
+asi   
+halal  
+resmi   
+5   Perubahan label melalui approval  
+halal   
+Label  change control  
+form   ☐   Ya  ☐   Tidak     
+CP9 .2.   
+Pemisahan Tampilan Halal/Non - 
+Halal  (Display Segregation  
+Halal/Non - Halal)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Produk halal dipisahkan dari  
+produk non - halal   
+SOP display  
+segregation   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Rak/display halal diberi identifikasi  
+jelas   
+Display labeling  
+checklist   ☐   Ya  ☐   Tidak     
+Display  
+halal  
+terpisah  
+sempurna   
+Minor  
+issue  
+layout   
+Label  
+display  
+kurang  
+jelas   
+Risiko  
+pencam 
+puran  
+tinggi   
+Produk  
+halal dan  
+non - halal  
+bercamp 
+ur   
+3   Area penyimpanan produk halal  
+terpisah   Storage layout plan   ☐   Ya  ☐   Tidak     
+4   Peralatan display (tray, tong,  
+freezer) khusus halal   
+Equipment  
+identification  
+checklist   
+☐   Ya  ☐   Tidak     
+5   
+Produk non - halal tidak ditempatkan  
+berdekatan dengan produk halal  
+sensitif   
+Retail inspection  
+report   ☐   Ya  ☐   Tidak     
+CP9 .3.   Suhu Penyimpanan Retail  (Retail  
+Storage Temperature)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Suhu  freezer/chiller sesuai standar  
+produk   
+Temperature  
+monitoring log   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Monitoring suhu dilakukan berkala   Temperature  
+inspection checklist   ☐   Ya  ☐   Tidak     
+Suhu stabil  
+dan  
+termonitor   
+Minor  
+deviation   
+Monitori 
+ng  
+kurang  
+konsisten   
+Fluktua 
+si suhu  
+tinggi   
+Tidak  
+ada  
+kontrol  
+suhu   
+3   Alarm suhu tersedia untuk cold  
+storage retail   
+Alarm  validation  
+report   ☐   Ya  ☐   Tidak     
+4   Kalibrasi alat ukur  suhu dilakukan   Calibration certificate   ☐   Ya  ☐   Tidak     
+5   Produk sensitif disimpan sesuai  
+kategori suhu   Product storage SOP   ☐   Ya  ☐   Tidak     
+CP9 .4   
+Pengendalian Tanggal  
+Kedaluwarsa  (Expiry Date  
+Control)   
+Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Sistem  FIFO/FEFO diterapkan   FIFO/FEFO  
+monitoring record   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Pemeriksaan tanggal kedaluwarsa  
+dilakukan rutin   
+Expiry inspection  
+checklist   ☐   Ya  ☐   Tidak     Minor  
+issue  
+Monitori 
+ng  
+Banyak  
+produk  
+
+
+  20   
+No   Pengukuran Performansi  Tingkat Kepatuhan Halal   Tingkat Ketersediaan / Resiko   
+1   2   3   4   5   
+3   Produk expired dipisahkan dari area  
+penjualan   
+Non - conformance  
+product record   ☐   Ya  ☐   Tidak     
+FIFO/FEF 
+O berjalan  
+optimal   
+administra 
+si   
+expired  
+lemah   
+near  
+expired   Produk  
+expired  
+dijual   
+4   Penarikan produk  expired  
+terdokumentasi   
+Product withdrawal  
+report   ☐   Ya  ☐   Tidak     
+5   Label tanggal produksi dan expired  
+jelas terbaca   
+Product labeling  
+checklist   ☐   Ya  ☐   Tidak     
+CP9 .5   Ketelusuran Pemasok   (Supplier  
+Traceability)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Data supplier tersedia lengkap   Approved supplier  
+list   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Produk dapat ditelusuri ke supplier  
+asal   
+Supplier traceability  
+record   ☐   Ya  ☐   Tidak     
+Supplier  
+traceability  
+sangat baik   
+Minor  
+issue  
+dokumen   
+Traceabil 
+ity  
+sebagian  
+belum  
+lengkap   
+Supplie 
+r  
+verifica 
+tion  
+lemah   
+Supplier  
+tidak  
+dapat  
+diverifik 
+asi   
+3   Supplier memiliki sertifikasi halal  
+valid   
+Supplier halal  
+certificate   ☐   Ya  ☐   Tidak     
+4   Histori penerimaan barang  
+terdokumentasi   Goods receiving log   ☐   Ya  ☐   Tidak     
+5   Audit supplier dilakukan berkala   Supplier audit report   ☐   Ya  ☐   Tidak     
+CP9 .6   Penanganan Keluhan Konsumen   
+(Consumer Complaint Handling)   Ketersediaan Bukti Pendukung   Lihat  
+Bukti   1   2   3   4   5   
+1   Sistem penerimaan  keluhan  
+konsumen tersedia   
+Complaint handling  
+SOP   ☐   Ya  ☐   Tidak     ☐   ☐   ☐   ☐   ☐   
+2   Keluhan terkait halal ditindaklanjuti  
+segera   
+Complaint  
+investigation report   ☐   Ya  ☐   Tidak     
+Sistem  
+complaint  
+handling  
+berjalan  
+efektif   
+Respons  
+lambat  
+minor   
+Sebagian  
+complain 
+t tidak  
+terdokum 
+entasi   
+Tidak  
+ada  
+tindak  
+lanjut  
+jelas   
+Tidak  
+ada  
+sistem  
+penangan 
+an  
+keluhan   
+3   Produk bermasalah dapat ditelusuri  
+melalui batch   
+Batch traceability  
+report   ☐   Ya  ☐   Tidak     
+4   Tindakan korektif  terhadap keluhan  
+dilakukan   
+Corrective action  
+report   ☐   Ya  ☐   Tidak     
+5   Evaluasi tren keluhan dilakukan  
+berkala   
+Integrated traceability  
+document   ☐   Ya  ☐   Tidak     
+  
+  
+Sekian dan  Terima Kasih   
+

@@ -52,7 +52,7 @@ const navItems: NavItem[] = [
 			{ href: "/dashboard/rekap-aktual", label: "Rekap Data" },
 		],
 	},
-	{ href: "/dashboard/input", label: "Manajemen CP" },
+	{ href: "/dashboard/input", label: "Kelola CP" },
 	{ href: "/dashboard/ahp-steps", label: "Tahapan AHP" },
 	{ href: "/chat", label: "Chat" },
 ];

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "analyze": "set ANALYZE=true && next build",
     "inngest": "pnpm dlx inngest-cli@latest dev --no-discovery -u localhost:3000/api/inngest",
     "postinstall": "prisma generate"
   },
@@ -48,6 +49,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@next/bundle-analyzer": "^16.2.6",
+    "@playwright/test": "^1.60.0",
     "@types/bcryptjs": "^3.0.0",
     "@types/node": "^20",
     "@types/pg": "^8.11.10",

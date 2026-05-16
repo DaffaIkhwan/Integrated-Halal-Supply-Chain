@@ -1,0 +1,539 @@
+
+=== ROW 15 (9 cells) ===
+  [0]: CP1.1.
+  [1]: Asal- U sul S api &amp; Traceability - Cattle Origins &amp; Traceability
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 21 (9 cells) ===
+  [0]: CP1.2.
+  [1]: Status kesehatan sapi - Cattle health status
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 27 (9 cells) ===
+  [0]: CP1.3.
+  [1]: Kepatuhan pakan - Feed compliance
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 33 (9 cells) ===
+  [0]: CP1.4.
+  [1]: Dokumentasi pemeliharaan - Maintenance documentation
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 39 (9 cells) ===
+  [0]: CP1.5.
+  [1]: Kebersihan kandang &amp; Sanitasi - Coop Cleanliness &amp; Sanitation
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 46 (9 cells) ===
+  [0]: CP2.1.
+  [1]: Halal status bahan pakan - Halal status of feed ingredients
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 52 (9 cells) ===
+  [0]: CP2.2.
+  [1]: Kontrol obat/ vaksin hewan - Control of veterinary drugs/vaccines
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 58 (9 cells) ===
+  [0]: CP2.3.
+  [1]: Pengawasan veteriner - Veterinary supervision
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 64 (9 cells) ===
+  [0]: CP2.4.
+  [1]: Supplier reliability pakan - Feed supplier reliability
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 70 (9 cells) ===
+  [0]: CP2.5.
+  [1]: Penyimpanan pakan ( segregasi ) - Feed storage (segregation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 77 (9 cells) ===
+  [0]: CP3 .1.
+  [1]: Kelayakan transportasi hewan - Animal welfare in transport
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 83 (9 cells) ===
+  [0]: CP3 .2.
+  [1]: Kebersihan kendaraan - Vehicle cleanliness
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 89 (9 cells) ===
+  [0]: CP3 .3.
+  [1]: Ketertelusuran selama transportasi - Traceability during transport
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 95 (9 cells) ===
+  [0]: CP3 .4.
+  [1]: Dokumentasi perjalanan - Travel documentation
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 101 (9 cells) ===
+  [0]: CP3 .5.
+  [1]: Kompetensi petugas handler - Handler competencies
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 108 (9 cells) ===
+  [0]: CP 4 .1.
+  [1]: Validitas Sertifikat Halal RPH (Validity of the Slaughterhouse Halal Certificate)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 114 (9 cells) ===
+  [0]: CP4 . 2 .
+  [1]: Kompetensi Juru Sembelih Halal (Competence of Halal Slaughterers)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 120 (9 cells) ===
+  [0]: CP4 .3.
+  [1]: Kesesuaian Proses Sembelih Syariah (Compliance with Sharia-compliant Slaughtering Processes)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 126 (9 cells) ===
+  [0]: CP4 .4
+  [1]: Pemeriksaan Ante/Post-Mortem (Ante/ Post Mortem Inspections)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 132 (9 cells) ===
+  [0]: CP4 .5
+  [1]: Sanitasi Alat &amp; Area (Equipment and Area Sanitation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 138 (9 cells) ===
+  [0]: CP4 .6
+  [1]: Pemisahan Halal &amp; Non-Halal (Separation of Halal and Non-Halal Meat)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 144 (9 cells) ===
+  [0]: CP4 .7
+  [1]: Dokumentasi &amp; Batch Traceability (Documentation and Batch Traceability)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 150 (9 cells) ===
+  [0]: CP4 .8
+  [1]: Audit &amp; Corrective Action Internal (Internal Audits and Corrective Actions)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 156 (9 cells) ===
+  [0]: CP4 .9
+  [1]: Pengawasan Halal Internal (Internal Halal Supervision)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 163 (9 cells) ===
+  [0]: CP5 .1.
+  [1]: Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 169 (9 cells) ===
+  [0]: CP5. 2 .
+  [1]: Batch Identification Karkas (Carcass Batch Identification)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 175 (9 cells) ===
+  [0]: CP5 .3.
+  [1]: Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 181 (9 cells) ===
+  [0]: CP5 .4
+  [1]: Dokumentasi Proses Post-Slaughter (Post-Slaughter Process Documentation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 188 (9 cells) ===
+  [0]: CP6 .1.
+  [1]: Handling Karkas &amp; Sanitasi (Carcass Handling &amp; Sanitation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 194 (9 cells) ===
+  [0]: CP6 .2.
+  [1]: Batch Identification Karkas (Carcass Batch Identification)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 200 (9 cells) ===
+  [0]: CP6 .3.
+  [1]: Segregasi Karkas Halal/Non-Halal (Halal/Non-Halal Carcass Segregation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 206 (9 cells) ===
+  [0]: CP6 .4
+  [1]: Dokumentasi Proses Post-Slaughter (Post-Slaughter Process Documentation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 213 (9 cells) ===
+  [0]: CP7 .1.
+  [1]: Kepatuhan Suhu (Temperature Compliance)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 219 (9 cells) ===
+  [0]: CP7 .2.
+  [1]: Halal Segregated Storage (Halal Segregated Storage)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 225 (9 cells) ===
+  [0]: CP7 .3.
+  [1]: Kebersihan Gudang / Cold Room (Warehouse / Cold Room Cleanliness)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 231 (9 cells) ===
+  [0]: CP7 .4
+  [1]: Batch Traceability &amp; FIFO/FEFO (Batch Traceability &amp; FIFO/FEFO)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 237 (9 cells) ===
+  [0]: CP7 .5
+  [1]: Penanganan Insiden (Suhu Naik) (Incident Handling – Temperature Rise)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 244 (9 cells) ===
+  [0]: CP8 .1.
+  [1]: Transportasi Halal Khusus (Dedicated Halal Transport)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 250 (9 cells) ===
+  [0]: CP8 .2.
+  [1]: Sanitasi Kendaraan (Vehicle Sanitation)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 256 (9 cells) ===
+  [0]: CP8 .3.
+  [1]: Distribusi dengan Kontrol Suhu (Temperature Control Distribution)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 262 (9 cells) ===
+  [0]: CP8 .4
+  [1]: Ketelusuran Rute &amp; Pengiriman (Route &amp; Delivery Traceability)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 268 (9 cells) ===
+  [0]: CP8 .5
+  [1]: Pencegahan Kontaminasi ( Pemuatan ) (Contamination Prevention – Loading)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 274 (9 cells) ===
+  [0]: CP8 .6
+  [1]: Kelengkapan Dokumentasi (Documentation Completeness)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 281 (9 cells) ===
+  [0]: CP9 .1.
+  [1]: Validitas Label Halal (Halal Label Validity)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 287 (9 cells) ===
+  [0]: CP9 .2.
+  [1]: Pemisahan Tampilan Halal/Non-Halal (Display Segregation Halal/Non-Halal)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 293 (9 cells) ===
+  [0]: CP9 .3.
+  [1]: Suhu Penyimpanan Retail (Retail Storage Temperature)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 299 (9 cells) ===
+  [0]: CP9 .4
+  [1]: Pengendalian Tanggal Kedaluwarsa (Expiry Date Control)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 305 (9 cells) ===
+  [0]: CP9 .5
+  [1]: Ketelusuran Pemasok (Supplier Traceability)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5
+
+=== ROW 311 (9 cells) ===
+  [0]: CP9 .6
+  [1]: Penanganan Keluhan Konsumen (Consumer Complaint Handling)
+  [2]: Ketersediaan Bukti Pendukung
+  [3]: Catatan Auditor
+  [4]: 1
+  [5]: 2
+  [6]: 3
+  [7]: 4
+  [8]: 5

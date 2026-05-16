@@ -1,17 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useMemo, useCallback } from "react";
+import { useSession } from "next-auth/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { ALL_CP_QUESTIONNAIRES, RISK_SCALE_LIKERT } from "@/lib/data/questionnaire-index";
-import type { CPQuestionnaire, SubCriteria } from "@/lib/data/questionnaire-index";
+import { SCALE_DESCRIPTIONS } from "@/lib/data/scale-descriptions";
+import type { CPQuestionnaire, SubCriteria, BackgroundField } from "@/lib/data/questionnaire-index";
 import {
   Shield, ChevronDown, ChevronUp, Send, ClipboardCheck,
-  AlertTriangle, CheckCircle2, Info
+  AlertTriangle, CheckCircle2, Info, Upload, X, FileText
 } from "lucide-react";
 
-type Answers = Record<string, Record<string, number>>; // { "CP1.1_1": riskValue, ... }
+type Answers = Record<string, number>; // { "CP1.1_1": riskValue, ... }
 type AuditorNotes = Record<string, string>;
+type UploadedFiles = Record<string, File | null>;
+type EvidenceCheck = Record<string, "sesuai" | "tidak_sesuai">;
 
 function RiskBadge({ value }: { value: number }) {
   const scale = RISK_SCALE_LIKERT.find(s => s.value === value);
@@ -30,13 +34,45 @@ function RiskBadge({ value }: { value: number }) {
   );
 }
 
+function FileUploadButton({ fileKey, files, onUpload, onRemove }: {
+  fileKey: string; files: UploadedFiles;
+  onUpload: (key: string, file: File) => void;
+  onRemove: (key: string) => void;
+}) {
+  const ref = useRef<HTMLInputElement>(null);
+  const file = files[fileKey];
+
+  return (
+    <div className="flex items-center gap-1.5">
+      {file ? (
+        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-400 max-w-[140px]">
+          <FileText className="h-3 w-3 shrink-0" />
+          <span className="truncate">{file.name}</span>
+          <button onClick={() => onRemove(fileKey)} className="shrink-0 hover:text-red-400"><X className="h-3 w-3" /></button>
+        </div>
+      ) : (
+        <button
+          onClick={() => ref.current?.click()}
+          className="flex items-center gap-1 px-2 py-1 rounded-md bg-muted hover:bg-muted/80 text-[10px] text-muted-foreground transition-colors"
+        >
+          <Upload className="h-3 w-3" /> Upload
+        </button>
+      )}
+      <input ref={ref} type="file" className="hidden" onChange={e => { if (e.target.files?.[0]) onUpload(fileKey, e.target.files[0]); }} />
+    </div>
+  );
+}
+
 function SubCriteriaSection({
-  cp, sub, answers, notes, onAnswer, onNote
+  cp, sub, answers, notes, files, evidenceCheck, onAnswer, onNote, onUpload, onRemoveFile, onEvidenceCheck
 }: {
   cp: CPQuestionnaire; sub: SubCriteria;
-  answers: Answers; notes: AuditorNotes;
+  answers: Answers; notes: AuditorNotes; files: UploadedFiles; evidenceCheck: EvidenceCheck;
   onAnswer: (key: string, val: number) => void;
   onNote: (key: string, val: string) => void;
+  onUpload: (k: string, f: File) => void;
+  onRemoveFile: (k: string) => void;
+  onEvidenceCheck: (key: string, val: "sesuai" | "tidak_sesuai") => void;
 }) {
   const [open, setOpen] = useState(false);
   const answered = sub.indicators.filter(ind => answers[`${sub.code}_${ind.no}`]).length;
@@ -64,19 +100,22 @@ function SubCriteriaSection({
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-3">
               {/* Table header */}
-              <div className="hidden md:grid grid-cols-[auto_1fr_auto_auto] gap-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+              <div className="hidden md:grid grid-cols-[auto_1fr_140px_80px_80px_auto] gap-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
                 <span className="w-6">No</span>
                 <span>Pernyataan</span>
-                <span className="w-40 text-center">Bukti Pendukung</span>
-                <span className="w-[220px] text-center">Tingkat Risiko (1-5)</span>
+                <span className="text-center">Bukti Pendukung</span>
+                <span className="text-center">Upload</span>
+                <span className="text-center">Kesesuaian</span>
+                <span className="w-[280px] text-center">Tingkat Ketersediaan / Risiko</span>
               </div>
 
               {sub.indicators.map(ind => {
                 const key = `${sub.code}_${ind.no}`;
                 const val = answers[key] as number | undefined;
+                const evCheck = evidenceCheck[key];
                 return (
-                  <div key={key} className="flex flex-col md:grid md:grid-cols-[auto_1fr_auto_auto] gap-3 md:gap-2 items-start px-3 py-4 md:px-2 md:py-2 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
-                    {/* Number & Statement (Mobile groups these) */}
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[auto_1fr_140px_80px_80px_auto] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                    {/* Number & Statement */}
                     <div className="flex gap-2 w-full md:contents items-start">
                       <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
                       <div className="flex-1">
@@ -85,37 +124,61 @@ function SubCriteriaSection({
                     </div>
 
                     {/* Evidence */}
-                    <div className="w-full md:w-40 text-left md:text-center mt-1 md:mt-0 pl-8 md:pl-0">
+                    <div className="w-full md:w-auto text-left md:text-center mt-1 md:mt-0 pl-8 md:pl-0">
                       <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground block mb-0.5">Bukti Pendukung:</span>
                       <span className="text-[11px] text-muted-foreground italic">{ind.evidence}</span>
                     </div>
 
-                    {/* Risk Rating */}
-                    <div className="w-full md:w-[220px] flex flex-col md:flex-row items-center gap-2 md:gap-1 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
-                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Tingkat Risiko (1-5)</span>
-                      <div className="flex items-center justify-center gap-1 w-full md:w-auto">
+                    {/* Upload */}
+                    <div className="w-full flex flex-col items-end md:items-center justify-center mt-2 md:mt-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">Upload</span>
+                      <FileUploadButton fileKey={key} files={files} onUpload={onUpload} onRemove={onRemoveFile} />
+                    </div>
+
+                    {/* Kesesuaian (Sesuai / Tidak Sesuai) */}
+                    <div className="w-full flex flex-col md:items-center gap-1 mt-2 md:mt-0 pl-8 md:pl-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">Kesesuaian</span>
+                      <div className="flex gap-1.5">
+                        <button
+                          onClick={() => onEvidenceCheck(key, "sesuai")}
+                          className={`px-2.5 py-1.5 md:px-2 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                            evCheck === "sesuai" ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20" : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                          }`}
+                        >
+                          Sesuai
+                        </button>
+                        <button
+                          onClick={() => onEvidenceCheck(key, "tidak_sesuai")}
+                          className={`px-2.5 py-1.5 md:px-2 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                            evCheck === "tidak_sesuai" ? "bg-red-500 text-white shadow-md shadow-red-500/20" : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                          }`}
+                        >
+                          Tidak
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Tingkat Ketersediaan / Risiko */}
+                    <div className="w-full md:w-[280px] flex flex-col items-center gap-2 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Tingkat Ketersediaan / Risiko</span>
+                      <div className="flex items-start justify-center gap-1 w-full md:w-auto">
                         {RISK_SCALE_LIKERT.map(scale => (
                           <button
                             key={scale.value}
                             onClick={() => onAnswer(key, scale.value)}
-                            className={`flex-1 md:flex-none md:w-9 h-10 md:h-9 rounded-lg text-sm md:text-xs font-bold transition-all ${
+                            className={`flex-1 md:flex-none md:w-[52px] flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
                               val === scale.value
                                 ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
                                   : scale.value === 3 ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
                                   : "bg-red-500 text-white shadow-lg shadow-red-500/30"
                                 : "bg-muted hover:bg-muted/80 text-muted-foreground"
                             }`}
-                            title={scale.label}
+                            title={`${scale.value} - ${scale.label}:\n${SCALE_DESCRIPTIONS[sub.code]?.[scale.value - 1] || scale.interpretation}`}
                           >
-                            {scale.value}
+                            <span className="text-sm md:text-xs">{scale.value}</span>
+                            <span className="text-[8px] font-medium leading-tight opacity-80">{scale.label.split(' ').pop()}</span>
                           </button>
                         ))}
-                      </div>
-                      <div className="h-5 md:hidden">
-                        {val && <RiskBadge value={val} />}
-                      </div>
-                      <div className="hidden md:block">
-                        {val && <RiskBadge value={val} />}
                       </div>
                     </div>
                   </div>
@@ -143,10 +206,43 @@ function SubCriteriaSection({
   );
 }
 
+function BgFieldInput({ field, value, onChange }: { field: BackgroundField; value: string; onChange: (v: string) => void }) {
+  if (field.type === "select") {
+    return (
+      <select value={value} onChange={e => onChange(e.target.value)} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+        <option value="">— Pilih —</option>
+        {field.options?.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+      </select>
+    );
+  }
+  return (
+    <input
+      type={field.type}
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+      placeholder={field.label}
+    />
+  );
+}
+
 export default function KuesionerRisikoPage() {
+  const { data: session } = useSession();
+
+  const availableCPs = useMemo(() => {
+    if (!session?.user?.role || session.user.role === "ADMIN") {
+      return ALL_CP_QUESTIONNAIRES;
+    }
+    const rolePrefix = session.user.role.split("_")[0];
+    return ALL_CP_QUESTIONNAIRES.filter((cp) => cp.cpId === rolePrefix);
+  }, [session?.user?.role]);
+
   const [selectedCPIndex, setSelectedCPIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [notes, setNotes] = useState<AuditorNotes>({});
+  const [files, setFiles] = useState<UploadedFiles>({});
+  const [evidenceCheck, setEvidenceCheck] = useState<EvidenceCheck>({});
+  const [bgData, setBgData] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -156,15 +252,27 @@ export default function KuesionerRisikoPage() {
     tanggalAudit: "", nama: "", jenisKelamin: "", posisi: "", namaInstansi: "", noSertifikat: "",
   });
 
-  const cp = ALL_CP_QUESTIONNAIRES[selectedCPIndex];
+  const cp = availableCPs[selectedCPIndex] || availableCPs[0];
 
-  const handleAnswer = (key: string, value: number) => {
+  const handleAnswer = useCallback((key: string, value: number) => {
     setAnswers(prev => ({ ...prev, [key]: value }));
-  };
+  }, []);
 
-  const handleNote = (key: string, value: string) => {
+  const handleNote = useCallback((key: string, value: string) => {
     setNotes(prev => ({ ...prev, [key]: value }));
-  };
+  }, []);
+
+  const handleUpload = useCallback((k: string, f: File) => {
+    setFiles(p => ({ ...p, [k]: f }));
+  }, []);
+
+  const handleRemoveFile = useCallback((k: string) => {
+    setFiles(p => ({ ...p, [k]: null }));
+  }, []);
+
+  const handleEvidenceCheck = useCallback((k: string, v: "sesuai" | "tidak_sesuai") => {
+    setEvidenceCheck(p => ({ ...p, [k]: v }));
+  }, []);
 
   const totalQuestions = cp.subCriteria.reduce((acc, sub) => acc + sub.indicators.length, 0);
   const answeredQuestions = cp.subCriteria.reduce((acc, sub) =>
@@ -177,6 +285,29 @@ export default function KuesionerRisikoPage() {
   const confirmSubmit = async () => {
     setShowConfirm(false);
     setSubmitting(true);
+
+    // Upload files
+    const fileList: any[] = [];
+    for (const [key, f] of Object.entries(files)) {
+      if (f) {
+        const formData = new FormData();
+        formData.append("file", f);
+        try {
+          const res = await fetch("/api/upload", { method: "POST", body: formData });
+          const json = await res.json();
+          fileList.push({
+            key,
+            filename: f.name,
+            url: json.url || `/uploads/${f.name}`,
+            downloadUrl: json.downloadUrl
+          });
+        } catch (err) {
+          console.error("Upload error:", err);
+          fileList.push({ key, filename: f.name, url: `/uploads/${f.name}` });
+        }
+      }
+    }
+
     try {
       await fetch("/api/dss/questionnaire-responses", {
         method: "POST",
@@ -188,10 +319,10 @@ export default function KuesionerRisikoPage() {
           respondentRole: auditorBg.posisi || null,
           respondentOrg: auditorBg.namaInstansi || null,
           respondentEmail: null,
-          respondentInfo: auditorBg,
-          answers,
+          respondentInfo: { ...auditorBg, ...bgData },
+          answers: { riskRatings: answers, evidenceCheck },
           notes,
-          files: [],
+          files: fileList,
         }),
       });
     } catch (e) { console.error(e); }
@@ -199,7 +330,7 @@ export default function KuesionerRisikoPage() {
     setSubmitting(false);
 
     // Auto next CP
-    if (selectedCPIndex < ALL_CP_QUESTIONNAIRES.length - 1) {
+    if (selectedCPIndex < availableCPs.length - 1) {
       setTimeout(() => {
         setSelectedCPIndex(selectedCPIndex + 1);
         setSubmitted(false);
@@ -260,48 +391,9 @@ export default function KuesionerRisikoPage() {
           </div>
         </div>
 
-        {/* Auditor Background */}
-        <div className="rounded-xl border bg-card p-5">
-          <p className="text-sm font-bold mb-4 flex items-center gap-2">
-            <Shield className="h-4 w-4 text-primary" /> Latar Belakang Responden (Auditor)
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { key: "tanggalAudit", label: "Tanggal Audit", type: "date" },
-              { key: "nama", label: "Nama", type: "text" },
-              { key: "jenisKelamin", label: "Jenis Kelamin", type: "text" },
-              { key: "posisi", label: "Posisi", type: "text" },
-              { key: "namaInstansi", label: "Nama Instansi", type: "text" },
-              { key: "noSertifikat", label: "No Sertifikat Auditor (Jika Ada)", type: "text" },
-            ].map(f => (
-              <div key={f.key}>
-                <label className="text-xs font-medium text-muted-foreground mb-1 block">{f.label}</label>
-                {f.key === "jenisKelamin" ? (
-                  <select
-                    value={auditorBg.jenisKelamin}
-                    onChange={e => setAuditorBg(prev => ({ ...prev, jenisKelamin: e.target.value }))}
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
-                  >
-                    <option value="">— Pilih —</option>
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
-                  </select>
-                ) : (
-                  <input
-                    type={f.type}
-                    value={auditorBg[f.key as keyof typeof auditorBg]}
-                    onChange={e => setAuditorBg(prev => ({ ...prev, [f.key]: e.target.value }))}
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* CP Selector Tabs */}
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
-          {ALL_CP_QUESTIONNAIRES.map((cpItem, idx) => {
+          {availableCPs.map((cpItem, idx) => {
             const cpAnswered = cpItem.subCriteria.reduce((acc, sub) =>
               acc + sub.indicators.filter(ind => answers[`${sub.code}_${ind.no}`]).length, 0);
             const cpTotal = cpItem.subCriteria.reduce((acc, sub) => acc + sub.indicators.length, 0);
@@ -323,6 +415,21 @@ export default function KuesionerRisikoPage() {
               </button>
             );
           })}
+        </div>
+
+        {/* Background Form — from CP data */}
+        <div className="rounded-xl border bg-card p-5">
+          <p className="text-sm font-bold mb-4 flex items-center gap-2">
+            <Shield className="h-4 w-4 text-primary" /> Latar Belakang Pengisi — {cp.cpId}. {cp.cpName}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {cp.backgroundFields.map(f => (
+              <div key={f.key}>
+                <label className="text-xs font-medium text-muted-foreground mb-1 block">{f.label}</label>
+                <BgFieldInput field={f} value={bgData[`${cp.cpId}_${f.key}`] || ""} onChange={v => setBgData(prev => ({ ...prev, [`${cp.cpId}_${f.key}`]: v }))} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* CP Content */}
@@ -352,8 +459,11 @@ export default function KuesionerRisikoPage() {
             {cp.subCriteria.map(sub => (
               <SubCriteriaSection
                 key={sub.code} cp={cp} sub={sub}
-                answers={answers} notes={notes}
+                answers={answers} notes={notes} files={files} evidenceCheck={evidenceCheck}
                 onAnswer={handleAnswer} onNote={handleNote}
+                onUpload={handleUpload}
+                onRemoveFile={handleRemoveFile}
+                onEvidenceCheck={handleEvidenceCheck}
               />
             ))}
           </div>

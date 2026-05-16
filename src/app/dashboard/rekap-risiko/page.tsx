@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import {
@@ -22,7 +22,7 @@ interface QResponse {
   respondentInfo: Record<string, string>;
   answers: Record<string, unknown>;
   notes: Record<string, string>;
-  files: Array<{ key: string; filename: string; url: string }>;
+  files: Array<{ key: string; filename: string; url: string; thumbnailUrl?: string }>;
   status: string;
   createdAt: string;
 }
@@ -110,28 +110,62 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
 
           {/* Answers Table */}
           <div className="rounded-xl border bg-muted/30 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Jawaban</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Jawaban / Hasil Penilaian</p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Kode / Key</th>
-                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Nilai</th>
+                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Kode Indikator</th>
+                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Kesesuaian Bukti</th>
+                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Tingkat Risiko (1-5)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.entries(answers).map(([key, val]) => (
-                    <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
-                      <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
-                      <td className="py-2 px-3 text-sm">
-                        {typeof val === "object" ? (
-                          <pre className="text-xs bg-muted rounded p-2 overflow-x-auto max-w-[400px]">{JSON.stringify(val, null, 2)}</pre>
-                        ) : (
-                          <span>{String(val)}</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                  {(() => {
+                    const evidenceCheck = (item.answers as any).evidenceCheck || {};
+                    const riskRatings = (item.answers as any).riskRatings || {};
+                    // Fallback for older flat structures
+                    const isLegacy = !item.answers.riskRatings && !item.answers.evidenceCheck;
+                    const keys = isLegacy 
+                      ? Object.keys(item.answers) 
+                      : Array.from(new Set([...Object.keys(evidenceCheck), ...Object.keys(riskRatings)])).sort();
+                    
+                    if (keys.length === 0) {
+                      return (
+                        <tr>
+                          <td colSpan={3} className="py-4 text-center text-muted-foreground text-xs italic">Tidak ada data jawaban</td>
+                        </tr>
+                      );
+                    }
+                    
+                    return keys.map((key) => {
+                      const ev = isLegacy ? null : evidenceCheck[key];
+                      const risk = isLegacy ? item.answers[key] : riskRatings[key];
+                      return (
+                        <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
+                          <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
+                          <td className="py-2 px-3 text-sm">
+                            {ev === "sesuai" ? (
+                              <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">Sesuai</span>
+                            ) : ev === "tidak_sesuai" ? (
+                              <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full">Tidak Sesuai</span>
+                            ) : <span className="text-muted-foreground">—</span>}
+                          </td>
+                          <td className="py-2 px-3 text-sm">
+                            {risk ? (
+                              <span className={`text-[10px] px-2 py-0.5 rounded-full border font-semibold ${
+                                Number(risk) <= 2 ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+                                : Number(risk) === 3 ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
+                                : "bg-red-500/15 text-red-400 border-red-500/30"
+                              }`}>
+                                Skala {String(risk)}
+                              </span>
+                            ) : <span className="text-muted-foreground">—</span>}
+                          </td>
+                        </tr>
+                      );
+                    });
+                  })()}
                 </tbody>
               </table>
             </div>
@@ -217,9 +251,13 @@ export default function RekapRisikoPage() {
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
+  const searchTimer = useRef<ReturnType<typeof setTimeout>>();
   const handleSearch = (val: string) => {
-    setSearchTerm(val);
-    setPage(1);
+    clearTimeout(searchTimer.current);
+    searchTimer.current = setTimeout(() => {
+      setSearchTerm(val);
+      setPage(1);
+    }, 300);
   };
 
   return (

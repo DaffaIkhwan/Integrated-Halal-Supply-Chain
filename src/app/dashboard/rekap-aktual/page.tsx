@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import {
@@ -22,7 +22,7 @@ interface QResponse {
   respondentInfo: Record<string, string>;
   answers: Record<string, unknown>;
   notes: Record<string, string>;
-  files: Array<{ key: string; filename: string; url: string }>;
+  files: Array<{ key: string; filename: string; url: string; thumbnailUrl?: string }>;
   status: string;
   createdAt: string;
 }
@@ -110,28 +110,50 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
 
           {/* Answers Table */}
           <div className="rounded-xl border bg-muted/30 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Jawaban</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Jawaban / Hasil Verifikasi</p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Kode / Key</th>
-                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Nilai</th>
+                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Kode Indikator</th>
+                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Ketersediaan Bukti</th>
+                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Verifikasi Lapangan</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.entries(answers).map(([key, val]) => (
-                    <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
-                      <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
-                      <td className="py-2 px-3 text-sm">
-                        {typeof val === "object" ? (
-                          <pre className="text-xs bg-muted rounded p-2 overflow-x-auto max-w-[400px]">{JSON.stringify(val, null, 2)}</pre>
-                        ) : (
-                          <span>{String(val)}</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                  {(() => {
+                    const evidence = (item.answers as any).evidence || {};
+                    const risks = (item.answers as any).risks || {};
+                    const keys = Array.from(new Set([...Object.keys(evidence), ...Object.keys(risks)])).sort();
+                    
+                    if (keys.length === 0) {
+                      return (
+                        <tr>
+                          <td colSpan={3} className="py-4 text-center text-muted-foreground text-xs italic">Tidak ada data jawaban</td>
+                        </tr>
+                      );
+                    }
+                    
+                    return keys.map((key) => (
+                      <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
+                        <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
+                        <td className="py-2 px-3 text-sm">
+                          {evidence[key] === "sesuai" ? (
+                            <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">Sesuai</span>
+                          ) : evidence[key] === "tidak_sesuai" ? (
+                            <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full">Tidak Sesuai</span>
+                          ) : <span className="text-muted-foreground">—</span>}
+                        </td>
+                        <td className="py-2 px-3 text-sm">
+                          {risks[key] === "sesuai" ? (
+                            <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">Sesuai</span>
+                          ) : risks[key] === "tidak_sesuai" ? (
+                            <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full">Tidak Sesuai</span>
+                          ) : <span className="text-muted-foreground">—</span>}
+                        </td>
+                      </tr>
+                    ));
+                  })()}
                 </tbody>
               </table>
             </div>
@@ -265,9 +287,13 @@ export default function RekapAktualPage() {
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
+  const searchTimer = useRef<ReturnType<typeof setTimeout>>();
   const handleSearch = (val: string) => {
-    setSearchTerm(val);
-    setPage(1);
+    clearTimeout(searchTimer.current);
+    searchTimer.current = setTimeout(() => {
+      setSearchTerm(val);
+      setPage(1);
+    }, 300);
   };
 
   return (

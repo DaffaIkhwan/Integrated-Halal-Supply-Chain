@@ -27,8 +27,13 @@ export async function GET(req: NextRequest) {
     }
 
     // RBAC: Non-admin can only see their own inputs
-    if (session?.user?.role !== 'ADMIN') {
-      where.respondentEmail = session?.user?.email;
+    if (!session || session.user?.role !== 'ADMIN') {
+      if (type === 'risiko' || type === 'aktual') {
+        where.respondentEmail = session?.user?.email || 'unauthenticated';
+      } else {
+        // Jika pembobotan, mungkin aturannya sama, tapi instruksi user bilang K2 dan K3
+        where.respondentEmail = session?.user?.email || 'unauthenticated';
+      }
     }
 
     const [responses, total] = await Promise.all([
@@ -49,7 +54,13 @@ export async function GET(req: NextRequest) {
         page,
         totalPages: Math.ceil(total / limit),
       }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
+      {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'private, max-age=10, stale-while-revalidate=30',
+        },
+      }
     );
   } catch (error: any) {
     console.error('GET QuestionnaireResponse Error:', error?.message || error);

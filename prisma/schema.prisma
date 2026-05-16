@@ -497,4 +497,7 @@ model QuestionnaireResponse {
   status          String   @default("SUBMITTED") // SUBMITTED, REVIEWED, APPROVED
   createdAt       DateTime @default(now())
   updatedAt       DateTime @default(now()) @updatedAt
+
+  @@index([questionnaireType, respondentEmail, createdAt(sort: Desc)])
+  @@index([questionnaireType, createdAt(sort: Desc)])
 }
