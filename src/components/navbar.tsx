@@ -19,6 +19,8 @@ const ROLE_SHORT: Record<string, string> = {
 	CP8_DISTRIBUTION: "CP8",
 	CP9_RETAIL: "CP9",
 	CP10_CONSUMER: "CP10",
+	PAKAR_K1: "Pakar K1",
+	PAKAR_K2: "Pakar K2",
 };
 
 interface NavItem {
@@ -30,28 +32,27 @@ interface NavItem {
 const navItems: NavItem[] = [
 	{ href: "/dashboard", label: "Dashboard" },
 	{
-		href: "#", label: "Pembobotan",
+		href: "#", label: "K1",
 		children: [
 			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan" },
 			{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
 		],
 	},
 	{
-		href: "#", label: "Risiko",
+		href: "#", label: "K2",
 		children: [
 			{ href: "/dashboard/kuesioner-risiko", label: "Input Risiko" },
 			{ href: "/dashboard/rekap-risiko", label: "Rekap Data" },
 		],
 	},
 	{
-		href: "#", label: "Aktual",
+		href: "#", label: "K3",
 		children: [
-			{ href: "/dashboard/batch-management", label: "Manajemen Sapi" },
 			{ href: "/dashboard/kuesioner-aktual", label: "Input Aktual" },
 			{ href: "/dashboard/rekap-aktual", label: "Rekap Data" },
 		],
 	},
-	{ href: "/dashboard/input", label: "Input CP" },
+	{ href: "/dashboard/input", label: "Manajemen CP" },
 	{ href: "/dashboard/ahp-steps", label: "Tahapan AHP" },
 	{ href: "/chat", label: "Chat" },
 ];
@@ -110,13 +111,70 @@ export function Navbar() {
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	const dynamicNavItems = useMemo(() => {
-		const items = [...navItems];
-		if (session?.user?.role === "ADMIN") {
-			// Add rekap-all link and docs
-			items.push({ href: "/docs", label: "Tambah Knowledge" });
+		const role = (session?.user as any)?.role;
+
+		if (!session?.user) {
+			return [{ href: "/chat", label: "Chat" }];
 		}
+
+		// PAKAR_K1 — hanya Kuesioner 1 + Chat
+		if (role === "PAKAR_K1") {
+			return [
+				{
+					href: "#", label: "K1",
+					children: [
+						{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan" },
+						{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
+					],
+				},
+				{ href: "/chat", label: "Chat" },
+			];
+		}
+
+		// PAKAR_K2 — hanya Kuesioner 2 + Chat
+		if (role === "PAKAR_K2") {
+			return [
+				{
+					href: "#", label: "K2",
+					children: [
+						{ href: "/dashboard/kuesioner-risiko", label: "Input Risiko" },
+						{ href: "/dashboard/rekap-risiko", label: "Rekap Data" },
+					],
+				},
+				{ href: "/chat", label: "Chat" },
+			];
+		}
+
+		// CP1..CP10 — hanya Kuesioner 3 + Chat
+		if (role !== "ADMIN") {
+			const isFarmOrSlaughter = role === "CP1_FARM" || role === "CP4_SLAUGHTER";
+			return [
+				{
+					href: "#", label: "K3",
+					children: [
+						...(isFarmOrSlaughter ? [{ href: "/dashboard/batch-management", label: "Manajemen Sapi" }] : []),
+						{ href: "/dashboard/kuesioner-aktual", label: "Input Aktual" },
+						{ href: "/dashboard/rekap-aktual", label: "Rekap Data" },
+					],
+				},
+				{ href: "/chat", label: "Chat" },
+			];
+		}
+
+		// ADMIN — semua menu + Chat dropdown + Kelola User
+		const chatItem: NavItem = {
+			href: "#", label: "Chat",
+			children: [
+				{ href: "/chat", label: "Chatbot" },
+				{ href: "/docs", label: "Tambah Knowledge" },
+			],
+		};
+
+		const items = navItems.filter((item) => item.href !== "/chat");
+		items.push(chatItem);
+		items.push({ href: "/dashboard/user-management", label: "Kelola User" });
 		return items;
-	}, [session?.user?.role]);
+	}, [session?.user]);
 
 	useEffect(() => {
 		function handleClickOutside(e: MouseEvent) {

@@ -282,9 +282,9 @@ export default function RekapAktualPage() {
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">Rekap</span>
-              {" "}Kuesioner Aktual
+              {" "}Kuesioner 3 — Aktual
             </h1>
-            <p className="text-sm text-muted-foreground">Tabel data isian kuesioner kondisi aktual dari lapangan — Admin View</p>
+            <p className="text-sm text-muted-foreground">Tabel data isian kuesioner 3 (kondisi aktual) dari lapangan</p>
           </div>
         </div>
 

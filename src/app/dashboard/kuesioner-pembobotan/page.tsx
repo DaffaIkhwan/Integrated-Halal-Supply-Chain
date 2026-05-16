@@ -193,6 +193,16 @@ export default function KuesionerPembobotanPage() {
                     <option value="">— Pilih —</option>
                     {EXPERT_TYPES.map(et => <option key={et.id} value={et.id}>{et.label}</option>)}
                   </select>
+                ) : f.key === "jenisKelamin" ? (
+                  <select
+                    value={expertBg.jenisKelamin}
+                    onChange={e => setExpertBg(p => ({ ...p, jenisKelamin: e.target.value }))}
+                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  >
+                    <option value="">— Pilih —</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                  </select>
                 ) : (
                   <input
                     type={f.type}

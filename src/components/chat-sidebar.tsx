@@ -223,10 +223,18 @@ function HistoryGroup({
       </div>
       <div className="space-y-0.5">
         {items.map((session) => (
-          <button
+          <div
             key={session.id}
+            role="button"
+            tabIndex={0}
             onClick={() => onSelect(session.id)}
-            className={`group relative flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-[13px] transition-colors ${
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onSelect(session.id);
+              }
+            }}
+            className={`group relative flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-[13px] transition-colors cursor-pointer ${
               session.id === activeId
                 ? "bg-muted/80 text-foreground font-medium"
                 : "text-muted-foreground hover:bg-muted/40 hover:text-foreground"
@@ -244,7 +252,7 @@ function HistoryGroup({
             >
               <Trash2 className="h-3 w-3" />
             </button>
-          </button>
+          </div>
         ))}
       </div>
     </div>

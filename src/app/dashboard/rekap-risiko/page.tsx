@@ -35,9 +35,9 @@ interface ApiResult {
 }
 
 const TYPE_META: Record<string, { label: string; labelShort: string; color: string; icon: React.ReactNode }> = {
-  pembobotan: { label: "K1 — Pembobotan Model", labelShort: "Pembobotan", color: "from-cyan-500 to-blue-500", icon: <Scale className="h-4 w-4" /> },
-  risiko: { label: "K2 — Pengukuran Risiko", labelShort: "Risiko", color: "from-amber-500 to-orange-500", icon: <ClipboardCheck className="h-4 w-4" /> },
-  aktual: { label: "K3 — Kondisi Aktual", labelShort: "Aktual", color: "from-teal-500 to-cyan-500", icon: <FileCheck className="h-4 w-4" /> },
+  pembobotan: { label: "Kuesioner 1 — Pembobotan Model", labelShort: "K1", color: "from-cyan-500 to-blue-500", icon: <Scale className="h-4 w-4" /> },
+  risiko: { label: "Kuesioner 2 — Pengukuran Risiko", labelShort: "K2", color: "from-amber-500 to-orange-500", icon: <ClipboardCheck className="h-4 w-4" /> },
+  aktual: { label: "Kuesioner 3 — Kondisi Aktual", labelShort: "K3", color: "from-teal-500 to-cyan-500", icon: <FileCheck className="h-4 w-4" /> },
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -234,9 +234,9 @@ export default function RekapRisikoPage() {
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Rekap</span>
-              {" "}Kuesioner Risiko
+              {" "}Kuesioner 2 — Risiko
             </h1>
-            <p className="text-sm text-muted-foreground">Tabel data isian kuesioner pengukuran risiko dari responden — Admin View</p>
+            <p className="text-sm text-muted-foreground">Tabel data isian kuesioner 2 (pengukuran risiko) dari responden</p>
           </div>
         </div>
 

@@ -45,8 +45,11 @@ model User {
   name         String
   email        String             @unique
   password     String
-  role         String             @default("ADMIN") // ADMIN, CP1_FARM, CP2_FEED, CP3_TRANSPORT, CP4_SLAUGHTER, CP5_POST_SLAUGHTER, CP6_PROCESSING, CP7_STORAGE, CP8_DISTRIBUTION, CP9_RETAIL, CP10_CONSUMER
+  role         String             @default("ADMIN") // ADMIN, PAKAR_K1, PAKAR_K2, CP1_FARM, CP2_FEED, CP3_TRANSPORT, CP4_SLAUGHTER, CP5_POST_SLAUGHTER, CP6_PROCESSING, CP7_STORAGE, CP8_DISTRIBUTION, CP9_RETAIL, CP10_CONSUMER
   phone        String?
+  orgId        String?
+  orgName      String?
+  isBanned     Boolean            @default(false)
   createdAt    DateTime           @default(now())
   certificates HalalCertificate[]
   incidents    IncidentLog[]
@@ -167,6 +170,7 @@ model HalalBatch {
   cattle           Cattle                   @relation(fields: [cattleId], references: [id])
   slaughterhouseId String
   slaughterhouse   Slaughterhouse           @relation(fields: [slaughterhouseId], references: [id])
+  butcherName      String?
   productionDate   DateTime                 @default(now())
   totalRiskScore   Float                    @default(0.0)
   riskLevel        String                   @default("LOW")

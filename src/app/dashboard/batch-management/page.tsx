@@ -24,7 +24,7 @@ export default function BatchManagementPage() {
   const [refreshKey, setRefreshKey] = useState(0);
 
   const [cattleForm, setCattleForm] = useState({ earTag: "", breed: "Brahman", farmId: "" });
-  const [batchForm, setBatchForm] = useState({ cattleId: "", slaughterhouseId: "" });
+  const [batchForm, setBatchForm] = useState({ cattleId: "", slaughterhouseId: "", butcherName: "" });
 
   const [submittingCattle, setSubmittingCattle] = useState(false);
   const [submittingBatch, setSubmittingBatch] = useState(false);
@@ -78,7 +78,7 @@ export default function BatchManagementPage() {
       const result = await res.json();
       if (!res.ok) throw new Error(result.error);
       setMessage({ text: "Halal Batch berhasil diterbitkan!", type: 'success' });
-      setBatchForm({ cattleId: "", slaughterhouseId: "" });
+      setBatchForm({ cattleId: "", slaughterhouseId: "", butcherName: "" });
       setRefreshKey(k => k + 1);
     } catch (err: any) {
       setMessage({ text: err.message, type: 'error' });
@@ -134,7 +134,7 @@ export default function BatchManagementPage() {
           )}
         </AnimatePresence>
 
-        <div className={userRole === "ADMIN" ? "grid grid-cols-1 lg:grid-cols-2 gap-8" : "max-w-3xl space-y-8"}>
+        <div className={userRole === "ADMIN" ? "grid grid-cols-1 lg:grid-cols-2 gap-8" : "max-w-3xl mx-auto space-y-8"}>
           
           {/* KOLOM KIRI: FORM SAPI */}
           {(userRole === "ADMIN" || userRole === "CP1_FARM") && (
@@ -172,20 +172,22 @@ export default function BatchManagementPage() {
                         onChange={e => setCattleForm({...cattleForm, breed: e.target.value})}
                       />
                     </div>
-                    <div>
-                      <label className="text-xs font-semibold text-muted-foreground mb-1 block">Asal Peternakan (Farm)</label>
-                      <select 
-                        required
-                        className="w-full px-3 py-2 rounded-lg border bg-background text-sm focus:outline-none focus:border-cyan-500"
-                        value={cattleForm.farmId}
-                        onChange={e => setCattleForm({...cattleForm, farmId: e.target.value})}
-                      >
-                        <option value="">-- Pilih Farm --</option>
-                        {data?.farms?.map((f: any) => (
-                          <option key={f.id} value={f.id}>{f.name}</option>
-                        ))}
-                      </select>
-                    </div>
+                    {userRole === "ADMIN" && (
+                      <div>
+                        <label className="text-xs font-semibold text-muted-foreground mb-1 block">Asal Peternakan (Farm)</label>
+                        <select 
+                          required
+                          className="w-full px-3 py-2 rounded-lg border bg-background text-sm focus:outline-none focus:border-cyan-500"
+                          value={cattleForm.farmId}
+                          onChange={e => setCattleForm({...cattleForm, farmId: e.target.value})}
+                        >
+                          <option value="">-- Pilih Farm --</option>
+                          {data?.farms?.map((f: any) => (
+                            <option key={f.id} value={f.id}>{f.name}</option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
                   </div>
                   <button 
                     type="submit" 
@@ -257,19 +259,32 @@ export default function BatchManagementPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-muted-foreground mb-1 block">Pilih Lokasi Pemotongan (RPH)</label>
-                    <select 
+                    <label className="text-xs font-semibold text-muted-foreground mb-1 block">Nama Juru Sembelih (Butcher)</label>
+                    <input 
+                      type="text" 
                       required
+                      placeholder="Contoh: Budi Santoso"
                       className="w-full px-3 py-2 rounded-lg border bg-background text-sm focus:outline-none focus:border-emerald-500"
-                      value={batchForm.slaughterhouseId}
-                      onChange={e => setBatchForm({...batchForm, slaughterhouseId: e.target.value})}
-                    >
-                      <option value="">-- Pilih RPH --</option>
-                      {data?.slaughterhouses?.map((s: any) => (
-                        <option key={s.id} value={s.id}>{s.name}</option>
-                      ))}
-                    </select>
+                      value={batchForm.butcherName}
+                      onChange={e => setBatchForm({...batchForm, butcherName: e.target.value})}
+                    />
                   </div>
+                  {userRole === "ADMIN" && (
+                    <div>
+                      <label className="text-xs font-semibold text-muted-foreground mb-1 block">Pilih Lokasi Pemotongan (RPH)</label>
+                      <select 
+                        required
+                        className="w-full px-3 py-2 rounded-lg border bg-background text-sm focus:outline-none focus:border-emerald-500"
+                        value={batchForm.slaughterhouseId}
+                        onChange={e => setBatchForm({...batchForm, slaughterhouseId: e.target.value})}
+                      >
+                        <option value="">-- Pilih RPH --</option>
+                        {data?.slaughterhouses?.map((s: any) => (
+                          <option key={s.id} value={s.id}>{s.name}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                   
                   <button 
                     type="submit" 

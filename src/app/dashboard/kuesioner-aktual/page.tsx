@@ -10,7 +10,7 @@ import {
   CheckCircle2, Info, Building2, FileText
 } from "lucide-react";
 
-type RiskAnswers = Record<string, number>;
+type RiskAnswers = Record<string, string>;
 type EvidenceAvail = Record<string, boolean>;
 type UploadedFiles = Record<string, File | null>;
 
@@ -69,7 +69,7 @@ function SubCriteriaForm({
 }: {
   sub: SubCriteria;
   risks: RiskAnswers; evidence: EvidenceAvail; files: UploadedFiles;
-  onRisk: (k: string, v: number) => void;
+  onRisk: (k: string, v: string) => void;
   onEvidence: (k: string, v: boolean) => void;
   onUpload: (k: string, f: File) => void;
   onRemoveFile: (k: string) => void;
@@ -99,8 +99,8 @@ function SubCriteriaForm({
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-2">
               {/* Header */}
-              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_60px_200px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
-                <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Kondisi Aktual (1-5)</span>
+              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_60px_160px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+                <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Verifikasi Supervisor</span>
               </div>
 
               {sub.indicators.map(ind => {
@@ -108,7 +108,7 @@ function SubCriteriaForm({
                 const val = risks[key];
                 const hasEvidence = evidence[key];
                 return (
-                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_60px_200px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_60px_160px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
                     {/* Number & Statement */}
                     <div className="flex gap-2 w-full md:contents items-start">
                       <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
@@ -150,26 +150,26 @@ function SubCriteriaForm({
                       </div>
                     </div>
 
-                    {/* Scale */}
+                    {/* Verifikasi Supervisor */}
                     <div className="w-full flex flex-col md:block items-center gap-2 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
-                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Kondisi Aktual (1-5)</span>
-                      <div className="flex items-center gap-1 w-full md:w-auto justify-center">
-                        {RISK_SCALE_LIKERT.map(scale => (
-                          <button
-                            key={scale.value}
-                            onClick={() => onRisk(key, scale.value)}
-                            className={`flex-1 md:flex-none md:w-8 h-10 md:h-8 rounded-lg text-sm md:text-xs font-bold transition-all ${
-                              val === scale.value
-                                ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg"
-                                  : scale.value === 3 ? "bg-amber-500 text-white shadow-lg"
-                                  : "bg-red-500 text-white shadow-lg"
-                                : "bg-muted hover:bg-muted/80 text-muted-foreground"
-                            }`}
-                            title={scale.label}
-                          >
-                            {scale.value}
-                          </button>
-                        ))}
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Verifikasi Supervisor</span>
+                      <div className="flex flex-col gap-1.5 w-full justify-center">
+                        <button
+                          onClick={() => onRisk(key, "sesuai")}
+                          className={`w-full px-3 py-1.5 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                            val === "sesuai" ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20" : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                          }`}
+                        >
+                          Sesuai
+                        </button>
+                        <button
+                          onClick={() => onRisk(key, "tidak_sesuai")}
+                          className={`w-full px-3 py-1.5 md:py-1 rounded-md text-[11px] md:text-[10px] font-semibold transition-all ${
+                            val === "tidak_sesuai" ? "bg-red-500 text-white shadow-md shadow-red-500/20" : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                          }`}
+                        >
+                          Tidak Sesuai
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -183,7 +183,20 @@ function SubCriteriaForm({
   );
 }
 
+import { useSession } from "next-auth/react";
+import { useMemo } from "react";
+
 export default function KuesionerAktualPage() {
+  const { data: session } = useSession();
+
+  const availableCPs = useMemo(() => {
+    if (!session?.user?.role || session.user.role === "ADMIN") {
+      return ALL_CP_QUESTIONNAIRES;
+    }
+    const rolePrefix = session.user.role.split("_")[0];
+    return ALL_CP_QUESTIONNAIRES.filter((cp) => cp.cpId === rolePrefix);
+  }, [session?.user?.role]);
+
   const [selectedCPIndex, setSelectedCPIndex] = useState(0);
   const [risks, setRisks] = useState<RiskAnswers>({});
   const [evidence, setEvidence] = useState<EvidenceAvail>({});
@@ -198,21 +211,19 @@ export default function KuesionerAktualPage() {
     namaSupervisor: "", hasilVerifikasi: "", tingkatRisiko: "", tindakanKorektif: "", tanggalVerifikasi: "",
   });
 
-  const cp = ALL_CP_QUESTIONNAIRES[selectedCPIndex];
+  const cp = availableCPs[selectedCPIndex] || availableCPs[0];
   const totalQ = cp.subCriteria.reduce((a, s) => a + s.indicators.length, 0);
   const answeredQ = cp.subCriteria.reduce((a, s) => a + s.indicators.filter(i => risks[`${s.code}_${i.no}`]).length, 0);
 
-  // Auto-calculate overall risk level from answered values
-  const riskValues = Object.values(risks).filter(v => typeof v === 'number' && v > 0) as number[];
-  const avgRisk = riskValues.length > 0
-    ? riskValues.reduce((a, b) => a + b, 0) / riskValues.length
-    : 0;
-  const calculatedRiskScale = RISK_SCALE_LIKERT.find(s => s.value === Math.round(avgRisk));
-  const calculatedRiskLabel = calculatedRiskScale?.label || '—';
-  const calculatedRiskColor = avgRisk <= 1.5 ? 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30'
-    : avgRisk <= 2.5 ? 'text-sky-400 bg-sky-500/15 border-sky-500/30'
-    : avgRisk <= 3.5 ? 'text-amber-400 bg-amber-500/15 border-amber-500/30'
-    : avgRisk <= 4.5 ? 'text-orange-400 bg-orange-500/15 border-orange-500/30'
+  // Calculate compliance stats
+  const answeredValues = Object.values(risks) as string[];
+  const sesuaiCount = answeredValues.filter(v => v === "sesuai").length;
+  const tidakSesuaiCount = answeredValues.filter(v => v === "tidak_sesuai").length;
+  const totalAnsweredRisk = sesuaiCount + tidakSesuaiCount;
+  const compliancePercent = totalAnsweredRisk > 0 ? Math.round((sesuaiCount / totalAnsweredRisk) * 100) : 0;
+  
+  const calculatedColor = compliancePercent >= 80 ? 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30'
+    : compliancePercent >= 50 ? 'text-amber-400 bg-amber-500/15 border-amber-500/30'
     : 'text-red-400 bg-red-500/15 border-red-500/30';
 
   const handlePreSubmit = () => {
@@ -262,7 +273,7 @@ export default function KuesionerAktualPage() {
           respondentEmail: null,
           respondentInfo: bgData,
           answers: { risks, evidence },
-          notes: { ...validasiSupervisor, tingkatRisiko: calculatedRiskLabel, avgRiskScore: avgRisk.toFixed(2) },
+          notes: { ...validasiSupervisor, tingkatRisiko: `${compliancePercent}% Kepatuhan (${sesuaiCount} Sesuai)` },
           files: fileList,
         }),
       });
@@ -271,7 +282,7 @@ export default function KuesionerAktualPage() {
     setSubmitting(false);
 
     // Auto next CP
-    if (selectedCPIndex < ALL_CP_QUESTIONNAIRES.length - 1) {
+    if (selectedCPIndex < availableCPs.length - 1) {
       setTimeout(() => {
         setSelectedCPIndex(selectedCPIndex + 1);
         setSubmitted(false);
@@ -303,13 +314,13 @@ export default function KuesionerAktualPage() {
           <Info className="h-5 w-5 text-teal-400 shrink-0 mt-0.5" />
           <div className="text-sm text-muted-foreground">
             <p className="font-medium text-foreground mb-1">Petunjuk Pengisian</p>
-            <p>Centang ketersediaan bukti dukung (Ya/Tidak), upload bukti pendukung, dan berikan penilaian kondisi aktual (1-5) berdasarkan keberadaan aktual dari masing-masing indikator.</p>
+            <p>Centang ketersediaan bukti dukung (Ya/Tidak), upload bukti pendukung, dan berikan verifikasi supervisor (Sesuai/Tidak Sesuai) berdasarkan keberadaan aktual dari masing-masing indikator.</p>
           </div>
         </div>
 
         {/* CP Selector */}
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
-          {ALL_CP_QUESTIONNAIRES.map((cpItem, idx) => (
+          {availableCPs.map((cpItem, idx) => (
             <button
               key={cpItem.cpId}
               onClick={() => setSelectedCPIndex(idx)}
@@ -340,24 +351,7 @@ export default function KuesionerAktualPage() {
           </div>
         </div>
 
-        {/* Risk Scale */}
-        <div className="rounded-xl border bg-card p-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Skala Kondisi Aktual</p>
-          <div className="grid grid-cols-5 gap-2">
-            {RISK_SCALE_LIKERT.map(s => (
-              <div key={s.value} className={`rounded-lg p-2 text-center border ${
-                s.value === 1 ? "border-emerald-500/30 bg-emerald-500/5" :
-                s.value === 2 ? "border-sky-500/30 bg-sky-500/5" :
-                s.value === 3 ? "border-amber-500/30 bg-amber-500/5" :
-                s.value === 4 ? "border-orange-500/30 bg-orange-500/5" :
-                "border-red-500/30 bg-red-500/5"
-              }`}>
-                <p className="text-lg font-bold">{s.value}</p>
-                <p className="text-[10px] font-semibold">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         {/* CP Content */}
         <div className="rounded-2xl border bg-card p-5 shadow-lg">
@@ -398,13 +392,13 @@ export default function KuesionerAktualPage() {
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Tingkat Risiko Keseluruhan</label>
-              <div className={`flex items-center justify-between w-full rounded-lg border px-3 py-2 text-sm font-semibold ${riskValues.length > 0 ? calculatedRiskColor : 'border-border bg-muted/30 text-muted-foreground'}`}>
-                <span>{calculatedRiskLabel}</span>
-                {riskValues.length > 0 && (
-                  <span className="text-xs font-mono opacity-70">rata-rata: {avgRisk.toFixed(2)}</span>
+              <div className={`flex items-center justify-between w-full rounded-lg border px-3 py-2 text-sm font-semibold ${totalAnsweredRisk > 0 ? calculatedColor : 'border-border bg-muted/30 text-muted-foreground'}`}>
+                <span>{totalAnsweredRisk > 0 ? `${compliancePercent}% Kepatuhan` : '—'}</span>
+                {totalAnsweredRisk > 0 && (
+                  <span className="text-xs font-mono opacity-70">{sesuaiCount} Sesuai / {totalAnsweredRisk} Total</span>
                 )}
               </div>
-              <p className="text-[10px] text-muted-foreground mt-1">⚡ Dihitung otomatis oleh sistem dari {riskValues.length} jawaban kondisi aktual</p>
+              <p className="text-[10px] text-muted-foreground mt-1">⚡ Dihitung otomatis oleh sistem dari {totalAnsweredRisk} jawaban verifikasi</p>
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Tanggal Verifikasi</label>

@@ -4,10 +4,12 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { LogIn, Loader2, AlertTriangle, Shield, Eye, EyeOff } from "lucide-react";
+import { LogIn, Loader2, AlertTriangle, Shield, Eye, EyeOff, ArrowLeft } from "lucide-react";
 
 const ROLE_LABELS: Record<string, string> = {
   ADMIN: "Administrator",
+  PAKAR_K1: "Pakar — Kuesioner 1 (Pembobotan)",
+  PAKAR_K2: "Pakar — Kuesioner 2 (Risiko)",
   CP1_FARM: "CP1 — Farm / Kandang",
   CP2_FEED: "CP2 — Pakan & Kesehatan",
   CP3_TRANSPORT: "CP3 — Transportasi",
@@ -45,12 +47,29 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/dashboard");
+    // Ambil session untuk mengecek role
+    const sessionRes = await fetch("/api/auth/session");
+    const sessionData = await sessionRes.json();
+    
+    if (sessionData?.user?.role === "ADMIN") {
+      router.push("/dashboard");
+    } else {
+      router.push("/chat");
+    }
     router.refresh();
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+      {/* Back Button (Top Left) */}
+      <button
+        onClick={() => router.push("/")}
+        className="absolute top-6 left-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-background/80 backdrop-blur-md border border-border/50 shadow-sm text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all hover:scale-105"
+        aria-label="Kembali ke Beranda"
+      >
+        <ArrowLeft className="h-5 w-5" />
+      </button>
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[40%] -right-[20%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-cyan-500/8 to-emerald-500/8 blur-3xl" />

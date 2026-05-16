@@ -276,12 +276,24 @@ export default function KuesionerRisikoPage() {
             ].map(f => (
               <div key={f.key}>
                 <label className="text-xs font-medium text-muted-foreground mb-1 block">{f.label}</label>
-                <input
-                  type={f.type}
-                  value={auditorBg[f.key as keyof typeof auditorBg]}
-                  onChange={e => setAuditorBg(prev => ({ ...prev, [f.key]: e.target.value }))}
-                  className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
-                />
+                {f.key === "jenisKelamin" ? (
+                  <select
+                    value={auditorBg.jenisKelamin}
+                    onChange={e => setAuditorBg(prev => ({ ...prev, jenisKelamin: e.target.value }))}
+                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  >
+                    <option value="">— Pilih —</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                  </select>
+                ) : (
+                  <input
+                    type={f.type}
+                    value={auditorBg[f.key as keyof typeof auditorBg]}
+                    onChange={e => setAuditorBg(prev => ({ ...prev, [f.key]: e.target.value }))}
+                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  />
+                )}
               </div>
             ))}
           </div>

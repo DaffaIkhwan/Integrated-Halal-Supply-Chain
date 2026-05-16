@@ -23,6 +23,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         });
 
         if (!user) return null;
+        if (user.isBanned) return null;
 
         const isValid = await compare(
           credentials.password as string,
@@ -36,6 +37,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           name: user.name,
           email: user.email,
           role: user.role,
+          orgId: user.orgId,
         };
       },
     }),

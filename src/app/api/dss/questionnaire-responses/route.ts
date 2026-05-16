@@ -1,11 +1,13 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { prisma } from '@/lib/db/client';
+import { auth } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
 // GET — list questionnaire responses with filters
 export async function GET(req: NextRequest) {
   try {
+    const session = await auth();
     const { searchParams } = new URL(req.url);
     const type = searchParams.get('type'); // pembobotan | risiko | aktual
     const cpId = searchParams.get('cpId');
@@ -22,6 +24,11 @@ export async function GET(req: NextRequest) {
         { respondentOrg: { contains: search, mode: 'insensitive' } },
         { respondentEmail: { contains: search, mode: 'insensitive' } },
       ];
+    }
+
+    // RBAC: Non-admin can only see their own inputs
+    if (session?.user?.role !== 'ADMIN') {
+      where.respondentEmail = session?.user?.email;
     }
 
     const [responses, total] = await Promise.all([
@@ -56,6 +63,7 @@ export async function GET(req: NextRequest) {
 // POST — save a new questionnaire response
 export async function POST(req: NextRequest) {
   try {
+    const session = await auth();
     const body = await req.json();
     const {
       questionnaireType,
@@ -77,6 +85,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const finalEmail = session?.user?.email || respondentEmail || null;
+
     const response = await prisma.questionnaireResponse.create({
       data: {
         questionnaireType,
@@ -84,7 +94,7 @@ export async function POST(req: NextRequest) {
         respondentName,
         respondentRole: respondentRole || null,
         respondentOrg: respondentOrg || null,
-        respondentEmail: respondentEmail || null,
+        respondentEmail: finalEmail,
         respondentInfo: respondentInfo || {},
         answers: answers || {},
         notes: notes || {},
