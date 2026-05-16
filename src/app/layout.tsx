@@ -2,16 +2,19 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/components/auth-provider";
+import { ThemeProvider } from "@/components/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
 	title: "Halal KMS-DSS",
-	description: "Knowledge Management & Decision Support System untuk Rantai Pasok Halal",
+	description:
+		"Knowledge Management & Decision Support System untuk Rantai Pasok Halal",
 	openGraph: {
 		title: "Halal KMS-DSS",
-		description: "Knowledge Management & Decision Support System untuk Rantai Pasok Halal",
+		description:
+			"Knowledge Management & Decision Support System untuk Rantai Pasok Halal",
 		url: "https://halal-kms.com",
 		siteName: "Halal KMS",
 		images: [
@@ -27,7 +30,8 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Halal KMS-DSS",
-		description: "Knowledge Management & Decision Support System Rantai Pasok Halal",
+		description:
+			"Knowledge Management & Decision Support System Rantai Pasok Halal",
 	},
 };
 
@@ -52,6 +56,7 @@ export default function RootLayout({
 						{children}
 					</ThemeProvider>
 				</AuthProvider>
+				<SpeedInsights />
 			</body>
 		</html>
 	);
