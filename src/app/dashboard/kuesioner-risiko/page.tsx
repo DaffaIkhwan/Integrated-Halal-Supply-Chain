@@ -45,7 +45,7 @@ function FileUploadButton({ fileKey, files, onUpload, onRemove }: {
   return (
     <div className="flex items-center gap-1.5">
       {file ? (
-        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-400 max-w-[140px]">
+        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-400 max-w-[110px]">
           <FileText className="h-3 w-3 shrink-0" />
           <span className="truncate">{file.name}</span>
           <button onClick={() => onRemove(fileKey)} className="shrink-0 hover:text-red-400"><X className="h-3 w-3" /></button>

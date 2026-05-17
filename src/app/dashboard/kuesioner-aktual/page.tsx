@@ -45,7 +45,7 @@ function FileUploadButton({ fileKey, files, onUpload, onRemove }: {
   return (
     <div className="flex items-center gap-1.5">
       {file ? (
-        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-400 max-w-[140px]">
+        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-400 max-w-[110px]">
           <FileText className="h-3 w-3 shrink-0" />
           <span className="truncate">{file.name}</span>
           <button onClick={() => onRemove(fileKey)} className="shrink-0 hover:text-red-400"><X className="h-3 w-3" /></button>
@@ -99,7 +99,7 @@ function SubCriteriaForm({
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-2">
               {/* Header */}
-              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_60px_100px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_120px_100px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
                 <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Kesesuaian</span>
               </div>
 
@@ -108,7 +108,7 @@ function SubCriteriaForm({
                 const val = risks[key];
                 const hasEvidence = evidence[key];
                 return (
-                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_60px_100px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_120px_100px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
                     {/* Number & Statement */}
                     <div className="flex gap-2 w-full md:contents items-start">
                       <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
