@@ -230,10 +230,11 @@ export default function KuesionerRisikoPage() {
   const { data: session } = useSession();
 
   const availableCPs = useMemo(() => {
-    if (!session?.user?.role || session.user.role === "ADMIN") {
+    const role = session?.user?.role;
+    if (!role || role === "ADMIN" || role.toUpperCase().startsWith("PAKAR")) {
       return ALL_CP_QUESTIONNAIRES;
     }
-    const rolePrefix = session.user.role.split("_")[0];
+    const rolePrefix = role.split("_")[0];
     return ALL_CP_QUESTIONNAIRES.filter((cp) => cp.cpId === rolePrefix);
   }, [session?.user?.role]);
 
@@ -253,6 +254,24 @@ export default function KuesionerRisikoPage() {
   });
 
   const cp = availableCPs[selectedCPIndex] || availableCPs[0];
+
+  // Prevent crash if role doesn't have any mapped CPs
+  if (!cp) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <Navbar />
+        <main className="flex-1 max-w-[1200px] mx-auto w-full px-4 py-8 flex flex-col items-center justify-center">
+          <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3 text-red-500">
+            <AlertTriangle className="h-6 w-6" />
+            <div>
+              <h2 className="font-bold">Akses Ditolak</h2>
+              <p className="text-sm">Role Anda ({session?.user?.role}) tidak memiliki akses ke kuesioner risiko untuk titik kritis mana pun.</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   const handleAnswer = useCallback((key: string, value: number) => {
     setAnswers(prev => ({ ...prev, [key]: value }));
@@ -415,6 +434,43 @@ export default function KuesionerRisikoPage() {
               </button>
             );
           })}
+        </div>
+
+        {/* Identitas Auditor — from Rubrik */}
+        <div className="rounded-xl border bg-card p-5">
+          <p className="text-sm font-bold mb-4 flex items-center gap-2">
+            <Shield className="h-4 w-4 text-primary" /> Identitas Auditor / Penilai
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">Tanggal Audit</label>
+              <input type="date" value={auditorBg.tanggalAudit} onChange={e => setAuditorBg(p => ({ ...p, tanggalAudit: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">Nama Auditor</label>
+              <input type="text" value={auditorBg.nama} onChange={e => setAuditorBg(p => ({ ...p, nama: e.target.value }))} placeholder="Nama lengkap auditor" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">Jenis Kelamin</label>
+              <select value={auditorBg.jenisKelamin} onChange={e => setAuditorBg(p => ({ ...p, jenisKelamin: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+                <option value="">— Pilih —</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">Posisi / Jabatan</label>
+              <input type="text" value={auditorBg.posisi} onChange={e => setAuditorBg(p => ({ ...p, posisi: e.target.value }))} placeholder="Posisi di instansi" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">Nama Instansi</label>
+              <input type="text" value={auditorBg.namaInstansi} onChange={e => setAuditorBg(p => ({ ...p, namaInstansi: e.target.value }))} placeholder="Nama instansi / lembaga" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">No Sertifikat Auditor (Jika Ada)</label>
+              <input type="text" value={auditorBg.noSertifikat} onChange={e => setAuditorBg(p => ({ ...p, noSertifikat: e.target.value }))} placeholder="Nomor sertifikat auditor" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+          </div>
         </div>
 
         {/* Background Form — from CP data */}

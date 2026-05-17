@@ -196,46 +196,32 @@ export const SCALE_DESCRIPTIONS: Record<string, string[]> = {
     "Tidak tersedia dokumentasi proses"
   ],
   "CP6.1": [
-    "Semua additive dan bahan tambahan bersertifikat halal dan tervalidasi",
-    "Sebagian menggunakan supplier declaration",
-    "Sebagian dokumen halal belum update",
-    "Additive tidak tervalidasi dengan baik",
-    "Menggunakan additive non-halal/syubhat"
+    "Karkas ditangani higienis sesuai SOP halal, APD lengkap, area bersih dan tervalidasi",
+    "Minor issue APD atau sanitasi peralatan",
+    "Cleaning tidak konsisten atau sebagian APD tidak tersedia",
+    "Karkas berpotensi kontaminasi dan hygiene lemah",
+    "Karkas terkontaminasi najis/non-halal atau area tidak higienis"
   ],
   "CP6.2": [
-    "Seluruh peralatan dibersihkan sesuai SOP halal sanitation dan tervalidasi",
-    "Cleaning berjalan dengan minor issue dokumentasi",
-    "Sanitasi tidak konsisten",
-    "Potensi kontaminasi biologis/najis tinggi",
-    "Peralatan terpapar non-halal atau tidak disanitasi"
+    "Setiap karkas memiliki kode batch unik, terhubung asal hewan dan operator secara realtime",
+    "Labeling berjalan dengan minor issue administratif",
+    "Sebagian batch tidak teridentifikasi atau label tidak konsisten",
+    "Traceability batch lemah dan pencatatan tidak konsisten",
+    "Batch tidak dapat ditelusuri atau tidak ada identifikasi karkas"
   ],
   "CP6.3": [
-    "Dedicated halal line tersedia dan tervalidasi",
-    "Shared line dengan cleansing procedure tervalidasi",
-    "Segregasi line belum optimal",
-    "Risiko pencampuran halal/nonhalal tinggi",
-    "Jalur produksi halal dan non-halal bercampur"
+    "Karkas halal dan non-halal sepenuhnya terpisah pada seluruh proses pengolahan",
+    "Segregasi berjalan dengan minor issue labeling atau identifikasi",
+    "Area segregasi belum optimal atau dokumentasi belum lengkap",
+    "Risiko pencampuran halal/non-halal tinggi pada jalur pengolahan",
+    "Terjadi cross contamination atau pencampuran karkas halal/non-halal"
   ],
   "CP6.4": [
-    "Batch dan formula produk tervalidasi, terdokumentasi, dan realtime traceable",
-    "Minor issue administrasi batch",
-    "Sebagian formula belum terdokumentasi lengkap",
-    "Kontrol batch lemah dan rawan kesalahan",
-    "Formula tidak tervalidasi atau batch tidak dapat ditelusuri"
-  ],
-  "CP6.5": [
-    "Kemasan dan label sesuai regulasi halal dan BPJPH",
-    "Minor issue desain/administratif label",
-    "Sebagian label belum update",
-    "Label halal tidak tervalidasi",
-    "Produk tanpa label halal resmi atau mislabeling"
-  ],
-  "CP6.6": [
-    "Seluruh operator telah training halal, hygiene, dan SOP processing",
-    "Training berjalan namun refreshment belum rutin",
-    "Sebagian operator belum dievaluasi kompetensinya",
-    "Pemahaman SOP halal rendah",
-    "Tidak ada training halal atau operator tidak kompeten"
+    "Seluruh aktivitas post-slaughter terdokumentasi lengkap dan terhubung batch distribusi",
+    "Minor issue pencatatan administratif atau cleaning log",
+    "Sebagian logbook atau checklist tidak lengkap",
+    "Dokumentasi tidak konsisten dan sulit diverifikasi",
+    "Tidak tersedia dokumentasi proses pengolahan"
   ],
   "CP7.1": [
     "Monitoring suhu realtime dan stabil",
