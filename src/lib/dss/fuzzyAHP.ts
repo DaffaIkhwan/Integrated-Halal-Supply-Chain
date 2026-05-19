@@ -283,7 +283,9 @@ export async function calculateBatchRiskScore(batchId: string) {
     // Calculate local risk score: Σ(weight × riskValue)
     let localRisk = 0;
     for (const cw of cp.criteriaWeights) {
-      const riskValue = record[cw.criteriaCode] ?? 0;
+      const rawValue = record[cw.criteriaCode] ?? 0; // 1 to 5 scale
+      // Convert raw scale 1-5 to crisp decimal 0.2 - 1.0
+      const riskValue = rawValue > 0 ? rawValue * 0.20 : 0;
       localRisk += cw.weight * riskValue;
     }
 

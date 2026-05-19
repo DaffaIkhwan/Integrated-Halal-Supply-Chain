@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useRef, useMemo, useCallback } from "react";
+import { toast } from "sonner";
+
+import { useState, useRef, useMemo, useCallback, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
@@ -9,7 +11,7 @@ import { SCALE_DESCRIPTIONS } from "@/lib/data/scale-descriptions";
 import type { CPQuestionnaire, SubCriteria, BackgroundField } from "@/lib/data/questionnaire-index";
 import {
   Shield, ChevronDown, ChevronUp, Send, ClipboardCheck,
-  AlertTriangle, CheckCircle2, Info, Upload, X, FileText
+  AlertTriangle, CheckCircle2, Info, FileText, Download
 } from "lucide-react";
 
 type Answers = Record<string, number>; // { "CP1.1_1": riskValue, ... }
@@ -34,44 +36,26 @@ function RiskBadge({ value }: { value: number }) {
   );
 }
 
-function FileUploadButton({ fileKey, files, onUpload, onRemove }: {
-  fileKey: string; files: UploadedFiles;
-  onUpload: (key: string, file: File) => void;
-  onRemove: (key: string) => void;
-}) {
-  const ref = useRef<HTMLInputElement>(null);
-  const file = files[fileKey];
-
+function DocumentViewButton({ fileKey, filesMap }: { fileKey: string; filesMap: Record<string, { url: string; filename: string }> }) {
+  const file = filesMap[fileKey];
+  if (!file) {
+    return <span className="text-[10px] text-muted-foreground italic bg-muted px-2 py-1 rounded-md">Tidak ada dokumen</span>;
+  }
   return (
-    <div className="flex items-center gap-1.5">
-      {file ? (
-        <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[10px] text-emerald-400 max-w-[110px]">
-          <FileText className="h-3 w-3 shrink-0" />
-          <span className="truncate">{file.name}</span>
-          <button onClick={() => onRemove(fileKey)} className="shrink-0 hover:text-red-400"><X className="h-3 w-3" /></button>
-        </div>
-      ) : (
-        <button
-          onClick={() => ref.current?.click()}
-          className="flex items-center gap-1 px-2 py-1 rounded-md bg-muted hover:bg-muted/80 text-[10px] text-muted-foreground transition-colors"
-        >
-          <Upload className="h-3 w-3" /> Upload
-        </button>
-      )}
-      <input ref={ref} type="file" className="hidden" onChange={e => { if (e.target.files?.[0]) onUpload(fileKey, e.target.files[0]); }} />
-    </div>
+    <a href={file.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-2 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-[10px] text-cyan-400 hover:bg-cyan-500/20 max-w-[110px] transition-colors" title={file.filename}>
+      <FileText className="h-3 w-3 shrink-0" />
+      <span className="truncate">{file.filename}</span>
+    </a>
   );
 }
 
 function SubCriteriaSection({
-  cp, sub, answers, notes, files, evidenceCheck, onAnswer, onNote, onUpload, onRemoveFile, onEvidenceCheck
+  cp, sub, answers, notes, aktualFilesMap, evidenceCheck, onAnswer, onNote, onEvidenceCheck
 }: {
   cp: CPQuestionnaire; sub: SubCriteria;
-  answers: Answers; notes: AuditorNotes; files: UploadedFiles; evidenceCheck: EvidenceCheck;
+  answers: Answers; notes: AuditorNotes; aktualFilesMap: Record<string, { url: string; filename: string }>; evidenceCheck: EvidenceCheck;
   onAnswer: (key: string, val: number) => void;
   onNote: (key: string, val: string) => void;
-  onUpload: (k: string, f: File) => void;
-  onRemoveFile: (k: string) => void;
   onEvidenceCheck: (key: string, val: "sesuai" | "tidak_sesuai") => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -81,7 +65,7 @@ function SubCriteriaSection({
 
   return (
     <div className="border border-border/50 rounded-xl overflow-hidden bg-card/50">
-      <button onClick={() => setOpen(!open)} className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-muted/30 transition-colors">
+      <div onClick={() => setOpen(!open)} role="button" tabIndex={0} className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-muted/30 transition-colors cursor-pointer">
         <span className="shrink-0 w-16 text-xs font-mono font-bold text-primary">{sub.code}</span>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium truncate">{sub.name}</p>
@@ -93,18 +77,18 @@ function SubCriteriaSection({
           </span>
           {open ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
         </div>
-      </button>
+      </div>
 
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-3">
               {/* Table header */}
-              <div className="hidden md:grid grid-cols-[auto_1fr_140px_80px_80px_auto] gap-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+              <div className="hidden md:grid grid-cols-[auto_1fr_120px_140px_110px_270px] gap-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
                 <span className="w-6">No</span>
                 <span>Pernyataan</span>
                 <span className="text-center">Bukti Pendukung</span>
-                <span className="text-center">Upload</span>
+                <span className="text-center">Dokumen Aktual</span>
                 <span className="text-center">Kesesuaian</span>
                 <span className="w-[280px] text-center">Tingkat Ketersediaan / Risiko</span>
               </div>
@@ -114,7 +98,7 @@ function SubCriteriaSection({
                 const val = answers[key] as number | undefined;
                 const evCheck = evidenceCheck[key];
                 return (
-                  <div key={key} className="flex flex-col md:grid md:grid-cols-[auto_1fr_140px_80px_80px_auto] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[auto_1fr_120px_140px_110px_270px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
                     {/* Number & Statement */}
                     <div className="flex gap-2 w-full md:contents items-start">
                       <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
@@ -129,10 +113,10 @@ function SubCriteriaSection({
                       <span className="text-[11px] text-muted-foreground italic">{ind.evidence}</span>
                     </div>
 
-                    {/* Upload */}
+                    {/* Dokumen Aktual */}
                     <div className="w-full flex flex-col items-end md:items-center justify-center mt-2 md:mt-0">
-                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">Upload</span>
-                      <FileUploadButton fileKey={key} files={files} onUpload={onUpload} onRemove={onRemoveFile} />
+                      <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground">Dokumen</span>
+                      <DocumentViewButton fileKey={key} filesMap={aktualFilesMap} />
                     </div>
 
                     {/* Kesesuaian (Sesuai / Tidak Sesuai) */}
@@ -159,13 +143,41 @@ function SubCriteriaSection({
                     </div>
 
                     {/* Tingkat Ketersediaan / Risiko */}
-                    <div className="w-full md:w-[280px] flex flex-col items-center gap-2 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
+                    <div className="w-full md:w-[270px] flex flex-col items-center gap-2 justify-center mt-3 md:mt-0 pt-3 md:pt-0 border-t border-border/50 md:border-0">
                       <span className="md:hidden text-[10px] font-semibold uppercase text-muted-foreground mb-1">Tingkat Ketersediaan / Risiko</span>
                       <div className="flex items-start justify-center gap-1 w-full md:w-auto">
                         {RISK_SCALE_LIKERT.map(scale => (
                           <button
                             key={scale.value}
-                            onClick={() => onAnswer(key, scale.value)}
+                            onClick={() => {
+                              onAnswer(key, scale.value);
+                              const desc = SCALE_DESCRIPTIONS[sub.code]?.[scale.value - 1];
+                              if (desc) {
+                                const colorMap: Record<number, { bg: string; border: string; badge: string; icon: string }> = {
+                                  1: { bg: "bg-emerald-950/90", border: "border-emerald-500/40", badge: "bg-emerald-500", icon: "🟢" },
+                                  2: { bg: "bg-sky-950/90", border: "border-sky-500/40", badge: "bg-sky-500", icon: "🔵" },
+                                  3: { bg: "bg-amber-950/90", border: "border-amber-500/40", badge: "bg-amber-500", icon: "🟡" },
+                                  4: { bg: "bg-orange-950/90", border: "border-orange-500/40", badge: "bg-orange-500", icon: "🟠" },
+                                  5: { bg: "bg-red-950/90", border: "border-red-500/40", badge: "bg-red-500", icon: "🔴" },
+                                };
+                                const c = colorMap[scale.value] || colorMap[3];
+                                toast.custom((t) => (
+                                  <div className={`${c.bg} ${c.border} border rounded-xl p-4 shadow-2xl backdrop-blur-sm max-w-md w-full animate-in slide-in-from-top-2 duration-300`}>
+                                    <div className="flex items-start gap-3">
+                                      <span className="text-xl mt-0.5">{c.icon}</span>
+                                      <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-2 mb-1.5">
+                                          <span className="text-xs font-mono font-bold text-white/90">{sub.code}</span>
+                                          <span className={`${c.badge} text-white text-[10px] font-bold px-2 py-0.5 rounded-full`}>Skala {scale.value} — {scale.label}</span>
+                                        </div>
+                                        <p className="text-[12px] leading-relaxed text-white/80">{desc}</p>
+                                      </div>
+                                      <button onClick={() => toast.dismiss(t)} className="text-white/40 hover:text-white/80 transition-colors text-lg leading-none shrink-0">✕</button>
+                                    </div>
+                                  </div>
+                                ), { duration: 5000, position: "top-center" });
+                              }
+                            }}
                             className={`flex-1 md:flex-none md:w-[52px] flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
                               val === scale.value
                                 ? scale.value <= 2 ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
@@ -196,6 +208,7 @@ function SubCriteriaSection({
                   placeholder="Tulis catatan auditor untuk sub-kriteria ini..."
                   rows={2}
                   className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+                  suppressHydrationWarning
                 />
               </div>
             </div>
@@ -209,7 +222,7 @@ function SubCriteriaSection({
 function BgFieldInput({ field, value, onChange }: { field: BackgroundField; value: string; onChange: (v: string) => void }) {
   if (field.type === "select") {
     return (
-      <select value={value} onChange={e => onChange(e.target.value)} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+      <select suppressHydrationWarning value={value} onChange={e => onChange(e.target.value)} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
         <option value="">— Pilih —</option>
         {field.options?.map(opt => <option key={opt} value={opt}>{opt}</option>)}
       </select>
@@ -222,6 +235,7 @@ function BgFieldInput({ field, value, onChange }: { field: BackgroundField; valu
       onChange={e => onChange(e.target.value)}
       className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
       placeholder={field.label}
+      suppressHydrationWarning
     />
   );
 }
@@ -241,12 +255,16 @@ export default function KuesionerRisikoPage() {
   const [selectedCPIndex, setSelectedCPIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [notes, setNotes] = useState<AuditorNotes>({});
-  const [files, setFiles] = useState<UploadedFiles>({});
   const [evidenceCheck, setEvidenceCheck] = useState<EvidenceCheck>({});
   const [bgData, setBgData] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  
+  // Data Aktual
+  const [aktualBatches, setAktualBatches] = useState<any[]>([]);
+  const [selectedBatchId, setSelectedBatchId] = useState<string>("");
+  const [aktualFilesMap, setAktualFilesMap] = useState<Record<string, { url: string; filename: string }>>({});
 
   // Auditor background
   const [auditorBg, setAuditorBg] = useState({
@@ -254,6 +272,40 @@ export default function KuesionerRisikoPage() {
   });
 
   const cp = availableCPs[selectedCPIndex] || availableCPs[0];
+  const selectedBatch = useMemo(() => aktualBatches.find(b => b.id === selectedBatchId), [aktualBatches, selectedBatchId]);
+
+
+  useEffect(() => {
+    if (!cp) return;
+    setAktualBatches([]);
+    setSelectedBatchId("");
+    setAktualFilesMap({});
+    fetch(`/api/dss/questionnaire-responses?type=aktual&cpId=${cp.cpId}&limit=100`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.responses) {
+          setAktualBatches(data.responses);
+        }
+      })
+      .catch(console.error);
+  }, [cp?.cpId]);
+
+  useEffect(() => {
+    if (selectedBatchId) {
+      const batch = aktualBatches.find(b => b.id === selectedBatchId);
+      if (batch && batch.files) {
+        const map: Record<string, { url: string; filename: string }> = {};
+        batch.files.forEach((f: any) => {
+          if (f.key) map[f.key] = { url: f.url, filename: f.filename };
+        });
+        setAktualFilesMap(map);
+      } else {
+        setAktualFilesMap({});
+      }
+    } else {
+      setAktualFilesMap({});
+    }
+  }, [selectedBatchId, aktualBatches]);
 
   // Prevent crash if role doesn't have any mapped CPs
   if (!cp) {
@@ -281,14 +333,6 @@ export default function KuesionerRisikoPage() {
     setNotes(prev => ({ ...prev, [key]: value }));
   }, []);
 
-  const handleUpload = useCallback((k: string, f: File) => {
-    setFiles(p => ({ ...p, [k]: f }));
-  }, []);
-
-  const handleRemoveFile = useCallback((k: string) => {
-    setFiles(p => ({ ...p, [k]: null }));
-  }, []);
-
   const handleEvidenceCheck = useCallback((k: string, v: "sesuai" | "tidak_sesuai") => {
     setEvidenceCheck(p => ({ ...p, [k]: v }));
   }, []);
@@ -305,28 +349,6 @@ export default function KuesionerRisikoPage() {
     setShowConfirm(false);
     setSubmitting(true);
 
-    // Upload files
-    const fileList: any[] = [];
-    for (const [key, f] of Object.entries(files)) {
-      if (f) {
-        const formData = new FormData();
-        formData.append("file", f);
-        try {
-          const res = await fetch("/api/upload", { method: "POST", body: formData });
-          const json = await res.json();
-          fileList.push({
-            key,
-            filename: f.name,
-            url: json.url || `/uploads/${f.name}`,
-            downloadUrl: json.downloadUrl
-          });
-        } catch (err) {
-          console.error("Upload error:", err);
-          fileList.push({ key, filename: f.name, url: `/uploads/${f.name}` });
-        }
-      }
-    }
-
     try {
       await fetch("/api/dss/questionnaire-responses", {
         method: "POST",
@@ -338,10 +360,10 @@ export default function KuesionerRisikoPage() {
           respondentRole: auditorBg.posisi || null,
           respondentOrg: auditorBg.namaInstansi || null,
           respondentEmail: null,
-          respondentInfo: { ...auditorBg, ...bgData },
+          respondentInfo: { ...auditorBg },
           answers: { riskRatings: answers, evidenceCheck },
-          notes,
-          files: fileList,
+          notes: { ...notes, aktualResponseId: selectedBatchByCP[cp.cpId] || "" },
+          files: [],
         }),
       });
     } catch (e) { console.error(e); }
@@ -381,13 +403,25 @@ export default function KuesionerRisikoPage() {
           </div>
         </div>
 
-        {/* Info banner */}
-        <div className="flex items-start gap-3 p-4 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
-          <Info className="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" />
-          <div className="text-sm text-muted-foreground">
-            <p className="font-medium text-foreground mb-1">Petunjuk Pengisian</p>
-            <p>Kuesioner ini diisi oleh <strong>Auditor / Tim Penilai</strong>. Berikan penilaian tingkat risiko (1-5) berdasarkan ketersediaan bukti pendukung dari masing-masing indikator.</p>
+        {/* Info banner & Download */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
+          <div className="flex items-start gap-3">
+            <Info className="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" />
+            <div className="text-sm text-muted-foreground">
+              <p className="font-medium text-foreground mb-1">Petunjuk Pengisian</p>
+              <p>Kuesioner ini diisi oleh <strong>Auditor / Tim Penilai</strong>. Berikan penilaian tingkat risiko (1-5) berdasarkan ketersediaan bukti pendukung dari masing-masing indikator.</p>
+            </div>
           </div>
+          <a
+            href="/docs/RUBRIK_PENGUKURAN_TINGKAT_RESIKO_HALAL.pdf"
+            download="Rubrik_Risiko_Halal.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-sm font-semibold transition-colors shrink-0"
+          >
+            <Download className="h-4 w-4" />
+            Download Rubrik
+          </a>
         </div>
 
         {/* Risk Scale Reference */}
@@ -436,6 +470,33 @@ export default function KuesionerRisikoPage() {
           })}
         </div>
 
+        {/* Batch Selector */}
+        <div className="rounded-xl border bg-card p-5 border-cyan-500/30">
+          <p className="text-sm font-bold mb-3 flex items-center gap-2">
+            <ClipboardCheck className="h-4 w-4 text-cyan-400" /> Pilih Batch / Kode Ternak (Data Kondisi Aktual K3) yang Akan Dinilai
+          </p>
+          <select 
+            value={selectedBatchId} 
+            onChange={(e) => setSelectedBatchId(e.target.value)}
+            className="w-full max-w-lg rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+            suppressHydrationWarning
+          >
+            <option value="">— Pilih Batch / Kode Ternak —</option>
+            {aktualBatches.map(b => {
+              const batchCode = b.respondentInfo?.[`${cp.cpId}_batch`] || b.respondentInfo?.[`${cp.cpId}_kodeTernak`] || "";
+              const labelPrefix = batchCode ? `[${batchCode}] ` : "";
+              return (
+              <option key={b.id} value={b.id}>
+                {labelPrefix}{new Date(b.createdAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })} - {b.respondentName} ({b.respondentOrg || 'Anonim'})
+              </option>
+              );
+            })}
+          </select>
+          {!selectedBatchId && (
+            <p className="text-xs text-amber-500 mt-2 flex items-center gap-1"><AlertTriangle className="w-3 h-3"/> Harap pilih data aktual terlebih dahulu sebelum melakukan penilaian.</p>
+          )}
+        </div>
+
         {/* Identitas Auditor — from Rubrik */}
         <div className="rounded-xl border bg-card p-5">
           <p className="text-sm font-bold mb-4 flex items-center gap-2">
@@ -444,15 +505,15 @@ export default function KuesionerRisikoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Tanggal Audit</label>
-              <input type="date" value={auditorBg.tanggalAudit} onChange={e => setAuditorBg(p => ({ ...p, tanggalAudit: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+              <input suppressHydrationWarning type="date" value={auditorBg.tanggalAudit} onChange={e => setAuditorBg(p => ({ ...p, tanggalAudit: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Nama Auditor</label>
-              <input type="text" value={auditorBg.nama} onChange={e => setAuditorBg(p => ({ ...p, nama: e.target.value }))} placeholder="Nama lengkap auditor" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+              <input suppressHydrationWarning type="text" value={auditorBg.nama} onChange={e => setAuditorBg(p => ({ ...p, nama: e.target.value }))} placeholder="Nama lengkap auditor" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Jenis Kelamin</label>
-              <select value={auditorBg.jenisKelamin} onChange={e => setAuditorBg(p => ({ ...p, jenisKelamin: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+              <select suppressHydrationWarning value={auditorBg.jenisKelamin} onChange={e => setAuditorBg(p => ({ ...p, jenisKelamin: e.target.value }))} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
                 <option value="">— Pilih —</option>
                 <option value="Laki-laki">Laki-laki</option>
                 <option value="Perempuan">Perempuan</option>
@@ -460,33 +521,37 @@ export default function KuesionerRisikoPage() {
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Posisi / Jabatan</label>
-              <input type="text" value={auditorBg.posisi} onChange={e => setAuditorBg(p => ({ ...p, posisi: e.target.value }))} placeholder="Posisi di instansi" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+              <input suppressHydrationWarning type="text" value={auditorBg.posisi} onChange={e => setAuditorBg(p => ({ ...p, posisi: e.target.value }))} placeholder="Posisi di instansi" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Nama Instansi</label>
-              <input type="text" value={auditorBg.namaInstansi} onChange={e => setAuditorBg(p => ({ ...p, namaInstansi: e.target.value }))} placeholder="Nama instansi / lembaga" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+              <input suppressHydrationWarning type="text" value={auditorBg.namaInstansi} onChange={e => setAuditorBg(p => ({ ...p, namaInstansi: e.target.value }))} placeholder="Nama instansi / lembaga" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">No Sertifikat Auditor (Jika Ada)</label>
-              <input type="text" value={auditorBg.noSertifikat} onChange={e => setAuditorBg(p => ({ ...p, noSertifikat: e.target.value }))} placeholder="Nomor sertifikat auditor" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
+              <input suppressHydrationWarning type="text" value={auditorBg.noSertifikat} onChange={e => setAuditorBg(p => ({ ...p, noSertifikat: e.target.value }))} placeholder="Nomor sertifikat auditor" className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" />
             </div>
           </div>
         </div>
 
-        {/* Background Form — from CP data */}
-        <div className="rounded-xl border bg-card p-5">
-          <p className="text-sm font-bold mb-4 flex items-center gap-2">
-            <Shield className="h-4 w-4 text-primary" /> Latar Belakang Pengisi — {cp.cpId}. {cp.cpName}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cp.backgroundFields.map(f => (
-              <div key={f.key}>
-                <label className="text-xs font-medium text-muted-foreground mb-1 block">{f.label}</label>
-                <BgFieldInput field={f} value={bgData[`${cp.cpId}_${f.key}`] || ""} onChange={v => setBgData(prev => ({ ...prev, [`${cp.cpId}_${f.key}`]: v }))} />
-              </div>
-            ))}
+        {/* Background Form — Read Only from Selected Batch */}
+        {selectedBatch && (
+          <div className="rounded-xl border bg-emerald-500/5 p-5 border-emerald-500/20">
+            <p className="text-sm font-bold mb-4 flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
+              <ClipboardCheck className="h-4 w-4" /> Data Latar Belakang Batch K3
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cp.backgroundFields.map(f => (
+                <div key={f.key}>
+                  <label className="text-xs font-medium text-muted-foreground block mb-0.5">{f.label}</label>
+                  <p className="text-sm font-semibold text-foreground">
+                    {selectedBatch.respondentInfo?.[`${cp.cpId}_${f.key}`] || "-"}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* CP Content */}
         <div className="rounded-2xl border bg-card p-5 shadow-lg">
@@ -515,10 +580,8 @@ export default function KuesionerRisikoPage() {
             {cp.subCriteria.map(sub => (
               <SubCriteriaSection
                 key={sub.code} cp={cp} sub={sub}
-                answers={answers} notes={notes} files={files} evidenceCheck={evidenceCheck}
+                answers={answers} notes={notes} aktualFilesMap={aktualFilesMap} evidenceCheck={evidenceCheck}
                 onAnswer={handleAnswer} onNote={handleNote}
-                onUpload={handleUpload}
-                onRemoveFile={handleRemoveFile}
                 onEvidenceCheck={handleEvidenceCheck}
               />
             ))}
@@ -534,7 +597,7 @@ export default function KuesionerRisikoPage() {
           )}
           <button
             onClick={handlePreSubmit}
-            disabled={submitting}
+            disabled={submitting || !selectedBatchId}
             className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold hover:from-cyan-600 hover:to-emerald-600 transition-all shadow-lg shadow-cyan-500/20 disabled:opacity-50"
           >
             {submitting ? (

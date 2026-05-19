@@ -40,6 +40,7 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased min-h-screen bg-background`}
+				suppressHydrationWarning
 			>
 				<AuthProvider>
 					<ThemeProvider

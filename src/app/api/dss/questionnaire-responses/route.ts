@@ -27,11 +27,10 @@ export async function GET(req: NextRequest) {
     }
 
     // RBAC: Non-admin can only see their own inputs
-    if (!session || session.user?.role !== 'ADMIN') {
+    if (!session || (session.user?.role !== 'ADMIN' && !session.user?.role?.startsWith('PAKAR'))) {
       if (type === 'risiko' || type === 'aktual') {
         where.respondentEmail = session?.user?.email || 'unauthenticated';
       } else {
-        // Jika pembobotan, mungkin aturannya sama, tapi instruksi user bilang K2 dan K3
         where.respondentEmail = session?.user?.email || 'unauthenticated';
       }
     }

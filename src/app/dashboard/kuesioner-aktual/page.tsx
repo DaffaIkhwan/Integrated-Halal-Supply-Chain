@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "sonner";
+
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
@@ -14,7 +16,24 @@ type RiskAnswers = Record<string, string>;
 type EvidenceAvail = Record<string, boolean>;
 type UploadedFiles = Record<string, File | null>;
 
-function BgFieldInput({ field, value, onChange }: { field: BackgroundField; value: string; onChange: (v: string) => void }) {
+function BgFieldInput({ field, value, onChange, masterData, cpId }: { field: BackgroundField; value: string; onChange: (v: string) => void, masterData?: any, cpId?: string }) {
+  if (field.key === "batch" || field.key === "kodeTernak") {
+    let options: {label: string, value: string}[] = [];
+    if (masterData) {
+      if (cpId === "CP1" || cpId === "CP2" || cpId === "CP3") {
+        options = masterData.cattle?.map((c: any) => ({ value: c.earTag, label: `${c.earTag} (${c.breed})` })) || [];
+      } else {
+        options = masterData.batches?.map((b: any) => ({ value: b.id.split('-')[0], label: `[Batch ${b.id.split('-')[0]}] Sapi: ${b.cattle?.earTag}` })) || [];
+      }
+    }
+    return (
+      <select suppressHydrationWarning value={value} onChange={e => onChange(e.target.value)} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+        <option value="">— Pilih Batch / Kode Ternak —</option>
+        {options.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+      </select>
+    );
+  }
+
   if (field.type === "select") {
     return (
       <select value={value} onChange={e => onChange(e.target.value)} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
@@ -80,7 +99,7 @@ function SubCriteriaForm({
 
   return (
     <div className="border border-border/50 rounded-xl overflow-hidden bg-card/50">
-      <button onClick={() => setOpen(!open)} className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-muted/30 transition-colors">
+      <div onClick={() => setOpen(!open)} role="button" tabIndex={0} className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-muted/30 transition-colors cursor-pointer">
         <span className="shrink-0 w-16 text-xs font-mono font-bold text-primary">{sub.code}</span>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium truncate">{sub.name}</p>
@@ -92,15 +111,15 @@ function SubCriteriaForm({
           </span>
           {open ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
         </div>
-      </button>
+      </div>
 
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-4 pb-4 space-y-2">
               {/* Header */}
-              <div className="hidden md:grid grid-cols-[24px_1fr_140px_80px_120px_100px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
-                <span>No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Kesesuaian</span>
+              <div className="hidden md:grid grid-cols-[auto_1fr_140px_80px_120px_100px] gap-2 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-2">
+                <span className="w-6">No</span><span>Pernyataan</span><span className="text-center">Bukti Pendukung</span><span className="text-center">Tersedia?</span><span className="text-center">Upload</span><span className="text-center">Kesesuaian</span>
               </div>
 
               {sub.indicators.map(ind => {
@@ -108,7 +127,7 @@ function SubCriteriaForm({
                 const val = risks[key];
                 const hasEvidence = evidence[key];
                 return (
-                  <div key={key} className="flex flex-col md:grid md:grid-cols-[24px_1fr_140px_80px_120px_100px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
+                  <div key={key} className="flex flex-col md:grid md:grid-cols-[auto_1fr_140px_80px_120px_100px] gap-3 md:gap-2 items-start md:items-center px-3 py-4 md:px-2 md:py-2.5 rounded-xl md:rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors border border-border/40 md:border-transparent">
                     {/* Number & Statement */}
                     <div className="flex gap-2 w-full md:contents items-start">
                       <span className="shrink-0 w-6 text-xs font-mono font-bold text-muted-foreground pt-0.5">{ind.no}</span>
@@ -184,7 +203,7 @@ function SubCriteriaForm({
 }
 
 import { useSession } from "next-auth/react";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 
 export default function KuesionerAktualPage() {
   const { data: session } = useSession();
@@ -205,6 +224,15 @@ export default function KuesionerAktualPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [masterData, setMasterData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/api/dss/master-data")
+      .then(r => r.json())
+      .then(d => {
+        if (!d.error) setMasterData(d);
+      });
+  }, []);
 
   // Validation
   const [validasiSupervisor, setValidasiSupervisor] = useState({
@@ -289,7 +317,7 @@ export default function KuesionerAktualPage() {
           respondentEmail: null,
           respondentInfo: bgData,
           answers: { risks, evidence },
-          notes: { ...validasiSupervisor, tingkatRisiko: `${compliancePercent}% Kepatuhan (${sesuaiCount} Sesuai)` },
+          notes: { ...validasiSupervisor, tingkatRisiko: validasiSupervisor.tingkatRisiko, complianceStats: `${compliancePercent}% Kepatuhan (${sesuaiCount} Sesuai)` },
           files: fileList,
         }),
       });
@@ -361,7 +389,7 @@ export default function KuesionerAktualPage() {
             {cp.backgroundFields.map(f => (
               <div key={f.key}>
                 <label className="text-xs font-medium text-muted-foreground mb-1 block">{f.label}</label>
-                <BgFieldInput field={f} value={bgData[`${cp.cpId}_${f.key}`] || ""} onChange={v => setBgData(prev => ({ ...prev, [`${cp.cpId}_${f.key}`]: v }))} />
+                <BgFieldInput field={f} value={bgData[`${cp.cpId}_${f.key}`] || ""} onChange={v => setBgData(prev => ({ ...prev, [`${cp.cpId}_${f.key}`]: v }))} masterData={masterData} cpId={cp.cpId} />
               </div>
             ))}
           </div>
@@ -407,14 +435,59 @@ export default function KuesionerAktualPage() {
               </select>
             </div>
             <div>
-              <label className="text-xs font-medium text-muted-foreground mb-1 block">Tingkat Risiko Keseluruhan</label>
-              <div className={`flex items-center justify-between w-full rounded-lg border px-3 py-2 text-sm font-semibold ${totalAnsweredRisk > 0 ? calculatedColor : 'border-border bg-muted/30 text-muted-foreground'}`}>
-                <span>{totalAnsweredRisk > 0 ? `${compliancePercent}% Kepatuhan` : '—'}</span>
-                {totalAnsweredRisk > 0 && (
-                  <span className="text-xs font-mono opacity-70">{sesuaiCount} Sesuai / {totalAnsweredRisk} Total</span>
-                )}
+              <label className="text-xs font-medium text-muted-foreground mb-2 block">Tingkat Risiko Keseluruhan</label>
+              <div className="flex gap-2">
+                {[
+                  { v: "1", l: "Rendah", c: "emerald" },
+                  { v: "2", l: "Rendah", c: "emerald" },
+                  { v: "3", l: "Sedang", c: "amber" },
+                  { v: "4", l: "Tinggi", c: "red" },
+                  { v: "5", l: "Tinggi", c: "red" }
+                ].map(opt => (
+                  <button
+                    key={opt.v}
+                    onClick={() => {
+                      setValidasiSupervisor(p => ({ ...p, tingkatRisiko: opt.v }));
+                      const scaleData = RISK_SCALE_LIKERT.find(s => s.value === Number(opt.v));
+                      if (scaleData) {
+                        const colorMap: Record<number, { bg: string; border: string; badge: string; icon: string }> = {
+                          1: { bg: "bg-emerald-950/90", border: "border-emerald-500/40", badge: "bg-emerald-500", icon: "🟢" },
+                          2: { bg: "bg-sky-950/90", border: "border-sky-500/40", badge: "bg-sky-500", icon: "🔵" },
+                          3: { bg: "bg-amber-950/90", border: "border-amber-500/40", badge: "bg-amber-500", icon: "🟡" },
+                          4: { bg: "bg-orange-950/90", border: "border-orange-500/40", badge: "bg-orange-500", icon: "🟠" },
+                          5: { bg: "bg-red-950/90", border: "border-red-500/40", badge: "bg-red-500", icon: "🔴" },
+                        };
+                        const c = colorMap[Number(opt.v)] || colorMap[3];
+                        toast.custom((t) => (
+                          <div className={`${c.bg} ${c.border} border rounded-xl p-4 shadow-2xl backdrop-blur-sm max-w-md w-full animate-in slide-in-from-top-2 duration-300`}>
+                            <div className="flex items-start gap-3">
+                              <span className="text-xl mt-0.5">{c.icon}</span>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1.5">
+                                  <span className="text-xs font-mono font-bold text-white/90">RISK LEVEL</span>
+                                  <span className={`${c.badge} text-white text-[10px] font-bold px-2 py-0.5 rounded-full`}>Skala {opt.v} — {scaleData.label}</span>
+                                </div>
+                                <p className="text-[12px] leading-relaxed text-white/80">{scaleData.interpretation}</p>
+                              </div>
+                              <button onClick={() => toast.dismiss(t)} className="text-white/40 hover:text-white/80 transition-colors text-lg leading-none shrink-0">✕</button>
+                            </div>
+                          </div>
+                        ), { duration: 5000, position: "top-center" });
+                      }
+                    }}
+                    className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-2 rounded-xl text-xs font-bold transition-all ${
+                      validasiSupervisor.tingkatRisiko === opt.v
+                        ? opt.c === "emerald" ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
+                          : opt.c === "amber" ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
+                          : "bg-red-500 text-white shadow-lg shadow-red-500/30"
+                        : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                    }`}
+                  >
+                    <span className="text-sm">{opt.v}</span>
+                    <span className="text-[9px] font-medium leading-tight opacity-80">{opt.l}</span>
+                  </button>
+                ))}
               </div>
-              <p className="text-[10px] text-muted-foreground mt-1">⚡ Dihitung otomatis oleh sistem dari {totalAnsweredRisk} jawaban verifikasi</p>
             </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground mb-1 block">Tanggal Verifikasi</label>
