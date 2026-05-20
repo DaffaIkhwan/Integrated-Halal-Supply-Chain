@@ -362,7 +362,7 @@ export default function KuesionerRisikoPage() {
           respondentEmail: null,
           respondentInfo: { ...auditorBg },
           answers: { riskRatings: answers, evidenceCheck },
-          notes: { ...notes, aktualResponseId: selectedBatchByCP[cp.cpId] || "" },
+          notes: { ...notes, aktualResponseId: selectedBatchId || "" },
           files: [],
         }),
       });
