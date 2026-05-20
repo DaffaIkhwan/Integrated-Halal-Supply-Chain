@@ -178,7 +178,11 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
                   {entries.map(([key, val]) => (
                     <div key={key} className="grid grid-cols-[180px_1fr] gap-2 items-start py-1.5 border-b border-border/30 last:border-0">
                       <span className="text-xs font-semibold text-muted-foreground">{NOTE_LABELS[key] || key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                      <span className="text-sm text-foreground font-medium">{String(val)}</span>
+                      <span className="text-sm text-foreground font-medium">
+                        {key === 'tingkatRisiko' && !isNaN(Number(val)) 
+                          ? `${val} (Nilai: ${(Number(val) * 0.20).toFixed(2)})` 
+                          : String(val)}
+                      </span>
                     </div>
                   ))}
                 </div>
