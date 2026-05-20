@@ -286,47 +286,47 @@ function BatchCard({ batch, index }: { batch: BatchData; index: number }) {
 
 // ─── Risk Distribution Bar ───
 function RiskDistributionBar({ distribution }: { distribution: Record<string, number> }) {
-  const total = Object.values(distribution).reduce((s, v) => s + v, 0);
+  // Normalize keys to uppercase to handle differences in DB vs API (e.g. "Low" vs "LOW")
+  const normalizedDist: Record<string, number> = {};
+  for (const [k, v] of Object.entries(distribution)) {
+    const upperK = k.toUpperCase();
+    normalizedDist[upperK] = (normalizedDist[upperK] || 0) + v;
+  }
+
+  const total = Object.values(normalizedDist).reduce((s, v) => s + v, 0);
   if (total === 0) return null;
 
-  const ordered = ["LOW", "MODERATE", "HIGH", "Critical"].filter(k => distribution[k]);
+  const ordered = ["LOW", "MODERATE", "HIGH", "CRITICAL"];
 
   return (
-    <div className="space-y-3">
-      {/* Visual bar */}
-      <div className="h-4 w-full rounded-full bg-muted overflow-hidden flex">
-        {ordered.map((level) => {
-          const count = distribution[level] || 0;
-          const pct = (count / total) * 100;
-          const rc = getRiskColor(level);
-          return (
-            <motion.div
-              key={level}
-              initial={{ width: 0 }}
-              animate={{ width: `${pct}%` }}
-              transition={{ duration: 0.8 }}
-              className={`h-full ${rc.bar} first:rounded-l-full last:rounded-r-full`}
-              title={`${level}: ${count} (${pct.toFixed(0)}%)`}
-            />
-          );
-        })}
-      </div>
-      {/* Legend */}
-      <div className="flex flex-wrap gap-3">
-        {ordered.map((level) => {
-          const count = distribution[level] || 0;
-          const pct = ((count / total) * 100).toFixed(0);
-          const rc = getRiskColor(level);
-          return (
-            <div key={level} className="flex items-center gap-1.5">
-              <div className={`w-2.5 h-2.5 rounded-full ${rc.bar}`} />
-              <span className="text-xs text-muted-foreground">
-                {level}: <strong className={rc.text}>{count}</strong> ({pct}%)
+    <div className="space-y-4 mt-2">
+      {ordered.map((level, index) => {
+        const count = normalizedDist[level] || 0;
+        const pct = total > 0 ? (count / total) * 100 : 0;
+        const rc = getRiskColor(level);
+        
+        return (
+          <div key={level} className="space-y-1.5">
+            <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center gap-1.5">
+                <div className={`w-2 h-2 rounded-full ${rc.bar}`} />
+                <span className="font-semibold tracking-wide">{level}</span>
+              </div>
+              <span className="text-muted-foreground">
+                <strong className={rc.text}>{count}</strong> batch ({pct.toFixed(0)}%)
               </span>
             </div>
-          );
-        })}
-      </div>
+            <div className="h-2.5 w-full rounded-full bg-muted overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${pct}%` }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className={`h-full ${rc.bar} rounded-full`}
+              />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
