@@ -246,9 +246,11 @@ export function Navbar() {
 							<div className="w-8 h-8 rounded-lg bg-muted animate-pulse" />
 						) : session?.user ? (
 							<div className="relative" ref={menuRef}>
-								<button
+								<div
+									role="button"
+									tabIndex={0}
 									onClick={() => setMenuOpen(!menuOpen)}
-									className="flex items-center gap-2 px-2 sm:px-3 py-1.5 rounded-xl border border-border/50 bg-muted/50 hover:bg-muted transition-colors text-sm"
+									className="flex items-center gap-2 px-2 sm:px-3 py-1.5 rounded-xl border border-border/50 bg-muted/50 hover:bg-muted transition-colors text-sm cursor-pointer"
 								>
 									<div className="w-6 h-6 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center">
 										<User className="h-3.5 w-3.5 text-white" />
@@ -260,7 +262,7 @@ export function Navbar() {
 										{roleLabel}
 									</span>
 									<ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform ${menuOpen ? "rotate-180" : ""}`} />
-								</button>
+								</div>
 
 								{menuOpen && (
 									<div className="absolute right-0 mt-2 w-56 rounded-xl border bg-card shadow-xl py-2 z-50">
