@@ -265,6 +265,7 @@ export default function KuesionerRisikoPage() {
   const [aktualBatches, setAktualBatches] = useState<any[]>([]);
   const [selectedBatchId, setSelectedBatchId] = useState<string>("");
   const [aktualFilesMap, setAktualFilesMap] = useState<Record<string, { url: string; filename: string }>>({});
+  const [existingRisikoResponses, setExistingRisikoResponses] = useState<any[]>([]);
 
   // Auditor background
   const [auditorBg, setAuditorBg] = useState({
@@ -275,20 +276,47 @@ export default function KuesionerRisikoPage() {
   const selectedBatch = useMemo(() => aktualBatches.find(b => b.id === selectedBatchId), [aktualBatches, selectedBatchId]);
 
 
+  const safeFetchJson = useCallback(async (url: string) => {
+    try {
+      const res = await fetch(url);
+      const text = await res.text();
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${text || res.statusText}`);
+      }
+      return JSON.parse(text);
+    } catch (e) {
+      console.error(`safeFetchJson error for URL ${url}:`, e);
+      throw e;
+    }
+  }, []);
+
   useEffect(() => {
     if (!cp) return;
     setAktualBatches([]);
     setSelectedBatchId("");
     setAktualFilesMap({});
-    fetch(`/api/dss/questionnaire-responses?type=aktual&cpId=${cp.cpId}&limit=100`)
-      .then(res => res.json())
+    setExistingRisikoResponses([]);
+
+    console.log("K2: Fetching aktual responses for", cp.cpId);
+    safeFetchJson(`/api/dss/questionnaire-responses?type=aktual&cpId=${cp.cpId}&limit=100&bypassEmailFilter=true`)
       .then(data => {
+        console.log("K2: Fetched aktual responses:", data.responses);
         if (data.responses) {
           setAktualBatches(data.responses);
         }
       })
       .catch(console.error);
-  }, [cp?.cpId]);
+
+    console.log("K2: Fetching risiko responses for", cp.cpId);
+    safeFetchJson(`/api/dss/questionnaire-responses?type=risiko&cpId=${cp.cpId}&limit=100&bypassEmailFilter=true`)
+      .then(data => {
+        console.log("K2: Fetched risiko responses:", data.responses);
+        if (data.responses) {
+          setExistingRisikoResponses(data.responses);
+        }
+      })
+      .catch(console.error);
+  }, [cp?.cpId, safeFetchJson]);
 
   useEffect(() => {
     if (selectedBatchId) {
@@ -366,6 +394,12 @@ export default function KuesionerRisikoPage() {
           files: [],
         }),
       });
+
+      safeFetchJson(`/api/dss/questionnaire-responses?type=risiko&cpId=${cp.cpId}&limit=100&bypassEmailFilter=true`)
+        .then(data => {
+          if (data.responses) setExistingRisikoResponses(data.responses);
+        })
+        .catch(console.error);
     } catch (e) { console.error(e); }
     setSubmitted(true);
     setSubmitting(false);
@@ -483,11 +517,17 @@ export default function KuesionerRisikoPage() {
           >
             <option value="">— Pilih Batch / Kode Ternak —</option>
             {aktualBatches.map(b => {
-              const batchCode = b.respondentInfo?.[`${cp.cpId}_batch`] || b.respondentInfo?.[`${cp.cpId}_kodeTernak`] || "";
+              const batchCode = b.respondentInfo?.[`${cp.cpId}_batch`] || b.respondentInfo?.[`${cp.cpId}_kodeTernak`] || b.respondentInfo?.batch || b.respondentInfo?.kodeTernak || "";
               const labelPrefix = batchCode ? `[${batchCode}] ` : "";
+              const isFilled = existingRisikoResponses.some(r => {
+                const match = r.notes?.aktualResponseId === b.id;
+                console.log(`K2 Option Map - Comparing r.notes.aktualResponseId (${r.notes?.aktualResponseId}) with b.id (${b.id}) -> Match: ${match}`);
+                return match;
+              });
+              console.log(`K2 Option Map - Batch ${batchCode} (id: ${b.id}) -> isFilled: ${isFilled}`);
               return (
               <option key={b.id} value={b.id}>
-                {labelPrefix}{new Date(b.createdAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })} - {b.respondentName} ({b.respondentOrg || 'Anonim'})
+                {labelPrefix}{new Date(b.createdAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })} - {b.respondentName} ({b.respondentOrg || 'Anonim'}){isFilled ? " ✅ (Sudah Diisi)" : ""}
               </option>
               );
             })}

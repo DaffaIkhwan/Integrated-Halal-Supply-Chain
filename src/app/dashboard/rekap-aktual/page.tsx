@@ -199,13 +199,21 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {files.map((f, i) => {
                   const isCloudinary = f.url?.includes("res.cloudinary.com");
+                  const isImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f.url || '') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f.filename || '');
+                  const isPdf = /\.(pdf)$/i.test(f.url || '') || /\.(pdf)$/i.test(f.filename || '');
 
-                  // Build thumbnail URL using Cloudinary image transformation
+                  // Build thumbnail URL
                   let previewUrl = '';
                   if (f.thumbnailUrl) {
                     // Use pre-generated thumbnail if available (from seed/upload)
                     previewUrl = f.thumbnailUrl;
-                  } else if (isCloudinary) {
+                  } else if (isImage) {
+                    if (isCloudinary) {
+                      previewUrl = f.url.replace('/upload/', '/upload/w_400,c_limit/');
+                    } else {
+                      previewUrl = f.url;
+                    }
+                  } else if (isPdf && isCloudinary) {
                     // Convert any Cloudinary URL to image thumbnail using transformation
                     // Works for both image/ and raw/ uploads
                     previewUrl = f.url

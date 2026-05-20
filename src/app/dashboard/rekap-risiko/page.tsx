@@ -48,10 +48,34 @@ const STATUS_COLORS: Record<string, string> = {
 
 // ─── Detail Modal ───
 function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }) {
-  const meta = TYPE_META[item.questionnaireType] || TYPE_META.pembobotan;
-  const answers = item.answers as Record<string, unknown>;
+  const meta = TYPE_META[item.questionnaireType] || TYPE_META.risiko;
   const respondentInfo = item.respondentInfo || {};
   const files = item.files || [];
+
+  // State for linked K3 (actual) response
+  const [actualResponse, setActualResponse] = useState<QResponse | null>(null);
+  const [actualLoading, setActualLoading] = useState(false);
+
+  useEffect(() => {
+    const actualId = item.notes?.aktualResponseId;
+    if (!actualId) return;
+    setActualLoading(true);
+    fetch(`/api/dss/questionnaire-response/${actualId}?bypassEmailFilter=true`)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json().catch(() => { throw new Error("Invalid JSON"); });
+      })
+      .then(data => {
+        setActualResponse(data);
+        setActualLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to fetch actual response', err);
+        setActualLoading(false);
+      });
+  }, [item.notes?.aktualResponseId]);
+
+
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={onClose}>
@@ -126,10 +150,10 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
                     const riskRatings = (item.answers as any).riskRatings || {};
                     // Fallback for older flat structures
                     const isLegacy = !item.answers.riskRatings && !item.answers.evidenceCheck;
-                    const keys = isLegacy 
-                      ? Object.keys(item.answers) 
+                    const keys = isLegacy
+                      ? Object.keys(item.answers)
                       : Array.from(new Set([...Object.keys(evidenceCheck), ...Object.keys(riskRatings)])).sort();
-                    
+
                     if (keys.length === 0) {
                       return (
                         <tr>
@@ -137,13 +161,25 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
                         </tr>
                       );
                     }
-                    
+
                     return keys.map((key) => {
                       const ev = isLegacy ? null : evidenceCheck[key];
                       const risk = isLegacy ? item.answers[key] : riskRatings[key];
+                      const subCode = key.split('_')[0];
+                      const sameSubKeys = keys.filter(k => k.startsWith(subCode + '_')).sort();
+                      const isFirstOfSub = sameSubKeys[0] === key;
+                      const note = item.notes?.[key] || (isFirstOfSub ? item.notes?.[subCode] : null);
+                      
                       return (
                         <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
-                          <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
+                          <td className="py-2 px-3">
+                            <span className="font-mono text-xs font-semibold text-primary">{key}</span>
+                            {note && (
+                              <p className="text-[11px] text-amber-400/90 mt-1 bg-amber-500/5 border border-amber-500/10 rounded px-2 py-1 max-w-xs break-words">
+                                <span className="font-semibold text-amber-400">Catatan:</span> {note}
+                              </p>
+                            )}
+                          </td>
                           <td className="py-2 px-3 text-sm">
                             {ev === "sesuai" ? (
                               <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">Sesuai</span>
@@ -172,12 +208,14 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
           </div>
 
           {/* Notes */}
-          {item.notes && Object.keys(item.notes).length > 0 && (
+          {item.notes && Object.keys(item.notes).filter(k => k !== "aktualResponseId").length > 0 && (
             <div className="rounded-xl border bg-muted/30 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Catatan</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Catatan Auditor</p>
               <div className="space-y-2">
-                {Object.entries(item.notes).map(([key, val]) => (
-                  <div key={key} className="flex gap-3 py-1.5">
+                {Object.entries(item.notes)
+                  .filter(([key]) => key !== "aktualResponseId")
+                  .map(([key, val]) => (
+                  <div key={key} className="flex gap-3 py-1.5 border-b border-border/30 last:border-0">
                     <span className="text-xs font-mono font-bold text-primary shrink-0 w-20">{key}</span>
                     <span className="text-sm text-muted-foreground">{val}</span>
                   </div>
@@ -186,31 +224,139 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
             </div>
           )}
 
-          {/* Files */}
+          {/* Files from K2 */}
           {files.length > 0 && (
             <div className="rounded-xl border bg-muted/30 p-4">
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
-                <FileText className="h-3.5 w-3.5" /> File Bukti Pendukung ({files.length})
+                <FileText className="h-3.5 w-3.5" /> File Bukti Pendukung K2 ({files.length})
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {files.map((f, i) => (
-                  <a
-                    key={i}
-                    href={f.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-xl border bg-card hover:bg-muted/50 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <FileText className="h-4 w-4 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">{f.filename}</p>
-                      <p className="text-[10px] text-muted-foreground font-mono">{f.key}</p>
-                    </div>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {files.map((f, i) => {
+                  const isCloudinary = f.url?.includes("res.cloudinary.com");
+                  const isImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f.url || '') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f.filename || '');
+                  const isPdf = /\.(pdf)$/i.test(f.url || '') || /\.(pdf)$/i.test(f.filename || '');
+                  
+                  let previewUrl = '';
+                  if (f.thumbnailUrl) {
+                    previewUrl = f.thumbnailUrl;
+                  } else if (isImage) {
+                    if (isCloudinary) {
+                      previewUrl = f.url.replace('/upload/', '/upload/w_400,c_limit/');
+                    } else {
+                      previewUrl = f.url;
+                    }
+                  } else if (isPdf && isCloudinary) {
+                    previewUrl = f.url
+                      .replace('/raw/upload/', '/image/upload/')
+                      .replace('/upload/', '/upload/w_400,h_300,c_fill,pg_1/')
+                      .replace(/\.[^/.]+$/, '.jpg');
+                  }
+
+                  return (
+                    <a
+                      key={i}
+                      href={f.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col gap-2 p-3 rounded-xl border bg-card hover:bg-muted/50 transition-colors group overflow-hidden"
+                    >
+                      <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted relative flex items-center justify-center border border-border/50">
+                        <div className="flex flex-col items-center gap-1 z-0 absolute">
+                          <FileText className="h-10 w-10 text-muted-foreground/25" />
+                          <span className="text-[10px] text-muted-foreground/40 font-mono uppercase">{f.filename?.split('.').pop() || 'file'}</span>
+                        </div>
+                        {previewUrl && (
+                          <img
+                            src={previewUrl}
+                            alt={f.filename}
+                            className="object-cover w-full h-full relative z-10 opacity-0 transition-opacity duration-300"
+                            onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
+                            onError={(e) => e.currentTarget.style.display = 'none'}
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                          <ExternalLink className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium truncate" title={f.filename}>{f.filename}</p>
+                        <p className="text-[10px] text-muted-foreground font-mono truncate">{f.key}</p>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {/* Files from linked K3 (actual) response */}
+          {actualLoading && (
+            <div className="py-2 text-sm text-muted-foreground">Loading file bukti K3…</div>
+          )}
+          {actualResponse && actualResponse.files && actualResponse.files.length > 0 && (
+            <div className="rounded-xl border bg-muted/30 p-4 mt-4">
+              <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <FileText className="h-3.5 w-3.5" /> File Bukti Pendukung K3 ({actualResponse.files.length})
+                </p>
+                <span className="text-[11px] text-muted-foreground bg-muted px-2.5 py-0.5 rounded-full border border-border/40">
+                  Terhubung: {actualResponse.respondentName} — {actualResponse.cpId} ({new Date(actualResponse.createdAt).toLocaleDateString("id-ID")})
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {actualResponse.files.map((f, i) => {
+                  const isCloudinary = f.url?.includes("res.cloudinary.com");
+                  const isImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f.url || '') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(f.filename || '');
+                  const isPdf = /\.(pdf)$/i.test(f.url || '') || /\.(pdf)$/i.test(f.filename || '');
+                  
+                  let previewUrl = '';
+                  if (f.thumbnailUrl) {
+                    previewUrl = f.thumbnailUrl;
+                  } else if (isImage) {
+                    if (isCloudinary) {
+                      previewUrl = f.url.replace('/upload/', '/upload/w_400,c_limit/');
+                    } else {
+                      previewUrl = f.url;
+                    }
+                  } else if (isPdf && isCloudinary) {
+                    previewUrl = f.url
+                      .replace('/raw/upload/', '/image/upload/')
+                      .replace('/upload/', '/upload/w_400,h_300,c_fill,pg_1/')
+                      .replace(/\.[^/.]+$/, '.jpg');
+                  }
+
+                  return (
+                    <a
+                      key={i}
+                      href={f.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col gap-2 p-3 rounded-xl border bg-card hover:bg-muted/50 transition-colors group overflow-hidden"
+                    >
+                      <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted relative flex items-center justify-center border border-border/50">
+                        <div className="flex flex-col items-center gap-1 z-0 absolute">
+                          <FileText className="h-10 w-10 text-muted-foreground/25" />
+                          <span className="text-[10px] text-muted-foreground/40 font-mono uppercase">{f.filename?.split('.').pop() || 'file'}</span>
+                        </div>
+                        {previewUrl && (
+                          <img
+                            src={previewUrl}
+                            alt={f.filename}
+                            className="object-cover w-full h-full relative z-10 opacity-0 transition-opacity duration-300"
+                            onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
+                            onError={(e) => e.currentTarget.style.display = 'none'}
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                          <ExternalLink className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium truncate" title={f.filename}>{f.filename}</p>
+                        <p className="text-[10px] text-muted-foreground font-mono truncate">{f.key}</p>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -225,6 +371,7 @@ export default function RekapRisikoPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const activeType = "risiko";
+  const [batchFilesMap, setBatchFilesMap] = useState<Record<string, any[]>>({});
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const [selectedItem, setSelectedItem] = useState<QResponse | null>(null);
@@ -248,6 +395,33 @@ export default function RekapRisikoPage() {
       setLoading(false);
     }
   }, [activeType, searchTerm, page]);
+
+  // Fetch files from related K3 (actual) responses
+  useEffect(() => {
+    if (!data) return;
+    const ids = data.responses
+      .map(r => r.notes?.aktualResponseId)
+      .filter(id => id);
+    if (ids.length === 0) return;
+    Promise.all(
+      ids.map(id => fetch(`/api/dss/questionnaire-response/${id}?bypassEmailFilter=true`).then(res => {
+        if (!res.ok) return {};
+        return res.json().catch(() => ({}));
+      }))
+    ).then(results => {
+      const map: Record<string, any[]> = {};
+      results.forEach((res: any, idx) => {
+        const actualId = ids[idx];
+        if (res && res.files) {
+          const parent = data.responses.find(r => r.notes?.aktualResponseId === actualId);
+          if (parent) {
+            map[parent.id] = res.files;
+          }
+        }
+      });
+      setBatchFilesMap(map);
+    }).catch(console.error);
+  }, [data]);
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
@@ -366,13 +540,18 @@ export default function RekapRisikoPage() {
                           </span>
                         </td>
                         <td className="py-3 px-4">
-                          {fileCount > 0 ? (
-                            <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold">
-                              <FileText className="h-3.5 w-3.5" /> {fileCount}
-                            </span>
-                          ) : (
-                            <span className="text-xs text-muted-foreground">—</span>
-                          )}
+                          {(() => {
+                            const batchFiles = batchFilesMap[r.id] || [];
+                            const count = fileCount > 0 ? fileCount : batchFiles.length;
+                            if (count > 0) {
+                              return (
+                                <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold">
+                                  <FileText className="h-3.5 w-3.5" /> {count}
+                                </span>
+                              );
+                            }
+                            return <span className="text-xs text-muted-foreground">—</span>;
+                          })()}
                         </td>
                         <td className="py-3 px-4 text-center">
                           <button
@@ -406,9 +585,8 @@ export default function RekapRisikoPage() {
                       <button
                         key={p}
                         onClick={() => setPage(p)}
-                        className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${
-                          page === p ? "bg-primary text-primary-foreground shadow-md" : "hover:bg-muted text-muted-foreground"
-                        }`}
+                        className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${page === p ? "bg-primary text-primary-foreground shadow-md" : "hover:bg-muted text-muted-foreground"
+                          }`}
                       >
                         {p}
                       </button>

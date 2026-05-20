@@ -16,7 +16,7 @@ type RiskAnswers = Record<string, string>;
 type EvidenceAvail = Record<string, boolean>;
 type UploadedFiles = Record<string, File | null>;
 
-function BgFieldInput({ field, value, onChange, masterData, cpId }: { field: BackgroundField; value: string; onChange: (v: string) => void, masterData?: any, cpId?: string }) {
+function BgFieldInput({ field, value, onChange, masterData, cpId, existingResponses }: { field: BackgroundField; value: string; onChange: (v: string) => void, masterData?: any, cpId?: string, existingResponses?: any[] }) {
   if (field.key === "batch" || field.key === "kodeTernak") {
     let options: {label: string, value: string}[] = [];
     if (masterData) {
@@ -26,6 +26,27 @@ function BgFieldInput({ field, value, onChange, masterData, cpId }: { field: Bac
         options = masterData.batches?.map((b: any) => ({ value: b.id.split('-')[0], label: `[Batch ${b.id.split('-')[0]}] Sapi: ${b.cattle?.earTag}` })) || [];
       }
     }
+
+    if (existingResponses && cpId) {
+      console.log(`K3 BgFieldInput: existingResponses count = ${existingResponses.length}, cpId = ${cpId}`);
+      options = options.map(opt => {
+        const isFilled = existingResponses.some(r => {
+          const match = r.cpId === cpId && 
+            (r.respondentInfo?.[`${cpId}_batch`] === opt.value || 
+             r.respondentInfo?.[`${cpId}_kodeTernak`] === opt.value ||
+             r.respondentInfo?.batch === opt.value ||
+             r.respondentInfo?.kodeTernak === opt.value);
+          console.log(`K3 BgFieldInput - Comparing r.cpId=${r.cpId} and opt.value=${opt.value} -> Match: ${match}`);
+          return match;
+        });
+        console.log(`K3 BgFieldInput - Option ${opt.value} -> isFilled: ${isFilled}`);
+        return {
+          ...opt,
+          label: isFilled ? `${opt.label} ✅ (Sudah Diisi)` : opt.label
+        };
+      });
+    }
+
     return (
       <select suppressHydrationWarning value={value} onChange={e => onChange(e.target.value)} className="w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
         <option value="">— Pilih Batch / Kode Ternak —</option>
@@ -225,6 +246,7 @@ export default function KuesionerAktualPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [masterData, setMasterData] = useState<any>(null);
+  const [existingResponses, setExistingResponses] = useState<any[]>([]);
 
   useEffect(() => {
     fetch("/api/dss/master-data")
@@ -234,12 +256,39 @@ export default function KuesionerAktualPage() {
       });
   }, []);
 
+  const cp = availableCPs[selectedCPIndex] || availableCPs[0];
+
+  const safeFetchJson = useCallback(async (url: string) => {
+    try {
+      const res = await fetch(url);
+      const text = await res.text();
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${text || res.statusText}`);
+      }
+      return JSON.parse(text);
+    } catch (e) {
+      console.error(`safeFetchJson error for URL ${url}:`, e);
+      throw e;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!cp) return;
+    setExistingResponses([]);
+    console.log("K3: Fetching existing responses for", cp.cpId);
+    safeFetchJson(`/api/dss/questionnaire-responses?type=aktual&cpId=${cp.cpId}&limit=100&bypassEmailFilter=true`)
+      .then(d => {
+        console.log("K3: Fetched responses:", d.responses);
+        if (d.responses) setExistingResponses(d.responses);
+      })
+      .catch(console.error);
+  }, [cp?.cpId, safeFetchJson]);
+
   // Validation
   const [validasiSupervisor, setValidasiSupervisor] = useState({
     namaSupervisor: "", hasilVerifikasi: "", tingkatRisiko: "", tindakanKorektif: "", tanggalVerifikasi: "",
   });
 
-  const cp = availableCPs[selectedCPIndex] || availableCPs[0];
   const totalQ = cp.subCriteria.reduce((a, s) => a + s.indicators.length, 0);
   const answeredQ = cp.subCriteria.reduce((a, s) => a + s.indicators.filter(i => risks[`${s.code}_${i.no}`]).length, 0);
 
@@ -321,6 +370,12 @@ export default function KuesionerAktualPage() {
           files: fileList,
         }),
       });
+
+      safeFetchJson(`/api/dss/questionnaire-responses?type=aktual&cpId=${cp.cpId}&limit=100&bypassEmailFilter=true`)
+        .then(d => {
+          if (d.responses) setExistingResponses(d.responses);
+        })
+        .catch(console.error);
     } catch (e) { console.error(e); }
     setSubmitted(true);
     setSubmitting(false);
@@ -389,7 +444,7 @@ export default function KuesionerAktualPage() {
             {cp.backgroundFields.map(f => (
               <div key={f.key}>
                 <label className="text-xs font-medium text-muted-foreground mb-1 block">{f.label}</label>
-                <BgFieldInput field={f} value={bgData[`${cp.cpId}_${f.key}`] || ""} onChange={v => setBgData(prev => ({ ...prev, [`${cp.cpId}_${f.key}`]: v }))} masterData={masterData} cpId={cp.cpId} />
+                <BgFieldInput field={f} value={bgData[`${cp.cpId}_${f.key}`] || ""} onChange={v => setBgData(prev => ({ ...prev, [`${cp.cpId}_${f.key}`]: v }))} masterData={masterData} cpId={cp.cpId} existingResponses={existingResponses} />
               </div>
             ))}
           </div>

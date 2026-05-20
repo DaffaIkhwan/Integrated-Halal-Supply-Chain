@@ -7,7 +7,7 @@ declare global {
   var prisma: PrismaClient | undefined;
 }
 
-let dbUrl = process.env.DATABASE_URL;
+let dbUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL;
 if (dbUrl) {
   if (!dbUrl.includes('connection_limit')) {
     dbUrl = dbUrl.includes('?') ? `${dbUrl}&connection_limit=3&pool_timeout=10` : `${dbUrl}?connection_limit=3&pool_timeout=10`;
