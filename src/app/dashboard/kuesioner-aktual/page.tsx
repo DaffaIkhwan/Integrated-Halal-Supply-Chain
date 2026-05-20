@@ -289,6 +289,15 @@ export default function KuesionerAktualPage() {
     namaSupervisor: "", hasilVerifikasi: "", tingkatRisiko: "", tindakanKorektif: "", tanggalVerifikasi: "",
   });
 
+  useEffect(() => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const today = `${year}-${month}-${day}`;
+    setValidasiSupervisor(prev => ({ ...prev, tanggalVerifikasi: today }));
+  }, []);
+
   const totalQ = cp.subCriteria.reduce((a, s) => a + s.indicators.length, 0);
   const answeredQ = cp.subCriteria.reduce((a, s) => a + s.indicators.filter(i => risks[`${s.code}_${i.no}`]).length, 0);
 

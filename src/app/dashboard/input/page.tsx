@@ -125,7 +125,19 @@ export default function ManajemenCPPage() {
 
   const openCreateModal = useCallback(() => {
     const initial: Record<string, string> = {};
-    for (const f of activeConfig.fields) initial[f.key] = "";
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const today = `${year}-${month}-${day}`;
+
+    for (const f of activeConfig.fields) {
+      if (f.type === "date") {
+        initial[f.key] = today;
+      } else {
+        initial[f.key] = "";
+      }
+    }
     setFormData(initial);
     setEditingId(null);
     setModalOpen(true);

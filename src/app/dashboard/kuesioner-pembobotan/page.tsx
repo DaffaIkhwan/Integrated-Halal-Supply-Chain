@@ -29,6 +29,15 @@ export default function KuesionerPembobotanPage() {
     pengalaman: "", email: "", tanggal: "",
   });
 
+  useEffect(() => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const today = `${year}-${month}-${day}`;
+    setExpertBg(prev => ({ ...prev, tanggal: today }));
+  }, []);
+
   const [selectedMode, setSelectedMode] = useState<string>("CP_LEVEL");
   const [comparisons, setComparisons] = useState<Record<string, Record<string, number>>>({
     "CP_LEVEL": {}

@@ -272,6 +272,15 @@ export default function KuesionerRisikoPage() {
     tanggalAudit: "", nama: "", jenisKelamin: "", posisi: "", namaInstansi: "", noSertifikat: "",
   });
 
+  useEffect(() => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const today = `${year}-${month}-${day}`;
+    setAuditorBg(prev => ({ ...prev, tanggalAudit: today }));
+  }, []);
+
   const cp = availableCPs[selectedCPIndex] || availableCPs[0];
   const selectedBatch = useMemo(() => aktualBatches.find(b => b.id === selectedBatchId), [aktualBatches, selectedBatchId]);
 
