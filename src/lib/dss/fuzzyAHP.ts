@@ -310,6 +310,15 @@ export async function calculateBatchRiskScore(batchId: string) {
         riskLevel: getRiskLevel(localRisk),
       },
     });
+
+    // Update CriticalPointRecord for this batch and CP
+    await prisma.criticalPointRecord.updateMany({
+      where: { halalBatchId: batchId, criticalPointId: cp.id },
+      data: {
+        riskValue: localRisk,
+        weightedRisk: globalWeightedRisk,
+      },
+    });
   }
 
   // Update batch total risk

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
+import Link from "next/link";
 import {
   Shield,
   AlertTriangle,
@@ -16,6 +17,14 @@ import {
   Factory,
   Truck,
   Search,
+  Building2,
+  Tractor,
+  Scale,
+  ClipboardCheck,
+  FileCheck,
+  Clock,
+  ArrowRight,
+  PieChart,
 } from "lucide-react";
 
 // ─── Types ───
@@ -55,6 +64,16 @@ interface BatchData {
   cpRecords: CPRecordItem[];
 }
 
+interface RecentResponse {
+  id: string;
+  questionnaireType: string;
+  cpId: string | null;
+  respondentName: string;
+  respondentOrg: string | null;
+  status: string;
+  createdAt: string;
+}
+
 interface DashboardData {
   criticalPoints: CriticalPointData[];
   batches: BatchData[];
@@ -64,7 +83,15 @@ interface DashboardData {
     passRate: number;
     avgRiskScore: number;
     totalCriticalPoints: number;
+    farmsCount?: number;
+    slaughterhousesCount?: number;
+    cattleCount?: number;
+    k1Count?: number;
+    k2Count?: number;
+    k3Count?: number;
   };
+  riskDistribution?: Record<string, number>;
+  recentResponses?: RecentResponse[];
 }
 
 // ─── Helpers ───
@@ -81,6 +108,18 @@ function getStatusIcon(status: string) {
   if (status === "FAIL") return <AlertTriangle className="h-4 w-4 text-red-400" />;
   return <Activity className="h-4 w-4 text-amber-400" />;
 }
+
+const QUESTIONNAIRE_META: Record<string, { label: string; short: string; color: string; icon: React.ReactNode }> = {
+  pembobotan: { label: "K1 — Pembobotan", short: "K1", color: "from-cyan-500 to-blue-500", icon: <Scale className="h-4 w-4" /> },
+  risiko: { label: "K2 — Risiko", short: "K2", color: "from-amber-500 to-orange-500", icon: <ClipboardCheck className="h-4 w-4" /> },
+  aktual: { label: "K3 — Aktual", short: "K3", color: "from-teal-500 to-cyan-500", icon: <FileCheck className="h-4 w-4" /> },
+};
+
+const STATUS_COLORS: Record<string, string> = {
+  SUBMITTED: "bg-blue-500/15 text-blue-400 border-blue-500/30",
+  REVIEWED: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+  APPROVED: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+};
 
 // ─── Stat Card ───
 function StatCard({ icon, label, value, sub, color }: { icon: React.ReactNode; label: string; value: string | number; sub?: string; color: string }) {
@@ -220,16 +259,21 @@ function BatchCard({ batch, index }: { batch: BatchData; index: number }) {
               </p>
               {batch.cpRecords.map((r) => (
                 <div key={r.cpId} className="flex items-center justify-between py-1.5 px-3 rounded-lg bg-muted/40">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 min-w-0">
                     {getStatusIcon(r.status)}
-                    <span className="text-xs font-mono font-semibold">{r.cpId}</span>
-                    <span className="text-xs text-muted-foreground truncate max-w-[200px]">{r.cpName}</span>
+                    <span className="text-xs font-mono font-semibold shrink-0">{r.cpId}</span>
+                    <span className="text-xs text-muted-foreground truncate">{r.cpName}</span>
                   </div>
-                  <span className={`text-xs font-bold ${
-                    r.status === "PASS" ? "text-emerald-400" : r.status === "FAIL" ? "text-red-400" : "text-amber-400"
-                  }`}>
-                    {r.status}
-                  </span>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <span className="text-[10px] font-mono text-muted-foreground">
+                      Risk: {(r.riskValue * 100).toFixed(1)}% (W: {(r.weightedRisk * 100).toFixed(1)}%)
+                    </span>
+                    <span className={`text-xs font-bold ${
+                      r.status === "PASS" ? "text-emerald-400" : r.status === "FAIL" ? "text-red-400" : "text-amber-400"
+                    }`}>
+                      {r.status}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -237,6 +281,53 @@ function BatchCard({ batch, index }: { batch: BatchData; index: number }) {
         )}
       </AnimatePresence>
     </motion.div>
+  );
+}
+
+// ─── Risk Distribution Bar ───
+function RiskDistributionBar({ distribution }: { distribution: Record<string, number> }) {
+  const total = Object.values(distribution).reduce((s, v) => s + v, 0);
+  if (total === 0) return null;
+
+  const ordered = ["LOW", "MODERATE", "HIGH", "Critical"].filter(k => distribution[k]);
+
+  return (
+    <div className="space-y-3">
+      {/* Visual bar */}
+      <div className="h-4 w-full rounded-full bg-muted overflow-hidden flex">
+        {ordered.map((level) => {
+          const count = distribution[level] || 0;
+          const pct = (count / total) * 100;
+          const rc = getRiskColor(level);
+          return (
+            <motion.div
+              key={level}
+              initial={{ width: 0 }}
+              animate={{ width: `${pct}%` }}
+              transition={{ duration: 0.8 }}
+              className={`h-full ${rc.bar} first:rounded-l-full last:rounded-r-full`}
+              title={`${level}: ${count} (${pct.toFixed(0)}%)`}
+            />
+          );
+        })}
+      </div>
+      {/* Legend */}
+      <div className="flex flex-wrap gap-3">
+        {ordered.map((level) => {
+          const count = distribution[level] || 0;
+          const pct = ((count / total) * 100).toFixed(0);
+          const rc = getRiskColor(level);
+          return (
+            <div key={level} className="flex items-center gap-1.5">
+              <div className={`w-2.5 h-2.5 rounded-full ${rc.bar}`} />
+              <span className="text-xs text-muted-foreground">
+                {level}: <strong className={rc.text}>{count}</strong> ({pct}%)
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -290,6 +381,8 @@ export default function DashboardPage() {
       b.riskLevel.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const totalQuestionnaires = (data.stats.k1Count || 0) + (data.stats.k2Count || 0) + (data.stats.k3Count || 0);
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -307,36 +400,181 @@ export default function DashboardPage() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <StatCard
-            icon={<BarChart3 className="h-5 w-5 text-blue-400" />}
-            label="Total Batch"
-            value={data.stats.totalBatches}
-            sub="Halal production batches"
-            color="border-blue-500/20"
-          />
-          <StatCard
-            icon={<AlertTriangle className="h-5 w-5 text-red-400" />}
-            label="High Risk"
-            value={data.stats.highRiskBatches}
-            sub="Perlu perhatian segera"
-            color="border-red-500/20"
-          />
-          <StatCard
-            icon={<CheckCircle2 className="h-5 w-5 text-emerald-400" />}
-            label="Pass Rate"
-            value={`${data.stats.passRate}%`}
-            sub="Compliance keseluruhan"
-            color="border-emerald-500/20"
-          />
-          <StatCard
-            icon={<TrendingUp className="h-5 w-5 text-amber-400" />}
-            label="Avg Risk"
-            value={`${(data.stats.avgRiskScore * 100).toFixed(1)}%`}
-            sub="Skor risiko rata-rata"
-            color="border-amber-500/20"
-          />
+        {/* Stats Row 1: Primary metrics */}
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <StatCard
+              icon={<BarChart3 className="h-5 w-5 text-blue-400" />}
+              label="Total Batch"
+              value={data.stats.totalBatches}
+              sub="Halal production batches"
+              color="border-blue-500/20"
+            />
+            <StatCard
+              icon={<AlertTriangle className="h-5 w-5 text-red-400" />}
+              label="High Risk"
+              value={data.stats.highRiskBatches}
+              sub="Perlu perhatian segera"
+              color="border-red-500/20"
+            />
+            <StatCard
+              icon={<CheckCircle2 className="h-5 w-5 text-emerald-400" />}
+              label="Pass Rate"
+              value={`${data.stats.passRate}%`}
+              sub="Compliance keseluruhan"
+              color="border-emerald-500/20"
+            />
+            <StatCard
+              icon={<TrendingUp className="h-5 w-5 text-amber-400" />}
+              label="Avg Risk"
+              value={`${(data.stats.avgRiskScore * 100).toFixed(1)}%`}
+              sub="Skor risiko rata-rata"
+              color="border-amber-500/20"
+            />
+          </div>
+
+          {/* Stats Row 2: Entity counts + Questionnaire counts */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border/40 shadow-sm">
+              <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                <Tractor className="h-4 w-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider truncate">Farm</p>
+                <p className="text-sm font-bold truncate">{data.stats.farmsCount ?? 0}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border/40 shadow-sm">
+              <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                <Building2 className="h-4 w-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider truncate">RPH</p>
+                <p className="text-sm font-bold truncate">{data.stats.slaughterhousesCount ?? 0}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border/40 shadow-sm">
+              <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                <Beef className="h-4 w-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider truncate">Sapi</p>
+                <p className="text-sm font-bold truncate">{data.stats.cattleCount ?? 0} Ekor</p>
+              </div>
+            </div>
+            {/* Questionnaire response counts */}
+            <Link href="/dashboard/rekap-pembobotan" className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border/40 shadow-sm hover:bg-muted/50 transition-colors group">
+              <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 text-cyan-400">
+                <Scale className="h-4 w-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider truncate">K1 Pembobotan</p>
+                <p className="text-sm font-bold truncate">{data.stats.k1Count ?? 0} <span className="text-xs font-normal text-muted-foreground">respons</span></p>
+              </div>
+            </Link>
+            <Link href="/dashboard/rekap-risiko" className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border/40 shadow-sm hover:bg-muted/50 transition-colors group">
+              <div className="p-2 rounded-lg bg-gradient-to-br from-amber-500/20 to-orange-500/20 text-amber-400">
+                <ClipboardCheck className="h-4 w-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider truncate">K2 Risiko</p>
+                <p className="text-sm font-bold truncate">{data.stats.k2Count ?? 0} <span className="text-xs font-normal text-muted-foreground">respons</span></p>
+              </div>
+            </Link>
+            <Link href="/dashboard/rekap-aktual" className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border/40 shadow-sm hover:bg-muted/50 transition-colors group">
+              <div className="p-2 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20 text-teal-400">
+                <FileCheck className="h-4 w-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider truncate">K3 Aktual</p>
+                <p className="text-sm font-bold truncate">{data.stats.k3Count ?? 0} <span className="text-xs font-normal text-muted-foreground">respons</span></p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Risk Distribution + Recent Activity */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* Risk Distribution */}
+          {data.riskDistribution && Object.keys(data.riskDistribution).length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-2xl border bg-card p-5 shadow-lg"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <PieChart className="h-5 w-5 text-primary" />
+                <h2 className="font-bold text-lg">Distribusi Risiko Batch</h2>
+              </div>
+              <p className="text-xs text-muted-foreground mb-4">
+                Persebaran tingkat risiko pada {data.stats.totalBatches} batch produksi halal.
+              </p>
+              <RiskDistributionBar distribution={data.riskDistribution} />
+            </motion.div>
+          )}
+
+          {/* Recent Activity */}
+          {data.recentResponses && data.recentResponses.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="rounded-2xl border bg-card p-5 shadow-lg"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-primary" />
+                  <h2 className="font-bold text-lg">Aktivitas Terbaru</h2>
+                </div>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-muted border border-border/40 text-muted-foreground">
+                  {totalQuestionnaires} total kuesioner
+                </span>
+              </div>
+              <div className="space-y-2">
+                {data.recentResponses.map((r, i) => {
+                  const meta = QUESTIONNAIRE_META[r.questionnaireType] || QUESTIONNAIRE_META.risiko;
+                  const rekapHref = r.questionnaireType === "pembobotan"
+                    ? "/dashboard/rekap-pembobotan"
+                    : r.questionnaireType === "risiko"
+                    ? "/dashboard/rekap-risiko"
+                    : "/dashboard/rekap-aktual";
+                  return (
+                    <motion.div
+                      key={r.id}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="flex items-center gap-3 py-2.5 px-3 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors"
+                    >
+                      <div className={`shrink-0 p-1.5 rounded-lg bg-gradient-to-br ${meta.color} text-white`}>
+                        {meta.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold">{meta.short}</span>
+                          {r.cpId && <span className="text-[10px] font-mono text-primary">{r.cpId}</span>}
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded-full border font-semibold ${STATUS_COLORS[r.status] || STATUS_COLORS.SUBMITTED}`}>
+                            {r.status}
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted-foreground truncate">
+                          {r.respondentName}{r.respondentOrg ? ` — ${r.respondentOrg}` : ""}
+                        </p>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <p className="text-[10px] text-muted-foreground">
+                          {new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "short" })}
+                        </p>
+                        <Link href={rekapHref} className="text-[10px] text-primary hover:underline flex items-center gap-0.5 justify-end">
+                          Lihat <ArrowRight className="h-2.5 w-2.5" />
+                        </Link>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Two-Column Layout */}

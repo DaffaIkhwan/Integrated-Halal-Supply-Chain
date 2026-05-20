@@ -253,7 +253,7 @@ export default function RekapPembobotanPage() {
             <input
               type="text"
               placeholder="Cari nama, instansi, email..."
-              value={searchTerm}
+              defaultValue={searchTerm}
               onChange={(e) => handleSearch(e.target.value)}
               className="w-full pl-9 pr-4 py-2 rounded-xl border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
@@ -262,11 +262,14 @@ export default function RekapPembobotanPage() {
 
         {/* Stats Summary */}
         {data && (
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Filter className="h-3.5 w-3.5" /> Total: <strong className="text-foreground">{data.total}</strong> respons
             </span>
-            <span>Halaman {data.page} / {data.totalPages || 1}</span>
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-muted border border-border/40">
+              Halaman {data.page} / {data.totalPages || 1}
+            </span>
+            <span className="text-xs">Menampilkan {data.responses.length} dari {data.total} data</span>
           </div>
         )}
 
@@ -366,20 +369,39 @@ export default function RekapPembobotanPage() {
                   <ChevronLeft className="h-4 w-4" /> Prev
                 </button>
                 <div className="flex items-center gap-1">
-                  {Array.from({ length: Math.min(data.totalPages, 5) }, (_, i) => {
-                    const p = i + 1;
-                    return (
-                      <button
-                        key={p}
-                        onClick={() => setPage(p)}
-                        className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${
-                          page === p ? "bg-primary text-primary-foreground shadow-md" : "hover:bg-muted text-muted-foreground"
-                        }`}
-                      >
-                        {p}
-                      </button>
+                  {(() => {
+                    const totalPages = data.totalPages;
+                    const current = page;
+                    const pages: (number | string)[] = [];
+
+                    if (totalPages <= 7) {
+                      for (let i = 1; i <= totalPages; i++) pages.push(i);
+                    } else {
+                      pages.push(1);
+                      if (current > 3) pages.push("...");
+                      const start = Math.max(2, current - 1);
+                      const end = Math.min(totalPages - 1, current + 1);
+                      for (let i = start; i <= end; i++) pages.push(i);
+                      if (current < totalPages - 2) pages.push("...");
+                      pages.push(totalPages);
+                    }
+
+                    return pages.map((p, idx) =>
+                      typeof p === "string" ? (
+                        <span key={`ellipsis-${idx}`} className="w-8 h-8 flex items-center justify-center text-muted-foreground text-xs">…</span>
+                      ) : (
+                        <button
+                          key={p}
+                          onClick={() => setPage(p)}
+                          className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${
+                            page === p ? "bg-primary text-primary-foreground shadow-md" : "hover:bg-muted text-muted-foreground"
+                          }`}
+                        >
+                          {p}
+                        </button>
+                      )
                     );
-                  })}
+                  })()}
                 </div>
                 <button
                   onClick={() => setPage(p => Math.min(data.totalPages, p + 1))}
