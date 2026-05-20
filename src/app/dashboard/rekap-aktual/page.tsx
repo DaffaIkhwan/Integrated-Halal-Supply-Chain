@@ -138,10 +138,10 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
                       <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
                         <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
                         <td className="py-2 px-3 text-sm">
-                          {evidence[key] === "sesuai" ? (
-                            <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">Sesuai</span>
-                          ) : evidence[key] === "tidak_sesuai" ? (
-                            <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full">Tidak Sesuai</span>
+                          {evidence[key] === true ? (
+                            <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">Tersedia (Ya)</span>
+                          ) : evidence[key] === false ? (
+                            <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full">Tidak Tersedia</span>
                           ) : <span className="text-muted-foreground">—</span>}
                         </td>
                         <td className="py-2 px-3 text-sm">
