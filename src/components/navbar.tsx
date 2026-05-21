@@ -36,7 +36,8 @@ const navItems: NavItem[] = [
 		children: [
 			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (V1)" },
 			{ href: "/dashboard/kuesioner-pembobotan-v2", label: "Input Pembobotan (V2)" },
-			{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
+			{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data (V1)" },
+			{ href: "/dashboard/rekap-pembobotan-v2", label: "Rekap Data (V2)" },
 		],
 	},
 	{

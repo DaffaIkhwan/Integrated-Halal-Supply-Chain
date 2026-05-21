@@ -237,7 +237,7 @@ export default function KuesionerPembobotanV2Page() {
           </div>
         </div>
 
-        {/* Ranking & Weight Table Section */}
+        {/* Ranking & Weight Cards Section */}
         <div className="space-y-6">
           <div className="flex items-center justify-between pb-2 border-b">
             <h2 className="font-bold text-lg">
@@ -253,64 +253,86 @@ export default function KuesionerPembobotanV2Page() {
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border bg-card shadow-sm">
-            <table className="w-full text-sm text-left">
-              <thead className="bg-muted/50 text-muted-foreground uppercase text-xs">
-                <tr>
-                  <th className="px-6 py-4 font-semibold w-12 text-center">No</th>
-                  <th className="px-6 py-4 font-semibold">Variabel</th>
-                  <th className="px-6 py-4 font-semibold text-center w-48">Urutan Skala Kepentingan (1-{totalCount})</th>
-                  <th className="px-6 py-4 font-semibold text-center w-48">Nilai Bobot Kepentingan (1-9)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
-                {currentItems.map((item, idx) => (
-                  <tr key={item.id} className="hover:bg-muted/20 transition-colors">
-                    <td className="px-6 py-4 text-center text-muted-foreground font-mono">{idx + 1}</td>
-                    <td className="px-6 py-4 font-medium">
-                      <div className="flex flex-col">
-                        <span className="text-xs text-emerald-500 font-bold mb-1">{item.id}</span>
-                        <span>{item.label}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <select
-                        value={modeRanks[item.id] || ""}
-                        onChange={(e) => handleRankChange(item.id, e.target.value)}
-                        className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 ${
-                          modeRanks[item.id] ? "bg-cyan-500/10 border-cyan-500/30 text-cyan-700 dark:text-cyan-400 font-bold" : "bg-background"
-                        }`}
-                      >
-                        <option value="">— Pilih —</option>
-                        {Array.from({length: totalCount}).map((_, i) => {
-                          const r = i + 1;
-                          const isUsed = Object.values(modeRanks).includes(r) && modeRanks[item.id] !== r;
-                          return <option key={r} value={r} disabled={isUsed}>{r}</option>
-                        })}
-                      </select>
-                    </td>
-                    <td className="px-6 py-4">
-                      <select
-                        value={modeBobots[item.id] || ""}
-                        onChange={(e) => handleBobotChange(item.id, e.target.value)}
-                        className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 ${
-                          modeBobots[item.id] ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-bold" : "bg-background"
-                        }`}
-                      >
-                        <option value="">— Pilih —</option>
-                        {Array.from({length: 9}).map((_, i) => {
-                          const b = i + 1;
-                          return <option key={b} value={b}>{b}</option>
-                        })}
-                      </select>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            
+          <div className="space-y-5">
+            {currentItems.map((item, idx) => {
+              const selectedRank = modeRanks[item.id];
+              const selectedBobot = modeBobots[item.id];
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.03 }}
+                  className="rounded-2xl border bg-card p-5 shadow-sm space-y-4"
+                >
+                  {/* Variable header */}
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs font-mono font-bold text-muted-foreground bg-muted px-2.5 py-1 rounded-lg shrink-0">{idx + 1}</span>
+                    <div>
+                      <span className="text-xs text-emerald-500 font-bold">{item.id}</span>
+                      <p className="font-semibold text-sm mt-0.5">{item.label}</p>
+                    </div>
+                  </div>
+
+                  {/* Ranking buttons */}
+                  <div>
+                    <p className="text-xs font-semibold text-muted-foreground mb-2">Urutan Skala Kepentingan (1-{totalCount})</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {Array.from({ length: totalCount }).map((_, i) => {
+                        const r = i + 1;
+                        const isSelected = selectedRank === r;
+                        const isUsedByOther = Object.entries(modeRanks).some(
+                          ([key, val]) => val === r && key !== item.id
+                        );
+                        return (
+                          <button
+                            key={r}
+                            onClick={() => handleRankChange(item.id, isSelected ? "" : String(r))}
+                            disabled={isUsedByOther}
+                            className={`w-10 h-10 rounded-xl text-sm font-bold transition-all duration-200 ${
+                              isSelected
+                                ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/30 scale-105 ring-2 ring-cyan-400/50"
+                                : isUsedByOther
+                                  ? "bg-muted/30 text-muted-foreground/30 cursor-not-allowed opacity-40 line-through"
+                                  : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground hover:scale-105"
+                            }`}
+                          >
+                            {r}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Bobot buttons */}
+                  <div>
+                    <p className="text-xs font-semibold text-muted-foreground mb-2">Nilai Bobot Kepentingan (1-9)</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {Array.from({ length: 9 }).map((_, i) => {
+                        const b = i + 1;
+                        const isSelected = selectedBobot === b;
+                        return (
+                          <button
+                            key={b}
+                            onClick={() => handleBobotChange(item.id, isSelected ? "" : String(b))}
+                            className={`w-10 h-10 rounded-xl text-sm font-bold transition-all duration-200 ${
+                              isSelected
+                                ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 scale-105 ring-2 ring-emerald-400/50"
+                                : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground hover:scale-105"
+                            }`}
+                          >
+                            {b}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+
             {currentItems.length === 0 && (
-              <div className="text-center p-8 text-muted-foreground">
+              <div className="text-center p-8 text-muted-foreground rounded-2xl border border-dashed">
                 Kategori ini tidak memiliki variabel.
               </div>
             )}
