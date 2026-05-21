@@ -1,5 +1,5 @@
-export type { Indicator, SubCriteria, BackgroundField, CPQuestionnaire, ExpertType } from './questionnaire-data';
-export { EXPERT_TYPES, RISK_SCALE_LIKERT, CP1_QUESTIONNAIRE, CP2_QUESTIONNAIRE, CP3_QUESTIONNAIRE } from './questionnaire-data';
+export type { Indicator, SubCriteria, BackgroundField, CPQuestionnaire, ExpertType, KriteriaUmum } from './questionnaire-data';
+export { EXPERT_TYPES, RISK_SCALE_LIKERT, KU_KRITERIA_UMUM, CP1_QUESTIONNAIRE, CP2_QUESTIONNAIRE, CP3_QUESTIONNAIRE } from './questionnaire-data';
 export { CP4_QUESTIONNAIRE, CP5_QUESTIONNAIRE, CP6_QUESTIONNAIRE } from './questionnaire-cp4-6';
 export { CP7_QUESTIONNAIRE, CP8_QUESTIONNAIRE, CP9_QUESTIONNAIRE } from './questionnaire-cp7-9';
 

@@ -53,9 +53,9 @@ const CP_LABELS = [
 ];
 
 const EXPERT_RESPONDENTS = [
-  { name: 'Prof. Dr. Ir. Budi Santoso, M.Sc.', role: 'Akademisi', org: 'Universitas Gadjah Mada', email: 'budi.santoso@ugm.ac.id', type: 'akademisi' },
-  { name: 'Dr. Hj. Siti Rahayu, M.Ag.', role: 'Pakar Halal', org: 'LPPOM MUI Pusat', email: 'siti.rahayu@lppom-mui.or.id', type: 'pakar_halal' },
-  { name: 'Ir. Agus Hermawan, M.T.', role: 'Pakar Supply Chain', org: 'PT. Logistik Halal Nusantara', email: 'agus.hermawan@loghalal.co.id', type: 'pakar_sc' },
+  { name: 'Prof. Dr. Ir. Budi Santoso, M.Sc.', role: 'Akademisi', org: 'Universitas Gadjah Mada', jenisKelamin: 'Laki-laki', lamaBekerja: '15 tahun' },
+  { name: 'Dr. Hj. Siti Rahayu, M.Ag.', role: 'Pakar Halal', org: 'LPPOM MUI Pusat', jenisKelamin: 'Perempuan', lamaBekerja: '12 tahun' },
+  { name: 'Ir. Agus Hermawan, M.T.', role: 'Pakar Supply Chain', org: 'PT. Logistik Halal Nusantara', jenisKelamin: 'Laki-laki', lamaBekerja: '20 tahun' },
 ];
 
 // Scale values for pembobotan: 1=Sama, 3=Sedikit Lebih, 5=Lebih, 7=Jauh Lebih, 9=Mutlak
@@ -91,12 +91,13 @@ async function main() {
         respondentName: expert.name,
         respondentRole: expert.role,
         respondentOrg: expert.org,
-        respondentEmail: expert.email,
         respondentInfo: {
-          expertType: expert.type,
-          pengalaman: '15 tahun',
-          institusi: expert.org,
-          noTelepon: '+62811000001',
+          tanggal: '2026-05-14',
+          nama: expert.name,
+          jenisKelamin: expert.jenisKelamin,
+          posisi: expert.role,
+          namaInstansi: expert.org,
+          lamaBekerja: expert.lamaBekerja,
         },
         answers: { type: 'CP_LEVEL', comparisons: PEMBOBOTAN_ANSWERS_EXPERT1 },
         notes: {},
@@ -121,8 +122,14 @@ async function main() {
           respondentName: expert.name,
           respondentRole: expert.role,
           respondentOrg: expert.org,
-          respondentEmail: expert.email,
-          respondentInfo: { expertType: expert.type, pengalaman: '15 tahun' },
+          respondentInfo: {
+            tanggal: '2026-05-14',
+            nama: expert.name,
+            jenisKelamin: expert.jenisKelamin,
+            posisi: expert.role,
+            namaInstansi: expert.org,
+            lamaBekerja: expert.lamaBekerja,
+          },
           answers: { type: 'SUBCRITERIA_LEVEL', cpId: cp.id, cpName: cp.name, comparisons: subAnswers },
           notes: {},
           files: [PDF_FILE],

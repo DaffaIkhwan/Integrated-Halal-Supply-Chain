@@ -54,6 +54,28 @@ export const RISK_SCALE_LIKERT = [
 ];
 
 // ══════════════════════════════════════
+// Kriteria Umum (KU) — Tabel 2 PDF K1
+// ══════════════════════════════════════
+export interface KriteriaUmum {
+  code: string;
+  name: string;
+  nameEn: string;
+}
+
+export const KU_KRITERIA_UMUM: KriteriaUmum[] = [
+  { code: 'KU1', name: 'Masa berlaku sertifikasi halal', nameEn: 'Halal certification validity' },
+  { code: 'KU2', name: 'Kepatuhan terhadap syariat', nameEn: 'Sharia compliance' },
+  { code: 'KU3', name: 'Kelengkapan jejak', nameEn: 'Traceability completeness' },
+  { code: 'KU4', name: 'Risiko kontaminasi silang', nameEn: 'Risk of cross contamination' },
+  { code: 'KU5', name: 'Kelengkapan dokumen', nameEn: 'Documentation completeness' },
+  { code: 'KU6', name: 'Kepatuhan terhadap standar sanitasi dan kebersihan', nameEn: 'Sanitation & hygiene compliance' },
+  { code: 'KU7', name: 'Kompetensi sumber daya manusia', nameEn: 'Human resource competence' },
+  { code: 'KU8', name: 'Pemisahan produk halal dan non-halal', nameEn: 'Segregation halal/non-halal' },
+  { code: 'KU9', name: 'Rantai dingin & pengendalian mutu', nameEn: 'Cold chain & quality control' },
+  { code: 'KU10', name: 'Tindakan perbaikan & penanganan insiden', nameEn: 'Corrective action & incident handling' },
+];
+
+// ══════════════════════════════════════
 // CP1 — Kandang Sapi (Farm)
 // ══════════════════════════════════════
 export const CP1_QUESTIONNAIRE: CPQuestionnaire = {

@@ -34,7 +34,8 @@ const navItems: NavItem[] = [
 	{
 		href: "#", label: "K1",
 		children: [
-			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan" },
+			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (Old)" },
+			{ href: "/dashboard/kuesioner-pembobotan-v2", label: "Input Pembobotan (V2)" },
 			{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
 		],
 	},
@@ -123,7 +124,8 @@ export function Navbar() {
 				{
 					href: "#", label: "K1",
 					children: [
-						{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan" },
+						{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (Old)" },
+						{ href: "/dashboard/kuesioner-pembobotan-v2", label: "Input Pembobotan (V2)" },
 						{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
 					],
 				},
