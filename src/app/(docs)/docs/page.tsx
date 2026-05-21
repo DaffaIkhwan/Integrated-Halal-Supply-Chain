@@ -4,10 +4,9 @@ import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export default async function DocsPage() {
-  const session = await auth();
-  if (session?.user?.role !== "ADMIN") {
-    redirect("/dashboard");
-  }
+  // if (session?.user?.role !== "ADMIN") {
+  //   redirect("/dashboard");
+  // }
 
   return (
     <div className="w-full max-w-[900px] mx-auto px-4 py-10 space-y-8">

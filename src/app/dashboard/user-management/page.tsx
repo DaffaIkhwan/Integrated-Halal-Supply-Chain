@@ -137,20 +137,20 @@ export default function UserManagementPage() {
     }
   };
 
-  if ((session?.user as any)?.role !== "ADMIN") {
-    return (
-      <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-3">
-            <Shield className="h-12 w-12 text-red-500 mx-auto" />
-            <p className="text-lg font-semibold">Akses Ditolak</p>
-            <p className="text-sm text-muted-foreground">Halaman ini hanya untuk Admin.</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // if ((session?.user as any)?.role !== "ADMIN") {
+  //   return (
+  //     <div className="min-h-screen flex flex-col bg-background">
+  //       <Navbar />
+  //       <div className="flex-1 flex items-center justify-center">
+  //         <div className="text-center space-y-3">
+  //           <Shield className="h-12 w-12 text-red-500 mx-auto" />
+  //           <p className="text-lg font-semibold">Akses Ditolak</p>
+  //           <p className="text-sm text-muted-foreground">Halaman ini hanya untuk Admin.</p>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   if (loading) {
     return (

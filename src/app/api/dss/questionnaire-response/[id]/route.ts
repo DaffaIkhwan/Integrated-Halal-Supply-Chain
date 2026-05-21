@@ -16,12 +16,12 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const { searchParams } = new URL(request.url);
     const bypassEmailFilter = searchParams.get('bypassEmailFilter') === 'true';
 
-    // RBAC: non‑admin users can only fetch their own responses unless bypassEmailFilter is set
+    // RBAC: Removed for public access
     const where: any = { id };
-    if (!session || (session.user?.role !== 'ADMIN' && !session.user?.role?.startsWith('PAKAR') && !bypassEmailFilter)) {
-      const email = session?.user?.email;
-      if (email) where.respondentEmail = email;
-    }
+    // if (!session || (session.user?.role !== 'ADMIN' && !session.user?.role?.startsWith('PAKAR') && !bypassEmailFilter)) {
+    //   const email = session?.user?.email;
+    //   if (email) where.respondentEmail = email;
+    // }
 
     const response = await prisma.questionnaireResponse.findFirst({
       where,

@@ -4,12 +4,9 @@ import { auth } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
-// Helper: Admin guard
+// Helper: Admin guard (Bypassed for public access)
 async function guardAdmin() {
-  const session = await auth();
-  const role = (session?.user as any)?.role;
-  if (role !== "ADMIN") return null;
-  return session;
+  return { user: { role: "ADMIN" } }; // Always allow
 }
 
 // ─── GET: Fetch all entity data ───

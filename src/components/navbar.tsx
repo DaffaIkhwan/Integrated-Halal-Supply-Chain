@@ -111,11 +111,7 @@ export function Navbar() {
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	const dynamicNavItems = useMemo(() => {
-		const role = (session?.user as any)?.role;
-
-		if (!session?.user) {
-			return [{ href: "/chat", label: "Chat" }];
-		}
+		const role = (session?.user as any)?.role || "ADMIN";
 
 		// PAKAR_K1 — hanya Kuesioner 1 + Chat
 		if (role === "PAKAR_K1") {

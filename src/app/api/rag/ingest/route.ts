@@ -6,10 +6,10 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {
-    const session = await auth();
-    if (!session || session.user?.role !== "ADMIN") {
-      return NextResponse.json({ error: "Unauthorized. Fitur ini hanya untuk Admin." }, { status: 401 });
-    }
+    // const session = await auth();
+    // if (!session || session.user?.role !== "ADMIN") {
+    //   return NextResponse.json({ error: "Unauthorized. Fitur ini hanya untuk Admin." }, { status: 401 });
+    // }
 
     let source = "";
     let text = "";
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
     // Add to VectorDB
     const result = await oaiVectorDB.addText(text, {
       chunkingMethod: "paragraph",
-      metadata: { source, uploadedBy: session.user.email }
+      metadata: { source, uploadedBy: "admin" } // Hardcoded since auth is bypassed
     });
 
     return NextResponse.json({ success: true, count: result.count });
