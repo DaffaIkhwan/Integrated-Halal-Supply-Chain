@@ -274,57 +274,64 @@ export default function KuesionerPembobotanV2Page() {
                     </div>
                   </div>
 
-                  {/* Ranking buttons */}
-                  <div>
-                    <p className="text-xs font-semibold text-muted-foreground mb-2">Urutan Skala Kepentingan (1-{totalCount})</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {Array.from({ length: totalCount }).map((_, i) => {
-                        const r = i + 1;
-                        const isSelected = selectedRank === r;
-                        const isUsedByOther = Object.entries(modeRanks).some(
-                          ([key, val]) => val === r && key !== item.id
-                        );
-                        return (
-                          <button
-                            key={r}
-                            onClick={() => handleRankChange(item.id, isSelected ? "" : String(r))}
-                            disabled={isUsedByOther}
-                            className={`w-10 h-10 rounded-xl text-sm font-bold transition-all duration-200 ${
-                              isSelected
-                                ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/30 scale-105 ring-2 ring-cyan-400/50"
-                                : isUsedByOther
-                                  ? "bg-muted/30 text-muted-foreground/30 cursor-not-allowed opacity-40 line-through"
-                                  : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground hover:scale-105"
-                            }`}
-                          >
-                            {r}
-                          </button>
-                        );
-                      })}
+                  {/* Ranking & Bobot side by side */}
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-0">
+                    {/* Ranking buttons */}
+                    <div className="flex-1">
+                      <p className="text-xs font-semibold text-muted-foreground mb-2">Urutan Skala Kepentingan (1-{totalCount})</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {Array.from({ length: totalCount }).map((_, i) => {
+                          const r = i + 1;
+                          const isSelected = selectedRank === r;
+                          const isUsedByOther = Object.entries(modeRanks).some(
+                            ([key, val]) => val === r && key !== item.id
+                          );
+                          return (
+                            <button
+                              key={r}
+                              onClick={() => handleRankChange(item.id, isSelected ? "" : String(r))}
+                              disabled={isUsedByOther}
+                              className={`w-10 h-10 rounded-xl text-sm font-bold transition-all duration-200 ${
+                                isSelected
+                                  ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/30 scale-105 ring-2 ring-cyan-400/50"
+                                  : isUsedByOther
+                                    ? "bg-muted/30 text-muted-foreground/30 cursor-not-allowed opacity-40 line-through"
+                                    : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground hover:scale-105"
+                              }`}
+                            >
+                              {r}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Bobot buttons */}
-                  <div>
-                    <p className="text-xs font-semibold text-muted-foreground mb-2">Nilai Bobot Kepentingan (1-9)</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {Array.from({ length: 9 }).map((_, i) => {
-                        const b = i + 1;
-                        const isSelected = selectedBobot === b;
-                        return (
-                          <button
-                            key={b}
-                            onClick={() => handleBobotChange(item.id, isSelected ? "" : String(b))}
-                            className={`w-10 h-10 rounded-xl text-sm font-bold transition-all duration-200 ${
-                              isSelected
-                                ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 scale-105 ring-2 ring-emerald-400/50"
-                                : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground hover:scale-105"
-                            }`}
-                          >
-                            {b}
-                          </button>
-                        );
-                      })}
+                    {/* Vertical divider */}
+                    <div className="hidden md:block w-px bg-border mx-5 self-stretch" />
+                    <hr className="md:hidden border-border" />
+
+                    {/* Bobot buttons */}
+                    <div className="flex-1">
+                      <p className="text-xs font-semibold text-muted-foreground mb-2">Nilai Bobot Kepentingan (1-9)</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {Array.from({ length: 9 }).map((_, i) => {
+                          const b = i + 1;
+                          const isSelected = selectedBobot === b;
+                          return (
+                            <button
+                              key={b}
+                              onClick={() => handleBobotChange(item.id, isSelected ? "" : String(b))}
+                              className={`w-10 h-10 rounded-xl text-sm font-bold transition-all duration-200 ${
+                                isSelected
+                                  ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 scale-105 ring-2 ring-emerald-400/50"
+                                  : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground hover:scale-105"
+                              }`}
+                            >
+                              {b}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
