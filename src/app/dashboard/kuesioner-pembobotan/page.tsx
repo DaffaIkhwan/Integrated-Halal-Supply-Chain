@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
-import { ALL_CP_QUESTIONNAIRES, EXPERT_TYPES } from "@/lib/data/questionnaire-index";
+import { ALL_CP_QUESTIONNAIRES, EXPERT_TYPES, KU_KRITERIA_UMUM } from "@/lib/data/questionnaire-index";
 import { Scale, Info, Send, CheckCircle2, Users, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 
 // ─── Saaty Scale Helper ───
@@ -38,8 +38,9 @@ export default function KuesionerPembobotanPage() {
     setExpertBg(prev => ({ ...prev, tanggal: today }));
   }, []);
 
-  const [selectedMode, setSelectedMode] = useState<string>("CP_LEVEL");
+  const [selectedMode, setSelectedMode] = useState<string>("KU_LEVEL");
   const [comparisons, setComparisons] = useState<Record<string, Record<string, number>>>({
+    "KU_LEVEL": {},
     "CP_LEVEL": {}
   });
   const [submitting, setSubmitting] = useState(false);
@@ -48,7 +49,19 @@ export default function KuesionerPembobotanPage() {
 
   // Generate pairs based on selected mode
   const pairs = useMemo(() => {
-    if (selectedMode === "CP_LEVEL") {
+    if (selectedMode === "KU_LEVEL") {
+      const p = [];
+      for (let i = 0; i < KU_KRITERIA_UMUM.length; i++) {
+        for (let j = i + 1; j < KU_KRITERIA_UMUM.length; j++) {
+          p.push({
+            id: `${KU_KRITERIA_UMUM[i].code}_vs_${KU_KRITERIA_UMUM[j].code}`,
+            left: { code: KU_KRITERIA_UMUM[i].code, label: KU_KRITERIA_UMUM[i].name },
+            right: { code: KU_KRITERIA_UMUM[j].code, label: KU_KRITERIA_UMUM[j].name },
+          });
+        }
+      }
+      return p;
+    } else if (selectedMode === "CP_LEVEL") {
       const p = [];
       for (let i = 0; i < ALL_CP_QUESTIONNAIRES.length; i++) {
         for (let j = i + 1; j < ALL_CP_QUESTIONNAIRES.length; j++) {
@@ -114,14 +127,14 @@ export default function KuesionerPembobotanPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           questionnaireType: "pembobotan",
-          cpId: selectedMode === "CP_LEVEL" ? null : selectedMode,
+          cpId: selectedMode === "CP_LEVEL" || selectedMode === "KU_LEVEL" ? null : selectedMode,
           respondentName: expertBg.nama || "Anonim",
           respondentRole: expertBg.posisi || null,
           respondentOrg: expertBg.namaInstansi || null,
           respondentEmail: expertBg.email || null,
           respondentInfo: expertBg,
-          answers: currentComparisons,
-          notes: {},
+          answers: { type: selectedMode, comparisons: currentComparisons },
+          notes: { version: "v1" },
           files: [],
         }),
       });
@@ -129,8 +142,20 @@ export default function KuesionerPembobotanPage() {
     setSubmitted(true);
     setSubmitting(false);
 
-    // Auto lanjut ke CP berikutnya jika bukan di tab CP_LEVEL
-    if (selectedMode !== "CP_LEVEL") {
+    // Auto lanjut ke tab berikutnya
+    if (selectedMode === "KU_LEVEL") {
+      setTimeout(() => {
+        setSelectedMode("CP_LEVEL");
+        setSubmitted(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1200);
+    } else if (selectedMode === "CP_LEVEL") {
+      setTimeout(() => {
+        setSelectedMode(ALL_CP_QUESTIONNAIRES[0].cpId);
+        setSubmitted(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1200);
+    } else {
       const currentIndex = ALL_CP_QUESTIONNAIRES.findIndex(cp => cp.cpId === selectedMode);
       if (currentIndex !== -1 && currentIndex < ALL_CP_QUESTIONNAIRES.length - 1) {
         setTimeout(() => {
@@ -169,7 +194,7 @@ export default function KuesionerPembobotanPage() {
           <div className="space-y-1 text-sm">
             <p className="font-semibold text-cyan-500">Cara Pengisian (Skala Saaty):</p>
             <ul className="list-disc list-inside text-muted-foreground space-y-0.5">
-              <li>Pilih bagian yang ingin dinilai (Antar CP atau Sub-Kriteria per CP).</li>
+              <li>Pilih bagian yang ingin dinilai (Kriteria Umum, Antar CP atau Sub-Kriteria per CP).</li>
               <li>Geser slider ke arah kriteria yang Anda anggap lebih penting.</li>
               <li>Angka <strong className="text-foreground">1</strong> berarti Sama Penting.</li>
               <li>Angka <strong className="text-foreground">3, 5, 7, 9</strong> menunjukkan tingkat kepentingan yang semakin tinggi.</li>
@@ -230,6 +255,16 @@ export default function KuesionerPembobotanPage() {
           <h2 className="font-bold">Pilih Kategori Pembobotan</h2>
           <div className="flex flex-wrap gap-2">
             <button
+              onClick={() => setSelectedMode("KU_LEVEL")}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                selectedMode === "KU_LEVEL"
+                  ? "bg-gradient-to-r from-cyan-500 to-emerald-500 text-white shadow-md shadow-cyan-500/20"
+                  : "bg-muted/50 hover:bg-muted text-muted-foreground"
+              }`}
+            >
+              Kriteria Umum
+            </button>
+            <button
               onClick={() => setSelectedMode("CP_LEVEL")}
               className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                 selectedMode === "CP_LEVEL"
@@ -259,7 +294,7 @@ export default function KuesionerPembobotanPage() {
         <div className="space-y-6">
           <div className="flex items-center justify-between pb-2 border-b">
             <h2 className="font-bold text-lg">
-              {selectedMode === "CP_LEVEL" ? "Perbandingan Antar Critical Point (Level 1)" : `Perbandingan Sub-Kriteria ${selectedMode}`}
+              {selectedMode === "KU_LEVEL" ? "Perbandingan Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Perbandingan Antar Critical Point (Level 1)" : `Perbandingan Sub-Kriteria ${selectedMode}`}
             </h2>
             <span className="text-sm font-mono text-muted-foreground">
               Terisi: {answeredCount}/{totalCount}
@@ -384,7 +419,7 @@ export default function KuesionerPembobotanPage() {
             {submitting ? (
               <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
             ) : <Send className="h-4 w-4" />}
-            Simpan Pembobotan {selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}
+            Simpan Pembobotan {selectedMode === "KU_LEVEL" ? "Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}
           </button>
         </div>
       </main>
@@ -405,11 +440,9 @@ export default function KuesionerPembobotanPage() {
                 </div>
                 <h3 className="text-xl font-bold">Simpan & Lanjutkan?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Apakah Anda yakin semua nilai pembobotan untuk <strong className="text-foreground">{selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}</strong> sudah sesuai?
+                  Apakah Anda yakin semua nilai pembobotan untuk <strong className="text-foreground">{selectedMode === "KU_LEVEL" ? "Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}</strong> sudah sesuai?
                 </p>
-                {selectedMode !== "CP_LEVEL" && (
-                  <p className="text-xs text-amber-500 font-medium">Setelah disimpan, Anda akan otomatis diarahkan ke CP berikutnya.</p>
-                )}
+                <p className="text-xs text-amber-500 font-medium">Setelah disimpan, Anda akan otomatis diarahkan ke tab berikutnya.</p>
               </div>
               <div className="flex border-t bg-muted/30">
                 <button 
