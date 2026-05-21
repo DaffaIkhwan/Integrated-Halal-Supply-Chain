@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
 	{
 		href: "#", label: "K1",
 		children: [
-			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (Old)" },
+			{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (V1)" },
 			{ href: "/dashboard/kuesioner-pembobotan-v2", label: "Input Pembobotan (V2)" },
 			{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
 		],
@@ -75,9 +75,8 @@ function NavDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
 		<div className="relative" ref={ref}>
 			<button
 				onClick={() => setOpen(!open)}
-				className={`flex items-center gap-1 text-sm transition-colors hover:text-foreground/80 ${
-					isChildActive ? "text-foreground font-medium" : "text-muted-foreground"
-				}`}
+				className={`flex items-center gap-1 text-sm transition-colors hover:text-foreground/80 ${isChildActive ? "text-foreground font-medium" : "text-muted-foreground"
+					}`}
 			>
 				{item.label}
 				<ChevronDown className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -89,11 +88,10 @@ function NavDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
 							key={child.href}
 							href={child.href}
 							onClick={() => setOpen(false)}
-							className={`block px-4 py-2.5 text-sm transition-colors hover:bg-muted ${
-								pathname.startsWith(child.href.split("?")[0])
+							className={`block px-4 py-2.5 text-sm transition-colors hover:bg-muted ${pathname.startsWith(child.href.split("?")[0])
 									? "text-foreground font-medium bg-muted/50"
 									: "text-muted-foreground"
-							}`}
+								}`}
 						>
 							{child.label}
 						</Link>
@@ -124,9 +122,10 @@ export function Navbar() {
 				{
 					href: "#", label: "K1",
 					children: [
-						{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (Old)" },
+						{ href: "/dashboard/kuesioner-pembobotan", label: "Input Pembobotan (V1)" },
 						{ href: "/dashboard/kuesioner-pembobotan-v2", label: "Input Pembobotan (V2)" },
-						{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data" },
+						{ href: "/dashboard/rekap-pembobotan", label: "Rekap Data (V1)" },
+						{ href: "/dashboard/rekap-pembobotan-v2", label: "Rekap Data (V2)" },
 					],
 				},
 				{ href: "/chat", label: "Chat" },
@@ -228,11 +227,10 @@ export function Navbar() {
 								<Link
 									key={item.href}
 									href={item.href}
-									className={`text-sm transition-colors hover:text-foreground/80 ${
-										pathname === item.href
+									className={`text-sm transition-colors hover:text-foreground/80 ${pathname === item.href
 											? "text-foreground font-medium"
 											: "text-muted-foreground"
-									}`}
+										}`}
 								>
 									{item.label}
 								</Link>
@@ -318,11 +316,10 @@ export function Navbar() {
 									key={`${item.href}-${i}`}
 									href={item.href}
 									onClick={() => setMobileMenuOpen(false)}
-									className={`px-4 py-3 rounded-xl text-sm transition-colors ${item.indent ? "pl-8" : ""} ${
-										pathname === item.href.split("?")[0]
+									className={`px-4 py-3 rounded-xl text-sm transition-colors ${item.indent ? "pl-8" : ""} ${pathname === item.href.split("?")[0]
 											? "bg-muted text-foreground font-medium"
 											: "text-muted-foreground hover:bg-muted/50"
-									}`}
+										}`}
 								>
 									{item.label}
 								</Link>

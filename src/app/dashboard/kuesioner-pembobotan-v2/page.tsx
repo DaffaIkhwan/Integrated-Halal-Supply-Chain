@@ -4,24 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { ALL_CP_QUESTIONNAIRES, KU_KRITERIA_UMUM } from "@/lib/data/questionnaire-index";
-import { Scale, Info, Send, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
-
-// ─── Saaty Scale Helper ───
-const SAATY_LABELS: Record<number, string> = {
-  9: "Mutlak Lebih Penting",
-  7: "Sangat Lebih Penting",
-  5: "Lebih Penting",
-  3: "Sedikit Lebih Penting",
-  1: "Sama Penting",
-};
-
-function getSaatyText(val: number, leftLabel: string, rightLabel: string) {
-  if (val === 0) return "Kedua elemen sama penting (1)";
-  const abs = Math.abs(val) + 1; // map 1..8 to 2..9
-  const side = val < 0 ? leftLabel : rightLabel;
-  const desc = SAATY_LABELS[abs] || "Nilai Antara";
-  return `${side} ${desc} (${abs})`;
-}
+import { Info, Send, CheckCircle2, ListOrdered } from "lucide-react";
 
 export default function KuesionerPembobotanV2Page() {
   const [expertBg, setExpertBg] = useState({
@@ -38,79 +21,54 @@ export default function KuesionerPembobotanV2Page() {
   }, []);
 
   const [selectedMode, setSelectedMode] = useState<string>("KU_LEVEL");
-  const [comparisons, setComparisons] = useState<Record<string, Record<string, number>>>({
-    "KU_LEVEL": {},
-    "CP_LEVEL": {}
-  });
+  
+  // State for rankings and weights
+  // Structure: Record<mode, Record<itemId, number>>
+  const [ranks, setRanks] = useState<Record<string, Record<string, number>>>({});
+  const [bobots, setBobots] = useState<Record<string, Record<string, number>>>({});
+
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
-  // Generate pairs based on selected mode
-  const pairs = useMemo(() => {
+  // Generate items based on selected mode
+  const currentItems = useMemo(() => {
     if (selectedMode === "KU_LEVEL") {
-      const p = [];
-      for (let i = 0; i < KU_KRITERIA_UMUM.length; i++) {
-        for (let j = i + 1; j < KU_KRITERIA_UMUM.length; j++) {
-          p.push({
-            id: `${KU_KRITERIA_UMUM[i].code}_vs_${KU_KRITERIA_UMUM[j].code}`,
-            left: { code: KU_KRITERIA_UMUM[i].code, label: KU_KRITERIA_UMUM[i].name },
-            right: { code: KU_KRITERIA_UMUM[j].code, label: KU_KRITERIA_UMUM[j].name },
-          });
-        }
-      }
-      return p;
+      return KU_KRITERIA_UMUM.map(ku => ({ id: ku.code, label: ku.name }));
     } else if (selectedMode === "CP_LEVEL") {
-      const p = [];
-      for (let i = 0; i < ALL_CP_QUESTIONNAIRES.length; i++) {
-        for (let j = i + 1; j < ALL_CP_QUESTIONNAIRES.length; j++) {
-          p.push({
-            id: `${ALL_CP_QUESTIONNAIRES[i].cpId}_vs_${ALL_CP_QUESTIONNAIRES[j].cpId}`,
-            left: { code: ALL_CP_QUESTIONNAIRES[i].cpId, label: ALL_CP_QUESTIONNAIRES[i].cpName },
-            right: { code: ALL_CP_QUESTIONNAIRES[j].cpId, label: ALL_CP_QUESTIONNAIRES[j].cpName },
-          });
-        }
-      }
-      return p;
+      return ALL_CP_QUESTIONNAIRES.map(cp => ({ id: cp.cpId, label: cp.cpName }));
     } else {
       const cp = ALL_CP_QUESTIONNAIRES.find(c => c.cpId === selectedMode);
       if (!cp) return [];
-      const subs = cp.subCriteria;
-      const p = [];
-      for (let i = 0; i < subs.length; i++) {
-        for (let j = i + 1; j < subs.length; j++) {
-          p.push({
-            id: `${subs[i].code}_vs_${subs[j].code}`,
-            left: { code: subs[i].code, label: subs[i].name },
-            right: { code: subs[j].code, label: subs[j].name },
-          });
-        }
-      }
-      return p;
+      return cp.subCriteria.map(sub => ({ id: sub.code, label: sub.name }));
     }
   }, [selectedMode]);
 
-  // Initialize empty comparisons for the current mode if not exist
-  useEffect(() => {
-    if (!comparisons[selectedMode]) {
-      const init: Record<string, number> = {};
-      pairs.forEach((p) => {
-        init[p.id] = 0;
-      });
-      setComparisons(prev => ({ ...prev, [selectedMode]: init }));
-    }
-  }, [selectedMode, pairs, comparisons]);
+  const modeRanks = ranks[selectedMode] || {};
+  const modeBobots = bobots[selectedMode] || {};
 
-  const currentComparisons = comparisons[selectedMode] || {};
-
-  const handleSliderChange = (pairId: string, val: number) => {
-    setComparisons((prev) => ({
-      ...prev,
-      [selectedMode]: {
-        ...(prev[selectedMode] || {}),
-        [pairId]: val
+  const handleRankChange = (itemId: string, rankStr: string) => {
+    setRanks((prev) => {
+      const currentModeRanks = { ...(prev[selectedMode] || {}) };
+      if (rankStr === "") {
+        delete currentModeRanks[itemId];
+      } else {
+        currentModeRanks[itemId] = Number(rankStr);
       }
-    }));
+      return { ...prev, [selectedMode]: currentModeRanks };
+    });
+  };
+
+  const handleBobotChange = (itemId: string, bobotStr: string) => {
+    setBobots((prev) => {
+      const currentModeBobots = { ...(prev[selectedMode] || {}) };
+      if (bobotStr === "") {
+        delete currentModeBobots[itemId];
+      } else {
+        currentModeBobots[itemId] = Number(bobotStr);
+      }
+      return { ...prev, [selectedMode]: currentModeBobots };
+    });
   };
 
   const handlePreSubmit = () => {
@@ -125,13 +83,13 @@ export default function KuesionerPembobotanV2Page() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          questionnaireType: "pembobotan",
+          questionnaireType: "pembobotan-v2",
           cpId: selectedMode === "CP_LEVEL" || selectedMode === "KU_LEVEL" ? null : selectedMode,
           respondentName: expertBg.nama || "Anonim",
           respondentRole: expertBg.posisi || null,
           respondentOrg: expertBg.namaInstansi || null,
           respondentInfo: expertBg,
-          answers: { type: selectedMode, comparisons: currentComparisons },
+          answers: { type: selectedMode, rankings: modeRanks, bobots: modeBobots },
           notes: { version: "v2" },
           files: [],
         }),
@@ -165,24 +123,27 @@ export default function KuesionerPembobotanV2Page() {
     }
   };
 
-  const answeredCount = Object.values(currentComparisons).filter(v => v !== undefined).length;
-  const totalCount = pairs.length;
+  const answeredRanks = Object.keys(modeRanks).length;
+  const answeredBobots = Object.keys(modeBobots).length;
+  const totalCount = currentItems.length;
+  const isComplete = answeredRanks === totalCount && answeredBobots === totalCount;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
+
       <main className="flex-1 max-w-[1200px] mx-auto w-full px-4 py-8 space-y-6">
         {/* Header */}
         <div className="flex items-center gap-3">
           <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20">
-            <Scale className="h-6 w-6 text-cyan-400" />
+            <ListOrdered className="h-6 w-6 text-cyan-400" />
           </div>
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Kuesioner 1 (V2)</span>
               {" "}— Pembobotan Model
             </h1>
-            <p className="text-sm text-muted-foreground">Pembobotan Model Integrasi Halal Supply Chain — Metode Fuzzy AHP</p>
+            <p className="text-sm text-muted-foreground">Perangkingan & Pemberian Bobot Variabel Integrasi Halal Supply Chain</p>
           </div>
         </div>
 
@@ -190,12 +151,11 @@ export default function KuesionerPembobotanV2Page() {
         <div className="rounded-2xl bg-cyan-500/10 border border-cyan-500/20 p-5 flex gap-4">
           <Info className="h-6 w-6 text-cyan-500 shrink-0" />
           <div className="space-y-1 text-sm">
-            <p className="font-semibold text-cyan-500">Cara Pengisian (Skala Saaty):</p>
+            <p className="font-semibold text-cyan-500">Cara Pengisian:</p>
             <ul className="list-disc list-inside text-muted-foreground space-y-0.5">
               <li>Pilih bagian yang ingin dinilai (Kriteria Umum, Antar CP atau Sub-Kriteria per CP).</li>
-              <li>Geser slider ke arah kriteria yang Anda anggap lebih penting.</li>
-              <li>Angka <strong className="text-foreground">1</strong> berarti Sama Penting.</li>
-              <li>Angka <strong className="text-foreground">3, 5, 7, 9</strong> menunjukkan tingkat kepentingan yang semakin tinggi.</li>
+              <li>Pada kolom <strong>Urutan Skala Kepentingan</strong>, pilih ranking (1 adalah yang paling penting). Pilihan tidak boleh ada yang sama.</li>
+              <li>Pada kolom <strong>Nilai Bobot Kepentingan</strong>, pilih bobot dari 1-9 untuk masing-masing variabel.</li>
             </ul>
           </div>
         </div>
@@ -277,119 +237,81 @@ export default function KuesionerPembobotanV2Page() {
           </div>
         </div>
 
-        {/* Pairwise Comparison Section */}
+        {/* Ranking & Weight Table Section */}
         <div className="space-y-6">
           <div className="flex items-center justify-between pb-2 border-b">
             <h2 className="font-bold text-lg">
-              {selectedMode === "KU_LEVEL" ? "Perbandingan Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Perbandingan Antar Critical Point (Level 1)" : `Perbandingan Sub-Kriteria ${selectedMode}`}
+              {selectedMode === "KU_LEVEL" ? "Perangkingan Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Perangkingan Antar Critical Point (Level 1)" : `Perangkingan Sub-Kriteria ${selectedMode}`}
             </h2>
-            <span className="text-sm font-mono text-muted-foreground">
-              Terisi: {answeredCount}/{totalCount}
-            </span>
+            <div className="flex flex-col items-end">
+              <span className="text-sm font-mono text-muted-foreground">
+                Rank Terisi: {answeredRanks}/{totalCount}
+              </span>
+              <span className="text-sm font-mono text-muted-foreground">
+                Bobot Terisi: {answeredBobots}/{totalCount}
+              </span>
+            </div>
           </div>
 
-          <div className="space-y-8 w-full">
-            {pairs.map((pair, idx) => {
-              const val = currentComparisons[pair.id] || 0;
-              const isLeft = val < 0;
-              const isRight = val > 0;
-
-              return (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
-                  key={pair.id}
-                  className="rounded-2xl border bg-card p-6 shadow-sm space-y-6"
-                >
-                  {/* Pair labels */}
-                  <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-3 md:gap-4 relative text-center md:text-left">
-                    <div className={`flex-1 w-full md:w-auto ${isLeft ? "opacity-100" : "opacity-70"}`}>
-                      <span className="text-xs font-mono font-bold text-cyan-500 block mb-1">
-                        {pair.left.code}
-                      </span>
-                      <h3 className={`font-semibold ${isLeft ? "text-cyan-500" : ""}`}>
-                        {pair.left.label}
-                      </h3>
-                    </div>
-
-                    <div className="shrink-0 pb-1">
-                      <span className="text-xs font-bold text-muted-foreground px-3 py-1 rounded-full bg-muted">
-                        VS
-                      </span>
-                    </div>
-
-                    <div className={`flex-1 w-full md:w-auto text-center md:text-right ${isRight ? "opacity-100" : "opacity-70"}`}>
-                      <span className="text-xs font-mono font-bold text-emerald-500 block mb-1">
-                        {pair.right.code}
-                      </span>
-                      <h3 className={`font-semibold ${isRight ? "text-emerald-500" : ""}`}>
-                        {pair.right.label}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Custom Slider Track */}
-                  <div className="relative pt-6 pb-2 px-2">
-                    {/* Tick marks & numbers */}
-                    <div className="flex justify-between absolute w-full top-0 left-0 px-2 text-[10px] text-muted-foreground font-mono">
-                      <span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span>
-                      <span className="font-bold text-foreground">1</span>
-                      <span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-                    </div>
-                    
-                    <div className="relative w-full h-6 flex items-center mt-2">
-                      {/* Base Gray Track */}
-                      <div className="absolute left-0 right-0 h-2 rounded-full bg-gray-200 dark:bg-gray-800 pointer-events-none" />
-                      
-                      {/* Active Track Highlight */}
-                      <div className="absolute h-2 rounded-full pointer-events-none bg-gradient-to-r from-cyan-500 to-emerald-500 transition-all duration-200 shadow-[0_0_10px_rgba(6,182,212,0.4)]"
-                        style={{
-                          left: val < 0 ? `calc(${((val + 8) / 16) * 100}% - ${((val + 8) / 16) * 24}px + 12px)` : '50%',
-                          right: val > 0 ? `calc(${100 - ((val + 8) / 16) * 100}% - ${(1 - ((val + 8) / 16)) * 24}px + 12px)` : '50%',
-                          width: val === 0 ? '0' : 'auto'
-                        }}
-                      />
-
-                      <input
-                        type="range"
-                        min="-8"
-                        max="8"
-                        step="1"
-                        value={val}
-                        onChange={(e) => handleSliderChange(pair.id, parseInt(e.target.value))}
-                        className="w-full absolute appearance-none bg-transparent [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:bg-transparent [&::-moz-range-track]:h-2 [&::-moz-range-track]:bg-transparent [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-cyan-500 [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:-mt-2 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-cyan-500 [&::-moz-range-thumb]:shadow-lg [&::-moz-range-thumb]:border-none cursor-pointer z-10"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Selected Value Text */}
-                  <div className="text-center text-sm font-medium min-h-[20px] transition-colors">
-                    {val < 0 && (
-                      <span className="text-cyan-500 flex items-center justify-center gap-1">
-                        <ChevronLeft className="h-4 w-4" />
-                        {getSaatyText(val, pair.left.label, pair.right.label)}
-                      </span>
-                    )}
-                    {val > 0 && (
-                      <span className="text-emerald-500 flex items-center justify-center gap-1">
-                        {getSaatyText(val, pair.left.label, pair.right.label)}
-                        <ChevronRight className="h-4 w-4" />
-                      </span>
-                    )}
-                    {val === 0 && (
-                      <span className="text-muted-foreground">
-                        {getSaatyText(val, pair.left.label, pair.right.label)}
-                      </span>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
+          <div className="overflow-x-auto rounded-2xl border bg-card shadow-sm">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-muted/50 text-muted-foreground uppercase text-xs">
+                <tr>
+                  <th className="px-6 py-4 font-semibold w-12 text-center">No</th>
+                  <th className="px-6 py-4 font-semibold">Variabel</th>
+                  <th className="px-6 py-4 font-semibold text-center w-48">Urutan Skala Kepentingan (1-{totalCount})</th>
+                  <th className="px-6 py-4 font-semibold text-center w-48">Nilai Bobot Kepentingan (1-9)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y">
+                {currentItems.map((item, idx) => (
+                  <tr key={item.id} className="hover:bg-muted/20 transition-colors">
+                    <td className="px-6 py-4 text-center text-muted-foreground font-mono">{idx + 1}</td>
+                    <td className="px-6 py-4 font-medium">
+                      <div className="flex flex-col">
+                        <span className="text-xs text-emerald-500 font-bold mb-1">{item.id}</span>
+                        <span>{item.label}</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <select
+                        value={modeRanks[item.id] || ""}
+                        onChange={(e) => handleRankChange(item.id, e.target.value)}
+                        className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 ${
+                          modeRanks[item.id] ? "bg-cyan-500/10 border-cyan-500/30 text-cyan-700 dark:text-cyan-400 font-bold" : "bg-background"
+                        }`}
+                      >
+                        <option value="">— Pilih —</option>
+                        {Array.from({length: totalCount}).map((_, i) => {
+                          const r = i + 1;
+                          const isUsed = Object.values(modeRanks).includes(r) && modeRanks[item.id] !== r;
+                          return <option key={r} value={r} disabled={isUsed}>{r}</option>
+                        })}
+                      </select>
+                    </td>
+                    <td className="px-6 py-4">
+                      <select
+                        value={modeBobots[item.id] || ""}
+                        onChange={(e) => handleBobotChange(item.id, e.target.value)}
+                        className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 ${
+                          modeBobots[item.id] ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-bold" : "bg-background"
+                        }`}
+                      >
+                        <option value="">— Pilih —</option>
+                        {Array.from({length: 9}).map((_, i) => {
+                          const b = i + 1;
+                          return <option key={b} value={b}>{b}</option>
+                        })}
+                      </select>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
             
-            {pairs.length === 0 && (
+            {currentItems.length === 0 && (
               <div className="text-center p-8 text-muted-foreground">
-                Kategori ini tidak memiliki kriteria untuk dibandingkan.
+                Kategori ini tidak memiliki variabel.
               </div>
             )}
           </div>
@@ -399,14 +321,18 @@ export default function KuesionerPembobotanV2Page() {
         <div className="flex justify-end gap-3 w-full">
           {submitted && (
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-2 text-emerald-400 text-sm">
-              <CheckCircle2 className="h-4 w-4" /> Data pembobotan berhasil disimpan
+              <CheckCircle2 className="h-4 w-4" /> Data berhasil disimpan
             </motion.div>
           )}
-          <button onClick={handlePreSubmit} disabled={submitting} className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold hover:from-cyan-600 hover:to-emerald-600 transition-all shadow-lg shadow-cyan-500/20 disabled:opacity-50">
+          <button 
+            onClick={handlePreSubmit} 
+            disabled={submitting || !isComplete} 
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold hover:from-cyan-600 hover:to-emerald-600 transition-all shadow-lg shadow-cyan-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             {submitting ? (
               <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
             ) : <Send className="h-4 w-4" />}
-            Simpan Pembobotan {selectedMode === "KU_LEVEL" ? "Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}
+            Simpan & Lanjutkan
           </button>
         </div>
       </main>
@@ -423,11 +349,11 @@ export default function KuesionerPembobotanV2Page() {
             >
               <div className="p-6 text-center space-y-4">
                 <div className="w-16 h-16 bg-cyan-500/10 text-cyan-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Scale className="h-8 w-8" />
+                  <ListOrdered className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-bold">Simpan & Lanjutkan?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Apakah Anda yakin semua nilai pembobotan untuk <strong className="text-foreground">{selectedMode === "KU_LEVEL" ? "Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}</strong> sudah sesuai?
+                  Apakah Anda yakin semua nilai perangkingan dan bobot untuk <strong className="text-foreground">{selectedMode === "KU_LEVEL" ? "Kriteria Umum" : selectedMode === "CP_LEVEL" ? "Antar CP" : selectedMode}</strong> sudah sesuai?
                 </p>
                 <p className="text-xs text-amber-500 font-medium">Setelah disimpan, Anda akan otomatis diarahkan ke tab berikutnya.</p>
               </div>
