@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import {
-  Table2, Search, Filter, Eye, FileText, X,
-  ChevronLeft, ChevronRight, Loader2, AlertTriangle,
-  ListOrdered, User, ExternalLink,
+  Table2, Search, Eye, X, Loader2, AlertTriangle,
+  ListOrdered, User, ExternalLink, FileText,
+  Download, ChevronDown, ChevronUp, Users, FileSpreadsheet,
 } from "lucide-react";
+import * as XLSX from "xlsx";
 
 // ─── Types ───
 interface QResponse {
@@ -33,19 +34,21 @@ interface ApiResult {
   totalPages: number;
 }
 
-const TYPE_META: Record<string, { label: string; labelShort: string; color: string; icon: React.ReactNode }> = {
-  "pembobotan-v2": { label: "Kuesioner 1 (V2) — Pembobotan Model", labelShort: "K1V2", color: "from-cyan-500 to-blue-500", icon: <ListOrdered className="h-4 w-4" /> },
-};
-
+// ─── Constants ───
 const STATUS_COLORS: Record<string, string> = {
   SUBMITTED: "bg-blue-500/15 text-blue-400 border-blue-500/30",
   REVIEWED: "bg-amber-500/15 text-amber-400 border-amber-500/30",
   APPROVED: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
 };
 
+function getModeLabel(type: string): string {
+  if (type === "KU_LEVEL") return "Kriteria Umum";
+  if (type === "CP_LEVEL") return "Antar CP (Level 1)";
+  return `Sub-Kriteria ${type}`;
+}
+
 // ─── Detail Modal ───
 function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }) {
-  const meta = TYPE_META[item.questionnaireType] || TYPE_META["pembobotan-v2"];
   const answers = item.answers as Record<string, unknown>;
   const respondentInfo = item.respondentInfo || {};
   const files = item.files || [];
@@ -60,11 +63,11 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className={`p-5 bg-gradient-to-r ${meta.color} text-white flex items-center justify-between`}>
+        <div className="p-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-white/20">{meta.icon}</div>
+            <div className="p-2 rounded-xl bg-white/20"><ListOrdered className="h-4 w-4" /></div>
             <div>
-              <h3 className="font-bold text-lg">{meta.label}</h3>
+              <h3 className="font-bold text-lg">Kuesioner 1 (V2) — Pembobotan Model</h3>
               <p className="text-sm opacity-90">
                 {item.cpId && <span className="font-mono font-bold mr-2">{item.cpId}</span>}
                 {item.respondentName} — {new Date(item.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" })}
@@ -103,6 +106,14 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Mode / Category */}
+          <div className="rounded-xl border bg-muted/30 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Kategori Pembobotan</p>
+            <span className="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+              {getModeLabel(String(answers.type || ""))}
+            </span>
           </div>
 
           {/* Answers Table */}
@@ -188,44 +199,363 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
   );
 }
 
+// ─── Helper: group responses by respondent ───
+interface ExpertGroup {
+  name: string;
+  org: string | null;
+  role: string | null;
+  info: Record<string, string>;
+  responses: QResponse[];
+}
+
+function groupByExpert(responses: QResponse[]): ExpertGroup[] {
+  const map = new Map<string, ExpertGroup>();
+  for (const r of responses) {
+    const key = r.respondentName.trim().toLowerCase();
+    if (!map.has(key)) {
+      map.set(key, {
+        name: r.respondentName,
+        org: r.respondentOrg,
+        role: r.respondentRole,
+        info: r.respondentInfo || {},
+        responses: [],
+      });
+    }
+    map.get(key)!.responses.push(r);
+  }
+  return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// ─── Excel Export ───
+function exportToExcel(groups: ExpertGroup[]) {
+  const wb = XLSX.utils.book_new();
+
+  // === Single Sheet: Semua Pakar ===
+  const rows: (string | number | null)[][] = [];
+
+  // Title row
+  rows.push(["REKAP DATA KUESIONER 1 (V2) — PEMBOBOTAN MODEL"]);
+  rows.push(["Dikelompokkan Per Pakar / Responden"]);
+  rows.push([`Tanggal Export: ${new Date().toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}`]);
+  rows.push([]);
+
+  for (const group of groups) {
+    // Expert header
+    rows.push([`PAKAR: ${group.name}`]);
+    rows.push([`Instansi: ${group.org || "-"}`, "", `Jabatan: ${group.role || "-"}`]);
+
+    // Additional respondent info
+    const infoEntries = Object.entries(group.info).filter(([k]) => !["nama", "posisi", "namaInstansi"].includes(k));
+    if (infoEntries.length > 0) {
+      const infoRow: (string | null)[] = [];
+      for (const [k, v] of infoEntries) {
+        infoRow.push(`${k}: ${v || "-"}`);
+      }
+      rows.push(infoRow);
+    }
+
+    rows.push([]);
+
+    // Sort responses by mode order
+    const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
+    const sorted = [...group.responses].sort((a, b) => {
+      const aType = String((a.answers as any)?.type || "");
+      const bType = String((b.answers as any)?.type || "");
+      const aOrder = modeOrder[aType] ?? 2;
+      const bOrder = modeOrder[bType] ?? 2;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return aType.localeCompare(bType);
+    });
+
+    for (const r of sorted) {
+      const answers = r.answers as Record<string, unknown>;
+      const type = String(answers.type || "");
+      const rankings = (answers.rankings || {}) as Record<string, number>;
+      const bobots = (answers.bobots || {}) as Record<string, number>;
+      const tanggal = new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
+
+      rows.push([`  Kategori: ${getModeLabel(type)}`, "", `Tanggal: ${tanggal}`, "", `Status: ${r.status}`]);
+
+      // Table header
+      rows.push(["  No", "  Variabel", "  Rangking", "  Bobot"]);
+
+      const keys = Object.keys(rankings).sort();
+      keys.forEach((key, idx) => {
+        rows.push([`  ${idx + 1}`, `  ${key}`, rankings[key] ?? null, bobots[key] ?? null]);
+      });
+
+      // If no data
+      if (keys.length === 0) {
+        rows.push(["  ", "  (Tidak ada data)", null, null]);
+      }
+
+      rows.push([]);
+    }
+
+    // Separator between experts
+    rows.push(["─".repeat(60)]);
+    rows.push([]);
+  }
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+
+  // Set column widths
+  ws["!cols"] = [
+    { wch: 8 },   // No
+    { wch: 30 },  // Variabel
+    { wch: 12 },  // Rangking
+    { wch: 12 },  // Bobot
+    { wch: 20 },  // Extra
+  ];
+
+  // Merge title rows
+  ws["!merges"] = [
+    { s: { r: 0, c: 0 }, e: { r: 0, c: 4 } },
+    { s: { r: 1, c: 0 }, e: { r: 1, c: 4 } },
+    { s: { r: 2, c: 0 }, e: { r: 2, c: 4 } },
+  ];
+
+  XLSX.utils.book_append_sheet(wb, ws, "Rekap K1 V2 Per Pakar");
+
+  // === Per-Expert Sheets ===
+  for (const group of groups) {
+    const expertRows: (string | number | null)[][] = [];
+
+    expertRows.push([`PAKAR: ${group.name}`]);
+    expertRows.push([`Instansi: ${group.org || "-"}`, `Jabatan: ${group.role || "-"}`]);
+    expertRows.push([]);
+
+    const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
+    const sorted = [...group.responses].sort((a, b) => {
+      const aType = String((a.answers as any)?.type || "");
+      const bType = String((b.answers as any)?.type || "");
+      const aOrder = modeOrder[aType] ?? 2;
+      const bOrder = modeOrder[bType] ?? 2;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return aType.localeCompare(bType);
+    });
+
+    for (const r of sorted) {
+      const answers = r.answers as Record<string, unknown>;
+      const type = String(answers.type || "");
+      const rankings = (answers.rankings || {}) as Record<string, number>;
+      const bobots = (answers.bobots || {}) as Record<string, number>;
+      const tanggal = new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
+
+      expertRows.push([`Kategori: ${getModeLabel(type)}`, `Tanggal: ${tanggal}`, `Status: ${r.status}`]);
+      expertRows.push(["No", "Variabel", "Rangking", "Bobot"]);
+
+      const keys = Object.keys(rankings).sort();
+      keys.forEach((key, idx) => {
+        expertRows.push([idx + 1, key, rankings[key] ?? null, bobots[key] ?? null]);
+      });
+
+      if (keys.length === 0) {
+        expertRows.push([null, "(Tidak ada data)", null, null]);
+      }
+
+      expertRows.push([]);
+    }
+
+    const expertWs = XLSX.utils.aoa_to_sheet(expertRows);
+    expertWs["!cols"] = [
+      { wch: 8 },
+      { wch: 30 },
+      { wch: 12 },
+      { wch: 12 },
+    ];
+
+    // Sheet name max 31 chars
+    const sheetName = group.name.substring(0, 28).replace(/[\\/*?[\]:]/g, "_");
+    XLSX.utils.book_append_sheet(wb, expertWs, sheetName);
+  }
+
+  XLSX.writeFile(wb, `Rekap_K1_V2_Pembobotan_${new Date().toISOString().slice(0, 10)}.xlsx`);
+}
+
+// ─── Expert Card Component ───
+function ExpertCard({ group, onViewDetail }: { group: ExpertGroup; onViewDetail: (r: QResponse) => void }) {
+  const [expanded, setExpanded] = useState(true);
+
+  const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
+  const sorted = [...group.responses].sort((a, b) => {
+    const aType = String((a.answers as any)?.type || "");
+    const bType = String((b.answers as any)?.type || "");
+    const aOrder = modeOrder[aType] ?? 2;
+    const bOrder = modeOrder[bType] ?? 2;
+    if (aOrder !== bOrder) return aOrder - bOrder;
+    return aType.localeCompare(bType);
+  });
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="rounded-2xl border bg-card shadow-lg overflow-hidden"
+    >
+      {/* Expert Header */}
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full flex items-center gap-4 p-5 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 hover:from-cyan-500/15 hover:to-blue-500/15 transition-colors text-left"
+      >
+        <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 shrink-0">
+          <User className="h-5 w-5 text-cyan-400" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-bold text-lg truncate">{group.name}</h3>
+          <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-0.5">
+            {group.org && <span className="flex items-center gap-1">🏢 {group.org}</span>}
+            {group.role && <span className="flex items-center gap-1">💼 {group.role}</span>}
+            <span className="px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-400 font-semibold border border-cyan-500/30">
+              {group.responses.length} respons
+            </span>
+          </div>
+        </div>
+        {expanded ? <ChevronUp className="h-5 w-5 text-muted-foreground shrink-0" /> : <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />}
+      </button>
+
+      {/* Responses */}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="p-5 space-y-4">
+              {sorted.map((r) => {
+                const answers = r.answers as Record<string, unknown>;
+                const type = String(answers.type || "");
+                const rankings = (answers.rankings || {}) as Record<string, number>;
+                const bobots = (answers.bobots || {}) as Record<string, number>;
+                const keys = Object.keys(rankings).sort();
+
+                return (
+                  <div key={r.id} className="rounded-xl border bg-muted/20 overflow-hidden">
+                    {/* Category Header */}
+                    <div className="flex items-center justify-between px-4 py-3 bg-muted/30 border-b">
+                      <div className="flex items-center gap-3">
+                        <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+                          K1V2
+                        </span>
+                        <span className="text-sm font-semibold">{getModeLabel(type)}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-[10px] text-muted-foreground">
+                          {new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" })}
+                        </span>
+                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${STATUS_COLORS[r.status] || STATUS_COLORS.SUBMITTED}`}>
+                          {r.status}
+                        </span>
+                        <button
+                          onClick={() => onViewDetail(r)}
+                          className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-500 hover:bg-cyan-500 hover:text-white transition-colors"
+                          title="Lihat Detail"
+                        >
+                          <Eye className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Rankings & Bobots Table */}
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b bg-muted/20">
+                            <th className="text-left py-2 px-4 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-12">No</th>
+                            <th className="text-left py-2 px-4 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Variabel</th>
+                            <th className="text-center py-2 px-4 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-28">Rangking</th>
+                            <th className="text-center py-2 px-4 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-28">Bobot</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {keys.length > 0 ? keys.map((key, idx) => (
+                            <tr key={key} className="border-b border-border/30 hover:bg-muted/30 transition-colors">
+                              <td className="py-2 px-4 text-xs font-mono text-muted-foreground">{idx + 1}</td>
+                              <td className="py-2 px-4 font-mono font-bold text-primary text-xs">{key}</td>
+                              <td className="py-2 px-4 text-center">
+                                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-500/15 text-cyan-400 font-bold text-sm">
+                                  {rankings[key]}
+                                </span>
+                              </td>
+                              <td className="py-2 px-4 text-center">
+                                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 font-bold text-sm">
+                                  {bobots[key] ?? "-"}
+                                </span>
+                              </td>
+                            </tr>
+                          )) : (
+                            <tr>
+                              <td colSpan={4} className="py-4 text-center text-muted-foreground text-xs italic">Tidak ada data</td>
+                            </tr>
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+// ─── Main Page ───
 export default function RekapPembobotanV2Page() {
-  const [data, setData] = useState<ApiResult | null>(null);
+  const [allResponses, setAllResponses] = useState<QResponse[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const activeType = "pembobotan-v2";
   const [searchTerm, setSearchTerm] = useState("");
-  const [page, setPage] = useState(1);
   const [selectedItem, setSelectedItem] = useState<QResponse | null>(null);
+  const [downloading, setDownloading] = useState(false);
 
-  const fetchData = useCallback(async () => {
+  const fetchAllData = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
       const params = new URLSearchParams();
-      if (activeType) params.set("type", activeType);
-      if (searchTerm) params.set("search", searchTerm);
-      params.set("page", String(page));
-      params.set("limit", "20");
+      params.set("type", "pembobotan-v2");
+      params.set("page", "1");
+      params.set("limit", "500"); // Fetch all at once
 
       const res = await fetch(`/api/dss/questionnaire-responses?${params}`);
       const json = await res.json();
       if (!res.ok) throw new Error(json.error);
-      setData(json);
+      setAllResponses(json.responses || []);
     } catch (e) {
       setError(String(e));
     } finally {
       setLoading(false);
     }
-  }, [activeType, searchTerm, page]);
+  }, []);
 
-  useEffect(() => { fetchData(); }, [fetchData]);
+  useEffect(() => { fetchAllData(); }, [fetchAllData]);
 
-  const searchTimer = useRef<ReturnType<typeof setTimeout>>();
-  const handleSearch = (val: string) => {
-    clearTimeout(searchTimer.current);
-    searchTimer.current = setTimeout(() => {
-      setSearchTerm(val);
-      setPage(1);
-    }, 300);
+  // Filter by search
+  const filtered = searchTerm
+    ? allResponses.filter(r =>
+        r.respondentName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (r.respondentOrg || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (r.respondentEmail || "").toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : allResponses;
+
+  const expertGroups = groupByExpert(filtered);
+  const totalExperts = expertGroups.length;
+  const totalResponses = filtered.length;
+
+  const handleDownloadExcel = () => {
+    if (expertGroups.length === 0) return;
+    setDownloading(true);
+    // Small delay for UI feedback
+    setTimeout(() => {
+      exportToExcel(expertGroups);
+      setDownloading(false);
+    }, 100);
   };
 
   return (
@@ -233,49 +563,60 @@ export default function RekapPembobotanV2Page() {
       <Navbar />
       <main className="flex-1 max-w-[1400px] mx-auto w-full px-4 py-8 space-y-6">
         {/* Header */}
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20">
-            <Table2 className="h-6 w-6 text-cyan-400" />
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20">
+              <Table2 className="h-6 w-6 text-cyan-400" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight">
+                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Rekap V2</span>
+                {" "}Kuesioner 1 — Pembobotan
+              </h1>
+              <p className="text-sm text-muted-foreground">Data isian kuesioner 1 (pembobotan perangkingan) dikelompokkan per pakar</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Rekap V2</span>
-              {" "}Kuesioner 1 — Pembobotan
-            </h1>
-            <p className="text-sm text-muted-foreground">Tabel data isian kuesioner 1 (pembobotan perangkingan) dari responden</p>
-          </div>
+
+          {/* Download Button */}
+          <button
+            onClick={handleDownloadExcel}
+            disabled={downloading || totalResponses === 0}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+          >
+            {downloading ? (
+              <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+            ) : (
+              <FileSpreadsheet className="h-4 w-4" />
+            )}
+            Download Excel
+          </button>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-col md:flex-row gap-3">
-
-          {/* Search */}
+        {/* Search & Stats */}
+        <div className="flex flex-col md:flex-row gap-3 items-start md:items-center">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Cari nama, instansi, email..."
-              defaultValue={searchTerm}
-              onChange={(e) => handleSearch(e.target.value)}
+              placeholder="Cari nama pakar, instansi, email..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-9 pr-4 py-2 rounded-xl border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
           </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <Users className="h-3.5 w-3.5" /> Pakar: <strong className="text-foreground">{totalExperts}</strong>
+            </span>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <ListOrdered className="h-3.5 w-3.5" /> Respons: <strong className="text-foreground">{totalResponses}</strong>
+            </span>
+          </div>
         </div>
 
-        {/* Stats Summary */}
-        {data && (
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <Filter className="h-3.5 w-3.5" /> Total: <strong className="text-foreground">{data.total}</strong> respons
-            </span>
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-muted border border-border/40">
-              Halaman {data.page} / {data.totalPages || 1}
-            </span>
-            <span className="text-xs">Menampilkan {data.responses.length} dari {data.total} data</span>
-          </div>
-        )}
-
-        {/* Table */}
+        {/* Content */}
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -285,65 +626,15 @@ export default function RekapPembobotanV2Page() {
             <AlertTriangle className="h-5 w-5 text-red-400" />
             <p className="text-sm text-red-400">{error}</p>
           </div>
-        ) : data && data.responses.length > 0 ? (
-          <div className="rounded-2xl border bg-card shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b bg-muted/40">
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">No</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tipe</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Kategori</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Nama Responden</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Instansi</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tanggal</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Status</th>
-                    <th className="text-center py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border/50">
-                  {data.responses.map((r, i) => {
-                    const no = (page - 1) * 20 + i + 1;
-                    const meta = TYPE_META[r.questionnaireType] || TYPE_META["pembobotan-v2"];
-                    const color = STATUS_COLORS[r.status] || STATUS_COLORS.SUBMITTED;
-                    
-                    return (
-                      <tr key={r.id} className="hover:bg-muted/30 transition-colors">
-                        <td className="py-3 px-4 text-xs font-mono text-muted-foreground">{no}</td>
-                        <td className="py-3 px-4">
-                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold bg-gradient-to-r ${meta.color} text-white`}>
-                            {meta.labelShort}
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 font-mono font-bold text-xs">{r.cpId || "—"}</td>
-                        <td className="py-3 px-4">
-                          <div className="font-medium">{r.respondentName}</div>
-                          <div className="text-[10px] text-muted-foreground truncate max-w-[150px]">{r.respondentEmail || "No Email"}</div>
-                        </td>
-                        <td className="py-3 px-4 text-sm truncate max-w-[150px]">{r.respondentOrg || "—"}</td>
-                        <td className="py-3 px-4 text-xs text-muted-foreground">
-                          {new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" })}
-                        </td>
-                        <td className="py-3 px-4">
-                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${color}`}>
-                            {r.status}
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 text-center">
-                          <button
-                            onClick={() => setSelectedItem(r)}
-                            className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-500 hover:bg-cyan-500 hover:text-white transition-colors"
-                            title="Lihat Detail"
-                          >
-                            <Eye className="h-4 w-4" />
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+        ) : expertGroups.length > 0 ? (
+          <div className="space-y-6">
+            {expertGroups.map((group) => (
+              <ExpertCard
+                key={group.name}
+                group={group}
+                onViewDetail={(r) => setSelectedItem(r)}
+              />
+            ))}
           </div>
         ) : (
           <div className="rounded-2xl border border-dashed p-10 flex flex-col items-center justify-center text-muted-foreground">
@@ -352,31 +643,9 @@ export default function RekapPembobotanV2Page() {
             <p className="text-sm opacity-70">Belum ada yang mengisi kuesioner ini</p>
           </div>
         )}
-
-        {/* Pagination Info & Controls */}
-        {data && data.totalPages > 1 && (
-          <div className="flex items-center justify-between pt-4">
-            <span className="text-xs text-muted-foreground">Halaman {page} dari {data.totalPages}</span>
-            <div className="flex gap-2">
-              <button 
-                onClick={() => setPage(p => Math.max(1, p - 1))} 
-                disabled={page === 1}
-                className="p-2 rounded-lg border bg-card hover:bg-muted disabled:opacity-50 transition-colors"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button 
-                onClick={() => setPage(p => Math.min(data.totalPages, p + 1))} 
-                disabled={page === data.totalPages}
-                className="p-2 rounded-lg border bg-card hover:bg-muted disabled:opacity-50 transition-colors"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-        )}
       </main>
 
+      {/* Detail Modal */}
       <AnimatePresence>
         {selectedItem && (
           <DetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />
