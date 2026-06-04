@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import {
-  Table2, Search, Filter, Eye, FileText, X,
-  ChevronLeft, ChevronRight, Loader2, AlertTriangle,
-  Scale, ClipboardCheck, FileCheck, Calendar, User, Building2,
-  Download, ExternalLink,
+  Table2, Search, Eye, X, Loader2, AlertTriangle,
+  Scale, User, ChevronDown, ChevronUp, Users, FileSpreadsheet,
+  ArrowLeftRight, ArrowLeft, ArrowRight, Minus,
 } from "lucide-react";
+import * as XLSX from "xlsx";
 
 // ─── Types ───
 interface QResponse {
@@ -34,24 +34,55 @@ interface ApiResult {
   totalPages: number;
 }
 
-const TYPE_META: Record<string, { label: string; labelShort: string; color: string; icon: React.ReactNode }> = {
-  pembobotan: { label: "Kuesioner 1 — Pembobotan Model", labelShort: "K1", color: "from-cyan-500 to-blue-500", icon: <Scale className="h-4 w-4" /> },
-  risiko: { label: "Kuesioner 2 — Pengukuran Risiko", labelShort: "K2", color: "from-amber-500 to-orange-500", icon: <ClipboardCheck className="h-4 w-4" /> },
-  aktual: { label: "Kuesioner 3 — Kondisi Aktual", labelShort: "K3", color: "from-teal-500 to-cyan-500", icon: <FileCheck className="h-4 w-4" /> },
-};
-
+// ─── Constants ───
 const STATUS_COLORS: Record<string, string> = {
   SUBMITTED: "bg-blue-500/15 text-blue-400 border-blue-500/30",
   REVIEWED: "bg-amber-500/15 text-amber-400 border-amber-500/30",
   APPROVED: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
 };
 
+function getModeLabel(type: string): string {
+  if (type === "KU_LEVEL") return "Kriteria Umum (KU)";
+  if (type === "CP_LEVEL") return "Antar CP (Level 1)";
+  return `Sub-Kriteria ${type}`;
+}
+
+function getModeBadgeColor(type: string): string {
+  if (type === "KU_LEVEL") return "from-violet-500 to-indigo-500";
+  if (type === "CP_LEVEL") return "from-cyan-500 to-blue-500";
+  return "from-emerald-500 to-teal-500";
+}
+
+// Convert slider value (-8..8) to Saaty scale interpretation
+function interpretComparison(pairKey: string, value: number): { left: string; right: string; scale: number; direction: "left" | "right" | "equal" } {
+  const parts = pairKey.split("_vs_");
+  const left = parts[0] || "?";
+  const right = parts[1] || "?";
+  const absVal = Math.abs(value) + 1; // 0 → 1, 1 → 2, ..., 8 → 9
+  if (value === 0) return { left, right, scale: 1, direction: "equal" };
+  if (value < 0) return { left, right, scale: absVal, direction: "left" };
+  return { left, right, scale: absVal, direction: "right" };
+}
+
+const SAATY_LABELS: Record<number, string> = {
+  1: "Sama Penting",
+  2: "Mendekati Sedikit Lebih Penting",
+  3: "Sedikit Lebih Penting",
+  4: "Mendekati Lebih Penting",
+  5: "Lebih Penting",
+  6: "Mendekati Sangat Lebih Penting",
+  7: "Sangat Lebih Penting",
+  8: "Mendekati Mutlak Lebih Penting",
+  9: "Mutlak Lebih Penting",
+};
+
 // ─── Detail Modal ───
 function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }) {
-  const meta = TYPE_META[item.questionnaireType] || TYPE_META.pembobotan;
   const answers = item.answers as Record<string, unknown>;
   const respondentInfo = item.respondentInfo || {};
-  const files = item.files || [];
+  const comparisons = (answers.comparisons || {}) as Record<string, number>;
+  const type = String(answers.type || "");
+  const compEntries = Object.entries(comparisons);
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={onClose}>
@@ -59,18 +90,22 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-card w-full max-w-3xl max-h-[85vh] rounded-2xl shadow-2xl overflow-hidden border flex flex-col"
+        className="bg-card w-full max-w-4xl max-h-[85vh] rounded-2xl shadow-2xl overflow-hidden border flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className={`p-5 bg-gradient-to-r ${meta.color} text-white flex items-center justify-between`}>
+        <div className={`p-5 bg-gradient-to-r ${getModeBadgeColor(type)} text-white flex items-center justify-between`}>
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-white/20">{meta.icon}</div>
+            <div className="p-2.5 rounded-xl bg-white/20">
+              <Scale className="h-5 w-5" />
+            </div>
             <div>
-              <h3 className="font-bold text-lg">{meta.label}</h3>
-              <p className="text-sm opacity-90">
-                {item.cpId && <span className="font-mono font-bold mr-2">{item.cpId}</span>}
-                {item.respondentName} — {new Date(item.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" })}
+              <h3 className="font-bold text-lg">Kuesioner 1 (V1) — Pembobotan Pairwise</h3>
+              <p className="text-sm opacity-90 flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded-md bg-white/20 text-[11px] font-bold">{getModeLabel(type)}</span>
+                <span>{item.respondentName}</span>
+                <span className="opacity-60">•</span>
+                <span>{new Date(item.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" })}</span>
               </p>
             </div>
           </div>
@@ -86,20 +121,20 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
               <User className="h-3.5 w-3.5" /> Data Responden
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {Object.entries(respondentInfo).map(([key, val]) => (
                 <div key={key}>
                   <p className="text-[10px] text-muted-foreground uppercase">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                   <p className="text-sm font-medium">{val || "—"}</p>
                 </div>
               ))}
-              {item.respondentRole && (
+              {item.respondentRole && !respondentInfo.posisi && (
                 <div>
                   <p className="text-[10px] text-muted-foreground uppercase">Jabatan</p>
                   <p className="text-sm font-medium">{item.respondentRole}</p>
                 </div>
               )}
-              {item.respondentOrg && (
+              {item.respondentOrg && !respondentInfo.namaInstansi && (
                 <div>
                   <p className="text-[10px] text-muted-foreground uppercase">Instansi</p>
                   <p className="text-sm font-medium">{item.respondentOrg}</p>
@@ -108,30 +143,88 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
             </div>
           </div>
 
-          {/* Answers Table */}
+          {/* Stats Summary Row */}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="rounded-xl border bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-4 text-center">
+              <p className="text-2xl font-bold text-cyan-400">{compEntries.length}</p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">Pasangan Perbandingan</p>
+            </div>
+            <div className="rounded-xl border bg-gradient-to-br from-emerald-500/10 to-teal-500/10 p-4 text-center">
+              <p className="text-2xl font-bold text-emerald-400">
+                {compEntries.filter(([, v]) => v !== 0).length}
+              </p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">Sudah Dinilai</p>
+            </div>
+            <div className="rounded-xl border bg-gradient-to-br from-amber-500/10 to-orange-500/10 p-4 text-center">
+              <p className="text-2xl font-bold text-amber-400">
+                {compEntries.filter(([, v]) => v === 0).length}
+              </p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">Sama Penting</p>
+            </div>
+          </div>
+
+          {/* Pairwise Comparison Table */}
           <div className="rounded-xl border bg-muted/30 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Jawaban</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
+              <ArrowLeftRight className="h-3.5 w-3.5" /> Perbandingan Berpasangan (Pairwise)
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Kode / Key</th>
-                    <th className="text-left py-2 px-3 text-xs font-semibold text-muted-foreground">Nilai</th>
+                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-10">No</th>
+                    <th className="text-right py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-cyan-400">Kriteria A</th>
+                    <th className="text-center py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-28">Skala</th>
+                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-emerald-400">Kriteria B</th>
+                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Interpretasi</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.entries(answers).map(([key, val]) => (
-                    <tr key={key} className="border-b border-border/30 hover:bg-muted/50 transition-colors">
-                      <td className="py-2 px-3 font-mono text-xs font-semibold text-primary">{key}</td>
-                      <td className="py-2 px-3 text-sm">
-                        {typeof val === "object" ? (
-                          <pre className="text-xs bg-muted rounded p-2 overflow-x-auto max-w-[400px]">{JSON.stringify(val, null, 2)}</pre>
-                        ) : (
-                          <span>{String(val)}</span>
-                        )}
-                      </td>
+                  {compEntries.length > 0 ? compEntries.map(([key, val], idx) => {
+                    const comp = interpretComparison(key, val);
+                    return (
+                      <tr key={key} className="border-b border-border/30 hover:bg-muted/30 transition-colors group">
+                        <td className="py-2.5 px-3 text-xs font-mono text-muted-foreground">{idx + 1}</td>
+                        <td className="py-2.5 px-3 text-right">
+                          <span className={`font-mono font-bold text-xs ${comp.direction === "left" ? "text-cyan-400" : "text-muted-foreground"}`}>
+                            {comp.left}
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3 text-center">
+                          <div className="flex items-center justify-center gap-1.5">
+                            {comp.direction === "left" && <ArrowLeft className="h-3 w-3 text-cyan-400" />}
+                            <span className={`inline-flex items-center justify-center min-w-[28px] h-7 rounded-lg font-bold text-xs ${
+                              comp.direction === "equal"
+                                ? "bg-muted text-muted-foreground"
+                                : comp.direction === "left"
+                                  ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30"
+                                  : "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                            }`}>
+                              {comp.scale}
+                            </span>
+                            {comp.direction === "right" && <ArrowRight className="h-3 w-3 text-emerald-400" />}
+                            {comp.direction === "equal" && <Minus className="h-3 w-3 text-muted-foreground" />}
+                          </div>
+                        </td>
+                        <td className="py-2.5 px-3 text-left">
+                          <span className={`font-mono font-bold text-xs ${comp.direction === "right" ? "text-emerald-400" : "text-muted-foreground"}`}>
+                            {comp.right}
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3">
+                          <span className="text-[11px] text-muted-foreground">
+                            {comp.direction === "equal"
+                              ? "Sama Penting"
+                              : `${comp.direction === "left" ? comp.left : comp.right} — ${SAATY_LABELS[comp.scale] || "Nilai Antara"}`}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  }) : (
+                    <tr>
+                      <td colSpan={5} className="py-6 text-center text-muted-foreground text-xs italic">Tidak ada data perbandingan</td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>
@@ -151,79 +244,377 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
               </div>
             </div>
           )}
-
-          {/* Files */}
-          {files.length > 0 && (
-            <div className="rounded-xl border bg-muted/30 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
-                <FileText className="h-3.5 w-3.5" /> File Bukti Pendukung ({files.length})
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {files.map((f, i) => (
-                  <a
-                    key={i}
-                    href={f.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-xl border bg-card hover:bg-muted/50 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <FileText className="h-4 w-4 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">{f.filename}</p>
-                      <p className="text-[10px] text-muted-foreground font-mono">{f.key}</p>
-                    </div>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </motion.div>
     </div>
   );
 }
 
+// ─── Helper: group responses by respondent ───
+interface ExpertGroup {
+  name: string;
+  org: string | null;
+  role: string | null;
+  email: string | null;
+  info: Record<string, string>;
+  responses: QResponse[];
+}
+
+function groupByExpert(responses: QResponse[]): ExpertGroup[] {
+  const map = new Map<string, ExpertGroup>();
+  for (const r of responses) {
+    const key = r.respondentName.trim().toLowerCase();
+    if (!map.has(key)) {
+      map.set(key, {
+        name: r.respondentName,
+        org: r.respondentOrg,
+        role: r.respondentRole,
+        email: r.respondentEmail,
+        info: r.respondentInfo || {},
+        responses: [],
+      });
+    }
+    map.get(key)!.responses.push(r);
+  }
+  return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// ─── Excel Export ───
+function exportToExcel(groups: ExpertGroup[]) {
+  const wb = XLSX.utils.book_new();
+
+  const rows: (string | number | null)[][] = [];
+  rows.push(["REKAP DATA KUESIONER 1 (V1) — PEMBOBOTAN PAIRWISE COMPARISON"]);
+  rows.push(["Dikelompokkan Per Pakar / Responden"]);
+  rows.push([`Tanggal Export: ${new Date().toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}`]);
+  rows.push([]);
+
+  for (const group of groups) {
+    rows.push([`PAKAR: ${group.name}`]);
+    rows.push([`Instansi: ${group.org || "-"}`, "", `Jabatan: ${group.role || "-"}`]);
+
+    const infoEntries = Object.entries(group.info).filter(([k]) => !["nama", "posisi", "namaInstansi"].includes(k));
+    if (infoEntries.length > 0) {
+      const infoRow: (string | null)[] = [];
+      for (const [k, v] of infoEntries) {
+        infoRow.push(`${k}: ${v || "-"}`);
+      }
+      rows.push(infoRow);
+    }
+    rows.push([]);
+
+    const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
+    const sorted = [...group.responses].sort((a, b) => {
+      const aType = String((a.answers as any)?.type || "");
+      const bType = String((b.answers as any)?.type || "");
+      const aOrder = modeOrder[aType] ?? 2;
+      const bOrder = modeOrder[bType] ?? 2;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return aType.localeCompare(bType);
+    });
+
+    for (const r of sorted) {
+      const answers = r.answers as Record<string, unknown>;
+      const type = String(answers.type || "");
+      const comparisons = (answers.comparisons || {}) as Record<string, number>;
+      const tanggal = new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
+
+      rows.push([`  Kategori: ${getModeLabel(type)}`, "", `Tanggal: ${tanggal}`, "", `Status: ${r.status}`]);
+      rows.push(["  No", "  Kriteria A", "  Kriteria B", "  Skala Saaty", "  Arah Lebih Penting", "  Interpretasi"]);
+
+      const entries = Object.entries(comparisons);
+      entries.forEach(([key, val], idx) => {
+        const comp = interpretComparison(key, val);
+        const dirLabel = comp.direction === "equal" ? "Sama Penting" : comp.direction === "left" ? `← ${comp.left}` : `→ ${comp.right}`;
+        const desc = comp.direction === "equal" ? "Sama Penting" : `${comp.direction === "left" ? comp.left : comp.right} — ${SAATY_LABELS[comp.scale] || "Nilai Antara"}`;
+        rows.push([`  ${idx + 1}`, `  ${comp.left}`, `  ${comp.right}`, comp.scale, `  ${dirLabel}`, `  ${desc}`]);
+      });
+
+      if (entries.length === 0) {
+        rows.push(["  ", "  (Tidak ada data)", null, null, null, null]);
+      }
+
+      rows.push([]);
+    }
+
+    rows.push(["─".repeat(80)]);
+    rows.push([]);
+  }
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws["!cols"] = [
+    { wch: 8 },   // No
+    { wch: 20 },  // Kriteria A
+    { wch: 20 },  // Kriteria B
+    { wch: 14 },  // Skala
+    { wch: 25 },  // Arah
+    { wch: 40 },  // Interpretasi
+  ];
+  ws["!merges"] = [
+    { s: { r: 0, c: 0 }, e: { r: 0, c: 5 } },
+    { s: { r: 1, c: 0 }, e: { r: 1, c: 5 } },
+    { s: { r: 2, c: 0 }, e: { r: 2, c: 5 } },
+  ];
+
+  XLSX.utils.book_append_sheet(wb, ws, "Rekap K1 V1 Per Pakar");
+
+  // Per-expert sheets
+  for (const group of groups) {
+    const expertRows: (string | number | null)[][] = [];
+    expertRows.push([`PAKAR: ${group.name}`]);
+    expertRows.push([`Instansi: ${group.org || "-"}`, `Jabatan: ${group.role || "-"}`]);
+    expertRows.push([]);
+
+    const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
+    const sorted = [...group.responses].sort((a, b) => {
+      const aType = String((a.answers as any)?.type || "");
+      const bType = String((b.answers as any)?.type || "");
+      const aOrder = modeOrder[aType] ?? 2;
+      const bOrder = modeOrder[bType] ?? 2;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return aType.localeCompare(bType);
+    });
+
+    for (const r of sorted) {
+      const answers = r.answers as Record<string, unknown>;
+      const type = String(answers.type || "");
+      const comparisons = (answers.comparisons || {}) as Record<string, number>;
+      const tanggal = new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
+
+      expertRows.push([`Kategori: ${getModeLabel(type)}`, `Tanggal: ${tanggal}`, `Status: ${r.status}`]);
+      expertRows.push(["No", "Kriteria A", "Kriteria B", "Skala", "Arah", "Interpretasi"]);
+
+      const entries = Object.entries(comparisons);
+      entries.forEach(([key, val], idx) => {
+        const comp = interpretComparison(key, val);
+        const dirLabel = comp.direction === "equal" ? "=" : comp.direction === "left" ? `← ${comp.left}` : `→ ${comp.right}`;
+        const desc = comp.direction === "equal" ? "Sama Penting" : `${comp.direction === "left" ? comp.left : comp.right} — ${SAATY_LABELS[comp.scale] || "Nilai Antara"}`;
+        expertRows.push([idx + 1, comp.left, comp.right, comp.scale, dirLabel, desc]);
+      });
+
+      if (entries.length === 0) {
+        expertRows.push([null, "(Tidak ada data)", null, null, null, null]);
+      }
+
+      expertRows.push([]);
+    }
+
+    const expertWs = XLSX.utils.aoa_to_sheet(expertRows);
+    expertWs["!cols"] = [
+      { wch: 6 },
+      { wch: 18 },
+      { wch: 18 },
+      { wch: 8 },
+      { wch: 20 },
+      { wch: 35 },
+    ];
+
+    const sheetName = group.name.substring(0, 28).replace(/[\\/*?[\]:]/g, "_");
+    XLSX.utils.book_append_sheet(wb, expertWs, sheetName);
+  }
+
+  XLSX.writeFile(wb, `Rekap_K1_V1_Pairwise_${new Date().toISOString().slice(0, 10)}.xlsx`);
+}
+
+// ─── Inline Comparison Row ───
+function ComparisonMiniRow({ pairKey, value }: { pairKey: string; value: number }) {
+  const comp = interpretComparison(pairKey, value);
+  return (
+    <div className="flex items-center gap-2 text-xs py-0.5">
+      <span className={`font-mono font-bold w-16 text-right truncate ${comp.direction === "left" ? "text-cyan-400" : "text-muted-foreground"}`}>
+        {comp.left}
+      </span>
+      <div className="flex items-center gap-1">
+        {comp.direction === "left" && <ArrowLeft className="h-2.5 w-2.5 text-cyan-400" />}
+        <span className={`inline-flex items-center justify-center w-5 h-5 rounded text-[10px] font-bold ${
+          comp.direction === "equal"
+            ? "bg-muted/80 text-muted-foreground"
+            : comp.direction === "left"
+              ? "bg-cyan-500/20 text-cyan-400"
+              : "bg-emerald-500/20 text-emerald-400"
+        }`}>
+          {comp.scale}
+        </span>
+        {comp.direction === "right" && <ArrowRight className="h-2.5 w-2.5 text-emerald-400" />}
+        {comp.direction === "equal" && <Minus className="h-2.5 w-2.5 text-muted-foreground" />}
+      </div>
+      <span className={`font-mono font-bold w-16 truncate ${comp.direction === "right" ? "text-emerald-400" : "text-muted-foreground"}`}>
+        {comp.right}
+      </span>
+    </div>
+  );
+}
+
+// ─── Expert Card Component ───
+function ExpertCard({ group, onViewDetail }: { group: ExpertGroup; onViewDetail: (r: QResponse) => void }) {
+  const [expanded, setExpanded] = useState(true);
+
+  const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
+  const sorted = [...group.responses].sort((a, b) => {
+    const aType = String((a.answers as any)?.type || "");
+    const bType = String((b.answers as any)?.type || "");
+    const aOrder = modeOrder[aType] ?? 2;
+    const bOrder = modeOrder[bType] ?? 2;
+    if (aOrder !== bOrder) return aOrder - bOrder;
+    return aType.localeCompare(bType);
+  });
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="rounded-2xl border bg-card shadow-lg overflow-hidden"
+    >
+      {/* Expert Header */}
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full flex items-center gap-4 p-5 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 hover:from-cyan-500/15 hover:to-blue-500/15 transition-colors text-left"
+      >
+        <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 shrink-0">
+          <User className="h-5 w-5 text-cyan-400" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-bold text-lg truncate">{group.name}</h3>
+          <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-0.5">
+            {group.org && <span className="flex items-center gap-1">🏢 {group.org}</span>}
+            {group.role && <span className="flex items-center gap-1">💼 {group.role}</span>}
+            {group.email && <span className="flex items-center gap-1">📧 {group.email}</span>}
+            <span className="px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-400 font-semibold border border-cyan-500/30">
+              {group.responses.length} respons
+            </span>
+          </div>
+        </div>
+        {expanded ? <ChevronUp className="h-5 w-5 text-muted-foreground shrink-0" /> : <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />}
+      </button>
+
+      {/* Responses */}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="p-5 space-y-4">
+              {sorted.map((r) => {
+                const answers = r.answers as Record<string, unknown>;
+                const type = String(answers.type || "");
+                const comparisons = (answers.comparisons || {}) as Record<string, number>;
+                const compEntries = Object.entries(comparisons);
+                const answeredCount = compEntries.filter(([, v]) => v !== 0).length;
+
+                return (
+                  <div key={r.id} className="rounded-xl border bg-muted/20 overflow-hidden">
+                    {/* Category Header */}
+                    <div className="flex items-center justify-between px-4 py-3 bg-muted/30 border-b">
+                      <div className="flex items-center gap-3">
+                        <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold bg-gradient-to-r ${getModeBadgeColor(type)} text-white`}>
+                          {type === "KU_LEVEL" ? "KU" : type === "CP_LEVEL" ? "L1" : type}
+                        </span>
+                        <span className="text-sm font-semibold">{getModeLabel(type)}</span>
+                        <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                          {answeredCount}/{compEntries.length} perbandingan
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-[10px] text-muted-foreground">
+                          {new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" })}
+                        </span>
+                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${STATUS_COLORS[r.status] || STATUS_COLORS.SUBMITTED}`}>
+                          {r.status}
+                        </span>
+                        <button
+                          onClick={() => onViewDetail(r)}
+                          className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-500 hover:bg-cyan-500 hover:text-white transition-colors"
+                          title="Lihat Detail"
+                        >
+                          <Eye className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Compact Pairwise Preview */}
+                    <div className="p-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+                        {compEntries.slice(0, 15).map(([key, val]) => (
+                          <ComparisonMiniRow key={key} pairKey={key} value={val} />
+                        ))}
+                      </div>
+                      {compEntries.length > 15 && (
+                        <button
+                          onClick={() => onViewDetail(r)}
+                          className="mt-3 text-xs text-cyan-500 hover:text-cyan-400 font-medium transition-colors"
+                        >
+                          + {compEntries.length - 15} perbandingan lainnya →
+                        </button>
+                      )}
+                      {compEntries.length === 0 && (
+                        <p className="text-xs text-muted-foreground italic text-center py-3">Tidak ada data perbandingan</p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+// ─── Main Page ───
 export default function RekapPembobotanPage() {
-  const [data, setData] = useState<ApiResult | null>(null);
+  const [allResponses, setAllResponses] = useState<QResponse[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const activeType = "pembobotan";
   const [searchTerm, setSearchTerm] = useState("");
-  const [page, setPage] = useState(1);
   const [selectedItem, setSelectedItem] = useState<QResponse | null>(null);
+  const [downloading, setDownloading] = useState(false);
 
-  const fetchData = useCallback(async () => {
+  const fetchAllData = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
       const params = new URLSearchParams();
-      if (activeType) params.set("type", activeType);
-      if (searchTerm) params.set("search", searchTerm);
-      params.set("page", String(page));
-      params.set("limit", "20");
+      params.set("type", "pembobotan");
+      params.set("page", "1");
+      params.set("limit", "500");
 
       const res = await fetch(`/api/dss/questionnaire-responses?${params}`);
       const json = await res.json();
       if (!res.ok) throw new Error(json.error);
-      setData(json);
+      setAllResponses(json.responses || []);
     } catch (e) {
       setError(String(e));
     } finally {
       setLoading(false);
     }
-  }, [activeType, searchTerm, page]);
+  }, []);
 
-  useEffect(() => { fetchData(); }, [fetchData]);
+  useEffect(() => { fetchAllData(); }, [fetchAllData]);
 
-  const searchTimer = useRef<ReturnType<typeof setTimeout>>();
-  const handleSearch = (val: string) => {
-    clearTimeout(searchTimer.current);
-    searchTimer.current = setTimeout(() => {
-      setSearchTerm(val);
-      setPage(1);
-    }, 300);
+  // Filter by search
+  const filtered = searchTerm
+    ? allResponses.filter(r =>
+        r.respondentName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (r.respondentOrg || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (r.respondentEmail || "").toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : allResponses;
+
+  const expertGroups = groupByExpert(filtered);
+  const totalExperts = expertGroups.length;
+  const totalResponses = filtered.length;
+
+  const handleDownloadExcel = () => {
+    if (expertGroups.length === 0) return;
+    setDownloading(true);
+    setTimeout(() => {
+      exportToExcel(expertGroups);
+      setDownloading(false);
+    }, 100);
   };
 
   return (
@@ -231,49 +622,60 @@ export default function RekapPembobotanPage() {
       <Navbar />
       <main className="flex-1 max-w-[1400px] mx-auto w-full px-4 py-8 space-y-6">
         {/* Header */}
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20">
-            <Table2 className="h-6 w-6 text-cyan-400" />
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20">
+              <Table2 className="h-6 w-6 text-cyan-400" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight">
+                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Rekap</span>
+                {" "}Kuesioner 1 — Pembobotan Pairwise
+              </h1>
+              <p className="text-sm text-muted-foreground">Data isian kuesioner 1 (perbandingan berpasangan Saaty) dikelompokkan per pakar</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Rekap</span>
-              {" "}Kuesioner 1 — Pembobotan
-            </h1>
-            <p className="text-sm text-muted-foreground">Tabel data isian kuesioner 1 (pembobotan) dari responden</p>
-          </div>
+
+          {/* Download Button */}
+          <button
+            onClick={handleDownloadExcel}
+            disabled={downloading || totalResponses === 0}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+          >
+            {downloading ? (
+              <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+            ) : (
+              <FileSpreadsheet className="h-4 w-4" />
+            )}
+            Download Excel
+          </button>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-col md:flex-row gap-3">
-
-          {/* Search */}
+        {/* Search & Stats */}
+        <div className="flex flex-col md:flex-row gap-3 items-start md:items-center">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Cari nama, instansi, email..."
-              defaultValue={searchTerm}
-              onChange={(e) => handleSearch(e.target.value)}
+              placeholder="Cari nama pakar, instansi, email..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-9 pr-4 py-2 rounded-xl border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
           </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <Users className="h-3.5 w-3.5" /> Pakar: <strong className="text-foreground">{totalExperts}</strong>
+            </span>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <Scale className="h-3.5 w-3.5" /> Respons: <strong className="text-foreground">{totalResponses}</strong>
+            </span>
+          </div>
         </div>
 
-        {/* Stats Summary */}
-        {data && (
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <Filter className="h-3.5 w-3.5" /> Total: <strong className="text-foreground">{data.total}</strong> respons
-            </span>
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-muted border border-border/40">
-              Halaman {data.page} / {data.totalPages || 1}
-            </span>
-            <span className="text-xs">Menampilkan {data.responses.length} dari {data.total} data</span>
-          </div>
-        )}
-
-        {/* Table */}
+        {/* Content */}
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -283,148 +685,30 @@ export default function RekapPembobotanPage() {
             <AlertTriangle className="h-5 w-5 text-red-400" />
             <p className="text-sm text-red-400">{error}</p>
           </div>
-        ) : data && data.responses.length > 0 ? (
-          <div className="rounded-2xl border bg-card shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b bg-muted/40">
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">No</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tipe</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">CP</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Nama Responden</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Instansi</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tanggal</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Status</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">File</th>
-                    <th className="text-center py-3 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.responses.map((r, i) => {
-                    const meta = TYPE_META[r.questionnaireType] || TYPE_META.pembobotan;
-                    const rowNum = (data.page - 1) * 20 + i + 1;
-                    const fileCount = r.files?.length || 0;
-                    return (
-                      <motion.tr
-                        key={r.id}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.03 }}
-                        className="border-b border-border/30 hover:bg-muted/30 transition-colors"
-                      >
-                        <td className="py-3 px-4 font-mono text-xs text-muted-foreground">{rowNum}</td>
-                        <td className="py-3 px-4">
-                          <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg bg-gradient-to-r ${meta.color} text-white`}>
-                            {meta.icon} {meta.labelShort}
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 font-mono font-bold text-xs text-primary">{r.cpId || "—"}</td>
-                        <td className="py-3 px-4">
-                          <p className="font-medium">{r.respondentName}</p>
-                          {r.respondentEmail && <p className="text-[10px] text-muted-foreground">{r.respondentEmail}</p>}
-                        </td>
-                        <td className="py-3 px-4 text-muted-foreground text-xs">{r.respondentOrg || "—"}</td>
-                        <td className="py-3 px-4 text-xs text-muted-foreground flex items-center gap-1.5">
-                          <Calendar className="h-3 w-3" />
-                          {new Date(r.createdAt).toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" })}
-                        </td>
-                        <td className="py-3 px-4">
-                          <span className={`text-[10px] px-2 py-0.5 rounded-full border font-semibold ${STATUS_COLORS[r.status] || STATUS_COLORS.SUBMITTED}`}>
-                            {r.status}
-                          </span>
-                        </td>
-                        <td className="py-3 px-4">
-                          {fileCount > 0 ? (
-                            <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold">
-                              <FileText className="h-3.5 w-3.5" /> {fileCount}
-                            </span>
-                          ) : (
-                            <span className="text-xs text-muted-foreground">—</span>
-                          )}
-                        </td>
-                        <td className="py-3 px-4 text-center">
-                          <button
-                            onClick={() => setSelectedItem(r)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-xs font-semibold transition-colors"
-                          >
-                            <Eye className="h-3.5 w-3.5" /> Detail
-                          </button>
-                        </td>
-                      </motion.tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Pagination */}
-            {data.totalPages > 1 && (
-              <div className="flex items-center justify-between px-4 py-3 border-t bg-muted/20">
-                <button
-                  onClick={() => setPage(p => Math.max(1, p - 1))}
-                  disabled={page <= 1}
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium disabled:opacity-40 hover:bg-muted transition-colors"
-                >
-                  <ChevronLeft className="h-4 w-4" /> Prev
-                </button>
-                <div className="flex items-center gap-1">
-                  {(() => {
-                    const totalPages = data.totalPages;
-                    const current = page;
-                    const pages: (number | string)[] = [];
-
-                    if (totalPages <= 7) {
-                      for (let i = 1; i <= totalPages; i++) pages.push(i);
-                    } else {
-                      pages.push(1);
-                      if (current > 3) pages.push("...");
-                      const start = Math.max(2, current - 1);
-                      const end = Math.min(totalPages - 1, current + 1);
-                      for (let i = start; i <= end; i++) pages.push(i);
-                      if (current < totalPages - 2) pages.push("...");
-                      pages.push(totalPages);
-                    }
-
-                    return pages.map((p, idx) =>
-                      typeof p === "string" ? (
-                        <span key={`ellipsis-${idx}`} className="w-8 h-8 flex items-center justify-center text-muted-foreground text-xs">…</span>
-                      ) : (
-                        <button
-                          key={p}
-                          onClick={() => setPage(p)}
-                          className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${
-                            page === p ? "bg-primary text-primary-foreground shadow-md" : "hover:bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          {p}
-                        </button>
-                      )
-                    );
-                  })()}
-                </div>
-                <button
-                  onClick={() => setPage(p => Math.min(data.totalPages, p + 1))}
-                  disabled={page >= data.totalPages}
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium disabled:opacity-40 hover:bg-muted transition-colors"
-                >
-                  Next <ChevronRight className="h-4 w-4" />
-                </button>
-              </div>
-            )}
+        ) : expertGroups.length > 0 ? (
+          <div className="space-y-6">
+            {expertGroups.map((group) => (
+              <ExpertCard
+                key={group.name}
+                group={group}
+                onViewDetail={(r) => setSelectedItem(r)}
+              />
+            ))}
           </div>
         ) : (
-          <div className="text-center py-20">
-            <Table2 className="h-12 w-12 mx-auto mb-3 text-muted-foreground/30" />
-            <p className="text-muted-foreground">Belum ada data kuesioner yang disubmit.</p>
-            <p className="text-xs text-muted-foreground mt-1">Data akan muncul setelah responden mengisi kuesioner.</p>
+          <div className="rounded-2xl border border-dashed p-10 flex flex-col items-center justify-center text-muted-foreground">
+            <Table2 className="h-10 w-10 mb-3 opacity-20" />
+            <p className="font-medium">Tidak ada data ditemukan</p>
+            <p className="text-sm opacity-70">Belum ada yang mengisi kuesioner ini</p>
           </div>
         )}
       </main>
 
       {/* Detail Modal */}
       <AnimatePresence>
-        {selectedItem && <DetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />}
+        {selectedItem && (
+          <DetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+        )}
       </AnimatePresence>
     </div>
   );
