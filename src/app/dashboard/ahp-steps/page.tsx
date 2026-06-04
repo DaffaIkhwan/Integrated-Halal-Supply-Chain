@@ -22,7 +22,7 @@ export default function AHPStepsPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/api/dss/ahp")
+    fetch("/api/dss/ahp?t=" + Date.now())
       .then((res) => res.json())
       .then((resData) => {
         if (resData.error) throw new Error(resData.error);
@@ -182,7 +182,7 @@ export default function AHPStepsPage() {
                   if (!res.ok) throw new Error(json.error || "Gagal kalkulasi ulang");
                   
                   // Refetch data after recalculation
-                  const dataRes = await fetch("/api/dss/ahp");
+                  const dataRes = await fetch("/api/dss/ahp?t=" + Date.now());
                   const dataJson = await dataRes.json();
                   if (!dataRes.ok) throw new Error(dataJson.error);
                   setData(dataJson);
