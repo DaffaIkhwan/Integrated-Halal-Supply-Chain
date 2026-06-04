@@ -152,7 +152,7 @@ export async function loadMatrixFromDB(matrixType: string): Promise<{
   }
 
   // Extract unique codes (maintain order)
-  const allCodes = [...new Set(entries.map((e) => e.rowCode))];
+  const allCodes = Array.from(new Set(entries.map((e) => e.rowCode)));
   allCodes.sort();
   const n = allCodes.length;
 
