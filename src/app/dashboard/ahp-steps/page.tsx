@@ -172,6 +172,33 @@ export default function AHPStepsPage() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Berikut adalah hasil kalkulasi aktual dari database (Level 1 / Antar Critical Points). Menampilkan matriks TFN, FSE, Defuzzifikasi, hingga bobot normalisasi.
           </p>
+          <div className="pt-2">
+            <button
+              onClick={async () => {
+                setLoading(true);
+                try {
+                  const res = await fetch("/api/dss/ahp/calculate-k1", { method: "POST" });
+                  const json = await res.json();
+                  if (!res.ok) throw new Error(json.error || "Gagal kalkulasi ulang");
+                  
+                  // Refetch data after recalculation
+                  const dataRes = await fetch("/api/dss/ahp");
+                  const dataJson = await dataRes.json();
+                  if (!dataRes.ok) throw new Error(dataJson.error);
+                  setData(dataJson);
+                  alert(`Kalkulasi sukses! Diambil dari rata-rata ${json.respondents} responden pakar.`);
+                } catch (e: any) {
+                  alert(e.message);
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/20"
+            >
+              <Settings2 className="h-4 w-4" />
+              Kalkulasi Ulang dari Data Kuesioner (K1 V1)
+            </button>
+          </div>
         </div>
 
         {loading ? (
