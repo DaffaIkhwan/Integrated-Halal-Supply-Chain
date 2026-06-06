@@ -91,16 +91,18 @@ export default function KuesionerPembobotanPage() {
     }
   }, [selectedMode]);
 
-  // Initialize empty comparisons for the current mode if not exist
+  // Initialize comparisons for the current mode — ensure ALL pairs have a default value (0 = Sama Penting)
   useEffect(() => {
-    if (!comparisons[selectedMode]) {
-      const init: Record<string, number> = {};
-      pairs.forEach((p) => {
-        init[p.id] = 0;
+    const current = comparisons[selectedMode] || {};
+    const missingPairs = pairs.filter(p => !(p.id in current));
+    if (missingPairs.length > 0) {
+      const updated = { ...current };
+      missingPairs.forEach(p => {
+        updated[p.id] = 0;
       });
-      setComparisons(prev => ({ ...prev, [selectedMode]: init }));
+      setComparisons(prev => ({ ...prev, [selectedMode]: updated }));
     }
-  }, [selectedMode, pairs, comparisons]);
+  }, [selectedMode, pairs]);
 
   const currentComparisons = comparisons[selectedMode] || {};
 
