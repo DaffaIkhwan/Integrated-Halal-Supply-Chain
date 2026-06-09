@@ -30,6 +30,7 @@ export default function KuesionerPembobotanV2Page() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   // Generate items based on selected mode
   const currentItems = useMemo(() => {
@@ -119,8 +120,26 @@ export default function KuesionerPembobotanV2Page() {
           setSubmitted(false);
           window.scrollTo({ top: 0, behavior: "smooth" });
         }, 1200);
+      } else if (currentIndex === ALL_CP_QUESTIONNAIRES.length - 1) {
+        setTimeout(() => {
+          setSubmitted(false);
+          setShowThankYou(true);
+        }, 1200);
       }
     }
+  };
+
+  const resetForm = () => {
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    setExpertBg({
+      tanggal: today, nama: "", jenisKelamin: "", posisi: "", namaInstansi: "", lamaBekerja: "",
+    });
+    setRanks({});
+    setBobots({});
+    setSelectedMode("KU_LEVEL");
+    setShowThankYou(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const answeredRanks = Object.keys(modeRanks).length;
@@ -398,6 +417,70 @@ export default function KuesionerPembobotanV2Page() {
                   className="flex-1 py-4 text-sm font-bold text-cyan-500 hover:bg-cyan-500/10 transition-colors"
                 >
                   Ya, Simpan
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Thank You / Review Modal */}
+        {showThankYou && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-card w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden border max-h-[85vh] flex flex-col"
+            >
+              <div className="p-6 text-center space-y-4 flex-shrink-0 border-b">
+                <div className="w-16 h-16 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <CheckCircle2 className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold text-emerald-500">Terima Kasih!</h3>
+                <p className="text-sm text-muted-foreground">
+                  Anda telah menyelesaikan seluruh kuesioner perangkingan dan bobot. Berikut adalah rekap data yang Anda masukkan:
+                </p>
+              </div>
+              
+              <div className="p-6 overflow-y-auto space-y-6 bg-muted/20">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-sm border-b pb-2">Identitas Responden</h4>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="text-muted-foreground">Nama:</div><div className="font-medium">{expertBg.nama || "-"}</div>
+                    <div className="text-muted-foreground">Instansi:</div><div className="font-medium">{expertBg.namaInstansi || "-"}</div>
+                    <div className="text-muted-foreground">Posisi:</div><div className="font-medium">{expertBg.posisi || "-"}</div>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-sm border-b pb-2">Rekap Isian</h4>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    {Object.keys({ ...ranks, ...bobots }).map(mode => {
+                      const answeredRanks = Object.keys(ranks[mode] || {}).length;
+                      const answeredBobots = Object.keys(bobots[mode] || {}).length;
+                      return (
+                        <div key={mode} className="flex justify-between items-center col-span-2 bg-background p-3 rounded-xl border shadow-sm">
+                          <span className="font-medium">{mode === "KU_LEVEL" ? "Kriteria Umum" : mode === "CP_LEVEL" ? "Antar CP" : `Sub-Kriteria ${mode}`}</span>
+                          <span className="text-cyan-500 font-bold">{answeredRanks} Rank / {answeredBobots} Bobot</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex border-t bg-muted/30 flex-shrink-0">
+                <button 
+                  onClick={() => setShowThankYou(false)}
+                  className="flex-1 py-4 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors border-r"
+                >
+                  Kembali
+                </button>
+                <button 
+                  onClick={resetForm}
+                  className="flex-1 py-4 text-sm font-bold text-emerald-500 hover:bg-emerald-500/10 transition-colors"
+                >
+                  OK, Selesai
                 </button>
               </div>
             </motion.div>
