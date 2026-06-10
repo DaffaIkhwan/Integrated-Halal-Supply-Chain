@@ -7,9 +7,10 @@ import { useSession } from "next-auth/react";
 import {
   Table2, Search, Eye, X, Loader2, AlertTriangle,
   Scale, User, ChevronDown, ChevronUp, Users, FileSpreadsheet,
-  ArrowLeftRight, ArrowLeft, ArrowRight, Minus, Edit2, Save,
+  ArrowLeftRight, ArrowLeft, ArrowRight, Minus, Edit2, Save, Plus
 } from "lucide-react";
 import * as XLSX from "xlsx";
+import { ALL_CP_QUESTIONNAIRES, KU_KRITERIA_UMUM } from "@/lib/data/questionnaire-index";
 
 // ─── Types ───
 interface QResponse {
@@ -524,8 +525,73 @@ function ComparisonMiniRow({ pairKey, value }: { pairKey: string; value: number 
 }
 
 // ─── Expert Card Component ───
-function ExpertCard({ group, onViewDetail }: { group: ExpertGroup; onViewDetail: (r: QResponse) => void }) {
+function ExpertCard({ group, isAdmin, onRefresh, onViewDetail }: { group: ExpertGroup; isAdmin: boolean; onRefresh: () => void; onViewDetail: (r: QResponse) => void }) {
   const [expanded, setExpanded] = useState(true);
+  const [isAdding, setIsAdding] = useState(false);
+  const [showAddMenu, setShowAddMenu] = useState(false);
+
+  const existingTypes = new Set(group.responses.map(r => String((r.answers as any)?.type || "")));
+  const expectedTypes = ["KU_LEVEL", "CP_LEVEL", ...ALL_CP_QUESTIONNAIRES.map(c => c.cpId)];
+  const missingTypes = expectedTypes.filter(t => !existingTypes.has(t));
+
+  const handleAddMissing = async (type: string) => {
+    setIsAdding(true);
+    setShowAddMenu(false);
+    try {
+      const defaultComparisons: Record<string, number> = {};
+      
+      if (type === "KU_LEVEL") {
+        for (let i = 0; i < KU_KRITERIA_UMUM.length; i++) {
+          for (let j = i + 1; j < KU_KRITERIA_UMUM.length; j++) {
+            defaultComparisons[`${KU_KRITERIA_UMUM[i].code}_vs_${KU_KRITERIA_UMUM[j].code}`] = 0;
+          }
+        }
+      } else if (type === "CP_LEVEL") {
+        for (let i = 0; i < ALL_CP_QUESTIONNAIRES.length; i++) {
+          for (let j = i + 1; j < ALL_CP_QUESTIONNAIRES.length; j++) {
+            defaultComparisons[`${ALL_CP_QUESTIONNAIRES[i].cpId}_vs_${ALL_CP_QUESTIONNAIRES[j].cpId}`] = 0;
+          }
+        }
+      } else {
+        const cp = ALL_CP_QUESTIONNAIRES.find(c => c.cpId === type);
+        if (cp) {
+          for (let i = 0; i < cp.subCriteria.length; i++) {
+            for (let j = i + 1; j < cp.subCriteria.length; j++) {
+              defaultComparisons[`${cp.subCriteria[i].code}_vs_${cp.subCriteria[j].code}`] = 0;
+            }
+          }
+        }
+      }
+
+      const res = await fetch("/api/dss/questionnaire-responses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          questionnaireType: "pembobotan",
+          cpId: type === "KU_LEVEL" || type === "CP_LEVEL" ? null : type,
+          respondentName: group.name,
+          respondentRole: group.role || "Admin Generated",
+          respondentOrg: group.org || "Admin Generated",
+          respondentEmail: group.email,
+          respondentInfo: group.info,
+          answers: { type, comparisons: defaultComparisons },
+          notes: { version: "v1", createdVia: "admin_auto_generate" },
+          files: [],
+        }),
+      });
+      
+      if (res.ok) {
+        onRefresh();
+      } else {
+        alert("Gagal menambahkan data kosong");
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Error menambahkan data");
+    } finally {
+      setIsAdding(false);
+    }
+  };
 
   const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
   const sorted = [...group.responses].sort((a, b) => {
@@ -544,26 +610,53 @@ function ExpertCard({ group, onViewDetail }: { group: ExpertGroup; onViewDetail:
       className="rounded-2xl border bg-card shadow-lg overflow-hidden"
     >
       {/* Expert Header */}
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="w-full flex items-center gap-4 p-5 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 hover:from-cyan-500/15 hover:to-blue-500/15 transition-colors text-left"
-      >
-        <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 shrink-0">
-          <User className="h-5 w-5 text-cyan-400" />
+      <div className="w-full flex items-center gap-4 p-5 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 transition-colors text-left relative">
+        <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 shrink-0 cursor-pointer hover:bg-cyan-500/30 transition-colors" onClick={() => setExpanded(!expanded)}>
+          <User className="h-5 w-5 text-cyan-500" />
         </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-lg truncate">{group.name}</h3>
+        <div className="flex-1 min-w-0 cursor-pointer" onClick={() => setExpanded(!expanded)}>
+          <h3 className="font-bold text-lg truncate hover:text-cyan-600 transition-colors">{group.name}</h3>
           <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-0.5">
             {group.org && <span className="flex items-center gap-1">🏢 {group.org}</span>}
             {group.role && <span className="flex items-center gap-1">💼 {group.role}</span>}
             {group.email && <span className="flex items-center gap-1">📧 {group.email}</span>}
-            <span className="px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-400 font-semibold border border-cyan-500/30">
+            <span className="px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-600 font-semibold border border-cyan-500/30">
               {group.responses.length} respons
             </span>
           </div>
         </div>
-        {expanded ? <ChevronUp className="h-5 w-5 text-muted-foreground shrink-0" /> : <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />}
-      </button>
+        <div className="flex items-center gap-3 shrink-0">
+          {isAdmin && missingTypes.length > 0 && (
+            <div className="relative">
+              <button
+                onClick={() => setShowAddMenu(!showAddMenu)}
+                disabled={isAdding}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-cyan-600 hover:bg-cyan-50 text-xs font-bold transition-all shadow-sm border border-cyan-200 disabled:opacity-50"
+              >
+                {isAdding ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Plus className="h-3.5 w-3.5" />}
+                Tambah Data
+              </button>
+              {showAddMenu && (
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white border rounded-xl shadow-xl p-1 z-10 max-h-[300px] overflow-y-auto">
+                  <div className="px-2 py-1.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Kategori Belum Terisi</div>
+                  {missingTypes.map(t => (
+                    <button
+                      key={t}
+                      onClick={() => handleAddMissing(t)}
+                      className="w-full text-left px-3 py-2 text-xs hover:bg-cyan-50 text-foreground rounded-lg transition-colors font-medium"
+                    >
+                      {t === "KU_LEVEL" ? "Kriteria Umum" : t === "CP_LEVEL" ? "Antar CP (L1)" : t}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+          <button onClick={() => setExpanded(!expanded)} className="p-1 hover:bg-black/5 rounded-full transition-colors">
+            {expanded ? <ChevronUp className="h-5 w-5 text-muted-foreground" /> : <ChevronDown className="h-5 w-5 text-muted-foreground" />}
+          </button>
+        </div>
+      </div>
 
       {/* Responses */}
       <AnimatePresence>
@@ -772,6 +865,8 @@ export default function RekapPembobotanPage() {
               <ExpertCard
                 key={group.name}
                 group={group}
+                isAdmin={isAdmin}
+                onRefresh={fetchAllData}
                 onViewDetail={(r) => setSelectedItem(r)}
               />
             ))}
