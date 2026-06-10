@@ -3,10 +3,11 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
+import { useSession } from "next-auth/react";
 import {
   Table2, Search, Eye, X, Loader2, AlertTriangle,
   Scale, User, ChevronDown, ChevronUp, Users, FileSpreadsheet,
-  ArrowLeftRight, ArrowLeft, ArrowRight, Minus,
+  ArrowLeftRight, ArrowLeft, ArrowRight, Minus, Edit2, Save,
 } from "lucide-react";
 import * as XLSX from "xlsx";
 
@@ -77,12 +78,53 @@ const SAATY_LABELS: Record<number, string> = {
 };
 
 // ─── Detail Modal ───
-function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }) {
+function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QResponse; isAdmin: boolean; onClose: () => void; onSaveSuccess: () => void }) {
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [editedComparisons, setEditedComparisons] = useState<Record<string, number>>({});
+  const [isSaving, setIsSaving] = useState(false);
+
   const answers = item.answers as Record<string, unknown>;
   const respondentInfo = item.respondentInfo || {};
-  const comparisons = (answers.comparisons || {}) as Record<string, number>;
   const type = String(answers.type || "");
+
+  useEffect(() => {
+    setEditedComparisons((answers.comparisons || {}) as Record<string, number>);
+  }, [answers.comparisons]);
+
+  const comparisons = isEditMode ? editedComparisons : ((answers.comparisons || {}) as Record<string, number>);
   const compEntries = Object.entries(comparisons);
+
+  const handleSliderChange = (pairId: string, val: number) => {
+    setEditedComparisons(prev => ({ ...prev, [pairId]: val }));
+  };
+
+  const handleSave = async () => {
+    setIsSaving(true);
+    try {
+      const updatedAnswers = {
+        ...answers,
+        comparisons: editedComparisons
+      };
+      
+      const res = await fetch(`/api/dss/questionnaire-responses/${item.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers: updatedAnswers })
+      });
+      
+      if (!res.ok) {
+        throw new Error("Failed to save");
+      }
+      
+      onSaveSuccess();
+      setIsEditMode(false);
+    } catch (e) {
+      console.error(e);
+      alert("Gagal menyimpan data");
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={onClose}>
@@ -109,9 +151,31 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 rounded-xl hover:bg-white/20 transition-colors">
-            <X className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            {isAdmin && !isEditMode && (
+              <button onClick={() => setIsEditMode(true)} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 transition-colors text-sm font-semibold">
+                <Edit2 className="h-4 w-4" /> Edit
+              </button>
+            )}
+            {isEditMode && (
+              <>
+                <button onClick={() => {
+                  setIsEditMode(false);
+                  setEditedComparisons((answers.comparisons || {}) as Record<string, number>);
+                }} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-red-500/80 hover:bg-red-500 transition-colors text-sm font-semibold" disabled={isSaving}>
+                  <X className="h-4 w-4" /> Batal
+                </button>
+                <button onClick={handleSave} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 transition-colors text-sm font-semibold shadow-lg shadow-emerald-500/20" disabled={isSaving}>
+                  {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />} Simpan
+                </button>
+              </>
+            )}
+            {!isEditMode && (
+              <button onClick={onClose} className="p-2 rounded-xl hover:bg-white/20 transition-colors">
+                <X className="h-5 w-5" />
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Content */}
@@ -191,20 +255,34 @@ function DetailModal({ item, onClose }: { item: QResponse; onClose: () => void }
                           </span>
                         </td>
                         <td className="py-2.5 px-3 text-center">
-                          <div className="flex items-center justify-center gap-1.5">
-                            {comp.direction === "left" && <ArrowLeft className="h-3 w-3 text-cyan-400" />}
-                            <span className={`inline-flex items-center justify-center min-w-[28px] h-7 rounded-lg font-bold text-xs ${
-                              comp.direction === "equal"
-                                ? "bg-muted text-muted-foreground"
-                                : comp.direction === "left"
-                                  ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30"
-                                  : "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
-                            }`}>
-                              {comp.scale}
-                            </span>
-                            {comp.direction === "right" && <ArrowRight className="h-3 w-3 text-emerald-400" />}
-                            {comp.direction === "equal" && <Minus className="h-3 w-3 text-muted-foreground" />}
-                          </div>
+                          {isEditMode ? (
+                            <div className="flex flex-col items-center justify-center w-full min-w-[150px] relative px-2">
+                               <input
+                                type="range"
+                                min="-8"
+                                max="8"
+                                step="1"
+                                value={val}
+                                onChange={(e) => handleSliderChange(key, parseInt(e.target.value))}
+                                className="w-full h-2 rounded-full bg-muted appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-cyan-500"
+                              />
+                            </div>
+                          ) : (
+                            <div className="flex items-center justify-center gap-1.5">
+                              {comp.direction === "left" && <ArrowLeft className="h-3 w-3 text-cyan-400" />}
+                              <span className={`inline-flex items-center justify-center min-w-[28px] h-7 rounded-lg font-bold text-xs ${
+                                comp.direction === "equal"
+                                  ? "bg-muted text-muted-foreground"
+                                  : comp.direction === "left"
+                                    ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30"
+                                    : "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                              }`}>
+                                {comp.scale}
+                              </span>
+                              {comp.direction === "right" && <ArrowRight className="h-3 w-3 text-emerald-400" />}
+                              {comp.direction === "equal" && <Minus className="h-3 w-3 text-muted-foreground" />}
+                            </div>
+                          )}
                         </td>
                         <td className="py-2.5 px-3 text-left">
                           <span className={`font-mono font-bold text-xs ${comp.direction === "right" ? "text-emerald-400" : "text-muted-foreground"}`}>
@@ -566,6 +644,9 @@ function ExpertCard({ group, onViewDetail }: { group: ExpertGroup; onViewDetail:
 
 // ─── Main Page ───
 export default function RekapPembobotanPage() {
+  const { data: session } = useSession();
+  const isAdmin = session?.user?.role === "ADMIN";
+  
   const [allResponses, setAllResponses] = useState<QResponse[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -707,7 +788,15 @@ export default function RekapPembobotanPage() {
       {/* Detail Modal */}
       <AnimatePresence>
         {selectedItem && (
-          <DetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+          <DetailModal 
+            item={selectedItem} 
+            isAdmin={isAdmin}
+            onClose={() => setSelectedItem(null)} 
+            onSaveSuccess={() => {
+              setSelectedItem(null);
+              fetchAllData();
+            }}
+          />
         )}
       </AnimatePresence>
     </div>
