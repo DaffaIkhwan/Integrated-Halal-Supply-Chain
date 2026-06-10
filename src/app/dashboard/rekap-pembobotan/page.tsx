@@ -234,14 +234,14 @@ function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QRespons
               <ArrowLeftRight className="h-3.5 w-3.5" /> Perbandingan Berpasangan (Pairwise)
             </p>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-sm table-fixed min-w-[700px]">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-10">No</th>
-                    <th className="text-right py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-cyan-400">Kriteria A</th>
-                    <th className="text-center py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-28">Skala</th>
-                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-emerald-400">Kriteria B</th>
-                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Interpretasi</th>
+                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-[6%]">No</th>
+                    <th className="text-right py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-cyan-400 w-[22%]">Kriteria A</th>
+                    <th className="text-center py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-[22%]">Skala</th>
+                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-emerald-400 w-[22%]">Kriteria B</th>
+                    <th className="text-left py-2.5 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground w-[28%]">Interpretasi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -291,10 +291,12 @@ function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QRespons
                           </span>
                         </td>
                         <td className="py-2.5 px-3">
-                          <span className="text-[11px] text-muted-foreground">
-                            {comp.direction === "equal"
-                              ? "Sama Penting"
-                              : `${comp.direction === "left" ? comp.left : comp.right} — ${SAATY_LABELS[comp.scale] || "Nilai Antara"}`}
+                          <span className="text-[11px] text-muted-foreground flex flex-wrap items-center gap-1">
+                            {comp.direction === "equal" ? (
+                              <span>Sama Penting <strong className="text-foreground ml-0.5">(1)</strong></span>
+                            ) : (
+                              <span>{comp.direction === "left" ? comp.left : comp.right} &mdash; {SAATY_LABELS[comp.scale] || "Nilai Antara"} <strong className="text-foreground ml-0.5">({comp.scale})</strong></span>
+                            )}
                           </span>
                         </td>
                       </tr>
