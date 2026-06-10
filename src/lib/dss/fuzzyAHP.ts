@@ -17,14 +17,18 @@ export const FuzzyScale = {
 // ======================================================================
 
 /** Mendapatkan nilai resiprokal/kebalikan dari TFN */
-export function getReciprocal([l, m, u]: TFN): TFN {
-  return [1 / u, 1 / m, 1 / l];
+export function getReciprocal(tfn: TFN): TFN {
+  if (!tfn) return [1, 1, 1] as TFN;
+  return [1 / tfn[2], 1 / tfn[1], 1 / tfn[0]];
 }
 
 /** Menjumlahkan array TFN */
 export function sumTFNs(tfns: TFN[]): TFN {
   return tfns.reduce(
-    (acc, val) => [acc[0] + val[0], acc[1] + val[1], acc[2] + val[2]],
+    (acc, val) => {
+      if (!val) return acc;
+      return [acc[0] + val[0], acc[1] + val[1], acc[2] + val[2]] as TFN;
+    },
     [0, 0, 0] as TFN
   );
 }
@@ -47,6 +51,7 @@ export function calculateFSE(matrix: TFN[][]): TFN[] {
 
 /** Defuzzification menggunakan metode Center of Area (CoA): D = (l + m + u) / 3 */
 export function defuzzify(tfn: TFN): number {
+  if (!tfn) return 0;
   return (tfn[0] + tfn[1] + tfn[2]) / 3;
 }
 
@@ -172,10 +177,15 @@ export async function loadMatrixFromDB(matrixType: string): Promise<{
   allCodes.sort();
   const n = allCodes.length;
 
-  // Build n×n TFN matrix
-  const matrix: TFN[][] = Array.from({ length: n }, () =>
-    Array.from({ length: n }, () => [1, 1, 1] as TFN)
-  );
+  // Build n×n TFN matrix safely
+  const matrix: TFN[][] = [];
+  for (let r = 0; r < n; r++) {
+    const row: TFN[] = [];
+    for (let c = 0; c < n; c++) {
+      row.push([1, 1, 1] as TFN);
+    }
+    matrix.push(row);
+  }
 
   for (const entry of entries) {
     const i = allCodes.indexOf(entry.rowCode);
