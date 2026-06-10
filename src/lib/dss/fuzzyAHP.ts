@@ -38,7 +38,10 @@ export function sumTFNs(tfns: TFN[]): TFN {
  * S_i = Σ M_{gi}^j ⊗ [Σ Σ M_{gi}^j]^{-1}
  */
 export function calculateFSE(matrix: TFN[][]): TFN[] {
-  const rowSums = matrix.map((row) => sumTFNs(row));
+  if (!matrix || matrix.length === 0) {
+    throw new Error('Matriks kosong, tidak bisa menghitung FSE.');
+  }
+  const rowSums = matrix.map((row) => sumTFNs(row.map(cell => cell || [1, 1, 1] as TFN)));
   const totalSum = sumTFNs(rowSums);
   const reverseTotal = getReciprocal(totalSum);
 
@@ -108,8 +111,8 @@ export function calculateConsistencyRatio(matrix: TFN[][]): {
     6: 1.24, 7: 1.32, 8: 1.41, 9: 1.45, 10: 1.49,
   };
 
-  // Defuzzify matrix → crisp
-  const crispMatrix = matrix.map((row) => row.map((cell) => defuzzify(cell)));
+  // Defuzzify matrix → crisp (with null-safe fallback)
+  const crispMatrix = matrix.map((row) => row.map((cell) => defuzzify(cell || [1, 1, 1] as TFN)));
 
   // Calculate classical AHP weights (Wi)
   const colSums = new Array(n).fill(0);
@@ -172,8 +175,13 @@ export async function loadMatrixFromDB(matrixType: string): Promise<{
     throw new Error(`Matriks "${matrixType}" belum ada di database. Silakan isi data matriks perbandingan berpasangan terlebih dahulu.`);
   }
 
-  // Extract unique codes (maintain order)
-  const allCodes = Array.from(new Set(entries.map((e) => e.rowCode)));
+  // Extract unique codes from BOTH rowCode and colCode to ensure completeness
+  const codeSet = new Set<string>();
+  for (const e of entries) {
+    codeSet.add(e.rowCode);
+    codeSet.add(e.colCode);
+  }
+  const allCodes = Array.from(codeSet);
   allCodes.sort();
   const n = allCodes.length;
 
