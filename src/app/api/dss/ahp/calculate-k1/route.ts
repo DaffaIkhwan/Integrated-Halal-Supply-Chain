@@ -97,6 +97,6 @@ export async function POST() {
         });
 
     } catch (e: any) {
-        return NextResponse.json({ error: e.message }, { status: 500 });
+        return NextResponse.json({ error: e.message, stack: e.stack }, { status: 500 });
     }
 }

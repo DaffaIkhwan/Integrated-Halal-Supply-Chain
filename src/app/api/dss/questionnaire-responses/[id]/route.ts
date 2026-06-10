@@ -2,10 +2,10 @@ import { NextResponse, NextRequest } from 'next/server';
 import { prisma } from '@/lib/db/client';
 import { auth } from '@/lib/auth';
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const session = await auth();
-    const id = params.id;
+    const { id } = await params;
 
     if (!session || session.user?.role !== 'ADMIN') {
       return NextResponse.json({ error: 'Unauthorized. Admin access required.' }, { status: 403 });
