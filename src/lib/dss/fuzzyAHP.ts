@@ -83,12 +83,13 @@ export function calculateWeightsFromMatrix(matrix: TFN[][], codes: string[]) {
 /**
  * Menghitung Consistency Ratio (CR)
  * 1. Defuzzify matriks TFN → matriks crisp
- * 2. Hitung Aw (matriks × vektor bobot)
- * 3. λmax = (1/n) Σ (Aw_i / w_i)
- * 4. CI = (λmax - n) / (n - 1)
- * 5. CR = CI / RI
+ * 2. Normalisasi kolom matriks crisp dan rata-ratakan barisnya untuk mendapat Vektor Bobot (Wi) Konvensional
+ * 3. Hitung Aw (matriks crisp × Wi)
+ * 4. λmax = (1/n) Σ (Aw_i / w_i)
+ * 5. CI = (λmax - n) / (n - 1)
+ * 6. CR = CI / RI
  */
-export function calculateConsistencyRatio(matrix: TFN[][], weights: number[]): {
+export function calculateConsistencyRatio(matrix: TFN[][]): {
   lambdaMax: number;
   ci: number;
   cr: number;
@@ -105,15 +106,30 @@ export function calculateConsistencyRatio(matrix: TFN[][], weights: number[]): {
   // Defuzzify matrix → crisp
   const crispMatrix = matrix.map((row) => row.map((cell) => defuzzify(cell)));
 
-  // Aw = crispMatrix × weights
+  // Calculate classical AHP weights (Wi)
+  const colSums = new Array(n).fill(0);
+  for (let j = 0; j < n; j++) {
+    for (let i = 0; i < n; i++) colSums[j] += crispMatrix[i][j];
+  }
+
+  const crispWeights = new Array(n).fill(0);
+  for (let i = 0; i < n; i++) {
+    let rowSum = 0;
+    for (let j = 0; j < n; j++) {
+      rowSum += crispMatrix[i][j] / colSums[j];
+    }
+    crispWeights[i] = rowSum / n;
+  }
+
+  // Aw = crispMatrix × crispWeights
   const Aw = crispMatrix.map((row) =>
-    row.reduce((sum, val, j) => sum + val * weights[j], 0)
+    row.reduce((sum, val, j) => sum + val * crispWeights[j], 0)
   );
 
   // λmax
   const lambdaMax = Aw.reduce((sum, aw_i, i) => {
-    if (weights[i] === 0) return sum;
-    return sum + aw_i / weights[i];
+    if (crispWeights[i] === 0) return sum;
+    return sum + aw_i / crispWeights[i];
   }, 0) / n;
 
   const ci = n <= 1 ? 0 : (lambdaMax - n) / (n - 1);
@@ -182,8 +198,7 @@ export async function recalculateLevel1Weights(): Promise<{
 }> {
   const { matrix, codes } = await loadMatrixFromDB('LEVEL1_CP');
   const results = calculateWeightsFromMatrix(matrix, codes);
-  const weights = results.map((r) => r.weight);
-  const cr = calculateConsistencyRatio(matrix, weights);
+  const cr = calculateConsistencyRatio(matrix);
 
   // Update CriticalPoint.globalWeight di DB
   for (const r of results) {
@@ -210,8 +225,7 @@ export async function recalculateLevel2Weights(cpId: string): Promise<{
   const matrixType = `LEVEL2_${cpId}`;
   const { matrix, codes } = await loadMatrixFromDB(matrixType);
   const results = calculateWeightsFromMatrix(matrix, codes);
-  const weights = results.map((r) => r.weight);
-  const cr = calculateConsistencyRatio(matrix, weights);
+  const cr = calculateConsistencyRatio(matrix);
 
   // Update CriteriaWeight.weight di DB
   for (const r of results) {

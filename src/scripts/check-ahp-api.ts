@@ -6,7 +6,7 @@ async function test() {
         const fse = calculateFSE(matrix);
         const crispValues = fse.map((val) => defuzzify(val));
         const normalizedWeights = normalizeWeights(crispValues);
-        const cr = calculateConsistencyRatio(matrix, normalizedWeights);
+        const cr = calculateConsistencyRatio(matrix);
         console.log("CR:", cr);
     } catch(e) {
         console.error(e);

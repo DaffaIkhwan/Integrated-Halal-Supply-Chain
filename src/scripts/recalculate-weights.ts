@@ -27,7 +27,7 @@ async function main() {
   const { matrix: l1Matrix, codes: l1Codes } = await loadMatrixFromDB('LEVEL1_CP');
   const l1Results = calculateWeightsFromMatrix(l1Matrix, l1Codes);
   const l1Weights = l1Results.map((r) => r.weight);
-  const l1CR = calculateConsistencyRatio(l1Matrix, l1Weights);
+  const l1CR = calculateConsistencyRatio(l1Matrix);
 
   console.log(`  Criteria: ${l1Codes.join(', ')}`);
   console.log(`  CR = ${l1CR.cr} (${l1CR.isConsistent ? '✅ Konsisten' : '⚠️ TIDAK Konsisten'})`);
@@ -51,7 +51,7 @@ async function main() {
       const { matrix, codes } = await loadMatrixFromDB(matrixType);
       const results = calculateWeightsFromMatrix(matrix, codes);
       const weights = results.map((r) => r.weight);
-      const cr = calculateConsistencyRatio(matrix, weights);
+      const cr = calculateConsistencyRatio(matrix);
 
       console.log(`\n  ${cpId} (${codes.length} kriteria):`);
       console.log(`    CR = ${cr.cr} (${cr.isConsistent ? '✅' : '⚠️'})`);

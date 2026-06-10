@@ -71,7 +71,7 @@ describe('Fuzzy AHP Core Mathematical Functions', () => {
     // Crisp values expected: 1/7, 2/7, 4/7
     const weights = [4/7, 2/7, 1/7];
     
-    const cr = calculateConsistencyRatio(matrix, weights);
+    const cr = calculateConsistencyRatio(matrix);
     expect(cr.ci).toBe(0); // Perfect consistency means CI = 0
     expect(cr.cr).toBe(0); // Perfect consistency means CR = 0
     expect(cr.isConsistent).toBe(true);

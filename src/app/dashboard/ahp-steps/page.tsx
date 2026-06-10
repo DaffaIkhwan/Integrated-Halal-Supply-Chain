@@ -150,6 +150,52 @@ export default function AHPStepsPage() {
         </div>
       ) : null
     },
+    {
+      title: "7. Ringkasan Konsistensi (CR) Keseluruhan",
+      icon: <CheckCircle2 className="h-6 w-6 text-blue-500" />,
+      description: "Rekapitulasi uji konsistensi (CR) untuk seluruh matriks (Kriteria Umum, Antar CP Level 1, dan seluruh Sub-Kriteria CP).",
+      details: "Nilai CR < 0.10 menandakan matriks tersebut konsisten dan layak digunakan.",
+      formula: "Target: CR < 0.10",
+      content: data && data.allCRs ? (
+        <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
+          <table className="w-full text-left text-xs whitespace-nowrap">
+            <thead className="bg-muted/50 border-b">
+              <tr>
+                <th className="p-3 font-semibold text-muted-foreground bg-muted">Level</th>
+                <th className="p-3 font-semibold text-muted-foreground text-center">λ Max</th>
+                <th className="p-3 font-semibold text-muted-foreground text-center">CI</th>
+                <th className="p-3 font-semibold text-muted-foreground text-center">CR Value</th>
+                <th className="p-3 font-semibold text-muted-foreground text-center">Status</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border/50">
+              {data.allCRs.map((crRow: any, i: number) => (
+                <tr key={i} className="hover:bg-muted/20">
+                  <td className="p-3 font-bold bg-muted/20">{crRow.level}</td>
+                  {crRow.lambdaMax !== null ? (
+                    <>
+                      <td className="p-3 text-center font-mono text-[11px] text-foreground/80">{crRow.lambdaMax.toFixed(4)}</td>
+                      <td className="p-3 text-center font-mono text-[11px] text-foreground/80">{crRow.ci.toFixed(4)}</td>
+                      <td className="p-3 text-center font-mono font-bold text-[11px] text-foreground/80">{crRow.cr.toFixed(4)}</td>
+                      <td className={`p-3 text-center font-bold text-[11px] ${crRow.isConsistent ? "text-emerald-500" : "text-red-500"}`}>
+                        {crRow.isConsistent ? "KONSISTEN" : "TIDAK KONSISTEN"}
+                      </td>
+                    </>
+                  ) : (
+                    <>
+                      <td className="p-3 text-center text-muted-foreground">-</td>
+                      <td className="p-3 text-center text-muted-foreground">-</td>
+                      <td className="p-3 text-center text-muted-foreground">-</td>
+                      <td className="p-3 text-center text-muted-foreground">Belum ada data</td>
+                    </>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null
+    },
   ];
 
   return (
