@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { createOpenAI } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 import { searchSimilarChunks } from '@/lib/actions/search';
 import { prisma } from '@/lib/db/client';
@@ -7,12 +7,17 @@ import { z } from 'zod';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
 
+const openrouter = createOpenAI({
+  baseURL: 'https://openrouter.ai/api/v1',
+  apiKey: process.env.OPENROUTER_API_KEY,
+});
+
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   try {
     const result = await streamText({
-      model: google('gemini-2.0-flash'),
+      model: openrouter('minimax/minimax-01'),
       maxToolRoundtrips: 3,
       system: `Anda adalah asisten AI Chatbot cerdas untuk Manajemen Rantai Pasok Halal (Halal Supply Chain).
 Gunakan **Tools** berikut secara otomatis berdasarkan "Intensi" *user*:
@@ -146,7 +151,7 @@ Setelah memanggil tool dan menerima hasilnya, SELALU buatkan rangkuman jawaban d
       error?.name === 'AI_RetryError' ||
       error?.name === 'AI_APICallError'
     ) {
-      errorMessage = "Limit API Key Gemini telah habis (Quota Exceeded). Silakan buat API Key baru dan masukkan ke dalam file .env untuk melanjutkan.";
+      errorMessage = "Limit API Key OpenRouter/Minimax telah habis (Quota Exceeded). Silakan buat API Key baru dan pastikan saldo cukup.";
     } else if (error?.message) {
       errorMessage = `Server Error: ${error.message}`;
     }
