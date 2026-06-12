@@ -16,13 +16,28 @@ import {
   AlertTriangle
 } from "lucide-react";
 
+const MATRIX_TYPES = [
+  { id: 'KU_LEVEL', label: 'Kriteria Umum (KU)' },
+  { id: 'LEVEL1_CP', label: 'Antar CP — Level 1' },
+  { id: 'LEVEL2_CP1', label: 'Sub-Kriteria CP1' },
+  { id: 'LEVEL2_CP2', label: 'Sub-Kriteria CP2' },
+  { id: 'LEVEL2_CP3', label: 'Sub-Kriteria CP3' },
+  { id: 'LEVEL2_CP4', label: 'Sub-Kriteria CP4' },
+  { id: 'LEVEL2_CP5', label: 'Sub-Kriteria CP5' },
+  { id: 'LEVEL2_CP6', label: 'Sub-Kriteria CP6' },
+  { id: 'LEVEL2_CP7', label: 'Sub-Kriteria CP7' },
+];
+
 export default function AHPStepsPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedType, setSelectedType] = useState('LEVEL1_CP');
 
-  useEffect(() => {
-    fetch("/api/dss/ahp?t=" + Date.now())
+  const fetchData = (type: string) => {
+    setLoading(true);
+    setError(null);
+    fetch(`/api/dss/ahp?type=${type}&t=` + Date.now())
       .then((res) => res.json())
       .then((resData) => {
         if (resData.error) throw new Error(resData.error);
@@ -30,14 +45,20 @@ export default function AHPStepsPage() {
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
-  }, []);
+  };
+
+  useEffect(() => {
+    fetchData(selectedType);
+  }, [selectedType]);
+
+  const selectedLabel = MATRIX_TYPES.find(m => m.id === selectedType)?.label || selectedType;
 
   const AHP_STEPS = [
     {
       title: "1 & 2. Matriks Perbandingan TFN",
       icon: <TableProperties className="h-6 w-6 text-cyan-400" />,
       description: "Tabel berikut adalah matriks skala pakar yang sudah dikonversi ke format Triangular Fuzzy Number (TFN) [Lower, Middle, Upper].",
-      details: "Matriks ini didapat dari database (antar CP Level 1).",
+      details: `Matriks ini didapat dari database (${selectedLabel}).`,
       formula: "M = (l, m, u)",
       content: data ? (
         <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
@@ -97,7 +118,7 @@ export default function AHPStepsPage() {
       title: "5. Normalisasi Bobot Global",
       icon: <Scale className="h-6 w-6 text-pink-400" />,
       description: "Nilai crisp dinormalisasi agar total keseluruhan bobot berjumlah 100%.",
-      details: "Inilah bobot final yang dipakai sistem untuk mengalikan risiko lokal masing-masing CP.",
+      details: `Inilah bobot final Fuzzy AHP untuk ${selectedLabel}.`,
       formula: "W_i = Crisp_i / Σ Crisp",
       content: data ? (
         <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
@@ -216,8 +237,25 @@ export default function AHPStepsPage() {
             </span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Berikut adalah hasil kalkulasi aktual dari database (Level 1 / Antar Critical Points). Menampilkan matriks TFN, FSE, Defuzzifikasi, hingga bobot normalisasi.
+            Berikut adalah hasil kalkulasi aktual dari database. Pilih level matriks yang ingin dilihat, lalu klik tombol kalkulasi ulang jika diperlukan.
           </p>
+
+          {/* Matrix Type Selector */}
+          <div className="flex flex-wrap justify-center gap-2 pt-3 max-w-3xl mx-auto">
+            {MATRIX_TYPES.map((mt) => (
+              <button
+                key={mt.id}
+                onClick={() => setSelectedType(mt.id)}
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                  selectedType === mt.id
+                    ? "bg-gradient-to-r from-cyan-500 to-emerald-500 text-white shadow-md shadow-cyan-500/20"
+                    : "bg-muted/50 hover:bg-muted text-muted-foreground"
+                }`}
+              >
+                {mt.label}
+              </button>
+            ))}
+          </div>
           <div className="pt-2">
             <button
               onClick={async () => {
@@ -227,12 +265,14 @@ export default function AHPStepsPage() {
                   const json = await res.json();
                   if (!res.ok) throw new Error(json.error || "Gagal kalkulasi ulang");
                   
-                  // Refetch data after recalculation
-                  const dataRes = await fetch("/api/dss/ahp?t=" + Date.now());
-                  const dataJson = await dataRes.json();
-                  if (!dataRes.ok) throw new Error(dataJson.error);
-                  setData(dataJson);
-                  alert(`Kalkulasi sukses! Diambil dari rata-rata ${json.respondents} responden pakar.`);
+                  const parts: string[] = [];
+                  if (json.kuLevel) parts.push(`Kriteria Umum (${json.kuLevel.respondents} responden)`);
+                  if (json.cpLevel) parts.push(`Antar CP (${json.cpLevel.respondents} responden)`);
+                  const subCount = Object.keys(json.subLevels || {}).length;
+                  if (subCount > 0) parts.push(`${subCount} Sub-Kriteria`);
+                  alert(`Kalkulasi sukses!\n${parts.join('\n') || `Diambil dari rata-rata ${json.respondents} responden pakar.`}`);
+                  // Refetch the current selected type
+                  fetchData(selectedType);
                 } catch (e: any) {
                   alert(e.message);
                 } finally {
