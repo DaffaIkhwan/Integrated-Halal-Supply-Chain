@@ -39,9 +39,27 @@ async function aggregateAndSaveMatrix(
         return { respondents: 0, processed: false };
     }
 
+    // Deduplicate by respondentName, keeping the latest one
+    // Assuming the responses array is ordered by createdAt DESC (or we'll sort it)
+    const sorted = [...filtered].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    const latestPerRespondent = new Map<string, any>();
+    
+    for (const res of sorted) {
+        const name = (res.respondentName || '').trim().toLowerCase();
+        if (name && !latestPerRespondent.has(name)) {
+            latestPerRespondent.set(name, res);
+        }
+    }
+
+    const deduplicated = Array.from(latestPerRespondent.values());
+
+    if (deduplicated.length === 0) {
+        return { respondents: 0, processed: false };
+    }
+
     const pairTFNs: Record<string, [number, number, number][]> = {};
 
-    for (const res of filtered) {
+    for (const res of deduplicated) {
         const comparisons = (res.answers as any).comparisons;
         for (const [key, val] of Object.entries(comparisons)) {
             const numVal = Number(val);
@@ -50,7 +68,7 @@ async function aggregateAndSaveMatrix(
         }
     }
 
-    const n = filtered.length;
+    const n = deduplicated.length;
     const aggregatedTFNs: Record<string, [number, number, number]> = {};
 
     for (const [key, tfns] of Object.entries(pairTFNs)) {
@@ -99,6 +117,14 @@ async function aggregateAndSaveMatrix(
 
 export async function POST() {
     try {
+        // Hapus data "Anonim" dari K1V1 (pembobotan)
+        await prisma.questionnaireResponse.deleteMany({
+            where: {
+                questionnaireType: 'pembobotan',
+                respondentName: 'Anonim'
+            }
+        });
+
         const responses = await prisma.questionnaireResponse.findMany({
             where: { questionnaireType: 'pembobotan' }
         });
