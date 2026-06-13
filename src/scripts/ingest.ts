@@ -4,8 +4,40 @@ import { oaiVectorDB } from '../lib/db/vector';
 
 const RAG_DIR = path.join(process.cwd(), 'public', 'RAG');
 
+/**
+ * Files to EXCLUDE from RAG ingest.
+ * These contain DSS/risk score data that should ONLY be accessed
+ * via the check_halal_risk tool (database), not via knowledge base.
+ */
+const EXCLUDED_FILES = [
+  'Analisis Fuzzy AHP .pdf.txt',
+  'Fuzzy AHP DSS Halal Suuply Chain (1).pdf.txt',
+  'note file.pdf.txt',
+];
+
+/**
+ * Extract a human-readable document title from filename
+ * e.g. "1. UU No. 33 Tahun 2014 — Jaminan Produk Halal (...).pdf.txt"
+ *   → "UU No. 33 Tahun 2014 — Jaminan Produk Halal"
+ */
+function extractDocTitle(filename: string): string {
+  return filename
+    .replace(/\.pdf\.txt$/, '')
+    .replace(/\.pdf$/, '')
+    .replace(/\.txt$/, '')
+    // Remove leading number + dot
+    .replace(/^\d+\.\s*/, '')
+    // Remove parenthetical info
+    .replace(/\s*\([^)]*\)\s*/g, ' ')
+    // Remove trailing category codes like "A1 · UU JPH"
+    .replace(/\s+[A-Z]\d+\s*·.*$/, '')
+    .trim();
+}
+
 async function main() {
-  console.log('Memulai proses membaca dan chunking dokumen Teks dari public/RAG...');
+  console.log('═══════════════════════════════════════════════════');
+  console.log('  RAG Semantic Ingest — Recursive Chunking Engine');
+  console.log('═══════════════════════════════════════════════════');
 
   if (!fs.existsSync(RAG_DIR)) {
     console.error(`Folder tidak ditemukan: ${RAG_DIR}`);
@@ -13,43 +45,62 @@ async function main() {
   }
 
   try {
-    console.log('Menghapus data lama dari tabel oai...');
+    console.log('\n🗑️  Menghapus data lama dari tabel oai...');
     const { query } = await import('../lib/db/pg');
     await query('TRUNCATE TABLE "oai" RESTART IDENTITY');
-    console.log('Data lama berhasil dihapus.');
+    console.log('✅ Data lama berhasil dihapus.');
   } catch (error) {
-    console.error('Gagal menghapus data lama:', error);
+    console.error('❌ Gagal menghapus data lama:', error);
   }
 
-  const files = fs.readdirSync(RAG_DIR).filter(file => file.endsWith('.txt'));
-  console.log(`Ditemukan ${files.length} file TXT.`);
+  const allFiles = fs.readdirSync(RAG_DIR).filter(file => file.endsWith('.txt'));
+  const files = allFiles.filter(file => !EXCLUDED_FILES.includes(file));
+  const excluded = allFiles.filter(file => EXCLUDED_FILES.includes(file));
+
+  console.log(`\n📂 Total file TXT: ${allFiles.length}`);
+  console.log(`✅ Akan di-ingest: ${files.length}`);
+  console.log(`🚫 Di-exclude (DSS/non-regulasi): ${excluded.length}`);
+  for (const ex of excluded) {
+    console.log(`   ⊘ ${ex}`);
+  }
+
+  // Load CP metadata for keyword matching
+  const { HALAL_CRITICAL_POINTS } = await import('../lib/dss/fuzzyAHP');
+  const cpWeights = HALAL_CRITICAL_POINTS;
+
+  let totalChunks = 0;
 
   for (const file of files) {
-    console.log(`\nMemproses: ${file}...`);
+    const docTitle = extractDocTitle(file);
+    console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+    console.log(`📄 ${file}`);
+    console.log(`   Judul: ${docTitle}`);
+
     const filePath = path.join(RAG_DIR, file);
     const text = fs.readFileSync(filePath, 'utf-8').trim();
 
     if (!text) {
-      console.warn(`Tidak ada teks yang dapat dibaca pada ${file}. Lewati.`);
+      console.warn(`   ⚠️  Tidak ada teks. Lewati.`);
       continue;
     }
 
     try {
-      console.log(`Mengekstrak dan menyimpan embeddings untuk ${file} (Panjang Teks: ${text.length} karakter)...`);
+      // Semantic chunking with context header
+      const chunks = oaiVectorDB.chunkText(text, 'semantic', `Sumber: ${docTitle}`);
+      console.log(`   📦 ${chunks.length} chunks (teks: ${text.length} chars)`);
 
-      // Ambil metadata CP untuk keyword matching
-      const { HALAL_CRITICAL_POINTS } = await import('../lib/dss/fuzzyAHP');
-      const cpWeights = HALAL_CRITICAL_POINTS;
-
-      // Chunk file secara manual
-      const chunks = oaiVectorDB.chunkText(text, 'paragraph');
-      console.log(`Ditemukan ${chunks.length} chunks. Melakukan mapping Fuzzy AHP...`);
+      // Show chunk size distribution
+      const sizes = chunks.map(c => c.length);
+      const avgSize = Math.round(sizes.reduce((a, b) => a + b, 0) / sizes.length);
+      const minSize = Math.min(...sizes);
+      const maxSize = Math.max(...sizes);
+      console.log(`   📊 Ukuran chunk: min=${minSize}, avg=${avgSize}, max=${maxSize}`);
 
       let processed = 0;
       for (const chunk of chunks) {
         if (!chunk.trim()) continue;
 
-        // Simple Keyword Matching untuk mapping Chunk ke Critical Point (CP)
+        // Keyword matching for CP metadata tagging
         let matchedCP: any = null;
         let maxMatches = 0;
 
@@ -63,24 +114,29 @@ async function main() {
         }
 
         const metadata = {
-          source: file.replace('.txt', ''),
-          documentType: 'PDF',
+          source: file.replace('.txt', '').replace('.pdf', ''),
+          documentTitle: docTitle,
+          documentType: 'regulasi',
+          chunkingMethod: 'semantic',
           criticalPoint: matchedCP ? matchedCP.id : null,
           cpName: matchedCP ? matchedCP.name : null,
         };
 
-        // Tambahkan ke database satu persatu (tiap chunk metadata berbeda)
         await oaiVectorDB.addChunks([chunk], metadata);
         processed++;
       }
 
-      console.log(`✅ Berhasil mengimpor ${processed} chunks dari ${file}`);
+      totalChunks += processed;
+      console.log(`   ✅ ${processed} chunks berhasil disimpan`);
     } catch (error) {
-      console.error(`❌ Gagal memproses ${file}:`, error);
+      console.error(`   ❌ Gagal memproses:`, error);
     }
   }
 
-  console.log('\nSelesai! Semua dokumen telah dimasukkan ke dalam RAG KMS dengan metadata Fuzzy AHP terikat.');
+  console.log('\n═══════════════════════════════════════════════════');
+  console.log(`✅ Selesai! Total ${totalChunks} chunks dari ${files.length} dokumen.`);
+  console.log(`🚫 ${excluded.length} file DSS/non-regulasi di-exclude.`);
+  console.log('═══════════════════════════════════════════════════');
 }
 
 main().catch(console.error);

@@ -26,7 +26,7 @@ import {
   VectorDBConfig,
 } from './config';
 
-type ChunkingMethod = 'sentence' | 'paragraph' | 'fixed';
+type ChunkingMethod = 'sentence' | 'paragraph' | 'fixed' | 'semantic';
 
 interface VectorDBConfigType {
   embedding: {
@@ -37,6 +37,10 @@ interface VectorDBConfigType {
   chunking: {
     defaultMethod: ChunkingMethod;
     fixedSize: number;
+    semanticTargetSize: number;
+    semanticMaxSize: number;
+    semanticMinSize: number;
+    semanticOverlap: number;
   };
   search: {
     defaultLimit: number;
@@ -169,13 +173,162 @@ export class VectorDB {
   }
 
   /**
+   * Clean PDF-extracted text by removing noise
+   */
+  private cleanPdfText(text: string): string {
+    return text
+      // Remove page numbers like "- 2 -", "- 10 -"
+      .replace(/^[\s]*-\s*\d+\s*-[\s]*$/gm, '')
+      // Remove pagination marks like "Pasal 2  . . .", "Dengan . . ."
+      .replace(/^.*\.\s*\.\s*\.\s*$/gm, '')
+      // Remove standalone "SALINAN" headers
+      .replace(/^\s*SALINAN\s*$/gm, '')
+      // Collapse 3+ consecutive blank lines into 2
+      .replace(/\n{3,}/g, '\n\n')
+      // Remove leading/trailing whitespace per line
+      .replace(/^[ \t]+|[ \t]+$/gm, '')
+      // Collapse multiple spaces into one
+      .replace(/ {2,}/g, ' ')
+      .trim();
+  }
+
+  /**
+   * Recursive Semantic Chunking — state-of-the-art method
+   * Splits text using a hierarchy of semantic separators,
+   * then merges small chunks and splits large ones.
+   */
+  private semanticChunk(text: string, contextHeader?: string): string[] {
+    const targetSize = this.config.chunking.semanticTargetSize;
+    const maxSize = this.config.chunking.semanticMaxSize;
+    const minSize = this.config.chunking.semanticMinSize;
+    const overlap = this.config.chunking.semanticOverlap;
+
+    // Clean text first
+    const cleanedText = this.cleanPdfText(text);
+
+    // Semantic separator hierarchy (highest to lowest)
+    const separators = [
+      /\n(?=BAB\s+[IVXLCDM]+)/,         // BAB boundaries
+      /\n(?=Bagian\s+\w+)/,              // Bagian boundaries
+      /\n(?=Pasal\s+\d+)/,              // Pasal boundaries
+      /\n(?=(?:Kriteria|Parameter|Evidence|Risk|Dokumen)\b)/i, // Section headers
+      /\n\n+/,                           // Double newlines (paragraph)
+      /(?<=\.)\s+(?=[A-Z])/,            // Sentence boundary (period + capital)
+      /\n/,                              // Single newline
+    ];
+
+    const rawChunks = this.recursiveSplit(cleanedText, separators, 0, maxSize);
+
+    // Merge small chunks
+    const merged = this.mergeSmallChunks(rawChunks, minSize, targetSize);
+
+    // Add overlap between chunks
+    const withOverlap = this.addOverlap(merged, overlap);
+
+    // Prepend context header if provided
+    if (contextHeader) {
+      return withOverlap.map((chunk) => `[${contextHeader}]\n${chunk}`);
+    }
+
+    return withOverlap;
+  }
+
+  /**
+   * Recursively split text using separator hierarchy
+   */
+  private recursiveSplit(
+    text: string,
+    separators: RegExp[],
+    level: number,
+    maxSize: number,
+  ): string[] {
+    if (text.length <= maxSize || level >= separators.length) {
+      return text.trim() ? [text.trim()] : [];
+    }
+
+    const separator = separators[level];
+    const parts = text.split(separator).filter((p) => p.trim());
+
+    const result: string[] = [];
+    for (const part of parts) {
+      const trimmed = part.trim();
+      if (!trimmed) continue;
+
+      if (trimmed.length <= maxSize) {
+        result.push(trimmed);
+      } else {
+        // Try next separator level
+        result.push(...this.recursiveSplit(trimmed, separators, level + 1, maxSize));
+      }
+    }
+
+    return result;
+  }
+
+  /**
+   * Merge chunks that are too small into their neighbors
+   */
+  private mergeSmallChunks(
+    chunks: string[],
+    minSize: number,
+    targetSize: number,
+  ): string[] {
+    if (chunks.length === 0) return [];
+
+    const result: string[] = [];
+    let buffer = chunks[0];
+
+    for (let i = 1; i < chunks.length; i++) {
+      const combined = `${buffer}\n\n${chunks[i]}`;
+
+      if (buffer.length < minSize && combined.length <= targetSize) {
+        // Current buffer is too small, merge with next
+        buffer = combined;
+      } else if (chunks[i].length < minSize && combined.length <= targetSize) {
+        // Next chunk is too small, merge into current
+        buffer = combined;
+      } else {
+        result.push(buffer);
+        buffer = chunks[i];
+      }
+    }
+
+    if (buffer.trim()) result.push(buffer);
+    return result;
+  }
+
+  /**
+   * Add overlap between consecutive chunks for context continuity
+   */
+  private addOverlap(chunks: string[], overlapSize: number): string[] {
+    if (chunks.length <= 1 || overlapSize <= 0) return chunks;
+
+    const result: string[] = [chunks[0]];
+
+    for (let i = 1; i < chunks.length; i++) {
+      const prevChunk = chunks[i - 1];
+      // Take last N characters from previous chunk as context prefix
+      const overlapText = prevChunk.length > overlapSize
+        ? '...' + prevChunk.slice(-overlapSize).trim()
+        : prevChunk;
+
+      result.push(`${overlapText}\n\n${chunks[i]}`);
+    }
+
+    return result;
+  }
+
+  /**
    * Utility function to chunk text
    */
   chunkText(
     text: string,
-    method = this.config.chunking.defaultMethod
+    method = this.config.chunking.defaultMethod,
+    contextHeader?: string,
   ): string[] {
     switch (method) {
+      case 'semantic':
+        return this.semanticChunk(text, contextHeader);
       case 'sentence':
         return text
           .trim()

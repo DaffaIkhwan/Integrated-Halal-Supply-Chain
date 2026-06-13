@@ -63,7 +63,7 @@ export async function POST(req: Request) {
 
     // Add to VectorDB
     const result = await oaiVectorDB.addText(text, {
-      chunkingMethod: "paragraph",
+      chunkingMethod: "semantic",
       metadata: { source, uploadedBy: "admin" } // Hardcoded since auth is bypassed
     });
 

@@ -5,8 +5,12 @@ export const DB_CONFIG = {
     distance: 'cosine' as 'cosine' | 'euclidean' | 'inner_product',
   },
   chunking: {
-    defaultMethod: 'sentence' as 'sentence' | 'paragraph' | 'fixed',
+    defaultMethod: 'semantic' as 'sentence' | 'paragraph' | 'fixed' | 'semantic',
     fixedSize: 500,
+    semanticTargetSize: 1000,
+    semanticMaxSize: 1500,
+    semanticMinSize: 200,
+    semanticOverlap: 150,
   },
   search: {
     defaultLimit: 5,
@@ -35,6 +39,10 @@ export type VectorDBConfig = {
   chunking?: {
     method?: typeof DB_CONFIG.chunking.defaultMethod;
     fixedSize?: number;
+    semanticTargetSize?: number;
+    semanticMaxSize?: number;
+    semanticMinSize?: number;
+    semanticOverlap?: number;
   };
   search?: {
     defaultLimit?: number;
