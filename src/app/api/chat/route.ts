@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
   try {
     const result = await streamText({
-      model: openrouter('minimax/minimax-01'),
+      model: openrouter('openai/gpt-4o-mini'),
       maxToolRoundtrips: 3,
       system: `Anda adalah asisten AI Chatbot cerdas untuk Manajemen Rantai Pasok Halal (Halal Supply Chain).
 Gunakan **Tools** berikut secara otomatis berdasarkan "Intensi" *user*:
@@ -50,29 +50,42 @@ Setelah memanggil tool dan menerima hasilnya, SELALU buatkan rangkuman jawaban d
               if (keywords.length > 0) {
                 // Try AND matching first for high relevance
                 const conditions = keywords.map((k: string, i: number) => `chunk ILIKE $${i + 1}`).join(' AND ');
-                searchResults = await prisma.$queryRawUnsafe(`SELECT chunk, metadata FROM oai WHERE ${conditions} LIMIT 5`, ...keywords);
+                searchResults = await prisma.$queryRawUnsafe(`SELECT chunk, metadata FROM oai WHERE ${conditions} LIMIT 3`, ...keywords);
 
                 // Fallback to OR if AND yields nothing
                 if (searchResults.length === 0) {
                   const orConditions = keywords.map((k: string, i: number) => `chunk ILIKE $${i + 1}`).join(' OR ');
-                  searchResults = await prisma.$queryRawUnsafe(`SELECT chunk, metadata FROM oai WHERE ${orConditions} LIMIT 5`, ...keywords);
+                  searchResults = await prisma.$queryRawUnsafe(`SELECT chunk, metadata FROM oai WHERE ${orConditions} LIMIT 3`, ...keywords);
                 }
               } else {
-                searchResults = await prisma.$queryRaw`SELECT chunk, metadata FROM oai WHERE chunk ILIKE ${`%${query}%`} LIMIT 5`;
+                searchResults = await prisma.$queryRaw`SELECT chunk, metadata FROM oai WHERE chunk ILIKE ${`%${query}%`} LIMIT 3`;
               }
               if (!searchResults || searchResults.length === 0) {
                 searchResults = await prisma.$queryRaw`SELECT chunk, metadata FROM oai LIMIT 2`;
               }
-              return `--- RAG KMS Output ---\n${searchResults
+
+              const MAX_CHUNK_CHARS = 1500;
+              const MAX_TOTAL_CHARS = 4500;
+              let totalChars = 0;
+
+              const formattedResults = searchResults
                 .map((r: any) => {
+                  if (totalChars >= MAX_TOTAL_CHARS) return null;
                   let meta: any = {};
                   try {
                     meta = typeof r.metadata === 'string' ? JSON.parse(r.metadata) : (r.metadata || {});
                   } catch (e) { }
                   const cp = meta.criticalPoint || 'General KMS';
-                  return `[${cp}] ${r.chunk}`;
+                  const truncatedChunk = r.chunk.length > MAX_CHUNK_CHARS
+                    ? r.chunk.substring(0, MAX_CHUNK_CHARS) + '... [dipotong]'
+                    : r.chunk;
+                  totalChars += truncatedChunk.length;
+                  return `[${cp}] ${truncatedChunk}`;
                 })
-                .join('\n\n')}`;
+                .filter(Boolean)
+                .join('\n\n');
+
+              return `--- RAG KMS Output ---\n${formattedResults}`;
             } catch (e: any) {
               console.error('RAG search error:', e);
               return `Gagal mencari di knowledge base: ${e.message}`;
@@ -147,11 +160,12 @@ Setelah memanggil tool dan menerima hasilnya, SELALU buatkan rangkuman jawaban d
     if (
       error?.message?.toLowerCase().includes("quota") ||
       error?.message?.includes("429") ||
-      error?.statusCode === 429 ||
-      error?.name === 'AI_RetryError' ||
-      error?.name === 'AI_APICallError'
+      error?.statusCode === 429
     ) {
-      errorMessage = "Limit API Key OpenRouter/Minimax telah habis (Quota Exceeded). Silakan buat API Key baru dan pastikan saldo cukup.";
+      errorMessage = "Limit API Key OpenRouter telah habis (Quota Exceeded). Silakan buat API Key baru dan pastikan saldo cukup.";
+    } else if (error?.name === 'AI_RetryError' || error?.name === 'AI_APICallError') {
+      const detail = error?.responseBody || error?.message || 'Unknown AI error';
+      errorMessage = `AI API Error: ${typeof detail === 'string' ? detail : JSON.stringify(detail)}`;
     } else if (error?.message) {
       errorMessage = `Server Error: ${error.message}`;
     }
