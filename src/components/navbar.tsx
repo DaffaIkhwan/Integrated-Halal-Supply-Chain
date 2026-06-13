@@ -165,6 +165,7 @@ export function Navbar() {
 			children: [
 				{ href: "/chat", label: "Chatbot" },
 				{ href: "/docs", label: "Tambah Knowledge" },
+				{ href: "/dashboard/knowledge-base", label: "Lihat Knowledge Base" },
 			],
 		};
 
