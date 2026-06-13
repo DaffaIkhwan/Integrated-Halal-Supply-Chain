@@ -31,6 +31,16 @@ export async function GET(request: Request) {
       return row;
     });
 
+    // Crisp pairwise table — defuzzified middle values for readable Saaty-like display
+    const crispPairwiseTable = codes.map((rowCode, i) => {
+      const row: any = { code: rowCode };
+      codes.forEach((colCode, j) => {
+        const cell = matrix[i]?.[j] || [1, 1, 1];
+        row[colCode] = defuzzify(cell);
+      });
+      return row;
+    });
+
     const resultTable = codes.map((code, i) => {
       const f = fse[i] || [0, 0, 0];
       return {
@@ -84,6 +94,7 @@ export async function GET(request: Request) {
     return NextResponse.json({
       codes,
       pairwiseTable,
+      crispPairwiseTable,
       resultTable,
       cr,
       allCRs,

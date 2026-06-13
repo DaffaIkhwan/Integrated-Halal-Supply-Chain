@@ -13,7 +13,9 @@ import {
   Settings2,
   ChevronRight,
   Loader2,
-  AlertTriangle
+  AlertTriangle,
+  ToggleLeft,
+  ToggleRight
 } from "lucide-react";
 
 const MATRIX_TYPES = [
@@ -33,6 +35,7 @@ export default function AHPStepsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState('LEVEL1_CP');
+  const [matrixView, setMatrixView] = useState<'tfn' | 'crisp'>('crisp');
 
   const fetchData = (type: string) => {
     setLoading(true);
@@ -55,33 +58,78 @@ export default function AHPStepsPage() {
 
   const AHP_STEPS = [
     {
-      title: "1 & 2. Matriks Perbandingan TFN",
+      title: "1 & 2. Matriks Perbandingan Berpasangan",
       icon: <TableProperties className="h-6 w-6 text-cyan-400" />,
-      description: "Tabel berikut adalah matriks skala pakar yang sudah dikonversi ke format Triangular Fuzzy Number (TFN) [Lower, Middle, Upper].",
+      description: matrixView === 'tfn'
+        ? "Tabel berikut adalah matriks skala pakar yang sudah dikonversi ke format Triangular Fuzzy Number (TFN) [Lower, Middle, Upper]."
+        : "Tabel berikut adalah matriks perbandingan berpasangan (Pairwise Comparison) dengan nilai crisp (defuzzified) dari rata-rata geometris pakar.",
       details: `Matriks ini didapat dari database (${selectedLabel}).`,
-      formula: "M = (l, m, u)",
+      formula: matrixView === 'tfn' ? "M = (l, m, u)" : "Crisp = (l+m+u)/3",
       content: data ? (
-        <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
-          <table className="w-full text-left text-xs whitespace-nowrap">
-            <thead className="bg-muted/50 border-b">
-              <tr>
-                <th className="p-3 font-semibold text-muted-foreground bg-muted">Kriteria</th>
-                {data.codes.map((c: string) => (
-                  <th key={c} className="p-3 font-semibold text-muted-foreground">{c}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border/50">
-              {data.pairwiseTable.map((row: any, i: number) => (
-                <tr key={i} className="hover:bg-muted/20">
-                  <td className="p-3 font-bold bg-muted/20">{row.code}</td>
+        <div className="space-y-3 mt-4">
+          {/* Toggle TFN / Crisp */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMatrixView(matrixView === 'tfn' ? 'crisp' : 'tfn')}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border bg-muted/50 hover:bg-muted"
+            >
+              {matrixView === 'tfn' ? (
+                <><ToggleRight className="h-4 w-4 text-cyan-500" /> Tampilan: TFN [l, m, u]</>
+              ) : (
+                <><ToggleLeft className="h-4 w-4 text-emerald-500" /> Tampilan: Crisp (Defuzzified)</>
+              )}
+            </button>
+            <span className="text-[10px] text-muted-foreground">
+              {matrixView === 'tfn' ? 'Klik untuk beralih ke nilai tunggal' : 'Klik untuk beralih ke format TFN'}
+            </span>
+          </div>
+
+          <div className="overflow-x-auto rounded-xl border border-border/50">
+            <table className="w-full text-left text-xs whitespace-nowrap">
+              <thead className="bg-muted/50 border-b">
+                <tr>
+                  <th className="p-3 font-semibold text-muted-foreground bg-muted">Kriteria</th>
                   {data.codes.map((c: string) => (
-                    <td key={c} className="p-3 font-mono text-[11px] text-foreground/80">{row[c]}</td>
+                    <th key={c} className="p-3 font-semibold text-muted-foreground text-center">{c}</th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-border/50">
+                {(matrixView === 'tfn' ? data.pairwiseTable : data.crispPairwiseTable)?.map((row: any, i: number) => (
+                  <tr key={i} className="hover:bg-muted/20">
+                    <td className="p-3 font-bold bg-muted/20">{row.code}</td>
+                    {data.codes.map((c: string) => {
+                      if (matrixView === 'tfn') {
+                        return (
+                          <td key={c} className="p-3 font-mono text-[11px] text-foreground/80 text-center">{row[c]}</td>
+                        );
+                      }
+                      const val = typeof row[c] === 'number' ? row[c] : parseFloat(row[c]);
+                      const isDiag = row.code === c;
+                      const isHigh = val > 1.5;
+                      const isLow = val < 0.67;
+                      return (
+                        <td
+                          key={c}
+                          className={`p-3 font-mono text-[12px] font-semibold text-center ${
+                            isDiag
+                              ? 'text-muted-foreground bg-muted/30'
+                              : isHigh
+                                ? 'text-amber-500'
+                                : isLow
+                                  ? 'text-blue-400'
+                                  : 'text-foreground/70'
+                          }`}
+                        >
+                          {isDiag ? '1.00' : val.toFixed(2)}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : null
     },
