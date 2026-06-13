@@ -7,8 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function KnowledgeBasePage() {
   const chunks = await prisma.oai.findMany({
-    take: 100, // Limit to 100 to avoid freezing the UI
-    orderBy: { createdAt: 'desc' },
+    orderBy: { id: 'asc' },
   });
 
   const totalChunks = await prisma.oai.count();
