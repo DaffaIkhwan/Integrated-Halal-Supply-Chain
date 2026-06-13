@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import {
   Table2, Search, Eye, X, Loader2, AlertTriangle,
   Scale, User, ChevronDown, ChevronUp, Users, FileSpreadsheet,
-  ArrowLeftRight, ArrowLeft, ArrowRight, Minus, Edit2, Save, Plus
+  ArrowLeftRight, ArrowLeft, ArrowRight, Minus, Edit2, Save, Plus, Trash2
 } from "lucide-react";
 import * as XLSX from "xlsx";
 import { ALL_CP_QUESTIONNAIRES, KU_KRITERIA_UMUM } from "@/lib/data/questionnaire-index";
@@ -83,6 +83,7 @@ function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QRespons
   const [isEditMode, setIsEditMode] = useState(false);
   const [editedComparisons, setEditedComparisons] = useState<Record<string, number>>({});
   const [isSaving, setIsSaving] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const answers = item.answers as Record<string, unknown>;
   const respondentInfo = item.respondentInfo || {};
@@ -127,6 +128,31 @@ function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QRespons
     }
   };
 
+  const handleDelete = async () => {
+    if (!confirm("Apakah Anda yakin ingin menghapus data kuesioner ini secara permanen?")) {
+      return;
+    }
+    
+    setIsDeleting(true);
+    try {
+      const res = await fetch(`/api/dss/questionnaire-responses/${item.id}`, {
+        method: "DELETE"
+      });
+      
+      if (!res.ok) {
+        throw new Error("Failed to delete");
+      }
+      
+      onSaveSuccess();
+      onClose();
+    } catch (e) {
+      console.error(e);
+      alert("Gagal menghapus data");
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={onClose}>
       <motion.div
@@ -154,9 +180,14 @@ function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QRespons
           </div>
           <div className="flex items-center gap-2">
             {isAdmin && !isEditMode && (
-              <button onClick={() => setIsEditMode(true)} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 transition-colors text-sm font-semibold">
-                <Edit2 className="h-4 w-4" /> Edit
-              </button>
+              <>
+                <button onClick={() => setIsEditMode(true)} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 transition-colors text-sm font-semibold">
+                  <Edit2 className="h-4 w-4" /> Edit
+                </button>
+                <button onClick={handleDelete} disabled={isDeleting} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-red-500/80 hover:bg-red-600 transition-colors text-sm font-semibold shadow-lg shadow-red-500/20 disabled:opacity-50">
+                  {isDeleting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />} Hapus
+                </button>
+              </>
             )}
             {isEditMode && (
               <>

@@ -42,3 +42,34 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     );
   }
 }
+
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    const session = await auth();
+    const { id } = await params;
+
+    if (!session || session.user?.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized. Admin access required.' }, { status: 403 });
+    }
+
+    const existingResponse = await prisma.questionnaireResponse.findUnique({
+      where: { id }
+    });
+
+    if (!existingResponse) {
+      return NextResponse.json({ error: 'Response not found.' }, { status: 404 });
+    }
+
+    await prisma.questionnaireResponse.delete({
+      where: { id }
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (error: any) {
+    console.error('DELETE QuestionnaireResponse Error:', error?.message || error);
+    return NextResponse.json(
+      { error: error?.message || String(error) },
+      { status: 500 }
+    );
+  }
+}
