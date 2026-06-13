@@ -562,6 +562,7 @@ function ExpertCard({ group, isAdmin, onRefresh, onViewDetail }: { group: Expert
   const [expanded, setExpanded] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [showAddMenu, setShowAddMenu] = useState(false);
+  const [isDeletingAll, setIsDeletingAll] = useState(false);
 
   const existingTypes = new Set(group.responses.map(r => String((r.answers as any)?.type || "")));
   const expectedTypes = ["KU_LEVEL", "CP_LEVEL", ...ALL_CP_QUESTIONNAIRES.map(c => c.cpId)];
@@ -636,6 +637,28 @@ function ExpertCard({ group, isAdmin, onRefresh, onViewDetail }: { group: Expert
     return aType.localeCompare(bType);
   });
 
+  const handleDeleteAll = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!confirm(`Apakah Anda yakin ingin menghapus SELURUH data kuesioner (${group.responses.length} respons) milik ${group.name} secara permanen?`)) {
+      return;
+    }
+    
+    setIsDeletingAll(true);
+    try {
+      await Promise.all(
+        group.responses.map(res => 
+          fetch(`/api/dss/questionnaire-responses/${res.id}`, { method: "DELETE" })
+        )
+      );
+      onRefresh();
+    } catch (e) {
+      console.error(e);
+      alert("Gagal menghapus seluruh data responden");
+    } finally {
+      setIsDeletingAll(false);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -659,6 +682,16 @@ function ExpertCard({ group, isAdmin, onRefresh, onViewDetail }: { group: Expert
           </div>
         </div>
         <div className="flex items-center gap-3 shrink-0">
+          {isAdmin && (
+            <button 
+              onClick={handleDeleteAll} 
+              disabled={isDeletingAll}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500/20 text-xs font-bold transition-all border border-red-500/30 disabled:opacity-50"
+            >
+              {isDeletingAll ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Trash2 className="h-3.5 w-3.5" />}
+              Hapus Responden
+            </button>
+          )}
           {isAdmin && missingTypes.length > 0 && (
             <div className="relative">
               <button
