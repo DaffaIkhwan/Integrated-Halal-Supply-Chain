@@ -93,9 +93,9 @@ Setelah memanggil tool dan menerima hasilnya, SELALU buatkan rangkuman jawaban d
           },
         },
         check_halal_risk: {
-          description: 'Menarik hasil matriks klasifikasi risiko Fuzzy AHP terkini dari database.',
+          description: 'Menarik hasil matriks klasifikasi risiko Fuzzy AHP terkini dari database, termasuk bobot (weight) dan tingkat kerentanan untuk semua Titik Kritis (Critical Points / CP).',
           parameters: z.object({
-            batchId: z.string().optional().describe('Opsional: Batch ID untuk risk score spesifik per batch'),
+            batchId: z.string().optional().describe('Opsional: HANYA diisi jika user secara eksplisit menyebut kata "Batch" (contoh: "Batch 123"). JANGAN diisi jika user bertanya tentang CP (contoh: "CP1", "Titik Kritis").'),
           }),
           execute: async ({ batchId }) => {
             try {
