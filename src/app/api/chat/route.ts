@@ -52,7 +52,7 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
 - **WAJIB Gunakan Tabel Markdown (Markdown Table)** saat menyajikan data yang terstruktur. Misalnya, saat menampilkan daftar Critical Points (CP), hasil status Compliance, nilai Risk Score, atau rincian batch pelacakan (Traceability).
 - Gunakan poin-poin (bullet points) dan heading jika diperlukan untuk penjelasan teks.
 - Setelah memanggil tool, rangkum hasilnya menjadi jawaban informatif. Jangan tampilkan data mentah.
-- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko ketidakhalalan pada CP yang memiliki status PENDING, FAIL, atau berisiko tinggi.
+- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko ketidakhalalan pada CP yang memiliki kategori Moderate Risk, High Risk, atau Critical Risk.
 - Sertakan referensi sumber jika tersedia (nama dokumen, pasal regulasi, dll).
 - Jika data dari knowledge base terbatas, sampaikan apa adanya tanpa menambahkan informasi dari luar knowledge base.`,
       messages,
@@ -165,8 +165,10 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
               let traceOutput = `--- Traceability Info ---\nBatch ID: ${batchInfo.id}\nTanggal Produksi: ${batchInfo.productionDate}\nTotal Risk Score: ${batchInfo.totalRiskScore.toFixed(4)} (${batchInfo.riskLevel})\nAsal Ternak: ${batchInfo.cattle.earTag} dari ${batchInfo.cattle.farm.name}\nRPH: ${batchInfo.slaughterhouse.name}`;
               if (batchInfo.cpRecords.length > 0) {
                 traceOutput += `\n\nCompliance Records:`;
+                const { getRiskLevel } = await import('@/lib/dss/fuzzyAHP');
                 for (const rec of batchInfo.cpRecords) {
-                  traceOutput += `\n  ${rec.criticalPoint.id} ${rec.criticalPoint.name}: ${rec.complianceStatus} | Risk: ${rec.weightedRisk.toFixed(3)}`;
+                  const rLevel = getRiskLevel(rec.riskValue);
+                  traceOutput += `\n  ${rec.criticalPoint.id} ${rec.criticalPoint.name}: ${rLevel} Risk | Local Score: ${rec.riskValue.toFixed(3)} | Weighted: ${rec.weightedRisk.toFixed(3)}`;
                 }
               }
               return traceOutput;
