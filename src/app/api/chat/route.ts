@@ -54,11 +54,13 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
 ## FORMAT JAWABAN
 - Jawab dalam **Bahasa Indonesia** yang terstruktur dan profesional.
 - **WAJIB Gunakan Tabel Markdown (Markdown Table)** HANYA saat menyajikan rincian data berulang/berseri. Misalnya, saat menampilkan rincian Critical Points (CP), skor per CP, atau riwayat compliance.
+- **Tabel HANYA BOLEH berisi baris CP1 sampai CP9**. JANGAN pernah membuat baris "CP10" atau "Sertifikat Halal" di dalam tabel.
 - **JANGAN Gunakan Tabel** untuk **Informasi Umum** (seperti Batch ID, Tanggal Produksi, Asal Ternak, RPH, Total Risk Score, dsb). Untuk bagian Informasi Umum, gunakan format daftar teks biasa (bullet points atau list bersusun).
 - **JANGAN cantumkan kolom "Sub-CP", "Sub-CP Tertinggi", atau "Nilai Sub-CP" di dalam tabel**. Sebutkan hal tersebut HANYA pada paragraf penjelasan di bawah tabel.
+- **JANGAN menyebutkan nilai angka** (contoh: "dengan nilai 5") saat menyebutkan Sub-CP Tertinggi di penjelasan teks. Cukup sebutkan nama Sub-CP-nya saja.
 - Gunakan poin-poin (bullet points) dan heading jika diperlukan untuk penjelasan teks.
 - Setelah memanggil tool, rangkum hasilnya menjadi jawaban informatif. Jangan tampilkan data mentah.
-- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB sebutkan secara spesifik **CP mana yang memiliki risiko tertinggi beserta Sub-CP penyumbang risiko terbesarnya**. Lalu berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko tersebut.
+- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB sebutkan secara spesifik **CP mana yang memiliki risiko tertinggi beserta Sub-CP penyumbang risiko terbesarnya** di paragraf terpisah (tanpa mencantumkan angka nilainya). Lalu berikan saran tindakan selanjutnya (recommendations) yang konkrit.
 - Sertakan referensi sumber jika tersedia (nama dokumen, pasal regulasi, dll).
 - Jika data dari knowledge base terbatas, sampaikan apa adanya tanpa menambahkan informasi dari luar knowledge base.`,
       messages,
@@ -211,7 +213,7 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
                      if (risks.length > 0) {
                        let formattedKey = risks[0].key.replace(/Risk$/, '').replace(/([A-Z])/g, ' $1').trim();
                        formattedKey = formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
-                       traceOutput += ` (Sub-CP Tertinggi: ${formattedKey} dengan nilai ${risks[0].value})`;
+                       traceOutput += ` (Sub-CP Tertinggi: ${formattedKey})`;
                      }
                   }
                 }
