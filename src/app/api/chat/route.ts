@@ -53,7 +53,7 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
 - **JANGAN Gunakan Tabel** untuk **Informasi Umum** (seperti Batch ID, Tanggal Produksi, Asal Ternak, RPH, Total Risk Score, dsb). Untuk bagian Informasi Umum, gunakan format daftar teks biasa (bullet points atau list bersusun).
 - Gunakan poin-poin (bullet points) dan heading jika diperlukan untuk penjelasan teks.
 - Setelah memanggil tool, rangkum hasilnya menjadi jawaban informatif. Jangan tampilkan data mentah.
-- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko ketidakhalalan pada CP yang memiliki kategori Moderate Risk, High Risk, atau Critical Risk.
+- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB sebutkan secara spesifik **CP mana yang memiliki risiko tertinggi beserta Sub-CP penyumbang risiko terbesarnya**. Lalu berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko tersebut.
 - Sertakan referensi sumber jika tersedia (nama dokumen, pasal regulasi, dll).
 - Jika data dari knowledge base terbatas, sampaikan apa adanya tanpa menambahkan informasi dari luar knowledge base.`,
       messages,
@@ -154,12 +154,24 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
             try {
               let batchInfo = await prisma.halalBatch.findFirst({
                 where: { cattle: { earTag: { contains: batchId, mode: 'insensitive' } } },
-                include: { cattle: { include: { farm: true } }, slaughterhouse: true, cpRecords: { include: { criticalPoint: true }, orderBy: { criticalPoint: { id: 'asc' } } } }
+                include: { 
+                  cattle: { include: { farm: true } }, 
+                  slaughterhouse: true, 
+                  cpRecords: { include: { criticalPoint: true }, orderBy: { criticalPoint: { id: 'asc' } } },
+                  cp1Farm: true, cp2Feed: true, cp3Transport: true, cp4Slaughter: true, cp5PostSlaughter: true,
+                  cp6Processing: true, cp7Storage: true, cp8Distribution: true, cp9Retail: true
+                }
               });
               if (!batchInfo) {
                 batchInfo = await prisma.halalBatch.findFirst({
                   where: { id: { contains: batchId } },
-                  include: { cattle: { include: { farm: true } }, slaughterhouse: true, cpRecords: { include: { criticalPoint: true }, orderBy: { criticalPoint: { id: 'asc' } } } }
+                  include: { 
+                    cattle: { include: { farm: true } }, 
+                    slaughterhouse: true, 
+                    cpRecords: { include: { criticalPoint: true }, orderBy: { criticalPoint: { id: 'asc' } } },
+                    cp1Farm: true, cp2Feed: true, cp3Transport: true, cp4Slaughter: true, cp5PostSlaughter: true,
+                    cp6Processing: true, cp7Storage: true, cp8Distribution: true, cp9Retail: true
+                  }
                 });
               }
               if (!batchInfo) return `Data Traceability untuk Batch "${batchId}" tidak ditemukan.`;
@@ -170,6 +182,28 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
                 for (const rec of batchInfo.cpRecords) {
                   const rLevel = getRiskLevel(rec.riskValue);
                   traceOutput += `\n  ${rec.criticalPoint.id} ${rec.criticalPoint.name}: ${rLevel} Risk | Risk Score: ${rec.riskValue.toFixed(4)} | Global Weighted Risk: ${rec.weightedRisk.toFixed(4)}`;
+                  
+                  let subDetails: any = null;
+                  if (rec.criticalPoint.id === 'CP1' && batchInfo.cp1Farm[0]) subDetails = batchInfo.cp1Farm[0];
+                  if (rec.criticalPoint.id === 'CP2' && batchInfo.cp2Feed[0]) subDetails = batchInfo.cp2Feed[0];
+                  if (rec.criticalPoint.id === 'CP3' && batchInfo.cp3Transport[0]) subDetails = batchInfo.cp3Transport[0];
+                  if (rec.criticalPoint.id === 'CP4' && batchInfo.cp4Slaughter[0]) subDetails = batchInfo.cp4Slaughter[0];
+                  if (rec.criticalPoint.id === 'CP5' && batchInfo.cp5PostSlaughter[0]) subDetails = batchInfo.cp5PostSlaughter[0];
+                  if (rec.criticalPoint.id === 'CP6' && batchInfo.cp6Processing[0]) subDetails = batchInfo.cp6Processing[0];
+                  if (rec.criticalPoint.id === 'CP7' && batchInfo.cp7Storage[0]) subDetails = batchInfo.cp7Storage[0];
+                  if (rec.criticalPoint.id === 'CP8' && batchInfo.cp8Distribution[0]) subDetails = batchInfo.cp8Distribution[0];
+                  if (rec.criticalPoint.id === 'CP9' && batchInfo.cp9Retail[0]) subDetails = batchInfo.cp9Retail[0];
+                  
+                  if (subDetails) {
+                     const risks = Object.entries(subDetails)
+                       .filter(([k]) => k.endsWith('Risk') && k !== 'riskScore')
+                       .map(([k, v]) => ({ key: k, value: Number(v) || 0 }))
+                       .sort((a, b) => b.value - a.value);
+                     
+                     if (risks.length > 0) {
+                       traceOutput += ` (Sub-CP Tertinggi: ${risks[0].key} dengan nilai ${risks[0].value})`;
+                     }
+                  }
                 }
               }
               return traceOutput;
