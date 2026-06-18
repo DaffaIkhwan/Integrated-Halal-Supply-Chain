@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
     console.log('🌱 Seeding Critical Points dan Criteria Weights...');
 
-    // ── 10 Critical Points ──
+    // ── 9 Critical Points ──
     const cps = [
         { id: 'CP1', name: 'Farm/Kandang Sapi', globalWeight: 0.080, localRiskScore: 0.376, riskLevel: 'Moderate' },
         { id: 'CP2', name: 'Pakan & Kesehatan Hewan', globalWeight: 0.070, localRiskScore: 0.371, riskLevel: 'Moderate' },
@@ -16,7 +16,7 @@ async function main() {
         { id: 'CP7', name: 'Cold Storage/Warehouse', globalWeight: 0.100, localRiskScore: 0.538, riskLevel: 'High' },
         { id: 'CP8', name: 'Distribusi/Logistik', globalWeight: 0.100, localRiskScore: 0.600, riskLevel: 'High' },
         { id: 'CP9', name: 'Retail/Pasar/Supermarket', globalWeight: 0.070, localRiskScore: 0.420, riskLevel: 'Moderate' },
-        { id: 'CP10', name: 'Konsumen & Complaint Handling', globalWeight: 0.030, localRiskScore: 0.463, riskLevel: 'Moderate' },
+
     ];
 
     for (const cp of cps) {
@@ -26,7 +26,7 @@ async function main() {
             create: { ...cp, globalWeightedRisk: cp.globalWeight * cp.localRiskScore },
         });
     }
-    console.log('✅ 10 Critical Points seeded.');
+    console.log('✅ 9 Critical Points seeded.');
 
     // ── 65+ Criteria Weights (Bobot Pakar per Sub-Kriteria) ──
     const criteria: { cpId: string; code: string; name: string; weight: number }[] = [
@@ -99,12 +99,7 @@ async function main() {
         { cpId: 'CP9', code: 'RT5', name: 'Consumer information accessibility', weight: 0.12 },
         { cpId: 'CP9', code: 'RT6', name: 'Supplier traceability', weight: 0.12 },
         { cpId: 'CP9', code: 'RT7', name: 'Complaint handling', weight: 0.08 },
-        // CP10 — Consumer (5)
-        { cpId: 'CP10', code: 'C1', name: 'Information transparency', weight: 0.25 },
-        { cpId: 'CP10', code: 'C2', name: 'Traceability accessibility', weight: 0.25 },
-        { cpId: 'CP10', code: 'C3', name: 'Complaint responsiveness', weight: 0.20 },
-        { cpId: 'CP10', code: 'C4', name: 'Consumer trust', weight: 0.15 },
-        { cpId: 'CP10', code: 'C5', name: 'Halal literacy', weight: 0.15 },
+
     ];
 
     for (const c of criteria) {

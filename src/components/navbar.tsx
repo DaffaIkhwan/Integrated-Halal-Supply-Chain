@@ -18,7 +18,6 @@ const ROLE_SHORT: Record<string, string> = {
 	CP7_STORAGE: "CP7",
 	CP8_DISTRIBUTION: "CP8",
 	CP9_RETAIL: "CP9",
-	CP10_CONSUMER: "CP10",
 	PAKAR_K1: "Pakar K1",
 	PAKAR_K2: "Pakar K2",
 };
@@ -143,7 +142,7 @@ export function Navbar() {
 			];
 		}
 
-		// CP1..CP10 — hanya Kuesioner 3 + Chat
+		// CP1..CP9 — hanya Kuesioner 3 + Chat
 		if (role !== "ADMIN") {
 			const isFarmOrSlaughter = role === "CP1_FARM" || role === "CP4_SLAUGHTER";
 			return [

@@ -19,7 +19,6 @@ const ROLE_LABELS: Record<string, string> = {
   CP7_STORAGE: "CP7 — Cold Storage",
   CP8_DISTRIBUTION: "CP8 — Distribusi",
   CP9_RETAIL: "CP9 — Retail / Pasar",
-  CP10_CONSUMER: "CP10 — Konsumen",
 };
 
 export default function LoginPage() {

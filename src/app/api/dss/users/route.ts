@@ -49,7 +49,6 @@ export async function GET() {
         CP7_STORAGE: warehouses,
         CP8_DISTRIBUTION: distributors,
         CP9_RETAIL: retailers,
-        CP10_CONSUMER: retailers,
       }
     });
   } catch (error: any) {

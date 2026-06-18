@@ -124,16 +124,7 @@ export async function GET() {
           { key: 'complaintRisk', label: 'Complaint handling', criteriaCode: 'RT7' },
         ],
       },
-      CP10: {
-        label: 'CP10 — Konsumen & Complaint',
-        fields: [
-          { key: 'transparansiRisk', label: 'Information transparency', criteriaCode: 'C1' },
-          { key: 'traceabilityRisk', label: 'Traceability accessibility', criteriaCode: 'C2' },
-          { key: 'responsivenessRisk', label: 'Complaint responsiveness', criteriaCode: 'C3' },
-          { key: 'consumerTrustRisk', label: 'Consumer trust', criteriaCode: 'C4' },
-          { key: 'halalLiteracyRisk', label: 'Halal literacy', criteriaCode: 'C5' },
-        ],
-      },
+
     };
 
     return NextResponse.json({ farms, slaughterhouses, cattle, criticalPoints, cpFields });
@@ -170,7 +161,7 @@ export async function POST(req: NextRequest) {
       prisma.cP7StorageRecord.deleteMany({ where: { halalBatchId: batchId } }),
       prisma.cP8DistributionRecord.deleteMany({ where: { halalBatchId: batchId } }),
       prisma.cP9RetailRecord.deleteMany({ where: { halalBatchId: batchId } }),
-      prisma.cP10ConsumerRecord.deleteMany({ where: { halalBatchId: batchId } }),
+
       prisma.criticalPointRecord.deleteMany({ where: { halalBatchId: batchId } }),
     ]);
 
@@ -184,7 +175,7 @@ export async function POST(req: NextRequest) {
     if (cpData.CP7) await prisma.cP7StorageRecord.create({ data: { halalBatchId: batchId, ...cpData.CP7 } });
     if (cpData.CP8) await prisma.cP8DistributionRecord.create({ data: { halalBatchId: batchId, ...cpData.CP8 } });
     if (cpData.CP9) await prisma.cP9RetailRecord.create({ data: { halalBatchId: batchId, ...cpData.CP9 } });
-    if (cpData.CP10) await prisma.cP10ConsumerRecord.create({ data: { halalBatchId: batchId, ...cpData.CP10 } });
+
 
     // Create generic CriticalPointRecord entries
     const cps = await prisma.criticalPoint.findMany();

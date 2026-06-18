@@ -415,10 +415,7 @@ async function getCPRecordRiskValues(
       model: 'cP9RetailRecord',
       fields: { RT1: 'labelHalalRisk', RT2: 'displayRisk', RT3: 'storageTemRisk', RT4: 'expiryRisk', RT5: 'consumerInfoRisk', RT6: 'supplierTraceRisk', RT7: 'complaintRisk' },
     },
-    CP10: {
-      model: 'cP10ConsumerRecord',
-      fields: { C1: 'transparansiRisk', C2: 'traceabilityRisk', C3: 'responsivenessRisk', C4: 'consumerTrustRisk', C5: 'halalLiteracyRisk' },
-    },
+
   };
 
   const mapping = fieldMappings[cpId];
@@ -454,7 +451,7 @@ export const HALAL_CRITICAL_POINTS = [
   { id: "CP7", name: "Cold Storage/Warehouse", keywords: ["gudang", "suhu", "cold storage", "pendingin"] },
   { id: "CP8", name: "Distribusi/Logistik", keywords: ["distribusi", "logistik", "kirim"] },
   { id: "CP9", name: "Retail/Pasar/Supermarket", keywords: ["retail", "pasar", "supermarket", "toko"] },
-  { id: "CP10", name: "Konsumen & Complaint", keywords: ["konsumen", "complaint", "keluhan"] },
+
 ];
 
 /**

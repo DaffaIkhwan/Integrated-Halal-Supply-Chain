@@ -44,7 +44,7 @@ async function main() {
   // ── Step 2: Level 2 (Sub-criteria per CP) ──
   console.log('\n━━━ LEVEL 2: Bobot sub-kriteria per CP ━━━');
 
-  const cpIds = l1Codes; // CP1..CP10
+  const cpIds = l1Codes; // CP1..CP9
   for (const cpId of cpIds) {
     const matrixType = `LEVEL2_${cpId}`;
     try {

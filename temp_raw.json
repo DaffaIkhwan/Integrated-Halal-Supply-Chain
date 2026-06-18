@@ -1,0 +1,1068 @@
+{
+  "Irdha": [
+    [
+      "PAKAR: Irdha Mirdayati"
+    ],
+    [
+      "Instansi: Program studi Magister Peternakan UIN Suska Riau",
+      "Jabatan: Dosen"
+    ],
+    [],
+    [
+      "Kategori: Kriteria Umum (KU)",
+      "Tanggal: 04 Juni 2026",
+      "Status: SUBMITTED"
+    ],
+    [
+      "No",
+      "Kriteria A",
+      "Kriteria B",
+      "Skala",
+      "Arah",
+      "Interpretasi"
+    ],
+    [
+      1,
+      "KU1",
+      "KU2",
+      9,
+      "← KU1",
+      "KU1 — Mutlak Lebih Penting"
+    ],
+    [
+      2,
+      "KU1",
+      "KU3",
+      7,
+      "→ KU3",
+      "KU3 — Sangat Lebih Penting"
+    ],
+    [
+      3,
+      "KU1",
+      "KU4",
+      7,
+      "→ KU4",
+      "KU4 — Sangat Lebih Penting"
+    ],
+    [
+      4,
+      "KU1",
+      "KU5",
+      7,
+      "→ KU5",
+      "KU5 — Sangat Lebih Penting"
+    ],
+    [
+      5,
+      "KU1",
+      "KU6",
+      7,
+      "→ KU6",
+      "KU6 — Sangat Lebih Penting"
+    ],
+    [
+      6,
+      "KU1",
+      "KU7",
+      7,
+      "→ KU7",
+      "KU7 — Sangat Lebih Penting"
+    ],
+    [
+      7,
+      "KU1",
+      "KU8",
+      7,
+      "→ KU8",
+      "KU8 — Sangat Lebih Penting"
+    ],
+    [
+      8,
+      "KU1",
+      "KU9",
+      7,
+      "→ KU9",
+      "KU9 — Sangat Lebih Penting"
+    ],
+    [
+      9,
+      "KU2",
+      "KU3",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      10,
+      "KU2",
+      "KU4",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      11,
+      "KU2",
+      "KU5",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      12,
+      "KU2",
+      "KU6",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      13,
+      "KU2",
+      "KU8",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      14,
+      "KU2",
+      "KU9",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      15,
+      "KU3",
+      "KU4",
+      3,
+      "← KU3",
+      "KU3 — Sedikit Lebih Penting"
+    ],
+    [
+      16,
+      "KU3",
+      "KU6",
+      5,
+      "→ KU6",
+      "KU6 — Lebih Penting"
+    ],
+    [
+      17,
+      "KU3",
+      "KU7",
+      5,
+      "→ KU7",
+      "KU7 — Lebih Penting"
+    ],
+    [
+      18,
+      "KU3",
+      "KU8",
+      3,
+      "→ KU8",
+      "KU8 — Sedikit Lebih Penting"
+    ],
+    [
+      19,
+      "KU3",
+      "KU9",
+      3,
+      "→ KU9",
+      "KU9 — Sedikit Lebih Penting"
+    ],
+    [
+      20,
+      "KU4",
+      "KU5",
+      3,
+      "→ KU5",
+      "KU5 — Sedikit Lebih Penting"
+    ],
+    [
+      21,
+      "KU4",
+      "KU6",
+      7,
+      "→ KU6",
+      "KU6 — Sangat Lebih Penting"
+    ],
+    [
+      22,
+      "KU4",
+      "KU7",
+      3,
+      "→ KU7",
+      "KU7 — Sedikit Lebih Penting"
+    ],
+    [
+      23,
+      "KU4",
+      "KU9",
+      3,
+      "→ KU9",
+      "KU9 — Sedikit Lebih Penting"
+    ],
+    [
+      24,
+      "KU5",
+      "KU6",
+      5,
+      "→ KU6",
+      "KU6 — Lebih Penting"
+    ],
+    [
+      25,
+      "KU5",
+      "KU7",
+      3,
+      "→ KU7",
+      "KU7 — Sedikit Lebih Penting"
+    ],
+    [
+      26,
+      "KU5",
+      "KU8",
+      3,
+      "→ KU8",
+      "KU8 — Sedikit Lebih Penting"
+    ],
+    [
+      27,
+      "KU5",
+      "KU9",
+      3,
+      "→ KU9",
+      "KU9 — Sedikit Lebih Penting"
+    ],
+    [
+      28,
+      "KU6",
+      "KU8",
+      3,
+      "← KU6",
+      "KU6 — Sedikit Lebih Penting"
+    ],
+    [
+      29,
+      "KU6",
+      "KU9",
+      3,
+      "← KU6",
+      "KU6 — Sedikit Lebih Penting"
+    ],
+    [
+      30,
+      "KU7",
+      "KU8",
+      5,
+      "← KU7",
+      "KU7 — Lebih Penting"
+    ],
+    [
+      31,
+      "KU7",
+      "KU9",
+      5,
+      "← KU7",
+      "KU7 — Lebih Penting"
+    ],
+    [
+      32,
+      "KU1",
+      "KU10",
+      7,
+      "→ KU10",
+      "KU10 — Sangat Lebih Penting"
+    ],
+    [
+      33,
+      "KU2",
+      "KU10",
+      9,
+      "← KU2",
+      "KU2 — Mutlak Lebih Penting"
+    ],
+    [
+      34,
+      "KU3",
+      "KU10",
+      3,
+      "→ KU10",
+      "KU10 — Sedikit Lebih Penting"
+    ],
+    [
+      35,
+      "KU6",
+      "KU10",
+      5,
+      "← KU6",
+      "KU6 — Lebih Penting"
+    ],
+    [
+      36,
+      "KU7",
+      "KU10",
+      5,
+      "← KU7",
+      "KU7 — Lebih Penting"
+    ],
+    [],
+    [
+      "Kategori: Antar CP (Level 1)",
+      "Tanggal: 04 Juni 2026",
+      "Status: SUBMITTED"
+    ],
+    [
+      "No",
+      "Kriteria A",
+      "Kriteria B",
+      "Skala",
+      "Arah",
+      "Interpretasi"
+    ],
+    [
+      1,
+      "CP1",
+      "CP2",
+      1,
+      "← CP1",
+      "CP1 — Updated by System"
+    ],
+    [
+      2,
+      "CP1",
+      "CP3",
+      2,
+      "→ CP3",
+      "CP3 — Updated by System"
+    ],
+    [
+      3,
+      "CP1",
+      "CP4",
+      2,
+      "→ CP4",
+      "CP4 — Updated by System"
+    ],
+    [
+      4,
+      "CP1",
+      "CP5",
+      4,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      5,
+      "CP1",
+      "CP6",
+      4,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      6,
+      "CP1",
+      "CP7",
+      4,
+      "→ CP7",
+      "CP7 — Updated by System"
+    ],
+    [
+      7,
+      "CP1",
+      "CP8",
+      3,
+      "→ CP8",
+      "CP8 — Updated by System"
+    ],
+    [
+      8,
+      "CP1",
+      "CP9",
+      3,
+      "→ CP9",
+      "CP9 — Updated by System"
+    ],
+    [
+      9,
+      "CP2",
+      "CP3",
+      2,
+      "→ CP3",
+      "CP3 — Updated by System"
+    ],
+    [
+      10,
+      "CP2",
+      "CP4",
+      2,
+      "→ CP4",
+      "CP4 — Updated by System"
+    ],
+    [
+      11,
+      "CP2",
+      "CP5",
+      4,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      12,
+      "CP2",
+      "CP6",
+      4,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      13,
+      "CP2",
+      "CP7",
+      4,
+      "→ CP7",
+      "CP7 — Updated by System"
+    ],
+    [
+      14,
+      "CP2",
+      "CP8",
+      3,
+      "→ CP8",
+      "CP8 — Updated by System"
+    ],
+    [
+      15,
+      "CP2",
+      "CP9",
+      3,
+      "→ CP9",
+      "CP9 — Updated by System"
+    ],
+    [
+      16,
+      "CP3",
+      "CP4",
+      1,
+      "← CP3",
+      "CP3 — Updated by System"
+    ],
+    [
+      17,
+      "CP3",
+      "CP5",
+      3,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      18,
+      "CP3",
+      "CP6",
+      3,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      19,
+      "CP3",
+      "CP7",
+      2,
+      "→ CP7",
+      "CP7 — Updated by System"
+    ],
+    [
+      20,
+      "CP3",
+      "CP8",
+      2,
+      "→ CP8",
+      "CP8 — Updated by System"
+    ],
+    [
+      21,
+      "CP3",
+      "CP9",
+      2,
+      "→ CP9",
+      "CP9 — Updated by System"
+    ],
+    [
+      22,
+      "CP4",
+      "CP5",
+      3,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      23,
+      "CP4",
+      "CP6",
+      3,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      24,
+      "CP4",
+      "CP7",
+      2,
+      "→ CP7",
+      "CP7 — Updated by System"
+    ],
+    [
+      25,
+      "CP4",
+      "CP8",
+      2,
+      "→ CP8",
+      "CP8 — Updated by System"
+    ],
+    [
+      26,
+      "CP4",
+      "CP9",
+      2,
+      "→ CP9",
+      "CP9 — Updated by System"
+    ]
+  ],
+  "Rizki": [
+    [
+      "PAKAR: Muhammad Rizki"
+    ],
+    [
+      "Instansi: UIN SUSKA",
+      "Jabatan: Auditor Halal"
+    ],
+    [],
+    [
+      "Kategori: Kriteria Umum (KU)",
+      "Tanggal: 04 Juni 2026",
+      "Status: SUBMITTED"
+    ],
+    [
+      "No",
+      "Kriteria A",
+      "Kriteria B",
+      "Skala",
+      "Arah",
+      "Interpretasi"
+    ],
+    [
+      1,
+      "KU1",
+      "KU2",
+      7,
+      "← KU1",
+      "KU1 — Sangat Lebih Penting"
+    ],
+    [
+      2,
+      "KU1",
+      "KU3",
+      2,
+      "← KU1",
+      "KU1 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      3,
+      "KU1",
+      "KU4",
+      1,
+      "=",
+      "Sama Penting"
+    ],
+    [
+      4,
+      "KU1",
+      "KU5",
+      5,
+      "← KU1",
+      "KU1 — Lebih Penting"
+    ],
+    [
+      5,
+      "KU1",
+      "KU6",
+      7,
+      "← KU1",
+      "KU1 — Sangat Lebih Penting"
+    ],
+    [
+      6,
+      "KU1",
+      "KU7",
+      6,
+      "← KU1",
+      "KU1 — Mendekati Sangat Lebih Penting"
+    ],
+    [
+      7,
+      "KU1",
+      "KU8",
+      7,
+      "→ KU8",
+      "KU8 — Sangat Lebih Penting"
+    ],
+    [
+      8,
+      "KU1",
+      "KU9",
+      3,
+      "← KU1",
+      "KU1 — Sedikit Lebih Penting"
+    ],
+    [
+      9,
+      "KU2",
+      "KU3",
+      8,
+      "← KU2",
+      "KU2 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      10,
+      "KU2",
+      "KU4",
+      4,
+      "← KU2",
+      "KU2 — Mendekati Lebih Penting"
+    ],
+    [
+      11,
+      "KU2",
+      "KU5",
+      5,
+      "← KU2",
+      "KU2 — Lebih Penting"
+    ],
+    [
+      12,
+      "KU2",
+      "KU6",
+      6,
+      "← KU2",
+      "KU2 — Mendekati Sangat Lebih Penting"
+    ],
+    [
+      13,
+      "KU2",
+      "KU7",
+      7,
+      "← KU2",
+      "KU2 — Sangat Lebih Penting"
+    ],
+    [
+      14,
+      "KU2",
+      "KU8",
+      1,
+      "=",
+      "Sama Penting"
+    ],
+    [
+      15,
+      "KU2",
+      "KU9",
+      8,
+      "← KU2",
+      "KU2 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      16,
+      "KU3",
+      "KU4",
+      4,
+      "→ KU4",
+      "KU4 — Mendekati Lebih Penting"
+    ],
+    [
+      17,
+      "KU3",
+      "KU5",
+      5,
+      "→ KU5",
+      "KU5 — Lebih Penting"
+    ],
+    [
+      18,
+      "KU3",
+      "KU6",
+      3,
+      "← KU3",
+      "KU3 — Sedikit Lebih Penting"
+    ],
+    [
+      19,
+      "KU3",
+      "KU7",
+      3,
+      "→ KU7",
+      "KU7 — Sedikit Lebih Penting"
+    ],
+    [
+      20,
+      "KU3",
+      "KU8",
+      8,
+      "→ KU8",
+      "KU8 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      21,
+      "KU4",
+      "KU5",
+      2,
+      "→ KU5",
+      "KU5 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      22,
+      "KU4",
+      "KU8",
+      8,
+      "→ KU8",
+      "KU8 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      23,
+      "KU5",
+      "KU6",
+      3,
+      "← KU5",
+      "KU5 — Sedikit Lebih Penting"
+    ],
+    [
+      24,
+      "KU5",
+      "KU7",
+      2,
+      "← KU5",
+      "KU5 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      25,
+      "KU5",
+      "KU8",
+      8,
+      "→ KU8",
+      "KU8 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      26,
+      "KU5",
+      "KU9",
+      2,
+      "← KU5",
+      "KU5 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      27,
+      "KU6",
+      "KU7",
+      1,
+      "=",
+      "Sama Penting"
+    ],
+    [
+      28,
+      "KU6",
+      "KU8",
+      9,
+      "→ KU8",
+      "KU8 — Mutlak Lebih Penting"
+    ],
+    [
+      29,
+      "KU6",
+      "KU9",
+      3,
+      "← KU6",
+      "KU6 — Sedikit Lebih Penting"
+    ],
+    [
+      30,
+      "KU7",
+      "KU8",
+      8,
+      "→ KU8",
+      "KU8 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      31,
+      "KU7",
+      "KU9",
+      2,
+      "→ KU9",
+      "KU9 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      32,
+      "KU8",
+      "KU9",
+      8,
+      "← KU8",
+      "KU8 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      33,
+      "KU1",
+      "KU10",
+      6,
+      "← KU1",
+      "KU1 — Mendekati Sangat Lebih Penting"
+    ],
+    [
+      34,
+      "KU2",
+      "KU10",
+      6,
+      "← KU2",
+      "KU2 — Mendekati Sangat Lebih Penting"
+    ],
+    [
+      35,
+      "KU3",
+      "KU10",
+      2,
+      "← KU3",
+      "KU3 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      36,
+      "KU4",
+      "KU10",
+      3,
+      "← KU4",
+      "KU4 — Sedikit Lebih Penting"
+    ],
+    [
+      37,
+      "KU5",
+      "KU10",
+      2,
+      "← KU5",
+      "KU5 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      38,
+      "KU6",
+      "KU10",
+      2,
+      "← KU6",
+      "KU6 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      39,
+      "KU7",
+      "KU10",
+      2,
+      "← KU7",
+      "KU7 — Mendekati Sedikit Lebih Penting"
+    ],
+    [
+      40,
+      "KU8",
+      "KU10",
+      8,
+      "← KU8",
+      "KU8 — Mendekati Mutlak Lebih Penting"
+    ],
+    [
+      41,
+      "KU9",
+      "KU10",
+      8,
+      "← KU9",
+      "KU9 — Mendekati Mutlak Lebih Penting"
+    ],
+    [],
+    [
+      "Kategori: Antar CP (Level 1)",
+      "Tanggal: 04 Juni 2026",
+      "Status: SUBMITTED"
+    ],
+    [
+      "No",
+      "Kriteria A",
+      "Kriteria B",
+      "Skala",
+      "Arah",
+      "Interpretasi"
+    ],
+    [
+      1,
+      "CP1",
+      "CP2",
+      1,
+      "→ CP2",
+      "CP2 — Updated by System"
+    ],
+    [
+      2,
+      "CP1",
+      "CP3",
+      1,
+      "← CP1",
+      "CP1 — Updated by System"
+    ],
+    [
+      3,
+      "CP1",
+      "CP4",
+      2,
+      "→ CP4",
+      "CP4 — Updated by System"
+    ],
+    [
+      4,
+      "CP1",
+      "CP5",
+      2,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      5,
+      "CP1",
+      "CP6",
+      2,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      6,
+      "CP1",
+      "CP7",
+      1,
+      "← CP1",
+      "CP1 — Updated by System"
+    ],
+    [
+      7,
+      "CP1",
+      "CP8",
+      1,
+      "→ CP8",
+      "CP8 — Updated by System"
+    ],
+    [
+      8,
+      "CP1",
+      "CP9",
+      1,
+      "→ CP9",
+      "CP9 — Updated by System"
+    ],
+    [
+      9,
+      "CP2",
+      "CP3",
+      1,
+      "← CP2",
+      "CP2 — Updated by System"
+    ],
+    [
+      10,
+      "CP2",
+      "CP4",
+      2,
+      "→ CP4",
+      "CP4 — Updated by System"
+    ],
+    [
+      11,
+      "CP2",
+      "CP5",
+      1,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      12,
+      "CP2",
+      "CP6",
+      2,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      13,
+      "CP2",
+      "CP7",
+      1,
+      "← CP2",
+      "CP2 — Updated by System"
+    ],
+    [
+      14,
+      "CP2",
+      "CP8",
+      1,
+      "← CP2",
+      "CP2 — Updated by System"
+    ],
+    [
+      15,
+      "CP2",
+      "CP9",
+      1,
+      "← CP2",
+      "CP2 — Updated by System"
+    ],
+    [
+      16,
+      "CP3",
+      "CP4",
+      2,
+      "→ CP4",
+      "CP4 — Updated by System"
+    ],
+    [
+      17,
+      "CP3",
+      "CP5",
+      2,
+      "→ CP5",
+      "CP5 — Updated by System"
+    ],
+    [
+      18,
+      "CP3",
+      "CP6",
+      2,
+      "→ CP6",
+      "CP6 — Updated by System"
+    ],
+    [
+      19,
+      "CP3",
+      "CP7",
+      1,
+      "← CP3",
+      "CP3 — Updated by System"
+    ],
+    [
+      20,
+      "CP3",
+      "CP8",
+      1,
+      "→ CP8",
+      "CP8 — Updated by System"
+    ],
+    [
+      21,
+      "CP3",
+      "CP9",
+      1,
+      "→ CP9",
+      "CP9 — Updated by System"
+    ]
+  ]
+}

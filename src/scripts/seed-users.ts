@@ -14,11 +14,11 @@ const USERS = [
   { name: "Petugas Gudang",  email: "storage@halal-kms.com",     role: "CP7_STORAGE",         password: "storage123" },
   { name: "Petugas Distribusi", email: "distribution@halal-kms.com", role: "CP8_DISTRIBUTION", password: "distribution123" },
   { name: "Petugas Retail",  email: "retail@halal-kms.com",      role: "CP9_RETAIL",          password: "retail123" },
-  { name: "Petugas Konsumen", email: "consumer@halal-kms.com",   role: "CP10_CONSUMER",       password: "consumer123" },
+
 ];
 
 async function main() {
-  console.log("🔐 Seeding users (11 roles)...\n");
+  console.log("🔐 Seeding users (10 roles)...\n");
 
   for (const u of USERS) {
     const hashed = await hash(u.password, 12);
@@ -37,7 +37,7 @@ async function main() {
     console.log(`  ✅ ${user.role.padEnd(20)} → ${user.email} (pass: ${u.password})`);
   }
 
-  console.log("\n🎉 Done! 11 users seeded.");
+  console.log("\n🎉 Done! 10 users seeded.");
 }
 
 main()

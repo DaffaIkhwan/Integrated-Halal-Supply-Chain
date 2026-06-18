@@ -22,7 +22,7 @@ const ROLES = [
   { value: "CP7_STORAGE", label: "CP7 — Penyimpanan" },
   { value: "CP8_DISTRIBUTION", label: "CP8 — Distribusi" },
   { value: "CP9_RETAIL", label: "CP9 — Retail" },
-  { value: "CP10_CONSUMER", label: "CP10 — Konsumen" },
+
 ];
 
 const ROLE_COLORS: Record<string, string> = {
@@ -38,7 +38,7 @@ const ROLE_COLORS: Record<string, string> = {
   CP7_STORAGE: "bg-sky-500/15 text-sky-500 border-sky-500/30",
   CP8_DISTRIBUTION: "bg-indigo-500/15 text-indigo-500 border-indigo-500/30",
   CP9_RETAIL: "bg-pink-500/15 text-pink-500 border-pink-500/30",
-  CP10_CONSUMER: "bg-teal-500/15 text-teal-500 border-teal-500/30",
+
 };
 
 type UserData = {

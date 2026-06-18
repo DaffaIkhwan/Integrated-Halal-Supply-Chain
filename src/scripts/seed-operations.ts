@@ -4,7 +4,7 @@
  * Creates mock data for:
  * - Farm, Slaughterhouse
  * - Cattle, HalalBatch
- * - CP Records (1 through 10)
+ * - CP Records (1 through 9)
  * 
  * Run: npx tsx src/scripts/seed-operations.ts
  */
@@ -26,7 +26,7 @@ async function main() {
     await prisma.cP7StorageRecord.deleteMany();
     await prisma.cP8DistributionRecord.deleteMany();
     await prisma.cP9RetailRecord.deleteMany();
-    await prisma.cP10ConsumerRecord.deleteMany();
+
     await prisma.halalBatch.deleteMany();
     await prisma.cattle.deleteMany();
     await prisma.slaughterhouse.deleteMany();
@@ -174,10 +174,7 @@ async function main() {
             data: { halalBatchId: batch.id, labelHalalRisk: v(0, 0, 0.8), displayRisk: v(0, 0.1, 0.9), storageTemRisk: v(0, 0.3, 0.7), expiryRisk: v(0, 0.2, 0.6), consumerInfoRisk: v(0, 0, 0.5), supplierTraceRisk: v(0, 0.1, 0.7), complaintRisk: v(0, 0.2, 0.6) }
         });
 
-        // --- CP10 ---
-        await prisma.cP10ConsumerRecord.create({
-            data: { halalBatchId: batch.id, transparansiRisk: v(0, 0.1, 0.7), traceabilityRisk: v(0, 0, 0.8), responsivenessRisk: v(0, 0.2, 0.6), consumerTrustRisk: v(0, 0.1, 0.5), halalLiteracyRisk: v(0, 0, 0.4) }
-        });
+
 
         // Create generic CP records linking batch & CP (so traceability UI can easily list them)
         const cps = await prisma.criticalPoint.findMany();

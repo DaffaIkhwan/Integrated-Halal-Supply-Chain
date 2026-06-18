@@ -33,7 +33,7 @@ async function main() {
     console.log('');
     console.log('Validation:');
     const expected: Record<string, number> = {
-        LEVEL1_CP: 100,   // 10x10
+        LEVEL1_CP: 81,    // 9x9
         LEVEL2_CP1: 49,   // 7x7
         LEVEL2_CP2: 25,   // 5x5
         LEVEL2_CP3: 25,   // 5x5
@@ -43,7 +43,7 @@ async function main() {
         LEVEL2_CP7: 49,   // 7x7
         LEVEL2_CP8: 49,   // 7x7
         LEVEL2_CP9: 49,   // 7x7
-        LEVEL2_CP10: 25,  // 5x5
+
     };
     let allOk = true;
     for (const [mt, exp] of Object.entries(expected)) {

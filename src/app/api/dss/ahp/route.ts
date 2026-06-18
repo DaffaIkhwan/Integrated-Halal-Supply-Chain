@@ -90,7 +90,6 @@ export async function GET(request: Request) {
       { id: 'LEVEL2_CP7', label: 'Sub-Kriteria CP7' },
       { id: 'LEVEL2_CP8', label: 'Sub-Kriteria CP8' },
       { id: 'LEVEL2_CP9', label: 'Sub-Kriteria CP9' },
-      { id: 'LEVEL2_CP10', label: 'Sub-Kriteria CP10' },
     ];
 
     const allCRs = [];

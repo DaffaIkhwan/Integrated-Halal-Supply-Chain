@@ -30,7 +30,7 @@ const MATRIX_TYPES = [
   { id: 'LEVEL2_CP7', label: 'Sub-Kriteria CP7' },
   { id: 'LEVEL2_CP8', label: 'Sub-Kriteria CP8' },
   { id: 'LEVEL2_CP9', label: 'Sub-Kriteria CP9' },
-  { id: 'LEVEL2_CP10', label: 'Sub-Kriteria CP10' },
+
 ];
 
 export default function AHPStepsPage() {
@@ -304,7 +304,7 @@ export default function AHPStepsPage() {
     {
       title: "9. Ringkasan Konsistensi (CR) Keseluruhan",
       icon: <CheckCircle2 className="h-6 w-6 text-blue-500" />,
-      description: "Rekapitulasi uji konsistensi (CR) untuk seluruh matriks (Kriteria Umum, Antar CP Level 1, dan seluruh Sub-Kriteria CP1–CP10).",
+      description: "Rekapitulasi uji konsistensi (CR) untuk seluruh matriks (Kriteria Umum, Antar CP Level 1, dan seluruh Sub-Kriteria CP1–CP9).",
       details: "Nilai CR < 0.10 menandakan matriks tersebut konsisten dan layak digunakan.",
       formula: "Target: CR < 0.10",
       content: data && data.allCRs ? (

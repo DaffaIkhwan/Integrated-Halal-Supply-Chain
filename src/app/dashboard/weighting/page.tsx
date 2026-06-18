@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { CP_OPTIONS_MAP } from "@/lib/data";
 
-const ALL_CPS = ["CP1", "CP2", "CP3", "CP4", "CP5", "CP6", "CP7", "CP8", "CP9", "CP10"];
+const ALL_CPS = ["CP1", "CP2", "CP3", "CP4", "CP5", "CP6", "CP7", "CP8", "CP9"];
 
 const ROLE_TO_CP: Record<string, string[]> = {
   ADMIN: ALL_CPS,
@@ -30,7 +30,6 @@ const ROLE_TO_CP: Record<string, string[]> = {
   CP7_STORAGE: ["CP7"],
   CP8_DISTRIBUTION: ["CP8"],
   CP9_RETAIL: ["CP9"],
-  CP10_CONSUMER: ["CP10"],
 };
 
 // ─── Saaty Scale Helper ───

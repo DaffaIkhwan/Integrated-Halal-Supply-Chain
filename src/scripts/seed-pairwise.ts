@@ -27,7 +27,6 @@ const CP_PREFIX_MAP: Record<string, string> = {
     'LEVEL2_CP7': 'CS',
     'LEVEL2_CP8': 'D',
     'LEVEL2_CP9': 'RT',
-    'LEVEL2_CP10': 'C',
 };
 
 // Mapping sub-criteria code prefix → domain code (e.g., "K1" → "F1" for CP1)
