@@ -46,10 +46,10 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
   "Maaf, saya hanya dapat membantu pertanyaan seputar Halal Supply Chain, Peternakan, dan data operasional sistem ini."
 
 ## TOOLS
-- **search_knowledge_base**: WAJIB dipanggil untuk SEMUA pertanyaan seputar regulasi, teori, atau dokumen (KMS).
+- **search_knowledge_base**: WAJIB dipanggil untuk SEMUA pertanyaan TEORI, HUKUM, REGULASI, STANDAR (SOP), KONSEP HALAL, atau rekomendasi praktik (contoh: "apa makanan sapi yang disarankan", "hukum stunning", "aturan pemotongan").
 - **check_halal_risk**: Untuk data perhitungan Risk Score, bobot Fuzzy AHP, atau Titik Kritis (CP).
 - **trace_halal_batch**: Untuk pelacakan batch produk, misalnya "Lacak Batch #123".
-- **get_operational_data**: Gunakan ini jika pengguna bertanya tentang isi database seperti daftar Farm, RPH, Pakan, Personel, Juru Sembelih, QC, dsb.
+- **get_operational_data**: Gunakan ini HANYA JIKA pengguna menanyakan "daftar entitas" atau "data master" yang TERSIMPAN DI DATABASE sistem (contoh: "daftar farm yang ada", "siapa saja rph terdaftar", "siapa juru sembelihnya").
 
 ## FORMAT JAWABAN
 - Jawab dalam **Bahasa Indonesia** yang terstruktur dan profesional.
@@ -64,9 +64,9 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
       messages,
       tools: {
         search_knowledge_base: {
-          description: 'Mencari informasi riil dari dokumen dan regulasi Halal (KMS) melalui Database Text Search.',
+          description: 'Mencari dokumen, teori, aturan, fatwa, SOP, hukum, atau rekomendasi praktik (misalnya standar pakan sapi, hukum stunning). DILARANG menggunakan ini untuk mencari daftar data entitas dari database.',
           parameters: z.object({
-            query: z.string().describe('Kata kunci pencarian spesifik (contoh: "hukuman denda Jaminan Produk Halal", "SOP pemotongan")'),
+            query: z.string().describe('Kata kunci pencarian spesifik (contoh: "hukuman denda Jaminan Produk Halal", "SOP pemotongan", "hukum stunning")'),
           }),
           execute: async ({ query }) => {
             try {
@@ -223,7 +223,7 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
           },
         },
         get_operational_data: {
-          description: 'Mengambil daftar data operasional dari database, seperti daftar Farm, RPH (Slaughterhouse), Juru Sembelih, Pakan, QC, dsb.',
+          description: 'Mengambil entitas data operasional yang tersimpan di database sistem (DAFTAR Farm, DAFTAR RPH, DAFTAR Juru Sembelih, DAFTAR QC, dsb). DILARANG menggunakan ini untuk pertanyaan teoritis, hukum, atau prosedur standar.',
           parameters: z.object({
             category: z.string().describe('Kategori data, contoh: "Farm", "RPH", "Juru Sembelih", "Pakan", "QC"'),
           }),
