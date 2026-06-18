@@ -39,14 +39,15 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
   • Keamanan pangan halal, sanitasi, kontaminasi silang
 
 ## BATASAN TOPIK
-- Jika pengguna bertanya tentang topik yang **sama sekali tidak berhubungan** dengan halal, pangan, atau rantai pasok (misalnya: coding, game, cuaca, hiburan, politik, gosip), **tolak dengan sopan**:
-  "Maaf, saya hanya dapat membantu pertanyaan seputar **Halal Supply Chain** dan topik kehalalan. Silakan ajukan pertanyaan terkait regulasi halal, titik kritis (CP1–CP9), traceability, atau analisis risiko halal."
+- Pengguna **DIIZINKAN** bertanya tentang data operasional apa saja yang mungkin ada di database (misal: "apa saja pakan", "siapa saja peternak", "daftar farm", "rph"). Jika data spesifik tidak tersedia, jelaskan dengan baik bahwa datanya belum ada di sistem, **JANGAN MENOLAK** pertanyaannya.
+- HANYA tolak pertanyaan jika **sama sekali tidak berhubungan** dengan halal, pangan, peternakan, atau rantai pasok (misalnya: coding, game, cuaca, politik, gosip), dengan kalimat:
+  "Maaf, saya hanya dapat membantu pertanyaan seputar Halal Supply Chain dan data operasional sistem ini."
 
 ## TOOLS
 - **search_knowledge_base**: WAJIB dipanggil untuk SEMUA pertanyaan seputar regulasi, teori, atau dokumen (KMS).
 - **check_halal_risk**: Untuk data perhitungan Risk Score, bobot Fuzzy AHP, atau Titik Kritis (CP).
 - **trace_halal_batch**: Untuk pelacakan batch produk, misalnya "Lacak Batch #123".
-- **get_registered_personnel**: Gunakan ini jika ditanya siapa saja orang/personel operasional yang terdaftar di database (seperti "siapa saja juru sembelih yang terdaftar?").
+- **get_operational_data**: Gunakan ini jika pengguna bertanya tentang isi database seperti daftar Farm, RPH, Pakan, Personel, Juru Sembelih, QC, dsb.
 
 ## FORMAT JAWABAN
 - Jawab dalam **Bahasa Indonesia** yang terstruktur dan profesional.
@@ -216,22 +217,38 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
             }
           },
         },
-        get_registered_personnel: {
-          description: 'Mengambil daftar personel atau responden yang terdaftar di database, seperti Juru Sembelih Halal, QC, Supervisor, dsb.',
+        get_operational_data: {
+          description: 'Mengambil daftar data operasional dari database, seperti daftar Farm, RPH (Slaughterhouse), Juru Sembelih, Pakan, QC, dsb.',
           parameters: z.object({
-            role: z.string().describe('Peran yang dicari, contoh: "Juru Sembelih Halal", "QC", "Veteriner", "Supervisor"'),
+            category: z.string().describe('Kategori data, contoh: "Farm", "RPH", "Juru Sembelih", "Pakan", "QC"'),
           }),
-          execute: async ({ role }) => {
+          execute: async ({ category }) => {
             try {
+              const cat = category.toLowerCase();
+              if (cat.includes('farm') || cat.includes('kandang') || cat.includes('peternakan')) {
+                const farms = await prisma.farm.findMany({ select: { name: true, location: true } });
+                if (farms.length === 0) return "Tidak ada data Farm di database.";
+                return "--- Daftar Farm ---\n" + farms.map(f => `- ${f.name} (Lokasi: ${f.location || '-'})`).join('\n');
+              }
+              if (cat.includes('rph') || cat.includes('slaughter')) {
+                const rph = await prisma.slaughterhouse.findMany({ select: { name: true, location: true } });
+                if (rph.length === 0) return "Tidak ada data RPH di database.";
+                return "--- Daftar RPH ---\n" + rph.map(r => `- ${r.name} (Lokasi: ${r.location || '-'})`).join('\n');
+              }
+              if (cat.includes('pakan') || cat.includes('feed')) {
+                 return "Informasi merk/jenis pakan spesifik tidak tersimpan secara terpisah di tabel master. Evaluasi risiko Pakan (CP2) langsung dinilai berdasarkan kepatuhan peternakan (Farm).";
+              }
+              
+              // Fallback to searching personnel in QuestionnaireResponse
               const personnel = await prisma.questionnaireResponse.findMany({
-                where: { respondentRole: { contains: role, mode: 'insensitive' } },
+                where: { respondentRole: { contains: category, mode: 'insensitive' } },
                 select: { respondentName: true, respondentRole: true, respondentOrg: true, respondentInfo: true },
                 distinct: ['respondentName']
               });
-              if (personnel.length === 0) return `Tidak ada personel dengan peran "${role}" yang terdaftar.`;
-              return `--- Daftar Personel Terdaftar ---\n` + personnel.map(p => `- ${p.respondentName} (${p.respondentRole}) dari ${p.respondentOrg} - Sertifikat: ${(p.respondentInfo as any)?.noSertifikat || 'Tidak ada/belum diverifikasi'}`).join('\n');
+              if (personnel.length === 0) return `Tidak ada data spesifik untuk kategori "${category}" di database sistem saat ini.`;
+              return `--- Daftar Data ${category} ---\n` + personnel.map(p => `- ${p.respondentName} (${p.respondentRole}) dari ${p.respondentOrg} - Sertifikat: ${(p.respondentInfo as any)?.noSertifikat || 'Belum diverifikasi'}`).join('\n');
             } catch (e: any) {
-              return `Gagal mengambil data personel: ${e.message}`;
+              return `Gagal mengambil data operasional: ${e.message}`;
             }
           }
         },
