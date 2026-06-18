@@ -162,13 +162,13 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
                 });
               }
               if (!batchInfo) return `Data Traceability untuk Batch "${batchId}" tidak ditemukan.`;
-              let traceOutput = `--- Traceability Info ---\nBatch ID: ${batchInfo.id}\nTanggal Produksi: ${batchInfo.productionDate}\nTotal Risk Score: ${batchInfo.totalRiskScore.toFixed(4)} (${batchInfo.riskLevel})\nAsal Ternak: ${batchInfo.cattle.earTag} dari ${batchInfo.cattle.farm.name}\nRPH: ${batchInfo.slaughterhouse.name}`;
+              let traceOutput = `--- Traceability Info ---\nBatch ID: ${batchInfo.id}\nTanggal Produksi: ${batchInfo.productionDate}\nTotal Halal Compliance Risk Score: ${batchInfo.totalRiskScore.toFixed(4)} (${batchInfo.riskLevel})\nAsal Ternak: ${batchInfo.cattle.earTag} dari ${batchInfo.cattle.farm.name}\nRPH: ${batchInfo.slaughterhouse.name}`;
               if (batchInfo.cpRecords.length > 0) {
                 traceOutput += `\n\nCompliance Records:`;
                 const { getRiskLevel } = await import('@/lib/dss/fuzzyAHP');
                 for (const rec of batchInfo.cpRecords) {
                   const rLevel = getRiskLevel(rec.riskValue);
-                  traceOutput += `\n  ${rec.criticalPoint.id} ${rec.criticalPoint.name}: ${rLevel} Risk | Local Score: ${rec.riskValue.toFixed(3)} | Weighted: ${rec.weightedRisk.toFixed(3)}`;
+                  traceOutput += `\n  ${rec.criticalPoint.id} ${rec.criticalPoint.name}: ${rLevel} Risk | Risk Score: ${rec.riskValue.toFixed(4)} | Global Weighted Risk: ${rec.weightedRisk.toFixed(4)}`;
                 }
               }
               return traceOutput;
