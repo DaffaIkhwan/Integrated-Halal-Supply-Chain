@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useChat } from "ai/react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import type { SyntaxHighlighterProps } from "react-syntax-highlighter";
@@ -80,6 +81,7 @@ export function ChatTab() {
 													</div>
 												)}
 											<ReactMarkdown
+												remarkPlugins={[remarkGfm]}
 												components={{
 													code({ className, children, ...props }) {
 														const match = /language-(\w+)/.exec(

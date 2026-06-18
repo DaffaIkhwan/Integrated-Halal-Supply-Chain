@@ -5,6 +5,7 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import type { SyntaxHighlighterProps } from "react-syntax-highlighter";
@@ -347,6 +348,7 @@ export default function ChatPage() {
                         prose-a:text-cyan-500 prose-a:no-underline hover:prose-a:underline
                       ">
                         <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
                           components={{
                             code({ className, children, ...props }) {
                               const match = /language-(\w+)/.exec(className || "");
