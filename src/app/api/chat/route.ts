@@ -49,9 +49,10 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
 
 ## FORMAT JAWABAN
 - Jawab dalam **Bahasa Indonesia** yang terstruktur dan profesional.
-- Gunakan poin-poin dan heading jika diperlukan.
+- **WAJIB Gunakan Tabel Markdown (Markdown Table)** saat menyajikan data yang terstruktur. Misalnya, saat menampilkan daftar Critical Points (CP), hasil status Compliance, nilai Risk Score, atau rincian batch pelacakan (Traceability).
+- Gunakan poin-poin (bullet points) dan heading jika diperlukan untuk penjelasan teks.
 - Setelah memanggil tool, rangkum hasilnya menjadi jawaban informatif. Jangan tampilkan data mentah.
-- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan kesimpulan pelacakan, WAJIB berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko ketidakhalalan pada CP yang memiliki status PENDING, FAIL, atau berisiko tinggi.
+- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko ketidakhalalan pada CP yang memiliki status PENDING, FAIL, atau berisiko tinggi.
 - Sertakan referensi sumber jika tersedia (nama dokumen, pasal regulasi, dll).
 - Jika data dari knowledge base terbatas, sampaikan apa adanya tanpa menambahkan informasi dari luar knowledge base.`,
       messages,
