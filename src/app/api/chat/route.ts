@@ -43,14 +43,16 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
   "Maaf, saya hanya dapat membantu pertanyaan seputar **Halal Supply Chain** dan topik kehalalan. Silakan ajukan pertanyaan terkait regulasi halal, titik kritis (CP1–CP9), traceability, atau analisis risiko halal."
 
 ## TOOLS
-- **search_knowledge_base**: WAJIB dipanggil untuk SEMUA pertanyaan seputar halal. Cari informasi dari dokumen dan regulasi di knowledge base.
+- **search_knowledge_base**: WAJIB dipanggil untuk SEMUA pertanyaan seputar regulasi, teori, atau dokumen (KMS).
 - **check_halal_risk**: Untuk data perhitungan Risk Score, bobot Fuzzy AHP, atau Titik Kritis (CP).
 - **trace_halal_batch**: Untuk pelacakan batch produk, misalnya "Lacak Batch #123".
+- **get_registered_personnel**: Gunakan ini jika ditanya siapa saja orang/personel operasional yang terdaftar di database (seperti "siapa saja juru sembelih yang terdaftar?").
 
 ## FORMAT JAWABAN
 - Jawab dalam **Bahasa Indonesia** yang terstruktur dan profesional.
 - **WAJIB Gunakan Tabel Markdown (Markdown Table)** HANYA saat menyajikan rincian data berulang/berseri. Misalnya, saat menampilkan rincian Critical Points (CP), skor per CP, atau riwayat compliance.
 - **JANGAN Gunakan Tabel** untuk **Informasi Umum** (seperti Batch ID, Tanggal Produksi, Asal Ternak, RPH, Total Risk Score, dsb). Untuk bagian Informasi Umum, gunakan format daftar teks biasa (bullet points atau list bersusun).
+- **JANGAN cantumkan kolom "Sub-CP", "Sub-CP Tertinggi", atau "Nilai Sub-CP" di dalam tabel**. Sebutkan hal tersebut HANYA pada paragraf penjelasan di bawah tabel.
 - Gunakan poin-poin (bullet points) dan heading jika diperlukan untuk penjelasan teks.
 - Setelah memanggil tool, rangkum hasilnya menjadi jawaban informatif. Jangan tampilkan data mentah.
 - **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB sebutkan secara spesifik **CP mana yang memiliki risiko tertinggi beserta Sub-CP penyumbang risiko terbesarnya**. Lalu berikan saran tindakan selanjutnya (recommendations) yang konkrit untuk menurunkan tingkat risiko tersebut.
@@ -201,7 +203,9 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
                        .sort((a, b) => b.value - a.value);
                      
                      if (risks.length > 0) {
-                       traceOutput += ` (Sub-CP Tertinggi: ${risks[0].key} dengan nilai ${risks[0].value})`;
+                       let formattedKey = risks[0].key.replace(/Risk$/, '').replace(/([A-Z])/g, ' $1').trim();
+                       formattedKey = formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
+                       traceOutput += ` (Sub-CP Tertinggi: ${formattedKey} dengan nilai ${risks[0].value})`;
                      }
                   }
                 }
@@ -211,6 +215,25 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
               return `Gagal melacak: ${e.message}`;
             }
           },
+        },
+        get_registered_personnel: {
+          description: 'Mengambil daftar personel atau responden yang terdaftar di database, seperti Juru Sembelih Halal, QC, Supervisor, dsb.',
+          parameters: z.object({
+            role: z.string().describe('Peran yang dicari, contoh: "Juru Sembelih Halal", "QC", "Veteriner", "Supervisor"'),
+          }),
+          execute: async ({ role }) => {
+            try {
+              const personnel = await prisma.questionnaireResponse.findMany({
+                where: { respondentRole: { contains: role, mode: 'insensitive' } },
+                select: { respondentName: true, respondentRole: true, respondentOrg: true, respondentInfo: true },
+                distinct: ['respondentName']
+              });
+              if (personnel.length === 0) return `Tidak ada personel dengan peran "${role}" yang terdaftar.`;
+              return `--- Daftar Personel Terdaftar ---\n` + personnel.map(p => `- ${p.respondentName} (${p.respondentRole}) dari ${p.respondentOrg} - Sertifikat: ${(p.respondentInfo as any)?.noSertifikat || 'Tidak ada/belum diverifikasi'}`).join('\n');
+            } catch (e: any) {
+              return `Gagal mengambil data personel: ${e.message}`;
+            }
+          }
         },
       },
     });
