@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import type { SyntaxHighlighterProps } from "react-syntax-highlighter";
+import { tableComponents } from "@/components/markdown-table";
 
 export function ChatTab() {
 	const isProduction = process.env.NODE_ENV === "production";
@@ -83,6 +84,7 @@ export function ChatTab() {
 											<ReactMarkdown
 												remarkPlugins={[remarkGfm]}
 												components={{
+													...tableComponents,
 													code({ className, children, ...props }) {
 														const match = /language-(\w+)/.exec(
 															className || "",

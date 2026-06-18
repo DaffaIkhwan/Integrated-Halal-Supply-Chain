@@ -9,6 +9,7 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import type { SyntaxHighlighterProps } from "react-syntax-highlighter";
+import { tableComponents } from "@/components/markdown-table";
 import {
   Send,
   Sparkles,
@@ -350,6 +351,7 @@ export default function ChatPage() {
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           components={{
+                            ...tableComponents,
                             code({ className, children, ...props }) {
                               const match = /language-(\w+)/.exec(className || "");
                               return match ? (
