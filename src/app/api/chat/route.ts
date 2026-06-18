@@ -216,6 +216,34 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
                   }
                 }
               }
+
+              // Tambahkan data personel yang terlibat berdasarkan kuesioner aktual
+              const personnelRaw = await prisma.questionnaireResponse.findMany({
+                where: { questionnaireType: 'aktual' },
+                select: { respondentName: true, respondentRole: true, respondentOrg: true, respondentInfo: true, cpId: true }
+              });
+              
+              const involved = personnelRaw.filter((p: any) => {
+                 const batchStr = p.respondentInfo?.batch || '';
+                 return typeof batchStr === 'string' && batchStr.toLowerCase().includes(batchId.toLowerCase());
+              });
+
+              if (involved.length > 0) {
+                traceOutput += `\n\nData Personel & Info Operasional Terkait:`;
+                involved.forEach((p: any) => {
+                  let extra = '';
+                  if (p.respondentInfo) {
+                    const info = p.respondentInfo as Record<string, any>;
+                    const ignoreKeys = ['batch', 'tanggal', 'shift', 'waktuMulai', 'waktuBerangkat', 'idKaryawan', 'namaPIC', 'jabatan', 'namaFarm', 'namaRPH', 'namaPerusahaan', 'lokasi', 'alamat', 'masaBerlaku', 'namaOutlet', 'namaGudang', 'namaStaff'];
+                    const extraInfos = Object.keys(info)
+                      .filter(k => !ignoreKeys.includes(k) && typeof info[k] === 'string' && info[k].trim() !== '')
+                      .map(k => `${k}: ${info[k]}`);
+                    if (extraInfos.length > 0) extra = ` | Detail: ${extraInfos.join(', ')}`;
+                  }
+                  traceOutput += `\n- [${p.cpId || 'Umum'}] ${p.respondentName} (${p.respondentRole} di ${p.respondentOrg})${extra}`;
+                });
+              }
+
               return traceOutput;
             } catch (e: any) {
               return `Gagal melacak: ${e.message}`;
