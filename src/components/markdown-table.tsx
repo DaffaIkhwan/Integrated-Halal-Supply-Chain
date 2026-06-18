@@ -28,12 +28,11 @@ export function MarkdownTable({ children, ...props }: React.HTMLAttributes<HTMLT
 
   return (
     <div className="relative group my-6 border rounded-lg overflow-hidden bg-card text-card-foreground shadow-sm">
-      <div className="flex items-center justify-between px-3 py-2 bg-muted/50 border-b">
-        <span className="text-xs font-medium text-muted-foreground">Table</span>
+      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
         <Button
-          variant="ghost"
+          variant="secondary"
           size="sm"
-          className="h-7 px-2 text-xs flex gap-1.5"
+          className="h-7 px-2 text-xs flex gap-1.5 shadow-sm bg-background/80 backdrop-blur-sm"
           onClick={handleCopy}
         >
           {copied ? (
