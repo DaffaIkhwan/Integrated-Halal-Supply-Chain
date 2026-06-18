@@ -54,7 +54,7 @@ const navItems: NavItem[] = [
 		],
 	},
 	{ href: "/dashboard/input", label: "Kelola CP" },
-	{ href: "/dashboard/ahp-steps", label: "Tahapan AHP" },
+	{ href: "/dashboard/ahp-steps", label: "Tahapan FUZZY AHP" },
 	{ href: "/chat", label: "Chat" },
 ];
 
