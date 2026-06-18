@@ -157,6 +157,13 @@ async function main() {
     { cpId: 'CP9', respondentName: 'Ibu Sri Wahyuni, S.E.', respondentRole: 'QC Retail', respondentOrg: 'Supermarket HalalMart Bandung', noSertifikat: 'RET-2024-055', subCodes: ['CP9.1','CP9.2','CP9.3','CP9.4','CP9.5','CP9.6','CP9.7'], baseRisk: 2, bgData: { namaOutlet: 'HalalMart Bandung', lokasi: 'Jl. Dago No. 45, Bandung', noSertifikat: 'RET-2024-055', posisi: 'QC Retail', tanggal: '2026-05-14', batch: 'TAG-A003 (Peternakan Berkah Mandiri)' } },
   ];
 
+  const risikoA002 = RISIKO_DATA.map(d => ({
+    ...d,
+    baseRisk: 5,
+    bgData: { ...d.bgData, batch: 'TAG-A002 (Peternakan Suka Maju)' }
+  }));
+  RISIKO_DATA.push(...risikoA002);
+
   for (const d of RISIKO_DATA) {
     const { risks, evidence } = riskAnswers(d.subCodes, 5, d.baseRisk);
     await prisma.questionnaireResponse.create({
@@ -193,6 +200,13 @@ async function main() {
     { cpId: 'CP8', name: 'Bpk. Faisal Rahman', role: 'Logistics Manager', org: 'PT. Distribusi Halal Sejahtera', subCodes: ['CP8.1','CP8.2','CP8.3','CP8.4','CP8.5','CP8.6','CP8.7'], baseRisk: 3, bgData: { namaPerusahaan: 'PT. Distribusi Halal Sejahtera', lokasi: 'Jakarta Timur', namaPIC: 'Bpk. Faisal Rahman', jabatan: 'Logistics Manager', idKaryawan: 'EMP-LOG-001', tanggal: '2026-05-14', shift: 'Pagi', nomorKendaraan: 'B 5678 ABC', tujuanDistribusi: 'HalalMart Bandung, Jabodetabek', batch: 'TAG-A003 (Peternakan Berkah Mandiri)' } },
     { cpId: 'CP9', name: 'Ibu Sri Wahyuni', role: 'QC Retail', org: 'HalalMart Bandung', subCodes: ['CP9.1','CP9.2','CP9.3','CP9.4','CP9.5','CP9.6','CP9.7'], baseRisk: 2, bgData: { namaOutlet: 'HalalMart Bandung — Dago', lokasi: 'Jl. Dago No. 45, Bandung', namaPIC: 'Ibu Sri Wahyuni', jabatan: 'QC Retail', idKaryawan: 'EMP-RET-001', tanggal: '2026-05-14', shift: 'Pagi', batch: 'TAG-A003 (Peternakan Berkah Mandiri)' } },
   ];
+
+  const aktualA002 = AKTUAL_DATA.map(d => ({
+    ...d,
+    baseRisk: 5,
+    bgData: { ...d.bgData, batch: 'TAG-A002 (Peternakan Suka Maju)' }
+  }));
+  AKTUAL_DATA.push(...aktualA002);
 
   for (const d of AKTUAL_DATA) {
     const indCount = d.subCodes.length >= 7 ? 5 : 5;

@@ -26,6 +26,7 @@ async function main() {
     await prisma.cP7StorageRecord.deleteMany();
     await prisma.cP8DistributionRecord.deleteMany();
     await prisma.cP9RetailRecord.deleteMany();
+    await prisma.cP10ConsumerRecord.deleteMany();
 
     await prisma.halalBatch.deleteMany();
     await prisma.cattle.deleteMany();
@@ -82,16 +83,18 @@ async function main() {
             }
         });
 
-        // Determine risk profile (Batch 1: Perfect, Batch 2: Moderate issues, Batch 3: High issues)
+        // Determine risk profile (Batch 1: Perfect, Batch 3: Moderate issues, Batch 2 (TAG-A002): High issues)
         const isPerfect = i === 0;
-        const isModerate = i === 1;
-        const isHigh = i === 2;
+        const isModerate = i === 2; // TAG-A003
+        const isHigh = i === 1;     // TAG-A002
 
-        // Generate risk values (0 is perfect, 1 is worst)
+        // Generate risk values (1 to 5 scale)
         const v = (perfectVal: number, modVal: number, highVal: number) => {
-            if (isPerfect) return perfectVal;
-            if (isModerate) return modVal;
-            return highVal;
+            let val = perfectVal;
+            if (isModerate) val = modVal;
+            if (isHigh) val = highVal;
+            // fuzzyAHP expects 1-5 scale. So multiply by 5.
+            return Math.ceil(val * 5);
         };
 
         // --- CP1 ---
