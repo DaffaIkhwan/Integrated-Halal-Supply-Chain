@@ -60,7 +60,7 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
 - **JANGAN menyebutkan nilai angka** (contoh: "dengan nilai 5") saat menyebutkan Sub-CP Tertinggi di penjelasan teks. Cukup sebutkan nama Sub-CP-nya saja.
 - Gunakan poin-poin (bullet points) dan heading jika diperlukan untuk penjelasan teks.
 - Setelah memanggil tool, rangkum hasilnya menjadi jawaban informatif. Jangan tampilkan data mentah.
-- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB sebutkan secara spesifik **CP mana yang memiliki risiko tertinggi beserta Sub-CP penyumbang risiko terbesarnya** di paragraf terpisah (tanpa mencantumkan angka nilainya). Lalu berikan saran tindakan selanjutnya (recommendations) yang konkrit.
+- **Khusus setelah memanggil trace_halal_batch**, setelah menyajikan tabel kesimpulan pelacakan, WAJIB sebutkan secara spesifik **CP mana yang memiliki risiko tertinggi (TENTUKAN BERDASARKAN NILAI "Global Weighted Risk" TERTINGGI, BUKAN "Risk Score")** beserta Sub-CP penyumbang risiko terbesarnya di paragraf terpisah (tanpa mencantumkan angka nilainya). Lalu berikan saran tindakan selanjutnya (recommendations) yang konkrit.
 - Sertakan referensi sumber jika tersedia (nama dokumen, pasal regulasi, dll).
 - Jika data dari knowledge base terbatas, sampaikan apa adanya tanpa menambahkan informasi dari luar knowledge base.`,
       messages,
