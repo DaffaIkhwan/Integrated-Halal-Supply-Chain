@@ -28,6 +28,9 @@ const MATRIX_TYPES = [
   { id: 'LEVEL2_CP5', label: 'Sub-Kriteria CP5' },
   { id: 'LEVEL2_CP6', label: 'Sub-Kriteria CP6' },
   { id: 'LEVEL2_CP7', label: 'Sub-Kriteria CP7' },
+  { id: 'LEVEL2_CP8', label: 'Sub-Kriteria CP8' },
+  { id: 'LEVEL2_CP9', label: 'Sub-Kriteria CP9' },
+  { id: 'LEVEL2_CP10', label: 'Sub-Kriteria CP10' },
 ];
 
 export default function AHPStepsPage() {
@@ -63,7 +66,7 @@ export default function AHPStepsPage() {
       description: matrixView === 'tfn'
         ? "Tabel berikut adalah matriks skala pakar yang sudah dikonversi ke format Triangular Fuzzy Number (TFN) [Lower, Middle, Upper]."
         : "Tabel berikut adalah matriks perbandingan berpasangan (Pairwise Comparison) dengan nilai crisp (defuzzified) dari rata-rata geometris pakar.",
-      details: `Matriks ini didapat dari database (${selectedLabel}).`,
+      details: `Matriks ini didapat dari database (${selectedLabel}). Ukuran matriks: ${data?.n || '-'}×${data?.n || '-'}.`,
       formula: matrixView === 'tfn' ? "M = (l, m, u)" : "Crisp = (l+m+u)/3",
       content: data ? (
         <div className="space-y-3 mt-4">
@@ -134,17 +137,63 @@ export default function AHPStepsPage() {
       ) : null
     },
     {
-      title: "3 & 4. Fuzzy Synthetic Extent & Defuzzifikasi",
+      title: "3. Penjumlahan Baris (Row Sum)",
+      icon: <Sigma className="h-6 w-6 text-amber-400" />,
+      description: "Menjumlahkan seluruh TFN pada setiap baris matriks perbandingan berpasangan. Ini adalah langkah pertama dalam menghitung Fuzzy Synthetic Extent (FSE).",
+      details: "Setiap baris dijumlahkan secara element-wise: R_i = Σⱼ M_ij = (Σl, Σm, Σu).",
+      formula: "Rᵢ = Σⱼ Mᵢⱼ",
+      content: data && data.rowSumsTable ? (
+        <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
+          <table className="w-full text-left text-xs whitespace-nowrap">
+            <thead className="bg-muted/50 border-b">
+              <tr>
+                <th className="p-3 font-semibold text-muted-foreground">Kriteria</th>
+                <th className="p-3 font-semibold text-amber-500">Row Sum [l, m, u]</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border/50">
+              {data.rowSumsTable.map((row: any, i: number) => (
+                <tr key={i} className="hover:bg-muted/20">
+                  <td className="p-3 font-bold">{row.code}</td>
+                  <td className="p-3 font-mono text-[11px] text-amber-500 font-semibold">{row.rowSum}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null
+    },
+    {
+      title: "4. Total Sum & Invers",
+      icon: <Sigma className="h-6 w-6 text-orange-400" />,
+      description: "Menjumlahkan seluruh Row Sum untuk mendapatkan Total Sum, lalu menghitung inversnya. Invers digunakan untuk mengalikan dengan Row Sum di langkah FSE.",
+      details: "Invers TFN: jika T = (l, m, u), maka T⁻¹ = (1/u, 1/m, 1/l).",
+      formula: "T⁻¹ = (1/u, 1/m, 1/l)",
+      content: data ? (
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="bg-muted p-4 rounded-xl border border-border/50">
+            <p className="text-xs text-muted-foreground mb-2 font-semibold">Total Sum = Σ Row Sum</p>
+            <p className="text-base font-mono font-bold text-orange-400">{data.totalSum}</p>
+          </div>
+          <div className="bg-muted p-4 rounded-xl border border-border/50">
+            <p className="text-xs text-muted-foreground mb-2 font-semibold">Invers Total Sum = T⁻¹</p>
+            <p className="text-base font-mono font-bold text-orange-400">{data.inversTotal}</p>
+          </div>
+        </div>
+      ) : null
+    },
+    {
+      title: "5 & 6. Fuzzy Synthetic Extent & Defuzzifikasi",
       icon: <BrainCircuit className="h-6 w-6 text-emerald-400" />,
-      description: "Menghitung nilai ekstensi sintesis (FSE) lalu merubahnya menjadi bilangan tegas (Crisp) menggunakan metode Center of Area (CoA).",
+      description: "Menghitung Fuzzy Synthetic Extent (FSE) dengan mengalikan Row Sum × Invers Total Sum, lalu defuzzifikasi ke nilai crisp menggunakan metode Center of Area (CoA).",
       details: "Semakin tinggi nilai FSE dan Crisp, semakin krusial titik tersebut.",
-      formula: "Crisp = (l + m + u) / 3",
+      formula: "Sᵢ = Rᵢ ⊗ T⁻¹ ; Crisp = (l+m+u)/3",
       content: data ? (
         <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
           <table className="w-full text-left text-xs whitespace-nowrap">
             <thead className="bg-muted/50 border-b">
               <tr>
-                <th className="p-3 font-semibold text-muted-foreground">Kriteria (CP)</th>
+                <th className="p-3 font-semibold text-muted-foreground">Kriteria</th>
                 <th className="p-3 font-semibold text-muted-foreground">Fuzzy Synthetic Extent (FSE)</th>
                 <th className="p-3 font-semibold text-emerald-500">Nilai Crisp (CoA)</th>
               </tr>
@@ -163,17 +212,17 @@ export default function AHPStepsPage() {
       ) : null
     },
     {
-      title: "5. Normalisasi Bobot Global",
+      title: "7. Normalisasi Bobot Global",
       icon: <Scale className="h-6 w-6 text-pink-400" />,
       description: "Nilai crisp dinormalisasi agar total keseluruhan bobot berjumlah 100%.",
       details: `Inilah bobot final Fuzzy AHP untuk ${selectedLabel}.`,
-      formula: "W_i = Crisp_i / Σ Crisp",
+      formula: "Wᵢ = Crispᵢ / Σ Crisp",
       content: data ? (
         <div className="overflow-x-auto mt-4 rounded-xl border border-border/50">
           <table className="w-full text-left text-xs whitespace-nowrap">
             <thead className="bg-muted/50 border-b">
               <tr>
-                <th className="p-3 font-semibold text-muted-foreground">Kriteria (CP)</th>
+                <th className="p-3 font-semibold text-muted-foreground">Kriteria</th>
                 <th className="p-3 font-semibold text-muted-foreground">Nilai Crisp</th>
                 <th className="p-3 font-semibold text-pink-500">Bobot Normalisasi (Global Weight)</th>
                 <th className="p-3 font-semibold text-pink-500">Persentase</th>
@@ -194,35 +243,68 @@ export default function AHPStepsPage() {
       ) : null
     },
     {
-      title: "6. Uji Konsistensi (CR)",
+      title: "8. Uji Konsistensi (CR)",
       icon: <CheckCircle2 className="h-6 w-6 text-emerald-500" />,
-      description: "Mengecek apakah perbandingan matriks awal konsisten (kurang dari 0.10).",
+      description: "Mengecek apakah perbandingan matriks awal konsisten. Matriks dianggap konsisten jika CR < 0.10.",
       details: "Jika tidak konsisten (merah), disarankan pakar mengisi ulang kuesioner.",
       formula: "CR = CI / RI",
       content: data ? (
-        <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
-            <p className="text-xs text-muted-foreground mb-1">λ Max</p>
-            <p className="text-lg font-mono font-bold">{data.cr.lambdaMax}</p>
+        <div className="mt-4 space-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
+              <p className="text-xs text-muted-foreground mb-1">n (Ukuran Matriks)</p>
+              <p className="text-lg font-mono font-bold">{data.n}</p>
+            </div>
+            <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
+              <p className="text-xs text-muted-foreground mb-1">λ Max</p>
+              <p className="text-lg font-mono font-bold">{data.cr.lambdaMax}</p>
+            </div>
+            <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
+              <p className="text-xs text-muted-foreground mb-1">CI = (λmax − n) / (n − 1)</p>
+              <p className="text-lg font-mono font-bold">{data.cr.ci}</p>
+            </div>
+            <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
+              <p className="text-xs text-muted-foreground mb-1">Random Index (RI)</p>
+              <p className="text-lg font-mono font-bold text-blue-400">{data.ri}</p>
+            </div>
+            <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
+              <p className="text-xs text-muted-foreground mb-1">CR = CI / RI</p>
+              <p className={`text-lg font-mono font-bold ${data.cr.isConsistent ? "text-emerald-500" : "text-red-500"}`}>{data.cr.cr}</p>
+            </div>
           </div>
-          <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
-            <p className="text-xs text-muted-foreground mb-1">Consistency Index (CI)</p>
-            <p className="text-lg font-mono font-bold">{data.cr.ci}</p>
+          <div className={`p-4 rounded-xl text-center border font-bold ${data.cr.isConsistent ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600" : "bg-red-500/10 border-red-500/30 text-red-600"}`}>
+            {data.cr.isConsistent ? "KONSISTEN ✅ — CR < 0.10" : "TIDAK KONSISTEN ❌ — CR ≥ 0.10, disarankan revisi penilaian"}
           </div>
-          <div className="bg-muted p-4 rounded-xl text-center border border-border/50">
-            <p className="text-xs text-muted-foreground mb-1">Consistency Ratio (CR)</p>
-            <p className={`text-lg font-mono font-bold ${data.cr.isConsistent ? "text-emerald-500" : "text-red-500"}`}>{data.cr.cr}</p>
-          </div>
-          <div className={`p-4 rounded-xl text-center flex items-center justify-center border font-bold ${data.cr.isConsistent ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600" : "bg-red-500/10 border-red-500/30 text-red-600"}`}>
-            {data.cr.isConsistent ? "KONSISTEN ✅" : "TIDAK KONSISTEN ❌"}
+
+          {/* RI Reference Table */}
+          <div className="rounded-xl border border-border/50 overflow-hidden">
+            <p className="text-xs font-semibold text-muted-foreground px-3 py-2 bg-muted/50 border-b">Tabel Random Index (RI) — Saaty (1990)</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead className="bg-muted/30">
+                  <tr>
+                    {[1,2,3,4,5,6,7,8,9,10].map(n => (
+                      <th key={n} className={`p-2 text-center font-mono ${n === data.n ? 'text-blue-400 font-bold bg-blue-500/10' : 'text-muted-foreground'}`}>n={n}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {[0, 0, 0.58, 0.90, 1.12, 1.24, 1.32, 1.41, 1.45, 1.49].map((ri, i) => (
+                      <td key={i} className={`p-2 text-center font-mono ${(i+1) === data.n ? 'text-blue-400 font-bold bg-blue-500/10' : 'text-foreground/70'}`}>{ri.toFixed(2)}</td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       ) : null
     },
     {
-      title: "7. Ringkasan Konsistensi (CR) Keseluruhan",
+      title: "9. Ringkasan Konsistensi (CR) Keseluruhan",
       icon: <CheckCircle2 className="h-6 w-6 text-blue-500" />,
-      description: "Rekapitulasi uji konsistensi (CR) untuk seluruh matriks (Kriteria Umum, Antar CP Level 1, dan seluruh Sub-Kriteria CP).",
+      description: "Rekapitulasi uji konsistensi (CR) untuk seluruh matriks (Kriteria Umum, Antar CP Level 1, dan seluruh Sub-Kriteria CP1–CP10).",
       details: "Nilai CR < 0.10 menandakan matriks tersebut konsisten dan layak digunakan.",
       formula: "Target: CR < 0.10",
       content: data && data.allCRs ? (

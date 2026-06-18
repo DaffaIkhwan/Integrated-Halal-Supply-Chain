@@ -4,10 +4,19 @@ import {
   calculateFSE, 
   defuzzify, 
   normalizeWeights, 
-  calculateConsistencyRatio 
+  calculateConsistencyRatio,
+  sumTFNs,
+  getReciprocal,
+  type TFN,
 } from "@/lib/dss/fuzzyAHP";
 
 export const dynamic = 'force-dynamic';
+
+// Random Index (RI) table — Saaty (1990)
+const RI_TABLE: Record<number, number> = {
+  1: 0, 2: 0, 3: 0.58, 4: 0.90, 5: 1.12,
+  6: 1.24, 7: 1.32, 8: 1.41, 9: 1.45, 10: 1.49,
+};
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -15,6 +24,13 @@ export async function GET(request: Request) {
 
   try {
     const { matrix, codes } = await loadMatrixFromDB(type);
+    const n = codes.length;
+
+    // ─── Intermediate: Row Sums, Total Sum, Inverse ───
+    const rowSums = matrix.map((row) => sumTFNs(row.map(cell => cell || [1, 1, 1] as TFN)));
+    const totalSum = sumTFNs(rowSums);
+    const inversTotal = getReciprocal(totalSum);
+
     const fse = calculateFSE(matrix);
     const crispValues = fse.map((val) => defuzzify(val));
     const normalizedWeights = normalizeWeights(crispValues);
@@ -41,6 +57,15 @@ export async function GET(request: Request) {
       return row;
     });
 
+    // Row Sums table for intermediate display
+    const rowSumsTable = codes.map((code, i) => {
+      const rs = rowSums[i] || [0, 0, 0];
+      return {
+        code,
+        rowSum: `[${rs[0].toFixed(3)}, ${rs[1].toFixed(3)}, ${rs[2].toFixed(3)}]`,
+      };
+    });
+
     const resultTable = codes.map((code, i) => {
       const f = fse[i] || [0, 0, 0];
       return {
@@ -65,6 +90,7 @@ export async function GET(request: Request) {
       { id: 'LEVEL2_CP7', label: 'Sub-Kriteria CP7' },
       { id: 'LEVEL2_CP8', label: 'Sub-Kriteria CP8' },
       { id: 'LEVEL2_CP9', label: 'Sub-Kriteria CP9' },
+      { id: 'LEVEL2_CP10', label: 'Sub-Kriteria CP10' },
     ];
 
     const allCRs = [];
@@ -93,8 +119,13 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       codes,
+      n,
       pairwiseTable,
       crispPairwiseTable,
+      rowSumsTable,
+      totalSum: `[${totalSum[0].toFixed(3)}, ${totalSum[1].toFixed(3)}, ${totalSum[2].toFixed(3)}]`,
+      inversTotal: `[${inversTotal[0].toFixed(4)}, ${inversTotal[1].toFixed(4)}, ${inversTotal[2].toFixed(4)}]`,
+      ri: RI_TABLE[n] ?? 1.49,
       resultTable,
       cr,
       allCRs,

@@ -156,7 +156,7 @@ export async function POST() {
         }
 
         // ═══ 3. Kalkulasi Sub-Kriteria per CP (Level 2) ═══
-        for (let cpNum = 1; cpNum <= 9; cpNum++) {
+        for (let cpNum = 1; cpNum <= 10; cpNum++) {
             const cpId = `CP${cpNum}`;
             const subResult = await aggregateAndSaveMatrix(responses, cpId, `LEVEL2_${cpId}`);
             if (subResult.processed) {
