@@ -70,48 +70,51 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
           }),
           execute: async ({ query }) => {
             try {
-              // Filter stop words from query
-              const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu'];
-              const words = query.split(' ')
+              const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'hukum', 'boleh', 'tidak', 'saja', 'terkait', 'tentang'];
+              const words = query.split(/[\s\?]+/)
                 .map(w => w.replace(/[^a-zA-Z0-9]/g, '').toLowerCase())
-                .filter(w => w.length > 3 && !stopWords.includes(w))
-                .sort((a, b) => b.length - a.length); // Sort by length descending to prioritize important keywords
+                .filter(w => w.length > 3 && !stopWords.includes(w));
+              
+              // Fallback if all words are filtered out
+              const finalWords = words.length > 0 ? words : query.split(' ').map(w => w.toLowerCase()).filter(w => w.length > 3);
+              const keywords = Array.from(new Set(finalWords)).slice(0, 5);
 
-              // Take the top 2 longest/most important words
-              const keywords = words.slice(0, 2).map(w => `%${w}%`);
-              let searchResults: any[] = [];
+              if (keywords.length === 0) return 'Kata kunci pencarian tidak ditemukan atau terlalu pendek.';
 
-              if (keywords.length > 0) {
-                // Try AND matching first for high relevance
-                const conditions = keywords.map((k: string, i: number) => `chunk ILIKE $${i + 1}`).join(' AND ');
-                searchResults = await prisma.$queryRawUnsafe(`SELECT chunk, metadata FROM oai WHERE ${conditions} LIMIT 3`, ...keywords);
+              // Fetch up to 20 potential matches using OR
+              const rawResults = await prisma.kMSDocumentChunk.findMany({
+                where: {
+                  OR: keywords.map(kw => ({
+                    chunk: { contains: kw, mode: 'insensitive' }
+                  }))
+                },
+                take: 20,
+                include: { document: true }
+              });
 
-                // Fallback to OR if AND yields nothing
-                if (searchResults.length === 0) {
-                  const orConditions = keywords.map((k: string, i: number) => `chunk ILIKE $${i + 1}`).join(' OR ');
-                  searchResults = await prisma.$queryRawUnsafe(`SELECT chunk, metadata FROM oai WHERE ${orConditions} LIMIT 3`, ...keywords);
-                }
-              } else {
-                searchResults = await prisma.$queryRaw`SELECT chunk, metadata FROM oai WHERE chunk ILIKE ${`%${query}%`} LIMIT 3`;
-              }
-              if (!searchResults || searchResults.length === 0) {
-                searchResults = await prisma.$queryRaw`SELECT chunk, metadata FROM oai LIMIT 2`;
-              }
+              if (rawResults.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
 
-              const MAX_CHUNK_CHARS = 1500;
-              const MAX_TOTAL_CHARS = 4500;
+              // Score them in memory based on how many distinct keywords they contain
+              const scoredResults = rawResults.map(r => {
+                const chunkLower = r.chunk.toLowerCase();
+                let score = 0;
+                keywords.forEach(kw => {
+                  if (chunkLower.includes(kw)) score += 1;
+                });
+                return { ...r, score };
+              });
+
+              // Sort by score descending, then take top 4
+              scoredResults.sort((a, b) => b.score - a.score);
+              const results = scoredResults.slice(0, 4);
+
               let totalChars = 0;
-
-              const formattedResults = searchResults
-                .map((r: any) => {
-                  if (totalChars >= MAX_TOTAL_CHARS) return null;
-                  let meta: any = {};
-                  try {
-                    meta = typeof r.metadata === 'string' ? JSON.parse(r.metadata) : (r.metadata || {});
-                  } catch (e) { }
-                  const cp = meta.criticalPoint || 'General KMS';
-                  const truncatedChunk = r.chunk.length > MAX_CHUNK_CHARS
-                    ? r.chunk.substring(0, MAX_CHUNK_CHARS) + '... [dipotong]'
+              const formattedResults = results
+                .map(r => {
+                  if (totalChars > 3000) return null;
+                  const cp = r.document?.criticalPointId || 'UMUM';
+                  const truncatedChunk = r.chunk.length > 1000 
+                    ? r.chunk.substring(0, 1000) + '...' 
                     : r.chunk;
                   totalChars += truncatedChunk.length;
                   return `[${cp}] ${truncatedChunk}`;
