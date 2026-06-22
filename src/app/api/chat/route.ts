@@ -24,9 +24,9 @@ export async function POST(req: Request) {
 ## CARA KERJA
 1. Untuk SETIAP pertanyaan pengguna, **SELALU panggil tool search_knowledge_base** terlebih dahulu untuk mencari informasi di Knowledge Base.
 2. Setelah mendapat hasil dari tool, **jawab berdasarkan data yang ditemukan**. Rangkum menjadi jawaban yang informatif dan mudah dipahami.
-3. Jika hasil pencarian benar-benar kosong (tool mengembalikan "Tidak ada dokumen yang relevan ditemukan"), barulah sampaikan bahwa informasi belum tersedia di Knowledge Base.
+3. Jika hasil pencarian kosong atau tidak relevan dengan pertanyaan, jawab: "Maaf, informasi mengenai topik tersebut belum tersedia dalam Knowledge Base kami saat ini."
 4. **JANGAN menolak pertanyaan sebelum mencari.** Selalu cari dulu, baru simpulkan.
-5. **JANGAN mengarang atau menambahkan informasi dari luar Knowledge Base.** Jawaban HANYA berdasarkan data yang dikembalikan oleh tools.
+5. **SANGAT PENTING: JANGAN PERNAH menjawab dari pengetahuan umum Anda sendiri.** Jawaban HANYA boleh berdasarkan data yang dikembalikan oleh tools. Jika tools tidak mengembalikan data yang relevan, Anda WAJIB mengatakan informasi belum tersedia. DILARANG KERAS mengarang jawaban sendiri.
 
 ## TOOLS YANG TERSEDIA
 - **search_knowledge_base**: Cari informasi, teori, regulasi, SOP, prosedur, atau apapun di Knowledge Base. SELALU gunakan ini untuk menjawab pertanyaan.
