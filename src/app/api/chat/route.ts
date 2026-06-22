@@ -36,9 +36,10 @@ export async function POST(req: Request) {
 
 ## FORMAT JAWABAN
 - Jawab dalam **Bahasa Indonesia** yang terstruktur dan profesional.
-- Gunakan **Tabel Markdown** untuk data berseri (skor CP, riwayat compliance). Tabel hanya berisi CP1–CP9.
+- Gunakan **Tabel Markdown** untuk data berseri (skor CP, riwayat compliance). Tabel hanya berisi CP1–CP9, **TANPA CP10**.
+- Di kolom pertama tabel, WAJIB tampilkan **ID DAN Nama CP** (contoh: "CP1 Farm/Kandang Sapi", "CP4 RPH/Penyembelihan"), bukan hanya "CP1".
 - Gunakan bullet points/list untuk informasi umum (Batch ID, Tanggal, RPH, dll).
-- Jangan cantumkan kolom "Sub-CP" atau "Nilai Sub-CP" di tabel. Sebutkan di paragraf penjelasan saja.
+- Setelah tabel, tampilkan **SELURUH Data Personel & Info Operasional** per CP. Untuk setiap CP, tampilkan nama personel dan SEMUA detail operasional (suhu, kendaraan, supplier, sertifikat, lokasi, dll) pada baris terpisah.
 - Setelah memanggil **trace_halal_batch**, sebutkan CP dengan Global Weighted Risk tertinggi beserta Sub-CP penyumbangnya, lalu beri rekomendasi konkrit.
 - Sertakan referensi sumber jika tersedia.`,
       messages,
@@ -218,16 +219,21 @@ export async function POST(req: Request) {
               if (involved.length > 0) {
                 traceOutput += `\n\nData Personel & Info Operasional Terkait:`;
                 involved.forEach((p: any) => {
-                  let extra = '';
+                  traceOutput += `\n${p.cpId || 'Umum'}: ${p.respondentName} (${p.respondentRole} di ${p.respondentOrg})`;
                   if (p.respondentInfo) {
                     const info = p.respondentInfo as Record<string, any>;
-                    const ignoreKeys = ['batch', 'tanggal', 'shift', 'waktuMulai', 'waktuBerangkat', 'idKaryawan', 'namaPIC', 'jabatan', 'namaFarm', 'namaRPH', 'namaPerusahaan', 'lokasi', 'alamat', 'masaBerlaku', 'namaOutlet', 'namaGudang', 'namaStaff'];
-                    const extraInfos = Object.keys(info)
-                      .filter(k => !ignoreKeys.includes(k) && typeof info[k] === 'string' && info[k].trim() !== '')
-                      .map(k => `${k}: ${info[k]}`);
-                    if (extraInfos.length > 0) extra = ` | Detail: ${extraInfos.join(', ')}`;
+                    // Only skip truly internal/ID fields
+                    const ignoreKeys = ['batch', 'tanggal', 'shift', 'waktuMulai', 'idKaryawan'];
+                    Object.keys(info).forEach(k => {
+                      if (ignoreKeys.includes(k)) return;
+                      const val = info[k];
+                      if (val === null || val === undefined || val === '') return;
+                      if (typeof val === 'string' && val.trim() === '') return;
+                      // Format key: camelCase to readable
+                      const label = k.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase()).trim();
+                      traceOutput += `\n  ${label}: ${val}`;
+                    });
                   }
-                  traceOutput += `\n- [${p.cpId || 'Umum'}] ${p.respondentName} (${p.respondentRole} di ${p.respondentOrg})${extra}`;
                 });
               }
 
