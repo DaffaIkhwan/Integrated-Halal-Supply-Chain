@@ -169,10 +169,12 @@ export async function POST(req: Request) {
               }
               if (!batchInfo) return `Data Traceability untuk Batch "${batchId}" tidak ditemukan.`;
               let traceOutput = `--- Traceability Info ---\nBatch ID: ${batchInfo.id}\nTanggal Produksi: ${batchInfo.productionDate}\nTotal Halal Compliance Risk Score: ${batchInfo.totalRiskScore.toFixed(4)} (${batchInfo.riskLevel})\nAsal Ternak: ${batchInfo.cattle.earTag} dari ${batchInfo.cattle.farm.name}\nJenis Sapi: ${batchInfo.cattle.breed || 'Tidak Dicatat'}\nUmur/Tanggal Lahir: ${batchInfo.cattle.birthDate ? new Date(batchInfo.cattle.birthDate).toLocaleDateString('id-ID') : 'Tidak Dicatat'}\nDetail Pakan (CP2): Informasi merk/jenis pakan spesifik tidak direkam di master data, masuk dalam evaluasi kepatuhan Peternakan.\nRPH: ${batchInfo.slaughterhouse.name}`;
-              if (batchInfo.cpRecords.length > 0) {
+              // Filter out CP10 from records
+              const cpRecordsFiltered = batchInfo.cpRecords.filter(rec => rec.criticalPoint.id !== 'CP10');
+              if (cpRecordsFiltered.length > 0) {
                 traceOutput += `\n\nCompliance Records:`;
                 const { getRiskLevel } = await import('@/lib/dss/fuzzyAHP');
-                for (const rec of batchInfo.cpRecords) {
+                for (const rec of cpRecordsFiltered) {
                   const rLevel = getRiskLevel(rec.riskValue);
                   traceOutput += `\n  ${rec.criticalPoint.id} ${rec.criticalPoint.name}: ${rLevel} Risk | Risk Score: ${rec.riskValue.toFixed(4)} | Global Weighted Risk: ${rec.weightedRisk.toFixed(4)}`;
                   
