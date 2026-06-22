@@ -122,13 +122,15 @@ export async function POST(req: Request) {
               const { getDynamicCPWeights, calculateBatchRiskScore } = await import('@/lib/dss/fuzzyAHP');
               if (batchId) {
                 const batchRisk = await calculateBatchRiskScore(batchId);
-                return `--- DSS Batch Risk (${batchId}) ---\nTotal Risk Score: ${batchRisk.totalRiskScore} (${batchRisk.riskLevel})\n\nBreakdown:\n${batchRisk.cpBreakdown
+                const filteredBreakdown = batchRisk.cpBreakdown.filter((cp: any) => !cp.cpId?.startsWith('CP10'));
+                return `--- DSS Batch Risk (${batchId}) ---\nTotal Risk Score: ${batchRisk.totalRiskScore} (${batchRisk.riskLevel})\n\nBreakdown:\n${filteredBreakdown
                   .map((cp: any) => `  ${cp.cpId} ${cp.cpName}: Local=${cp.localRiskScore.toFixed(3)} × Global=${cp.globalWeight.toFixed(3)} = ${cp.globalWeightedRisk.toFixed(3)} [${cp.riskLevel}]`)
                   .join('\n')}`;
               }
               const cpWeights = await getDynamicCPWeights();
               if (!cpWeights || cpWeights.length === 0) return 'Data bobot belum tersedia.';
-              return `--- DSS Halal Risk Output ---\n${cpWeights
+              const filtered = cpWeights.filter((cp: any) => !cp.id?.startsWith('CP10'));
+              return `--- DSS Halal Risk Output ---\n${filtered
                 .map((cp: any) => `Titik Kritis: ${cp.name} | Bobot Global: ${cp.weight.toFixed(4)} | Risk Score Lokal: ${(cp.localRiskScore ?? 0).toFixed(3)} | Status: ${cp.riskLevel}`)
                 .join('\n')}`;
             } catch (e: any) {
