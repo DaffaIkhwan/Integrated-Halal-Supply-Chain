@@ -72,52 +72,29 @@ Topik yang diperbolehkan (tetap harus dicari di knowledge base dulu):
           }),
           execute: async ({ query }) => {
             try {
-              const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'hukum', 'boleh', 'tidak', 'saja', 'terkait', 'tentang'];
-              const words = query.split(/[\s\?]+/)
-                .map(w => w.replace(/[^a-zA-Z0-9]/g, '').toLowerCase())
-                .filter(w => w.length > 3 && !stopWords.includes(w));
-              
-              // Fallback if all words are filtered out
-              const finalWords = words.length > 0 ? words : query.split(' ').map(w => w.toLowerCase()).filter(w => w.length > 3);
-              const keywords = Array.from(new Set(finalWords)).slice(0, 5);
+              // Gunakan semantic vector search untuk relevansi yang lebih tinggi
+              const results = await searchSimilarChunks(query, 5);
 
-              if (keywords.length === 0) return 'Kata kunci pencarian tidak ditemukan atau terlalu pendek.';
-
-              // Fetch up to 20 potential matches using OR
-              const rawResults = await prisma.kMSDocumentChunk.findMany({
-                where: {
-                  OR: keywords.map(kw => ({
-                    chunk: { contains: kw, mode: 'insensitive' }
-                  }))
-                },
-                take: 20,
-                include: { document: true }
-              });
-
-              if (rawResults.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
-
-              // Score them in memory based on how many distinct keywords they contain
-              const scoredResults = rawResults.map(r => {
-                const chunkLower = r.chunk.toLowerCase();
-                let score = 0;
-                keywords.forEach(kw => {
-                  if (chunkLower.includes(kw)) score += 1;
-                });
-                return { ...r, score };
-              });
-
-              // Sort by score descending, then take top 4
-              scoredResults.sort((a, b) => b.score - a.score);
-              const results = scoredResults.slice(0, 4);
+              if (!results || results.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
 
               let totalChars = 0;
               const formattedResults = results
                 .map(r => {
                   if (totalChars > 3000) return null;
-                  const cp = r.document?.criticalPointId || 'UMUM';
-                  const truncatedChunk = r.chunk.length > 1000 
-                    ? r.chunk.substring(0, 1000) + '...' 
-                    : r.chunk;
+                  
+                  let cp = 'UMUM';
+                  if (r.metadata) {
+                    try {
+                      const meta = typeof r.metadata === 'string' ? JSON.parse(r.metadata) : r.metadata;
+                      if (meta.criticalPoint) cp = meta.criticalPoint;
+                    } catch (e) {}
+                  }
+
+                  const chunkText = r.chunk || '';
+                  const truncatedChunk = chunkText.length > 1000 
+                    ? chunkText.substring(0, 1000) + '...' 
+                    : chunkText;
+                  
                   totalChars += truncatedChunk.length;
                   return `[${cp}] ${truncatedChunk}`;
                 })
