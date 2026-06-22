@@ -50,16 +50,47 @@ export async function POST(req: Request) {
           }),
           execute: async ({ query }) => {
             try {
-              // Gunakan semantic vector search untuk relevansi yang lebih tinggi
-              const results = await searchSimilarChunks(query, 5);
+              // Text-based keyword search (vector search incompatible: docs use text-embedding-3-small but searchSimilarChunks uses all-MiniLM-L6-v2)
+              const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'boleh', 'tidak', 'saja', 'terkait', 'tentang', 'cara', 'apa', 'jelaskan', 'sesuai', 'sebutkan'];
+              const words = query.split(/[\s\?\!\.]+/)
+                .map(w => w.replace(/[^a-zA-Z0-9\u00C0-\u024F]/g, '').toLowerCase())
+                .filter(w => w.length > 2 && !stopWords.includes(w));
+              
+              const keywords = words.length > 0 ? Array.from(new Set(words)).slice(0, 6) : [query.toLowerCase()];
 
-              if (!results || results.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
+              if (keywords.length === 0) return 'Kata kunci pencarian tidak ditemukan.';
+
+              console.log('[RAG] Keywords:', keywords);
+
+              const rawResults = await prisma.oai.findMany({
+                where: {
+                  OR: keywords.map(kw => ({
+                    chunk: { contains: kw, mode: 'insensitive' as const }
+                  }))
+                },
+                take: 30,
+                select: { chunk: true, metadata: true }
+              });
+
+              console.log('[RAG] Raw results count:', rawResults.length);
+
+              if (rawResults.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
+
+              // Score by keyword match count
+              const scored = rawResults.map(r => {
+                const text = (r.chunk || '').toLowerCase();
+                let score = 0;
+                keywords.forEach(kw => { if (text.includes(kw)) score++; });
+                return { ...r, score };
+              });
+
+              scored.sort((a, b) => b.score - a.score);
+              const topResults = scored.slice(0, 5);
 
               let totalChars = 0;
-              const formattedResults = results
+              const formatted = topResults
                 .map(r => {
-                  if (totalChars > 3000) return null;
-                  
+                  if (totalChars > 4000) return null;
                   let cp = 'UMUM';
                   if (r.metadata) {
                     try {
@@ -67,19 +98,14 @@ export async function POST(req: Request) {
                       if (meta.criticalPoint) cp = meta.criticalPoint;
                     } catch (e) {}
                   }
-
-                  const chunkText = r.chunk || '';
-                  const truncatedChunk = chunkText.length > 1000 
-                    ? chunkText.substring(0, 1000) + '...' 
-                    : chunkText;
-                  
-                  totalChars += truncatedChunk.length;
-                  return `[${cp}] ${truncatedChunk}`;
+                  const chunk = (r.chunk || '').length > 1200 ? (r.chunk || '').substring(0, 1200) + '...' : (r.chunk || '');
+                  totalChars += chunk.length;
+                  return `[${cp}] ${chunk}`;
                 })
                 .filter(Boolean)
                 .join('\n\n');
 
-              return `--- RAG KMS Output ---\n${formattedResults}`;
+              return `--- RAG KMS Output ---\n${formatted}`;
             } catch (e: any) {
               console.error('RAG search error:', e);
               return `Gagal mencari di knowledge base: ${e.message}`;
