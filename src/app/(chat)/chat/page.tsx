@@ -105,8 +105,8 @@ function ChatPageInner() {
         .catch(() => {}) // Silently ignore — chatbot tools will fetch the data
         .finally(() => setIsLoadingTrace(false));
 
-      // Always use earTag/batchId directly as the prompt — let chatbot tools handle lookup
-      const tracePrompt = `Lacak batch sapi ${traceParam} dan tampilkan informasi lengkap meliputi: Batch ID, tanggal produksi, total halal compliance risk score, asal ternak (farm), jenis sapi, RPH, rekaman kepatuhan SEMUA Critical Point (CP1-CP9) beserta risk score, global weighted risk, dan sub-CP dengan risiko tertinggi, data personel & info operasional setiap CP (nama petugas, supervisor, nomor kendaraan, sertifikat, suhu, dll), serta rekomendasi perbaikan.`;
+      // Short clean prompt — system prompt already instructs full detail response
+      const tracePrompt = `Lacak batch dengan ID ${traceParam}`;
 
       // Create a new session for this trace
       const newSession: ChatSession = {
