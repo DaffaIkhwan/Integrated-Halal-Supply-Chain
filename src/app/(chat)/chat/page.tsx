@@ -19,8 +19,10 @@ import {
   RotateCcw,
   Trash2,
   Shield,
+  ShieldCheck,
   CheckCircle2,
   AlertTriangle,
+  QrCode,
 } from "lucide-react";
 import {
   ChatSidebar,
@@ -28,7 +30,7 @@ import {
   loadSessions,
   saveSessions,
 } from "@/components/chat-sidebar";
-import { TraceSummaryUI } from "@/components/trace-summary-ui";
+
 
 // ─── Suggested Actions ───
 const SUGGESTED_ACTIONS = [
@@ -59,8 +61,7 @@ function ChatPageInner() {
   const searchParams = useSearchParams();
   const traceParam = searchParams.get("trace");
   const [traceTriggered, setTraceTriggered] = useState(false);
-  const [traceData, setTraceData] = useState<any>(null);
-  const [isLoadingTrace, setIsLoadingTrace] = useState(false);
+
 
   // Load sessions from localStorage on mount
   useEffect(() => {
@@ -93,18 +94,6 @@ function ChatPageInner() {
       url.searchParams.delete("trace");
       window.history.replaceState({}, "", url.pathname);
 
-      // Fetch trace data for visual TraceSummaryUI (optional, non-blocking)
-      setIsLoadingTrace(true);
-      fetch(`/api/trace/${traceParam}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data && !data.error) {
-            setTraceData(data);
-          }
-        })
-        .catch(() => {}) // Silently ignore — chatbot tools will fetch the data
-        .finally(() => setIsLoadingTrace(false));
-
       // Short clean prompt — system prompt already instructs full detail response
       const tracePrompt = `Lacak batch dengan ID ${traceParam}`;
 
@@ -127,6 +116,13 @@ function ChatPageInner() {
       append({ role: "user", content: tracePrompt });
     }
   }, [traceParam, traceTriggered, isLoading, append]);
+
+  // ─── Helper: detect trace response from chatbot ───
+  const isTraceResponse = (m: any) =>
+    m.role === "assistant" &&
+    m.toolInvocations?.some(
+      (t: any) => t.toolName === "trace_halal_batch" && t.state === "result"
+    );
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -294,21 +290,6 @@ function ChatPageInner() {
           className="flex-1 overflow-y-auto px-4 py-6 space-y-1"
           style={{ scrollBehavior: "smooth" }}
         >
-          {/* Trace Summary UI injected for Deep Links */}
-          {isLoadingTrace && (
-            <div className="w-full flex justify-center py-8">
-              <Loader2 className="h-6 w-6 animate-spin text-cyan-500" />
-            </div>
-          )}
-          {traceData && !isLoadingTrace && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-8"
-            >
-              <TraceSummaryUI data={traceData} />
-            </motion.div>
-          )}
 
           {/* Greeting */}
           <AnimatePresence>
@@ -412,46 +393,102 @@ function ChatPageInner() {
 
                     {/* Text content */}
                     {m.content ? (
-                      <div className="prose prose-sm dark:prose-invert max-w-none text-[13px] leading-[1.65]
-                        prose-headings:font-semibold prose-headings:tracking-tight
-                        prose-p:text-foreground/90
-                        prose-strong:text-foreground prose-strong:font-semibold
-                        prose-code:text-[12px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono
-                        prose-pre:bg-[#1e1e2e] prose-pre:border prose-pre:border-border/30 prose-pre:rounded-xl prose-pre:shadow-sm
-                        prose-ul:my-2 prose-li:my-0.5
-                        prose-a:text-cyan-500 prose-a:no-underline hover:prose-a:underline
-                      ">
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          components={{
-                            ...tableComponents,
-                            code({ className, children, ...props }) {
-                              const match = /language-(\w+)/.exec(className || "");
-                              return match ? (
-                                <SyntaxHighlighter
-                                  style={oneDark}
-                                  language={match[1]}
-                                  PreTag="div"
-                                  customStyle={{
-                                    margin: 0,
-                                    borderRadius: "0.75rem",
-                                    fontSize: "12px",
-                                  }}
-                                  {...(props as SyntaxHighlighterProps)}
-                                >
-                                  {String(children).replace(/\n$/, "")}
-                                </SyntaxHighlighter>
-                              ) : (
-                                <code className={className} {...props}>
-                                  {children}
-                                </code>
-                              );
-                            },
-                          }}
-                        >
-                          {m.content}
-                        </ReactMarkdown>
-                      </div>
+                      isTraceResponse(m) ? (
+                        /* ── Styled Trace Response ── */
+                        <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/[0.03] via-transparent to-emerald-500/[0.03] overflow-hidden shadow-sm">
+                          {/* Trace Header */}
+                          <div className="flex items-center gap-2.5 px-4 py-2.5 border-b border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10">
+                            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-cyan-500/15">
+                              <ShieldCheck className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />
+                            </div>
+                            <span className="text-[11px] font-bold text-cyan-700 dark:text-cyan-300 tracking-widest uppercase">Halal Traceability Report</span>
+                          </div>
+                          {/* Trace Content */}
+                          <div className="px-4 py-3 prose prose-sm dark:prose-invert max-w-none text-[13px] leading-[1.65]
+                            prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-cyan-700 dark:prose-headings:text-cyan-300
+                            prose-p:text-foreground/90
+                            prose-strong:text-foreground prose-strong:font-semibold
+                            prose-code:text-[12px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono
+                            prose-pre:bg-[#1e1e2e] prose-pre:border prose-pre:border-border/30 prose-pre:rounded-xl prose-pre:shadow-sm
+                            prose-ul:my-2 prose-li:my-0.5
+                            prose-a:text-cyan-500 prose-a:no-underline hover:prose-a:underline
+                            prose-th:text-cyan-700 dark:prose-th:text-cyan-300 prose-th:border-cyan-500/30
+                          ">
+                            <ReactMarkdown
+                              remarkPlugins={[remarkGfm]}
+                              components={{
+                                ...tableComponents,
+                                code({ className, children, ...props }) {
+                                  const match = /language-(\w+)/.exec(className || "");
+                                  return match ? (
+                                    <SyntaxHighlighter
+                                      style={oneDark}
+                                      language={match[1]}
+                                      PreTag="div"
+                                      customStyle={{
+                                        margin: 0,
+                                        borderRadius: "0.75rem",
+                                        fontSize: "12px",
+                                      }}
+                                      {...(props as SyntaxHighlighterProps)}
+                                    >
+                                      {String(children).replace(/\n$/, "")}
+                                    </SyntaxHighlighter>
+                                  ) : (
+                                    <code className={className} {...props}>
+                                      {children}
+                                    </code>
+                                  );
+                                },
+                              }}
+                            >
+                              {m.content}
+                            </ReactMarkdown>
+                          </div>
+                        </div>
+                      ) : (
+                        /* ── Regular Response ── */
+                        <div className="prose prose-sm dark:prose-invert max-w-none text-[13px] leading-[1.65]
+                          prose-headings:font-semibold prose-headings:tracking-tight
+                          prose-p:text-foreground/90
+                          prose-strong:text-foreground prose-strong:font-semibold
+                          prose-code:text-[12px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono
+                          prose-pre:bg-[#1e1e2e] prose-pre:border prose-pre:border-border/30 prose-pre:rounded-xl prose-pre:shadow-sm
+                          prose-ul:my-2 prose-li:my-0.5
+                          prose-a:text-cyan-500 prose-a:no-underline hover:prose-a:underline
+                        ">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              ...tableComponents,
+                              code({ className, children, ...props }) {
+                                const match = /language-(\w+)/.exec(className || "");
+                                return match ? (
+                                  <SyntaxHighlighter
+                                    style={oneDark}
+                                    language={match[1]}
+                                    PreTag="div"
+                                    customStyle={{
+                                      margin: 0,
+                                      borderRadius: "0.75rem",
+                                      fontSize: "12px",
+                                    }}
+                                    {...(props as SyntaxHighlighterProps)}
+                                  >
+                                    {String(children).replace(/\n$/, "")}
+                                  </SyntaxHighlighter>
+                                ) : (
+                                  <code className={className} {...props}>
+                                    {children}
+                                  </code>
+                                );
+                              },
+                            }}
+                          >
+                            {m.content}
+                          </ReactMarkdown>
+                        </div>
+                      )
                     ) : !((m as any).toolInvocations?.length > 0) ? (
                       <div className="flex h-[calc(13px*1.65)] items-center">
                         <span className="text-[13px] text-muted-foreground animate-pulse font-medium">
