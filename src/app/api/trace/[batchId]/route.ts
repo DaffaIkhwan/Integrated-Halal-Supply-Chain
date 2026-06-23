@@ -35,7 +35,7 @@ export async function GET(
         cp3Transport: {
           take: 1,
           orderBy: { createdAt: "desc" },
-          include: { transporter: { select: { name: true, vehicleNumber: true, originLocation: true, destinationLocation: true, animalCount: true } } },
+          include: { transporter: { select: { name: true, vehicleNumber: true } } },
         },
         cp4Slaughter: { take: 1, orderBy: { createdAt: "desc" } },
         cp5PostSlaughter: { take: 1, orderBy: { createdAt: "desc" } },
@@ -134,9 +134,6 @@ export async function GET(
       ? {
           name: transport.transporter.name,
           vehicleNumber: transport.transporter.vehicleNumber,
-          origin: transport.transporter.originLocation,
-          destination: transport.transporter.destinationLocation,
-          animalCount: transport.transporter.animalCount,
         }
       : null;
 
