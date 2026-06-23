@@ -50,8 +50,8 @@ interface TraceData {
   retail?: { name: string; location?: string; outletType?: string } | null;
 }
 
-function getRiskColor(level: string) {
-  const l = level.toUpperCase();
+function getRiskColor(level: string | undefined) {
+  const l = (level || "").toUpperCase();
   if (l === "LOW" || l === "VERY LOW") return { bg: "bg-emerald-500/10", text: "text-emerald-600 dark:text-emerald-400", border: "border-emerald-500/30" };
   if (l === "MEDIUM" || l === "MODERATE") return { bg: "bg-amber-500/10", text: "text-amber-600 dark:text-amber-400", border: "border-amber-500/30" };
   if (l === "HIGH") return { bg: "bg-orange-500/10", text: "text-orange-600 dark:text-orange-400", border: "border-orange-500/30" };
@@ -59,8 +59,8 @@ function getRiskColor(level: string) {
   return { bg: "bg-muted", text: "text-muted-foreground", border: "border-border" };
 }
 
-function getStatusIcon(status: string) {
-  switch (status.toUpperCase()) {
+function getStatusIcon(status: string | undefined) {
+  switch ((status || "").toUpperCase()) {
     case "PASS": return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />;
     case "FAIL": return <XCircle className="h-3.5 w-3.5 text-red-500" />;
     default: return <Clock className="h-3.5 w-3.5 text-amber-500" />;
@@ -91,13 +91,13 @@ export function TraceSummaryUI({ data }: { data: TraceData }) {
 
           <div className="flex flex-col items-end">
             <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border ${riskColors.bg} ${riskColors.border}`}>
-              {data.riskLevel.toUpperCase().includes("HIGH") ? (
+              {(data.riskLevel || "").toUpperCase().includes("HIGH") ? (
                 <ShieldAlert className={`h-4 w-4 ${riskColors.text}`} />
               ) : (
                 <ShieldCheck className={`h-4 w-4 ${riskColors.text}`} />
               )}
               <span className={`text-xs font-bold ${riskColors.text}`}>
-                {data.riskLevel}
+                {data.riskLevel || "UNKNOWN"}
               </span>
             </div>
             <p className="text-[10px] text-muted-foreground mt-1">
@@ -181,11 +181,11 @@ export function TraceSummaryUI({ data }: { data: TraceData }) {
         {/* Batch ID */}
         <div className="rounded-lg border border-border/30 bg-muted/30 px-3 py-2 flex items-center justify-between">
           <span className="text-[10px] text-muted-foreground uppercase font-semibold">Batch ID</span>
-          <span className="font-mono text-[11px] font-bold text-foreground">{data.id.split("-")[0]}</span>
+          <span className="font-mono text-[11px] font-bold text-foreground">{(data.id || "").split("-")[0]}</span>
         </div>
 
         {/* CP Records Table */}
-        {data.cpRecords.length > 0 && (
+        {data.cpRecords?.length > 0 && (
           <div>
             <p className="text-xs font-bold mb-2 flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-cyan-500" />

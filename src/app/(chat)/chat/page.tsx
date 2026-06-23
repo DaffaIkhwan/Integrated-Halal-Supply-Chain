@@ -97,11 +97,16 @@ function ChatPageInner() {
       fetch(`/api/trace/${traceParam}`)
         .then((res) => res.json())
         .then((data) => {
-          if (data) setTraceData(data);
+          if (data && !data.error) {
+            setTraceData(data);
+          }
 
           // Use ear tag from fetched data for better RAG results
           const earTag = data?.earTag || traceParam;
-          const tracePrompt = `Lacak batch sapi ${earTag} dan tampilkan informasi lengkap meliputi: Batch ID, tanggal produksi, total halal compliance risk score, asal ternak (farm), jenis sapi, RPH, rekaman kepatuhan SEMUA Critical Point (CP1-CP9) beserta risk score, global weighted risk, dan sub-CP dengan risiko tertinggi, data personel & info operasional setiap CP (nama petugas, supervisor, nomor kendaraan, sertifikat, suhu, dll), serta rekomendasi perbaikan.`;
+          const isError = !!data?.error;
+          const tracePrompt = isError 
+            ? `Data batch ${traceParam} tidak ditemukan. ${data.error}`
+            : `Lacak batch sapi ${earTag} dan tampilkan informasi lengkap meliputi: Batch ID, tanggal produksi, total halal compliance risk score, asal ternak (farm), jenis sapi, RPH, rekaman kepatuhan SEMUA Critical Point (CP1-CP9) beserta risk score, global weighted risk, dan sub-CP dengan risiko tertinggi, data personel & info operasional setiap CP (nama petugas, supervisor, nomor kendaraan, sertifikat, suhu, dll), serta rekomendasi perbaikan.`;
 
           // Create a new session for this trace
           const newSession: ChatSession = {
