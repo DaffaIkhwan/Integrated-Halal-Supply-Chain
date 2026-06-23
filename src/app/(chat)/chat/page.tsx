@@ -1,7 +1,8 @@
 "use client";
 
 import { useChat } from "ai/react";
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import ReactMarkdown from "react-markdown";
@@ -41,10 +42,22 @@ function generateId() {
 }
 
 export default function ChatPage() {
+  return (
+    <Suspense>
+      <ChatPageInner />
+    </Suspense>
+  );
+}
+
+function ChatPageInner() {
   // ─── Sidebar State ───
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
+
+  const searchParams = useSearchParams();
+  const traceParam = searchParams.get("trace");
+  const [traceTriggered, setTraceTriggered] = useState(false);
 
   // Load sessions from localStorage on mount
   useEffect(() => {
@@ -65,6 +78,43 @@ export default function ChatPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [showGreeting, setShowGreeting] = useState(true);
+
+  // ─── QR Code Deep Link: Auto-trigger trace ───
+  useEffect(() => {
+    if (traceParam && !traceTriggered && !isLoading) {
+      setTraceTriggered(true);
+
+      // Clear ?trace= from URL to prevent re-trigger
+      const url = new URL(window.location.href);
+      url.searchParams.delete("trace");
+      window.history.replaceState({}, "", url.pathname);
+
+      // Create a new session for this trace
+      const tracePrompt = `Lacak batch ${traceParam} dan tampilkan status compliance-nya`;
+      const newSession: ChatSession = {
+        id: generateId(),
+        title: `Lacak ${traceParam.split("-")[0]}...`,
+        createdAt: new Date().toISOString(),
+        messages: [],
+      };
+      setSessions((prev) => {
+        const updated = [newSession, ...prev];
+        saveSessions(updated);
+        return updated;
+      });
+      setActiveSessionId(newSession.id);
+      setShowGreeting(false);
+
+      // Trigger the message
+      handleInputChange({
+        target: { value: tracePrompt },
+      } as React.ChangeEvent<HTMLTextAreaElement>);
+
+      setTimeout(() => {
+        handleSubmit({ preventDefault: () => {} } as React.FormEvent<HTMLFormElement>);
+      }, 100);
+    }
+  }, [traceParam, traceTriggered, isLoading, handleInputChange, handleSubmit]);
 
   // Auto-scroll on new messages
   useEffect(() => {

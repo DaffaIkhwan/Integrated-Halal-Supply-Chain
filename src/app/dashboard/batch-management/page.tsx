@@ -10,10 +10,12 @@ import {
   Save, 
   DatabaseZap,
   CheckCircle2,
-  AlertTriangle
+  AlertTriangle,
+  QrCode
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSession } from "next-auth/react";
+import { BatchQrModal } from "@/components/batch-qr-modal";
 
 export default function BatchManagementPage() {
   const { data: session } = useSession();
@@ -30,6 +32,15 @@ export default function BatchManagementPage() {
   const [submittingBatch, setSubmittingBatch] = useState(false);
 
   const [message, setMessage] = useState<{ text: string, type: 'success' | 'error' } | null>(null);
+
+  // QR Modal state
+  const [qrModal, setQrModal] = useState<{
+    isOpen: boolean;
+    batchId: string;
+    earTag: string;
+    rphName: string;
+    productionDate?: string;
+  }>({ isOpen: false, batchId: "", earTag: "", rphName: "" });
 
   useEffect(() => {
     setLoading(true);
@@ -80,6 +91,19 @@ export default function BatchManagementPage() {
       setMessage({ text: "Halal Batch berhasil diterbitkan!", type: 'success' });
       setBatchForm({ cattleId: "", slaughterhouseId: "", butcherName: "" });
       setRefreshKey(k => k + 1);
+
+      // Auto-show QR for newly created batch
+      if (result.result) {
+        const cattle = data?.cattle?.find((c: any) => c.id === batchForm.cattleId);
+        const rph = data?.slaughterhouses?.find((s: any) => s.id === batchForm.slaughterhouseId);
+        setQrModal({
+          isOpen: true,
+          batchId: result.result.id,
+          earTag: cattle?.earTag || "",
+          rphName: rph?.name || "",
+          productionDate: result.result.productionDate,
+        });
+      }
     } catch (err: any) {
       setMessage({ text: err.message, type: 'error' });
     } finally {
@@ -308,7 +332,22 @@ export default function BatchManagementPage() {
                       <div key={b.id} className="flex flex-col gap-1 p-3 rounded-xl border border-border/50 bg-background/50 text-sm">
                         <div className="flex items-center justify-between">
                           <p className="font-mono font-bold text-emerald-600 dark:text-emerald-400">BATCH: {b.id.split("-")[0]}</p>
-                          <p className="text-[10px] text-muted-foreground">{new Date(b.productionDate).toLocaleDateString()}</p>
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => setQrModal({
+                                isOpen: true,
+                                batchId: b.id,
+                                earTag: b.cattle?.earTag || "",
+                                rphName: b.slaughterhouse?.name || "",
+                                productionDate: b.productionDate,
+                              })}
+                              className="flex items-center gap-1 text-[10px] font-bold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-2 py-1 rounded-md hover:bg-cyan-500/20 transition-colors"
+                            >
+                              <QrCode className="h-3 w-3" />
+                              QR Code
+                            </button>
+                            <p className="text-[10px] text-muted-foreground">{new Date(b.productionDate).toLocaleDateString()}</p>
+                          </div>
                         </div>
                         <p className="text-xs text-muted-foreground mt-1">
                           Sapi: <strong className="text-foreground">{b.cattle?.earTag}</strong> dipotong di <strong className="text-foreground">{b.slaughterhouse?.name}</strong>
@@ -327,6 +366,16 @@ export default function BatchManagementPage() {
         </div>
 
       </main>
+
+      {/* QR Modal */}
+      <BatchQrModal
+        isOpen={qrModal.isOpen}
+        onClose={() => setQrModal((prev) => ({ ...prev, isOpen: false }))}
+        batchId={qrModal.batchId}
+        earTag={qrModal.earTag}
+        rphName={qrModal.rphName}
+        productionDate={qrModal.productionDate}
+      />
     </div>
   );
 }
