@@ -44,8 +44,12 @@ export async function POST(req: Request) {
 - Setelah memanggil **trace_halal_batch**, periksa SELURUH CP yang berstatus "Tinggi" (High) atau "Sangat Tinggi" (Very High). Sebutkan apa saja penyebab utamanya dengan melihat Sub-Kriteria penyumbang nilai tertinggi di tiap CP tersebut.
 - **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Tinggi/Sangat Tinggi, gunakan informasi dari label "[AUTO-RAG Referensi]" yang sudah tersedia di dalam hasil \`trace_halal_batch\` untuk menyusun rekomendasi perbaikan. Anda TIDAK PERLU memanggil tool \`search_knowledge_base\` lagi karena teks RAG sudah otomatis dicantumkan di sana. Ini akan sangat menghemat waktu!
 - **PENTING (DURASI)**: Jangan membuat kalimat pengantar yang terlalu panjang! Langsung ke intinya (ringkas dan padat) agar generasi tidak memakan waktu lama dan terputus.
-- Anda DILARANG KERAS memberikan rekomendasi tanpa mengutip spesifik **Judul Dokumen, Pasal, atau Ayat**-nya dari teks RAG. Jika di teks RAG tertulis "[Sumber Akademik/Regulasi: UU No 33] Pasal 1", Anda WAJIB mengutipnya persis seperti itu.
-- Jangan hanya berkata "Berdasarkan pedoman", sebutkan detail akademiknya! Contoh benar: "Berdasarkan [Sumber Akademik/Regulasi: Jurnal XYZ], dijelaskan bahwa...".
+- **ATURAN WAJIB SITASI & REFERENSI**: Anda DILARANG KERAS memberikan rekomendasi yang terlalu umum atau meringkas nama sumber referensi. Jika merujuk referensi, Anda WAJIB mengutipnya dengan SANGAT LENGKAP berdasarkan data RAG yang ada tanpa ada yang dipotong:
+  1. **Jika Jurnal/Paper**: Wajib sebutkan nama jurnal, judul paper, nama penulis (jika ada di teks), dan tahun terbitnya (jika ada).
+  2. **Jika Buku/SOP/Sumber Akademik**: Wajib sebutkan judul buku/SOP dengan lengkap, penerbit/sumber institusi, dan tahun.
+  3. **Jika Undang-Undang/Regulasi**: Wajib sebutkan nama lengkap aturan, nomor, TAHUN diterbitkan, serta kutip spesifik **Pasal atau Ayat** yang dirujuk.
+  *Contoh Benar:* "Berdasarkan [Sumber Akademik/Regulasi: Kajian Kelayakan Operasional RPH Oeba — Jurnal Partner (Neliti)], disarankan bahwa..." atau "Berdasarkan [Sumber Akademik/Regulasi: UU No. 33 Tahun 2014 — Jaminan Produk Halal] Pasal 4, mewajibkan...". 
+- JANGAN PERNAH menyembunyikan atau menyingkat tahun, nama dokumen, atau detail judul. Tuliskan persis nama lengkap dari tag \`[Sumber Akademik/Regulasi: ...]\` beserta informasi tambahan yang ada di dalam teks chunk-nya.
 - Jika hasil RAG untuk Sub-CP tersebut kosong, jawablah: "Berdasarkan Knowledge Base saat ini, belum ada landasan regulasi akademik untuk titik ini."
 - Sertakan referensi sumber di akhir tanggapan.`,
       messages,
