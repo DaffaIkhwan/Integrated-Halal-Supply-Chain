@@ -5,7 +5,7 @@ import { prisma } from '@/lib/db/client';
 import { z } from 'zod';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 const openrouter = createOpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
