@@ -75,6 +75,7 @@ function ChatPageInner() {
     isLoading,
     reload,
     setMessages,
+    append,
     error,
   } = useChat({ api: "/api/chat" });
 
@@ -123,19 +124,14 @@ function ChatPageInner() {
           setActiveSessionId(newSession.id);
           setShowGreeting(false);
 
-          // Trigger the message with comprehensive prompt
-          handleInputChange({
-            target: { value: tracePrompt },
-          } as React.ChangeEvent<HTMLTextAreaElement>);
-
-          setTimeout(() => {
-            handleSubmit({ preventDefault: () => {} } as React.FormEvent<HTMLFormElement>);
-          }, 100);
+          // Use append() to directly send message — avoids race condition
+          // with handleInputChange (async state) + handleSubmit
+          append({ role: "user", content: tracePrompt });
         })
         .catch(console.error)
         .finally(() => setIsLoadingTrace(false));
     }
-  }, [traceParam, traceTriggered, isLoading, handleInputChange, handleSubmit]);
+  }, [traceParam, traceTriggered, isLoading, append]);
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -273,13 +269,8 @@ function ChatPageInner() {
       setActiveSessionId(newSession.id);
     }
 
-    handleInputChange({
-      target: { value: prompt },
-    } as React.ChangeEvent<HTMLTextAreaElement>);
-
-    setTimeout(() => {
-      handleSubmit({ preventDefault: () => {} } as React.FormEvent<HTMLFormElement>);
-    }, 50);
+    // Use append() directly — avoids race condition with async state
+    append({ role: "user", content: prompt });
   };
 
   return (
