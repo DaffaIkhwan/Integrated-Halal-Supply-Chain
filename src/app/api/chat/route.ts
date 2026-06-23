@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 - Gunakan **Tabel Markdown** untuk data berseri (skor CP, riwayat compliance). Tabel hanya berisi CP1–CP9, **TANPA CP10**.
 - Di kolom pertama tabel, WAJIB tampilkan **ID DAN Nama CP** (contoh: "CP1 Farm/Kandang Sapi", "CP4 RPH/Penyembelihan"), bukan hanya "CP1".
 - Gunakan bullet points/list untuk informasi umum (Batch ID, Tanggal, RPH, dll).
-- Setelah tabel, tampilkan **SELURUH Data Personel & Info Operasional** per CP. Untuk setiap CP, tampilkan nama personel dan SEMUA detail operasional (suhu, kendaraan, supplier, sertifikat, lokasi, dll) pada baris terpisah.
+- Setelah tabel, tampilkan **Data Personel & Info Operasional** per CP PERSIS seperti data dari tool. Setiap CP memiliki field operasional yang BERBEDA (contoh: CP1=Farm, CP3=Transporter/Kendaraan, CP4=RPH/Juru Sembelih, CP7=Gudang/Suhu) — tampilkan HANYA info dari baris "Entitas:" dan "Personel:" per CP. DILARANG menambahkan field generik yang sama untuk semua CP (seperti Suhu, Kendaraan, Supplier untuk setiap CP). Tampilkan SEMUA sub-kriteria per CP beserta skornya dari baris "Sub-Kriteria:" pada output tool.
 - Setelah memanggil **trace_halal_batch**, sebutkan CP dengan Global Weighted Risk tertinggi beserta Sub-CP penyumbangnya.
 - **SANGAT PENTING (REKOMENDASI)**: Untuk memberikan rekomendasi perbaikan pada Sub-CP risiko tinggi tersebut, Anda WAJIB memanggil \`search_knowledge_base\` terlebih dahulu dengan query nama Sub-CP tersebut (contoh: "F1 Asal usul sapi").
 - Anda DILARANG KERAS memberikan rekomendasi tanpa menyebutkan spesifik **Pasal atau Ayat**-nya dari teks RAG. Jika di teks RAG tertulis "Pasal 1 Ayat 2", Anda WAJIB mengutipnya.
@@ -156,8 +156,13 @@ export async function POST(req: Request) {
                   cattle: { include: { farm: true } }, 
                   slaughterhouse: true, 
                   cpRecords: { include: { criticalPoint: true }, orderBy: { criticalPoint: { id: 'asc' } } },
-                  cp1Farm: true, cp2Feed: true, cp3Transport: true, cp4Slaughter: true, cp5PostSlaughter: true,
-                  cp6Processing: true, cp7Storage: true, cp8Distribution: true, cp9Retail: true
+                  cp1Farm: true, cp2Feed: true,
+                  cp3Transport: { include: { transporter: true } },
+                  cp4Slaughter: true, cp5PostSlaughter: true,
+                  cp6Processing: { include: { processingPlant: true } },
+                  cp7Storage: { include: { warehouse: true } },
+                  cp8Distribution: { include: { distributor: true } },
+                  cp9Retail: { include: { retailOutlet: true } }
                 }
               });
               if (!batchInfo) {
@@ -167,22 +172,60 @@ export async function POST(req: Request) {
                     cattle: { include: { farm: true } }, 
                     slaughterhouse: true, 
                     cpRecords: { include: { criticalPoint: true }, orderBy: { criticalPoint: { id: 'asc' } } },
-                    cp1Farm: true, cp2Feed: true, cp3Transport: true, cp4Slaughter: true, cp5PostSlaughter: true,
-                    cp6Processing: true, cp7Storage: true, cp8Distribution: true, cp9Retail: true
+                    cp1Farm: true, cp2Feed: true,
+                    cp3Transport: { include: { transporter: true } },
+                    cp4Slaughter: true, cp5PostSlaughter: true,
+                    cp6Processing: { include: { processingPlant: true } },
+                    cp7Storage: { include: { warehouse: true } },
+                    cp8Distribution: { include: { distributor: true } },
+                    cp9Retail: { include: { retailOutlet: true } }
                   }
                 });
               }
               if (!batchInfo) return `Data Traceability untuk Batch "${batchId}" tidak ditemukan.`;
               
-              // Get master data safely
-              const masterData = {
-                Farm: batchInfo.cattle?.farm?.name || 'Belum diisi',
-                RPH: batchInfo.slaughterhouse?.name || 'Belum diisi',
-                ProcessingPlant: batchInfo.cp6Processing?.[0]?.processingPlantId ? `Plant ID: ${batchInfo.cp6Processing[0].processingPlantId}` : 'Belum diisi',
-                Warehouse: batchInfo.cp7Storage?.[0]?.warehouseId ? `Warehouse ID: ${batchInfo.cp7Storage[0].warehouseId}` : 'Belum diisi',
-                Transporter: batchInfo.cp3Transport?.[0]?.transporterId ? `Transporter ID: ${batchInfo.cp3Transport[0].transporterId}` : 'Belum diisi',
-                Distributor: batchInfo.cp8Distribution?.[0]?.distributorId ? `Distributor ID: ${batchInfo.cp8Distribution[0].distributorId}` : 'Belum diisi',
-                RetailOutlet: batchInfo.cp9Retail?.[0]?.retailOutletId ? `Retail ID: ${batchInfo.cp9Retail[0].retailOutletId}` : 'Belum diisi',
+              // Query latest QuestionnaireResponse per CP for personnel data
+              const qrResponses = await prisma.questionnaireResponse.findMany({
+                where: {
+                  questionnaireType: { in: ['aktual', 'risiko'] },
+                  cpId: { in: ['CP1','CP2','CP3','CP4','CP5','CP6','CP7','CP8','CP9'] },
+                },
+                orderBy: { createdAt: 'desc' },
+                take: 50,
+                select: { cpId: true, respondentName: true, respondentRole: true, respondentOrg: true, respondentInfo: true },
+              });
+              const latestQRPerCP: Record<string, any> = {};
+              for (const qr of qrResponses) {
+                if (qr.cpId && !latestQRPerCP[qr.cpId]) latestQRPerCP[qr.cpId] = qr;
+              }
+
+              // CP-specific entity info resolver — each CP has DIFFERENT operational fields
+              const getCPEntityInfo = (cpId: string): string => {
+                switch(cpId) {
+                  case 'CP1': { const f = batchInfo.cattle?.farm; return `Nama Farm: ${f?.name || 'Belum diisi'} | Lokasi: ${f?.location || 'Belum diisi'}`; }
+                  case 'CP2': { const f = batchInfo.cattle?.farm; return `Farm/Unit Pakan: ${f?.name || 'Belum diisi'} | Lokasi: ${f?.location || 'Belum diisi'}`; }
+                  case 'CP3': { const t = (batchInfo.cp3Transport as any)?.[0]?.transporter; return `Transporter: ${t?.name || 'Belum diisi'} | No.Kendaraan: ${t?.vehicleNumber || 'Belum diisi'} | Jenis Kendaraan: ${t?.vehicleType || 'Belum diisi'}`; }
+                  case 'CP4': { const s = batchInfo.slaughterhouse; return `RPH: ${s?.name || 'Belum diisi'} | Lokasi RPH: ${s?.location || 'Belum diisi'} | Juru Sembelih: ${batchInfo.butcherName || 'Belum diisi'}`; }
+                  case 'CP5': { const s = batchInfo.slaughterhouse; return `RPH (Post-Slaughter): ${s?.name || 'Belum diisi'} | Lokasi: ${s?.location || 'Belum diisi'}`; }
+                  case 'CP6': { const p = (batchInfo.cp6Processing as any)?.[0]?.processingPlant; return `Pabrik Pengolahan: ${p?.name || 'Belum diisi'} | Lokasi: ${p?.location || 'Belum diisi'} | Tipe Produksi: ${p?.productionType || 'Belum diisi'}`; }
+                  case 'CP7': { const w = (batchInfo.cp7Storage as any)?.[0]?.warehouse; return `Gudang/Cold Storage: ${w?.name || 'Belum diisi'} | Lokasi: ${w?.location || 'Belum diisi'} | Tipe Storage: ${w?.storageType || 'Belum diisi'}`; }
+                  case 'CP8': { const d = (batchInfo.cp8Distribution as any)?.[0]?.distributor; return `Distributor: ${d?.name || 'Belum diisi'} | Lokasi: ${d?.location || 'Belum diisi'} | Area Distribusi: ${d?.coverageArea || 'Belum diisi'}`; }
+                  case 'CP9': { const r = (batchInfo.cp9Retail as any)?.[0]?.retailOutlet; return `Retail/Outlet: ${r?.name || 'Belum diisi'} | Lokasi: ${r?.location || 'Belum diisi'} | Tipe Outlet: ${r?.outletType || 'Belum diisi'}`; }
+                  default: return 'Belum diisi';
+                }
+              };
+
+              // Expected sub-criteria keys per CP (fallback when no detail record)
+              const cpSubCriteriaKeys: Record<string, string[]> = {
+                CP1: ['asalUsulRisk', 'kesehatanRisk', 'kepatuhanPakanRisk', 'obatVaksinRisk', 'dokumentasiRisk', 'kebersihanKandangRisk', 'kesiapanSembelihRisk'],
+                CP2: ['halalFeedStatusRisk', 'supplierRisk', 'feedStorageRisk', 'medicationRisk', 'vetSupervisionRisk'],
+                CP3: ['kelayakanRisk', 'kebersihanRisk', 'animalWelfareRisk', 'traceabilityRisk', 'dokumentasiRisk'],
+                CP4: ['sertifikatHalalRisk', 'kompetensiSembelihRisk', 'prosesSyariahRisk', 'pemeriksaanRisk', 'sanitasiRisk', 'segregasiRisk', 'dokumentasiRisk', 'pengawasanRisk', 'auditRisk', 'traceabilityRisk'],
+                CP5: ['handlingRisk', 'sanitasiRisk', 'batchIdRisk', 'segregasiRisk', 'dokumentasiRisk'],
+                CP6: ['halalIngredientsRisk', 'equipmentRisk', 'dedicatedLineRisk', 'batchControlRisk', 'packagingRisk', 'operatorRisk', 'formulaRisk'],
+                CP7: ['temperatureRisk', 'segregasiRisk', 'hygieneRisk', 'traceabilityRisk', 'fifoFefoRisk', 'dokumentasiRisk', 'incidentRisk'],
+                CP8: ['dedicatedTransRisk', 'vehicleSanitasiRisk', 'temperatureRisk', 'routeRisk', 'loadingRisk', 'dokumentasiRisk', 'kontaminasiRisk'],
+                CP9: ['labelHalalRisk', 'displayRisk', 'storageTemRisk', 'expiryRisk', 'consumerInfoRisk', 'supplierTraceRisk', 'complaintRisk'],
               };
 
               // Sub-CP Code mapping helper
@@ -202,10 +245,9 @@ export async function POST(req: Request) {
                 return mappings[cpId]?.[cleanKey] || cleanKey;
               };
 
-              let traceOutput = `--- Traceability Info ---\nBatch ID: ${batchInfo.id}\nTanggal Produksi: ${batchInfo.productionDate}\nTotal Halal Compliance Risk Score: ${batchInfo.totalRiskScore.toFixed(4)} (${batchInfo.riskLevel})\nAsal Ternak: ${batchInfo.cattle?.earTag || '-'} dari Peternakan: ${masterData.Farm}\nJenis Sapi: ${batchInfo.cattle?.breed || 'Tidak Dicatat'}\nUmur/Tanggal Lahir: ${batchInfo.cattle?.birthDate ? new Date(batchInfo.cattle.birthDate).toLocaleDateString('id-ID') : 'Tidak Dicatat'}`;
+              let traceOutput = `--- Traceability Info ---\nBatch ID: ${batchInfo.id}\nTanggal Produksi: ${batchInfo.productionDate}\nTotal Halal Compliance Risk Score: ${batchInfo.totalRiskScore.toFixed(4)} (${batchInfo.riskLevel})\nAsal Ternak: ${batchInfo.cattle?.earTag || '-'} dari Peternakan: ${batchInfo.cattle?.farm?.name || 'Belum diisi'}\nJenis Sapi: ${batchInfo.cattle?.breed || 'Tidak Dicatat'}\nUmur/Tanggal Lahir: ${batchInfo.cattle?.birthDate ? new Date(batchInfo.cattle.birthDate).toLocaleDateString('id-ID') : 'Tidak Dicatat'}`;
               
-              traceOutput += `\n\n--- Master Data Logistik & Operasional ---`;
-              traceOutput += `\n- CP1 Farm: ${masterData.Farm}\n- CP4 RPH: ${masterData.RPH}\n- CP3 Transportasi Awal: ${masterData.Transporter}\n- CP6 Pabrik Pengolahan: ${masterData.ProcessingPlant}\n- CP7 Gudang (Warehouse): ${masterData.Warehouse}\n- CP8 Distributor: ${masterData.Distributor}\n- CP9 Retail: ${masterData.RetailOutlet}`;
+              // Entity data is now shown per-CP in compliance records below
 
               // Filter out CP10 from records
               const cpRecordsFiltered = batchInfo.cpRecords.filter(rec => rec.criticalPoint.id !== 'CP10');
@@ -227,16 +269,36 @@ export async function POST(req: Request) {
                   if (rec.criticalPoint.id === 'CP8' && batchInfo.cp8Distribution[0]) subDetails = batchInfo.cp8Distribution[0];
                   if (rec.criticalPoint.id === 'CP9' && batchInfo.cp9Retail[0]) subDetails = batchInfo.cp9Retail[0];
                   
+                  // Show ALL sub-criteria risk scores (each CP has different sub-criteria)
+                  const cpId = rec.criticalPoint.id;
                   if (subDetails) {
                      const risks = Object.entries(subDetails)
                        .filter(([k]) => k.endsWith('Risk') && k !== 'riskScore')
-                       .map(([k, v]) => ({ key: k, value: Number(v) || 0 }))
+                       .map(([k, v]) => ({ key: k, label: mapSubCP(cpId, k), value: Number(v) || 0 }))
                        .sort((a, b) => b.value - a.value);
-                     
                      if (risks.length > 0) {
-                       const highestSubCP = mapSubCP(rec.criticalPoint.id, risks[0].key);
-                       traceOutput += `\n    -> Sub-CP Penyumbang Risiko Tertinggi: ${highestSubCP} (Skor: ${risks[0].value.toFixed(2)})`;
+                       traceOutput += `\n    Sub-Kriteria:`;
+                       for (const r of risks) {
+                         traceOutput += `\n      - ${r.label}: ${r.value.toFixed(2)}`;
+                       }
                      }
+                  } else {
+                     // Fallback: show expected sub-criteria with 'Belum dinilai'
+                     const expectedKeys = cpSubCriteriaKeys[cpId] || [];
+                     if (expectedKeys.length > 0) {
+                       traceOutput += `\n    Sub-Kriteria:`;
+                       for (const key of expectedKeys) {
+                         traceOutput += `\n      - ${mapSubCP(cpId, key)}: Belum dinilai`;
+                       }
+                     }
+                  }
+                  // CP-specific entity & personnel info
+                  traceOutput += `\n    Entitas: ${getCPEntityInfo(cpId)}`;
+                  const qrData = latestQRPerCP[cpId];
+                  if (qrData) {
+                    traceOutput += `\n    Personel: ${qrData.respondentName || 'Belum diisi'} (${qrData.respondentRole || '-'}) dari ${qrData.respondentOrg || '-'}`;
+                  } else {
+                    traceOutput += `\n    Personel: Belum ada data kuesioner`;
                   }
                 }
               }
