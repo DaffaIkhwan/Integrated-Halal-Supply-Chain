@@ -44,9 +44,9 @@ export async function POST(req: Request) {
 - Setelah memanggil **trace_halal_batch**, periksa SELURUH CP yang berstatus "Tinggi" (High) atau "Sangat Tinggi" (Very High). Sebutkan apa saja penyebab utamanya dengan melihat Sub-Kriteria penyumbang nilai tertinggi di tiap CP tersebut.
 - **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Tinggi/Sangat Tinggi, gunakan informasi dari label "[AUTO-RAG Referensi]" yang sudah tersedia di dalam hasil \`trace_halal_batch\` untuk menyusun rekomendasi perbaikan. Anda TIDAK PERLU memanggil tool \`search_knowledge_base\` lagi karena teks RAG sudah otomatis dicantumkan di sana. Ini akan sangat menghemat waktu!
 - **PENTING (DURASI)**: Jangan membuat kalimat pengantar yang terlalu panjang! Langsung ke intinya (ringkas dan padat) agar generasi tidak memakan waktu lama dan terputus.
-- Anda DILARANG KERAS memberikan rekomendasi tanpa menyebutkan spesifik **Pasal atau Ayat**-nya dari teks RAG. Jika di teks RAG tertulis "Pasal 1 Ayat 2", Anda WAJIB mengutipnya.
-- Jangan hanya berkata "Berdasarkan dokumen RAG", sebutkan detailnya! Contoh benar: "Berdasarkan Pasal 2 Ayat 1 Dokumen 25 Regulasi Pelengkap, disebutkan bahwa...".
-- Jika hasil pencarian RAG untuk Sub-CP tersebut kosong atau tidak memuat rekomendasi/pasal spesifik, jawablah: "Berdasarkan Knowledge Base saat ini, belum ada landasan regulasi atau SOP spesifik untuk merekomendasikan perbaikan pada titik [Nama Sub-CP] ini."
+- Anda DILARANG KERAS memberikan rekomendasi tanpa mengutip spesifik **Judul Dokumen, Pasal, atau Ayat**-nya dari teks RAG. Jika di teks RAG tertulis "[Sumber Akademik/Regulasi: UU No 33] Pasal 1", Anda WAJIB mengutipnya persis seperti itu.
+- Jangan hanya berkata "Berdasarkan pedoman", sebutkan detail akademiknya! Contoh benar: "Berdasarkan [Sumber Akademik/Regulasi: Jurnal XYZ], dijelaskan bahwa...".
+- Jika hasil RAG untuk Sub-CP tersebut kosong, jawablah: "Berdasarkan Knowledge Base saat ini, belum ada landasan regulasi akademik untuk titik ini."
 - Sertakan referensi sumber di akhir tanggapan.`,
       messages,
       tools: {
@@ -99,15 +99,18 @@ export async function POST(req: Request) {
                 .map(r => {
                   if (totalChars > 4000) return null;
                   let cp = 'UMUM';
+                  let docTitle = 'Dokumen RAG';
                   if (r.metadata) {
                     try {
                       const meta = typeof r.metadata === 'string' ? JSON.parse(r.metadata) : r.metadata;
                       if (meta.criticalPoint) cp = meta.criticalPoint;
+                      if (meta.documentTitle) docTitle = meta.documentTitle;
+                      else if (meta.source) docTitle = meta.source;
                     } catch (e) {}
                   }
                   const chunk = (r.chunk || '').length > 1200 ? (r.chunk || '').substring(0, 1200) + '...' : (r.chunk || '');
                   totalChars += chunk.length;
-                  return `[${cp}] ${chunk}`;
+                  return `[Sumber Akademik/Regulasi: ${docTitle}] [Kategori: ${cp}]\n${chunk}`;
                 })
                 .filter(Boolean)
                 .join('\n\n');
@@ -294,17 +297,27 @@ export async function POST(req: Request) {
                             if (keywords.length > 0) {
                               const rawResults = await prisma.oai.findMany({
                                 where: { OR: keywords.map(kw => ({ chunk: { contains: kw, mode: 'insensitive' as const } })) },
-                                take: 20, select: { chunk: true }
+                                take: 20, select: { chunk: true, metadata: true }
                               });
                               if (rawResults.length > 0) {
                                 const scored = rawResults.map(r => {
                                   let score = 0;
                                   const text = (r.chunk || '').toLowerCase();
                                   keywords.forEach(kw => { if (text.includes(kw)) score++; });
-                                  return { chunk: r.chunk, score };
+                                  
+                                  let docTitle = 'Dokumen RAG';
+                                  if (r.metadata) {
+                                    try {
+                                      const meta = typeof r.metadata === 'string' ? JSON.parse(r.metadata) : r.metadata;
+                                      if (meta.documentTitle) docTitle = meta.documentTitle;
+                                      else if (meta.source) docTitle = meta.source;
+                                    } catch(e){}
+                                  }
+                                  
+                                  return { chunk: `[Sumber Akademik/Regulasi: ${docTitle}]\n${r.chunk}`, score };
                                 }).sort((a, b) => b.score - a.score);
-                                const topRAG = scored.slice(0, 2).map(r => r.chunk).join(' | ').substring(0, 1000);
-                                traceOutput += `\n    [AUTO-RAG Referensi untuk penyebab utama ${topRisk.label}]: ${topRAG}`;
+                                const topRAG = scored.slice(0, 2).map(r => r.chunk).join('\n\n---\n\n').substring(0, 1500);
+                                traceOutput += `\n    [AUTO-RAG Referensi untuk penyebab utama ${topRisk.label}]:\n${topRAG}`;
                               }
                             }
                           } catch(e) {}
