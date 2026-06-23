@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 - Gunakan bullet points/list untuk informasi umum (Batch ID, Tanggal, RPH, dll).
 - Setelah tabel, tampilkan **Data Personel & Info Operasional** per CP PERSIS seperti data dari tool. Setiap CP memiliki field operasional yang BERBEDA (contoh: CP1=Farm, CP3=Transporter/Kendaraan, CP4=RPH/Juru Sembelih, CP7=Gudang/Suhu) — tampilkan HANYA info dari baris "Entitas:" dan "Personel:" per CP. DILARANG menambahkan field generik yang sama untuk semua CP (seperti Suhu, Kendaraan, Supplier untuk setiap CP). Tampilkan SEMUA sub-kriteria per CP beserta skornya dari baris "Sub-Kriteria:" pada output tool.
 - Setelah memanggil **trace_halal_batch**, periksa SELURUH CP yang berstatus "Tinggi" (High) atau "Sangat Tinggi" (Very High). Sebutkan apa saja penyebab utamanya dengan melihat Sub-Kriteria penyumbang nilai tertinggi di tiap CP tersebut.
-- **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Tinggi/Sangat Tinggi, Anda WAJIB memberikan rekomendasi perbaikan dengan cara memanggil \`search_knowledge_base\` untuk masing-masing Sub-Kriteria yang bermasalah (contoh query: "F1 Asal usul sapi"). **PENTING: Lakukan pemanggilan tool secara PARALEL (bersamaan) untuk menghemat waktu jika ada banyak CP yang bermasalah!**
+- **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Tinggi/Sangat Tinggi, gunakan informasi dari label "[AUTO-RAG Referensi]" yang sudah tersedia di dalam hasil \`trace_halal_batch\` untuk menyusun rekomendasi perbaikan. Anda TIDAK PERLU memanggil tool \`search_knowledge_base\` lagi karena teks RAG sudah otomatis dicantumkan di sana. Ini akan sangat menghemat waktu!
 - **PENTING (DURASI)**: Jangan membuat kalimat pengantar yang terlalu panjang! Langsung ke intinya (ringkas dan padat) agar generasi tidak memakan waktu lama dan terputus.
 - Anda DILARANG KERAS memberikan rekomendasi tanpa menyebutkan spesifik **Pasal atau Ayat**-nya dari teks RAG. Jika di teks RAG tertulis "Pasal 1 Ayat 2", Anda WAJIB mengutipnya.
 - Jangan hanya berkata "Berdasarkan dokumen RAG", sebutkan detailnya! Contoh benar: "Berdasarkan Pasal 2 Ayat 1 Dokumen 25 Regulasi Pelengkap, disebutkan bahwa...".
@@ -282,6 +282,32 @@ export async function POST(req: Request) {
                        traceOutput += `\n    Sub-Kriteria:`;
                        for (const r of risks) {
                          traceOutput += `\n      - ${r.label}: ${r.value.toFixed(2)}`;
+                       }
+                       if (rLevel === 'Tinggi' || rLevel === 'Sangat Tinggi') {
+                          const topRisk = risks[0];
+                          try {
+                            const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'boleh', 'tidak', 'saja', 'terkait', 'tentang', 'cara', 'apa', 'jelaskan', 'sesuai', 'sebutkan'];
+                            const words = topRisk.label.split(/[\s\?\!\.]+/)
+                              .map(w => w.replace(/[^a-zA-Z0-9\u00C0-\u024F]/g, '').toLowerCase())
+                              .filter(w => w.length > 2 && !stopWords.includes(w));
+                            const keywords = words.length > 0 ? Array.from(new Set(words)).slice(0, 6) : [topRisk.label.toLowerCase()];
+                            if (keywords.length > 0) {
+                              const rawResults = await prisma.oai.findMany({
+                                where: { OR: keywords.map(kw => ({ chunk: { contains: kw, mode: 'insensitive' as const } })) },
+                                take: 20, select: { chunk: true }
+                              });
+                              if (rawResults.length > 0) {
+                                const scored = rawResults.map(r => {
+                                  let score = 0;
+                                  const text = (r.chunk || '').toLowerCase();
+                                  keywords.forEach(kw => { if (text.includes(kw)) score++; });
+                                  return { chunk: r.chunk, score };
+                                }).sort((a, b) => b.score - a.score);
+                                const topRAG = scored.slice(0, 2).map(r => r.chunk).join(' | ').substring(0, 1000);
+                                traceOutput += `\n    [AUTO-RAG Referensi untuk penyebab utama ${topRisk.label}]: ${topRAG}`;
+                              }
+                            }
+                          } catch(e) {}
                        }
                      }
                   } else {
