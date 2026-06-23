@@ -118,11 +118,22 @@ function ChatPageInner() {
   }, [traceParam, traceTriggered, isLoading, append]);
 
   // ─── Helper: detect trace response from chatbot ───
-  const isTraceResponse = (m: any) =>
-    m.role === "assistant" &&
-    m.toolInvocations?.some(
-      (t: any) => t.toolName === "trace_halal_batch" && t.state === "result"
-    );
+  // Walks backwards through consecutive assistant messages (same turn)
+  // because multi-roundtrip tools may split invocations across messages
+  const isTraceResponse = (m: any, index: number) => {
+    if (m.role !== "assistant" || !m.content) return false;
+    // Check own tool invocations
+    if (m.toolInvocations?.some((t: any) => t.toolName === "trace_halal_batch")) return true;
+    // Walk backwards through consecutive assistant messages (same turn)
+    for (let j = index - 1; j >= 0; j--) {
+      const prev = messages[j] as any;
+      if (prev.role === "user") break; // Stop at user message boundary
+      if (prev.role === "assistant" && prev.toolInvocations?.some(
+        (t: any) => t.toolName === "trace_halal_batch"
+      )) return true;
+    }
+    return false;
+  };
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -393,7 +404,7 @@ function ChatPageInner() {
 
                     {/* Text content */}
                     {m.content ? (
-                      isTraceResponse(m) ? (
+                      isTraceResponse(m, i) ? (
                         /* ── Styled Trace Response ── */
                         <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/[0.03] via-transparent to-emerald-500/[0.03] overflow-hidden shadow-sm">
                           {/* Trace Header */}
