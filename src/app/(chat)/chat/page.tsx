@@ -92,40 +92,43 @@ function ChatPageInner() {
       url.searchParams.delete("trace");
       window.history.replaceState({}, "", url.pathname);
 
-      // Fetch trace data
+      // Fetch trace data FIRST, then use ear tag for comprehensive prompt
       setIsLoadingTrace(true);
       fetch(`/api/trace/${traceParam}`)
         .then((res) => res.json())
         .then((data) => {
           if (data) setTraceData(data);
+
+          // Use ear tag from fetched data for better RAG results
+          const earTag = data?.earTag || traceParam;
+          const tracePrompt = `Lacak batch sapi ${earTag} dan tampilkan informasi lengkap meliputi: Batch ID, tanggal produksi, total halal compliance risk score, asal ternak (farm), jenis sapi, RPH, rekaman kepatuhan SEMUA Critical Point (CP1-CP9) beserta risk score, global weighted risk, dan sub-CP dengan risiko tertinggi, data personel & info operasional setiap CP (nama petugas, supervisor, nomor kendaraan, sertifikat, suhu, dll), serta rekomendasi perbaikan.`;
+
+          // Create a new session for this trace
+          const newSession: ChatSession = {
+            id: generateId(),
+            title: `Lacak ${earTag}`,
+            createdAt: new Date().toISOString(),
+            messages: [],
+          };
+          setSessions((prev) => {
+            const updated = [newSession, ...prev];
+            saveSessions(updated);
+            return updated;
+          });
+          setActiveSessionId(newSession.id);
+          setShowGreeting(false);
+
+          // Trigger the message with comprehensive prompt
+          handleInputChange({
+            target: { value: tracePrompt },
+          } as React.ChangeEvent<HTMLTextAreaElement>);
+
+          setTimeout(() => {
+            handleSubmit({ preventDefault: () => {} } as React.FormEvent<HTMLFormElement>);
+          }, 100);
         })
         .catch(console.error)
         .finally(() => setIsLoadingTrace(false));
-
-      // Create a new session for this trace
-      const tracePrompt = `Lacak batch ${traceParam} dan tampilkan status compliance-nya`;
-      const newSession: ChatSession = {
-        id: generateId(),
-        title: `Lacak ${traceParam.split("-")[0]}...`,
-        createdAt: new Date().toISOString(),
-        messages: [],
-      };
-      setSessions((prev) => {
-        const updated = [newSession, ...prev];
-        saveSessions(updated);
-        return updated;
-      });
-      setActiveSessionId(newSession.id);
-      setShowGreeting(false);
-
-      // Trigger the message
-      handleInputChange({
-        target: { value: tracePrompt },
-      } as React.ChangeEvent<HTMLTextAreaElement>);
-
-      setTimeout(() => {
-        handleSubmit({ preventDefault: () => {} } as React.FormEvent<HTMLFormElement>);
-      }, 100);
     }
   }, [traceParam, traceTriggered, isLoading, handleInputChange, handleSubmit]);
 
