@@ -27,8 +27,8 @@ export function BatchQrModal({
 
   const traceUrl =
     typeof window !== "undefined"
-      ? `${window.location.origin}/trace/${batchId}`
-      : `/trace/${batchId}`;
+      ? `${window.location.origin}/chat?trace=${batchId}`
+      : `/chat?trace=${batchId}`;
 
   const handleCopyLink = async () => {
     await navigator.clipboard.writeText(traceUrl);
@@ -208,11 +208,11 @@ export function BatchQrModal({
                 {copied ? "Copied!" : "Copy Link"}
               </button>
               <a
-                href={`/chat?trace=${batchId}`}
+                href={traceUrl}
                 className="flex flex-col items-center gap-1.5 rounded-xl border border-border/50 bg-background py-3 text-xs font-medium text-foreground hover:bg-muted transition-colors"
               >
                 <MessageCircle className="h-4 w-4 text-emerald-500" />
-                Chatbot
+                Buka
               </a>
             </div>
           </motion.div>

@@ -28,6 +28,7 @@ import {
   loadSessions,
   saveSessions,
 } from "@/components/chat-sidebar";
+import { TraceSummaryUI } from "@/components/trace-summary-ui";
 
 // ─── Suggested Actions ───
 const SUGGESTED_ACTIONS = [
@@ -58,6 +59,8 @@ function ChatPageInner() {
   const searchParams = useSearchParams();
   const traceParam = searchParams.get("trace");
   const [traceTriggered, setTraceTriggered] = useState(false);
+  const [traceData, setTraceData] = useState<any>(null);
+  const [isLoadingTrace, setIsLoadingTrace] = useState(false);
 
   // Load sessions from localStorage on mount
   useEffect(() => {
@@ -88,6 +91,16 @@ function ChatPageInner() {
       const url = new URL(window.location.href);
       url.searchParams.delete("trace");
       window.history.replaceState({}, "", url.pathname);
+
+      // Fetch trace data
+      setIsLoadingTrace(true);
+      fetch(`/api/trace/${traceParam}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) setTraceData(data);
+        })
+        .catch(console.error)
+        .finally(() => setIsLoadingTrace(false));
 
       // Create a new session for this trace
       const tracePrompt = `Lacak batch ${traceParam} dan tampilkan status compliance-nya`;
@@ -287,6 +300,22 @@ function ChatPageInner() {
           className="flex-1 overflow-y-auto px-4 py-6 space-y-1"
           style={{ scrollBehavior: "smooth" }}
         >
+          {/* Trace Summary UI injected for Deep Links */}
+          {isLoadingTrace && (
+            <div className="w-full flex justify-center py-8">
+              <Loader2 className="h-6 w-6 animate-spin text-cyan-500" />
+            </div>
+          )}
+          {traceData && !isLoadingTrace && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8"
+            >
+              <TraceSummaryUI data={traceData} />
+            </motion.div>
+          )}
+
           {/* Greeting */}
           <AnimatePresence>
             {showGreeting && messages.length === 0 && (
