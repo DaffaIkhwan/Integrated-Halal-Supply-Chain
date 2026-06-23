@@ -40,8 +40,12 @@ export async function POST(req: Request) {
 - Di kolom pertama tabel, WAJIB tampilkan **ID DAN Nama CP** (contoh: "CP1 Farm/Kandang Sapi", "CP4 RPH/Penyembelihan"), bukan hanya "CP1".
 - Gunakan bullet points/list untuk informasi umum (Batch ID, Tanggal, RPH, dll).
 - Setelah tabel, tampilkan **SELURUH Data Personel & Info Operasional** per CP. Untuk setiap CP, tampilkan nama personel dan SEMUA detail operasional (suhu, kendaraan, supplier, sertifikat, lokasi, dll) pada baris terpisah.
-- Setelah memanggil **trace_halal_batch**, sebutkan CP dengan Global Weighted Risk tertinggi beserta Sub-CP penyumbangnya, lalu beri rekomendasi konkrit.
-- Sertakan referensi sumber jika tersedia.`,
+- Setelah memanggil **trace_halal_batch**, sebutkan CP dengan Global Weighted Risk tertinggi beserta Sub-CP penyumbangnya.
+- **SANGAT PENTING (REKOMENDASI)**: Untuk memberikan rekomendasi perbaikan pada Sub-CP risiko tinggi tersebut, Anda WAJIB memanggil \`search_knowledge_base\` terlebih dahulu terkait Sub-CP itu.
+- Rekomendasi Anda **TIDAK BOLEH HALU**. Anda HANYA boleh memberikan rekomendasi jika ada dasar di dalam hasil RAG.
+- Dalam rekomendasi, Anda WAJIB menyebutkan **Landasan Berkas/Dokumen**-nya apa, dan sebutkan **Pasal atau Ayat**-nya secara spesifik (jika tercantum di teks RAG).
+- Jika hasil pencarian RAG untuk Sub-CP tersebut kosong atau tidak memuat rekomendasi/pasal, jawablah: "Berdasarkan Knowledge Base saat ini, belum ada landasan regulasi atau SOP spesifik untuk merekomendasikan perbaikan pada titik [Nama Sub-CP] ini."
+- Sertakan referensi sumber di akhir tanggapan.`,
       messages,
       tools: {
         search_knowledge_base: {
