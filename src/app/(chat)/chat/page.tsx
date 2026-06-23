@@ -387,20 +387,29 @@ function ChatPageInner() {
                     </div>
                   </div>
                   <div className="min-w-0 flex-1 space-y-2">
-                    {/* Tool invocations */}
-                    {(m as any).toolInvocations?.map((tool: any, ti: number) => (
-                      <div key={ti} className="flex items-center gap-2 text-xs text-muted-foreground py-1 px-3 rounded-lg bg-muted/40 border border-border/30">
-                        {tool.state === "result" ? (
-                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                        ) : (
-                          <Loader2 className="h-3.5 w-3.5 animate-spin shrink-0" />
-                        )}
-                        <span className="font-mono font-semibold">{tool.toolName}</span>
-                        <span className="text-muted-foreground/60">
-                          {tool.state === "result" ? "✓ selesai" : "sedang memproses..."}
-                        </span>
-                      </div>
-                    ))}
+                    {/* Tool invocations (deduplicated by tool name) */}
+                    {(m as any).toolInvocations && (() => {
+                      const seen = new Map<string, string>();
+                      for (const tool of (m as any).toolInvocations) {
+                        // Keep the latest state per tool name (prefer "result" over pending)
+                        if (!seen.has(tool.toolName) || tool.state === "result") {
+                          seen.set(tool.toolName, tool.state);
+                        }
+                      }
+                      return Array.from(seen.entries()).map(([toolName, state]) => (
+                        <div key={toolName} className="flex items-center gap-2 text-xs text-muted-foreground py-1 px-3 rounded-lg bg-muted/40 border border-border/30">
+                          {state === "result" ? (
+                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
+                          ) : (
+                            <Loader2 className="h-3.5 w-3.5 animate-spin shrink-0" />
+                          )}
+                          <span className="font-mono font-semibold">{toolName}</span>
+                          <span className="text-muted-foreground/60">
+                            {state === "result" ? "✓ selesai" : "sedang memproses..."}
+                          </span>
+                        </div>
+                      ));
+                    })()}
 
                     {/* Text content */}
                     {m.content ? (
