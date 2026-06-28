@@ -72,7 +72,7 @@ export default function BatchManagementPage() {
       const res = await fetch("/api/dss/master-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "CREATE_CATTLE", ...cattleForm })
+        body: JSON.stringify({ entity: "cattle", data: cattleForm })
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error);
@@ -94,7 +94,7 @@ export default function BatchManagementPage() {
       const res = await fetch("/api/dss/master-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "CREATE_BATCH", ...batchForm })
+        body: JSON.stringify({ entity: "halalBatch", data: batchForm })
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error);
