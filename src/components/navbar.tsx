@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
 			{ href: "/dashboard/rekap-aktual", label: "Rekap Data" },
 		],
 	},
-	{ href: "/dashboard/batch-management", label: "Manajemen Sapi" },
+	{ href: "/dashboard/batch-management", label: "Daftar Batch" },
 	{ href: "/dashboard/input", label: "Kelola CP" },
 	{ href: "/dashboard/ahp-steps", label: "Tahapan FUZZY AHP" },
 	{ href: "/chat", label: "Chat" },
@@ -150,7 +150,7 @@ export function Navbar() {
 				{
 					href: "#", label: "K3",
 					children: [
-						...(isFarmOrSlaughter ? [{ href: "/dashboard/batch-management", label: "Manajemen Sapi" }] : []),
+						...(isFarmOrSlaughter ? [{ href: "/dashboard/batch-management", label: "Daftar Batch" }] : []),
 						{ href: "/dashboard/kuesioner-aktual", label: "Input Aktual" },
 						{ href: "/dashboard/rekap-aktual", label: "Rekap Data" },
 					],

@@ -136,7 +136,7 @@ export default function BatchManagementPage() {
           <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
             <DatabaseZap className="h-8 w-8 text-cyan-500" />
             <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              Manajemen Sapi & Batch
+              Daftar Batch
             </span>
           </h1>
           <p className="mt-2 text-muted-foreground">
