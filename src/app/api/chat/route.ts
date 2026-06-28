@@ -47,9 +47,9 @@ export async function POST(req: Request) {
 - **ATURAN WAJIB SITASI & REFERENSI**: Anda DILARANG KERAS memberikan rekomendasi yang terlalu umum atau meringkas nama sumber referensi. Jika merujuk referensi, Anda WAJIB mengutipnya dengan SANGAT LENGKAP berdasarkan data RAG yang ada tanpa ada yang dipotong:
   1. **Jika Jurnal/Paper**: Wajib sebutkan nama jurnal, judul paper, nama penulis (jika ada di teks), dan tahun terbitnya (jika ada).
   2. **Jika Buku/SOP/Sumber Akademik**: Wajib sebutkan judul buku/SOP dengan lengkap, penerbit/sumber institusi, dan tahun.
-  3. **Jika Undang-Undang/Regulasi**: Wajib sebutkan nama lengkap aturan, nomor, TAHUN diterbitkan, serta kutip spesifik **Pasal atau Ayat** yang dirujuk.
-  *Contoh Benar:* "Berdasarkan [Sumber Akademik/Regulasi: Kajian Kelayakan Operasional RPH Oeba — Jurnal Partner (Neliti)], disarankan bahwa..." atau "Berdasarkan [Sumber Akademik/Regulasi: UU No. 33 Tahun 2014 — Jaminan Produk Halal] Pasal 4, mewajibkan...". 
-- JANGAN PERNAH menyembunyikan atau menyingkat tahun, nama dokumen, atau detail judul. Tuliskan persis nama lengkap dari tag \`[Sumber Akademik/Regulasi: ...]\` beserta informasi tambahan yang ada di dalam teks chunk-nya.
+  3. **Jika Undang-Undang/Regulasi**: WAJIB SEBUTKAN NAMA LENGKAP UNDANG-UNDANG ATAU ATURANNYA (contoh: "Jaminan Produk Halal"), bukan hanya nomor dokumennya saja! Harus sebutkan Nomor, Tahun, dan Nama Regulasi secara utuh agar landasannya jelas.
+  *Contoh Benar:* "Berdasarkan [Sumber Akademik/Regulasi: Kajian Kelayakan Operasional RPH Oeba — Jurnal Partner (Neliti)], disarankan bahwa..." atau "Berdasarkan [Sumber Akademik/Regulasi: UU No. 33 Tahun 2014 tentang Jaminan Produk Halal] Pasal 4, mewajibkan...". 
+- JANGAN PERNAH menyembunyikan, menyingkat, atau menghilangkan bagian judul dokumen. DILARANG KERAS hanya menyebutkan nomor dokumen (seperti "UU No. 33 Tahun 2014" atau "Nomor 25"). Wajib sebutkan nama aturan spesifiknya dari tag \`[Sumber Akademik/Regulasi: ...]\` secara utuh.
 - Jika hasil RAG untuk Sub-CP tersebut kosong, jawablah: "Berdasarkan Knowledge Base saat ini, belum ada landasan regulasi akademik untuk titik ini."
 - Sertakan referensi sumber di akhir tanggapan.`,
       messages,
