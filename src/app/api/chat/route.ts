@@ -41,8 +41,8 @@ export async function POST(req: Request) {
 - Di kolom pertama tabel, WAJIB tampilkan **ID DAN Nama CP** (contoh: "CP1 Farm/Kandang Sapi", "CP4 RPH/Penyembelihan"), bukan hanya "CP1".
 - Gunakan bullet points/list untuk informasi umum (Batch ID, Tanggal, RPH, dll).
 - Setelah tabel, tampilkan **Data Personel & Info Operasional** per CP PERSIS seperti data dari tool. Setiap CP memiliki field operasional yang BERBEDA (contoh: CP1=Farm, CP3=Transporter/Kendaraan, CP4=RPH/Juru Sembelih, CP7=Gudang/Suhu) — tampilkan HANYA info dari baris "Entitas:" dan "Personel:" per CP. DILARANG menambahkan field generik yang sama untuk semua CP (seperti Suhu, Kendaraan, Supplier untuk setiap CP). Tampilkan SEMUA sub-kriteria per CP beserta skornya dari baris "Sub-Kriteria:" pada output tool.
-- Setelah memanggil **trace_halal_batch**, periksa SELURUH CP yang berstatus "Tinggi" (High), "Sangat Tinggi" (Very High), atau "Moderate" (Sedang). Sebutkan apa saja penyebab utamanya dengan melihat Sub-Kriteria penyumbang nilai tertinggi di tiap CP tersebut.
-- **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Tinggi, Sangat Tinggi, atau Moderate, gunakan informasi dari label "[AUTO-RAG Referensi]" yang sudah tersedia di dalam hasil \`trace_halal_batch\` untuk menyusun rekomendasi perbaikan. Anda TIDAK PERLU memanggil tool \`search_knowledge_base\` lagi karena teks RAG sudah otomatis dicantumkan di sana. Ini akan sangat menghemat waktu!
+- Setelah memanggil **trace_halal_batch**, periksa SELURUH CP yang berstatus "Critical", "High", atau "Moderate". Sebutkan apa saja penyebab utamanya dengan melihat Sub-Kriteria penyumbang nilai tertinggi di tiap CP tersebut.
+- **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Critical, High, atau Moderate, gunakan informasi dari label "[AUTO-RAG Referensi]" yang sudah tersedia di dalam hasil \`trace_halal_batch\` untuk menyusun rekomendasi perbaikan. Anda TIDAK PERLU memanggil tool \`search_knowledge_base\` lagi karena teks RAG sudah otomatis dicantumkan di sana. Ini akan sangat menghemat waktu!
 - **PENTING (DURASI)**: Jangan membuat kalimat pengantar yang terlalu panjang! Langsung ke intinya (ringkas dan padat) agar generasi tidak memakan waktu lama dan terputus.
 - **ATURAN WAJIB SITASI & REFERENSI**: Anda DILARANG KERAS memberikan rekomendasi yang terlalu umum atau meringkas nama sumber referensi. Jika merujuk referensi, Anda WAJIB mengutipnya dengan SANGAT LENGKAP berdasarkan data RAG yang ada tanpa ada yang dipotong:
   1. **Jika Jurnal/Paper**: Wajib sebutkan nama jurnal, judul paper, nama penulis (jika ada di teks), dan tahun terbitnya (jika ada).
@@ -290,7 +290,7 @@ export async function POST(req: Request) {
                        for (const r of risks) {
                          traceOutput += `\n      - ${r.label}: ${r.value.toFixed(2)}`;
                        }
-                       if (rLevel === 'Tinggi' || rLevel === 'Sangat Tinggi' || rLevel === 'Moderate' || rLevel === 'Sedang') {
+                       if (rLevel === 'High' || rLevel === 'Critical' || rLevel === 'Moderate') {
                           const topRisk = risks[0];
                           try {
                             const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'boleh', 'tidak', 'saja', 'terkait', 'tentang', 'cara', 'apa', 'jelaskan', 'sesuai', 'sebutkan'];
