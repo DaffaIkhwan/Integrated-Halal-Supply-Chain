@@ -158,10 +158,10 @@ export default function BatchManagementPage() {
           )}
         </AnimatePresence>
 
-        <div className={userRole === "ADMIN" ? "grid grid-cols-1 lg:grid-cols-2 gap-8" : "max-w-3xl mx-auto space-y-8"}>
+        <div className={userRole === "ADMIN" ? "max-w-4xl mx-auto space-y-8" : "grid grid-cols-1 lg:grid-cols-2 gap-8"}>
           
           {/* KOLOM KIRI: FORM SAPI */}
-          {(userRole === "ADMIN" || userRole === "CP1_FARM") && (
+          {(userRole === "CP1_FARM") && (
             <div className="space-y-6">
               <div className="rounded-2xl border bg-card p-6 shadow-sm">
                 <h2 className="text-lg font-bold flex items-center gap-2 mb-4">
@@ -256,8 +256,8 @@ export default function BatchManagementPage() {
           )}
 
           {/* KOLOM KANAN: FORM BATCH */}
-          {(userRole === "ADMIN" || userRole === "CP4_SLAUGHTER") && (
-            <div className="space-y-6">
+          <div className="space-y-6">
+            {(userRole === "CP4_SLAUGHTER") && (
               <div className="rounded-2xl border bg-card p-6 shadow-sm">
                 <h2 className="text-lg font-bold flex items-center gap-2 mb-4">
                   <Factory className="h-5 w-5 text-emerald-500" />
@@ -320,7 +320,9 @@ export default function BatchManagementPage() {
                   </button>
                 </form>
               </div>
+            )}
 
+            {(userRole === "ADMIN" || userRole === "CP4_SLAUGHTER") && (
               <div className="rounded-2xl border bg-card overflow-hidden shadow-sm">
                 <div className="bg-muted px-4 py-3 border-b flex justify-between items-center">
                   <h3 className="font-bold text-sm">Daftar Batch Berjalan (HalalBatch)</h3>
@@ -360,8 +362,8 @@ export default function BatchManagementPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
           
         </div>
 
