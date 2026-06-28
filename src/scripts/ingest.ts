@@ -25,12 +25,16 @@ function extractDocTitle(filename: string): string {
     .replace(/\.pdf\.txt$/, '')
     .replace(/\.pdf$/, '')
     .replace(/\.txt$/, '')
+    // Remove trailing 'pdf' glued to title (e.g. "(KEMNAKER)pdf" → "(KEMNAKER)")
+    .replace(/pdf$/i, '')
     // Remove leading number + dot
     .replace(/^\d+\.\s*/, '')
     // Remove parenthetical info
     .replace(/\s*\([^)]*\)\s*/g, ' ')
     // Remove trailing category codes like "A1 · UU JPH"
     .replace(/\s+[A-Z]\d+\s*·.*$/, '')
+    // Collapse multiple spaces
+    .replace(/\s+/g, ' ')
     .trim();
 }
 

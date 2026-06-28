@@ -7,6 +7,19 @@ import { z } from 'zod';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
+/** Strip PDF filename artifacts from document titles for clean reference display */
+function cleanDocTitle(raw: string): string {
+  return raw
+    .replace(/\.pdf\.txt$/i, '')
+    .replace(/\.pdf$/i, '')
+    .replace(/\.txt$/i, '')
+    .replace(/pdf$/i, '')       // trailing 'pdf' glued to title (e.g. "...Halalpdf")
+    .replace(/^\d+\.\s*/, '')   // leading number "12. "
+    .replace(/\s*\([^)]*\)\s*/g, ' ')  // parenthetical info like (KEMNAKER)
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 const openrouter = createOpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
   apiKey: process.env.OPENROUTER_API_KEY,
@@ -114,7 +127,7 @@ export async function POST(req: Request) {
                   }
                   const chunk = (r.chunk || '').length > 1200 ? (r.chunk || '').substring(0, 1200) + '...' : (r.chunk || '');
                   totalChars += chunk.length;
-                  return `[Sumber Akademik/Regulasi: ${docTitle}] [Kategori: ${cp}]\n${chunk}`;
+                  return `[Sumber Akademik/Regulasi: ${cleanDocTitle(docTitle)}] [Kategori: ${cp}]\n${chunk}`;
                 })
                 .filter(Boolean)
                 .join('\n\n');
@@ -318,7 +331,7 @@ export async function POST(req: Request) {
                                     } catch(e){}
                                   }
                                   
-                                  return { chunk: `[Sumber Akademik/Regulasi: ${docTitle}]\n${r.chunk}`, score };
+                                  return { chunk: `[Sumber Akademik/Regulasi: ${cleanDocTitle(docTitle)}]\n${r.chunk}`, score };
                                 }).sort((a, b) => b.score - a.score);
                                 const topRAG = scored.slice(0, 2).map(r => r.chunk).join('\n\n---\n\n').substring(0, 1500);
                                 traceOutput += `\n    [AUTO-RAG Referensi untuk penyebab utama ${topRisk.label}]:\n${topRAG}`;
