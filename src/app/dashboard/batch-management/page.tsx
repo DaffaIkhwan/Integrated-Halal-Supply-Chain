@@ -11,11 +11,16 @@ import {
   DatabaseZap,
   CheckCircle2,
   AlertTriangle,
-  QrCode
+  QrCode,
+  CalendarDays,
+  DownloadCloud
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSession } from "next-auth/react";
 import { BatchQrModal } from "@/components/batch-qr-modal";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
+import { QRCodeSVG } from "qrcode.react";
 
 export default function BatchManagementPage() {
   const { data: session } = useSession();
@@ -32,6 +37,11 @@ export default function BatchManagementPage() {
   const [submittingBatch, setSubmittingBatch] = useState(false);
 
   const [message, setMessage] = useState<{ text: string, type: 'success' | 'error' } | null>(null);
+
+  // Filter & Download state
+  const [selectedDate, setSelectedDate] = useState<string>("");
+  const [selectedBatches, setSelectedBatches] = useState<string[]>([]);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   // QR Modal state
   const [qrModal, setQrModal] = useState<{
@@ -108,6 +118,102 @@ export default function BatchManagementPage() {
       setMessage({ text: err.message, type: 'error' });
     } finally {
       setSubmittingBatch(false);
+    }
+  };
+
+  const filteredBatches = data?.batches?.filter((b: any) => {
+    if (!selectedDate) return true;
+    const batchDate = new Date(b.productionDate).toISOString().split('T')[0];
+    return batchDate === selectedDate;
+  }) || [];
+
+  const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setSelectedBatches(filteredBatches.map((b: any) => b.id));
+    } else {
+      setSelectedBatches([]);
+    }
+  };
+
+  const handleSelectBatch = (batchId: string) => {
+    setSelectedBatches(prev => 
+      prev.includes(batchId) ? prev.filter(id => id !== batchId) : [...prev, batchId]
+    );
+  };
+
+  const handleBulkDownload = async () => {
+    if (selectedBatches.length === 0) return;
+    setIsDownloading(true);
+    
+    try {
+      const zip = new JSZip();
+      
+      for (const batchId of selectedBatches) {
+        const batch = data.batches.find((b: any) => b.id === batchId);
+        if (!batch) continue;
+
+        const svgEl = document.querySelector(`#qr-hidden-${batchId} svg`) as SVGSVGElement;
+        if (!svgEl) continue;
+
+        const padding = 32;
+        const qrSize = 280;
+        const totalSize = qrSize + padding * 2;
+        const labelHeight = 80;
+        const canvasHeight = totalSize + labelHeight;
+
+        const canvas = document.createElement("canvas");
+        canvas.width = totalSize;
+        canvas.height = canvasHeight;
+        const ctx = canvas.getContext("2d")!;
+
+        // White background
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, totalSize, canvasHeight);
+
+        const svgData = new XMLSerializer().serializeToString(svgEl);
+        const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+        const svgUrl = URL.createObjectURL(svgBlob);
+
+        await new Promise<void>((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => {
+            ctx.drawImage(img, padding, padding, qrSize, qrSize);
+            URL.revokeObjectURL(svgUrl);
+
+            ctx.fillStyle = "#1a1a2e";
+            ctx.font = "bold 16px system-ui, sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(`🐄 ${batch.cattle?.earTag || "Unknown"}`, totalSize / 2, totalSize + 20);
+
+            ctx.fillStyle = "#6b7280";
+            ctx.font = "14px system-ui, sans-serif";
+            ctx.fillText(`Batch: ${batchId.split("-")[0]}`, totalSize / 2, totalSize + 45);
+
+            ctx.font = "12px system-ui, sans-serif";
+            const dateStr = new Date(batch.productionDate).toLocaleDateString('id-ID');
+            ctx.fillText(`Tgl: ${dateStr}`, totalSize / 2, totalSize + 65);
+
+            canvas.toBlob((blob) => {
+              if (blob) {
+                zip.file(`QR-${batch.cattle?.earTag || "Unknown"}-${batchId.split("-")[0]}.png`, blob);
+              }
+              resolve();
+            }, "image/png");
+          };
+          img.onerror = reject;
+          img.src = svgUrl;
+        });
+      }
+
+      const content = await zip.generateAsync({ type: "blob" });
+      saveAs(content, `QR_Batches_${selectedDate || 'All'}.zip`);
+      setMessage({ text: "Berhasil mengunduh QR Code!", type: "success" });
+    } catch (error) {
+      console.error(error);
+      setMessage({ text: "Gagal mengunduh QR Code", type: "error" });
+    } finally {
+      setIsDownloading(false);
+      setSelectedBatches([]);
     }
   };
 
@@ -334,15 +440,60 @@ export default function BatchManagementPage() {
                       <p className="text-xs text-muted-foreground">Riwayat batch daging yang telah diterbitkan</p>
                     </div>
                   </div>
-                  <span className="text-sm font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 px-4 py-1.5 rounded-full shadow-sm">{data?.batches?.length || 0} Batch</span>
+                  <span className="text-sm font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 px-4 py-1.5 rounded-full shadow-sm">{filteredBatches.length} Batch</span>
+                </div>
+
+                {/* FILTER AND BULK ACTIONS */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-between items-center bg-card p-4 rounded-2xl border shadow-sm">
+                  <div className="flex items-center gap-3 w-full sm:w-auto">
+                    <div className="flex items-center gap-2 bg-background border px-3 py-2 rounded-lg">
+                      <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                      <input 
+                        type="date" 
+                        className="bg-transparent text-sm focus:outline-none" 
+                        value={selectedDate}
+                        onChange={(e) => setSelectedDate(e.target.value)}
+                      />
+                    </div>
+                    {selectedDate && (
+                      <button onClick={() => setSelectedDate("")} className="text-xs text-muted-foreground hover:text-foreground">Reset</button>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3 w-full sm:w-auto">
+                    <label className="flex items-center gap-2 text-sm cursor-pointer">
+                      <input 
+                        type="checkbox" 
+                        className="rounded border-gray-300"
+                        checked={filteredBatches.length > 0 && selectedBatches.length === filteredBatches.length}
+                        onChange={handleSelectAll}
+                      />
+                      Pilih Semua
+                    </label>
+                    <button 
+                      onClick={handleBulkDownload}
+                      disabled={selectedBatches.length === 0 || isDownloading}
+                      className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors disabled:opacity-50"
+                    >
+                      {isDownloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <DownloadCloud className="h-4 w-4" />}
+                      Download Terpilih ({selectedBatches.length})
+                    </button>
+                  </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {data?.batches?.map((b: any) => (
+                  {filteredBatches.map((b: any) => (
                     <div key={b.id} className="group relative flex flex-col p-5 rounded-2xl border bg-card/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 hover:border-emerald-500/30 overflow-hidden">
                       <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500/50 group-hover:bg-emerald-500 transition-colors"></div>
                       <div className="flex items-start justify-between mb-4 pl-2">
-                        <div>
+                        <div className="absolute top-3 right-3 z-10">
+                          <input 
+                            type="checkbox" 
+                            className="w-5 h-5 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500"
+                            checked={selectedBatches.includes(b.id)}
+                            onChange={() => handleSelectBatch(b.id)}
+                          />
+                        </div>
+                        <div className="pr-8">
                           <p className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider mb-1">ID Batch</p>
                           <p className="font-mono font-bold text-lg text-emerald-600 dark:text-emerald-400 leading-none">
                             {b.id.split("-")[0]}
@@ -389,7 +540,7 @@ export default function BatchManagementPage() {
                     </div>
                   ))}
                   
-                  {data?.batches?.length === 0 && (
+                  {filteredBatches.length === 0 && (
                     <div className="col-span-full py-12 flex flex-col items-center justify-center border-2 border-dashed rounded-3xl bg-muted/20">
                       <DatabaseZap className="h-8 w-8 text-muted-foreground/30 mb-2" />
                       <p className="text-sm text-muted-foreground font-medium">Belum ada batch yang diterbitkan.</p>
@@ -412,15 +563,60 @@ export default function BatchManagementPage() {
                 Daftar Seluruh Halal Batch
               </h2>
               <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 px-4 py-1.5 rounded-full text-sm font-bold shadow-sm">
-                {data?.batches?.length || 0} Batch Terdaftar
+                {filteredBatches.length} Batch Terdaftar
               </span>
+            </div>
+
+            {/* FILTER AND BULK ACTIONS (ADMIN) */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-between items-center bg-card p-4 rounded-2xl border shadow-sm">
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                <div className="flex items-center gap-2 bg-background border px-3 py-2 rounded-lg">
+                  <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                  <input 
+                    type="date" 
+                    className="bg-transparent text-sm focus:outline-none" 
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                  />
+                </div>
+                {selectedDate && (
+                  <button onClick={() => setSelectedDate("")} className="text-xs text-muted-foreground hover:text-foreground">Reset</button>
+                )}
+              </div>
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                <label className="flex items-center gap-2 text-sm cursor-pointer">
+                  <input 
+                    type="checkbox" 
+                    className="rounded border-gray-300"
+                    checked={filteredBatches.length > 0 && selectedBatches.length === filteredBatches.length}
+                    onChange={handleSelectAll}
+                  />
+                  Pilih Semua
+                </label>
+                <button 
+                  onClick={handleBulkDownload}
+                  disabled={selectedBatches.length === 0 || isDownloading}
+                  className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors disabled:opacity-50"
+                >
+                  {isDownloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <DownloadCloud className="h-4 w-4" />}
+                  Download Terpilih ({selectedBatches.length})
+                </button>
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data?.batches?.map((b: any) => (
-                <div key={b.id} className="flex flex-col p-5 rounded-2xl border bg-card/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-all border-border/50">
+              {filteredBatches.map((b: any) => (
+                <div key={b.id} className="relative flex flex-col p-5 rounded-2xl border bg-card/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-all border-border/50">
                   <div className="flex items-start justify-between mb-4">
-                    <div>
+                    <div className="absolute top-3 right-3 z-10">
+                      <input 
+                        type="checkbox" 
+                        className="w-5 h-5 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500"
+                        checked={selectedBatches.includes(b.id)}
+                        onChange={() => handleSelectBatch(b.id)}
+                      />
+                    </div>
+                    <div className="relative pr-8">
                       <p className="text-xs text-muted-foreground font-semibold mb-1">BATCH ID</p>
                       <p className="font-mono font-bold text-lg text-emerald-600 dark:text-emerald-400 leading-none">
                         {b.id.split("-")[0]}
@@ -458,7 +654,7 @@ export default function BatchManagementPage() {
                 </div>
               ))}
               
-              {data?.batches?.length === 0 && (
+              {filteredBatches.length === 0 && (
                 <div className="col-span-full py-16 flex flex-col items-center justify-center border-2 border-dashed rounded-3xl bg-muted/20">
                   <DatabaseZap className="h-10 w-10 text-muted-foreground/30 mb-3" />
                   <p className="text-muted-foreground font-medium">Belum ada batch daging yang diterbitkan.</p>
@@ -469,6 +665,27 @@ export default function BatchManagementPage() {
         )}
 
       </main>
+
+      {/* Hidden QRs for bulk download */}
+      <div style={{ display: 'none' }}>
+        {filteredBatches.map((b: any) => {
+          const traceUrl = typeof window !== "undefined"
+            ? `${window.location.origin}/chat?trace=${b.id}`
+            : `/chat?trace=${b.id}`;
+          return (
+            <div key={`hidden-qr-${b.id}`} id={`qr-hidden-${b.id}`}>
+              <QRCodeSVG
+                value={traceUrl}
+                size={280}
+                level="H"
+                includeMargin={false}
+                bgColor="#ffffff"
+                fgColor="#1a1a2e"
+              />
+            </div>
+          );
+        })}
+      </div>
 
       {/* QR Modal */}
       <BatchQrModal
