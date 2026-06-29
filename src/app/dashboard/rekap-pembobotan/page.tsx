@@ -230,12 +230,7 @@ function DetailModal({ item, isAdmin, onClose, onSaveSuccess }: { item: QRespons
                   <p className="text-sm font-medium">{item.respondentRole}</p>
                 </div>
               )}
-              {item.respondentOrg && !respondentInfo.namaInstansi && (
-                <div>
-                  <p className="text-[10px] text-muted-foreground uppercase">Instansi</p>
-                  <p className="text-sm font-medium">{item.respondentOrg}</p>
-                </div>
-              )}
+
             </div>
           </div>
 
@@ -403,7 +398,7 @@ function exportToExcel(groups: ExpertGroup[]) {
 
   for (const group of groups) {
     rows.push([`PAKAR: ${group.name}`]);
-    rows.push([`Instansi: ${group.org || "-"}`, "", `Jabatan: ${group.role || "-"}`]);
+    rows.push(["", "", `Jabatan: ${group.role || "-"}`]);
 
     const infoEntries = Object.entries(group.info).filter(([k]) => !["nama", "posisi", "namaInstansi"].includes(k));
     if (infoEntries.length > 0) {
@@ -474,7 +469,7 @@ function exportToExcel(groups: ExpertGroup[]) {
   for (const group of groups) {
     const expertRows: (string | number | null)[][] = [];
     expertRows.push([`PAKAR: ${group.name}`]);
-    expertRows.push([`Instansi: ${group.org || "-"}`, `Jabatan: ${group.role || "-"}`]);
+    expertRows.push(["", `Jabatan: ${group.role || "-"}`]);
     expertRows.push([]);
 
     const modeOrder: Record<string, number> = { KU_LEVEL: 0, CP_LEVEL: 1 };
@@ -673,9 +668,7 @@ function ExpertCard({ group, isAdmin, onRefresh, onViewDetail }: { group: Expert
         <div className="flex-1 min-w-0 cursor-pointer" onClick={() => setExpanded(!expanded)}>
           <h3 className="font-bold text-lg truncate hover:text-cyan-600 transition-colors">{group.name}</h3>
           <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-0.5">
-            {group.org && <span className="flex items-center gap-1">🏢 {group.org}</span>}
             {group.role && <span className="flex items-center gap-1">💼 {group.role}</span>}
-            {group.email && <span className="flex items-center gap-1">📧 {group.email}</span>}
             <span className="px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-600 font-semibold border border-cyan-500/30">
               {group.responses.length} respons
             </span>
@@ -897,7 +890,7 @@ export default function RekapPembobotanPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Cari nama pakar, instansi, email..."
+              placeholder="Cari nama pakar atau jabatan..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-9 pr-4 py-2 rounded-xl border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
