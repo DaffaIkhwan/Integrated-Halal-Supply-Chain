@@ -1,0 +1,601 @@
+text,label
+"hi bot",greeting
+"lacak batch daging batch B-22",batch_trace
+"cara masak rendang",out_of_scope
+"ok paham",greeting
+"apa itu SJH?",knowledge_query
+"tolong buatkan resep nasi goreng ya",out_of_scope
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"ada berapa transporter",operational_data
+"selamat malam",greeting
+"lacak batch daging batch B-22",batch_trace
+"skala saaty itu apa sih penjelasannya?",knowledge_query
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"mana saja transporter",operational_data
+"selamat malam bot",greeting
+"berapa bobot kuesioner pakar",risk_check
+"hitung risiko untuk kriteria fasilitas",risk_check
+"hitung risiko untuk CP1",risk_check
+"lacak batch B-002",batch_trace
+"lacak batch E-1234",batch_trace
+"lacak batch E-1234",batch_trace
+"cara masak rendang",out_of_scope
+"cek asal usul B-001",batch_trace
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"apa itu kriteria bahan haram?",knowledge_query
+"tolong cek risiko penyembelihan di RPH",risk_check
+"lokasi transporter",operational_data
+"cara masak rendang ya",out_of_scope
+"tolong jelaskan SOP kebersihan?",knowledge_query
+"tolong jelaskan penanganan produk tidak sesuai?",knowledge_query
+"apa rekomendasi film bagus dong",out_of_scope
+"berikan data pakar K1",operational_data
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"cek asal usul B-001",batch_trace
+"lacak eartag B-001",batch_trace
+"berikan data responden kuesioner",operational_data
+"tampilkan hasil risiko fasilitas pemotongan",risk_check
+"cara install windows ya",out_of_scope
+"test bot",greeting
+"berapa harga bitcoin hari ini",out_of_scope
+"mana saja transporter",operational_data
+"gimana riwayat daging batch B-22",batch_trace
+"cari info batch E-1234",batch_trace
+"cari info batch B-001",batch_trace
+"hi bot bot",greeting
+"tolong buatkan resep nasi goreng dong",out_of_scope
+"lirik lagu indonesia raya",out_of_scope
+"mana saja responden kuesioner",operational_data
+"berikan data responden kuesioner",operational_data
+"cara mengatasi rambut rontok",out_of_scope
+"kasih liat bobot AHP Titik Kritis 3",risk_check
+"makasih ya",greeting
+"sebutkan list responden kuesioner",operational_data
+"cari info batch pengiriman B-444",batch_trace
+"oke thanks bantu saya",greeting
+"cek asal usul B-002",batch_trace
+"tolong buatkan resep nasi goreng",out_of_scope
+"tampilkan hasil risiko fasilitas pemotongan",risk_check
+"cara mengatasi rambut rontok ya",out_of_scope
+"oke thanks",greeting
+"berapa bobot CP1",risk_check
+"game paling seru ya",out_of_scope
+"apa rekomendasi film bagus dong",out_of_scope
+"gimana riwayat sapi dengan eartag E-001",batch_trace
+"kasih liat bobot AHP penyembelihan di RPH",risk_check
+"hitung risiko untuk batch B-001",risk_check
+"assalamualaikum bot",greeting
+"gimana riwayat pengiriman B-444",batch_trace
+"tolong cek risiko CP4",risk_check
+"pemisahan fasilitas halal itu apa sih penjelasannya?",knowledge_query
+"selamat malam bot",greeting
+"audit halal itu apa sih penjelasannya?",knowledge_query
+"siapa nama responden kuesioner",operational_data
+"siapa saja RPH yang terdaftar",operational_data
+"siapa saja juru sembelih halal",operational_data
+"halo",greeting
+"SOP kebersihan itu apa sih penjelasannya?",knowledge_query
+"berapa harga bitcoin hari ini",out_of_scope
+"berapa bobot fasilitas pemotongan",risk_check
+"tampilkan traceability E-1234",batch_trace
+"siapa nama juru sembelih halal",operational_data
+"berapa harga bitcoin hari ini",out_of_scope
+"berikan data outlet ritel",operational_data
+"bisakah anda jelaskan kriteria bahan haram?",knowledge_query
+"hitung risiko untuk CP4",risk_check
+"gimana riwayat B-099",batch_trace
+"cara hack wifi",out_of_scope
+"tolong buatkan resep nasi goreng ya",out_of_scope
+"tolong cek risiko fasilitas pemotongan",risk_check
+"apakah status risiko Titik Kritis 3",risk_check
+"tolong buatkan resep nasi goreng dong",out_of_scope
+"berapa harga bitcoin hari ini",out_of_scope
+"ada berapa transporter",operational_data
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"apa rekomendasi film bagus dong",out_of_scope
+"lirik lagu indonesia raya ya",out_of_scope
+"ada berapa outlet ritel",operational_data
+"cek asal usul B-001",batch_trace
+"oke thanks bantu saya",greeting
+"cek asal usul sapi dengan eartag E-001",batch_trace
+"p",greeting
+"sebutkan list farm aktif",operational_data
+"dari mana asal B-002",batch_trace
+"berapa skor risiko batch B-001",risk_check
+"apakah status risiko fasilitas pemotongan",risk_check
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"apakah status risiko kuesioner pakar",risk_check
+"cara daftar cpns dong",out_of_scope
+"tampilkan hasil risiko batch B-001",risk_check
+"berita bola semalam ya",out_of_scope
+"berapa harga bitcoin hari ini dong",out_of_scope
+"hi bot min",greeting
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"siapa presiden amerika ya",out_of_scope
+"tolong cek risiko penyembelihan di RPH",risk_check
+"p bot",greeting
+"sebutkan list outlet ritel",operational_data
+"game paling seru",out_of_scope
+"selamat siang",greeting
+"cuaca hari ini gimana dong",out_of_scope
+"apa rekomendasi film bagus dong",out_of_scope
+"cari info batch pengiriman B-444",batch_trace
+"gimana nilai risiko kuesioner pakar",risk_check
+"cari info batch B-002",batch_trace
+"kasih liat bobot AHP batch B-001",risk_check
+"berapa harga bitcoin hari ini ya",out_of_scope
+"apakah status risiko Titik Kritis 3",risk_check
+"sebutkan audit halal?",knowledge_query
+"lokasi petugas RPH",operational_data
+"lacak batch daging batch B-22",batch_trace
+"kasih liat bobot AHP kuesioner pakar",risk_check
+"terima kasih min",greeting
+"cara masak rendang",out_of_scope
+"selamat malam",greeting
+"ok paham",greeting
+"tolong lacak pengiriman B-444",batch_trace
+"cara mengatasi rambut rontok ya",out_of_scope
+"ada berapa fasilitas kandang",operational_data
+"tampilkan hasil risiko penyembelihan di RPH",risk_check
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"skala saaty itu apa sih penjelasannya?",knowledge_query
+"siapa presiden amerika ya",out_of_scope
+"audit halal itu apa sih penjelasannya?",knowledge_query
+"siapa nama pakar K1",operational_data
+"gimana nilai risiko penyembelihan di RPH",risk_check
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"tampilkan daftar juru sembelih halal",operational_data
+"ok paham bantu saya",greeting
+"selamat pagi",greeting
+"siapa nama responden kuesioner",operational_data
+"game paling seru dong",out_of_scope
+"tolong lacak pengiriman B-444",batch_trace
+"tampilkan traceability B-099",batch_trace
+"berapa skor risiko transportasi daging",risk_check
+"pemisahan fasilitas halal itu apa sih penjelasannya?",knowledge_query
+"oke thanks",greeting
+"cara install windows ya",out_of_scope
+"kasih liat bobot AHP penyembelihan di RPH",risk_check
+"ok paham ya",greeting
+"makasih bantu saya",greeting
+"tolong lacak B-001",batch_trace
+"p",greeting
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"cuaca hari ini gimana dong",out_of_scope
+"tampilkan traceability pengiriman B-444",batch_trace
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"sebutkan list responden kuesioner",operational_data
+"buatkan puisi cinta ya",out_of_scope
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"siapa nama responden kuesioner",operational_data
+"mana saja fasilitas kandang",operational_data
+"assalamualaikum",greeting
+"terima kasih",greeting
+"lokasi responden kuesioner",operational_data
+"ada berapa pakar K1",operational_data
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"ada berapa juru sembelih halal",operational_data
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"selamat pagi",greeting
+"lirik lagu indonesia raya dong",out_of_scope
+"hai",greeting
+"lokasi pakar K1",operational_data
+"cara hack wifi ya",out_of_scope
+"berapa bobot fasilitas pemotongan",risk_check
+"gimana riwayat daging batch B-22",batch_trace
+"cara install windows dong",out_of_scope
+"apa rekomendasi film bagus ya",out_of_scope
+"tampilkan hasil risiko Titik Kritis 3",risk_check
+"terima kasih bot",greeting
+"berapa skor risiko kuesioner pakar",risk_check
+"ok paham",greeting
+"audit halal itu apa sih penjelasannya?",knowledge_query
+"skala saaty itu apa sih penjelasannya?",knowledge_query
+"pemisahan fasilitas halal itu apa sih penjelasannya?",knowledge_query
+"selamat malam",greeting
+"lirik lagu indonesia raya dong",out_of_scope
+"berikan data juru sembelih halal",operational_data
+"ada berapa petugas RPH",operational_data
+"jadwal kereta api ya",out_of_scope
+"cuaca hari ini gimana ya",out_of_scope
+"apa regulasi tentang undang-undang jph?",knowledge_query
+"tolong cek risiko CP4",risk_check
+"lokasi farm aktif",operational_data
+"ada berapa outlet ritel",operational_data
+"berita bola semalam ya",out_of_scope
+"gimana nilai risiko transportasi daging",risk_check
+"cari info batch batch produksi hari ini",batch_trace
+"cek asal usul E-1234",batch_trace
+"hitung risiko untuk kuesioner pakar",risk_check
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"gimana riwayat E-1234",batch_trace
+"apakah status risiko CP1",risk_check
+"hai bantu saya",greeting
+"sebutkan list pakar K1",operational_data
+"dari mana asal daging batch B-22",batch_trace
+"dari mana asal daging batch B-22",batch_trace
+"ada berapa responden kuesioner",operational_data
+"ok paham",greeting
+"cari info batch sapi dengan eartag E-001",batch_trace
+"sebutkan list petugas RPH",operational_data
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"undang-undang jph itu apa sih penjelasannya?",knowledge_query
+"apa rekomendasi film bagus dong",out_of_scope
+"test bot",greeting
+"halo",greeting
+"tampilkan traceability daging batch B-22",batch_trace
+"rekomendasi hp murah",out_of_scope
+"cek asal usul B-001",batch_trace
+"berikan data farm aktif",operational_data
+"terima kasih",greeting
+"jadwal kereta api ya",out_of_scope
+"siapa nama pakar K1",operational_data
+"SJH itu apa sih penjelasannya?",knowledge_query
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"siapa presiden amerika dong",out_of_scope
+"berikan data RPH yang terdaftar",operational_data
+"tolong lacak B-002",batch_trace
+"hi bot min",greeting
+"apa yang dimaksud dengan titik kritis halal?",knowledge_query
+"lacak eartag B-001",batch_trace
+"ok paham",greeting
+"oke thanks bantu saya",greeting
+"bisakah anda jelaskan skala saaty?",knowledge_query
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"hitung risiko untuk penyembelihan di RPH",risk_check
+"gimana riwayat batch produksi hari ini",batch_trace
+"hai",greeting
+"oke thanks ya",greeting
+"hai min",greeting
+"lirik lagu indonesia raya ya",out_of_scope
+"tolong cek risiko CP1",risk_check
+"ada berapa pakar K1",operational_data
+"hi bot",greeting
+"selamat siang ya",greeting
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"berita bola semalam dong",out_of_scope
+"gimana nilai risiko penyembelihan di RPH",risk_check
+"cara masak rendang ya",out_of_scope
+"cara masak rendang ya",out_of_scope
+"berapa bobot kriteria fasilitas",risk_check
+"ok paham",greeting
+"rekomendasi hp murah ya",out_of_scope
+"undang-undang jph itu apa sih penjelasannya?",knowledge_query
+"lokasi outlet ritel",operational_data
+"cuaca hari ini gimana ya",out_of_scope
+"berapa skor risiko CP4",risk_check
+"cek asal usul B-002",batch_trace
+"penanganan produk tidak sesuai itu apa sih penjelasannya?",knowledge_query
+"cek asal usul B-001",batch_trace
+"cara hack wifi ya",out_of_scope
+"apakah status risiko batch B-002",risk_check
+"cek asal usul sapi dengan eartag E-001",batch_trace
+"tolong cek risiko fasilitas pemotongan",risk_check
+"halo",greeting
+"rekomendasi hp murah ya",out_of_scope
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"lacak batch sapi dengan eartag E-001",batch_trace
+"siapa saja outlet ritel",operational_data
+"terima kasih bot",greeting
+"mana saja farm aktif",operational_data
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"selamat siang",greeting
+"ada berapa RPH yang terdaftar",operational_data
+"berapa harga bitcoin hari ini dong",out_of_scope
+"siapa saja transporter",operational_data
+"buatkan puisi cinta dong",out_of_scope
+"test bot",greeting
+"pemisahan fasilitas halal itu apa sih penjelasannya?",knowledge_query
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"tolong cek risiko CP4",risk_check
+"p bot",greeting
+"makasih bot",greeting
+"bagaimana aturan traceability batch?",knowledge_query
+"ada berapa juru sembelih halal",operational_data
+"skala saaty itu apa sih penjelasannya?",knowledge_query
+"dari mana asal batch produksi hari ini",batch_trace
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"selamat siang",greeting
+"cara install windows",out_of_scope
+"lokasi pakar K1",operational_data
+"dari mana asal pengiriman B-444",batch_trace
+"tampilkan daftar farm aktif",operational_data
+"ok paham min",greeting
+"siapa nama petugas RPH",operational_data
+"mana saja RPH yang terdaftar",operational_data
+"cari info batch B-099",batch_trace
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"hai ya",greeting
+"kasih liat bobot AHP batch B-002",risk_check
+"lirik lagu indonesia raya dong",out_of_scope
+"lacak eartag sapi dengan eartag E-001",batch_trace
+"bisakah anda jelaskan SOP kebersihan?",knowledge_query
+"game paling seru",out_of_scope
+"sebutkan list RPH yang terdaftar",operational_data
+"selamat siang",greeting
+"cara hack wifi dong",out_of_scope
+"siapa nama petugas RPH",operational_data
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"selamat siang bantu saya",greeting
+"apa rekomendasi film bagus dong",out_of_scope
+"tolong buatkan resep nasi goreng dong",out_of_scope
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"dari mana asal batch produksi hari ini",batch_trace
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"tampilkan traceability E-1234",batch_trace
+"dari mana asal B-001",batch_trace
+"tolong cek risiko penyembelihan di RPH",risk_check
+"berapa skor risiko Titik Kritis 3",risk_check
+"siapa nama responden kuesioner",operational_data
+"pemisahan fasilitas halal itu apa sih penjelasannya?",knowledge_query
+"dari mana asal B-002",batch_trace
+"tampilkan daftar juru sembelih halal",operational_data
+"halo min",greeting
+"bagaimana aturan SOP kebersihan?",knowledge_query
+"hitung risiko untuk kuesioner pakar",risk_check
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"berapa bobot batch B-001",risk_check
+"gimana riwayat E-1234",batch_trace
+"hai min",greeting
+"lacak eartag batch produksi hari ini",batch_trace
+"cara masak rendang ya",out_of_scope
+"dari mana asal E-1234",batch_trace
+"cara mengatasi rambut rontok",out_of_scope
+"apa rekomendasi film bagus ya",out_of_scope
+"gimana nilai risiko batch B-002",risk_check
+"dari mana asal B-001",batch_trace
+"terima kasih",greeting
+"tampilkan hasil risiko CP4",risk_check
+"bisakah anda jelaskan audit halal?",knowledge_query
+"oke thanks min",greeting
+"tolong lacak B-099",batch_trace
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"sebutkan list transporter",operational_data
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"selamat pagi",greeting
+"gimana nilai risiko batch B-001",risk_check
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"berapa harga bitcoin hari ini ya",out_of_scope
+"undang-undang jph itu apa sih penjelasannya?",knowledge_query
+"lirik lagu indonesia raya dong",out_of_scope
+"halo ya",greeting
+"halo",greeting
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"hi bot min",greeting
+"apa rekomendasi film bagus",out_of_scope
+"apa yang dimaksud dengan traceability batch?",knowledge_query
+"lacak batch batch produksi hari ini",batch_trace
+"tampilkan daftar pakar K1",operational_data
+"tampilkan traceability B-099",batch_trace
+"cek asal usul E-1234",batch_trace
+"mana saja transporter",operational_data
+"dari mana asal B-002",batch_trace
+"tolong cek risiko kuesioner pakar",risk_check
+"lacak batch batch produksi hari ini",batch_trace
+"lacak eartag B-099",batch_trace
+"tolong lacak batch produksi hari ini",batch_trace
+"sebutkan list petugas RPH",operational_data
+"kasih liat bobot AHP CP4",risk_check
+"lacak eartag B-002",batch_trace
+"cari info batch daging batch B-22",batch_trace
+"bisakah anda jelaskan traceability batch?",knowledge_query
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"siapa presiden amerika dong",out_of_scope
+"ada berapa petugas RPH",operational_data
+"ok paham bot",greeting
+"ok paham ya",greeting
+"p",greeting
+"ada berapa responden kuesioner",operational_data
+"buatkan puisi cinta dong",out_of_scope
+"tampilkan traceability batch produksi hari ini",batch_trace
+"berapa skor risiko CP1",risk_check
+"gimana riwayat pengiriman B-444",batch_trace
+"hai bot",greeting
+"skala saaty itu apa sih penjelasannya?",knowledge_query
+"berikan data RPH yang terdaftar",operational_data
+"kasih liat bobot AHP kuesioner pakar",risk_check
+"lirik lagu indonesia raya dong",out_of_scope
+"dari mana asal E-1234",batch_trace
+"hitung risiko untuk batch B-002",risk_check
+"selamat pagi min",greeting
+"berikan data fasilitas kandang",operational_data
+"apa rekomendasi film bagus",out_of_scope
+"lacak batch batch produksi hari ini",batch_trace
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"apa regulasi tentang skala saaty?",knowledge_query
+"ok paham",greeting
+"hi bot ya",greeting
+"siapa saja transporter",operational_data
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"hi bot min",greeting
+"sebutkan list juru sembelih halal",operational_data
+"tampilkan hasil risiko kuesioner pakar",risk_check
+"game paling seru dong",out_of_scope
+"undang-undang jph itu apa sih penjelasannya?",knowledge_query
+"gimana nilai risiko kriteria fasilitas",risk_check
+"cek asal usul B-001",batch_trace
+"berita bola semalam ya",out_of_scope
+"cuaca hari ini gimana ya",out_of_scope
+"lokasi juru sembelih halal",operational_data
+"cara install windows dong",out_of_scope
+"cari info batch B-099",batch_trace
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"siapa presiden amerika ya",out_of_scope
+"lacak batch batch produksi hari ini",batch_trace
+"siapa saja juru sembelih halal",operational_data
+"hitung risiko untuk penyembelihan di RPH",risk_check
+"berikan data fasilitas kandang",operational_data
+"berapa harga bitcoin hari ini",out_of_scope
+"lokasi outlet ritel",operational_data
+"berita bola semalam ya",out_of_scope
+"berapa bobot transportasi daging",risk_check
+"gimana nilai risiko fasilitas pemotongan",risk_check
+"hitung risiko untuk CP1",risk_check
+"sistem jaminan halal itu apa sih penjelasannya?",knowledge_query
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"ok paham ya",greeting
+"oke thanks",greeting
+"berikan data petugas RPH",operational_data
+"sebutkan sistem jaminan halal?",knowledge_query
+"kasih liat bobot AHP batch B-001",risk_check
+"oke thanks",greeting
+"sebutkan list transporter",operational_data
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"SOP kebersihan itu apa sih penjelasannya?",knowledge_query
+"kasih liat bobot AHP kuesioner pakar",risk_check
+"tampilkan hasil risiko kriteria fasilitas",risk_check
+"apakah status risiko kuesioner pakar",risk_check
+"gimana riwayat E-1234",batch_trace
+"berita bola semalam dong",out_of_scope
+"tolong cek risiko batch B-001",risk_check
+"lokasi petugas RPH",operational_data
+"audit halal itu apa sih penjelasannya?",knowledge_query
+"apa rekomendasi film bagus ya",out_of_scope
+"SOP kebersihan itu apa sih penjelasannya?",knowledge_query
+"berapa skor risiko CP4",risk_check
+"lokasi RPH yang terdaftar",operational_data
+"SJH itu apa sih penjelasannya?",knowledge_query
+"terima kasih ya",greeting
+"lacak eartag daging batch B-22",batch_trace
+"hitung risiko untuk CP1",risk_check
+"berita bola semalam ya",out_of_scope
+"lacak eartag daging batch B-22",batch_trace
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"mana saja RPH yang terdaftar",operational_data
+"tolong cek risiko Titik Kritis 3",risk_check
+"tolong cek risiko Titik Kritis 3",risk_check
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"cara masak rendang",out_of_scope
+"hi bot bot",greeting
+"lacak eartag daging batch B-22",batch_trace
+"tolong cek risiko kriteria fasilitas",risk_check
+"lokasi responden kuesioner",operational_data
+"berapa skor risiko batch B-001",risk_check
+"cara install windows",out_of_scope
+"sebutkan list pakar K1",operational_data
+"gimana nilai risiko batch B-002",risk_check
+"berapa skor risiko batch B-001",risk_check
+"tampilkan traceability B-099",batch_trace
+"sebutkan list fasilitas kandang",operational_data
+"tolong cek risiko CP1",risk_check
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"apakah status risiko CP4",risk_check
+"siapa nama farm aktif",operational_data
+"cari info batch batch produksi hari ini",batch_trace
+"tolong cek risiko transportasi daging",risk_check
+"apakah status risiko kuesioner pakar",risk_check
+"berapa bobot kriteria fasilitas",risk_check
+"tolong jelaskan titik kritis halal?",knowledge_query
+"lacak eartag B-099",batch_trace
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"cara mengatasi rambut rontok dong",out_of_scope
+"test min",greeting
+"gimana riwayat pengiriman B-444",batch_trace
+"kasih liat bobot AHP kuesioner pakar",risk_check
+"berikan data outlet ritel",operational_data
+"tolong lacak B-001",batch_trace
+"apakah status risiko penyembelihan di RPH",risk_check
+"ok paham",greeting
+"p",greeting
+"cek asal usul B-001",batch_trace
+"dari mana asal B-001",batch_trace
+"tolong cek risiko Titik Kritis 3",risk_check
+"mana saja fasilitas kandang",operational_data
+"halo",greeting
+"mana saja farm aktif",operational_data
+"mana saja juru sembelih halal",operational_data
+"siapa saja RPH yang terdaftar",operational_data
+"tampilkan traceability B-002",batch_trace
+"tampilkan traceability pengiriman B-444",batch_trace
+"test",greeting
+"selamat siang",greeting
+"siapa nama fasilitas kandang",operational_data
+"ok paham",greeting
+"mana saja fasilitas kandang",operational_data
+"tampilkan daftar pakar K1",operational_data
+"mana saja juru sembelih halal",operational_data
+"cuaca hari ini gimana",out_of_scope
+"siapa nama outlet ritel",operational_data
+"cuaca hari ini gimana",out_of_scope
+"apakah status risiko penyembelihan di RPH",risk_check
+"apakah status risiko penyembelihan di RPH",risk_check
+"halo ya",greeting
+"berapa harga bitcoin hari ini",out_of_scope
+"cari info batch B-002",batch_trace
+"lokasi pakar K1",operational_data
+"p",greeting
+"cek asal usul B-001",batch_trace
+"ada berapa pakar K1",operational_data
+"kasih liat bobot AHP transportasi daging",risk_check
+"game paling seru dong",out_of_scope
+"gimana nilai risiko Titik Kritis 3",risk_check
+"gimana nilai risiko transportasi daging",risk_check
+"ada berapa outlet ritel",operational_data
+"cara install windows",out_of_scope
+"gimana riwayat B-002",batch_trace
+"berapa bobot CP1",risk_check
+"siapa saja petugas RPH",operational_data
+"titik kritis halal itu apa sih penjelasannya?",knowledge_query
+"audit halal itu apa sih penjelasannya?",knowledge_query
+"ada berapa petugas RPH",operational_data
+"tolong cek risiko kuesioner pakar",risk_check
+"test",greeting
+"lokasi petugas RPH",operational_data
+"cek asal usul B-099",batch_trace
+"kriteria bahan haram itu apa sih penjelasannya?",knowledge_query
+"berapa skor risiko batch B-002",risk_check
+"dari mana asal B-002",batch_trace
+"siapa nama outlet ritel",operational_data
+"tampilkan daftar responden kuesioner",operational_data
+"tampilkan daftar outlet ritel",operational_data
+"tolong jelaskan sertifikasi halal BPJPH?",knowledge_query
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"cuaca hari ini gimana",out_of_scope
+"terima kasih",greeting
+"penyembelihan hewan itu apa sih penjelasannya?",knowledge_query
+"tolong lacak B-001",batch_trace
+"tampilkan hasil risiko Titik Kritis 3",risk_check
+"halo",greeting
+"tolong lacak E-1234",batch_trace
+"audit halal itu apa sih penjelasannya?",knowledge_query
+"berapa bobot CP1",risk_check
+"apakah status risiko Titik Kritis 3",risk_check
+"kasih liat bobot AHP transportasi daging",risk_check
+"ok paham",greeting
+"siapa nama farm aktif",operational_data
+"apa rekomendasi film bagus dong",out_of_scope
+"halo",greeting
+"ok paham",greeting
+"hitung risiko untuk CP1",risk_check
+"sertifikasi halal BPJPH itu apa sih penjelasannya?",knowledge_query
+"makasih min",greeting
+"jadwal kereta api",out_of_scope
+"berikan data farm aktif",operational_data
+"tampilkan traceability daging batch B-22",batch_trace
+"test bantu saya",greeting
+"gimana riwayat sapi dengan eartag E-001",batch_trace
+"rekomendasi hp murah dong",out_of_scope
+"test bantu saya",greeting
+"lacak eartag sapi dengan eartag E-001",batch_trace
+"cara daftar cpns dong",out_of_scope
+"dari mana asal batch produksi hari ini",batch_trace
+"tampilkan traceability B-099",batch_trace
+"gimana nilai risiko batch B-001",risk_check
+"terima kasih ya",greeting
+"SOP kebersihan itu apa sih penjelasannya?",knowledge_query
+"apa yang dimaksud dengan titik kritis halal?",knowledge_query
+"hitung risiko untuk kriteria fasilitas",risk_check
+"kasih liat bobot AHP penyembelihan di RPH",risk_check
+"lacak eartag daging batch B-22",batch_trace
+"halo bantu saya",greeting
+"berikan data pakar K1",operational_data
+"berapa skor risiko batch B-001",risk_check
+"Fuzzy AHP itu apa sih penjelasannya?",knowledge_query
+"cara hack wifi",out_of_scope
+"traceability batch itu apa sih penjelasannya?",knowledge_query
+"hai bantu saya",greeting
+"lirik lagu indonesia raya dong",out_of_scope
+"cek asal usul pengiriman B-444",batch_trace

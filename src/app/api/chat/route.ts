@@ -3,6 +3,7 @@ import { streamText } from 'ai';
 import { searchSimilarChunks } from '@/lib/actions/search';
 import { prisma } from '@/lib/db/client';
 import { z } from 'zod';
+import { classifyIntent } from '@/lib/ml/intent-classifier';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -29,11 +30,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   try {
-    const result = await streamText({
-      model: openrouter('openai/gpt-4o-mini'),
-      maxTokens: 4096,
-      maxToolRoundtrips: 5,
-      system: `Anda adalah asisten AI untuk sistem **Integrated Halal Supply Chain** — Knowledge Management System & Decision Support System (KMS-DSS).
+    let systemPrompt = `Anda adalah asisten AI untuk sistem **Integrated Halal Supply Chain** — Knowledge Management System & Decision Support System (KMS-DSS).
 
 ## CARA KERJA
 1. Untuk SETIAP pertanyaan pengguna, **SELALU panggil tool search_knowledge_base** terlebih dahulu untuk mencari informasi di Knowledge Base.
@@ -64,9 +61,51 @@ export async function POST(req: Request) {
   *Contoh Benar:* "Berdasarkan [Sumber Akademik/Regulasi: Kajian Kelayakan Operasional RPH Oeba — Jurnal Partner (Neliti)], disarankan bahwa..." atau "Berdasarkan [Sumber Akademik/Regulasi: UU No. 33 Tahun 2014 tentang Jaminan Produk Halal] Pasal 4, mewajibkan...". 
 - JANGAN PERNAH menyembunyikan, menyingkat, atau menghilangkan bagian judul dokumen. DILARANG KERAS hanya menyebutkan nomor dokumen (seperti "UU No. 33 Tahun 2014" atau "Nomor 25"). Wajib sebutkan nama aturan spesifiknya dari tag \`[Sumber Akademik/Regulasi: ...]\` secara utuh.
 - Jika hasil RAG untuk Sub-CP tersebut kosong, jawablah: "Berdasarkan Knowledge Base saat ini, belum ada landasan regulasi akademik untuk titik ini."
-- Sertakan referensi sumber di akhir tanggapan.`,
-      messages,
-      tools: {
+- Sertakan referensi sumber di akhir tanggapan.`;
+
+    let activeTools: any = {};
+    let directResponse: string | null = null;
+    let intentLabel = "implicit (fallback)";
+
+    const lastMessage = messages[messages.length - 1];
+    if (lastMessage && lastMessage.role === 'user') {
+      const intent = await classifyIntent(lastMessage.content);
+      if (intent && intent.score >= 0.7) {
+        intentLabel = `${intent.label} (conf: ${intent.score.toFixed(2)})`;
+        console.log(`[IndoBERT] Intent classified: ${intentLabel}`);
+        
+        switch (intent.label) {
+          case 'greeting':
+            directResponse = "Halo! Saya adalah asisten AI terintegrasi KMS-DSS Halal. Ada yang bisa saya bantu terkait regulasi, status risiko, atau pelacakan batch halal hari ini?";
+            break;
+          case 'out_of_scope':
+            directResponse = "Maaf, saya hanya diprogram untuk menjawab pertanyaan terkait Sistem Jaminan Halal, Regulasi BPJPH, Manajemen Risiko, dan Titik Kritis (CP). Saya tidak dapat merespons pertanyaan di luar domain tersebut.";
+            break;
+          case 'knowledge_query':
+            systemPrompt += `\n\n[IndoBERT Intent]: KNOWLEDGE_QUERY. Anda WAJIB HANYA memanggil tool 'search_knowledge_base'.`;
+            break;
+          case 'risk_check':
+            systemPrompt += `\n\n[IndoBERT Intent]: RISK_CHECK. Anda WAJIB HANYA memanggil tool 'check_halal_risk'.`;
+            break;
+          case 'batch_trace':
+            systemPrompt += `\n\n[IndoBERT Intent]: BATCH_TRACE. Anda WAJIB HANYA memanggil tool 'trace_halal_batch'.`;
+            break;
+          case 'operational_data':
+            systemPrompt += `\n\n[IndoBERT Intent]: OPERATIONAL_DATA. Anda WAJIB HANYA memanggil tool 'get_operational_data'.`;
+            break;
+        }
+      } else {
+         console.log(`[IndoBERT] Confidence low or model missing. Fallback to implicit routing.`);
+      }
+    }
+
+    if (directResponse) {
+      // Return plain text response (Vercel AI useChat will handle it as a single chunk)
+      return new Response(directResponse, { status: 200 });
+    }
+
+    // Define all tools
+    const allTools = {
         search_knowledge_base: {
           description: 'Mencari dokumen, teori, aturan, fatwa, SOP, hukum, atau rekomendasi praktik (misalnya standar pakan sapi, hukum stunning). DILARANG menggunakan ini untuk mencari daftar data entitas dari database.',
           parameters: z.object({
@@ -402,7 +441,22 @@ export async function POST(req: Request) {
             }
           }
         },
-      },
+      };
+
+    // Filter tools based on explicitly classified intent (if any)
+    if (intentLabel.includes('knowledge_query')) activeTools = { search_knowledge_base: allTools.search_knowledge_base };
+    else if (intentLabel.includes('risk_check')) activeTools = { check_halal_risk: allTools.check_halal_risk };
+    else if (intentLabel.includes('batch_trace')) activeTools = { trace_halal_batch: allTools.trace_halal_batch };
+    else if (intentLabel.includes('operational_data')) activeTools = { get_operational_data: allTools.get_operational_data };
+    else activeTools = allTools; // Fallback: give all tools to LLM
+
+    const result = await streamText({
+      model: openrouter('openai/gpt-4o-mini'),
+      maxTokens: 4096,
+      maxToolRoundtrips: 5,
+      system: systemPrompt,
+      messages,
+      tools: activeTools,
     });
 
     return result.toDataStreamResponse();
