@@ -17,7 +17,7 @@ let localFilesOnly = true;
 if (isProduction) {
   // Ambil ID Repositori dari Hugging Face (diset di Environment Variables Vercel)
   // Contoh format: "username-kamu/indobert-intent"
-  MODEL_PATH = process.env.HF_MODEL_REPO || "ganti-dengan-username-hf-kamu/indobert-intent";
+  MODEL_PATH = process.env.HF_MODEL_REPO || "NurfauzanDaffa/indobert-intent";
   localFilesOnly = false;
 } else {
   // Mode Development (Lokal)
