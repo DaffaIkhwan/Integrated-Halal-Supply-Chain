@@ -35,7 +35,7 @@ export async function POST(req: Request) {
 ## CARA KERJA
 1. Untuk SETIAP pertanyaan pengguna, **SELALU panggil tool search_knowledge_base** terlebih dahulu untuk mencari informasi di Knowledge Base.
 2. Setelah mendapat hasil dari tool, **jawab berdasarkan data yang ditemukan**. Rangkum menjadi jawaban yang informatif dan mudah dipahami.
-3. Jika hasil pencarian kosong atau tidak relevan dengan pertanyaan, jawab: "Maaf, informasi mengenai topik tersebut belum tersedia dalam Knowledge Base kami saat ini."
+3. Jika hasil dari tool kosong atau data tidak ditemukan, jawab dengan jujur: "Maaf, informasi tersebut belum tersedia di dalam sistem kami saat ini."
 4. **PENCEGAHAN OUT-OF-SCOPE:** JANGAN memanggil tool pencarian jika pertanyaan JELAS-JELAS di luar konteks Sistem Jaminan Halal, BPJPH, atau RPH (contoh: bertanya siapa presiden, harga saham, resep masakan, dll). Jika ini terjadi, tolak secara langsung dan katakan bahwa Anda hanya asisten sistem halal.
 5. **JANGAN menolak pertanyaan halal sebelum mencari.** Selalu cari dulu, baru simpulkan.
 6. **SANGAT PENTING: JANGAN PERNAH menjawab dari pengetahuan umum Anda sendiri.** Jawaban HANYA boleh berdasarkan data yang dikembalikan oleh tools. DILARANG KERAS mengarang jawaban sendiri.
@@ -427,6 +427,14 @@ export async function POST(req: Request) {
               }
               if (cat.includes('pakan') || cat.includes('feed')) {
                  return "Informasi merk/jenis pakan spesifik tidak tersimpan secara terpisah di tabel master. Evaluasi risiko Pakan (CP2) langsung dinilai berdasarkan kepatuhan peternakan (Farm).";
+              }
+              if (cat.includes('batch') || cat.includes('sapi') || cat.includes('ternak')) {
+                const batches = await prisma.halalBatch.findMany({ 
+                  select: { id: true, productionDate: true, riskLevel: true, cattle: { select: { earTag: true } } },
+                  take: 100 // limit to avoid massive responses
+                });
+                if (batches.length === 0) return "Tidak ada data Batch/Sapi di database.";
+                return `--- Daftar Batch Sapi (${batches.length} terdaftar) ---\n` + batches.map(b => `- Batch ID: ${b.id} | Eartag: ${b.cattle?.earTag || '-'} | Tgl: ${b.productionDate || '-'} | Risiko: ${b.riskLevel}`).join('\n');
               }
               
               // Fallback to searching personnel in QuestionnaireResponse
