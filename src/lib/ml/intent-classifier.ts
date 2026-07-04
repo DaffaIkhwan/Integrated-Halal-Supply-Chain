@@ -7,23 +7,13 @@ if (isProduction) {
   env.cacheDir = '/tmp/.cache/huggingface';
 }
 
-// 2. Disable remote dari HF Hub (kita izinkan di production untuk fetch dari Vercel kita sendiri)
-env.allowRemoteModels = isProduction;
+// 2. Izinkan remote dari HF Hub agar bisa mendownload model NurfauzanDaffa
+env.allowRemoteModels = true;
 
 // 3. Tentukan path model
-let MODEL_PATH = '';
-let localFilesOnly = true;
-
-if (isProduction) {
-  // Ambil ID Repositori dari Hugging Face (diset di Environment Variables Vercel)
-  // Contoh format: "username-kamu/indobert-intent"
-  MODEL_PATH = process.env.HF_MODEL_REPO || "NurfauzanDaffa/indobert-intent";
-  localFilesOnly = false;
-} else {
-  // Mode Development (Lokal)
-  MODEL_PATH = path.join(process.cwd(), 'public', 'models', 'indobert-intent');
-  localFilesOnly = true;
-}
+// Menggunakan ID model yang sudah Anda upload di Hugging Face
+const MODEL_PATH = "NurfauzanDaffa/indobert-intent";
+const localFilesOnly = false; // Set false agar mengambil dari Hugging Face Hub
 
 class IntentClassifierSingleton {
   static task = 'text-classification';
