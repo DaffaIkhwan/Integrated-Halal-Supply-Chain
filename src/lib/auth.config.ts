@@ -9,7 +9,7 @@ export const authConfig = {
     maxAge: 24 * 60 * 60, // 24 hours
   },
   trustHost: true,
-  secret: process.env.AUTH_SECRET || "default-secret-key-for-next-auth-v5-123456789",
+  secret: process.env.AUTH_SECRET,
   providers: [], // Add providers in auth.ts instead
   callbacks: {
     async jwt({ token, user }) {

@@ -117,14 +117,6 @@ async function aggregateAndSaveMatrix(
 
 export async function POST() {
     try {
-        // Hapus data "Anonim" dari K1V1 (pembobotan)
-        await prisma.questionnaireResponse.deleteMany({
-            where: {
-                questionnaireType: 'pembobotan',
-                respondentName: 'Anonim'
-            }
-        });
-
         const responses = await prisma.questionnaireResponse.findMany({
             where: { questionnaireType: 'pembobotan' }
         });
@@ -194,6 +186,7 @@ export async function POST() {
         });
 
     } catch (e: any) {
-        return NextResponse.json({ error: e.message, stack: e.stack }, { status: 500 });
+        console.error('Calculate K1 Error:', e);
+        return NextResponse.json({ error: e.message }, { status: 500 });
     }
 }

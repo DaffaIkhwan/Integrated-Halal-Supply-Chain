@@ -30,7 +30,6 @@ const MATRIX_TYPES = [
   { id: 'LEVEL2_CP7', label: 'Sub-Kriteria CP7' },
   { id: 'LEVEL2_CP8', label: 'Sub-Kriteria CP8' },
   { id: 'LEVEL2_CP9', label: 'Sub-Kriteria CP9' },
-
 ];
 
 export default function AHPStepsPage() {

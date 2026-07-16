@@ -340,7 +340,10 @@ export default function DashboardPage() {
 
   useEffect(() => {
     fetch("/api/dss/dashboard")
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`Server error: ${r.status}`);
+        return r.json();
+      })
       .then((d) => { setData(d); setLoading(false); })
       .catch((e) => { setError(String(e)); setLoading(false); });
   }, []);

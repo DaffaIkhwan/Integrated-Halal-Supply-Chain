@@ -28,14 +28,17 @@ export async function GET(req: NextRequest) {
 
     const bypassEmailFilter = searchParams.get('bypassEmailFilter') === 'true';
 
-    // RBAC: Removed for public admin access
-    // if (!session || (session.user?.role !== 'ADMIN' && !session.user?.role?.startsWith('PAKAR') && !bypassEmailFilter)) {
-    //   if (type === 'risiko' || type === 'aktual') {
-    //     where.respondentEmail = session?.user?.email || 'unauthenticated';
-    //   } else {
-    //     where.respondentEmail = session?.user?.email || 'unauthenticated';
-    //   }
-    // }
+    // RBAC: Restrict non-admin users to their own data
+    if (!session?.user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const userRole = (session.user as any).role || '';
+    const isPrivileged = userRole === 'ADMIN' || userRole.startsWith('PAKAR');
+
+    if (!isPrivileged && !bypassEmailFilter) {
+      where.respondentEmail = session.user.email || 'unauthenticated';
+    }
 
     const [responses, total] = await Promise.all([
       prisma.questionnaireResponse.findMany({

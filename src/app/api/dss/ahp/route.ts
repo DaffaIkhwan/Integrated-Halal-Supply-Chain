@@ -130,6 +130,7 @@ export async function GET(request: Request) {
       allCRs,
     });
   } catch (error: any) {
-    return NextResponse.json({ error: error.message, stack: error.stack }, { status: 500 });
+    console.error('AHP GET Error:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
