@@ -3,7 +3,7 @@ import { streamText } from 'ai';
 import { searchSimilarChunks } from '@/lib/actions/search';
 import { prisma } from '@/lib/db/client';
 import { z } from 'zod';
-import { classifyIntent } from '@/lib/ml/intent-classifier-rules';
+import { classifyIntent } from '@/lib/ml/intent-classifier';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
       const intent = await classifyIntent(lastMessage.content);
       if (intent && intent.score >= 0.7) {
         intentLabel = `${intent.label} (conf: ${intent.score.toFixed(2)})`;
-        console.log(`[RuleBase] Intent classified: ${intentLabel}`);
+        console.log(`[IndoBERT] Intent classified: ${intentLabel}`);
         
         switch (intent.label) {
           case 'greeting':
@@ -83,20 +83,20 @@ export async function POST(req: Request) {
             directResponse = "Maaf, saya hanya diprogram untuk menjawab pertanyaan terkait Sistem Jaminan Halal, Regulasi BPJPH, Manajemen Risiko, dan Titik Kritis (CP). Saya tidak dapat merespons pertanyaan di luar domain tersebut.";
             break;
           case 'knowledge_query':
-            systemPrompt += `\n\n[RuleBase Intent]: KNOWLEDGE_QUERY. Anda WAJIB HANYA memanggil tool 'search_knowledge_base'.`;
+            systemPrompt += `\n\n[IndoBERT Intent]: KNOWLEDGE_QUERY. Anda WAJIB HANYA memanggil tool 'search_knowledge_base'.`;
             break;
           case 'risk_check':
-            systemPrompt += `\n\n[RuleBase Intent]: RISK_CHECK. Anda WAJIB HANYA memanggil tool 'check_halal_risk'.`;
+            systemPrompt += `\n\n[IndoBERT Intent]: RISK_CHECK. Anda WAJIB HANYA memanggil tool 'check_halal_risk'.`;
             break;
           case 'batch_trace':
-            systemPrompt += `\n\n[RuleBase Intent]: BATCH_TRACE. Anda WAJIB HANYA memanggil tool 'trace_halal_batch'.`;
+            systemPrompt += `\n\n[IndoBERT Intent]: BATCH_TRACE. Anda WAJIB HANYA memanggil tool 'trace_halal_batch'.`;
             break;
           case 'operational_data':
-            systemPrompt += `\n\n[RuleBase Intent]: OPERATIONAL_DATA. Anda WAJIB HANYA memanggil tool 'get_operational_data'.`;
+            systemPrompt += `\n\n[IndoBERT Intent]: OPERATIONAL_DATA. Anda WAJIB HANYA memanggil tool 'get_operational_data'.`;
             break;
         }
       } else {
-         console.log(`[RuleBase] Confidence low or model missing. Fallback to implicit routing.`);
+         console.log(`[IndoBERT] Confidence low or model missing. Fallback to implicit routing.`);
       }
     }
 
