@@ -312,17 +312,25 @@ export async function calculateBatchRiskScore(batchId: string) {
     const record = await getCPRecordRiskValues(batchId, cp.id);
     if (!record) continue;
 
-    // Calculate local risk score: Σ(weight × riskValue)
-    let localRisk = 0;
+    // Calculate local risk score using Rule-Based (MAX / Weakest-Link) instead of Weighted Sum
+    let maxRawValue = 0;
     for (const cw of cp.criteriaWeights) {
       const rawValue = record[cw.criteriaCode] ?? 0; // 1 to 5 scale
-      // Convert raw scale 1-5 to crisp decimal 0.2 - 1.0
-      const riskValue = rawValue > 0 ? rawValue * 0.20 : 0;
-      localRisk += cw.weight * riskValue;
+      if (rawValue > maxRawValue) {
+        maxRawValue = rawValue;
+      }
     }
+    
+    // Convert raw scale 1-5 to crisp decimal 0.2 - 1.0 to maintain compatibility with DB and UI
+    const localRisk = maxRawValue > 0 ? maxRawValue * 0.20 : 0;
 
-    const globalWeightedRisk = cp.globalWeight * localRisk;
-    totalGlobalRisk += globalWeightedRisk;
+    // Rule-Based ignores global weights for calculation, but we map it directly so DB fields stay populated
+    const globalWeightedRisk = localRisk; 
+    
+    // Total batch risk is the MAX of all CP risks (Weakest-Link)
+    if (localRisk > totalGlobalRisk) {
+      totalGlobalRisk = localRisk;
+    }
 
     cpResults.push({
       cpId: cp.id,
