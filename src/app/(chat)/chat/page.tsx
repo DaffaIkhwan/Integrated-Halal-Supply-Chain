@@ -387,10 +387,10 @@ function ChatPageInner() {
                     </div>
                   </div>
                   <div className="min-w-0 flex-1 space-y-2">
-                    {/* IndoBERT classification always finishes before assistant responds */}
+                    {/* Rule-based classification always finishes before assistant responds */}
                     <div className="flex items-center gap-2 text-xs text-muted-foreground py-1 px-3 rounded-lg bg-muted/40 border border-border/30 w-max">
                       <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                      <span className="font-mono font-semibold">indobert_classifier</span>
+                      <span className="font-mono font-semibold">rule_classifier</span>
                       <span className="text-muted-foreground/60">✓ selesai</span>
                     </div>
 
@@ -544,7 +544,7 @@ function ChatPageInner() {
               <div className="min-w-0 flex-1 space-y-2">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground py-1 px-3 rounded-lg bg-muted/40 border border-border/30 w-max">
                   <Loader2 className="h-3.5 w-3.5 animate-spin shrink-0 text-primary" />
-                  <span className="font-mono font-semibold">indobert_classifier</span>
+                  <span className="font-mono font-semibold">rule_classifier</span>
                   <span className="text-muted-foreground/60">
                     sedang memproses intent...
                   </span>
