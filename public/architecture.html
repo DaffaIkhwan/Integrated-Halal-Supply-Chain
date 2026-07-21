@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>AI Halal DSS - Full Architecture Flow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            background-image: 
+                linear-gradient(rgba(255, 120, 0, 0.05) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(255, 120, 0, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #workspace-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .workspace {
+            position: relative;
+            width: 1400px;
+            height: 1000px;
+            margin: 20px auto;
+            transform-origin: top center;
+        }
+
+        /* Node Styling */
+        .n8n-node {
+            background: rgba(15, 15, 18, 0.95);
+            border: 1px solid rgba(255, 115, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 115, 0, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 16px;
+            position: absolute;
+            width: 240px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .n8n-node:hover {
+            border-color: rgba(255, 140, 0, 0.9);
+            box-shadow: 0 0 25px rgba(255, 115, 0, 0.3), inset 0 0 20px rgba(255, 115, 0, 0.1);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 115, 0, 0.1);
+            border: 1px solid rgba(255, 115, 0, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 0 15px rgba(255, 115, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        .node-content { flex: 1; }
+        .node-title { color: #ff9d00; font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+        .node-desc { color: #94a3b8; font-size: 11px; line-height: 1.2; }
+
+        /* Specific Component Types */
+        .n8n-logic {
+            position: absolute;
+            background: rgba(30, 20, 10, 0.95);
+            border: 1px solid rgba(255, 115, 0, 0.8);
+            box-shadow: 0 0 15px rgba(255,115,0,0.3);
+            color: #ffb700;
+            width: 140px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .n8n-intent {
+            position: absolute;
+            background: rgba(20, 20, 25, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #ff9d00;
+            border-radius: 8px;
+            padding: 10px;
+            width: 160px;
+            height: 70px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .n8n-intent:hover {
+            border-top: 3px solid #ff4500;
+            transform: translateY(-2px);
+        }
+
+        .path-label {
+            position: absolute;
+            background: #111;
+            border: 1px solid rgba(255, 115, 0, 0.5);
+            color: #ffb700;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            z-index: 20;
+            box-shadow: 0 0 10px rgba(255, 115, 0, 0.2);
+            transform: translate(-50%, -50%);
+        }
+
+        /* SVG Paths & Glow Animation */
+        .base-line {
+            fill: none;
+            stroke: rgba(255, 115, 0, 0.2);
+            stroke-width: 3px;
+            stroke-linecap: round;
+        }
+
+        .glow-line {
+            fill: none;
+            stroke: #ff8400;
+            stroke-width: 3px;
+            stroke-dasharray: 12 24;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 6px #ff6a00) drop-shadow(0 0 12px #ff4500);
+            animation: dataFlow 1.5s linear infinite reverse;
+        }
+
+        @keyframes dataFlow {
+            from { stroke-dashoffset: 72; }
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-center mt-8 mb-2 relative z-20 px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-white tracking-wide" style="text-shadow: 0 0 20px rgba(255,115,0,0.6);">Sistem Arsitektur Lengkap</h1>
+        <p class="text-slate-400 mt-2 text-sm">Interactive N8N-style Data Flow - Next.js, IndoBERT, Fuzzy AHP, RAG</p>
+        <p class="text-xs text-orange-500 mt-2 md:hidden">(Anda bisa cubit layar / pinch-to-zoom untuk memperbesar tampilan)</p>
+    </div>
+
+    <!-- Responsive Wrapper -->
+    <div id="workspace-container">
+        <div class="workspace" id="workspace">
+            <!-- SVG Connections Layer -->
+            <svg id="svg-layer" width="1400" height="1000" style="position: absolute; top: 0; left: 0; z-index: 1; pointer-events: none;">
+                
+                <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255, 115, 0, 0.5)" />
+                    </marker>
+                    <marker id="arrow-glow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9d00" filter="drop-shadow(0 0 5px #ff6a00)" />
+                    </marker>
+                </defs>
+
+                <!-- GROUP OF ALL PATHS -->
+                <g marker-end="url(#arrow)">
+                    <!-- Layer 1-3 -->
+                    <path d="M 700 110 L 700 140" class="base-line"/>
+                    <path d="M 700 230 L 700 260" class="base-line"/>
+                    <path d="M 770 280 L 1060 280" class="base-line"/>
+                    
+                    <path d="M 700 300 C 700 330 140 330 140 360" class="base-line"/>
+                    <path d="M 700 300 C 700 330 340 330 340 360" class="base-line"/>
+                    <path d="M 700 300 C 700 330 540 330 540 360" class="base-line"/>
+                    <path d="M 700 300 C 700 330 740 330 740 360" class="base-line"/>
+                    <path d="M 700 300 C 700 330 940 330 940 360" class="base-line"/>
+                    <path d="M 700 300 C 700 330 1140 330 1140 360" class="base-line"/>
+
+                    <path d="M 1180 345 C 1180 500 1120 500 1120 650" class="base-line"/>
+
+                    <!-- Intents to Tools -->
+                    <path d="M 140 430 L 140 650" class="base-line"/>
+                    <path d="M 340 430 C 340 460 410 460 410 650" class="base-line"/>
+                    <path d="M 540 430 C 540 540 680 540 680 650" class="base-line"/>
+                    <path d="M 740 430 C 740 540 680 540 680 650" class="base-line"/>
+                    <path d="M 940 430 C 940 540 1120 540 1120 650" class="base-line"/>
+                    <path d="M 1140 430 C 1140 540 1120 540 1120 650" class="base-line"/>
+
+                    <!-- Kuesioner to AHP (Point DOWN into AHP) -->
+                    <path d="M 210 560 C 210 600 350 600 350 650" class="base-line"/>
+                    <path d="M 350 560 C 350 600 410 600 410 650" class="base-line"/>
+                    <path d="M 490 560 C 490 600 470 600 470 650" class="base-line"/>
+
+                    <!-- Tools to DB -->
+                    <path d="M 140 740 C 140 800 420 800 420 850" class="base-line"/>
+                    <path d="M 410 740 C 410 800 500 800 500 850" class="base-line"/>
+                    <path d="M 680 740 C 680 800 580 800 580 850" class="base-line"/>
+
+                    <!-- DB to LLM -->
+                    <path d="M 620 895 C 1120 895 1120 800 1120 740" class="base-line"/>
+                    <path d="M 1240 695 C 1450 695 1450 65 820 65" class="base-line"/>
+                </g>
+
+                <!-- SAME PATHS FOR ANIMATED GLOW (with marker) -->
+                <g marker-end="url(#arrow-glow)">
+                    <path d="M 700 110 L 700 140" class="glow-line"/>
+                    <path d="M 700 230 L 700 260" class="glow-line" style="animation-delay: -0.2s;"/>
+                    <path d="M 770 280 L 1060 280" class="glow-line" style="animation-delay: -0.5s;"/>
+                    
+                    <path d="M 700 300 C 700 330 140 330 140 360" class="glow-line" style="animation-delay: -0.1s;"/>
+                    <path d="M 700 300 C 700 330 340 330 340 360" class="glow-line" style="animation-delay: -0.4s;"/>
+                    <path d="M 700 300 C 700 330 540 330 540 360" class="glow-line" style="animation-delay: -0.7s;"/>
+                    <path d="M 700 300 C 700 330 740 330 740 360" class="glow-line" style="animation-delay: -0.2s;"/>
+                    <path d="M 700 300 C 700 330 940 330 940 360" class="glow-line" style="animation-delay: -0.5s;"/>
+                    <path d="M 700 300 C 700 330 1140 330 1140 360" class="glow-line" style="animation-delay: -0.8s;"/>
+
+                    <path d="M 1180 345 C 1180 500 1120 500 1120 650" class="glow-line"/>
+
+                    <path d="M 140 430 L 140 650" class="glow-line" style="animation-delay: -1s;"/>
+                    <path d="M 340 430 C 340 460 410 460 410 650" class="glow-line" style="animation-delay: -0.3s;"/>
+                    <path d="M 540 430 C 540 540 680 540 680 650" class="glow-line" style="animation-delay: -0.6s;"/>
+                    <path d="M 740 430 C 740 540 680 540 680 650" class="glow-line" style="animation-delay: -0.1s;"/>
+                    <path d="M 940 430 C 940 540 1120 540 1120 650" class="glow-line" style="animation-delay: -0.8s;"/>
+                    <path d="M 1140 430 C 1140 540 1120 540 1120 650" class="glow-line" style="animation-delay: -0.4s;"/>
+
+                    <!-- Kuesioner to AHP Glow -->
+                    <path d="M 210 560 C 210 600 350 600 350 650" class="glow-line" style="animation-delay: -0.2s;"/>
+                    <path d="M 350 560 C 350 600 410 600 410 650" class="glow-line" style="animation-delay: -0.5s;"/>
+                    <path d="M 490 560 C 490 600 470 600 470 650" class="glow-line" style="animation-delay: -0.8s;"/>
+
+                    <path d="M 140 740 C 140 800 420 800 420 850" class="glow-line" style="animation-delay: -0.2s;"/>
+                    <path d="M 410 740 C 410 800 500 800 500 850" class="glow-line" style="animation-delay: -0.7s;"/>
+                    <path d="M 680 740 C 680 800 580 800 580 850" class="glow-line" style="animation-delay: -0.5s;"/>
+
+                    <path d="M 620 895 C 1120 895 1120 800 1120 740" class="glow-line"/>
+                    <path d="M 1240 695 C 1450 695 1450 65 820 65" class="glow-line"/>
+                </g>
+            </svg>
+
+            <!-- LABELS -->
+            <div class="path-label" style="left: 450px; top: 325px;">Yes (Score &ge; 0.7)</div>
+            <div class="path-label" style="left: 920px; top: 265px;">No (Score &lt; 0.7)</div>
+
+            <!-- NODES -->
+            
+            <div class="n8n-node" style="left: 580px; top: 20px;">
+                <div class="icon-box">💻</div>
+                <div class="node-content">
+                    <div class="node-title">User Interface</div>
+                    <div class="node-desc">Indonesian Chat</div>
+                </div>
+            </div>
+
+            <div class="n8n-node" style="left: 580px; top: 140px;">
+                <div class="icon-box">🧠</div>
+                <div class="node-content">
+                    <div class="node-title">IndoBERT NLP</div>
+                    <div class="node-desc">Classification Head</div>
+                </div>
+            </div>
+
+            <div class="n8n-logic" style="left: 630px; top: 260px;">
+                Confidence &ge; 0.7?
+            </div>
+
+            <div class="n8n-node" style="left: 1060px; top: 235px;">
+                <div class="icon-box">🔄</div>
+                <div class="node-content">
+                    <div class="node-title">LLM Fallback</div>
+                    <div class="node-desc">GPT-4 Func Calling</div>
+                </div>
+            </div>
+
+            <!-- 6 INTENTS -->
+            <div class="n8n-intent" style="left: 60px; top: 360px;">
+                <div style="font-size: 12px; color:#ff9d00; margin-bottom:4px; font-weight:700;">knowledge_query</div>
+                <div style="font-size: 10px; color:#94a3b8;">Theory, Regs, SOP</div>
+            </div>
+            <div class="n8n-intent" style="left: 260px; top: 360px;">
+                <div style="font-size: 12px; color:#ff9d00; margin-bottom:4px; font-weight:700;">risk_check</div>
+                <div style="font-size: 10px; color:#94a3b8;">AHP Weights, Risk</div>
+            </div>
+            <div class="n8n-intent" style="left: 460px; top: 360px;">
+                <div style="font-size: 12px; color:#ff9d00; margin-bottom:4px; font-weight:700;">batch_trace</div>
+                <div style="font-size: 10px; color:#94a3b8;">Track Batch/Eartag</div>
+            </div>
+            <div class="n8n-intent" style="left: 660px; top: 360px;">
+                <div style="font-size: 12px; color:#ff9d00; margin-bottom:4px; font-weight:700;">operational_data</div>
+                <div style="font-size: 10px; color:#94a3b8;">Farm, Slaughterhouse</div>
+            </div>
+            <div class="n8n-intent" style="left: 860px; top: 360px;">
+                <div style="font-size: 12px; color:#ff9d00; margin-bottom:4px; font-weight:700;">greeting</div>
+                <div style="font-size: 10px; color:#94a3b8;">Salutation</div>
+            </div>
+            <div class="n8n-intent" style="left: 1060px; top: 360px;">
+                <div style="font-size: 12px; color:#ff9d00; margin-bottom:4px; font-weight:700;">out_of_scope</div>
+                <div style="font-size: 10px; color:#94a3b8;">Polite Rejection</div>
+            </div>
+
+            <!-- 3 KUESIONER NODES (Inputs to AHP) -->
+            <div class="n8n-intent" style="left: 150px; top: 500px; width: 120px; height: 60px; padding: 10px;">
+                <div style="font-size: 11px; color:#ff9d00; margin-bottom:2px; font-weight:700;">Kuesioner 1</div>
+                <div style="font-size: 9px; color:#94a3b8;">Kriteria Pakar</div>
+            </div>
+            <div class="n8n-intent" style="left: 290px; top: 500px; width: 120px; height: 60px; padding: 10px;">
+                <div style="font-size: 11px; color:#ff9d00; margin-bottom:2px; font-weight:700;">Kuesioner 2</div>
+                <div style="font-size: 9px; color:#94a3b8;">Bobot Risiko</div>
+            </div>
+            <div class="n8n-intent" style="left: 430px; top: 500px; width: 120px; height: 60px; padding: 10px;">
+                <div style="font-size: 11px; color:#ff9d00; margin-bottom:2px; font-weight:700;">Kuesioner 3</div>
+                <div style="font-size: 9px; color:#94a3b8;">Penilaian Aktual</div>
+            </div>
+
+            <!-- 4 TOOLS -->
+            <div class="n8n-node" style="left: 20px; top: 650px;">
+                <div class="icon-box">🔍</div>
+                <div class="node-content">
+                    <div class="node-title">Knowledge RAG</div>
+                    <div class="node-desc">pgvector Semantic Search</div>
+                </div>
+            </div>
+            <div class="n8n-node" style="left: 290px; top: 650px;">
+                <div class="icon-box">⚖️</div>
+                <div class="node-content">
+                    <div class="node-title">Fuzzy AHP DSS</div>
+                    <div class="node-desc">Rule-Based Engine</div>
+                </div>
+            </div>
+            <div class="n8n-node" style="left: 560px; top: 650px;">
+                <div class="icon-box">📦</div>
+                <div class="node-content">
+                    <div class="node-title">Relational Trace</div>
+                    <div class="node-desc">Prisma DB Join (Data)</div>
+                </div>
+            </div>
+            <div class="n8n-node" style="left: 1000px; top: 650px;">
+                <div class="icon-box">🤖</div>
+                <div class="node-content">
+                    <div class="node-title">GPT-4o-mini</div>
+                    <div class="node-desc">Summarize Response</div>
+                </div>
+            </div>
+
+            <!-- DB -->
+            <div class="n8n-node" style="left: 380px; top: 850px;">
+                <div class="icon-box">🗄️</div>
+                <div class="node-content">
+                    <div class="node-title">PostgreSQL DB</div>
+                    <div class="node-desc">pgvector + Prisma</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script to scale down on small screens -->
+    <script>
+        function resizeWorkspace() {
+            const workspace = document.getElementById('workspace');
+            const container = document.getElementById('workspace-container');
+            const screenWidth = window.innerWidth;
+            const originalWidth = 1400; // Fixed width of our diagram
+            
+            if (screenWidth < originalWidth) {
+                // Calculate scale (leave a little margin on mobile)
+                const scale = (screenWidth - 20) / originalWidth; 
+                
+                // Scale from top-left, but the container handles centering
+                workspace.style.transform = `scale(${scale})`;
+                workspace.style.transformOrigin = 'top left';
+                
+                // Adjust container height to match scaled height so it doesn't leave huge empty space at bottom
+                const newHeight = 1000 * scale;
+                container.style.height = `${newHeight}px`;
+                
+                // Ensure no margin pushes it off screen when scaled
+                workspace.style.margin = '0';
+            } else {
+                workspace.style.transform = 'scale(1)';
+                workspace.style.transformOrigin = 'top center';
+                workspace.style.margin = '20px auto';
+                container.style.height = '1000px';
+            }
+        }
+
+        window.addEventListener('resize', resizeWorkspace);
+        window.addEventListener('load', resizeWorkspace);
+        resizeWorkspace(); // run immediately
+    </script>
+</body>
+</html>
