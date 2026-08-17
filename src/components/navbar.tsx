@@ -55,7 +55,13 @@ const navItems: NavItem[] = [
 	},
 	{ href: "/dashboard/batch-management", label: "Daftar Batch" },
 	{ href: "/dashboard/input", label: "Kelola CP" },
-	{ href: "/dashboard/ahp-steps", label: "Tahapan FUZZY AHP" },
+	{
+		href: "#", label: "Fuzzy AHP & Rule Based",
+		children: [
+			{ href: "/dashboard/ahp-steps", label: "Tahapan Fuzzy AHP" },
+			{ href: "/dashboard/rule-based", label: "Rule-Based Risk Assessment" },
+		],
+	},
 	{ href: "/chat", label: "Chat" },
 ];
 

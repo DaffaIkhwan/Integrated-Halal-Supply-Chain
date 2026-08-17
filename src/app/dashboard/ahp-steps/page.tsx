@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { useEffect, useState } from "react";
 import { 
@@ -11,11 +11,11 @@ import {
   CheckCircle2, 
   BrainCircuit,
   Settings2,
-  ChevronRight,
+  ChevronDown,
   Loader2,
   AlertTriangle,
   ToggleLeft,
-  ToggleRight
+  ToggleRight,
 } from "lucide-react";
 
 const MATRIX_TYPES = [
@@ -32,12 +32,42 @@ const MATRIX_TYPES = [
   { id: 'LEVEL2_CP9', label: 'Sub-Kriteria CP9' },
 ];
 
+const CP_LIST = [
+  { code: 'CP1', label: 'CP1 — Kandang Sapi / Farm' },
+  { code: 'CP2', label: 'CP2 — Pakan dan Kesehatan Ternak' },
+  { code: 'CP3', label: 'CP3 — Transportasi Hewan' },
+  { code: 'CP4', label: 'CP4 — RPH dan Penyembelihan' },
+  { code: 'CP5', label: 'CP5 — Penanganan Karkas / Post-Slaughter' },
+  { code: 'CP6', label: 'CP6 — Produksi / Pengolahan' },
+  { code: 'CP7', label: 'CP7 — Penyimpanan / Cold Storage' },
+  { code: 'CP8', label: 'CP8 — Distribusi Produk' },
+  { code: 'CP9', label: 'CP9 — Retail' },
+];
+
+const RISK_COLORS: Record<number, string> = {
+  1: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/30',
+  2: 'text-blue-500 bg-blue-500/10 border-blue-500/30',
+  3: 'text-amber-500 bg-amber-500/10 border-amber-500/30',
+  4: 'text-orange-500 bg-orange-500/10 border-orange-500/30',
+  5: 'text-red-500 bg-red-500/10 border-red-500/30',
+};
+
+const RISK_BADGE_COLORS: Record<number, string> = {
+  1: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  2: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+  3: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  4: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  5: 'bg-red-500/20 text-red-400 border-red-500/30',
+};
+
 export default function AHPStepsPage() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState('LEVEL1_CP');
   const [matrixView, setMatrixView] = useState<'tfn' | 'crisp'>('crisp');
+
+
 
   const fetchData = (type: string) => {
     setLoading(true);
@@ -471,6 +501,7 @@ export default function AHPStepsPage() {
             </div>
           </div>
         )}
+
 
       </main>
     </div>
