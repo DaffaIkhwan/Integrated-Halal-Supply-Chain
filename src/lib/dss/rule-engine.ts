@@ -105,6 +105,8 @@ export interface OverallAssessment {
   stages: StageAssessment[];
 }
 
+import rawRuleBaseData from '@/data/rule-base.json';
+
 // ─── Rule Base Loader (Singleton) ───
 
 let _ruleBaseCache: RuleBaseData | null = null;
@@ -112,14 +114,8 @@ let _ruleBaseCache: RuleBaseData | null = null;
 export function loadRuleBase(): RuleBaseData {
   if (_ruleBaseCache) return _ruleBaseCache;
 
-  const jsonPath = path.join(process.cwd(), 'scratch', 'rule base', 'Daffa Rule_Base_Risiko_Halal_Lengkap.json');
-  
-  if (!fs.existsSync(jsonPath)) {
-    throw new Error(`Rule base file not found: ${jsonPath}`);
-  }
-
-  const raw = fs.readFileSync(jsonPath, 'utf-8');
-  _ruleBaseCache = JSON.parse(raw) as RuleBaseData;
+  // Cast the imported JSON to the proper type
+  _ruleBaseCache = rawRuleBaseData as unknown as RuleBaseData;
   
   console.log(`[RuleEngine] Loaded: ${_ruleBaseCache.metadata.construct_count} constructs, ${_ruleBaseCache.metadata.indicator_count} indicators`);
   
