@@ -594,7 +594,7 @@ export default function KuesionerRisikoPage() {
                 <div key={f.key}>
                   <label className="text-xs font-medium text-muted-foreground block mb-0.5">{f.label}</label>
                   <p className="text-sm font-semibold text-foreground">
-                    {selectedBatch.respondentInfo?.[`${cp.cpId}_${f.key}`] || "-"}
+                    {selectedBatch.respondentInfo?.[`${cp.cpId}_${f.key}`] || selectedBatch.respondentInfo?.[f.key] || "-"}
                   </p>
                 </div>
               ))}

@@ -27,7 +27,13 @@ const openrouter = createOpenAI({
 });
 
 export async function POST(req: Request) {
-  const { messages } = await req.json();
+  const body = await req.json();
+  let messages = body.messages;
+  const isEval = body.isEval === true;
+
+  if (isEval && body.message) {
+    messages = [{ role: 'user', content: body.message }];
+  }
 
   try {
     let systemPrompt = `Anda adalah asisten AI untuk sistem **Integrated Halal Supply Chain** — Knowledge Management System & Decision Support System (KMS-DSS).
@@ -55,6 +61,8 @@ export async function POST(req: Request) {
 - Setelah memanggil **trace_halal_batch**, periksa SELURUH CP yang berstatus "Critical", "High", atau "Moderate". Sebutkan apa saja penyebab utamanya dengan melihat Sub-Kriteria penyumbang nilai tertinggi di tiap CP tersebut.
 - **SANGAT PENTING (REKOMENDASI)**: Untuk SETIAP CP yang berstatus Critical, High, atau Moderate, gunakan informasi dari label "[AUTO-RAG Referensi]" yang sudah tersedia di dalam hasil \`trace_halal_batch\` untuk menyusun rekomendasi perbaikan. Anda TIDAK PERLU memanggil tool \`search_knowledge_base\` lagi karena teks RAG sudah otomatis dicantumkan di sana. Ini akan sangat menghemat waktu!
 - **PENTING (DURASI)**: Jangan membuat kalimat pengantar yang terlalu panjang! Langsung ke intinya (ringkas dan padat) agar generasi tidak memakan waktu lama dan terputus.
+- **FOKUS JAWABAN (ANTI-BERTELE-TELE)**: Jawablah SANGAT SINGKAT dan LANGSUNG KE INTI PERTANYAAN. Jika pengguna bertanya tentang SATU Titik Kritis/CP spesifik (misal CP1 Kandang Sapi), HANYA berikan data skor dan rekomendasi untuk CP1 tersebut. DILARANG KERAS menampilkan tabel atau info CP lain yang tidak ditanyakan (misal CP4 RPH atau CP7 Gudang).
+- **ANTI-HALUSINASI**: Dilarang keras menyimpulkan tingkat risiko secara mandiri. Tingkat risiko (Low/Moderate/High/Critical) HANYA boleh diambil langsung dari output sistem/tools. Jangan mengarang logika AHP Anda sendiri.
 - **ATURAN WAJIB SITASI & REFERENSI**: Anda DILARANG KERAS memberikan rekomendasi yang terlalu umum atau meringkas nama sumber referensi. Jika merujuk referensi, Anda WAJIB mengutipnya dengan SANGAT LENGKAP berdasarkan data RAG yang ada tanpa ada yang dipotong:
   1. **Jika Jurnal/Paper**: Wajib sebutkan nama jurnal, judul paper, nama penulis (jika ada di teks), dan tahun terbitnya (jika ada).
   2. **Jika Buku/SOP/Sumber Akademik**: Wajib sebutkan judul buku/SOP dengan lengkap, penerbit/sumber institusi, dan tahun.
@@ -67,11 +75,16 @@ export async function POST(req: Request) {
     let activeTools: any = {};
     let directResponse: string | null = null;
     let intentLabel = "implicit (fallback)";
+    let rawIntentLabel = "unknown";
+    let confidenceScore = 0.0;
 
     const lastMessage = messages[messages.length - 1];
     if (lastMessage && lastMessage.role === 'user') {
       const intent = await classifyIntent(lastMessage.content);
+      console.log(`[IndoBERT] Raw result for "${lastMessage.content.substring(0, 60)}":`, JSON.stringify(intent));
       if (intent && intent.score >= 0.7) {
+        rawIntentLabel = intent.label;
+        confidenceScore = intent.score;
         intentLabel = `${intent.label} (conf: ${intent.score.toFixed(2)})`;
         console.log(`[IndoBERT] Intent classified: ${intentLabel}`);
         
@@ -96,65 +109,57 @@ export async function POST(req: Request) {
             break;
         }
       } else {
-         console.log(`[IndoBERT] Confidence low or model missing. Fallback to implicit routing.`);
+         console.log(`[IndoBERT] Confidence low or model missing (intent=${JSON.stringify(intent)}). Fallback to implicit routing.`);
       }
     }
 
+    // Tambahan system prompt untuk pertanyaan ambigu agar tidak salah routing
+    systemPrompt += `\n\n## ATURAN TAMBAHAN (ROUTING PERTANYAAN AMBIGU)
+- Jika user bertanya "aman ga", "safe ga", "apakah aman", "risikonya gimana", "status risiko" → ini adalah pertanyaan RISIKO, gunakan tool 'check_halal_risk'. BUKAN greeting.
+- Jika user menyebut eartag, tag, batch, atau ID produk → gunakan tool 'trace_halal_batch'.
+- Pertanyaan pendek tanpa konteks yang jelas → Tanyakan klarifikasi terlebih dahulu, JANGAN jawab dengan greeting generik.`;
+
     if (directResponse) {
-      // Return plain text response (Vercel AI useChat will handle it as a single chunk)
-      return new Response(directResponse, { status: 200 });
+      if (isEval) {
+        return Response.json({
+          answer: directResponse,
+          intent: rawIntentLabel,
+          confidence: confidenceScore,
+          contexts: []
+        });
+      }
+      // Return plain text response formatted as Vercel AI Data Stream Protocol
+      const formattedChunk = `0:${JSON.stringify(directResponse)}\n`;
+      return new Response(formattedChunk, { 
+        status: 200,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'X-Vercel-AI-Data-Stream': 'v1'
+        }
+      });
     }
 
     // Define all tools
     const allTools = {
         search_knowledge_base: {
-          description: 'Mencari dokumen, teori, aturan, fatwa, SOP, hukum, atau rekomendasi praktik (misalnya standar pakan sapi, hukum stunning). DILARANG menggunakan ini untuk mencari daftar data entitas dari database.',
+          description: 'Mencari dokumen, teori, aturan, fatwa, SOP, hukum, regulasi BPJPH, atau rekomendasi praktik (misalnya standar pakan sapi, hukum stunning, UU Jaminan Produk Halal). Gunakan tool ini untuk pertanyaan TEORITIS dan PENGETAHUAN. DILARANG menggunakan ini untuk mencari daftar data entitas dari database atau data risiko/skor.',
           parameters: z.object({
             query: z.string().describe('Kata kunci pencarian spesifik (contoh: "hukuman denda Jaminan Produk Halal", "SOP pemotongan", "hukum stunning")'),
           }),
-          execute: async ({ query }) => {
+          execute: async ({ query: searchQuery }) => {
             try {
-              // Text-based keyword search (vector search incompatible: docs use text-embedding-3-small but searchSimilarChunks uses all-MiniLM-L6-v2)
-              const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'boleh', 'tidak', 'saja', 'terkait', 'tentang', 'cara', 'apa', 'jelaskan', 'sesuai', 'sebutkan'];
-              const words = query.split(/[\s\?\!\.]+/)
-                .map(w => w.replace(/[^a-zA-Z0-9\u00C0-\u024F]/g, '').toLowerCase())
-                .filter(w => w.length > 2 && !stopWords.includes(w));
-              
-              const keywords = words.length > 0 ? Array.from(new Set(words)).slice(0, 6) : [query.toLowerCase()];
+              console.log('[RAG] Vector search for:', searchQuery);
+              // Use vector similarity search (same embedding model: all-MiniLM-L6-v2)
+              const results = await searchSimilarChunks(searchQuery, 8);
 
-              if (keywords.length === 0) return 'Kata kunci pencarian tidak ditemukan.';
+              console.log('[RAG] Vector results count:', results?.length || 0);
 
-              console.log('[RAG] Keywords:', keywords);
-
-              const rawResults = await prisma.oai.findMany({
-                where: {
-                  OR: keywords.map(kw => ({
-                    chunk: { contains: kw, mode: 'insensitive' as const }
-                  }))
-                },
-                take: 30,
-                select: { chunk: true, metadata: true }
-              });
-
-              console.log('[RAG] Raw results count:', rawResults.length);
-
-              if (rawResults.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
-
-              // Score by keyword match count
-              const scored = rawResults.map(r => {
-                const text = (r.chunk || '').toLowerCase();
-                let score = 0;
-                keywords.forEach(kw => { if (text.includes(kw)) score++; });
-                return { ...r, score };
-              });
-
-              scored.sort((a, b) => b.score - a.score);
-              const topResults = scored.slice(0, 5);
+              if (!results || results.length === 0) return 'Tidak ada dokumen yang relevan ditemukan.';
 
               let totalChars = 0;
-              const formatted = topResults
-                .map(r => {
-                  if (totalChars > 4000) return null;
+              const formatted = results
+                .map((r: any) => {
+                  if (totalChars > 8000) return null;
                   let cp = 'UMUM';
                   let docTitle = 'Dokumen RAG';
                   if (r.metadata) {
@@ -165,7 +170,8 @@ export async function POST(req: Request) {
                       else if (meta.source) docTitle = meta.source;
                     } catch (e) {}
                   }
-                  const chunk = (r.chunk || '').length > 1200 ? (r.chunk || '').substring(0, 1200) + '...' : (r.chunk || '');
+                  const content = r.chunk || r.content || '';
+                  const chunk = content.length > 2000 ? content.substring(0, 2000) + '...' : content;
                   totalChars += chunk.length;
                   return `[Sumber Akademik/Regulasi: ${cleanDocTitle(docTitle)}] [Kategori: ${cp}]\n${chunk}`;
                 })
@@ -180,7 +186,7 @@ export async function POST(req: Request) {
           },
         },
         check_halal_risk: {
-          description: 'Menarik hasil matriks klasifikasi risiko Fuzzy AHP terkini dari database, termasuk bobot (weight) dan tingkat kerentanan untuk semua Titik Kritis (Critical Points / CP).',
+          description: 'Menarik hasil matriks klasifikasi risiko Fuzzy AHP terkini dari database, termasuk bobot (weight) dan tingkat kerentanan untuk semua Titik Kritis (Critical Points / CP). GUNAKAN tool ini jika user bertanya tentang: risiko, tingkat keamanan, bobot CP, skor risiko, status kerentanan, "aman atau tidak", "safe ga", "risikonya gimana", level risiko, vulnerability, analisis AHP. JANGAN gunakan search_knowledge_base untuk pertanyaan risiko.',
           parameters: z.object({
             batchId: z.string().optional().describe('Opsional: HANYA diisi jika user secara eksplisit menyebut kata "Batch" (contoh: "Batch 123"). JANGAN diisi jika user bertanya tentang CP (contoh: "CP1", "Titik Kritis").'),
           }),
@@ -196,24 +202,39 @@ export async function POST(req: Request) {
               }
               const cpWeights = await getDynamicCPWeights();
               if (!cpWeights || cpWeights.length === 0) return 'Data bobot belum tersedia.';
-              const filtered = cpWeights.filter((cp: any) => !cp.id?.startsWith('CP10'));
+              const filtered = cpWeights.filter((cp: any) => !cp.cpId?.startsWith('CP10'));
               return `--- DSS Halal Risk Output ---\n${filtered
-                .map((cp: any) => `Titik Kritis: ${cp.name} | Bobot Global: ${cp.weight.toFixed(4)} | Risk Score Lokal: ${(cp.localRiskScore ?? 0).toFixed(3)} | Status: ${cp.riskLevel}`)
-                .join('\n')}`;
+                .map((cp: any) => {
+                  const criteriaList = cp.criteria && cp.criteria.length > 0 
+                    ? cp.criteria.map((c: any) => `${c.name} (${c.weight.toFixed(3)})`).join(', ')
+                    : 'Tidak ada data sub-kriteria';
+                  return `Titik Kritis: ${cp.name}\n  Bobot Global: ${cp.weight.toFixed(4)} | Risk Score Lokal: ${(cp.localRiskScore ?? 0).toFixed(3)} | Status: ${cp.riskLevel}\n  Sub-kriteria pemicu risiko: ${criteriaList}`;
+                })
+                .join('\n\n')}`;
             } catch (e: any) {
               return `Gagal mengambil data DSS: ${e.message}`;
             }
           },
         },
         trace_halal_batch: {
-          description: 'Melakukan database relational query pelacakan produk daging dan status pemotongannya.',
+          description: 'Melakukan database relational query pelacakan produk daging dan status pemotongannya. GUNAKAN tool ini jika user menyebut eartag (TAG-xxx), ID batch, nama sapi, atau bertanya tentang: di RPH mana dipotong, siapa juru sembelihnya, asal ternak, riwayat compliance. Tool ini untuk PELACAKAN SPESIFIK per hewan/batch.',
           parameters: z.object({
-            batchId: z.string().describe('Nomor ID Batch atau eartag')
+            batchId: z.string().describe('Nomor ID Batch atau eartag (contoh: TAG-A001, TAG-B004, B-001)')
           }),
           execute: async ({ batchId }) => {
             try {
+              // Handle variations: "Sapi TAG-B004", "sapi tag b004", "TAG B004", "batch 123", "B-001"
+              let cleanId = batchId
+                .replace(/^(sapi|hewan|ternak|cattle|produk|daging)\s+/i, '')  // Strip animal/product prefix
+                .replace(/^(id|nomor|no\.?)\s+/i, '')                          // Strip ID prefix
+                .replace(/^batch\s+/i, '')                                     // Strip batch prefix
+                .trim();
+              // Normalize TAG format: "tag b004" → "TAG-B004", "TAG B004" → "TAG-B004"
+              cleanId = cleanId.replace(/^tag\s*[-_]?\s*/i, 'TAG-');
+              // Uppercase the tag ID portion for consistent matching
+              if (cleanId.startsWith('TAG-')) cleanId = cleanId.toUpperCase();
               let batchInfo = await prisma.halalBatch.findFirst({
-                where: { cattle: { earTag: { contains: batchId, mode: 'insensitive' } } },
+                where: { cattle: { earTag: { contains: cleanId, mode: 'insensitive' } } },
                 include: { 
                   cattle: { include: { farm: true } }, 
                   slaughterhouse: true, 
@@ -229,7 +250,7 @@ export async function POST(req: Request) {
               });
               if (!batchInfo) {
                 batchInfo = await prisma.halalBatch.findFirst({
-                  where: { id: { contains: batchId } },
+                  where: { id: { contains: cleanId } },
                   include: { 
                     cattle: { include: { farm: true } }, 
                     slaughterhouse: true, 
@@ -338,7 +359,7 @@ export async function POST(req: Request) {
                        .filter(([k]) => k.endsWith('Risk') && k !== 'riskScore')
                        .map(([k, v]) => ({ key: k, label: mapSubCP(cpId, k), value: Number(v) || 0 }))
                        .sort((a, b) => b.value - a.value);
-                     if (risks.length > 0) {
+                       if (risks.length > 0) {
                        traceOutput += `\n    Sub-Kriteria:`;
                        for (const r of risks) {
                          traceOutput += `\n      - ${r.label}: ${r.value.toFixed(2)}`;
@@ -346,42 +367,28 @@ export async function POST(req: Request) {
                        if (rLevel === 'High' || rLevel === 'Critical' || rLevel === 'Moderate') {
                           const topRisk = risks[0];
                           try {
-                            const stopWords = ['yang', 'untuk', 'dan', 'atau', 'dengan', 'dari', 'pada', 'dalam', 'ini', 'itu', 'adalah', 'sebagai', 'melalui', 'secara', 'apakah', 'bagaimana', 'mengapa', 'boleh', 'tidak', 'saja', 'terkait', 'tentang', 'cara', 'apa', 'jelaskan', 'sesuai', 'sebutkan'];
-                            const words = topRisk.label.split(/[\s\?\!\.]+/)
-                              .map(w => w.replace(/[^a-zA-Z0-9\u00C0-\u024F]/g, '').toLowerCase())
-                              .filter(w => w.length > 2 && !stopWords.includes(w));
-                            const keywords = words.length > 0 ? Array.from(new Set(words)).slice(0, 6) : [topRisk.label.toLowerCase()];
-                            if (keywords.length > 0) {
-                              const rawResults = await prisma.oai.findMany({
-                                where: { OR: keywords.map(kw => ({ chunk: { contains: kw, mode: 'insensitive' as const } })) },
-                                take: 20, select: { chunk: true, metadata: true }
-                              });
-                              if (rawResults.length > 0) {
-                                const scored = rawResults.map(r => {
-                                  let score = 0;
-                                  const text = (r.chunk || '').toLowerCase();
-                                  keywords.forEach(kw => { if (text.includes(kw)) score++; });
-                                  
-                                  let docTitle = 'Dokumen RAG';
-                                  if (r.metadata) {
-                                    try {
-                                      const meta = typeof r.metadata === 'string' ? JSON.parse(r.metadata) : r.metadata;
-                                      if (meta.documentTitle) docTitle = meta.documentTitle;
-                                      else if (meta.source) docTitle = meta.source;
-                                    } catch(e){}
-                                  }
-                                  
-                                  return { chunk: `[Sumber Akademik/Regulasi: ${cleanDocTitle(docTitle)}]\n${r.chunk}`, score };
-                                }).sort((a, b) => b.score - a.score);
-                                const topRAG = scored.slice(0, 2).map(r => r.chunk).join('\n\n---\n\n').substring(0, 1500);
-                                traceOutput += `\n    [AUTO-RAG Referensi untuk penyebab utama ${topRisk.label}]:\n${topRAG}`;
-                              }
+                            // Use vector search for AUTO-RAG (same MiniLM embedding model)
+                            const ragQuery = `${rec.criticalPoint.name} ${topRisk.label} halal supply chain`;
+                            const ragResults = await searchSimilarChunks(ragQuery, 2);
+                            if (ragResults && ragResults.length > 0) {
+                              const topRAG = (ragResults as any[]).map((ragItem: any) => {
+                                let docTitle = 'Dokumen RAG';
+                                if (ragItem.metadata) {
+                                  try {
+                                    const meta = typeof ragItem.metadata === 'string' ? JSON.parse(ragItem.metadata) : ragItem.metadata;
+                                    if (meta.documentTitle) docTitle = meta.documentTitle;
+                                    else if (meta.source) docTitle = meta.source;
+                                  } catch(e){}
+                                }
+                                const content = ragItem.chunk || ragItem.content || '';
+                                return `[Sumber Akademik/Regulasi: ${cleanDocTitle(docTitle)}]\n${content}`;
+                              }).join('\n\n---\n\n').substring(0, 1500);
+                              traceOutput += `\n    [AUTO-RAG Referensi untuk penyebab utama ${topRisk.label}]:\n${topRAG}`;
                             }
                           } catch(e) {}
                        }
                      }
                   } else {
-                     // Fallback: show expected sub-criteria with 'Belum dinilai'
                      const expectedKeys = cpSubCriteriaKeys[cpId] || [];
                      if (expectedKeys.length > 0) {
                        traceOutput += `\n    Sub-Kriteria:`;
@@ -411,19 +418,22 @@ export async function POST(req: Request) {
           description: 'Mengambil entitas data operasional yang tersimpan di database sistem (DAFTAR Farm, DAFTAR RPH, DAFTAR Juru Sembelih, DAFTAR QC, dsb). DILARANG menggunakan ini untuk pertanyaan teoritis, hukum, atau prosedur standar.',
           parameters: z.object({
             category: z.string().describe('Kategori data, contoh: "Farm", "RPH", "Juru Sembelih", "Pakan", "QC"'),
+            location: z.string().optional().describe('Filter spesifik berdasarkan lokasi/daerah (contoh: "Jatim", "Bandung", "Bogor") jika diminta pengguna.')
           }),
-          execute: async ({ category }) => {
+          execute: async ({ category, location }) => {
             try {
               const cat = category.toLowerCase();
               if (cat.includes('farm') || cat.includes('kandang') || cat.includes('peternakan')) {
-                const farms = await prisma.farm.findMany({ select: { name: true, location: true } });
-                if (farms.length === 0) return "Tidak ada data Farm di database.";
-                return "--- Daftar Farm ---\n" + farms.map(f => `- ${f.name} (Lokasi: ${f.location || '-'})`).join('\n');
+                const whereClause = location ? { location: { contains: location, mode: 'insensitive' as const } } : {};
+                const farms = await prisma.farm.findMany({ where: whereClause, select: { name: true, location: true } });
+                if (farms.length === 0) return `Tidak ada data Farm di database${location ? ' untuk lokasi ' + location : ''}.`;
+                return `--- Daftar Farm${location ? ' di ' + location : ''} ---\n` + farms.map(f => `- ${f.name} (Lokasi: ${f.location || '-'})`).join('\n');
               }
               if (cat.includes('rph') || cat.includes('slaughter')) {
-                const rph = await prisma.slaughterhouse.findMany({ select: { name: true, location: true } });
-                if (rph.length === 0) return "Tidak ada data RPH di database.";
-                return "--- Daftar RPH ---\n" + rph.map(r => `- ${r.name} (Lokasi: ${r.location || '-'})`).join('\n');
+                const whereClause = location ? { location: { contains: location, mode: 'insensitive' as const } } : {};
+                const rph = await prisma.slaughterhouse.findMany({ where: whereClause, select: { name: true, location: true } });
+                if (rph.length === 0) return `Tidak ada data RPH di database${location ? ' untuk lokasi ' + location : ''}.`;
+                return `--- Daftar RPH${location ? ' di ' + location : ''} ---\n` + rph.map(r => `- ${r.name} (Lokasi: ${r.location || '-'})`).join('\n');
               }
               if (cat.includes('pakan') || cat.includes('feed')) {
                  return "Informasi merk/jenis pakan spesifik tidak tersimpan secara terpisah di tabel master. Evaluasi risiko Pakan (CP2) langsung dinilai berdasarkan kepatuhan peternakan (Farm).";
@@ -459,16 +469,55 @@ export async function POST(req: Request) {
     else if (intentLabel.includes('operational_data')) activeTools = { get_operational_data: allTools.get_operational_data };
     else activeTools = allTools; // Fallback: give all tools to LLM
 
-    const result = await streamText({
-      model: openrouter('openai/gpt-4o-mini'),
-      maxTokens: 4096,
-      maxToolRoundtrips: 5,
-      system: systemPrompt,
-      messages,
-      tools: activeTools,
-    });
+    if (isEval) {
+      const { generateText } = await import('ai');
+      const result = await generateText({
+        model: openrouter('openai/gpt-4o-mini'),
+        maxTokens: 4096,
+        maxToolRoundtrips: 5,
+        system: systemPrompt,
+        messages,
+        tools: activeTools,
+      });
 
-    return result.toDataStreamResponse();
+      // Extract tool results for contexts (RAG/DSS/etc)
+      const contexts: string[] = [];
+      if (result.steps) {
+         for (const step of result.steps) {
+            if (step.toolResults) {
+               for (const tr of step.toolResults) {
+                  if (tr.result && typeof tr.result === 'string') {
+                     contexts.push(tr.result);
+                  }
+               }
+            }
+         }
+      } else if (result.toolResults) {
+         for (const tr of result.toolResults) {
+            if (tr.result && typeof tr.result === 'string') {
+               contexts.push(tr.result);
+            }
+         }
+      }
+
+      return Response.json({
+        answer: result.text,
+        intent: rawIntentLabel,
+        confidence: confidenceScore,
+        contexts: contexts
+      });
+    } else {
+      const result = await streamText({
+        model: openrouter('openai/gpt-4o-mini'),
+        maxTokens: 4096,
+        maxToolRoundtrips: 5,
+        system: systemPrompt,
+        messages,
+        tools: activeTools,
+      });
+
+      return result.toDataStreamResponse();
+    }
   } catch (error: any) {
     console.error('Chat API Error:', error);
     

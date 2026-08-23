@@ -1,0 +1,28 @@
+category,metric,avg_score,pass_rate,n
+batch_trace,Bias,0.0,1.0,26
+batch_trace,Data Grounding Accuracy [GEval],0.8192307692307692,0.8846153846153846,26
+batch_trace,Faithfulness,0.9600862269004724,0.9615384615384616,26
+batch_trace,Intent Routing Exact Match,0.7692307692307693,0.7692307692307693,26
+batch_trace,Toxicity,0.0,1.0,26
+knowledge_query,Answer Relevancy,0.2684240362811791,0.2857142857142857,21
+knowledge_query,Bias,0.0,1.0,21
+knowledge_query,Contextual Precision,0.2568783068783069,0.23809523809523808,21
+knowledge_query,Contextual Recall,0.2857142857142857,0.23809523809523808,21
+knowledge_query,Faithfulness,0.9523809523809523,0.9523809523809523,21
+knowledge_query,Hallucination,0.6190476190476191,0.38095238095238093,21
+knowledge_query,Intent Routing Exact Match,0.6666666666666666,0.6666666666666666,21
+knowledge_query,Toxicity,0.0,1.0,21
+operational_data,Bias,0.0,1.0,16
+operational_data,Data Grounding Accuracy [GEval],0.99375,1.0,16
+operational_data,Faithfulness,1.0,1.0,16
+operational_data,Intent Routing Exact Match,1.0,1.0,16
+operational_data,Toxicity,0.0,1.0,16
+out_of_scope,Bias,0.0,1.0,2
+out_of_scope,Intent Routing Exact Match,0.5,0.5,2
+out_of_scope,Tone & Intent Handling [GEval],0.9,1.0,2
+out_of_scope,Toxicity,0.0,1.0,2
+risk_check,AHP Risk Correctness [GEval],0.8300000000000001,0.9,10
+risk_check,Answer Relevancy,0.6504545454545454,0.6,10
+risk_check,Bias,0.0,1.0,10
+risk_check,Intent Routing Exact Match,0.9,0.9,10
+risk_check,Toxicity,0.0,1.0,10

@@ -47,8 +47,8 @@ const generateIntentDataset = () => {
 
     // 6. out_of_scope
     const oos_texts = [
-        "berapa harga bitcoin hari ini", "tolong buatkan resep nasi goreng", "siapa presiden amerika", "cuaca hari ini gimana", 
-        "cara install windows", "apa rekomendasi film bagus", "buatkan puisi cinta", "berita bola semalam", 
+        "berapa harga bitcoin hari ini", "tolong buatkan resep nasi goreng", "siapa presiden amerika", "cuaca hari ini gimana",
+        "cara install windows", "apa rekomendasi film bagus", "buatkan puisi cinta", "berita bola semalam",
         "cara hack wifi", "lirik lagu indonesia raya", "cara masak rendang", "jadwal kereta api", "cara daftar cpns",
         "game paling seru", "rekomendasi hp murah", "cara mengatasi rambut rontok"
     ];
@@ -69,7 +69,7 @@ const generateIntentDataset = () => {
     const csvContent = "text,label\n" + dataset.map(d => `"${d.text}",${d.intent}`).join("\n");
     const filePath = path.join(__dirname, 'dataset_intent.csv');
     fs.writeFileSync(filePath, csvContent);
-    
+
     console.log(`✅ Berhasil men-generate ${dataset.length} baris dataset ke ${filePath}`);
 };
 

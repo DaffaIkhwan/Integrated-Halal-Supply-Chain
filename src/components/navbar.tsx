@@ -59,6 +59,7 @@ const navItems: NavItem[] = [
 		href: "#", label: "Fuzzy AHP & Rule Based",
 		children: [
 			{ href: "/dashboard/ahp-steps", label: "Tahapan Fuzzy AHP" },
+			{ href: "/dashboard/sensitivity-analysis", label: "Analisis Sensitivitas" },
 			{ href: "/dashboard/rule-based", label: "Rule-Based Risk Assessment" },
 		],
 	},

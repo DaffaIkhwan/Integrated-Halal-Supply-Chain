@@ -1,0 +1,452 @@
+[
+    {
+        "input": "Apa itu BPJPH dan apa fungsinya dalam industri peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) berperan dalam menyelenggarakan Jaminan Produk Halal di Indonesia, termasuk bagi industri peternakan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Gimana cara jadi juleha yg bener?",
+        "category": "knowledge_query",
+        "expected_output": "Syarat untuk menjadi juru sembelih halal adalah beragama Islam, dewasa (baligh), berakal sehat, dan memahami tata cara syariat penyembelihan. Cara untuk menjadi juru sembelih halal meliputi pelatihan dan sertifikasi yang diakui oleh lembaga yang berwenang dalam penyelenggaraan jaminan produk halal.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Suhu ideal buat cold storage daging berapa ya?",
+        "category": "knowledge_query",
+        "expected_output": "Suhu ideal untuk cold storage daging segar adalah antara 0 hingga 4 derajat Celcius, sedangkan untuk daging beku adalah di bawah -18 derajat Celcius untuk mencegah pertumbuhan bakteri.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Cek risiko AHP di CP4 RPH, aman ga?",
+        "category": "risk_check",
+        "expected_output": "Skor risiko AHP (Analytic Hierarchy Process) di CP4 RPH (Rumah Potong Hewan) digunakan untuk menilai dan mengelola risiko yang terkait dengan proses pemotongan hewan, berdasarkan berbagai kriteria yang telah ditentukan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apakah CP1 Kandang terjamin keamanannya?",
+        "category": "risk_check",
+        "expected_output": "Tingkat keamanan CP1 Kandang adalah standar yang ditetapkan untuk memastikan keselamatan dan kesehatan hewan ternak, serta mencegah risiko penyebaran penyakit.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Tolong lacak perjalanan sapi TAG-B002, asalnya dari mana dan dipotong di mana?",
+        "category": "batch_trace",
+        "expected_output": "Perjalanan sapi TAG-B002 mencakup proses pemeliharaan, pengawasan kesehatan, dan pengolahan hingga siap untuk didistribusikan dalam rantai pasokan daging.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Darimana asal sapi dengan eartag TAG-C003 dan statusnya sekarang?",
+        "category": "batch_trace",
+        "expected_output": "Menginformasikan asal dan status sapi TAG-C003.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Berapa jumlah peternakan yang ada di data kita?",
+        "category": "operational_data",
+        "expected_output": "Jumlah peternakan yang ada di Indonesia bervariasi tergantung pada jenis hewan dan lokasi, namun data terbaru menunjukkan bahwa terdapat ribuan peternakan di seluruh wilayah Indonesia.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sebutkan nama RPH yang ada di Jatim.",
+        "category": "operational_data",
+        "expected_output": "Nama-nama RPH (Rumah Potong Hewan) yang ada di Jawa Timur adalah RPH Surabaya, RPH Malang, RPH Sidoarjo, dan RPH Jember.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa fasilitas cold storage yang ada di Bandung?",
+        "category": "operational_data",
+        "expected_output": "Fasilitas cold storage di Bandung menyediakan tempat penyimpanan dingin untuk produk makanan dan bahan baku, menjaga kesegaran dan kualitas produk.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Cek cuaca hari ini di Jakarta dong!",
+        "category": "out_of_scope",
+        "expected_output": "Topik di luar peternakan atau halal.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Resep masakan daging sapi enak ada?",
+        "category": "out_of_scope",
+        "expected_output": "Topik di luar peternakan atau halal.",
+        "retrieval_context": []
+    },
+    {
+        "input": "bntu lacak",
+        "category": "batch_trace",
+        "expected_output": "Permintaan pelacakan sapi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "aman ga",
+        "category": "risk_check",
+        "expected_output": "Menanyakan tingkat keamanan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "coba cek sapi",
+        "category": "batch_trace",
+        "expected_output": "Permintaan pengecekan sapi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Bagaimana tata cara sembelih yang sesuai syariat Islam?",
+        "category": "knowledge_query",
+        "expected_output": "Tata cara sembelih yang sesuai syariat Islam meliputi penyembelihan hewan dengan menyebut nama Allah, menggunakan alat yang tajam, dan memotong bagian leher hewan dengan tepat untuk memastikan darah mengalir keluar.",
+        "retrieval_context": []
+    },
+    {
+        "input": "RPH Syariah Al-Anam ada di kota mana?",
+        "category": "operational_data",
+        "expected_output": "RPH Syariah Al-Anam terletak di [lokasi spesifik, jika ada].",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa saja distribusi halal batch 3?",
+        "category": "batch_trace",
+        "expected_output": "Distribusi halal batch 3 merujuk pada proses distribusi produk yang telah mendapatkan sertifikasi halal pada batch ketiga dalam sistem jaminan produk halal di Indonesia.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Klo sapi TAG-A004 asalnya dari mana?",
+        "category": "batch_trace",
+        "expected_output": "Sapi TAG-A004 berasal dari program pemuliaan sapi potong yang dilakukan di Indonesia, yang bertujuan untuk meningkatkan kualitas genetik dan produktivitas sapi lokal.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sebutkan nama distributor di Jabodetabek.",
+        "category": "operational_data",
+        "expected_output": "Nama-nama distributor yang ada di wilayah Jabodetabek.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa itu CP dalam konteks risiko peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "Konsep CP (Critical Point) dalam risiko peternakan merujuk pada titik-titik kritis dalam proses produksi yang dapat mempengaruhi keamanan dan kualitas produk peternakan, sehingga memerlukan pengendalian yang ketat untuk mencegah risiko.",
+        "retrieval_context": []
+    },
+    {
+        "input": "cek risiko CP2 di RPH Terpadu Semarang gimana?",
+        "category": "risk_check",
+        "expected_output": "Tingkat risiko CP2 (Cacat Produk Pangan) di RPH Terpadu Semarang ditentukan berdasarkan analisis terhadap proses produksi dan pengolahan daging, serta penerapan standar keamanan pangan yang berlaku.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi dengan eartag TAG-B004 dipotong di RPH mana?",
+        "category": "batch_trace",
+        "expected_output": "Menginformasikan RPH tempat pemotongan sapi TAG-B004.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Bagaimana cara memastikan daging tetap halal sepanjang supply chain?",
+        "category": "knowledge_query",
+        "expected_output": "Untuk memastikan kehalalan daging di supply chain, langkah-langkah yang dilakukan meliputi pemilihan pemasok yang terjamin kehalalannya, penerapan sertifikasi halal pada setiap tahap produksi, serta pengawasan dan audit secara berkala untuk memastikan kepatuhan terhadap standar halal.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Nama peternakan di Jatim apa saja?",
+        "category": "operational_data",
+        "expected_output": "Nama-nama peternakan yang ada di Jawa Timur.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Perjalanan sapi TAG-C002 gimana?",
+        "category": "batch_trace",
+        "expected_output": "Sapi TAG-C002 adalah salah satu sapi yang terdaftar dalam program pemantauan dan pengelolaan ternak, yang mengikuti proses perjalanan dari peternakan hingga ke tempat pemrosesan atau penjualan, dengan tujuan memastikan kualitas dan kesehatan hewan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Ada berapa batch halal yang diproduksi antara Januari dan Februari 2026?",
+        "category": "operational_data",
+        "expected_output": "Jumlah batch halal yang diproduksi adalah sejumlah unit produk yang telah memenuhi standar sertifikasi halal yang ditetapkan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "kasi tau suhu ideal cold storage daging berapa",
+        "category": "knowledge_query",
+        "expected_output": "Suhu ideal untuk cold storage daging segar adalah antara 0 hingga 4 derajat Celcius, sedangkan untuk daging beku adalah di bawah -18 derajat Celcius untuk mencegah pertumbuhan bakteri.",
+        "retrieval_context": []
+    },
+    {
+        "input": "gimana jadi juleha yg sesuai syarat?",
+        "category": "knowledge_query",
+        "expected_output": "Syarat untuk menjadi juru sembelih halal adalah beragama Islam, dewasa (baligh), berakal sehat, dan memahami tata cara syariat penyembelihan. Cara untuk menjadi juru sembelih halal meliputi mengikuti pelatihan yang diakui, mendapatkan sertifikasi dari lembaga yang berwenang, serta mematuhi prosedur penyembelihan sesuai dengan syariat Islam.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa itu AHP dalam konteks risiko peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "Konsep AHP (Analytic Hierarchy Process) dalam risiko peternakan adalah metode pengambilan keputusan yang digunakan untuk menganalisis dan memprioritaskan berbagai risiko yang dihadapi dalam industri peternakan dengan cara membandingkan elemen-elemen secara berpasangan dan mengorganisasikannya dalam struktur hierarkis.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Distribusi sapi dari peternakan Berkah Mandiri ke RPH mana saja?",
+        "category": "batch_trace",
+        "expected_output": "Distribusi sapi dari Peternakan Berkah Mandiri dilakukan untuk memenuhi permintaan pasar di berbagai wilayah, dengan fokus pada penyediaan sapi berkualitas untuk kebutuhan konsumsi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Cek batch 5 distribusinya ke mana aja?",
+        "category": "batch_trace",
+        "expected_output": "Distribusi batch 5 adalah proses pengiriman dan penyaluran produk dalam kelompok kelima yang telah ditentukan sesuai dengan jadwal dan prosedur distribusi yang berlaku.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Dimana lokasi peternakan Sumber Rejeki?",
+        "category": "operational_data",
+        "expected_output": "Peternakan Sumber Rejeki terletak di [lokasi spesifik yang relevan, misalnya: Kabupaten X, Provinsi Y, Indonesia].",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apakah ada cold storage di Bandung yang halal?",
+        "category": "operational_data",
+        "expected_output": "Menginformasikan fasilitas cold storage halal di Bandung.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa yang dimaksud dengan CP4 dalam risiko peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "CP4 dalam risiko peternakan adalah konsep yang mencakup empat elemen penting, yaitu: identifikasi risiko, analisis risiko, pengendalian risiko, dan pemantauan risiko, yang bertujuan untuk mengelola dan meminimalkan dampak risiko dalam industri peternakan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Cek risiko di CP3 RPH Halal Surabaya.",
+        "category": "risk_check",
+        "expected_output": "Tingkat risiko di CP3 RPH Halal Surabaya mencakup analisis terhadap potensi bahaya yang dapat mempengaruhi keamanan dan kualitas produk halal yang dihasilkan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi TAG-A002 itu asalnya dari mana?",
+        "category": "batch_trace",
+        "expected_output": "Sapi TAG-A002 berasal dari hasil pengembangan program pemuliaan sapi potong di Indonesia, yang bertujuan untuk meningkatkan kualitas genetik dan produktivitas ternak.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Nama RPH di Jateng apa aja?",
+        "category": "operational_data",
+        "expected_output": "Nama-nama RPH yang ada di Jawa Tengah.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Daging sapi dari batch 2 asalnya dari mana?",
+        "category": "batch_trace",
+        "expected_output": "Daging sapi batch 2 berasal dari sapi yang telah melalui proses pemeliharaan dan penyembelihan sesuai dengan standar yang ditetapkan untuk memastikan kualitas dan keamanan produk.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Gimana cara memastikan sertifikasi halal RPH tetap valid?",
+        "category": "knowledge_query",
+        "expected_output": "Untuk memastikan sertifikasi halal RPH (Rumah Potong Hewan) tetap valid, RPH harus mematuhi ketentuan dan regulasi yang ditetapkan oleh BPJPH serta melakukan audit dan pemantauan secara berkala.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi TAG-C001 sekarang statusnya gimana?",
+        "category": "batch_trace",
+        "expected_output": "Menginformasikan status sapi TAG-C001.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Berapa banyak RPH yang ada di data kita?",
+        "category": "operational_data",
+        "expected_output": "Jumlah RPH (Rumah Potong Hewan) yang ada di Indonesia adalah sebanyak 1.200 unit.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa fungsi PT Angkutan Ternak Sejahtera dalam supply chain?",
+        "category": "knowledge_query",
+        "expected_output": "PT Angkutan Ternak Sejahtera berfungsi sebagai penyedia layanan transportasi untuk hewan ternak dalam rantai pasokan, memastikan pengiriman yang aman dan efisien dari peternak ke pasar.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Risiko di CP1 Peternakan Nusantara Jaya gimana?",
+        "category": "risk_check",
+        "expected_output": "Tingkat risiko di CP1 Peternakan Nusantara Jaya mencakup berbagai faktor yang dapat mempengaruhi kesehatan hewan, keamanan pangan, dan keberlanjutan operasional, yang perlu dikelola secara efektif untuk memastikan keberhasilan usaha peternakan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apakah batch 7 sudah didistribusikan?",
+        "category": "batch_trace",
+        "expected_output": "Status distribusi batch 7 adalah informasi terkait pengiriman dan distribusi produk dalam batch tersebut, yang mencakup rincian mengenai lokasi, waktu, dan kondisi produk yang didistribusikan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Nama peternakan di Jabar?",
+        "category": "operational_data",
+        "expected_output": "Nama-nama peternakan yang ada di Jawa Barat.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa aja supply chain yg terlibat dalam batch 6?",
+        "category": "batch_trace",
+        "expected_output": "Supply chain yang terlibat dalam batch 6 mencakup berbagai tahap mulai dari pengadaan bahan baku, proses produksi, distribusi, hingga penjualan produk akhir.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Bagaimana cara menjaga daging tetap segar selama transportasi?",
+        "category": "knowledge_query",
+        "expected_output": "Cara menjaga kesegaran daging selama transportasi adalah dengan menggunakan pendingin atau es untuk menjaga suhu tetap rendah, serta memastikan daging terbungkus rapat dan terhindar dari kontaminasi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi dengan eartag TAG-B001 dipotong di mana?",
+        "category": "batch_trace",
+        "expected_output": "Menginformasikan RPH tempat pemotongan sapi TAG-B001.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Gimana caranya biar sapi tetep sehat di peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "Cara menjaga kesehatan sapi di peternakan meliputi pemberian pakan yang bergizi, pemeliharaan kebersihan kandang, pemeriksaan kesehatan secara rutin, serta vaksinasi untuk mencegah penyakit.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa sih syarat juleha yang sesuai aturan?",
+        "category": "knowledge_query",
+        "expected_output": "Syarat juleha yang sesuai aturan adalah harus dilakukan oleh juru sembelih yang memenuhi kriteria syariat, menggunakan alat yang tajam dan bersih, serta mengikuti tata cara penyembelihan yang sesuai dengan hukum Islam.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Cek batch 4, sapi dari mana?",
+        "category": "batch_trace",
+        "expected_output": "Sapi batch 4 berasal dari peternakan yang terletak di daerah tertentu, yang telah memenuhi standar kualitas dan kesehatan yang ditetapkan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa istilah CP dalam konteks keamanan pangan?",
+        "category": "knowledge_query",
+        "expected_output": "CP (Critical Point) dalam konteks keamanan pangan merujuk pada titik atau langkah dalam proses produksi makanan di mana pengendalian dapat diterapkan untuk mencegah, menghilangkan, atau mengurangi risiko terhadap keamanan pangan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Kirim sapi dari Peternakan Sumber Rejeki ke mana aja?",
+        "category": "batch_trace",
+        "expected_output": "Pengiriman sapi dari Peternakan Sumber Rejeki dilakukan untuk memenuhi permintaan pasar dan mendistribusikan sapi ke berbagai lokasi sesuai kebutuhan konsumen.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Bagaimana cara mengukur risiko di CP4 RPH?",
+        "category": "risk_check",
+        "expected_output": "Cara mengukur risiko di CP4 RPH (Rumah Potong Hewan) melibatkan identifikasi potensi bahaya, penilaian tingkat risiko berdasarkan kemungkinan dan dampak, serta penerapan langkah-langkah pengendalian untuk meminimalkan risiko tersebut.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa aja fasilitas cold storage di Jabar?",
+        "category": "operational_data",
+        "expected_output": "Fasilitas cold storage di Jawa Barat meliputi berbagai tempat penyimpanan dingin yang dirancang untuk menjaga kesegaran dan kualitas produk makanan, terutama daging dan produk perishable lainnya.",
+        "retrieval_context": []
+    },
+    {
+        "input": "cek batch 9 distribusinya mana",
+        "category": "batch_trace",
+        "expected_output": "Distribusi batch 9 merujuk pada pengiriman atau penyebaran produk dalam kelompok kesembilan yang dilakukan sesuai dengan jadwal dan prosedur yang telah ditetapkan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi TAG-A003 dipotong di RPH mana?",
+        "category": "batch_trace",
+        "expected_output": "Menginformasikan RPH tempat pemotongan sapi TAG-A003.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Nama distributor di Bandung?",
+        "category": "operational_data",
+        "expected_output": "Nama-nama distributor yang ada di Bandung.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi dengan eartag TAG-C004 asalnya dari mana?",
+        "category": "batch_trace",
+        "expected_output": "Sapi TAG-C004 berasal dari program pemuliaan sapi potong yang dikembangkan di Indonesia untuk meningkatkan kualitas genetik dan produktivitas ternak.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa aja proses di CP3 dalam supply chain?",
+        "category": "knowledge_query",
+        "expected_output": "Proses di CP3 (Centralized Processing Plant) dalam supply chain meliputi pengolahan dan pengemasan produk sebelum didistribusikan ke konsumen, yang bertujuan untuk meningkatkan efisiensi dan menjaga kualitas produk.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Lacak batch 10, statusnya gimana?",
+        "category": "batch_trace",
+        "expected_output": "Menginformasikan status batch 10.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Risiko di CP2 Peternakan Berkah Mandiri gimana?",
+        "category": "risk_check",
+        "expected_output": "Tingkat risiko di CP2 Peternakan Berkah Mandiri mencakup berbagai faktor yang dapat mempengaruhi operasional dan keberlanjutan usaha peternakan, termasuk risiko kesehatan hewan, fluktuasi harga pakan, dan perubahan regulasi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Gimana cara melacak daging sapi di supply chain?",
+        "category": "knowledge_query",
+        "expected_output": "Cara melacak daging sapi di supply chain melibatkan penggunaan sistem pelacakan yang mencakup pencatatan informasi dari peternakan, pemrosesan, distribusi, hingga penjualan, sering kali menggunakan teknologi seperti RFID atau kode batang untuk memastikan transparansi dan keamanan produk.",
+        "retrieval_context": []
+    },
+    {
+        "input": "cek batch 8 darimana asalnya",
+        "category": "batch_trace",
+        "expected_output": "Batch 8 berasal dari proses produksi yang dilakukan pada periode tertentu dalam suatu sistem atau lini produksi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa fungsi dari cold storage dalam supply chain daging?",
+        "category": "knowledge_query",
+        "expected_output": "Cold storage berfungsi untuk menjaga kesegaran dan kualitas daging selama proses distribusi dalam supply chain, dengan cara menyimpan daging pada suhu rendah untuk mencegah pertumbuhan bakteri dan memperpanjang masa simpan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "cek TAG-B003 asalnya dari mana",
+        "category": "batch_trace",
+        "expected_output": "Sapi TAG-B003 berasal dari program pemuliaan sapi potong yang dikembangkan di Indonesia untuk meningkatkan kualitas genetik dan produktivitas ternak.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Risiko di CP4 Peternakan Nusantara Jaya gimana?",
+        "category": "risk_check",
+        "expected_output": "Tingkat risiko di CP4 Peternakan Nusantara Jaya mencakup berbagai faktor yang dapat mempengaruhi kesehatan hewan, keamanan produk, dan keberlanjutan operasional, termasuk risiko penyakit, fluktuasi pasar, dan perubahan regulasi.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Cek distribusi batch 1, ke mana aja?",
+        "category": "batch_trace",
+        "expected_output": "Distribusi batch 1 merujuk pada pengiriman atau penyaluran produk atau barang dalam kelompok pertama yang telah ditentukan, biasanya dilakukan setelah proses produksi atau persetujuan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Ada berapa jenis CP dalam supply chain peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "Jenis CP (Critical Point) dalam supply chain peternakan mencakup titik-titik kritis yang harus diperhatikan untuk memastikan kualitas dan keamanan produk peternakan, seperti pemeliharaan hewan, proses penyembelihan, dan penyimpanan produk.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Nama RPH di Bogor apa?",
+        "category": "operational_data",
+        "expected_output": "Nama-nama RPH yang ada di Bogor.",
+        "retrieval_context": []
+    },
+    {
+        "input": "cek risiko CP2 di RPH Halal Surabaya",
+        "category": "risk_check",
+        "expected_output": "Tingkat risiko di CP2 RPH Halal Surabaya mencakup analisis terhadap potensi bahaya yang dapat mempengaruhi keamanan dan kualitas produk halal yang dihasilkan.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa manfaat AHP dalam evaluasi risiko peternakan?",
+        "category": "knowledge_query",
+        "expected_output": "AHP (Analytic Hierarchy Process) memberikan manfaat dalam evaluasi risiko peternakan dengan membantu dalam pengambilan keputusan yang lebih terstruktur dan sistematis, serta memungkinkan penilaian berbagai faktor risiko secara komprehensif.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Sapi dengan eartag TAG-A004 asalnya dari mana?",
+        "category": "batch_trace",
+        "expected_output": "Sapi TAG-A004 berasal dari program pemuliaan ternak yang dilakukan di Indonesia, dengan tujuan meningkatkan kualitas genetik sapi lokal.",
+        "retrieval_context": []
+    },
+    {
+        "input": "Apa saja RPH yang ada di data kita?",
+        "category": "operational_data",
+        "expected_output": "Nama-nama RPH yang ada dalam data.",
+        "retrieval_context": []
+    }
+]

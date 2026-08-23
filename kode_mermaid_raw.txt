@@ -1,0 +1,308 @@
+=======================================================
+DIAGRAM 1 — Overall System Architecture
+=======================================================
+flowchart TD
+    USER["🧑‍💻 USER\n(Indonesian Chat\nInterface)"]
+
+    subgraph LAYER1["LAYER 1 — NLP LAYER (IndoBERT)"]
+        direction LR
+        TOK["WordPiece\nTokenizer"]
+        ENC["IndoBERT Encoder\n12 Transformer Layers\n110M Parameters"]
+        CLS["Classification Head\nLinear 768×6 + Softmax"]
+        THR{"Confidence\n≥ 0.7?"}
+    end
+
+    subgraph LAYER2["LAYER 2 — TOOL EXECUTION LAYER"]
+        direction LR
+        T1["🔍 search_knowledge_base\n(RAG + pgvector)"]
+        T2["⚖️ check_halal_risk\n(Fuzzy AHP + Rule-Based)"]
+        T3["📦 trace_halal_batch\n(DB Relational JOIN)"]
+        T4["📋 get_operational_data\n(Farm, Slaughterhouse, Personnel)"]
+        T5["💬 greeting\n(Direct Response)"]
+        T6["🚫 out_of_scope\n(Polite Rejection)"]
+    end
+
+    subgraph LAYER3["LAYER 3 — DSS LAYER (Fuzzy AHP + Rule-Based)"]
+        direction LR
+        AHP["Fuzzy AHP Engine\nCriteria Weighting\n(Level 1 & Level 2)"]
+        RBE["Rule-Based Engine\nIF-THEN Evaluation\nMAX Aggregation (Weakest-Link)"]
+        RISK["Risk Score &\nRisk Level\n(Low/Moderate/High/Critical)"]
+    end
+
+    DB[("🗄️ PostgreSQL\nDatabase\n(pgvector + prisma)")]
+    LLM["🤖 LLM Response\nGPT-4o-mini\n(Summarize Response)"]
+    FALLBACK["🔄 LLM Fallback\n(if Confidence < 0.7)"]
+
+    USER --> TOK
+    TOK --> ENC --> CLS --> THR
+    THR -->|"Yes (≥ 0.7)"| T1 & T2 & T3 & T4 & T5 & T6
+    THR -->|"No (< 0.7)"| FALLBACK
+    T2 --> AHP --> RBE --> RISK
+    RISK --> DB
+    T1 & T3 & T4 --> DB
+    DB --> LLM
+    FALLBACK --> LLM
+    LLM --> USER
+
+    style USER fill:#2C3E50,color:#fff
+    style LLM fill:#27AE60,color:#fff
+    style FALLBACK fill:#E67E22,color:#fff
+    style DB fill:#2980B9,color:#fff
+
+
+=======================================================
+DIAGRAM 2 — Flow Process IndoBERT Intent Classification
+=======================================================
+flowchart TD
+    A(["📝 Input\nIndonesian Sentence"])
+    B["🔤 WordPiece Tokenizer\nindobenchmark/indobert-base-p1\nmax_length = 128"]
+    C["📊 Token IDs\n+ Attention Mask"]
+    D["🧠 IndoBERT Encoder\n12 Transformer Layers\n110M Parameters\nBidirectional Attention"]
+    E["📐 CLS Token\nHidden State\n768-Dimensional Vector"]
+    F["🎯 Classification Head\nLinear Layer 768 × 6\n+ Softmax Activation"]
+    G{"Confidence\nScore ≥ 0.7?"}
+
+    subgraph INTENT["6 Intent Classes"]
+        I1["knowledge_query\n(Theory, Regulation, SOP)"]
+        I2["risk_check\n(AHP Weights, Risk Score)"]
+        I3["batch_trace\n(Track Batch / Eartag)"]
+        I4["operational_data\n(Farm, Slaughterhouse, Personnel)"]
+        I5["greeting\n(Greeting / Salutation)"]
+        I6["out_of_scope\n(Out of Scope)"]
+    end
+
+    FALLBACK["🔄 LLM Fallback\nGPT-4o-mini\n(Function Calling)"]
+    TOOL["⚙️ Tool Execution\n(Based on Intent)"]
+    RESPONSE(["✅ Structured Response\nto User"])
+
+    A --> B --> C --> D --> E --> F --> G
+    G -->|"Yes ✅"| INTENT
+    G -->|"No ❌"| FALLBACK
+    INTENT --> TOOL
+    FALLBACK --> TOOL
+    TOOL --> RESPONSE
+
+    style A fill:#2C3E50,color:#fff
+    style RESPONSE fill:#27AE60,color:#fff
+    style FALLBACK fill:#E67E22,color:#fff
+    style G fill:#8E44AD,color:#fff
+
+
+=======================================================
+DIAGRAM 3 — Flow Process Fuzzy AHP (Weighting)
+=======================================================
+flowchart TD
+    A(["📋 Expert Input\nPairwise Comparison Matrix\nSaaty Scale 1–9"])
+    B["🔢 Fuzzification\nConvert Crisp Values\nto TFN [l, m, u]"]
+    C["📊 TFN Matrix n×n\nEach cell contains\n[l, m, u]"]
+    D["➕ Calculate Row Sums\nRowSum_i = Σ TFN_ij\n= [Σl, Σm, Σu]"]
+    E["🔢 Calculate Total Sum\nTotalSum = Σ RowSum_i"]
+    F["🔄 Calculate Inverse Total\nInvTotal = [1/u, 1/m, 1/l]"]
+    G["📐 Fuzzy Synthetic Extent\nSi = RowSum_i ⊗ InvTotal"]
+    H["📉 Defuzzification CoA\nDi = (li + mi + ui) / 3"]
+    I["⚖️ Normalization\nWi = Di / ΣDi\n(so that ΣWi = 1)"]
+    J{"Consistency Ratio\nCR = CI / RI\nCR < 0.10?"}
+    K(["✅ Weights Accepted\n& Saved to DB"])
+    L["❌ CR ≥ 0.10\nRevise Expert Input"]
+
+    subgraph OUTPUT["Weight Output"]
+        O1["Level 1\nGlobal Weights CP1–CP9"]
+        O2["Level 2\nSub-Criteria Weights\nper CP"]
+    end
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J
+    J -->|"Yes ✅"| K
+    J -->|"No ❌"| L
+    L -->|"Revise"| A
+    K --> OUTPUT
+
+    style A fill:#2C3E50,color:#fff
+    style K fill:#27AE60,color:#fff
+    style L fill:#E74C3C,color:#fff
+    style J fill:#8E44AD,color:#fff
+
+
+=======================================================
+DIAGRAM 4 — Flow Process Rule-Based Risk Assessment
+=======================================================
+flowchart TD
+    A(["📝 Field Operator Input\nScore per Indicator (Scale 1–5)\nQuestionnaire 2 & 3"])
+
+    subgraph EVAL["Rule Evaluation per Indicator"]
+        E1["Indicator 1\n↓\nIF-THEN Rule\n→ Risk Level 1-5"]
+        E2["Indicator 2\n↓\nIF-THEN Rule\n→ Risk Level 1-5"]
+        EN["...\nIndicator N\n↓\nIF-THEN Rule\n→ Risk Level 1-5"]
+    end
+
+    AGG1["🔗 Level 1 Aggregation\nIndicator → Construct\nMAX(I1, I2, ..., In)\nWeakest-Link Principle"]
+    AGG2["🔗 Level 2 Aggregation\nConstruct → Stage (CP)\nMAX(all Constructs)"]
+    AGG3["🔗 Level 3 Aggregation\nStage → Overall\nMAX(CP1, CP2, ..., CP9)"]
+
+    subgraph CLASS["Final Risk Classification"]
+        C1["🟢 Score 0.00–0.25\nLow Risk"]
+        C2["🟡 Score 0.26–0.50\nModerate Risk"]
+        C3["🟠 Score 0.51–0.75\nHigh Risk"]
+        C4["🔴 Score 0.76–1.00\nCritical Risk"]
+    end
+
+    SAVE(["💾 Saved to Database\nHalalBatch + CriticalPointRecord\nriskLevel + totalRiskScore"])
+
+    A --> EVAL
+    EVAL --> AGG1 --> AGG2 --> AGG3 --> CLASS --> SAVE
+
+    style A fill:#2C3E50,color:#fff
+    style SAVE fill:#27AE60,color:#fff
+    style AGG1 fill:#2980B9,color:#fff
+    style AGG2 fill:#2980B9,color:#fff
+    style AGG3 fill:#2980B9,color:#fff
+
+
+=======================================================
+DIAGRAM 5 — Integration of 3 Components (3 Phases)
+=======================================================
+flowchart LR
+    subgraph F1["⚙️ PHASE 1: WEIGHTING\n(Offline — By Expert, Done Once)"]
+        direction TB
+        P1A["Expert fills\nQuestionnaire 1\nPairwise Comparison"]
+        P1B["Fuzzy AHP Engine\nCalculate Weights\nLevel 1 & Level 2"]
+        P1C{"CR < 0.10?"}
+        P1D["Weights Saved\nin Database\n(CriticalPoint +\nCriteriaWeight)"]
+        P1E["Revise Expert\nInput"]
+        P1A --> P1B --> P1C
+        P1C -->|"Yes ✅"| P1D
+        P1C -->|"No ❌"| P1E --> P1A
+    end
+
+    subgraph F2["📋 PHASE 2: RISK ASSESSMENT\n(Per Batch — By Field Operator)"]
+        direction TB
+        P2A["Operator fills\nQuestionnaire 2 & 3\nActual Condition per CP"]
+        P2B["Rule-Based Engine\nEvaluate IF-THEN\nper Indicator"]
+        P2C["MAX Aggregation\nWeakest-Link\nper CP → Overall"]
+        P2D["Risk Score &\nRisk Level\nin Database"]
+        P2A --> P2B --> P2C --> P2D
+    end
+
+    subgraph F3["💬 PHASE 3: CHATBOT QUERY\n(Real-time — By User)"]
+        direction TB
+        P3A["User asks\nvia Chat Interface"]
+        P3B["IndoBERT\nIntent Classification"]
+        P3C["Tool Execution\n(RAG / Risk / Trace)"]
+        P3D["LLM summarizes\nStructured Answer"]
+        P3A --> P3B --> P3C --> P3D
+    end
+
+    P1D -->|"Weights used"| P2B
+    P2D -->|"Data used"| P3C
+
+    style F1 fill:#EBF5FB
+    style F2 fill:#EAFAF1
+    style F3 fill:#FDF2E9
+
+
+=======================================================
+DIAGRAM 6 — Fuzzy AHP Weight Hierarchy (Tree)
+=======================================================
+flowchart TD
+    ROOT["🏆 GOAL\nHalal Risk Assessment\nIntegrated Supply Chain"]
+
+    subgraph L1["LEVEL 1 — Between Critical Points"]
+        CP1["CP1\nFarm/Cattle\nPen"]
+        CP2["CP2\nFeed &\nHealth"]
+        CP3["CP3\nTransportation"]
+        CP4["CP4\nSlaughterhouse ⭐"]
+        CP5["CP5\nPost-Slaughter"]
+        CP6["CP6\nProcessing"]
+        CP7["CP7\nCold Storage"]
+        CP8["CP8\nDistribution"]
+        CP9["CP9\nRetail"]
+    end
+
+    subgraph L2A["LEVEL 2 — Sub-Criteria CP1 (7)"]
+        F1["F1 Origin"] 
+        F2["F2 Health"]
+        F3["F3 Feed"]
+        F4["F4 Medicine/Vaccine"]
+        F5["F5 Maint. Docs"]
+        F6["F6 Cleanliness"]
+        F7["F7 Slaughter Readiness"]
+    end
+
+    subgraph L2D["LEVEL 2 — Sub-Criteria CP4 (10 — LARGEST)"]
+        R1["R1 Halal Certificate"]
+        R2["R2 Slaughterer Competence"]
+        R3["R3 Sharia Process"]
+        R4["R4 AM/PM Inspection"]
+        R5["R5 Sanitation"]
+        R6["R6 Halal Separation"]
+        R7["R7 Documentation"]
+        R8["R8 Internal Supervision"]
+        R9["R9 Audit & CAPA"]
+        R10["R10 Batch Traceability"]
+    end
+
+    NOTE["... CP2 (5 sub),\nCP3 (5 sub), CP5 (5 sub),\nCP6 (7 sub), CP7 (7 sub),\nCP8 (7 sub), CP9 (7 sub)\nTotal: 60 Sub-Criteria"]
+
+    ROOT --> CP1 & CP2 & CP3 & CP4 & CP5 & CP6 & CP7 & CP8 & CP9
+    CP1 --> L2A
+    CP4 --> L2D
+    CP2 & CP3 & CP5 & CP6 & CP7 & CP8 & CP9 --> NOTE
+
+    style ROOT fill:#2C3E50,color:#fff
+    style CP4 fill:#E74C3C,color:#fff
+    style CP1 fill:#2980B9,color:#fff
+
+
+=======================================================
+DIAGRAM 7 — System Testing Flow
+=======================================================
+flowchart TD
+    START(["🚀 Start Testing\nKMS-DSS System"])
+
+    subgraph UT["UNIT TEST (Vitest)\nBasic Math Functions"]
+        UT1["✅ getReciprocal\nInverse TFN"]
+        UT2["✅ sumTFNs\nTFN Addition"]
+        UT3["✅ defuzzify\nCenter of Area"]
+        UT4["✅ normalizeWeights\nWeight Normalization"]
+        UT5["✅ getRiskLevel\nRisk Classification"]
+        UT6["✅ calculateCR\nConsistency Ratio"]
+    end
+
+    subgraph CT["CONSISTENCY TEST\nFuzzy AHP — Saaty (1990)"]
+        CT1["11 Pairwise\nComparison Matrices"]
+        CT2["Calculate CR = CI / RI\nfor each matrix"]
+        CT3["✅ All CR < 0.10\nAll CONSISTENT"]
+    end
+
+    subgraph MLT["MODEL TEST\nIndoBERT — Held-out Test Set"]
+        ML1["180 test data\n(unseen during training)"]
+        ML2["Calculate Precision,\nRecall, F1-Score\nper Intent"]
+        ML3["✅ Accuracy = 91%\nF1 Macro = 0.90"]
+    end
+
+    subgraph RBT["SCENARIO TEST\nRule-Based Engine"]
+        RB1["5 Test Scenarios\n(Low, Weakest-Link,\nCritical, Mixed, Pad)"]
+        RB2["Check MAX Aggregation\nWeakest-Link Principle"]
+        RB3["✅ 5/5 PASS"]
+    end
+
+    subgraph E2E["E2E TEST (Playwright)\nDashboard Integration"]
+        E1["3 Dashboard\nTest Cases"]
+        E2["Load, Filter,\nSearch"]
+        E3["✅ 3/3 PASS"]
+    end
+
+    REPORT(["📊 Testing Report\n✅ All Tests PASS\nSystem Ready to Use"])
+
+    START --> UT & CT & MLT & RBT & E2E
+    UT --> REPORT
+    CT --> REPORT
+    MLT --> REPORT
+    RBT --> REPORT
+    E2E --> REPORT
+
+    style START fill:#2C3E50,color:#fff
+    style REPORT fill:#27AE60,color:#fff
+    style CT3 fill:#27AE60,color:#fff
+    style ML3 fill:#27AE60,color:#fff
+    style RB3 fill:#27AE60,color:#fff
+    style E3 fill:#27AE60,color:#fff

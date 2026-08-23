@@ -1,0 +1,1647 @@
+text,label
+"hei salam",greeting
+"history perpindahan batch gmna ya",batch_trace
+"yng paling urgent diperbaiki apaan min",risk_check
+"modal ternak sapi brp!",out_of_scope
+"KAK REKAP DATA BULANAN DONG!",operational_data
+"daging sapi palsu cirinya apa?",out_of_scope
+"eh apa itu fatwa halal min",knowledge_query
+"nanya dong dong mui itu organisasi apa?",knowledge_query
+"permisi oh gitu ya",greeting
+"jelasin verifikasi sjh min",knowledge_query
+"pdf laporan bulanan ada?",operational_data
+"MIN BAGUS MIN",greeting
+"kasih data produksi",operational_data
+"cara belajar dong programming",out_of_scope
+"sorry helo",greeting
+"nomor batch brapa?",batch_trace
+"apaan tu self declare halal ya",knowledge_query
+"nanya dong risk trend bulan ini naik atau turun?",risk_check
+"modal ternak sapi brp gak",out_of_scope
+"SALAM KENAL GAK",greeting
+"kak bye",greeting
+"cara mining bitcoin",out_of_scope
+"permisi nih jelaskan tentang sihalal",knowledge_query
+"tolong kah minta bantuan",greeting
+"tolong fasilitas pemotongan lolos standar gak ya",risk_check
+"proses pemotongan sesuai standar ya",risk_check
+"risk velocity masing-masing risiko gimana?",risk_check
+"permisi mengerti",greeting
+"kak sesuai sop deh keamanan gak?",risk_check
+"sorry kapan terakhir batch nih dicek ya",batch_trace
+"pemilik ternak asal siapa?",batch_trace
+"PERFORMANCE RPH GMNA?",operational_data
+"MIN DIKIRIM KE OUTLET MANA?",batch_trace
+"sorry yo",greeting
+"catatan pengiriman batch ini ada!",batch_trace
+"modal ternak sapi berapa?",out_of_scope
+"ada warning dari sistem risiko sih",risk_check
+"eh contingency plan sudah siap?",risk_check
+"sorry cek riwayat batch b-099?",batch_trace
+"sorry ping",greeting
+"lacak hp hilang gak",out_of_scope
+"permisi shelf life batch ini berapa hari lagi?",batch_trace
+"budget min bulanan berapa thanks",operational_data
+"kah cara cairkan daging beku??",out_of_scope
+"PENCAPAIAN TARGET BERAPA PERSEN?",operational_data
+"permisi mantap mas please",greeting
+"kode batch ni apa min",batch_trace
+"hei testing thanks",greeting
+"ante mortem sapi ini gimana?",batch_trace
+"minggu lalu brapa batch?",operational_data
+"prosesnya sudah sampai tahap mana?",batch_trace
+"prioritas perbaikan risiko yang mana?",risk_check
+"btw minta laporan mingguan",operational_data
+"sapi kurban terbaik apa?",out_of_scope
+"lacak paket shopee",out_of_scope
+"admin kak",greeting
+"sertifikat halal rph pemotong ada?",batch_trace
+"tolong history perpindahan batch gimana!",batch_trace
+"apa itu ya fatwa halal thanks",knowledge_query
+"nomor resi pengiriman berapa?",batch_trace
+"apaan itu ccp please",knowledge_query
+"eartag fungsinya buat apa?",knowledge_query
+"tolong uji mikrobiologi batch ini hasilnya?",batch_trace
+"eh record perjalanan batch gimana?",batch_trace
+"data statistik penduduk",out_of_scope
+"outlet mana yang sudah terima?",batch_trace
+"btw catatan pengiriman batch nih ada",batch_trace
+"tampilkan info sapi e-001",batch_trace
+"bobot ahp tu maksudnya gmn please",knowledge_query
+"kah admin",greeting
+"mau tanya bs bantu?",greeting
+"ada emerging risk baru gak?",risk_check
+"catatan pengiriman batch ini ada dong",batch_trace
+"wassalam ya",greeting
+"hari ini sudah berapa?",operational_data
+"lowongan kerja di rph ada?",out_of_scope
+"sih update data terbaru dong",operational_data
+"btw apa tuh halal value chain?",knowledge_query
+"list karyawan dong",operational_data
+"ada brp batch hari nih",operational_data
+"permisi test",greeting
+"eh ap tuh ai?",out_of_scope
+"oh gitu",greeting
+"min lihatkan laporan dong",operational_data
+"nanya dong nice",greeting
+"TRACKING JNE RESI NI",out_of_scope
+"oke noted",greeting
+"cek riwayat batch b-099",batch_trace
+"hei near miss incident ada gak?",risk_check
+"detail batch nih apaan aja?",batch_trace
+"ada residu antibiotik di batch nih min",batch_trace
+"bang min jelasin hazard analysis halal thanks",knowledge_query
+"RISK VELOCITY MASING-MASING RISIKO GIMANA MIN",risk_check
+"ada issue keamanan gak",risk_check
+"HEI CEK RIWAYAT BATCH B-099",batch_trace
+"kak promo cashback hari ini",out_of_scope
+"jelasin verifikasi sjh dong",knowledge_query
+"AP TU MBA CONSISTENCY RATIO?",knowledge_query
+"nanya dong admin",greeting
+"PERBANDINGAN BULAN INI DAN LALU THANKS",operational_data
+"risk trend bulan nih naik atau turun?",risk_check
+"permisi!",greeting
+"sorry catatan pengiriman batch ni ada?",batch_trace
+"KAK RISK APPETITE PERUSAHAAN BRP?",risk_check
+"hei apa hukum gelatin dalam islam?",knowledge_query
+"maaf hallo sih",greeting
+"MIN MIN ADA FILE LAPORANNYA GAK?",operational_data
+"min tips beli sapi yang sehat??",out_of_scope
+"apa hukum mba gelatin dalam islam",knowledge_query
+"jlasin proses samak kah thanks",knowledge_query
+"lppom itu apa?",knowledge_query
+"berapa total risk deh exposure?",risk_check
+"mau tanya stunning tu apa?",knowledge_query
+"maaf apakah mitigasi risiko sdh efektif!",risk_check
+"history perpindahan batch gimana?",batch_trace
+"kode batch ini ap?",batch_trace
+"nomor batch berapa?",batch_trace
+"apaan itu letter of guarantee?",knowledge_query
+"berapa residual risk setelah mitigasi kak",risk_check
+"asalnya dr farm mana sih sih",batch_trace
+"corrective action completion rate berapa?",risk_check
+"ada masalah keamanan gak min",risk_check
+"salam kenal",greeting
+"follow up temuan min sudah?",risk_check
+"hei record perjalanan batch gmna?",batch_trace
+"apaan bedanya farm dan rph??",knowledge_query
+"tolong risk trend bulan ni naik atau turun?",risk_check
+"mau tanya kualitas batch ini masih bagus?",risk_check
+"apa itu cerol?",knowledge_query
+"sampai jumpa nih dong",greeting
+"dikirim ke outlet mana min",batch_trace
+"ada issue keamanan gak?",risk_check
+"min risk velocity masing-masing risiko gmna thanks",risk_check
+"BTW RISK VELOCITY MASING-MASING RISIKO GMN THANKS",risk_check
+"apa itu halal value chain dong",knowledge_query
+"ante mortem sapi ini gimana sih",batch_trace
+"catatan pengiriman batch ini ada?",batch_trace
+"root cause analysis sudah dilakukan?",risk_check
+"mau tanya early warning system dong aktif gak?",risk_check
+"nanya dong tahun lalu produksi berapa?",operational_data
+"izin potong batch b-001 ada thanks",batch_trace
+"PERMISI BERAPA GAJI KERJA DI RPH?",out_of_scope
+"bank digital terbaik",out_of_scope
+"apa tuh fatwa halal kak",knowledge_query
+"mau tanya root cause analysis udh dilakukan",risk_check
+"masih mba aktif?",greeting
+"summary produksi ya dong",operational_data
+"sorry cara bedakan daging sapi dan babi",out_of_scope
+"batch ini pernah di-recall gak?",batch_trace
+"maaf tracking jne resi ini",out_of_scope
+"eh data inflasi indonesia",out_of_scope
+"btw pemilik ternak asal siapa",batch_trace
+"performance rph gmna?",operational_data
+"apaan tuh risk assessment halal?",knowledge_query
+"yo",greeting
+"permisi apa itu machine learning",out_of_scope
+"ap itu ai?",out_of_scope
+"nanya dong eartag sapi ini nomor brapa?",batch_trace
+"jelaskan proses samak",knowledge_query
+"kpan terakhir batch nih dicek??",batch_trace
+"hei brapa residual risk setelah mitigasi?",risk_check
+"BS KIRIM VIA EMAIL GAK?",operational_data
+"mau tanya sampai jumpa gak",greeting
+"iya paham min kak",greeting
+"APA ITU SELF DECLARE HALAL?",knowledge_query
+"cara kak ternak sapi",out_of_scope
+"hei harga sapi kurban tahun nih min",out_of_scope
+"eh ada issue keamanan gak?",risk_check
+"kak rekomendasi perbaikan keamanan ap?",risk_check
+"nanya dong datangnya kapan batch ini?",batch_trace
+"kasih data produksi thanks",operational_data
+"kah sorry info lengkap batch b-002 dong",batch_trace
+"btw summary produksi deh dong",operational_data
+"shelf life batch ini berapa hari lagi?",batch_trace
+"min oh gitu",greeting
+"btw apa itu corrective action!",knowledge_query
+"KAK HEI APA ITU ISTIHALAH?",knowledge_query
+"asal usulnya dr mana ya",batch_trace
+"ap tu ai?",out_of_scope
+"catatan pengiriman batch ini ada ya",batch_trace
+"SALAM KENAL",greeting
+"apa tuh ai dong",out_of_scope
+"DAGING INI LAYAK MAS KONSUMSI GAK",risk_check
+"kondisi keamanan pangan gimana",risk_check
+"detail batch ini apa aja?",batch_trace
+"LEWAT JALUR MANA PENGIRIMANNYA??",batch_trace
+"MAAF ADA FILE LAPORANNYA GAK?",operational_data
+"kah bsa bantu",greeting
+"jelaskan perbedaan hcp dan ccp",knowledge_query
+"apa itu risk assessment halal?",knowledge_query
+"mau tanya data terkini apaan aja?",operational_data
+"cara melamar kerja di rph ya",out_of_scope
+"jelaskan verifikasi sjh",knowledge_query
+"rekap data bulanan deh dong",operational_data
+"permisi summary produksi dong",operational_data
+"permisi daging tahan brapa lama di freezer?",out_of_scope
+"mas min manajemen risiko konstruksi kak",out_of_scope
+"mau tanya minggu lalu berapa batch?",operational_data
+"maaf produktivitas karyawan gmn?",operational_data
+"efisiensi produksi berapa?",operational_data
+"nih pencapaian target brapa persen sih",operational_data
+"risiko main forex",out_of_scope
+"brapa gap antara actual risk dan target?",risk_check
+"maaf spa yng terima di gudang?",batch_trace
+"permisi penyakit nih sapi apa aja kak",out_of_scope
+"cara bikin website",out_of_scope
+"tahun lalu produksi berapa!",operational_data
+"min bot dikirim ke outlet mana sih",batch_trace
+"sorry cara belajar programming sih",out_of_scope
+"maaf update data terbaru dong",operational_data
+"min ap tu risk assessment halal thanks",knowledge_query
+"sorry jelasin verifikasi sjh!",knowledge_query
+"profit margin brp?",operational_data
+"maaf risiko investasi properti sih",out_of_scope
+"btw oke noted",greeting
+"hei pengeluaran rph brp please",operational_data
+"siapa yang terima di gudang?",batch_trace
+"AP TUH ISTIHALAH?",knowledge_query
+"PERBANDINGAN BULAN NIH DAN LALU",operational_data
+"batch tuh artinya apaan kak",knowledge_query
+"sertifikat halal rph pemotong ada dong",batch_trace
+"sih nanya dong jelasin tentang sihalal gak",knowledge_query
+"cara melamar kerja di rph",out_of_scope
+"oke nih siap",greeting
+"tren produksi min gimana?",operational_data
+"probability of occurrence berapa",risk_check
+"apa maksudnya skor risiko thanks",knowledge_query
+"permisi masalah keamanan apa yang ditemukan?",risk_check
+"jelaskan positive list bahan kak halal please",knowledge_query
+"sampai jumpa??",greeting
+"hari ini sudah berapa kak",operational_data
+"ada warning dri sistem risiko?",risk_check
+"DEH KAPAN TERAKHIR BATCH NI DICEK?",batch_trace
+"record perjalanan batch gmn?",batch_trace
+"cek pengiriman tokopedia",out_of_scope
+"tracking jne resi ini",out_of_scope
+"CATATAN PENGIRIMAN BATCH INI ADA DONG",batch_trace
+"sorry daging tahan brp lama di freezer?",out_of_scope
+"btw pdf laporan bulanan ada?",operational_data
+"nih brp residual risk setelah mitigasi sih",risk_check
+"nanya dong print data rph min",operational_data
+"modal ternak sapi brp dong",out_of_scope
+"permisi early warning system aktif gak min",risk_check
+"BTW PAHAM",greeting
+"mau tanya data terkini ap aja",operational_data
+"eh ya cara belajar programming",out_of_scope
+"mau tanya admin",greeting
+"MIN STANDAR KEAMANAN TERPENUHI GAK DONG",risk_check
+"cara bikin cv",out_of_scope
+"apa hukum gelatin dalam islam?",knowledge_query
+"halo mau kah tanya",greeting
+"mau tanya siapa saja yang bertugas!",operational_data
+"mau tanya lewat jalur mana pengirimannya?",batch_trace
+"kpn terakhir batch nih dicek?",batch_trace
+"btw dikirim dong ke outlet mana?",batch_trace
+"hallo",greeting
+"tips wawancara kerja",out_of_scope
+"data covid terbaru",out_of_scope
+"nanya dong tampilkan info sapi e-001",batch_trace
+"eh jelasin hazard analysis halal",knowledge_query
+"sorry profit margin brapa",operational_data
+"maaf masih aktif?",greeting
+"hei ada berapa batch hari ini?",operational_data
+"mba risk velocity masing-masing risiko gmn?",risk_check
+"eh jelaskan verifikasi sjh",knowledge_query
+"sampai jumpa kak",greeting
+"aturan alkohol dalam produk halal gmn!",knowledge_query
+"skkh batch ni nomor sih berapa ya",batch_trace
+"summary produksi dong dong",operational_data
+"REKOMENDASI PERBAIKAN BOT KEAMANAN APA MIN",risk_check
+"permisi bank digital terbaik dong",out_of_scope
+"min cara dapat followers",out_of_scope
+"eh masalah keamanan ap yg ditemukan?",risk_check
+"mau tanya risiko main forex",out_of_scope
+"SHELF LIFE BATCH INI BERAPA HARI LAGI?",batch_trace
+"permisi ada update regulasi yng affect risk",risk_check
+"maaf biaya operasional berapa?",operational_data
+"data pengiriman batch ini ada gak ya",batch_trace
+"apa maksudnya skor mas risiko?",knowledge_query
+"PRIORITAS PERBAIKAN RISIKO YANG BANG MANA?",risk_check
+"tolong info lengkap batch b-002 dong",batch_trace
+"prosesnya sudah sampai tahap mana please",batch_trace
+"eh daging tahan berapa lama di freezer?",out_of_scope
+"btw masih aktif min",greeting
+"contingency plan sdh siap?",risk_check
+"kak oke noted?",greeting
+"apaan tuh blockchain please",out_of_scope
+"rph terdekat dari rumah mba dimana dong",out_of_scope
+"maaf bot cara obati sapi sakit",out_of_scope
+"min bot aktif?",greeting
+"min cara dapat nih followers please",out_of_scope
+"KAK RISK APPETITE PERUSAHAAN BRAPA?",risk_check
+"near miss incident ada bot gak",risk_check
+"MAAF NEAR MISS MIN INCIDENT ADA GAK?",risk_check
+"apa peran bpjph?",knowledge_query
+"eh aturan alkohol dalam produk halal gmna?",knowledge_query
+"id sapi ini apa?",batch_trace
+"sorry ap tu cerol?",knowledge_query
+"JELASKAN TENTANG NKV",knowledge_query
+"jelaskan hazard analysis halal",knowledge_query
+"cek riwayat batch dong b-099",batch_trace
+"hei bobot ahp ya itu maksudnya gimana??",knowledge_query
+"bisa bantu",greeting
+"APA MAS ITU RISK ASSESSMENT HALAL SIH",knowledge_query
+"btw id sapi nih ap",batch_trace
+"batch itu artinya apa?",knowledge_query
+"min sapi kurban terbaik apaan?",out_of_scope
+"asal usulnya dari mana?",batch_trace
+"deh stunning tu apa?",knowledge_query
+"mau tanya semua titik kritis aman min",risk_check
+"ADA WARNING DRI SISTEM RISIKO THANKS",risk_check
+"NANYA DONG PDF LAPORAN BULANAN ADA?",operational_data
+"apakah mitigasi risiko sudah sih efektif??",risk_check
+"perbandingan bulan ini dan lalu gak",operational_data
+"MAU TANYA BYE!",greeting
+"cara cairkan daging beku?",out_of_scope
+"kpi operasional gimana gak",operational_data
+"cp1 itu apa?",knowledge_query
+"nanya dong ante mortem sapi nih gimana",batch_trace
+"MAU TANYA BUDGET BULANAN BERAPA??",operational_data
+"tolong apakah mitigasi risiko sudah efektif?",risk_check
+"minta laporan mingguan gak",operational_data
+"nanya dong log pergerakan batch ada?",batch_trace
+"KAH OKE SIAP",greeting
+"kenapa daging sapi mahal thanks",out_of_scope
+"gak bs bantu?",greeting
+"ada file laporannya gak thanks",operational_data
+"berapa kak gap antara actual risk dan target?",risk_check
+"follow up temuan sudah?",risk_check
+"min cara bikin cv",out_of_scope
+"tolong bisa deh bantu?",greeting
+"hallo!",greeting
+"permisi daging tahan berapa lama di freezer?",out_of_scope
+"kak bisa bantu??",greeting
+"cara bedakan daging sapi dan babi",out_of_scope
+"tolong kpi operasional gimana?",operational_data
+"biaya operasional berapa",operational_data
+"nanya dong wow",greeting
+"maaf kasih liat info sapi e-001",batch_trace
+"TOLONG HELO",greeting
+"good dong",greeting
+"kak hallo",greeting
+"siapa yang cek terakhir kali sih",batch_trace
+"root cause analysis sudah bot dilakukan sih",risk_check
+"mau tanya data terkini apa aja?",operational_data
+"apa arti dari traceability bot kak",knowledge_query
+"BOLEH TANYA",greeting
+"sorry cara menabung efektif",out_of_scope
+"bulan kak lalu pengiriman berapa please",operational_data
+"gimana cara cek kehalalan bahan baku?",knowledge_query
+"sorry minta bantuan?",greeting
+"btw complaint untuk batch nih mba ada",batch_trace
+"promo cashback hari sih ini",out_of_scope
+"btw bang cara ternak sapi ya",out_of_scope
+"nanya dong cara cairkan daging beku",out_of_scope
+"boleh tanya please",greeting
+"cara bedakan daging sapi dan babi!",out_of_scope
+"mau tanya konsistensi nih ahp itu apa",knowledge_query
+"sorry boleh tanya?",greeting
+"oke deh",greeting
+"data statistik penduduk thanks",out_of_scope
+"EXPORT DATA KE EXCEL DONG",operational_data
+"HALO ADA GAK ORANG?",greeting
+"produktivitas karyawan mas gmn?",operational_data
+"dadah",greeting
+"apaan itu self declare halal?",knowledge_query
+"mau tanya produktivitas karyawan gimana please",operational_data
+"lppom tu apaan",knowledge_query
+"tampilkan info sapi mas e-001 gak",batch_trace
+"probability of occurrence berapa?",risk_check
+"apa arti dari traceability?",knowledge_query
+"ADMIN DONG",greeting
+"biaya operasional berapa please",operational_data
+"min modal nih ternak sapi brapa please",out_of_scope
+"prosesnya sudah sampai tahap mana gak",batch_trace
+"perlu perbaikan keamanan gak?",risk_check
+"jelaskan hazard analysis bang halal",knowledge_query
+"eartag nih fungsinya buat apa kak",knowledge_query
+"sorry promo cashback hari nih",out_of_scope
+"AP ITU LETTER OF GUARANTEE?",knowledge_query
+"bulan lalu pengiriman berapa?",operational_data
+"TOLONG PROMO CASHBACK HARI INI",out_of_scope
+"btw jelaskan tentang sihalal",knowledge_query
+"BTW STRESS TESTING YA HASILNYA GIMANA THANKS",risk_check
+"kah apaan tuh istihalah?",knowledge_query
+"record perjalanan batch gmna gak",batch_trace
+"mau tanya nomor batch berapa?",batch_trace
+"jelasin proses samak",knowledge_query
+"sorry ada residu antibiotik di batch nih?",batch_trace
+"apa itu halal value chain please",knowledge_query
+"mui itu organisasi apa?",knowledge_query
+"mau tanya apa itu ai?",out_of_scope
+"CARA BEDAKAN DAGING SAPI DAN BABI",out_of_scope
+"maaf daging tahan brapa lama di freezer?",out_of_scope
+"near miss incident ada gak thanks",risk_check
+"batch ini min pernah di-recall gak sih",batch_trace
+"tampilin semua data min",operational_data
+"brapa gaji kerja di rph please",out_of_scope
+"bot nomor resi pengiriman brp",batch_trace
+"halo mau tanya ya",greeting
+"tolong daging ni layak konsumsi gak?",risk_check
+"permisi wassalam min",greeting
+"min proses pemotongan sesuai standar??",risk_check
+"mau tanya ada file laporannya gak?",operational_data
+"eh history perpindahan batch gimana?",batch_trace
+"maaf daftar petugas dong",operational_data
+"apaan tu letter of guarantee dong",knowledge_query
+"skkh batch ini nomor berapa?",batch_trace
+"maaf paham",greeting
+"pencapaian target brp persen?",operational_data
+"list karyawan mba dong!",operational_data
+"SIAPA YANG CEK KAK TERAKHIR KALI",batch_trace
+"kak nih cek pengiriman tokopedia",out_of_scope
+"sorry gimana cara cek kehalalan bahan baku??",knowledge_query
+"jelaskan hazard deh analysis halal",knowledge_query
+"KIRIM DATA OPERASIONAL",operational_data
+"sorry performance rph gimana?",operational_data
+"permisi update data terbaru dong",operational_data
+"eartag fungsinya buat ap?",knowledge_query
+"root sih cause analysis udah dilakukan??",risk_check
+"CARA CAIRKAN DAGING BEKU",out_of_scope
+"HEI PERBANDINGAN BULAN INI DAN LALU",operational_data
+"MBA PING??",greeting
+"YA SORRY JELASKAN PERBEDAAN HCP DAN CCP",knowledge_query
+"tahun lalu produksi berapa please",operational_data
+"tolong near miss incident ada gak dong",risk_check
+"maaf bang siapa saja yang bertugas?",operational_data
+"tips beli sapi yng sehat",out_of_scope
+"apa syarat juru sembelih halal?",knowledge_query
+"boleh tanya min",greeting
+"eh permisi ya",greeting
+"DONG PAHAM",greeting
+"maaf salam kenal",greeting
+"eh pencapaian gak target berapa persen ya",operational_data
+"mengerti gak",greeting
+"woi",greeting
+"BATCH ITU ARTINYA APAAN THANKS",knowledge_query
+"tolong log pergerakan batch ada?",batch_trace
+"eh salam kenal",greeting
+"min uji mikrobiologi batch ini hasilnya gak",batch_trace
+"ap tu corrective action?",knowledge_query
+"permisi produktivitas karyawan gimana min",operational_data
+"HEI EARTAG SAPI INI NOMOR BRAPA?",batch_trace
+"ada warning dari sistem risiko?",risk_check
+"kode voucher gratis ongkir ya",out_of_scope
+"tolong oh gitu",greeting
+"tolong budget bulanan berapa",operational_data
+"excel data produksi ada?",operational_data
+"bobot ahp itu maksudnya gimana?",knowledge_query
+"nanya dong gak test",greeting
+"permisi outlet mana yang sudah terima ya",batch_trace
+"ping",greeting
+"ada file laporannya gak?",operational_data
+"brp sih residual risk setelah mitigasi?",risk_check
+"min hy mba thanks",greeting
+"nanya dong proses pemotongan sesuai standar kah dong",risk_check
+"tolong ada brp batch hari nih",operational_data
+"btw min",greeting
+"apaan tuh istihalah?",knowledge_query
+"efisiensi produksi berapa sih",operational_data
+"tampilkan info sapi e-001!",batch_trace
+"eh chart pengiriman dong",operational_data
+"MAU TANYA DONG BOT AKTIF?",greeting
+"helo ya",greeting
+"ya cara bikin website!",out_of_scope
+"sih jlasin perbedaan hcp dan ccp",knowledge_query
+"eh minggu lalu berapa batch?",operational_data
+"perbandingan bulan ini dan lalu",operational_data
+"admin",greeting
+"hei ada brapa batch hari ni kak",operational_data
+"mau tanya cara menabung efektif",out_of_scope
+"min met pagi",greeting
+"JLASIN TENTANG NKV DONG",knowledge_query
+"apa fungsi cold chain?",knowledge_query
+"apaan tu cerol?",knowledge_query
+"berapa residual risk setelah mitigasi?",risk_check
+"lihat jejak perjalanan batch ini",batch_trace
+"apa itu surveillance audit ya",knowledge_query
+"kode voucher gratis kak ongkir!",out_of_scope
+"jelaskan positive list bahan halal thanks",knowledge_query
+"pemilik ternak asal spa sih",batch_trace
+"min rekap data min bulanan dong",operational_data
+"kak complaint utk batch ni ada ya",batch_trace
+"good nih min",greeting
+"perjalanan batch nih gimana?",batch_trace
+"update data terbaru dong",operational_data
+"btw tren produksi gimana",operational_data
+"mba near miss incident ada gak please",risk_check
+"maaf bulan lalu pengiriman min berapa?",operational_data
+"kak apa itu machine learning?",out_of_scope
+"min penyakit sapi apa aja?",out_of_scope
+"nomor batch brp?",batch_trace
+"jlasin tentang sihalal",knowledge_query
+"iya mba paham",greeting
+"btw surat jalan batch ini ada?",batch_trace
+"sorry tampilkan info sapi e-001 dong",batch_trace
+"cara bedakan daging sapi dan babi gak",out_of_scope
+"BTW DOKUMEN BATCH INI LENGKAP?",batch_trace
+"rph terdekat dari rumah dimana ya",out_of_scope
+"JELASKAN PROSES SAMAK",knowledge_query
+"masalah keamanan apa yng ditemukan?",risk_check
+"info lengkap batch b-002 dong",batch_trace
+"pdf laporan bulanan ada dong",operational_data
+"apa itu istihalah sih",knowledge_query
+"alamat farm asal sapi ini dimana?",batch_trace
+"hei daging ini layak konsumsi gak?",risk_check
+"nanya dong helo",greeting
+"keren!",greeting
+"sapi kurban terbaik apa please",out_of_scope
+"hei tahun min lalu produksi brp thanks",operational_data
+"daging tahan berapa lama di freezer min",out_of_scope
+"nanya dong fasilitas pemotongan lolos standar gak?",risk_check
+"nih ringkasan operasional mingguan!",operational_data
+"grafik mas produksi ada!",operational_data
+"btw ringkasan sih operasional mingguan",operational_data
+"maaf ap syarat juru sembelih halal!",knowledge_query
+"bang yo?",greeting
+"min dikirim ke dong outlet mana?",batch_trace
+"maaf grafik produksi ada",operational_data
+"nih kak permisi",greeting
+"tolong apa tu istihalah?",knowledge_query
+"cara menabung deh efektif min",out_of_scope
+"btw nomor resi pengiriman berapa thanks",batch_trace
+"sesuai sop keamanan gak?",risk_check
+"min bang please",greeting
+"btw berapa total risk exposure thanks",risk_check
+"sorry sampai jumpa ya",greeting
+"id sapi nih apa?",batch_trace
+"shelf life batch ini kah berapa hari lagi kak",batch_trace
+"hei kirim data operasional",operational_data
+"ringkasan operasional mingguan",operational_data
+"nanya dong biaya operasional berapa?",operational_data
+"pengeluaran rph brp?",operational_data
+"ya kak keren?",greeting
+"nih nanya dong oke deh",greeting
+"MBA REKAP DATA BULANAN DONG",operational_data
+"PERMISI JELASKAN VERIFIKASI SJH",knowledge_query
+"lowongan kerja di rph ada sih",out_of_scope
+"maaf jlasin positive bot list bahan halal??",knowledge_query
+"tolong bank digital terbaik",out_of_scope
+"jelaskan verifikasi sjh please",knowledge_query
+"ap hukum gelatin dalam islam min",knowledge_query
+"hei hari nih udah brp?",operational_data
+"bot dikirim ke outlet mana?",batch_trace
+"efisiensi produksi brp",operational_data
+"risiko investasi properti??",out_of_scope
+"lihatkan laporan dong",operational_data
+"nanya dong masalah keamanan apa yng ditemukan kak",risk_check
+"apa tuh dong uu jph?",knowledge_query
+"stunning tu apa min",knowledge_query
+"budget bulanan brp?",operational_data
+"apa itu istihalah?",knowledge_query
+"kapan terakhir batch ini dicek?",batch_trace
+"hei yo gak",greeting
+"HEI MIN",greeting
+"kak tampilin semua data",operational_data
+"cara bedakan daging sapi dan babi kak",out_of_scope
+"kak penyakit sapi ap aja?",out_of_scope
+"ada emerging risk baru gak thanks",risk_check
+"kak rph min itu apa sih sih",knowledge_query
+"NANYA DONG NEAR MISS INCIDENT ADA SIH GAK?",risk_check
+"maaf cara belajar programming gak",out_of_scope
+"root cause analysis sdh dilakukan",risk_check
+"mas kak manajemen risiko konstruksi dong",out_of_scope
+"apa yang dimaksud titik kritis kak",knowledge_query
+"kualitas batch ini masih bagus?",risk_check
+"mas perjalanan batch ini gmna?",batch_trace
+"follow up temuan dong sudah!",risk_check
+"stress testing hasilnya gmn",risk_check
+"minggu lalu berapa batch",operational_data
+"kak risk trend bulan ini naik atau turun kak",risk_check
+"sampai jumpa",greeting
+"kak cara dapat followers",out_of_scope
+"tahun lalu produksi berapa?",operational_data
+"min halo ada orang?",greeting
+"HISTORY PERPINDAHAN BATCH GIMANA",batch_trace
+"oh kah gitu",greeting
+"risk concentration di area mana?",risk_check
+"PERMISI DADAH",greeting
+"nanya dong apa tu ai!",out_of_scope
+"masalah keamanan apa yang ditemukan?",risk_check
+"oke siap",greeting
+"data bot inflasi indonesia gak",out_of_scope
+"mantap",greeting
+"oke siap ya",greeting
+"maaf info lengkap batch b-002 dong",batch_trace
+"oke dong siap?",greeting
+"eh maaf ganggu",greeting
+"progress target produksi gimana thanks",operational_data
+"near miss incident ada sih gak sih",risk_check
+"SORRY AP YG DIMAKSUD TITIK KRITIS?",knowledge_query
+"kak salam kenal",greeting
+"nanya dong nomor resi pengiriman berapa please",batch_trace
+"kondisi keamanan pangan gimana?",risk_check
+"sorry nomor resi pengiriman berapa",batch_trace
+"mas test",greeting
+"gak data statistik penduduk dong",out_of_scope
+"chart pengiriman dong",operational_data
+"detail batch ini min apa aja?",batch_trace
+"hei dikirim ke outlet mana thanks",batch_trace
+"tolong probability of occurrence berapa!",risk_check
+"eartag fungsinya buat min apa dong",knowledge_query
+"ada file laporannya gak",operational_data
+"cek riwayat batch b-099 ya",batch_trace
+"biaya operasional berapa min",operational_data
+"btw berapa gaji kerja di rph?",out_of_scope
+"tolong ada file kah laporannya gak?",operational_data
+"min cara ternak sapi",out_of_scope
+"tips wawancara kerja dong",out_of_scope
+"min ada brapa batch hari nih!",operational_data
+"RISK REGISTER SUDAH DI-UPDATE DONG",risk_check
+"nanya dong jelaskan tentang nkv",knowledge_query
+"nanya dong cek pengiriman tokopedia min",out_of_scope
+"nice min",greeting
+"tolong manajemen risiko konstruksi",out_of_scope
+"tolong corrective action completion rate berapa sih",risk_check
+"boleh tanya?",greeting
+"tolong detail batch ini apaan aja?",batch_trace
+"tolong halo ada orang?",greeting
+"kualitas batch ni masih bagus?",risk_check
+"contingency plan udh siap kak",risk_check
+"stress testing hasilnya gmn?",risk_check
+"eh kualitas batch ini masih bagus sih",risk_check
+"apa syarat juru sembelih halal ya",knowledge_query
+"DAGING TAHAN BERAPA LAMA DI FREEZER?",out_of_scope
+"APA TU LETTER YA OF GUARANTEE?",knowledge_query
+"btw biaya operasional brp sih ya",operational_data
+"tolong paham min",greeting
+"nih good",greeting
+"mau tanya dikirim ke ya outlet mana thanks",batch_trace
+"excel data produksi ada kak",operational_data
+"lewat jalur mana pengirimannya?",batch_trace
+"follow up temuan udh?",risk_check
+"performance bang rph gimana?",operational_data
+"maaf near miss incident ya ada gak min",risk_check
+"permisi bagus",greeting
+"test",greeting
+"lacak mas hp hilang",out_of_scope
+"KAK CARA MENABUNG EFEKTIF",out_of_scope
+"eh near miss incident ada gak?",risk_check
+"min sorry jlasin proses samak",knowledge_query
+"mengerti dong",greeting
+"btw bot produktivitas karyawan gimana min",operational_data
+"stunning itu apa?",knowledge_query
+"hei standar keamanan nih terpenuhi gak?",risk_check
+"jelaskan tentang sihalal ya",knowledge_query
+"MIN APA SYARAT JURU SEMBELIH HALAL?",knowledge_query
+"oke deh!",greeting
+"lacak hp gak hilang",out_of_scope
+"lacak hp hilang",out_of_scope
+"nanya dong prioritas perbaikan risiko yang mana?",risk_check
+"KONDISI KEAMANAN DEH PANGAN GMNA",risk_check
+"MIN ADA RESIDU ANTIBIOTIK NIH DI BATCH NIH YA",batch_trace
+"btw halal tu ap sih sebenarnya min",knowledge_query
+"siapa yang cek terakhir kali?",batch_trace
+"met pagi please",greeting
+"harga sapi kurban tahun ini sih",out_of_scope
+"eh probability of occurrence berapa please",risk_check
+"mau tanya paham",greeting
+"min cp1 itu apa?",knowledge_query
+"complaint buat batch nih ada?",batch_trace
+"rph tu singkatan apaan?",knowledge_query
+"sorry gak produktivitas karyawan gimana?",operational_data
+"catatan pengiriman batch nih ada kak",batch_trace
+"risk appetite perusahaan brapa?",risk_check
+"daging tahan berapa lama di freezer?",out_of_scope
+"history perpindahan batch gimana",batch_trace
+"risk velocity masing-masing mas risiko gimana",risk_check
+"eh lolos audit mba keamanan gak?",risk_check
+"sorry kualitas batch ni masih bagus?",risk_check
+"complaint kak untuk batch ini ada?",batch_trace
+"MAAF DIKIRIM KE OUTLET MANA",batch_trace
+"apa itu fatwa halal?",knowledge_query
+"min",greeting
+"apaan fungsi cold chain kak",knowledge_query
+"sorry apa itu consistency ratio!",knowledge_query
+"kak konsistensi ahp tuh ap",knowledge_query
+"sorry pengeluaran rph berapa?",operational_data
+"stress testing hasilnya gmna?",risk_check
+"nanya dong data terkini apa aja?",operational_data
+"root cause analysis udh dilakukan?",risk_check
+"eh bagus",greeting
+"risiko investasi properti",out_of_scope
+"ap tu fatwa halal?",knowledge_query
+"bot wassalam",greeting
+"jelaskan hazard analysis halal ya",knowledge_query
+"nomor resi pengiriman berapa sih",batch_trace
+"tolong met pagi",greeting
+"sorry profit margin brp",operational_data
+"yoo",greeting
+"deh salam",greeting
+"kah eh bagus gak",greeting
+"apaan bedanya farm dan rph?",knowledge_query
+"ADA BRAPA BATCH HARI NI",operational_data
+"risiko investasi properti kak",out_of_scope
+"promo cashback hari ini",out_of_scope
+"nih nanya dong budget bulanan berapa please",operational_data
+"PROSESNYA SDH MAS SAMPAI TAHAP MANA?",batch_trace
+"CEK PENGIRIMAN TOKOPEDIA",out_of_scope
+"ya apa itu seo?",out_of_scope
+"mau tanya asal usulnya dri mana?",batch_trace
+"batch tu artinya apaan please",knowledge_query
+"btw lolos audit keamanan gak?",risk_check
+"tolong manajemen risiko konstruksi min",out_of_scope
+"berapa gaji kerja di rph?",out_of_scope
+"dadah please",greeting
+"bye sih",greeting
+"masalah keamanan apaan yang ditemukan",risk_check
+"ya risk maturity level perusahaan dimana?",risk_check
+"pencapaian target berapa persen?",operational_data
+"tolong apa syarat juru sembelih halal?",knowledge_query
+"profit margin berapa?",operational_data
+"cara ternak sapi",out_of_scope
+"datangnya kpan batch ini?",batch_trace
+"dong yo",greeting
+"risk register sudah di-update?",risk_check
+"HEI PAHAM",greeting
+"IZIN POTONG BATCH B-001 ADA?",batch_trace
+"lppom tuh apa!",knowledge_query
+"eh ringkasan operasional mingguan",operational_data
+"sorry ap itu machine learning",out_of_scope
+"harga sapi kurban tahun ini",out_of_scope
+"sorry lihat jejak perjalanan batch nih dong",batch_trace
+"performance rph gmn",operational_data
+"ya oke deh",greeting
+"tolong lihat jejak perjalanan batch ini dong",batch_trace
+"bang min min",greeting
+"hei mba hallo",greeting
+"min pengeluaran rph berapa?",operational_data
+"min early warning system aktif gak",risk_check
+"kondisi keamanan pangan gmna?",risk_check
+"produktivitas karyawan gimana?",operational_data
+"sorry hy",greeting
+"btw masih aktif sih",greeting
+"biaya operasional berapa?",operational_data
+"penyakit min sapi apaan aja",out_of_scope
+"permisi alamat farm asal sapi ini dimana?",batch_trace
+"KAK CEK RIWAYAT BATCH B-099",batch_trace
+"apaan tuh surveillance audit?",knowledge_query
+"permisi profit margin berapa?",operational_data
+"asalnya dari farm mana sih?",batch_trace
+"sih sorry berapa total risk exposure dong",risk_check
+"mas excel data produksi ada?",operational_data
+"kode voucher gratis ongkir",out_of_scope
+"cp1 tu apa kak",knowledge_query
+"sorry apaan itu istihalah gak",knowledge_query
+"rph tangerang risikonya gmna thanks",risk_check
+"action plan keamanan apa?",risk_check
+"ada residu antibiotik di batch ni?",batch_trace
+"apa itu blockchain?",out_of_scope
+"risk trend bulan nih naik atau kah turun?",risk_check
+"cara menabung efektif",out_of_scope
+"nanya dong sesuai sop keamanan gak?",risk_check
+"risk appetite perusahaan brp?",risk_check
+"kak performance rph gimana?",operational_data
+"eh woi",greeting
+"mau min tanya hari ini udah brp min",operational_data
+"eh alamat farm asal sapi ini dmana?",batch_trace
+"sorry data pengiriman batch nih ada gak?",batch_trace
+"apaan itu uu jph?",knowledge_query
+"salam kenal thanks",greeting
+"hei jelaskan ya tentang nkv",knowledge_query
+"pengeluaran rph berapa?",operational_data
+"tolong kode deh voucher gratis ongkir",out_of_scope
+"CARA BIKIN WEBSITE",out_of_scope
+"kak perlu perbaikan keamanan gak?",risk_check
+"mba min data statistik penduduk",out_of_scope
+"mba mengerti",greeting
+"MAAF LOG PERGERAKAN BATCH ADA!",batch_trace
+"maaf pencapaian target berapa persen",operational_data
+"good",greeting
+"ap bedanya farm dan rph?",knowledge_query
+"jelaskan tentang dong sihalal dong",knowledge_query
+"min sesuai sop gak keamanan gak ya",risk_check
+"hei root cause analysis sudah dilakukan?",risk_check
+"lowongan kerja di rph ada",out_of_scope
+"gimana cara cek kehalalan bahan baku thanks",knowledge_query
+"tren kah produksi gimana?",operational_data
+"STANDAR KEAMANAN TERPENUHI GAK",risk_check
+"asal usulnya dr mana thanks",batch_trace
+"stress kak testing hasilnya gimana!",risk_check
+"NANYA DONG DATA PENGIRIMAN BATCH NI ADA GAK?",batch_trace
+"eh pengeluaran rph berapa?",operational_data
+"apaan itu ai gak",out_of_scope
+"halo ada orang",greeting
+"ap tu surveillance audit?",knowledge_query
+"mau tanya ping",greeting
+"LOWONGAN KERJA DI RPH ADA SIH",out_of_scope
+"kualitas batch ni masih bagus gak",risk_check
+"nomor resi pengiriman brapa!",batch_trace
+"maaf bye sih",greeting
+"btw skkh batch nih nomor brp?",batch_trace
+"grafik produksi ada?",operational_data
+"cp1 itu bang apa?",knowledge_query
+"semua titik kritis aman?",risk_check
+"apa itu ccp min",knowledge_query
+"cara min bikin website please",out_of_scope
+"ada di gudang mana sekarang dong",batch_trace
+"bot rph tu apaan sih ya",knowledge_query
+"nanya dong risiko investasi properti",out_of_scope
+"kak lihatkan laporan dong",operational_data
+"apa itu halal value chain?",knowledge_query
+"hari ini sudah berapa ya",operational_data
+"salam sih",greeting
+"profit margin berapa sih",operational_data
+"tracking jne resi ini thanks",out_of_scope
+"berapa total risk exposure?",risk_check
+"tolong lacak hp hilang sih",out_of_scope
+"wassalam gak",greeting
+"berapa total risk exposure sih",risk_check
+"hei tips wawancara kerja",out_of_scope
+"bot eh hari ini sudah berapa?",operational_data
+"sorry risiko investasi properti gak",out_of_scope
+"paham gak",greeting
+"KAK CATATAN PENGIRIMAN DONG BATCH INI ADA?",batch_trace
+"sorry bobot ahp itu maksudnya gmn?",knowledge_query
+"id kah sapi ini apa?",batch_trace
+"near miss incident nih ada gak dong",risk_check
+"pendapatan bulan ini berapa?",operational_data
+"uji mikrobiologi batch ini hasilnya thanks",batch_trace
+"permisi lihat jejak perjalanan batch nih",batch_trace
+"nih print data rph",operational_data
+"apa itu consistency ratio please",knowledge_query
+"ada file laporannya gak ya",operational_data
+"tolong min",greeting
+"permisi",greeting
+"min iya paham",greeting
+"min standar keamanan terpenuhi gak dong",risk_check
+"min halo mau tanya",greeting
+"rph terdekat dr rumah dimana?",out_of_scope
+"budget bulanan brp",operational_data
+"mba btw apa itu letter of guarantee thanks",knowledge_query
+"lihat jejak bang perjalanan batch ni",batch_trace
+"yo sih",greeting
+"permisi harga bot sapi kurban tahun ni",out_of_scope
+"ada mba update regulasi yang affect risk ya",risk_check
+"lewat jalur mana pengirimannya",batch_trace
+"apa maksudnya skor risiko gak",knowledge_query
+"min apa itu bot ccp?",knowledge_query
+"btw eartag fungsinya buat apa?",knowledge_query
+"risk velocity masing-masing risiko gimana min",risk_check
+"eartag sapi ini nomor berapa?",batch_trace
+"KAH APAAN TU BLOCKCHAIN SIH",out_of_scope
+"maaf jelasin proses samak",knowledge_query
+"hei cara obati sapi sakit",out_of_scope
+"permisi permisi",greeting
+"apa itu seo?",out_of_scope
+"tolong ada emerging risk baru gak",risk_check
+"maaf halo mau tanya",greeting
+"wow",greeting
+"maaf risk concentration di area mana ya",risk_check
+"MAU TANYA PRINT DATA RPH GAK",operational_data
+"kak permisi",greeting
+"rph terdekat dari rumah dimana?",out_of_scope
+"btw dong semua titik kritis aman gak",risk_check
+"apa itu letter of guarantee?",knowledge_query
+"mau tanya cara bedakan daging sapi dan babi gak",out_of_scope
+"gmna cara cek kehalalan bahan baku?",knowledge_query
+"risk trend bulan ni naik atau turun thanks",risk_check
+"tolong semua titik nih kritis aman??",risk_check
+"sorry pemilik ternak asal siapa?",batch_trace
+"complaint utk kak batch ni ada?",batch_trace
+"btw cp1 tuh ap",knowledge_query
+"tolong update data terbaru dong",operational_data
+"dadah??",greeting
+"apaan maksudnya skor risiko??",knowledge_query
+"pemilik ternak asal sapa?",batch_trace
+"bot aktif?",greeting
+"rekap data bulanan dong",operational_data
+"mengerti",greeting
+"ada masalah keamanan kah gak",risk_check
+"permisi testing",greeting
+"nomor resi pengiriman brapa?",batch_trace
+"HEI ADA DI DEH GUDANG MANA SEKARANG",batch_trace
+"berapa gap antara actual risk dan target?",risk_check
+"nanya dong cara bedakan daging sapi dan babi",out_of_scope
+"log pergerakan batch ada?",batch_trace
+"daging tahan berapa lama di freezer gak",out_of_scope
+"EH TAHUN LALU PRODUKSI BRAPA?",operational_data
+"salam kenal dong",greeting
+"min pencapaian target brapa persen??",operational_data
+"nanya dong list karyawan dong dong",operational_data
+"halal itu apa sih sebenarnya?",knowledge_query
+"mau tanya detail batch ini apa aja dong",batch_trace
+"eartag sapi ini nomor brapa?",batch_trace
+"sorry standar keamanan terpenuhi gak?",risk_check
+"tren kah produksi gimana ya",operational_data
+"SIH GRAFIK PRODUKSI ADA?",operational_data
+"nomor batch ya berapa?",batch_trace
+"perbandingan bot bulan ini dan lalu",operational_data
+"nanya dong id sapi ini ap?",batch_trace
+"aturan alkohol dalam produk halal gimana?",knowledge_query
+"tolong oke deh gak",greeting
+"hy?",greeting
+"detail batch ini apa aja",batch_trace
+"nanya dong oke deh",greeting
+"maaf mui tu organisasi apa",knowledge_query
+"ID SAPI INI APA??",batch_trace
+"YANG PALING SIH URGENT DIPERBAIKI APAAN?",risk_check
+"cara nih bedakan daging sapi dan babi ya",out_of_scope
+"mau tanya alamat farm asal sapi ni dimana?",batch_trace
+"LOWONGAN GAK KERJA DI RPH ADA??",out_of_scope
+"minggu lalu gak berapa batch?",operational_data
+"apa itu consistency ratio?",knowledge_query
+"eh apaan syarat juru sembelih halal min",knowledge_query
+"maaf oh gitu",greeting
+"maaf mengerti",greeting
+"fasilitas pemotongan lolos standar gak min",risk_check
+"datangnya kapan batch ini",batch_trace
+"apa itu blockchain??",out_of_scope
+"bang cara bikin website",out_of_scope
+"sorry dokumen batch ni lengkap?",batch_trace
+"ap tu surveillance deh audit dong",knowledge_query
+"probability of occurrence brp?",risk_check
+"ada sih masalah keamanan gak?",risk_check
+"min aturan alkohol dalam produk halal gimana thanks",knowledge_query
+"hari min ni udah brp",operational_data
+"risk trend bulan nih naik atau kak turun?",risk_check
+"permisi brp gaji kerja di rph?",out_of_scope
+"risk velocity masing-masing risiko gmna?",risk_check
+"ada residu antibiotik di batch ini?",batch_trace
+"bisa bantu?",greeting
+"min apa min yg dimaksud titik kritis",knowledge_query
+"profit margin brp",operational_data
+"oke noted dong",greeting
+"btw siapa saja yang bertugas sih",operational_data
+"lolos nih audit keamanan gak",risk_check
+"apa itu self declare halal?",knowledge_query
+"nih min admin min",greeting
+"permisi apa tuh risk assessment bang halal",knowledge_query
+"nanya dong detail batch ni ap aja?",batch_trace
+"cara dapat followers",out_of_scope
+"ap tuh corrective action please",knowledge_query
+"KODE BATCH INI APA YA",batch_trace
+"tolong surat jalan batch ni min ada?",batch_trace
+"nanya dong pendapatan bulan ini berapa?",operational_data
+"eh eartag sapi ini nomor berapa?",batch_trace
+"ap hukum gelatin dalam islam",knowledge_query
+"hei prosesnya sudah sampai tahap mana ya",batch_trace
+"mau tanya rph terdekat dri rumah dmana sih",out_of_scope
+"fasilitas pemotongan lolos standar gak?",risk_check
+"minta bantuan",greeting
+"kak data terkini apa aja?",operational_data
+"sorry met pagi",greeting
+"mau tanya shelf life batch nih brp sih hari lagi?",batch_trace
+"hei nomor resi pengiriman brp?",batch_trace
+"ada file laporannya gak??",operational_data
+"bisa mba kirim via email gak?",operational_data
+"min halal itu apaan sih sebenarnya sih",knowledge_query
+"deh paham",greeting
+"contingency plan sudah siap?",risk_check
+"apa tu surveillance audit?",knowledge_query
+"MIN LOG PERGERAKAN BATCH ADA?",batch_trace
+"nih permisi apa itu ccp?",knowledge_query
+"LEWAT JALUR MANA PENGIRIMANNYA",batch_trace
+"mas min",greeting
+"kak admin",greeting
+"sorry tren produksi gimana?",operational_data
+"TAMPILIN SEMUA DATA THANKS",operational_data
+"ada update regulasi yang affect risk ya",risk_check
+"hei mantap ya",greeting
+"proses pemotongan sesuai kah standar?",risk_check
+"cp1 mba tuh apaan thanks",knowledge_query
+"info deh lengkap batch b-002 dong",batch_trace
+"hei bisa bantu?",greeting
+"jelasin hazard analysis halal",knowledge_query
+"skkh batch nih nomor berapa?",batch_trace
+"mau tanya ap tuh blockchain??",out_of_scope
+"eartag sapi nih nomor berapa?",batch_trace
+"sorry hari ini sudah berapa please",operational_data
+"ada di gudang mana sekarang?",batch_trace
+"permisi spa saja yang bertugas?",operational_data
+"kak apa itu halal value min chain?",knowledge_query
+"oke deh deh",greeting
+"permisi tracking jne resi nih",out_of_scope
+"wassalam",greeting
+"prosesnya sudah sampai tahap mana thanks",batch_trace
+"summary sih produksi dong min",operational_data
+"nanya dong asal usulnya dari mana?",batch_trace
+"rekomendasi perbaikan keamanan apa?",risk_check
+"nanya dong performance rph gimana?",operational_data
+"tolong oke siap",greeting
+"perjalanan batch ini gimana?",batch_trace
+"risk velocity masing-masing risiko gimana",risk_check
+"salam kak",greeting
+"tolong alamat farm asal sapi ni dimana?",batch_trace
+"apa itu bang seo?",out_of_scope
+"record perjalanan batch gimana ya",batch_trace
+"MAU TANYA APAAN TUH SELF DECLARE HALAL?",knowledge_query
+"min apaan tu letter of guarantee min",knowledge_query
+"bot sertifikat halal rph pemotong ada?",batch_trace
+"min min good",greeting
+"inherent risk vs residual risk gmn min",risk_check
+"ada ya issue keamanan gak?",risk_check
+"nanya dong kualitas batch ini masih bagus?",risk_check
+"log pergerakan batch ada please",batch_trace
+"AP FUNGSI COLD CHAIN?",knowledge_query
+"hei cara bikin cv",out_of_scope
+"lihat jejak perjalanan batch ini sih",batch_trace
+"SALAM KENAL BANG SIH",greeting
+"kirim data operasional",operational_data
+"TOLONG EXPORT DATA KE EXCEL DONG",operational_data
+"MIN BERAPA RESIDUAL RISK SETELAH MITIGASI?",risk_check
+"ante mortem sapi nih gimana?",batch_trace
+"good min gak",greeting
+"ada update regulasi kah yang affect risk dong",risk_check
+"maaf apa itu self declare halal?",knowledge_query
+"permisi apaan arti dari traceability sih",knowledge_query
+"export data ke excel dong",operational_data
+"PERMISI WOI",greeting
+"permisi?",greeting
+"MIN WASSALAM MIN",greeting
+"eh tips beli sapi yang sehat",out_of_scope
+"maaf daging nih layak konsumsi gak??",risk_check
+"APA HUKUM GELATIN DALAM ISLAM?",knowledge_query
+"maaf cara ternak sapi gak",out_of_scope
+"hy",greeting
+"apa syarat juru sembelih halal thanks",knowledge_query
+"risk appetite perusahaan berapa?",risk_check
+"helo gak",greeting
+"btw oke deh kak",greeting
+"tampilkan semua data",operational_data
+"nanya dong bulan lalu pengiriman berapa?",operational_data
+"HEI APA ITU AI",out_of_scope
+"tracking jne resi ni",out_of_scope
+"kenapa daging sapi mahal",out_of_scope
+"prioritas perbaikan mba risiko yang mana?",risk_check
+"nanya dong apa itu halal value chain dong",knowledge_query
+"masih aktif?",greeting
+"LEWAT BOT JALUR MANA PENGIRIMANNYA?",batch_trace
+"maaf sesuai sop keamanan gak??",risk_check
+"permisi ada emerging risk baru gak min",risk_check
+"summary produksi dong?",operational_data
+"keren",greeting
+"kak nomor batch berapa kak",batch_trace
+"HEI PDF DEH LAPORAN BULANAN ADA?",operational_data
+"tolong ante mortem sapi ini gimana?",batch_trace
+"sorry risk maturity level perusahaan dimana gak",risk_check
+"btw maaf ganggu ya",greeting
+"apaan min bedanya farm dan rph gak",knowledge_query
+"cara belajar programming ya",out_of_scope
+"mau tanya kak ante mortem sapi ini gmna?",batch_trace
+"LIHATKAN LAPORAN DONG",operational_data
+"FASILITAS PEMOTONGAN LOLOS STANDAR GAK",risk_check
+"jelasin perbedaan hcp dan ccp min",knowledge_query
+"tahun lalu mas produksi brapa?",operational_data
+"pemilik ternak asal siapa sih",batch_trace
+"min tren produksi gmn dong",operational_data
+"nanya dong mengerti",greeting
+"kode batch ini apa",batch_trace
+"DOWNLOAD LAPORAN BULANAN GAK",operational_data
+"probability of occurrence ya brapa",risk_check
+"RPH TERDEKAT DR RUMAH DMN KAK",out_of_scope
+"BTW CARA BIKIN WEBSITE",out_of_scope
+"GAK MIN",greeting
+"MAU TANYA KODE VOUCHER GRATIS ONGKIR",out_of_scope
+"cp1 itu apa gak",knowledge_query
+"pendapatan bulan ini brapa?",operational_data
+"ap tuh blockchain?",out_of_scope
+"proses pemotongan sesuai standar kak",risk_check
+"kak cara dapat followers sih",out_of_scope
+"LOG PERGERAKAN BATCH ADA?",batch_trace
+"maaf jelasin min proses samak kak",knowledge_query
+"iya paham",greeting
+"ap syarat juru sembelih halal?",knowledge_query
+"apa itu machine learning?",out_of_scope
+"ap itu halal value chain thanks",knowledge_query
+"sorry berapa total risk exposure kak",risk_check
+"mau tanya kirim data operasional sih",operational_data
+"cara obati sapi sakit ya",out_of_scope
+"rph itu singkatan nih apa",knowledge_query
+"eh nih apa itu seo",out_of_scope
+"DAGING TAHAN BERAPA LAMA DI FREEZER SIH",out_of_scope
+"eh minta bantuan",greeting
+"eh shelf life batch ini berapa hari lagi gak",batch_trace
+"chart pengiriman dong!",operational_data
+"ap tuh sih seo thanks",out_of_scope
+"gimana cara cek kehalalan bahan baku",knowledge_query
+"btw izin potong batch b-001 ada?",batch_trace
+"penyakit sapi apa aja?",out_of_scope
+"paham",greeting
+"profit margin brapa?",operational_data
+"ap tuh halal value chain?",knowledge_query
+"mui itu organisasi apa kak",knowledge_query
+"BTW KIRIM DATA OPERASIONAL??",operational_data
+"deh maaf ganggu",greeting
+"risk maturity level perusahaan dimana?",risk_check
+"harga sapi kurban tahun ni",out_of_scope
+"eh masih aktif",greeting
+"EH ATURAN ALKOHOL DALAM PRODUK HALAL GIMANA?",knowledge_query
+"min sapi kurban terbaik apa?",out_of_scope
+"apa tuh ai kak",out_of_scope
+"apa itu ai?",out_of_scope
+"KAK PERLU PERBAIKAN KEAMANAN GAK?",risk_check
+"wassalam??",greeting
+"NIH PERLU PERBAIKAN KEAMANAN GAK?",risk_check
+"hei ping",greeting
+"cara ternak sapi min",out_of_scope
+"permisi napa daging sih sapi mahal ya",out_of_scope
+"admin please",greeting
+"lppom tu apa gak",knowledge_query
+"inherent risk vs residual risk gimana?",risk_check
+"mau tanya mantap",greeting
+"grafik produksi mas ada?",operational_data
+"eh halo mau tanya thanks",greeting
+"wassalam thanks",greeting
+"min apaan itu machine learning",out_of_scope
+"CARA CAIRKAN DAGING BEKU GAK",out_of_scope
+"eartag fungsinya buat apaan?",knowledge_query
+"btw apaan bedanya farm dan rph?",knowledge_query
+"early warning system aktif gak?",risk_check
+"iya paham thanks",greeting
+"minggu lalu berapa batch ya",operational_data
+"masalah keamanan apaan yang ditemukan?",risk_check
+"hei cara melamar kerja di rph",out_of_scope
+"jelaskan perbedaan hcp sih dan ccp",knowledge_query
+"jelasin perbedaan hcp dan ya ccp??",knowledge_query
+"kak rekap data bulanan dong??",operational_data
+"kak wow",greeting
+"catatan pengiriman batch kak ini ada?",batch_trace
+"perjalanan batch ini gimana please",batch_trace
+"eh kenapa daging sapi mahal?",out_of_scope
+"kpn terakhir batch ni dicek please",batch_trace
+"NAPA DAGING SAPI MAHAL?",out_of_scope
+"siapa saja yang bertugas?",operational_data
+"batch nih pernah di-recall gak?",batch_trace
+"ping ya",greeting
+"bagus gak",greeting
+"complaint untuk batch ini ada?",batch_trace
+"risk velocity masing-masing risiko gmn kak",risk_check
+"tracking jne resi ini sih",out_of_scope
+"kpi operasional gimana?",operational_data
+"eartag fungsinya buat ap sih",knowledge_query
+"tren produksi gimana??",operational_data
+"sorry inherent risk vs residual risk gmna?",risk_check
+"print data rph",operational_data
+"hei bye",greeting
+"uji mikrobiologi batch ini hasilnya bang thanks",batch_trace
+"kak tracking jne resi ni",out_of_scope
+"halo mau tanya gak",greeting
+"MANAJEMEN RISIKO KONSTRUKSI",out_of_scope
+"deh tolong woi",greeting
+"record perjalanan batch gimana?",batch_trace
+"corrective action mas completion rate brp?",risk_check
+"kak tips beli sapi yng sehat",out_of_scope
+"DATA STATISTIK PENDUDUK YA",out_of_scope
+"aturan alkohol dalam produk halal gmn kak",knowledge_query
+"hei excel data produksi ada!",operational_data
+"maaf jelaskan verifikasi sjh sih",knowledge_query
+"WASSALAM SIH",greeting
+"oke siap dong",greeting
+"cara mining bitcoin min",out_of_scope
+"eh kasih data produksi min",operational_data
+"maaf ganggu",greeting
+"asal usulnya dari mana thanks",batch_trace
+"cara belajar programming",out_of_scope
+"kak modal ternak sapi brapa?",out_of_scope
+"min salam please",greeting
+"oh gitu??",greeting
+"mau tanya summary produksi dong",operational_data
+"risk register udh di-update?",risk_check
+"kenapa daging sapi mahal?",out_of_scope
+"proses pemotongan sesuai standar!",risk_check
+"WASSALAM",greeting
+"action plan keamanan apa",risk_check
+"daging sapi palsu cirinya apa sih",out_of_scope
+"DEH BUDGET BULANAN BRAPA GAK",operational_data
+"rph itu singkatan apa?",knowledge_query
+"batch tu artinya apa?",knowledge_query
+"min risiko sih main forex",out_of_scope
+"nanya dong pengeluaran rph berapa?",operational_data
+"REKOMENDASI PERBAIKAN KEAMANAN APA",risk_check
+"tolong ada warning dari sistem risiko?",risk_check
+"sorry lihat jejak perjalanan batch ini",batch_trace
+"spa yg cek terakhir kali",batch_trace
+"jelasin hazard analysis halal sih",knowledge_query
+"apa tu machine learning sih",out_of_scope
+"yng paling urgent diperbaiki apa?",risk_check
+"eartag fungsinya buat apa dong",knowledge_query
+"nih efisiensi produksi berapa?",operational_data
+"PERMISI RISIKO INVESTASI PROPERTI",out_of_scope
+"action plan keamanan ap?",risk_check
+"NANYA DONG BOBOT AHP ITU MAKSUDNYA GIMANA GAK",knowledge_query
+"perbandingan bulan ini dan lalu please",operational_data
+"masih aktif mas dong",greeting
+"DATA STATISTIK PENDUDUK??",out_of_scope
+"min batch itu artinya apaan?",knowledge_query
+"sorry minggu lalu brp batch?",operational_data
+"PENDAPATAN BULAN INI BERAPA",operational_data
+"hei hy min",greeting
+"alamat farm asal sapi ni dmn sih",batch_trace
+"pemilik ternak asal siapa dong",batch_trace
+"apa yang dimaksud titik kritis?",knowledge_query
+"nanya dong eartag sapi ini nomor berapa!",batch_trace
+"sorry min eartag sapi ini nomor brapa sih",batch_trace
+"salam",greeting
+"export deh data ke excel dong?",operational_data
+"NOMOR RESI PENGIRIMAN BERAPA THANKS",batch_trace
+"nomor resi pengiriman brp gak",batch_trace
+"apaan itu seo?",out_of_scope
+"MIN ID SAPI INI APA SIH",batch_trace
+"stunning itu apa sih min",knowledge_query
+"follow up temuan udah!",risk_check
+"rph tuh singkatan apa?",knowledge_query
+"nanya dong semua titik kritis aman please",risk_check
+"daftar gak petugas dong",operational_data
+"mau tanya sertifikat halal rph pemotong ada kak",batch_trace
+"mau tanya oke noted??",greeting
+"dokumen batch ya ini lengkap?",batch_trace
+"NIH CORRECTIVE ACTION COMPLETION RATE BRAPA?",risk_check
+"budget bulanan berapa?",operational_data
+"mengerti kak",greeting
+"ap bedanya farm dan rph ya",knowledge_query
+"mba kondisi keamanan pangan gimana gak",risk_check
+"CARA MENABUNG EFEKTIF",out_of_scope
+"nomor deh batch berapa kak",batch_trace
+"apa tuh surveillance audit?",knowledge_query
+"maaf probability of occurrence berapa?",risk_check
+"tolong nice gak",greeting
+"lihat jejak perjalanan batch nih",batch_trace
+"batch itu artinya apaan?",knowledge_query
+"btw cara bikin cv thanks",out_of_scope
+"summary produksi dong",operational_data
+"MAAF JELASKAN POSITIVE LIST BAHAN HALAL",knowledge_query
+"MIN RPH ITU APA SIH?",knowledge_query
+"nomor batch brapa??",batch_trace
+"LOWONGAN KERJA DI RPH ADA?",out_of_scope
+"eh data terkini apaan aja?",operational_data
+"cara cairkan daging beku",out_of_scope
+"near miss incident ada gak?",risk_check
+"data terkini apaan aja thanks",operational_data
+"btw apa fungsi cold chain?",knowledge_query
+"ada berapa batch hari ini?",operational_data
+"tolong masih aktif?",greeting
+"siapa saja yang bertugas gak",operational_data
+"helo",greeting
+"mau tanya apaan bedanya mba farm dan rph",knowledge_query
+"data pengiriman batch ini ada gak thanks",batch_trace
+"mas data terkini apa aja?",operational_data
+"prioritas perbaikan risiko yg mana?",risk_check
+"APA ITU CONSISTENCY BOT RATIO?",knowledge_query
+"tren produksi gimana",operational_data
+"cara melamar kerja di mba rph",out_of_scope
+"min eartag fungsinya buat apa dong",knowledge_query
+"eh kasih data gak produksi",operational_data
+"gmn cara cek kehalalan bahan baku",knowledge_query
+"konsistensi ahp itu ap?",knowledge_query
+"kak apa itu istihalah please",knowledge_query
+"btw follow up temuan sudah gak",risk_check
+"mau tanya complaint untuk batch ini ada dong",batch_trace
+"hei lowongan kerja di rph ada ya",out_of_scope
+"mau tanya id sapi ini apa",batch_trace
+"perlu mba perbaikan keamanan gak dong",risk_check
+"perlu perbaikan keamanan gak ya",risk_check
+"tolong risk appetite perusahaan berapa?",risk_check
+"sorry lppom itu apa?",knowledge_query
+"uji mikrobiologi batch ini hasilnya?",batch_trace
+"prosesnya udah sampai tahap mana?",batch_trace
+"mau tanya penyakit sapi apaan aja",out_of_scope
+"nanya dong apa tu blockchain??",out_of_scope
+"tren produksi gimana?",operational_data
+"halo ada orang?",greeting
+"brp gaji kerja di rph!",out_of_scope
+"MAU TANYA JLASIN PROSES SAMAK",knowledge_query
+"semua titik kritis aman",risk_check
+"kak kpi operasional gimana?",operational_data
+"tips beli sapi yang sehat",out_of_scope
+"bot rekomendasi perbaikan keamanan apa?",risk_check
+"tolong ada update regulasi yng affect risk gak",risk_check
+"RECORD PERJALANAN BATCH GIMANA?",batch_trace
+"MAU TANYA IYA PAHAM",greeting
+"nanya dong risk register sudah kah di-update?",risk_check
+"ada warning dari sistem ya risiko??",risk_check
+"PENYAKIT SAPI APA AJA?",out_of_scope
+"apa tu cerol?",knowledge_query
+"sih mau tanya siapa saja yang bertugas?",operational_data
+"PRINT DATA RPH",operational_data
+"modal ternak bot sapi brapa?",out_of_scope
+"HEI LACAK PAKET SHOPEE",out_of_scope
+"PERMISI APAAN TUH SURVEILLANCE AUDIT",knowledge_query
+"maaf perlu perbaikan keamanan gak ya",risk_check
+"min tips wawancara kerja",out_of_scope
+"KAK KONSISTENSI AHP TU APAAN?",knowledge_query
+"btw shelf life batch ni berapa hari lagi kak",batch_trace
+"nanya dong stunning itu apa?",knowledge_query
+"risk concentration nih di area mana please",risk_check
+"mba maaf jelaskan tentang nkv",knowledge_query
+"stress testing hasilnya gimana??",risk_check
+"hei probability of occurrence berapa?",risk_check
+"sorry progress target produksi gimana",operational_data
+"ada residu antibiotik mas di batch ini?",batch_trace
+"tolong aturan alkohol dalam produk halal bang gmn?",knowledge_query
+"performance rph gimana?",operational_data
+"mau tanya profit margin berapa?",operational_data
+"fasilitas pemotongan lolos standar gak ya",risk_check
+"risk trend bulan ini naik atau turun?",risk_check
+"mas good",greeting
+"mau tanya eartag sapi ini nomor berapa?",batch_trace
+"mas minta bantuan",greeting
+"tolong kasih data produksi",operational_data
+"apakah mitigasi risiko sudah efektif",risk_check
+"hallo please",greeting
+"jlasin proses samak!",knowledge_query
+"risk trend bulan ni naik atau turun?",risk_check
+"nanya dong risk register udah gak di-update min",risk_check
+"min kualitas batch ini masih bagus",risk_check
+"permisi risiko investasi properti",out_of_scope
+"daftar petugas dong",operational_data
+"konsistensi ahp itu apa?",knowledge_query
+"shelf life batch ini berapa hari lagi",batch_trace
+"MAS DAGING SAPI PALSU CIRINYA APA?",out_of_scope
+"dong kak dadah!",greeting
+"apa bedanya farm dan rph mas ya",knowledge_query
+"permisi salam kenal??",greeting
+"btw efisiensi produksi brapa?",operational_data
+"eh rph tangerang risikonya gimana!",risk_check
+"apa itu ccp?",knowledge_query
+"min jelaskan proses samak",knowledge_query
+"sorry gak wassalam",greeting
+"eh ada masalah keamanan gak",risk_check
+"dokumen batch ini lengkap?",batch_trace
+"standar keamanan terpenuhi gak?",risk_check
+"apa tu blockchain thanks",out_of_scope
+"btw proses pemotongan sesuai standar?",risk_check
+"nanya dong pdf laporan kak bulanan ada ya",operational_data
+"nanya dong bagus",greeting
+"btw probability of occurrence berapa?",risk_check
+"testing",greeting
+"nice!",greeting
+"brp gaji kerja di rph?",out_of_scope
+"btw oke deh thanks",greeting
+"btw siapa yng terima di gudang",batch_trace
+"min prioritas perbaikan risiko yang mana",risk_check
+"log pergerakan batch ada",batch_trace
+"min risk appetite perusahaan brp?",risk_check
+"AP TU MACHINE LEARNING MIN",out_of_scope
+"kah nanya dong dadah",greeting
+"sorry stress testing hasilnya gimana?",risk_check
+"bot min cp1 itu apaan?",knowledge_query
+"tolong near miss incident ada gak min",risk_check
+"tolong root cause analysis udh dilakukan?",risk_check
+"nanya dong cek pengiriman tokopedia",out_of_scope
+"kualitas batch ini masih bagus sih gak",risk_check
+"min cara obati sapi sakit",out_of_scope
+"ada residu antibiotik di batch ni thanks",batch_trace
+"mba inherent risk vs residual risk gimana??",risk_check
+"nanya dong uji mikrobiologi batch ni hasilnya?",batch_trace
+"bisa kirim via email gak?",operational_data
+"jelaskan tentang sihalal",knowledge_query
+"record perjalanan batch gmna?",batch_trace
+"ada brp batch kak hari ni?",operational_data
+"apa arti dari traceability",knowledge_query
+"prosesnya sudah sampai tahap mana dong",batch_trace
+"lacak bot paket shopee",out_of_scope
+"permisi lacak hp hilang",out_of_scope
+"apa bedanya farm dan rph?",knowledge_query
+"permisi minta laporan mingguan ya",operational_data
+"OKE SIAP",greeting
+"PROFIT MARGIN BERAPA",operational_data
+"tampilin info sapi e-001?",batch_trace
+"complaint utk batch ini ada min",batch_trace
+"mau tanya minta laporan mingguan",operational_data
+"cara obati kah sapi sakit dong",out_of_scope
+"cp1 tuh apaan ya",knowledge_query
+"ADA FILE LAPORANNYA GAK SIH",operational_data
+"min lewat jalur mana pengirimannya?",batch_trace
+"btw nice!",greeting
+"permisi maaf ganggu dong",greeting
+"bagus",greeting
+"minta laporan mingguan",operational_data
+"permisi risk maturity level perusahaan dmana sih",risk_check
+"nanya dong nice sih",greeting
+"KAK SORRY CARA BIKIN CV SIH",out_of_scope
+"btw data pengiriman batch nih ada gak?",batch_trace
+"masalah keamanan ap yg ditemukan?",risk_check
+"mau tanya risiko investasi properti",out_of_scope
+"hei sesuai sop keamanan gak?",risk_check
+"mau tanya wow",greeting
+"izin potong batch b-001 ada?",batch_trace
+"bot aktif dong kak",greeting
+"hei perbandingan bulan ni dan lalu??",operational_data
+"lowongan kerja di rph ada ya",out_of_scope
+"hei batch tuh artinya apaan?",knowledge_query
+"bye",greeting
+"sorry pencapaian target berapa persen?",operational_data
+"info lengkap min batch b-002 dong!",batch_trace
+"tolong pendapatan bulan ini berapa?",operational_data
+"maaf tips beli sapi yg sehat",out_of_scope
+"bisa bantu min",greeting
+"mau tanya grafik produksi ada gak",operational_data
+"nih bot aktif??",greeting
+"nanya dong ap tuh ai sih",out_of_scope
+"maaf rph tu kak apaan sih",knowledge_query
+"TOLONG AP TUH CEROL",knowledge_query
+"sorry risk maturity level perusahaan mba dimana",risk_check
+"nomor resi pengiriman brapa",batch_trace
+"nanya dong bank digital terbaik",out_of_scope
+"data statistik penduduk?",out_of_scope
+"siapa yg terima di gudang?",batch_trace
+"maaf apaan peran bpjph?",knowledge_query
+"manajemen risiko konstruksi",out_of_scope
+"rph tangerang risikonya gimana?",risk_check
+"halo mau tanya",greeting
+"maaf daging tahan berapa lama di freezer?",out_of_scope
+"CATATAN PENGIRIMAN BATCH NI ADA KAK",batch_trace
+"eh oke deh min",greeting
+"kak apa itu ai ya",out_of_scope
+"cara bot cairkan daging beku",out_of_scope
+"print data rph thanks",operational_data
+"hei lowongan kerja di rph ada dong",out_of_scope
+"tolong list karyawan dong",operational_data
+"stress testing hasilnya gimana?",risk_check
+"tolong wassalam",greeting
+"cara mining bitcoin?",out_of_scope
+"min mui itu organisasi apa please",knowledge_query
+"nanya dong risk concentration di area mana!",risk_check
+"HELO",greeting
+"RISK TREND BULAN NI NAIK ATAU TURUN",risk_check
+"eh ya halo ada orang?",greeting
+"sorry stunning itu apa?",knowledge_query
+"maaf action plan keamanan ap?",risk_check
+"tahun lalu produksi brp ya",operational_data
+"btw ap tuh cerol?",knowledge_query
+"maaf stress testing hasilnya gmn?",risk_check
+"risiko sih main forex",out_of_scope
+"minggu lalu brp batch?",operational_data
+"APA ITU MACHINE LEARNING?",out_of_scope
+"sorry apaan tuh seo",out_of_scope
+"cp1 itu kak apa dong",knowledge_query
+"sorry lolos audit keamanan gak??",risk_check
+"ap tuh machine learning please",out_of_scope
+"daging nih layak konsumsi gak?",risk_check
+"min min",greeting
+"apa itu surveillance audit?",knowledge_query
+"halo ada orang thanks",greeting
+"PERMISI NOMOR BATCH BERAPA?",batch_trace
+"permisi apa itu seo sih",out_of_scope
+"apaan min tu machine learning thanks",out_of_scope
+"brp total risk exposure!",risk_check
+"min brp ya gaji kerja di rph please",out_of_scope
+"jelaskan tentang nkv",knowledge_query
+"sorry cara obati mas sapi sakit",out_of_scope
+"data inflasi indonesia",out_of_scope
+"min nomor batch berapa!",batch_trace
+"min tunjukin semua data",operational_data
+"maaf record perjalanan batch gimana?",batch_trace
+"proses pemotongan sesuai standar?",risk_check
+"ada issue keamanan gak sih",risk_check
+"masalah keamanan apa yang kah ditemukan?",risk_check
+"risk appetite sih perusahaan berapa",risk_check
+"hei risk concentration di area mana",risk_check
+"jelaskan positive list bahan halal",knowledge_query
+"KAK LIHATKAN LAPORAN DONG",operational_data
+"pengeluaran rph brapa?",operational_data
+"permisi record perjalanan batch gmna?",batch_trace
+"btw yang paling urgent diperbaiki ap",risk_check
+"min daging tahan berapa lama di freezer?",out_of_scope
+"min modal ternak sapi berapa?",out_of_scope
+"NANYA DONG HARI INI UDAH MIN BRAPA?",operational_data
+"yang paling urgent diperbaiki apa?",risk_check
+"btw apa itu corrective action ya",knowledge_query
+"grafik produksi ada mba ya",operational_data
+"rph tangerang risikonya gmna?",risk_check
+"halal itu sih apa sih sebenarnya please",knowledge_query
+"apa itu uu jph?",knowledge_query
+"bot harga sapi kurban tahun ini??",out_of_scope
+"maaf eartag sapi ini nomor berapa thanks",batch_trace
+"MODAL TERNAK SAPI BRP",out_of_scope
+"kah sorry masalah keamanan apaan yang ditemukan",risk_check
+"nanya dong apaan itu corrective action?",knowledge_query
+"hari nih sdh berapa ya",operational_data
+"nanya dong apa itu ccp",knowledge_query
+"jlasin proses samak",knowledge_query
+"tracking jne resi ini please",out_of_scope
+"penyakit sapi apa aja sih",out_of_scope
+"sorry cara cairkan daging beku",out_of_scope
+"surat jalan batch ini ada?",batch_trace
+"ringkasan operasional mingguan dong",operational_data
+"tolong kak record perjalanan batch gimana?",batch_trace
+"apakah mitigasi risiko sudah efektif?",risk_check
+"tolong ap maksudnya skor risiko?",knowledge_query
+"EH EARLY WARNING SYSTEM AKTIF GAK PLEASE",risk_check
+"jelaskan perbedaan hcp dan ccp thanks",knowledge_query
+"sertifikat gak halal rph pemotong ada",batch_trace
+"data pengiriman batch ini ada gak?",batch_trace
+"tampilkan info sapi e-001??",batch_trace
+"helo please",greeting
+"PROFIT MARGIN BERAPA?",operational_data
+"sorry risk maturity level perusahaan dmn?",risk_check
+"permisi ada berapa batch hari ini??",operational_data
+"ringkasan operasional min mingguan",operational_data
+"ap itu corrective deh action?",knowledge_query
+"KAK ROOT CAUSE ANALYSIS SUDAH DILAKUKAN?",risk_check
+"permisi data pengiriman batch ni dong ada gak sih",batch_trace
+"mau tanya probability of occurrence brapa thanks",risk_check
+"modal ternak sapi berapa??",out_of_scope
+"apaan tu machine learning?",out_of_scope
+"jelaskan positive list bahan halal?",knowledge_query
+"maaf gak iya paham!",greeting
+"risk register sdh di-update?",risk_check
+"btw batch itu artinya apa",knowledge_query
+"progress target produksi gimana?",operational_data
+"risk appetite perusahaan brp!",risk_check
+"eh bank digital terbaik thanks",out_of_scope
+"perlu mba perbaikan keamanan gak?",risk_check
+"pdf laporan bulanan ada kak",operational_data
+"APA ITU SURVEILLANCE AUDIT",knowledge_query
+"biaya operasional brapa?",operational_data
+"berapa gap antara actual risk dan target please",risk_check
+"mas cara mining bitcoin",out_of_scope
+"APA ITU SEO",out_of_scope
+"lolos audit keamanan gak?",risk_check
+"sampai jumpa mba min",greeting
+"kak surat ya jalan batch ini ada?",batch_trace
+"mau min tanya apaan tuh halal value chain kak",knowledge_query
+"permisi log pergerakan batch ada thanks",batch_trace
+"paham thanks",greeting
+"sorry pdf laporan bulanan ada?",operational_data
+"tolong probability of occurrence gak berapa?",risk_check
+"BRP GAP ANTARA ACTUAL RISK DAN TARGET?",risk_check
+"gak maaf sapa yg terima di gudang?",batch_trace
+"ada update regulasi yang affect risk?",risk_check
+"cara obati sapi sakit",out_of_scope
+"skkh batch mba ini nomor brapa dong",batch_trace
+"mau tanya cara melamar kerja di rph",out_of_scope
+"hei asal usulnya dari mana gak",batch_trace
+"sorry eartag fungsinya buat apaan?",knowledge_query
+"mau tanya cara bikin cv",out_of_scope
+"download laporan bulanan",operational_data
+"lowongan kerja di deh rph ada kak",out_of_scope
+"eh data pengiriman batch dong ini ada gak ya",batch_trace
+"hari ni udh berapa gak",operational_data
+"maaf modal ternak sapi berapa?",out_of_scope
+"record perjalanan batch gimana thanks",batch_trace
+"mau tanya apa itu seo dong",out_of_scope
+"rph itu apa sih?",knowledge_query
+"min wow ya",greeting
+"min gimana cara cek kehalalan bahan baku?",knowledge_query
+"ada issue keamanan gak thanks",risk_check
+"maaf hari ini sudah berapa",operational_data
+"eh yo dong",greeting
+"kak wassalam",greeting
+"iya paham min",greeting
+"nanya dong aturan alkohol dalam produk halal gmn??",knowledge_query
+"prosesnya udh sampai tahap mana?",batch_trace
+"ap hukum gelatin dalam islam?",knowledge_query
+"eh jelaskan positive list bahan halal sih",knowledge_query
+"eh hari ini sudah berapa min",operational_data
+"btw prioritas perbaikan risiko yng mana?",risk_check
+"print data gak rph!",operational_data
+"kak mengerti mba ya",greeting
+"sih tolong apa tu uu jph?",knowledge_query
+"apa itu corrective action?",knowledge_query
+"tolong grafik produksi ada dong",operational_data
+"dikirim ke outlet mana?",batch_trace
+"data terkini apa aja?",operational_data
+"maaf hari ini sudah berapa?",operational_data
+"mau tanya masalah keamanan apa yang ditemukan?",risk_check
+"SORRY KIRIM DATA OPERASIONAL",operational_data
+"tolong bye",greeting
+"min apa tuh blockchain!",out_of_scope
+"dikirim ya ke outlet mana thanks",batch_trace
+"nomor batch bot berapa?",batch_trace
+"woi thanks",greeting
+"min cara menabung efektif ya",out_of_scope
+"daging ini layak konsumsi gak?",risk_check
+"met pagi",greeting
+"permisi lowongan kerja di rph ada?",out_of_scope
+"HEI RPH TANGERANG RISIKONYA GIMANA?",risk_check
+"shelf life ya batch ni brapa hari lagi?",batch_trace
+"mas pencapaian target brp persen!",operational_data
+"sih min halo ada orang?",greeting
+"tolong risiko investasi properti",out_of_scope
+"permisi nomor resi pengiriman brapa?",batch_trace
+"nanya dong apa tu surveillance audit",knowledge_query
+"yoo??",greeting
+"ada warning bot dri sistem risiko!",risk_check
+"maaf excel data produksi ada?",operational_data
+"apa itu istihalah",knowledge_query
+"cek pengiriman tokopedia dong",out_of_scope
+"min proses pemotongan sesuai standar sih",risk_check
+"apa maksudnya skor risiko?",knowledge_query
+"kak asalnya dri farm mana sih min",batch_trace
+"SORRY LACAK PAKET SHOPEE",out_of_scope
+"boleh tanya",greeting
+"chart pengiriman dong gak",operational_data
+"nih btw keren",greeting
+"data pengiriman batch ini ada gak min",batch_trace
+"permisi minta laporan mingguan min",operational_data
+"SIAPA YANG TERIMA DI GUDANG YA",batch_trace
+"permisi daging sapi palsu cirinya apa?",out_of_scope
+"apaan itu risk assessment halal?",knowledge_query
+"BS KAH KIRIM VIA EMAIL GAK?",operational_data
+"promo cashback hari nih",out_of_scope
+"nanya dong sertifikat halal rph pemotong ada?",batch_trace
+"nanya dong summary produksi dong sih",operational_data
+"apa itu halal value chain kak",knowledge_query
+"nice",greeting
+"CHART PENGIRIMAN DONG DONG",operational_data
+"apa tuh letter of guarantee?",knowledge_query
+"risk mba concentration di area mana min",risk_check
+"grafik bot produksi ada?",operational_data
+"hei rph nih tuh singkatan apa dong",knowledge_query
+"root cause analysis udah dilakukan?",risk_check
+"data terkini ap aja?",operational_data
+"APA ITU CCP?",knowledge_query
+"sorry apaan tuh fatwa halal thanks",knowledge_query
+"pdf laporan bulanan ada min",operational_data
+"lppom itu ap please",knowledge_query
+"btw root cause analysis sudah gak dilakukan?",risk_check
+"ada masalah keamanan gak sih",risk_check
+"daging tahan brapa lama di freezer?",out_of_scope
+"bulan lalu pengiriman brp?",operational_data
+"datangnya kapan batch ini?",batch_trace
+"kode batch ini apa?",batch_trace
+"btw jlasin hazard analysis halal",knowledge_query
+"btw contingency plan sudah siap?",risk_check
+"ada masalah keamanan gak?",risk_check
+"mas min yoo gak",greeting
+"minggu lalu berapa batch?",operational_data
+"Sebutkan nama RPH yang ada di Jatim.",operational_data
+"Apa fasilitas cold storage yang ada di Bandung?",operational_data
+"RPH Syariah Al-Anam ada di kota mana?",operational_data
+"Sebutkan nama distributor di Jabodetabek.",operational_data
+"Nama peternakan di Jatim apa saja?",operational_data
+"Ada berapa batch halal yang diproduksi antara Januari dan Februari 2026?",operational_data
+"Dimana lokasi peternakan Sumber Rejeki?",operational_data
+"Apakah ada cold storage di Bandung yang halal?",operational_data
+"Nama RPH di Jateng apa aja?",operational_data
+"Nama peternakan di Jabar?",operational_data
+"Apa aja fasilitas cold storage di Jabar?",operational_data
+"Nama distributor di Bandung?",operational_data
+"Nama RPH di Bogor apa?",operational_data
+"RPH yang ada di lokasi Jakarta?",operational_data
+"distributor yang terdaftar di area Malang?",operational_data
+"berapa jumlah peternakan sapi di jawa barat?",operational_data
+"Cek risiko AHP di CP4 RPH, aman ga?",risk_check
+"Apakah CP1 Kandang terjamin keamanannya?",risk_check
+"cek risiko CP2 di RPH Terpadu Semarang gimana?",risk_check
+"berapa tingkat risiko CP3 Transportasi?",risk_check
+"aman ga sih CP4 Penyembelihan?",risk_check
+"evaluasi keamanan CP2 Pakan ternak",risk_check
+"gimana level risiko CP1 di peternakan?",risk_check
+"kasih liat bobot AHP buat CP4",risk_check
+"status keamanan CP3 saat distribusi",risk_check
+"risiko penyembelihan CP4 tinggi ga?",risk_check

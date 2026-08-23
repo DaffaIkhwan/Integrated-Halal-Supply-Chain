@@ -50,3 +50,14 @@ public/models/
 *.log
 temp_*.json
 verify-output.txt
+
+# python venv
+ml/venv/
+
+# temporary files
+tmp_docx2/
+~*
+*.ipynb
+
+# large ml models
+ml/indobert/

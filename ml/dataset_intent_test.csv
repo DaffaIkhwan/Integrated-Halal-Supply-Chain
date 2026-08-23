@@ -1,0 +1,185 @@
+text,label
+"apa itu cross contamination?",knowledge_query
+"berapa threshold risiko yang tidak aman?",risk_check
+"berapa persentase on-time delivery?",operational_data
+"tampilkan heat map risiko",risk_check
+"tempat wisata bali",out_of_scope
+"oke",greeting
+"posisi batch ini dimana sekarang?",batch_trace
+"skala saaty itu apa?",knowledge_query
+"statistik operasional gimana?",operational_data
+"ada deviasi dari standar keamanan?",risk_check
+"cara hack wifi",out_of_scope
+"waalaikumsalam",greeting
+"mana yang lebih berisiko penyembelihan atau transportasi?",risk_check
+"berapa skor risk maturity saat ini?",risk_check
+"siapa saja juru sembelih tersertifikasi?",operational_data
+"dimana beli daging murah?",out_of_scope
+"ok terima kasih",greeting
+"cara masak rendang",out_of_scope
+"apa itu audit halal?",knowledge_query
+"dokter hewan yang memeriksa siapa?",batch_trace
+"jalur distribusi batch terakhir",batch_trace
+"riwayat perjalanan daging ini dari awal",batch_trace
+"sudah sampai tujuan belum?",batch_trace
+"daging ini dari rph mana?",batch_trace
+"lowongan kerja jakarta",out_of_scope
+"apa perbedaan haccp dan has?",knowledge_query
+"assalamualaikum",greeting
+"jelaskan tentang halal logistics",knowledge_query
+"cara daftar cpns",out_of_scope
+"siapa presiden pertama indonesia?",out_of_scope
+"sjh singkatan dari apa?",knowledge_query
+"jumlah pemotongan berapa?",operational_data
+"tampilkan daftar farm aktif",operational_data
+"data produksi kuartal terakhir",operational_data
+"sapi ini berasal dari mana?",batch_trace
+"total pengiriman berapa?",operational_data
+"rekomendasi film dong",out_of_scope
+"resep steak sapi",out_of_scope
+"cara awetkan daging tanpa kulkas",out_of_scope
+"batch terakhir aman gak skornya?",risk_check
+"siapa yang motong sapi batch ini?",batch_trace
+"pagi",greeting
+"data petugas rph hari ini siapa saja?",operational_data
+"rute pengiriman gimana?",batch_trace
+"daftar gudang beserta kapasitasnya",operational_data
+"jelaskan metode fuzzy ahp",knowledge_query
+"apa itu eigenvector ahp?",knowledge_query
+"game seru apa?",out_of_scope
+"cara diet sehat",out_of_scope
+"jadwal kereta jakarta surabaya",out_of_scope
+"resep sop sapi",out_of_scope
+"jelaskan gmp dalam produksi halal",knowledge_query
+"berapa harga sapi per kilo?",out_of_scope
+"berapa karyawan rph jakarta?",operational_data
+"selamat malam",greeting
+"jelaskan tentang traceability halal",knowledge_query
+"cara potong daging untuk sate",out_of_scope
+"hp murah terbaik apa?",out_of_scope
+"apa kriteria bahan haram?",knowledge_query
+"hasil post mortem sapi e-1234",batch_trace
+"rph jakarta gimana kondisi risikonya?",risk_check
+"hai bot",greeting
+"supplier ini aman gak?",risk_check
+"hai",greeting
+"selamat pagi",greeting
+"ada berapa rph yang terdaftar?",operational_data
+"nilai fuzzy ahp untuk cp1 berapa?",risk_check
+"jual daging online dimana?",out_of_scope
+"juru sembelih batch ini siapa?",batch_trace
+"kapasitas potong rph berapa per hari?",operational_data
+"apa itu ssop?",knowledge_query
+"hasil bola semalam",out_of_scope
+"sore",greeting
+"rata-rata volume pemotongan per bulan",operational_data
+"kenapa harus pemisahan fasilitas halal?",knowledge_query
+"dari rph mana batch b-001 dipotong?",batch_trace
+"cek level risiko pendinginan daging",risk_check
+"baik",greeting
+"apa itu animal welfare?",knowledge_query
+"sip",greeting
+"resep nasi goreng dong",out_of_scope
+"ok paham",greeting
+"rph tangerang datanya apa saja?",operational_data
+"cold storage aman gak suhunya?",risk_check
+"buatkan puisi cinta",out_of_scope
+"sip makasih",greeting
+"apa itu juleha?",knowledge_query
+"siapa pakar responden ahp?",operational_data
+"hey",greeting
+"restoran steak enak dimana?",out_of_scope
+"sapi eartag e-1234 dari farm mana?",batch_trace
+"skor akhir fuzzy ahp sudah keluar?",risk_check
+"bagaimana alur sertifikasi halal?",knowledge_query
+"nomor kendaraan pengangkut batch b-099",batch_trace
+"kapan batch b-002 masuk gudang?",batch_trace
+"oke makasih",greeting
+"jelaskan farm to fork",knowledge_query
+"terima kasih",greeting
+"apa bedanya ccp dan cp?",knowledge_query
+"kurs dollar berapa?",out_of_scope
+"malam",greeting
+"siapa yang kirim batch ini?",batch_trace
+"sertifikat kesehatan hewan dari mana?",batch_trace
+"kondisi risiko gudang gimana?",risk_check
+"statistik pengiriman minggu ini",operational_data
+"berapa lama daging di perjalanan?",batch_trace
+"batch b-444 sudah sampai outlet?",batch_trace
+"daging di gudang ini asalnya dari mana?",batch_trace
+"berapa risk priority number setiap bahaya?",risk_check
+"traceability daging ke outlet jakarta",batch_trace
+"berapa skor risiko batch b-001?",risk_check
+"hi",greeting
+"suhu selama pengiriman batch ini",batch_trace
+"apakah rph ini aman?",risk_check
+"jelaskan tentang sistem jaminan halal",knowledge_query
+"transportasi daging risikonya gimana?",risk_check
+"laporan maintenance peralatan rph",operational_data
+"apakah bobot ahp sudah divalidasi pakar?",risk_check
+"masuk ke gudang kapan?",batch_trace
+"halo",greeting
+"apa itu internal audit halal?",knowledge_query
+"angka produksi berapa?",operational_data
+"apa peran komite halal?",knowledge_query
+"jadwal shift juru sembelih minggu ini",operational_data
+"status pengiriman batch ini gimana?",batch_trace
+"p",greeting
+"apakah ada titik kritis di atas ambang batas?",risk_check
+"jumlah batch yang diproses bulan ini",operational_data
+"ada critical risk yang perlu ditangani?",risk_check
+"laporan bulanan mana?",operational_data
+"siap",greeting
+"apa itu has 23000?",knowledge_query
+"ok",greeting
+"selamat siang",greeting
+"ini dari rph mana ya?",batch_trace
+"apa itu titik kritis halal?",knowledge_query
+"makasih ya",greeting
+"berapa harga bitcoin?",out_of_scope
+"tampilkan risk matrix untuk semua ccp",risk_check
+"cara install windows",out_of_scope
+"data rph lengkap dong",operational_data
+"tampilkan skor risiko semua titik kritis",risk_check
+"info semua rph jakarta",operational_data
+"apa syarat penyembelihan menurut islam?",knowledge_query
+"berapa bobot kriteria kebersihan peralatan?",risk_check
+"harga daging di pasar berapa?",out_of_scope
+"lirik lagu indonesia raya",out_of_scope
+"ada temuan audit keamanan?",risk_check
+"batch b-001 lolos standar gak?",risk_check
+"cek overall risk posture",risk_check
+"berapa kendaraan pengangkut kita?",operational_data
+"cara masak daging biar empuk",out_of_scope
+"bobot prioritas cp mana yang tertinggi?",risk_check
+"apa bedanya halal dan toyyib?",knowledge_query
+"cek tingkat risiko kontaminasi gudang",risk_check
+"cuaca jakarta gimana?",out_of_scope
+"jadwal kalibrasi alat ukur kapan?",operational_data
+"compliance keamanan gimana?",risk_check
+"apa itu triangular fuzzy number?",knowledge_query
+"siang",greeting
+"berapa jumlah outlet ritel kita?",operational_data
+"bagaimana proses sertifikasi halal?",knowledge_query
+"tanggal penyembelihan batch ini",batch_trace
+"jam berapa batch b-001 dipotong?",batch_trace
+"suhu rata-rata cold storage minggu ini",operational_data
+"halo admin",greeting
+"tampilkan ranking risiko dari tertinggi",risk_check
+"lacak asal usul batch yang barusan masuk",batch_trace
+"apa kelebihan fuzzy ahp?",knowledge_query
+"cara atasi rambut rontok",out_of_scope
+"jelaskan defuzzifikasi",knowledge_query
+"jelaskan tentang manual sjh",knowledge_query
+"selamat sore",greeting
+"batch b-001 dari mana asalnya?",batch_trace
+"list transporter yang kerja sama",operational_data
+"thanks",greeting
+"makasih",greeting
+"minta semua data operasional",operational_data
+"berapa banyak yang diproses?",operational_data
+"dari peternakan siapa sapi e-001?",batch_trace
+"RPH di kalimantan ada berapa?",operational_data
+"apakah CP4 aman?",risk_check
+"cek risiko keamanan di CP1 kandang",risk_check
+"apa nama cold storage di surabaya",operational_data

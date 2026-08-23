@@ -19,22 +19,39 @@ class IntentClassifierSingleton {
   static task = 'text-classification';
   static model = MODEL_PATH;
   static instance: any = null;
+  static loadAttempted = false;
 
   static async getInstance(progress_callback?: any) {
+    // If previously failed, don't retry on every request
+    if (this.loadAttempted && this.instance === null) {
+      return null;
+    }
+
     if (this.instance === null) {
+      this.loadAttempted = true;
       try {
         console.log(`[IndoBERT] Loading model from: ${this.model}`);
+        console.log(`[IndoBERT] Environment: NODE_ENV=${process.env.NODE_ENV}, localFilesOnly=${localFilesOnly}`);
         this.instance = await pipeline(this.task as any, this.model, { 
           progress_callback,
           local_files_only: localFilesOnly,
         });
+        console.log(`[IndoBERT] ✅ Model loaded successfully`);
       } catch (error) {
-        console.warn("⚠️ [IndoBERT] Failed to load model from", this.model, error);
-        console.warn("Falling back to implicit LLM intent routing.");
+        console.error("❌ [IndoBERT] Failed to load model:", error);
+        console.error(`[IndoBERT] Model path: ${this.model}`);
+        console.error("[IndoBERT] ⚠️ ALL requests will use LLM fallback until server restart!");
+        this.instance = null;
         return null;
       }
     }
     return this.instance;
+  }
+
+  /** Reset to allow re-attempting model load (e.g., after fixing model path) */
+  static reset() {
+    this.instance = null;
+    this.loadAttempted = false;
   }
 }
 
